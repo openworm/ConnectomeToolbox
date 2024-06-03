@@ -7,7 +7,8 @@ pip install .
 python -m cect.SpreadsheetDataReader 
 python -m cect.UpdatedSpreadsheetDataReader                                                                                                                                                                      
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
-#python -m cect.OpenWormReader 
+#python -m cect.OpenWormReader                                                                                                                                                            
+python -m cect.VarshneyDataReader
 
 
 
