@@ -1,8 +1,11 @@
 site_name: C. elegans Connectome Toolbox
 theme:
-  name: material
+  name: material    
+  favicon: images/favicon.ico
+  logo: images/favicon.ico
   palette:
-    primary: green
+    primary: green  
+
 nav:
   - Overview: 'index.md'
   - 'Connectomes':
@@ -13,7 +16,7 @@ nav:
     - 'Pereira et al. 2015': 'Pereira_2015.md'
     - 'Bentley et al. 2016': 'Bentley_2016.md'
     - 'Cook et al. 2019': 'Cook_2019.md'
-    - 'Britten et al. 2021': 'Brittent_2021.md'
+    - 'Brittin et al. 2021': 'Brittin_2021.md'
     - 'Witvliet et al. 2021': 'Witvliet_2021.md'
   - Python package:
     - 'Installation': 'Python.md'
