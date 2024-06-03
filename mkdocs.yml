@@ -3,3 +3,10 @@ theme:
   name: material
   palette:
     primary: green
+nav:
+  - Overview: 'index.md'
+  - 'Connectomes':
+    - 'White et al 1984': 'White_1984.md'
+    - 'Cook et al. 2019': 'Cook_2019.md'
+  - Python package:
+    - 'Installation': 'Python.md'
