@@ -25,7 +25,6 @@ READER_DESCRIPTION = """Data extracted from CElegansNeuronTables.xls for neurona
 def read_data(include_nonconnected_cells=False, neuron_connect=False):
 
 
-
 # reading the NeuronConnectFormatted.xls file if neuron_connect = True
     if neuron_connect:
         conns = []
@@ -115,6 +114,8 @@ def main():
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+
+    print_(' -- Finished analysing connections using: %s'%os.path.basename(__file__))
 
 if __name__ == '__main__':
 
