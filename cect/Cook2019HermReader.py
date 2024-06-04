@@ -1,9 +1,9 @@
 # Temporary class to allow this to be used in comparison notebook. 
 # Should be tidied up.
 
-from c302.Cook2019DataReader import Cook2019DataReader
+from cect.Cook2019DataReader import Cook2019DataReader
 
-from c302.ConnectomeReader import analyse_connections
+from cect.ConnectomeReader import analyse_connections
 
 cdr = Cook2019DataReader()
 read_data = cdr.read_data

@@ -11,12 +11,12 @@
 
 import csv
 
-from c302.ConnectomeReader import ConnectionInfo
-from c302.ConnectomeReader import analyse_connections
-from c302.ConnectomeReader import convert_to_preferred_muscle_name
-from c302.ConnectomeReader import is_neuron
-from c302.ConnectomeReader import is_body_wall_muscle
-from c302.ConnectomeReader import remove_leading_index_zero
+from cect.ConnectomeReader import ConnectionInfo
+from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeReader import convert_to_preferred_muscle_name
+from cect.ConnectomeReader import is_neuron
+from cect.ConnectomeReader import is_body_wall_muscle
+from cect.ConnectomeReader import remove_leading_index_zero
 
 from openpyxl import load_workbook
 
