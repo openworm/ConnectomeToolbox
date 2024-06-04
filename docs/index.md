@@ -14,7 +14,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 | Papers                                                     | Features      | Datasets      | Readers |
 | -------------                                              | -----         | -----         | ---- |
-| [White et al. 1986](White_1984.md)     | |[N2U.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/wormwiring_N2U.txt)|  N/A |
+| [White et al. 1986](White_1984.md)     | Anatomical |[N2U.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/wormwiring_N2U.txt)|  N/A |
 | [Durbin 1987](Durbin_1987.md)    | |[Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)| N/A |
 | [Altun et al. 2009](Altun_2009.md)   | |[Db.dump](datasets/neurons/Modified_celegans_db_dump.csv)| [OpenWormReader](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/OpenWormReader.py) |
 | [Varshney et al. 2011](Varshney_2011.md)  |    | [NeuronsConnect](datasets/neurons/NeuronConnectFormatted(1).xlsx)   | [SpreadsheetDataReader](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/SpreadsheetDataReader.py) |
