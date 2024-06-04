@@ -8,6 +8,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 - Gene Expression Map (Altun et al. 2009; CenGEN)
 - Extrasynaptic connectome (Pereira et al. 2015; Bentley et al. 2016; Ripoll-Sanchez et al. 2023)
 - Functional connectome (Randi et al. 2023)
+- Developmental connectome (Witvliet et al. 2021)
 
 ## Datasets
 
