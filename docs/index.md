@@ -26,4 +26,5 @@ Information on published connectomics data related to _C. elegans_. This is bein
 | [Witvliet et al. 2021](Witvliet_2021.md)  |  | [physical.csv](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/physical_contact) [synapses.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/synapses) [skeletons.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/skeletons) | N/A |
 | [Taylor et al. 2021](Taylor_2021.md)    |   | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
 | [Beets et al. 2023](Beets_2023.md)    |   | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
+| [Atanas et al. 2023](Atanas_2023.md)    |   | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
 
