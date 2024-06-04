@@ -5,7 +5,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 **Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work.**
 
 - Anatomical connectome (Albertson & Thomson 1976; White et al. 1986; Durbin 1987; Varshney et al. 2011; Cook et al. 2019; Cook et al. 2020; Witvliet et al. 2021)
-- Gene Expression Map (Altun et al. 2009; Fenvyes et al. 2020)
+- Gene Expression Map (Altun et al. 2009; Fenvyes et al. 2020; Yemini et al. 2021)
 - Extrasynaptic connectome (Pereira et al. 2015; Bentley et al. 2016; Beets et al. 2023; Ripoll-Sanchez et al. 2023)
 - Functional connectome (Randi et al. 2023)
 - Developmental connectome (Witvliet et al. 2021)
@@ -25,6 +25,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 | [Brittin et al. 2021](Brittin_2021.md)    |   | [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) [parsed](https://github.com/cabrittin/parsetrakem2)| N/A  |
 | [Witvliet et al. 2021](Witvliet_2021.md)  |  | [physical.csv](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/physical_contact) [synapses.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/synapses) [skeletons.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/skeletons) | N/A |
 | [Taylor et al. 2021](Taylor_2021.md)    |   | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
+| [Yemini et al. 2021](Yemini_2021.md)    |   | [data](https://zenodo.org/records/3906530) | N/A  |
 | [Beets et al. 2023](Beets_2023.md)    |   | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    |   | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
 
