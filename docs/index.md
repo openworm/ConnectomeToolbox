@@ -6,7 +6,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 - Anatomical connectome (Albertson & Thomson 1976; White et al. 1986; Durbin 1987; Varshney et al. 2011; Cook et al. 2019; Cook et al. 2020; Witvliet et al. 2021)
 - Gene Expression Map (Altun et al. 2009; CenGEN)
-- Extrasynaptic connectome (Pereira et al. 2015; Bentley et al. 2016; Ripoll-Sanchez et al. 2023)
+- Extrasynaptic connectome (Pereira et al. 2015; Bentley et al. 2016; Beets et al. 2023; Ripoll-Sanchez et al. 2023)
 - Functional connectome (Randi et al. 2023)
 - Developmental connectome (Witvliet et al. 2021)
 
