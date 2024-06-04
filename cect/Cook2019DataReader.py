@@ -23,7 +23,7 @@ from openpyxl import load_workbook
 import os
 import numpy as np
 
-from c302 import print_
+from cect import print_
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
 filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
