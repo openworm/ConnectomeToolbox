@@ -11,16 +11,16 @@
 
 import csv
 
-from c302.ConnectomeReader import ConnectionInfo
-from c302.ConnectomeReader import analyse_connections
-from c302.ConnectomeReader import convert_to_preferred_muscle_name
-from c302.ConnectomeReader import is_neuron
-from c302.ConnectomeReader import is_body_wall_muscle
+from cect.ConnectomeReader import ConnectionInfo
+from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeReader import convert_to_preferred_muscle_name
+from cect.ConnectomeReader import is_neuron
+from cect.ConnectomeReader import is_body_wall_muscle
 
 
 import os
 
-from c302 import print_
+from cect import print_
 
 
 def remove_leading_index_zero(cell):
