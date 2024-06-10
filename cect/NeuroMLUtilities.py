@@ -6,13 +6,13 @@
 
 ############################################################
 
-from c302 import print_
+from cect import print_
 
-from c302.ConnectomeReader import PREFERRED_NEURON_NAMES
-from c302.ConnectomeReader import PREFERRED_MUSCLE_NAMES
+from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
+from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 
-from c302.ConnectomeReader import ConnectionInfo
-from c302.ConnectomeReader import analyse_connections
+from cect.ConnectomeReader import ConnectionInfo
+from cect.ConnectomeReader import analyse_connections
 
 
 def getSegmentIds(cell):
