@@ -4,6 +4,9 @@
 
 *Received 9 August 1984- Revised 12 November 1984*
 
+**Type of Connectomics Data**
+- Anatomical connectome: chemical synapses; electrical gap junctions
+
 **Datasets Available**
 - [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_A.csv)
 - [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_L4.csv)
