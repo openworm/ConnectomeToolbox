@@ -2,7 +2,7 @@
 
 *By J.G.White, E.Southgate, J.N. Thomson and S.Brenner, F.R.S.*
 
-*Received 9 August 1984- Revised 12 November 1984*
+*Published 12 November 1986*
 
 **Type of Connectomics Data**
 - Anatomical connectome: chemical synapses; electrical gap junctions
