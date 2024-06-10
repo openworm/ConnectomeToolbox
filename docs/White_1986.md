@@ -7,10 +7,12 @@
 **Type of Connectomics Data**
 - Anatomical connectome: chemical synapses; electrical gap junctions
 
-**Datasets Available**
-- [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_A.csv)
-- [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_L4.csv)
-- [White_Whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_whole.csv)
+| Datasets | Readers             | 
+| --------           | ------       |
+| [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_A.csv) | [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_A.py)  |
+| [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_L4.csv) | [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_L4.py) |
+| [White_Whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_whole.csv) |[White_whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_whole.py) | 
+
 
 **Summary**
 - The first complete connectome of the adult hermaphrodite _C.elegans_
