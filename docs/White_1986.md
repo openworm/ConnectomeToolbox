@@ -4,7 +4,11 @@
 
 *Received 9 August 1984- Revised 12 November 1984*
 
-- links to supplementary information and datasets
+**Datasets Available**
+- [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_A.csv)
+- [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_L4.csv)
+- [White_Whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_whole.csv)
+
 
 **Abstract:**
 - Hermaphrodite nervous system consists of 302 neurons arranged in an invariant structure.
