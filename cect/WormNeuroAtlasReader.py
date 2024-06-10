@@ -1,9 +1,9 @@
 import logging
 import re
 
-from c302.NeuroMLUtilities import ConnectionInfo
-from c302.NeuroMLUtilities import analyse_connections
-from c302 import print_
+from cect.NeuroMLUtilities import ConnectionInfo
+from cect.NeuroMLUtilities import analyse_connections
+from cect import print_
 
 import wormneuroatlas as wa
 

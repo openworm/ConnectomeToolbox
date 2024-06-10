@@ -1,8 +1,8 @@
 # Temporary class to allow this to be used in comparison notebook. 
 # Should be tidied up.
 
-from c302.W_SpreadsheetDataReader import WitvlietDataReader
-from c302.NeuroMLUtilities import analyse_connections
+from cect.W_SpreadsheetDataReader import WitvlietDataReader
+from cect.NeuroMLUtilities import analyse_connections
 
 wdr = WitvlietDataReader('witvliet_2020_7.xlsx')
 
