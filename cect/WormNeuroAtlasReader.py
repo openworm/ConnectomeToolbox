@@ -1,8 +1,8 @@
 import logging
 import re
 
-from cect.NeuroMLUtilities import ConnectionInfo
-from cect.NeuroMLUtilities import analyse_connections
+from cect.ConnectomeReader import ConnectionInfo
+from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
 import wormneuroatlas as wa
