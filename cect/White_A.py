@@ -3,7 +3,7 @@
 
 from cect.WhiteDataReader import White_A
 
-from cect.NeuroMLUtilities import analyse_connections
+from cect.ConnectomeReader import analyse_connections
 
 read_data = White_A.read_data
 read_muscle_data = White_A.read_muscle_data
