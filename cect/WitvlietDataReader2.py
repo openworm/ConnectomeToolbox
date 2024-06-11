@@ -2,7 +2,7 @@
 # Should be tidied up.
 
 from cect.W_SpreadsheetDataReader import WitvlietDataReader
-from cect.NeuroMLUtilities import analyse_connections
+from cect.ConnectomeReader import analyse_connections
 
 wdr = WitvlietDataReader('witvliet_2020_8.xlsx')
 
