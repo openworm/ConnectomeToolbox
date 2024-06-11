@@ -36,6 +36,7 @@ jobs:
     - name: Install package
       run: |
         pip install .
+        pip install wormneuroatlas
         pip list
         
         
