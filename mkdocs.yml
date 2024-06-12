@@ -6,17 +6,36 @@ theme:
   palette:
     primary: green  
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 nav:
   - Overview: 'index.md'
   - 'Connectomes':
-    - 'White et al. 1984': 'White_1984.md'
+    - 'Albertson & Thomson 1976': 'Albertson_1976.md'
+    - 'White et al. 1986': 'White_1986.md'
     - 'Durbin 1987': 'Durbin_1987.md'
-    - 'Altunet al. 2009': 'Altun_2009.md'
+    - 'Hall & Russell 1991': 'Hall_1991.md'
+    - 'Altun et al. 2009': 'Altun_2009.md'
     - 'Varshney et al. 2011': 'Varshney_2011.md'
+    - 'Serrano-Saiz et al. 2013': 'Serrano_2013.md'
     - 'Pereira et al. 2015': 'Pereira_2015.md'
+    - 'Gendrel, Hobert & Atlas 2016': 'Gendrel_2016.md'
     - 'Bentley et al. 2016': 'Bentley_2016.md'
     - 'Cook et al. 2019': 'Cook_2019.md'
+    - 'Cook et al. 2020': 'Cook_2020.md'
+    - 'Fenyves et al. 2020': 'Fenyves_2020.md'
     - 'Brittin et al. 2021': 'Brittin_2021.md'
+    - 'Taylor et al. 2021': 'Taylor_2021.md'
+    - 'Yemini et al. 2021': 'Yemini_2021.md'
     - 'Witvliet et al. 2021': 'Witvliet_2021.md'
+    - 'Beets et al. 2023': 'Beets_2023.md'
+    - 'Ripoll-Sanchez et al. 2023': 'Ripoll_2023.md'
+    - 'Randi et al. 2023': 'Randi_2023.md'
+    - 'Timeline': 'Timeline.md'
   - Python package:
     - 'Installation': 'Python.md'

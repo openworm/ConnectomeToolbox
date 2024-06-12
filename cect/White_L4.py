@@ -1,0 +1,19 @@
+# Temporary class to allow this to be used in comparison notebook. 
+# Should be tidied up.
+
+from cect.WhiteDataReader import White_L4
+
+from cect.ConnectomeReader import analyse_connections
+
+read_data = White_L4.read_data
+read_muscle_data = White_L4.read_muscle_data
+
+
+def main1():
+    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+
+
+if __name__ == '__main__':
+    main1()
