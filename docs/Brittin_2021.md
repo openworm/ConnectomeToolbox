@@ -1,5 +1,5 @@
 ## A multi-scale brain map derived from whole-brain volumetric reconstructions
-_Brittin, C.A., Cook, S.J., Hall, D.H. et al_
+_Brittin, C.A., Cook, S.J., Hall, D.H. et al_ <br> _Nature 591, 105–110_
 
 _Published: 24 February 2021 https://doi.org/10.1038/s41586-021-03284-x_
 
