@@ -13,18 +13,13 @@ markdown_extensions:
   - pymdownx.snippets:
         base_path: ['docs']
   - pymdownx.superfences:
-      preserve_tabs: true
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-        - name: plotly
-          class: plotly
-          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
 
-          
 
-nav:
+  nav:
   - Overview: 'Timeline.md'
   - 'Connectomes':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
