@@ -1,6 +1,7 @@
 ## Connectomes across development reveal principles of brain maturation
 _Witvliet, D., Mulcahy, B., Mitchell, J.K. et al_
 
+*Nature 596, 257–261*<br>
 _Published: 4 August 2021 (https://doi.org/10.1038/s41586-021-03778-8)_
 
 www.nemanode.org

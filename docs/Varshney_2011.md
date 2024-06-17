@@ -1,6 +1,7 @@
 ## Structural Properties of the Caenorhabditis elegans Neuronal Network
 _Lav R. Varshney, Beth L. Chen, Eric Paniagua, David H. Hall, Dmitri B. Chklovskii_
 
+*PLOS Computational Biology 7(2): e1001066*<br>
 _Published: February 3, 2011 (https://doi.org/10.1371/journal.pcbi.1001066)_
 
 

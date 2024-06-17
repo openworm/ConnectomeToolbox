@@ -1,7 +1,7 @@
 ## Brain-wide representations of behavior spanning multiple timescales and states in C. elegans
-_Adam A. Atanas, Jungsoo Kim, Ziyu Wang, Eric Bueno, McCoy Becker, Di Kang, Jungyeon Park, Talya S. Kramer, Flossie K. Wan, Saba Baskoylu, Ugur Dag, Elpiniki Kalogeropoulou, Matthew A. Gomes, Cassi Estrem, Netta Cohen, Vikash K. Mansinghka, and Steven W. Flavell_
+_Adam A. Atanas, Jungsoo Kim, Ziyu Wang, Eric Bueno, McCoy Becker, Di Kang, Jungyeon Park, Talya S. Kramer, Flossie K. Wan, Saba Baskoylu, Ugur Dag, Elpiniki Kalogeropoulou, Matthew A. Gomes, Cassi Estrem, Netta Cohen, Vikash K. Mansinghka, and Steven W. Flavell_ 
 
-_Published: September 14, 2023 https://doi.org/10.1016/j.cell.2023.07.035_
+_Cell, Volume 186, Issue 19, 2023, Pages 4134-4151.e31, ISSN 0092-8674_ <br> _Published: September 14, 2023 https://doi.org/10.1016/j.cell.2023.07.035_
 
 - For quantitative analaysis, the two adult datasets from Witvliet et al were averaged. (https://www.nature.com/articles/s41586-021-03778-8)
 - Self looping and single synapse edges were excluded
