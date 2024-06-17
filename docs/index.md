@@ -16,6 +16,10 @@ Information on published connectomics data related to _C. elegans_. This is bein
 }
 ```
 
+```plotly
+--8<-- "./assets/contour.json"
+```
+
 ```mermaid
 flowchart TD
     classDef anat fill:#ff6666
