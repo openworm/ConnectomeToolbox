@@ -17,3 +17,6 @@ fig = go.Figure(data =
 with open("./docs/assets/contour.json", "w") as f:
     f.write(fig.to_json())
 ```
+```plotly
+--8<-- "./assets/contour.json"
+```
