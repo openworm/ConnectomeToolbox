@@ -26,7 +26,7 @@ flowchart TD
     end
 
     subgraph 2020-2030
-    J[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Brittin_2021.md' >Brittin et al. 2021</a>]:::anat & K[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Witvliet_2021.md' >Witvliet et al. 2021</a>]:::anat & L[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Taylor_2021.md' >Taylor et al. 2021</a>]:::gene & M[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Yemini_2021.md' >Yemini et al. 2021</a>]:::gene & N[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Beets_2023.md' >Beets et al. 2023</a>]:::gene & P[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Randi_2023.md' >Randi et al. 2023</a>]:::func & NP[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Ripoll_2023.md' >Ripoll-Sanchez et al. 2023</a>]:::es
+    J[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Brittin_2021.md' >Brittin et al. 2021</a>]:::anat & K[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Witvliet_2021.md' >Witvliet et al. 2021</a>]:::anat & L[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Taylor_2021.md' >Taylor et al. 2021</a>]:::gene & M[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Yemini_2021.md' >Yemini et al. 2021</a>]:::gene & N[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Beets_2023.md' >Beets et al. 2023</a>]:::gene & P[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Randi_2023.md' >Randi et al. 2023</a>]:::func & NP[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Ripoll_2023.md' >Ripoll-Sanchez et al. 2023</a>]:::es & R[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Dag_2023.md' >Dag et al. 2023</a>]:::func & T[<a href='https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/docs/Atanas_2023.md' >Atanas et al. 2023</a>]:::func
     end     
 
 
@@ -61,4 +61,8 @@ flowchart TD
     K --> P
     NP --> P
     F --> P
+    M --> R
+    T --> R
+    A --> R
+    K --> R
 ```
