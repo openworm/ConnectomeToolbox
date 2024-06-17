@@ -62,3 +62,23 @@ flowchart TD
     NP --> P
     F --> P
 ```
+
+```plotly
+{
+    "data": [
+        {
+            "x": [
+                "giraffes",
+                "orangutans",
+                "monkeys"
+            ],
+            "y": [
+                20,
+                14,
+                23
+            ],
+            "type": "bar"
+        }
+    ]
+}
+```
