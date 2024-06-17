@@ -4,7 +4,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 **Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work.**
 
-``` plotly
+```plotly
 --8<-- "./assets/contour.json"
 ```
 
