@@ -8,7 +8,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 | Papers                                                     | Features      | Datasets      | Readers |
 | -------------                                              | -----         | -----         | ---- |
-| [Albertson & Thompson 1976](Albertson_Thompson_1976.md)     | Anatomical | N/A |  N/A |
+| [Albertson & Thomson 1976](Albertson_Thompson_1976.md)     | Anatomical | N/A |  N/A |
 | [White et al. 1986](White_1986.md)     | Anatomical |[N2U.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/wormwiring_N2U.txt)|  N/A |
 | [Durbin 1987](Durbin_1987.md)    | Anatomical |[Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)| N/A |
 | [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |  N/A |
