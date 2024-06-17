@@ -10,6 +10,8 @@ plugins:
   - plotly
 
 markdown_extensions:
+  - pymdownx.snippets:
+        base_path: ['docs']
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
