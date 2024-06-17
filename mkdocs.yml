@@ -14,7 +14,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - Overview: 'Timeline.md'
+  - Overview: 'index.md'
   - 'Connectomes':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
     - 'White et al. 1986': 'White_1986.md'
@@ -36,6 +36,6 @@ nav:
     - 'Beets et al. 2023': 'Beets_2023.md'
     - 'Ripoll-Sanchez et al. 2023': 'Ripoll_2023.md'
     - 'Randi et al. 2023': 'Randi_2023.md'
-    - 'Index': 'index.md'
+    - 'Dag et al. 2023': 'Dag_2023.md'
   - Python package:
     - 'Installation': 'Python.md'
