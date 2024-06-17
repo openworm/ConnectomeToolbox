@@ -8,7 +8,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 | Papers                                                     | Features      | Datasets      | Readers |
 | -------------                                              | -----         | -----         | ---- |
-| [Albertson & Thomson 1976](Albertson_Thompson_1976.md)     | Anatomical | N/A |  N/A |
+| [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |  N/A |
 | [White et al. 1986](White_1986.md)     | Anatomical |[N2U.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/wormwiring_N2U.txt)|  N/A |
 | [Durbin 1987](Durbin_1987.md)    | Anatomical |[Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)| N/A |
 | [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |  N/A |
@@ -24,6 +24,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
 | [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | [data](https://zenodo.org/records/3906530) | N/A  |
 | [Beets et al. 2023](Beets_2023.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
+| [Dagg et al. 2023](Dagg_2023.md)    | Extrasynaptic | N/A | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    | Functional | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
 | [Randi et al. 2023](Randi_2023.md)    | Functional | [data]() | N/A  |
 
