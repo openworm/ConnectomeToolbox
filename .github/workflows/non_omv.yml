@@ -37,6 +37,7 @@ jobs:
       run: |
         pip install .
         pip install wormneuroatlas
+        pip install mkdocs-plotly-plugin
         pip list
         
         
