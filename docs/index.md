@@ -97,5 +97,7 @@ flowchart TD
 | [Dag et al. 2023](Dag_2023.md)    | Functional | N/A | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    | Functional | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
 | [Randi et al. 2023](Randi_2023.md)    | Functional | [data]() | N/A  |
+| [Ripoll-Sanchez et al. 2023](Ripoll_2023.md)    | Functional | [data]() | N/A  |
+
 
 
