@@ -1,5 +1,6 @@
 ## A cellular and regulatory map of the cholinergic nervous system of C. elegans
-_Laura Pereira, Paschalis Kratsios, Esther Serrano-Saiz, Hila Sheftel, Avi E Mayo, David H Hall, John G White, Brigitte LeBoeuf, L Rene Garcia, Uri Alon, and Oliver Hobert_ <br>
+_Laura Pereira, Paschalis Kratsios, Esther Serrano-Saiz, Hila Sheftel, Avi E Mayo, David H Hall, John G White, Brigitte LeBoeuf, L Rene Garcia, Uri Alon, and Oliver Hobert_ 
+
 *eLife* <br>
 _Published: 25 December 2015 https://doi.org/10.7554/eLife.12432.001_
 
