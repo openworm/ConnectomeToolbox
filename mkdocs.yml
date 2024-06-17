@@ -13,7 +13,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-  nav:
+nav:
   - Overview: 'Timeline.md'
   - 'Connectomes':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
