@@ -24,7 +24,7 @@ Information on published connectomics data related to _C. elegans_. This is bein
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
 | [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | [data](https://zenodo.org/records/3906530) | N/A  |
 | [Beets et al. 2023](Beets_2023.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
-| [Dagg et al. 2023](Dagg_2023.md)    | Extrasynaptic | N/A | N/A  |
+| [Dag et al. 2023](Dag_2023.md)    | Extrasynaptic | N/A | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    | Functional | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
 | [Randi et al. 2023](Randi_2023.md)    | Functional | [data]() | N/A  |
 
