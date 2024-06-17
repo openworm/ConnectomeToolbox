@@ -6,9 +6,15 @@ theme:
   palette:
     primary: green  
 
+plugins:
+  - plotly
+
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
+        - name: plotly
+          class: mkdocs-plotly
+          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
