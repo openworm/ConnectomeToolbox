@@ -6,15 +6,23 @@ theme:
   palette:
     primary: green  
 
+plugins:
+  - plotly
+
 markdown_extensions:
+  - pymdownx.snippets:
+        base_path: ['docs']
   - pymdownx.superfences:
       custom_fences:
+        - name: plotly
+          class: mkdocs-plotly
+          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - Overview: 'Timeline.md'
+  - Overview: 'index.md'
   - 'Connectomes':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
     - 'White et al. 1986': 'White_1986.md'
@@ -35,7 +43,8 @@ nav:
     - 'Witvliet et al. 2021': 'Witvliet_2021.md'
     - 'Beets et al. 2023': 'Beets_2023.md'
     - 'Ripoll-Sanchez et al. 2023': 'Ripoll_2023.md'
+    - 'Dag et al. 2023': 'Dag_2023.md'
+    - 'Atanas et al. 2023': 'Atanas_2023.md'
     - 'Randi et al. 2023': 'Randi_2023.md'
-    - 'Index': 'index.md'
   - Python package:
     - 'Installation': 'Python.md'
