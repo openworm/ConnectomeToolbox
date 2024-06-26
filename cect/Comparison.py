@@ -57,7 +57,7 @@ def get_cell_link(cell_name):
 
     url = None
 
-    known_indiv = ['SABD']
+    known_indiv = ['SABD','MI']
     
     if cell_name in known_indiv:
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
@@ -65,10 +65,10 @@ def get_cell_link(cell_name):
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-2]
     elif cell_name[-1].isdigit():
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-1]
-    elif len(cell_name)==3:
-        url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
     elif cell_name.endswith('L') or cell_name.endswith('R') or cell_name.endswith('EV') or cell_name.endswith('ED') or cell_name.endswith('BD'):
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-1]
+    elif len(cell_name)==3:
+        url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
 
     if url is not None:
         return '[%s](%s)'%(cell_name, url)
@@ -124,7 +124,8 @@ for name, reader in readers.items():
 
             cells = {'Neurons': preferred, 
                      "Missing neurons": missing_preferred, 
-                     "Muscles": muscles}
+                     "Muscles": muscles, 
+                     "Other cells": not_in_preferred}
 
             for t in cells:
                 f.write('\n### %s (%i)\n| '%(t,len(cells[t])))
