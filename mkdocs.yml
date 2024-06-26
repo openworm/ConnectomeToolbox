@@ -9,6 +9,9 @@ theme:
 plugins:
   - plotly
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - pymdownx.snippets:
         base_path: ['docs']
@@ -23,6 +26,7 @@ markdown_extensions:
 
 nav:
   - Overview: 'index.md'
+  - Comparison: 'Comparison.md'
   - 'Connectomes':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
     - 'White et al. 1986': 'White_1986.md'
