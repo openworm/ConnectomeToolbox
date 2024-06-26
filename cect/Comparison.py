@@ -55,19 +55,25 @@ def shorten_neurotransmitter(nt):
 # TODO: move elsewhere and make more generic
 def get_cell_link(cell_name):
 
-    url = '-%s-'%name
+    url = None
 
-    if len(cell_name) == 3:
+    known_indiv = ['SABD']
+    
+    if cell_name in known_indiv:
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
-    elif cell_name.endswith('L'):
+    elif cell_name[-2:].isnumeric():
+        url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-2]
+    elif cell_name[-1].isdigit():
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-1]
-    elif cell_name.endswith('R'):
+    elif len(cell_name)==3:
+        url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
+    elif cell_name.endswith('L') or cell_name.endswith('R') or cell_name.endswith('EV') or cell_name.endswith('ED') or cell_name.endswith('BD'):
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name[:-1]
 
     if url is not None:
         return '[%s](%s)'%(cell_name, url)
     else:
-        return name
+        return cell_name
     
 
 
