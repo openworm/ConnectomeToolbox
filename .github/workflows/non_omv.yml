@@ -33,9 +33,10 @@ jobs:
         brew install hdf5
         
         
-    - name: Install c302
+    - name: Install package
       run: |
         pip install .
+        pip install wormneuroatlas
         pip list
         
         
