@@ -18,6 +18,10 @@ all_data["Values"] =["Num neurons",
 readers = {"SSData": "cect.SpreadsheetDataReader", 
            "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
            "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
+          }
+readers = {"SSData": "cect.SpreadsheetDataReader", 
+           "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
+           "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
            "White_A": "cect.White_A", 
            "White_L4": "cect.White_L4", 
            "White_whole": "cect.White_whole",
@@ -27,6 +31,7 @@ readers = {"SSData": "cect.SpreadsheetDataReader",
            "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
            "Cook2019Herm": "cect.Cook2019HermReader",
           }
+
 
 def shorten_neurotransmitter(nt):
     return nt.replace('Acetylcholine', 'ACh').replace('Serotonin', '5HT').replace('Glutamate', 'Glu')\
@@ -90,8 +95,8 @@ import pandas as pd
 import numpy as np
 from IPython.display import HTML
 
-df_all = pd.DataFrame(all_data)
-df_all.set_index("Values")
+df_all = pd.DataFrame(all_data).transpose()
+#df_all.set_index("Values")
 
 #h = HTML(df_all.to_html(escape=False, index=False))
 
