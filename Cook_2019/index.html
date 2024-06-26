@@ -1,0 +1,1144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Bentley_2016/">
+      
+      
+        <link rel="next" href="../Cook_2020/">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Cook et al. 2019 - C. elegans Connectome Toolbox</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#whole-animal-connectomes-of-both-caeonrhabditis-elegans-sexes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="C. elegans Connectome Toolbox" class="md-header__button md-logo" aria-label="C. elegans Connectome Toolbox" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C. elegans Connectome Toolbox
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cook et al. 2019
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="C. elegans Connectome Toolbox" class="md-nav__button md-logo" aria-label="C. elegans Connectome Toolbox" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    C. elegans Connectome Toolbox
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connectomes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Connectomes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Albertson_1976/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Albertson & Thomson 1976
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../White_1986/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    White et al. 1986
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Durbin_1987/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Durbin 1987
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hall_1991/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hall & Russell 1991
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Altun_2009/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Altun et al. 2009
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Varshney_2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Varshney et al. 2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Serrano_2013/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serrano-Saiz et al. 2013
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pereira_2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pereira et al. 2015
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gendrel_2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gendrel, Hobert & Atlas 2016
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bentley_2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bentley et al. 2016
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cook et al. 2019
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cook et al. 2019
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whole-animal-connectomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whole animal connectomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-of-information-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture of information flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-of-body-movements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation of body movements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility-of-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducibility of connectivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-the-sexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of the sexes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significant-updates-and-corrections-to-previous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Significant updates and corrections to previous data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook_2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cook et al. 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fenyves_2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenyves et al. 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Brittin_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Brittin et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Taylor_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taylor et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Yemini_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yemini et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Beets_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beets et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ripoll_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ripoll-Sanchez et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Randi_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Randi et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python package
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python package
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whole-animal-connectomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Whole animal connectomes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-of-information-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture of information flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-of-body-movements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation of body movements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducibility-of-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproducibility of connectivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-the-sexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of the sexes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significant-updates-and-corrections-to-previous-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Significant updates and corrections to previous data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="whole-animal-connectomes-of-both-caeonrhabditis-elegans-sexes">Whole-animal connectomes of both <em>Caeonrhabditis elegans</em> sexes</h1>
+<p><em>Steven J. Cook, Travis A. Jarrell, Christopher A. Brittin, Yi Wang, Adam E. Bloniarz, Maksim A. Yakovlev, Ken C. Q. Nguyen, Leo T.-H. Tang, Emily A. Bayer, Janet S. Duerr, Hannes E. Bülow, Oliver Hobert, David H. Hall &amp; Scott W. Emmons</em> </p>
+<p><em>Nature 571, 63–71 <br>Published: 3 July 2019 https://doi.org/10.1038/s41586-019-1352-7</em></p>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>Present quantitative connectivity matrices that encompass all connections from sensory input to end-organ output across the entire animal.</li>
+<li>Serial EM reconstructions that are based on analysis of both new and previously published EM update results and include data on male head</li>
+<li>Nervous system differs between sexes at multiple levels:</li>
+<li>Several sex-shared neurons that function in circuits for sexual behaviour are sexually dimorphic in structure and connectivity</li>
+<li>Inputs from sex-specific circuitry to central circuitry reveal points at which sexual and non-sexual pathways converge</li>
+<li>Sex-shared central pathways, a substantial no. of connections differ in strength between the sexes</li>
+</ul>
+<h3 id="whole-animal-connectomes">Whole animal connectomes</h3>
+<ul>
+<li>Small world, network motifs, modules and rich clubs</li>
+<li>Reconstruction of circuity for the male head, including the nerve ring and retrovesicular ganglion, from a new EM series and re-annotate previously generated prints of the hermaphrodite</li>
+<li>Graph of the hermaphrodite connectome has 460 nodes (302 neurons, 132 muscles and 26 non-muscle end organs)</li>
+<li>Male graph has 579 nodes (385 neurons, 155 muscles and 39 non-muscle end organs)</li>
+<li>Two dimensional layouts of the connectivity graphs based on computational arrangement reveal the pathways of sensory information flow</li>
+<li>Small number (1-5) of synaptic steps between the sensory neurons and the end organs and feedforward nature of the networks</li>
+<li>Placement of the nodes to the neuroanatomy of the worm reflects economical wiring, a property commonly found for nervous systems, including in C.elegans</li>
+</ul>
+<h3 id="architecture-of-information-flow">Architecture of information flow</h3>
+<ul>
+<li>Polarity of the chemical synapses and the architecture of the physical connectivity networks to order the sex-shared neurons and end organ classes using an algorithm that detects hierarchy in a network</li>
+<li>Interneurons can be categorised roughly into one of three layers that reflect preponderance of their output onto the layer below and approx the number of synaptic steps to motor neurons</li>
+<li>Fourth interneuron category: consists of interneurons that interact across all layers, cannot be fitted into this layered structure</li>
+<li>83 sensory neurons that are shared by both sexes may be grouped into six categories based on type of stimulus, connectivity and the nature of the evoked behavioural response</li>
+<li>Chemical connectivity between the three interneuron layers forms a feedforward loop:</li>
+<li>Layer 3 substantially targets both layer 2 and layer 1</li>
+<li>Layer 2 targets layer 1</li>
+<li>Feedforward loop is a prevalent motif in the C.elegans connectome</li>
+<li>Node degree: amount of convergence and divergence at single nodes in a network (number of attached edges)</li>
+<li>Diverging connectivity enables information from single sensory neurons to potentially reach from 70% to 98% of all the other cells in the network within two synaptic steps</li>
+</ul>
+<h3 id="generation-of-body-movements">Generation of body movements</h3>
+<ul>
+<li>Postural movements of C.elegans during foraging and locomotion are generated by a set of 95 body wall muscles that are arranged in four longitudinal rows, two of which are sub-dorsal and the other two are sub-ventral</li>
+<li>Within each of these quadrants, adjacent muscle cells are electrically coupled by gap junctions</li>
+<li>154 neurons in 46 classes have NMJs with these somatic muscles</li>
+<li>SMD encodes the deep ventral bend behaviour known as the omega-turn; SMB influences the amplitude of sinusoidal movement</li>
+<li>SAB is thought to act in proprioception</li>
+<li>SIA neurons are involved in flipping behaviour during lethargus</li>
+<li>Posture of worm will arise from muscle tensions that result from summed inputs of these 3 groups of motor neurons</li>
+<li>Summing 4 eigenworms, the shapes of which, respectively, correspond to these groups</li>
+<li>Two are sinusoidal: corresponding to the forward and backward classes of ventral cord motor neurons</li>
+<li>Third is a general body curvature, corresponding to the potential effect of the sublateral motor neurons</li>
+<li>Fourth includes head bending, corresponding to the head motor neurons</li>
+</ul>
+<h3 id="reproducibility-of-connectivity">Reproducibility of connectivity</h3>
+<ul>
+<li>Left-right homologous neuron pairs onto left-right homologous targets in the nerve ring of the hermaphrodite reconstruction to assess the amount of natural variability in connectivity</li>
+<li>For chemical connections, edge weights varied by 10-40%, depending on connection strength</li>
+<li>In both sexes, the gustatory neurons ASEL (left neuron of the pair) has greater chemical than the ASER (right neuron of the pair) to the olfactory neuron class AWC.</li>
+<li>Known to be lateralized in its ability to sense chemosensory cues</li>
+<li>We confirmed the difference in connectivity by in vivo fluorescence labelling of this synaptic connection</li>
+</ul>
+<h3 id="comparison-of-the-sexes">Comparison of the sexes</h3>
+<ul>
+<li>Circuits controlling the sex-unique behaviours of egg laying and copulation include both sex-specific and sex-shared neurons,</li>
+<li>Most notable in the male, in which the neural network that controls copulation consists of 85 male-specific and 64 shared neurons</li>
+<li>Sex-specific neurons connect into the sex-shared central circuity in the head with 2 functions</li>
+<li>Regulate behaviour during overt reproductive activity</li>
+<li>Mediate sex specific appetitive decision making</li>
+</ul>
+<h2 id="discussion">Discussion</h2>
+<ul>
+<li>Physical connectivity matrices for the entire nervous system of an animal for both adult sexes</li>
+<li>Amount of convergence and divergence of sensory input pathways is such that particular behavioural response pathways cannot be readily identified in general</li>
+<li>Major motor neurons and primary premotor interneurons are highly interconnected</li>
+<li>Structural connectome describes only one portion of the functional communication network</li>
+<li>Extrasynaptic communication by neurotransmitters, neuropeptides and hormones provides a second dimension that controls the flow of information for optimal output</li>
+<li>Complex circuitry -&gt; well known behaviours and novel behaviours (learning and memory, inter-animal communication, social behaviour and complexities of mating)</li>
+<li>An EM based connectome should be considered a snapshot of a dynamic structure</li>
+<li>More detailed architecture of individual neurons and the locations and structures of individual synapses may be important for understanding the functions of neurons within circuits.</li>
+<li>C.elegans neurons are isopotential, properties of these neurons may be compartmentalised and signalling may not be uniform or simultaneous at all synapses</li>
+<li>Modelling the functions of the nervous system at the abstracted level of the connectivity network cannot be seriously cannot be seriously undertaken if a considerable number of nodes and edges are missing</li>
+</ul>
+<h2 id="significant-updates-and-corrections-to-previous-data">Significant updates and corrections to previous data</h2>
+<ul>
+<li>DVB/PVT mixup.  The ventral cord processes of these neurons were crossed in MOW.  PVT extends to the head, DVB ends mid-body.</li>
+<li>PVCL and PVCR.  In MOW these were switched at N2U ventral cord section 1656.</li>
+<li>Sublateral motor neurons.  MOW contained no data for the sublateral cords anterior or posterior to the nerve ring, and no neuromuscular junctions for these neurons along the body. Synapses were first noted by immunofluorescence, then confirmed by sampling multiple animals (not reconstructed).</li>
+<li>Lateral nerves were closely examined in multiple animals to assess synapses for the first time (not reconstructed except for short portions)</li>
+<li>Motor neurons re-assigned as interneurons: RIM, RMF, RMG.  nmj's reported in MOW for the adult RMF could not be verified.</li>
+<li>Interneurons reassigned as motor neurons: SAB, SIA, SIB.</li>
+<li>Interneuron reasssigned as sensory neuron: DVA.</li>
+<li>Amphid nerves were found to contain synapses among sensory dendrites and RIP, following first discovery in Pristionchus.</li>
+<li>Synapses to hypodermis, both chemical and gap junctional, were occasionally reported in MOW but were not systematically scored until now.</li>
+<li>Extensive gap junctional connectivity of hmc (head mesodermal cell) to muscle was previously noted (MRC notebooks) but never systematically assessed and reported.</li>
+<li>PDB is considered to be an AS class motor neuron (AS12).  It shares all the characteristics of the other members of this class, except the route taken by its commissure differs by going first posteriorly before crossing the body and progressing anteriorly (the reason behind its unique name, J. White, personal communication).  In the male it has an extensive dendritic arbor involved in mating circuitry, as does AS11.</li>
+<li>Muscle arms of the bodywall muscles of the head (#1-8) were  traced to their NMJ inputs for the first time.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
