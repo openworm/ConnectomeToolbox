@@ -30,5 +30,4 @@ jobs:
           pip install mkdocs-material
           pip install mkdocs-plotly-plugin 
 
-
       - run: mkdocs gh-deploy --force
