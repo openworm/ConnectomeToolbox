@@ -9,7 +9,7 @@ wdr = WitvlietDataReader('witvliet_2020_8.xlsx')
 read_data = wdr.read_data
 read_muscle_data = wdr.read_muscle_data
 
-READER_DESCRIPTION = """Data extracted from %s for neuronal connectivity"""%wdr.filename.split('/')[-1]
+READER_DESCRIPTION = """Data extracted from **%s** for neuronal connectivity"""%wdr.filename.split('/')[-1]
 
 def main2():
 

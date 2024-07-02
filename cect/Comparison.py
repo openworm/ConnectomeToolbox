@@ -133,7 +133,7 @@ for name, reader in readers.items():
         with open(filename, 'w') as f:
             f.write('## %s\n'%name)
 
-            f.write('**%s**\n'%READER_DESCRIPTION)
+            f.write('%s\n'%READER_DESCRIPTION)
 
             cell_types = {'Neurons': preferred, 
                      "Missing neurons": missing_preferred, 

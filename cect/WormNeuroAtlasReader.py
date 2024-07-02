@@ -19,7 +19,7 @@ import wormneuroatlas as wa
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data extracted from the WormNeuroAtlas package for neuronal connectivity"""
+READER_DESCRIPTION = """Data extracted from the **WormNeuroAtlas package** for neuronal connectivity"""
 
 class WormNeuroAtlasReader(object):
 

@@ -8,7 +8,7 @@ from cect.ConnectomeReader import analyse_connections
 read_data = White_A.read_data
 read_muscle_data = White_A.read_muscle_data
 
-READER_DESCRIPTION = """Data extracted from %s for neuronal connectivity"""%White_A.filename.split('/')[-1]
+READER_DESCRIPTION = """Data extracted from **%s** for neuronal connectivity"""%White_A.filename.split('/')[-1]
 
 def main1():
     cells, neuron_conns = read_data(include_nonconnected_cells=True)

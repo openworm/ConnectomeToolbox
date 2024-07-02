@@ -1,5 +1,5 @@
 ## Varshney
-**Data extracted from NeuronConnectFormatted.xlsx for neuronal connectivity**
+Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>

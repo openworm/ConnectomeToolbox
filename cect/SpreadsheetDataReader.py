@@ -20,7 +20,7 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
 
 from cect import print_
 
-READER_DESCRIPTION = """Data extracted from CElegansNeuronTables.xls for neuronal connectivity"""
+READER_DESCRIPTION = """Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity"""
 
 def read_data(include_nonconnected_cells=False, neuron_connect=False):
 
