@@ -11,7 +11,7 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
 spreadsheet_name = "NeuronConnect.xlsx" # has old name...
 spreadsheet_name = "NeuronConnectFormatted.xlsx"
 
-READER_DESCRIPTION = """Data extracted from %s for neuronal connectivity"""%spreadsheet_name
+READER_DESCRIPTION = """Data extracted from **%s** for neuronal connectivity"""%spreadsheet_name
 
 NMJ_ENDPOINT = 'NMJ'
 
