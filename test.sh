@@ -2,10 +2,10 @@ set -ex
 
 pip install .
 
-quick_test=false
+quick_test=0
 
 if [[ ($# -eq 1) && ($1 == '-q') ]]; then
-    quick_test=true
+    quick_test=1
 fi
 
 ##   Test readers
@@ -16,7 +16,7 @@ python -m cect.UpdatedSpreadsheetDataReader2
 #python -m cect.OpenWormReader                                                                                                                                                            
 python -m cect.VarshneyDataReader
 
-if [ "$quick_test" == false ]; then
+if [ "$quick_test" == 0 ]; then
 
     python -m cect.Cook2019DataReader
     python -m cect.Cook2019HermReader

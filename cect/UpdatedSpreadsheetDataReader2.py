@@ -20,6 +20,8 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
 filename = "%sherm_full_edgelist_MODIFIED.csv" % spreadsheet_location
 
+READER_DESCRIPTION = """Data extracted from %s for neuronal connectivity"""%filename
+
 def get_all_muscle_prefixes():
     return ["pm", "vm", "um", "dBWM", "vBWM"]
 

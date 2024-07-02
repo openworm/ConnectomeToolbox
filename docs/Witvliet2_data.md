@@ -1,4 +1,5 @@
 ## Witvliet2
+**Data extracted from witvliet_2020_8.xlsx for neuronal connectivity**
 
 ### Neurons (180)
 <details><summary>Full list of Neurons</summary>

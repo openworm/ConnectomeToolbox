@@ -1,4 +1,5 @@
 ## WormNeuroAtlas
+**Data extracted from the WormNeuroAtlas package for neuronal connectivity**
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

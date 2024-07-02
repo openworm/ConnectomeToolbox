@@ -1,4 +1,5 @@
 ## White_whole
+**Data extracted from aconnectome_white_1986_whole.csv for neuronal connectivity**
 
 ### Neurons (301)
 <details><summary>Full list of Neurons</summary>

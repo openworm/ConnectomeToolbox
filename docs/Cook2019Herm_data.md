@@ -1,4 +1,5 @@
 ## Cook2019Herm
+**Data extracted from SI 5 Connectome adjacency matrices.xlsx for neuronal connectivity**
 
 ### Neurons (302)
 <details><summary>Full list of Neurons</summary>

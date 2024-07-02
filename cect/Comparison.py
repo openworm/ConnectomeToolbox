@@ -89,7 +89,7 @@ for name, reader in readers.items():
 
     print("\n****** Importing dataset %s using %s ******"% (name, reader))
     
-    exec("from %s import read_data, read_muscle_data"%reader)
+    exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION"%reader)
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
 
     preferred, not_in_preferred, missing_preferred = check_neurons(cells)
@@ -128,19 +128,23 @@ for name, reader in readers.items():
 
     if name in reader_pages:
         filename = 'docs/%s.md'%reader_pages[name]
+
+    
         with open(filename, 'w') as f:
             f.write('## %s\n'%name)
 
-            cells = {'Neurons': preferred, 
+            f.write('**%s**\n'%READER_DESCRIPTION)
+
+            cell_types = {'Neurons': preferred, 
                      "Missing neurons": missing_preferred, 
                      "Muscles": muscles, 
                      "Other cells": not_in_preferred}
 
-            for t in cells:
-                f.write('\n### %s (%i)\n'%(t,len(cells[t])))
-                if len(cells[t])>0:
+            for t in cell_types:
+                f.write('\n### %s (%i)\n'%(t,len(cell_types[t])))
+                if len(cell_types[t])>0:
                     f.write('<details><summary>Full list of %s</summary>\n'%t)
-                    ss = sorted(cells[t])
+                    ss = sorted(cell_types[t])
                     for n in ss:
                         f.write('%s'%(get_cell_link(n, True)))
                         if n is not ss[-1]:

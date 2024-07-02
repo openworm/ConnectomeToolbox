@@ -1,4 +1,5 @@
 ## White_L4
+**Data extracted from aconnectome_white_1986_L4.csv for neuronal connectivity**
 
 ### Neurons (180)
 <details><summary>Full list of Neurons</summary>

@@ -25,8 +25,6 @@ import numpy as np
 
 from cect import print_
 
-spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
-filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
 HERM_CHEM = 'hermaphrodite chemical'
 HERM_GAP_SYMM = 'herm gap jn symmetric'
@@ -49,12 +47,15 @@ def get_synclass(cell, syntype):
 
 class Cook2019DataReader():
 
+    spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
+    filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
+
     verbose = False
 
     def __init__(self):
 
-        wb = load_workbook(filename)
-        print_("Opened the Excel file: " + filename)   
+        wb = load_workbook(self.filename)
+        print_("Opened the Excel file: " + self.filename)   
 
         self.pre_cells = {}
         self.post_cells = {}
