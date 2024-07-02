@@ -169,7 +169,6 @@ print('\nFinished loading all the data from the readers!')
 
 import pandas as pd
 import numpy as np
-from IPython.display import HTML
 
 df_all = pd.DataFrame(all_data).transpose()
 #df_all.set_index("Values")
