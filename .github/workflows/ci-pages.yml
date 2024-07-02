@@ -27,7 +27,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: |
-          pip install mkdocs-material
-          pip install mkdocs-plotly-plugin 
+          pip install .[docs]
 
       - run: mkdocs gh-deploy --force
