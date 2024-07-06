@@ -3,7 +3,11 @@ import cect
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
 
+import sys
+
 all_data = {}
+
+quick = len(sys.argv)>1 and eval(sys.argv[1])
 
 reader_pages = {"Varshney":"Varshney_data",
                 "White_A":"White_A_data",
@@ -26,25 +30,26 @@ all_data[""] =["Num neurons",
                      "N->N neurotrans.", 
                      "N->M neurotrans."]
 
-
-readers = {"SSData": "cect.SpreadsheetDataReader", 
-           "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
-           "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
-           "Varshney": "cect.VarshneyDataReader",
-           "White_L4": "cect.White_L4", 
-          }
-readers = {"SSData": "cect.SpreadsheetDataReader", 
-           "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
-           "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
-           "White_A": "cect.White_A", 
-           "White_L4": "cect.White_L4", 
-           "White_whole": "cect.White_whole",
-           "Varshney": "cect.VarshneyDataReader",
-           "Witvliet1": "cect.WitvlietDataReader1",
-           "Witvliet2": "cect.WitvlietDataReader2",
-           "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
-           "Cook2019Herm": "cect.Cook2019HermReader",
-          }
+if quick:
+    readers = {"SSData": "cect.SpreadsheetDataReader", 
+            "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
+            "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
+            "Varshney": "cect.VarshneyDataReader",
+            "White_L4": "cect.White_L4", 
+            }
+else:
+    readers = {"SSData": "cect.SpreadsheetDataReader", 
+            "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
+            "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
+            "White_A": "cect.White_A", 
+            "White_L4": "cect.White_L4", 
+            "White_whole": "cect.White_whole",
+            "Varshney": "cect.VarshneyDataReader",
+            "Witvliet1": "cect.WitvlietDataReader1",
+            "Witvliet2": "cect.WitvlietDataReader2",
+            "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
+            "Cook2019Herm": "cect.Cook2019HermReader",
+            }
 
 
 def shorten_neurotransmitter(nt):
@@ -53,7 +58,7 @@ def shorten_neurotransmitter(nt):
 
 
 # TODO: move elsewhere and make more generic
-def get_cell_link(cell_name):
+def get_cell_link(cell_name, html=False):
 
     url = None
 
@@ -71,7 +76,10 @@ def get_cell_link(cell_name):
         url = 'https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html'%cell_name
 
     if url is not None:
-        return '[%s](%s)'%(cell_name, url)
+        if html:
+            return '<a href="%s">%s</a>'%(url, cell_name)
+        else:
+            return '[%s](%s)'%(cell_name, url)
     else:
         return cell_name
     
@@ -81,7 +89,7 @@ for name, reader in readers.items():
 
     print("\n****** Importing dataset %s using %s ******"% (name, reader))
     
-    exec("from %s import read_data, read_muscle_data"%reader)
+    exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION"%reader)
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
 
     preferred, not_in_preferred, missing_preferred = check_neurons(cells)
@@ -119,18 +127,32 @@ for name, reader in readers.items():
     ref = '[%s](%s.md)'%(name,reader_pages[name]) if name in reader_pages else name
 
     if name in reader_pages:
-        with open('docs/%s.md'%reader_pages[name], 'w') as f:
+        filename = 'docs/%s.md'%reader_pages[name]
+
+    
+        with open(filename, 'w') as f:
             f.write('## %s\n'%name)
 
-            cells = {'Neurons': preferred, 
+            f.write('%s\n'%READER_DESCRIPTION)
+
+            cell_types = {'Neurons': preferred, 
                      "Missing neurons": missing_preferred, 
                      "Muscles": muscles, 
                      "Other cells": not_in_preferred}
 
-            for t in cells:
-                f.write('\n### %s (%i)\n| '%(t,len(cells[t])))
-                for n in sorted(cells[t]):
-                    f.write('%s | '%(get_cell_link(n)))
+            for t in cell_types:
+                f.write('\n### %s (%i)\n'%(t,len(cell_types[t])))
+                if len(cell_types[t])>0:
+                    f.write('<details><summary>Full list of %s</summary>\n'%t)
+                    ss = sorted(cell_types[t])
+                    for n in ss:
+                        f.write('%s'%(get_cell_link(n, True)))
+                        if n is not ss[-1]:
+                            f.write(' | ')
+
+                    f.write('\n</details>\n')
+
+        print('Written page: %s'%filename)
 
 
     all_data[ref] =[len(preferred),
@@ -147,7 +169,6 @@ print('\nFinished loading all the data from the readers!')
 
 import pandas as pd
 import numpy as np
-from IPython.display import HTML
 
 df_all = pd.DataFrame(all_data).transpose()
 #df_all.set_index("Values")
@@ -156,6 +177,8 @@ df_all = pd.DataFrame(all_data).transpose()
 
 mk = df_all.to_markdown()
 
-with open('docs/Comparison.md', 'w') as f:
+filename = 'docs/Comparison.md'
+with open(filename, 'w') as f:
     f.write(mk)
 
+print('Written page: %s'%filename)
