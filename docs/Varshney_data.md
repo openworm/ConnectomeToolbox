@@ -6,7 +6,7 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 ```
 
 ### Network Overview
-[](docs\assets\VarshneyNetwork.png)
+[Network](VarshneyNetwork.png)
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>
