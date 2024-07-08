@@ -45,6 +45,7 @@ def convert_to_array(cells,neuron_conns):
     fig.show()
     with open("./docs/assets/Varshney.json","w") as f:
         f.write(fig.to_json())
+    
     G = nx.Graph(arr1)
     nx.draw(G, pos=nx.spring_layout(G, k=0.01), node_color='red', edge_color='black', node_size=5)
     plt.savefig("./docs/assets/VarshneyNetwork.png")

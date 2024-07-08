@@ -1,11 +1,13 @@
 ## Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
-```plotly
---8<-- "./assets/Varshney.json"
-```
+=== "Connectivity Matrix"
 
-### Network Overview
+    ```plotly
+    --8<-- "./assets/Varshney.json"
+    ```
+
+=== Network Overview
 [](docs\assets\VarshneyNetwork.png)
 
 ### Neurons (279)
