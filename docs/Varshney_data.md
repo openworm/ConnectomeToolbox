@@ -7,8 +7,8 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
     --8<-- "./assets/Varshney.json"
     ```
 
-=== Network Overview
-[](docs\assets\VarshneyNetwork.png)
+### Network Overview
+![Alt Text](assets/VarshneyNetwork.png)
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>
