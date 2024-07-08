@@ -15,7 +15,7 @@ python -m cect.UpdatedSpreadsheetDataReader
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
 #python -m cect.OpenWormReader                                                                                                                                                            
 python -m cect.VarshneyDataReader                                                                                                                                                    
-python -m cect.TestDataReader
+python -m cect.TestDataReader -nogui 
 
 if [ "$quick_test" == 0 ]; then
 
