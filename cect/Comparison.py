@@ -2,8 +2,10 @@ import cect
 
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
+from cect import print_
 
 import sys
+import numpy as np
 
 all_data = {}
 
@@ -90,7 +92,7 @@ def get_cell_link(cell_name, html=False):
 
 for name, reader in readers.items():
 
-    print("\n****** Importing dataset %s using %s ******"% (name, reader))
+    print_("\n****** Importing dataset %s using %s ******"% (name, reader))
     
     exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION"%reader)
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
@@ -98,6 +100,16 @@ for name, reader in readers.items():
     preferred, not_in_preferred, missing_preferred = check_neurons(cells)
 
     neuron_nts = {}
+
+    connectome = None
+    try:
+        exec("from %s import get_instance"%reader)
+        connectome = get_instance()
+        print_('Adding full connectome info')
+    except:
+        print_('NOT adding full connectome info')
+        connectome = None
+
     for c in neuron_conns:
         nt = c.synclass
         if len(nt)==0: nt='**MISSING**'
@@ -138,6 +150,23 @@ for name, reader in readers.items():
 
             f.write('%s\n'%READER_DESCRIPTION)
 
+            if connectome is not None:
+                for synclass in connectome.connections:
+                    conn_array = connectome.connections[synclass]
+
+                    syn_info = '\n### %s (%i non-zero entries, %i total)\n'%(synclass, np.count_nonzero(conn_array), np.sum(conn_array))
+                    print_(syn_info)
+                    f.write(syn_info)
+                    #f.write('%s\n'%conn_array)
+                    fig = connectome.to_plotly_matrix_fig(synclass)
+
+                    asset_filename = "assets/%s_%s.json"%(name, synclass)
+                    with open('./docs/%s'%asset_filename,"w") as asset_file:
+                        asset_file.write(fig.to_json())
+
+                    f.write('\n```plotly\n---8<-- "./%s"\n```\n'%asset_filename)
+
+
             cell_types = {'Neurons': preferred, 
                      "Missing neurons": missing_preferred, 
                      "Muscles": muscles, 
@@ -155,7 +184,7 @@ for name, reader in readers.items():
 
                     f.write('\n</details>\n')
 
-        print('Written page: %s'%filename)
+        print_('Written page: %s'%filename)
 
 
     all_data[ref] =[len(preferred),
@@ -168,7 +197,7 @@ for name, reader in readers.items():
                      nts_info,
                      m_nts_info]
 
-print('\nFinished loading all the data from the readers!')
+print_('\nFinished loading all the data from the readers!')
 
 import pandas as pd
 import numpy as np
@@ -184,4 +213,4 @@ filename = 'docs/Comparison.md'
 with open(filename, 'w') as f:
     f.write(mk)
 
-print('Written page: %s'%filename)
+print_('Written page: %s'%filename)

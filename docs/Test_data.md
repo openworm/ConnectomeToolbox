@@ -1,6 +1,24 @@
 ## TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
+### Acetylcholine (7 non-zero entries, 69 total)
+
+```plotly
+---8<-- "./assets/TestData_Acetylcholine.json"
+```
+
+### GABA (3 non-zero entries, 7 total)
+
+```plotly
+---8<-- "./assets/TestData_GABA.json"
+```
+
+### Generic_GJ (2 non-zero entries, 7 total)
+
+```plotly
+---8<-- "./assets/TestData_Generic_GJ.json"
+```
+
 ### Neurons (10)
 <details><summary>Full list of Neurons</summary>
 <a href="https://www.wormatlas.org/neurons/Individual Neurons/AVBframeset.html">AVBL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/DBframeset.html">DB4</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/DDframeset.html">DD4</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/PVCframeset.html">PVCL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VAframeset.html">VA3</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VAframeset.html">VA6</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VBframeset.html">VB2</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VBframeset.html">VB6</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html">VD3</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html">VD6</a>

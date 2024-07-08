@@ -6,12 +6,14 @@ import numpy as np
 
 class ConnectomeDataset():
 
-    nodes = []
-    connections = {}
-
     DEFAULT_DTYPE = np.float64
 
     verbose = False
+
+    def __init__(self):
+
+        self.nodes = []
+        self.connections = {}
 
     def _expand_conn_arrays(self):
         
@@ -59,9 +61,21 @@ class ConnectomeDataset():
         print_("Nodes present: %s"%self.nodes)
         for c in self.connections:
             conn_array = self.connections[c]
-            print_("- Connections: %s %s, %i non-zero entries\n%s"%(c, conn_array.shape, np.count_nonzero(conn_array), conn_array))
+            print_("- Connections: %s %s, %i non-zero entries, %i total\n%s"%(c, conn_array.shape, np.count_nonzero(conn_array), np.sum(conn_array), conn_array))
 
 
+    def to_plotly_matrix_fig(self, synclass):
+
+        import plotly.express as px
+
+        conn_array = self.connections[synclass]
+
+        fig = px.imshow(conn_array,
+                        labels=dict(x ="Pre", y = "Post", color = "Synapses"),
+                        x = self.nodes,
+                        y = self.nodes)
+
+        return fig
 
 
 if __name__ == '__main__':

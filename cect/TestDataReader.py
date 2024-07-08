@@ -11,6 +11,8 @@ READER_DESCRIPTION = """Dummy dataset used for testing webpage/graph generation 
 
 NMJ_ENDPOINT = 'NMJ'
 
+def get_instance():
+    return TestDataReader()
 
 class TestDataReader(ConnectomeDataset):
 
@@ -18,6 +20,7 @@ class TestDataReader(ConnectomeDataset):
     conns = []
 
     def __init__(self):
+        ConnectomeDataset.__init__(self)
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
@@ -59,7 +62,7 @@ class TestDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-tdr_instance = TestDataReader()
+tdr_instance = get_instance()
 
 read_data = tdr_instance.read_data
 read_muscle_data = tdr_instance.read_muscle_data
@@ -80,14 +83,8 @@ def main():
 
     if not '-nogui' in sys.argv:
 
-        import plotly.express as px
+        fig = tdr_instance.to_plotly_matrix_fig('Acetylcholine')
 
-        conn_array = tdr_instance.connections['Acetylcholine']
-
-        fig = px.imshow(conn_array,
-                        labels=dict(x ="Pre", y = "Post", color = "Synapses"),
-                        x = tdr_instance.nodes,
-                        y = tdr_instance.nodes)
         fig.show()
 
 if __name__ == '__main__':
