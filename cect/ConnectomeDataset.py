@@ -71,7 +71,7 @@ class ConnectomeDataset():
         conn_array = self.connections[synclass]
 
         fig = px.imshow(conn_array,
-                        labels=dict(x ="Pre", y = "Post", color = "Synapses"),
+                        labels=dict(x ="Postsynaptic", y = "Presynaptic", color = "Synapses"),
                         x = self.nodes,
                         y = self.nodes)
 
