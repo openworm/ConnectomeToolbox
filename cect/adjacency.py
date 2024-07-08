@@ -2,6 +2,7 @@ import plotly.express as px
 from cect.VarshneyDataReader import read_data
 import numpy as np
 import networkx as nx
+import matplotlib.pyplot as plt
 
 def convert_to_array(cells,neuron_conns):
     num1 = []
@@ -46,7 +47,7 @@ def convert_to_array(cells,neuron_conns):
         f.write(fig.to_json())
     G = nx.Graph(arr1)
     nx.draw(G, pos=nx.spring_layout(G, k=0.01), node_color='red', edge_color='black', node_size=5)
-    
+    plt.savefig("./docs/assets/VarshneyNetwork.png")
     
 if __name__ == "__main__":
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
