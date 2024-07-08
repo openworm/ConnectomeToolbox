@@ -1,9 +1,8 @@
-from cect.VarshneyDataReader import read_data
 import plotly.express as px
 import numpy as np
 
 
-def convert_to_array(cells,conns):
+def convert_to_array(cells,neuron_conns):
     num1 = []
     for i in cells:
         num1.append([])
@@ -11,7 +10,7 @@ def convert_to_array(cells,conns):
             num1[cells.index(i)].append(0)
     pre1 = []
     post1 = []
-    for i in conns:
+    for i in neuron_conns:
         if i.pre_cell not in pre1:
             pre1.append(i.pre_cell)
             x1 = pre1.index(i.pre_cell)
@@ -42,7 +41,5 @@ def convert_to_array(cells,conns):
                     )
     fig.show()
 
-if __name__ == '__main__':
-    cells, conns = read_data(include_nonconnected_cells=True)
-    convert_to_array(cells,conns)
+
 
