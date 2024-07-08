@@ -9,7 +9,8 @@ all_data = {}
 
 quick = len(sys.argv)>1 and eval(sys.argv[1])
 
-reader_pages = {"Varshney":"Varshney_data",
+reader_pages = {"TestData":"Test_data",
+                "Varshney":"Varshney_data",
                 "White_A":"White_A_data",
                 "White_L4":"White_L4_data",
                 "White_whole":"White_whole_data",
@@ -36,6 +37,7 @@ if quick:
             "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
             "Varshney": "cect.VarshneyDataReader",
             "White_L4": "cect.White_L4", 
+            "TestData": "cect.TestDataReader", 
             }
 else:
     readers = {"SSData": "cect.SpreadsheetDataReader", 
@@ -49,6 +51,7 @@ else:
             "Witvliet2": "cect.WitvlietDataReader2",
             "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
             "Cook2019Herm": "cect.Cook2019HermReader",
+            "TestData": "cect.TestDataReader", 
             }
 
 
