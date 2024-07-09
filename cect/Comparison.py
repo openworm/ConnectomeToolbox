@@ -151,20 +151,22 @@ for name, reader in readers.items():
             f.write('%s\n'%READER_DESCRIPTION)
 
             if connectome is not None:
+                
                 for synclass in connectome.connections:
                     conn_array = connectome.connections[synclass]
 
-                    syn_info = '\n### %s (%i non-zero entries, %i total)\n'%(synclass, np.count_nonzero(conn_array), np.sum(conn_array))
+                    syn_info = '%s (%i non-zero entries, %i total)'%(synclass, np.count_nonzero(conn_array), np.sum(conn_array))
                     print_(syn_info)
-                    f.write(syn_info)
-                    #f.write('%s\n'%conn_array)
+                    #f.write('### %s'%synclass if first_synclass==synclass else '=== "%s"'%synclass)
+                    f.write('=== "%s"\n'%synclass)
+                    f.write('    %s\n'%syn_info)
                     fig = connectome.to_plotly_matrix_fig(synclass)
 
                     asset_filename = "assets/%s_%s.json"%(name, synclass)
                     with open('./docs/%s'%asset_filename,"w") as asset_file:
                         asset_file.write(fig.to_json())
 
-                    f.write('\n```plotly\n---8<-- "./%s"\n```\n'%asset_filename)
+                    f.write('\n    ```plotly\n    ---8<-- "./%s"\n    ```\n'%asset_filename)
 
 
             cell_types = {'Neurons': preferred, 

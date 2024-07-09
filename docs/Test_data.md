@@ -1,23 +1,23 @@
 ## TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
+=== "Acetylcholine"
+    Acetylcholine (7 non-zero entries, 69 total)
 
-### Acetylcholine (7 non-zero entries, 69 total)
+    ```plotly
+    ---8<-- "./assets/TestData_Acetylcholine.json"
+    ```
+=== "GABA"
+    GABA (3 non-zero entries, 7 total)
 
-```plotly
----8<-- "./assets/TestData_Acetylcholine.json"
-```
+    ```plotly
+    ---8<-- "./assets/TestData_GABA.json"
+    ```
+=== "Generic_GJ"
+    Generic_GJ (2 non-zero entries, 7 total)
 
-### GABA (3 non-zero entries, 7 total)
-
-```plotly
----8<-- "./assets/TestData_GABA.json"
-```
-
-### Generic_GJ (2 non-zero entries, 7 total)
-
-```plotly
----8<-- "./assets/TestData_Generic_GJ.json"
-```
+    ```plotly
+    ---8<-- "./assets/TestData_Generic_GJ.json"
+    ```
 
 ### Neurons (10)
 <details><summary>Full list of Neurons</summary>
