@@ -1,14 +1,17 @@
 ## Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
-
-=== "Connectivity Matrix"
+=== "Generic_GJ"
+    Generic_GJ (1031 non-zero entries, 1777 total)
 
     ```plotly
-    --8<-- "./assets/Varshney.json"
+    ---8<-- "./assets/Varshney_Generic_GJ.json"
     ```
+=== "Generic_CS"
+    Generic_CS (3922 non-zero entries, 8577 total)
 
-=== "Network Overview"
-    ![Alt Text](assets/VarshneyNetwork.png)
+    ```plotly
+    ---8<-- "./assets/Varshney_Generic_CS.json"
+    ```
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>
