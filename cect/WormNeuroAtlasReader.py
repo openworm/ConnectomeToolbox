@@ -5,6 +5,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
+from cect.ConnectomeDataset import ConnectomeDataset
+
 import wormneuroatlas as wa
 
 
@@ -24,8 +26,10 @@ READER_DESCRIPTION = (
 )
 
 
-class WormNeuroAtlasReader(object):
+class WormNeuroAtlasReader(ConnectomeDataset):
     def __init__(self):
+        ConnectomeDataset.__init__(self)
+
         self.atlas = wa.NeuroAtlas()
         syn_sign = wa.SynapseSign()
 
@@ -43,6 +47,10 @@ class WormNeuroAtlasReader(object):
                 self.all_cells[i] = "AWCL"
             if self.all_cells[i] == "AWCON":
                 self.all_cells[i] = "AWCR"
+
+        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        for conn in neuron_conns:
+            self.add_connection(conn)
 
     def determine_nt(self, neuron):
         if neuron in self.dom_glu:

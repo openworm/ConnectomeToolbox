@@ -1,5 +1,53 @@
 ## Witvliet1
 Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
+=== "Full View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Full View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Full View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Full View_Electrical.json"
+        ```
+=== "Pharynx View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Pharynx View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Pharynx View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Pharynx View_Electrical.json"
+        ```
+=== "Social View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Social View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Social View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Social View_Electrical.json"
+        ```
 
 ### Neurons (181)
 <details><summary>Full list of Neurons</summary>

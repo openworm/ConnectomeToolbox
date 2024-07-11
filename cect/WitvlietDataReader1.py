@@ -4,15 +4,20 @@
 from cect.W_SpreadsheetDataReader import WitvlietDataReader
 from cect.ConnectomeReader import analyse_connections
 
-wdr = WitvlietDataReader("witvliet_2020_7.xlsx")
 
-read_data = wdr.read_data
-read_muscle_data = wdr.read_muscle_data
+def get_instance():
+    return WitvlietDataReader("witvliet_2020_7.xlsx")
+
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 
 READER_DESCRIPTION = (
     """Data extracted from **%s** for neuronal connectivity"""
-    % wdr.filename.split("/")[-1]
+    % my_instance.filename.split("/")[-1]
 )
 
 

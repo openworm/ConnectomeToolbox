@@ -1,5 +1,53 @@
 ## White_L4
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
+=== "Full View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Full View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Full View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Full View_Electrical.json"
+        ```
+=== "Pharynx View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Pharynx View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Pharynx View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Pharynx View_Electrical.json"
+        ```
+=== "Social View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Social View_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Social View_Chemical_Inh.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/White_L4_Social View_Electrical.json"
+        ```
 
 ### Neurons (180)
 <details><summary>Full list of Neurons</summary>
