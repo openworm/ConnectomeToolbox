@@ -412,6 +412,29 @@ PREFERRED_MUSCLE_NAMES = [
     "MVULVA",
 ]
 
+PHARYNX_CELLS = [
+    "M1",
+    "M2L",
+    "M2R",
+    "M3L",
+    "M3R",
+    "M4",
+    "M5",
+    "I1L",
+    "I1R",
+    "I2L",
+    "I2R",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "MI",
+    "NSML",
+    "NSMR",
+    "MCL",
+    "MCR",
+]
+
 
 def convert_to_preferred_muscle_name(muscle):
     if muscle.startswith("BWM-VL"):

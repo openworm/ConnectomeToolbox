@@ -44,6 +44,10 @@ class TestDataReader(ConnectomeDataset):
         self.conns.append(ConnectionInfo("DB4", "AVBL", 4, "GapJunction", "Generic_GJ"))
         self.conns.append(ConnectionInfo("VB6", "AVBL", 3, "GapJunction", "Generic_GJ"))
 
+        self.conns.append(
+            ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")
+        )
+
         for c in self.conns:
             if c.pre_cell not in self.cells:
                 self.cells.append(c.pre_cell)
@@ -74,7 +78,7 @@ def main():
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
-    tdr_instance.summary()
+    print(tdr_instance.summary())
 
     import sys
 

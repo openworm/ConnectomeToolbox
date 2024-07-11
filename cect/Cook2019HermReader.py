@@ -5,14 +5,19 @@ from cect.Cook2019DataReader import Cook2019DataReader
 
 from cect.ConnectomeReader import analyse_connections
 
-cdr = Cook2019DataReader()
 
-read_data = cdr.read_data
-read_muscle_data = cdr.read_muscle_data
+def get_instance():
+    return Cook2019DataReader()
+
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 READER_DESCRIPTION = (
     """Data extracted from **%s** for neuronal connectivity"""
-    % cdr.filename.split("/")[-1]
+    % my_instance.filename.split("/")[-1]
 )
 
 

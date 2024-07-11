@@ -14,6 +14,8 @@ class ConnectomeDataset:
         self.nodes = []
         self.connections = {}
 
+        self.view = None
+
     def _expand_conn_arrays(self):
         for c in self.connections:
             conn_array = self.connections[c]
@@ -61,39 +63,47 @@ class ConnectomeDataset:
             )
 
     def get_connectome_view(self, view):
+        self.view = view
+
         cv = ConnectomeDataset()
 
         for n in view.node_sets:
             cv.nodes.append(n.name)
 
-        cv.connections[view.name] = np.zeros(
-            [len(cv.nodes)] * 2, dtype=self.DEFAULT_DTYPE
-        )
-        for synclass in view.synclasses:
-            conn_array = self.connections[synclass]
-            for pre in self.nodes:
-                pre_index = view.get_index_of_cell(pre)
-                for post in self.nodes:
-                    post_index = view.get_index_of_cell(post)
+        for synclass_set in view.synclass_sets:
+            cv.connections[synclass_set] = np.zeros(
+                [len(cv.nodes)] * 2, dtype=self.DEFAULT_DTYPE
+            )
 
-                    print(
-                        "Testing if %s (%i), %s (%s) in %s"
-                        % (pre, pre_index, post, post_index, view.node_sets)
-                    )
+            for synclass in view.synclass_sets[synclass_set]:
+                if synclass in self.connections:
+                    conn_array = self.connections[synclass]
+                    for pre in self.nodes:
+                        pre_index = view.get_index_of_cell(pre)
+                        for post in self.nodes:
+                            post_index = view.get_index_of_cell(post)
 
-                    if pre_index >= 0 and post_index >= 0:
-                        cv.connections[view.name][pre_index, post_index] += conn_array[
-                            self.nodes.index(pre), self.nodes.index(post)
-                        ]
+                            if self.verbose:
+                                print(
+                                    "Testing if %s (%i), %s (%s) in %s"
+                                    % (pre, pre_index, post, post_index, view.node_sets)
+                                )
+
+                            if pre_index >= 0 and post_index >= 0:
+                                cv.connections[synclass_set][
+                                    pre_index, post_index
+                                ] += conn_array[
+                                    self.nodes.index(pre), self.nodes.index(post)
+                                ]
 
         return cv
 
     def summary(self):
-        print_("Nodes present: %s" % self.nodes)
+        info = "Nodes present: %s\n" % self.nodes
         for c in self.connections:
             conn_array = self.connections[c]
-            print_(
-                "- Connections: %s %s, %i non-zero entries, %i total\n%s"
+            info += (
+                "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
                 % (
                     c,
                     conn_array.shape,
@@ -102,6 +112,7 @@ class ConnectomeDataset:
                     conn_array,
                 )
             )
+        return info
 
     def to_plotly_matrix_fig(self, synclass):
         import plotly.express as px

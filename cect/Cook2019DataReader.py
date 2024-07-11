@@ -18,6 +18,8 @@ from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_body_wall_muscle
 from cect.ConnectomeReader import remove_leading_index_zero
 
+from cect.ConnectomeDataset import ConnectomeDataset
+
 from openpyxl import load_workbook
 
 import os
@@ -44,13 +46,15 @@ def get_synclass(cell, syntype):
         return "Acetylcholine"
 
 
-class Cook2019DataReader:
+class Cook2019DataReader(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
     verbose = False
 
     def __init__(self):
+        ConnectomeDataset.__init__(self)
+
         wb = load_workbook(self.filename)
         print_("Opened the Excel file: " + self.filename)
 
@@ -114,6 +118,10 @@ class Cook2019DataReader:
                         self.conn_nums[conn_type],
                     )
                 )
+
+        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        for conn in neuron_conns:
+            self.add_connection(conn)
 
     def read_data(self, include_nonconnected_cells=False):
         """

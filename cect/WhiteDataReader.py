@@ -17,6 +17,8 @@ from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_body_wall_muscle
 
+from cect.ConnectomeDataset import ConnectomeDataset
+
 
 import os
 
@@ -207,13 +209,20 @@ def main2():
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
 
-class White_whole:
+class White_whole(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
 
     BODYWALLMUSCLE_ENDPOINT = "LegacyBodyWallMuscles"
 
-    def read_data(include_nonconnected_cells=False):
+    def __init__(self):
+        ConnectomeDataset.__init__(self)
+
+        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        for conn in neuron_conns:
+            self.add_connection(conn)
+
+    def read_data(self, include_nonconnected_cells=False):
         conns = []
         cells = []
 
@@ -245,7 +254,7 @@ class White_whole:
 
         return cells, conns
 
-    def read_muscle_data():
+    def read_muscle_data(self):
         neurons = []
         muscles = []
         conns = []
@@ -275,8 +284,9 @@ class White_whole:
 
 
 def main3():
-    cells, neuron_conns = White_whole.read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = White_whole.read_muscle_data()
+    ww = White_whole()
+    cells, neuron_conns = ww.read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
