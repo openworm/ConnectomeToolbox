@@ -29,6 +29,7 @@ READER_DESCRIPTION = (
 class WormNeuroAtlasReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
+        print_("Initialising WormNeuroAtlasReader")
 
         self.atlas = wa.NeuroAtlas()
         syn_sign = wa.SynapseSign()
@@ -71,8 +72,6 @@ class WormNeuroAtlasReader(ConnectomeDataset):
             return nt
 
     def read_data(self, include_nonconnected_cells=False):
-        print_("Initialising WormNeuroAtlasReader")
-
         conns = []
         gj = self.atlas.get_gap_junctions()
         cs = self.atlas.get_chemical_synapses()
@@ -122,10 +121,14 @@ class WormNeuroAtlasReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-READER = WormNeuroAtlasReader()
+def get_instance():
+    return WormNeuroAtlasReader()
 
-read_data = READER.read_data
-read_muscle_data = READER.read_muscle_data
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 if __name__ == "__main__":
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
