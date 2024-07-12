@@ -4,7 +4,21 @@ Information on published connectomics data related to _C. elegans_. This is bein
 
 **Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work!**
 
+```mermaid
+block-beta
+columns 4
 
+t1["<b>Anatomical - Chemical/electrical</b>"]
+t2["<b>Extrasynaptic</b>"]
+t4["<b>Gene/protein expression</b>"]
+t3["<b>Functional</b>"]
+
+  style t1 fill:#ff6666
+  style t2 fill:#99bbff
+  style t3 fill:#ff80ff
+  style t4 fill:#85e085
+
+```
 ```mermaid
 block-beta
 
@@ -13,7 +27,7 @@ columns 4
   block:70sA
     columns 1
     space    
-    A1("<a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/'>Albertson and Thomson 1976</a>")
+    A1("<b><a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/'>Albertson and Thomson 1976</a></b>")
     space space space
   end
 
@@ -34,9 +48,9 @@ columns 4
 
   block:80sA
     columns 1
-    A("<a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a>")
+    A("<b><a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a></b>")
     space
-    B("<a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a>")
+    B("<b><a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a></b>")
     space
     space
   end
@@ -59,7 +73,7 @@ columns 4
   block:90sA
     columns 1
     space
-    A2("<a href='http://openworm.org/ConnectomeToolbox/Hall_1991/'>Hall & Russell 1991</a>") space space space
+    A2("<b><a href='http://openworm.org/ConnectomeToolbox/Hall_1991/'>Hall & Russell 1991</a></b>") space space space
   end
   
   block:90sB
@@ -89,7 +103,7 @@ columns 4
 
   block:00sC
     columns 1
-    C("<a href='http://openworm.org/ConnectomeToolbox/Altun_2009/'>Altun et al. 2009</a>")
+    C("<b><a href='http://openworm.org/ConnectomeToolbox/Altun_2009/'>Altun et al. 2009</a></b>")
     space space space
   end
   
@@ -100,18 +114,18 @@ columns 4
 
   block:10sA
     columns 1
-    D("<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/'>Varshney et al.2011</a>") 
-    G("<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/'>Cook et al. 2019</a>") 
+    D("<b><a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/'>Varshney et al.2011</a></b>") 
+    G("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2019/'>Cook et al. 2019</a></b>") 
     space
     space
   end
 
   block:10sB
     columns 1
-    E("<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a>")
-    E1("<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/'>Serrano-Saiz et al. 2013</a>") 
-    E2("<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/'>Gendrel, Hobert & Atlas 2016</a>")
-    F("<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/'>Bentley et al. 2016</a>")
+    E("<b><a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a></b>")
+    E1("<b><a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/'>Serrano-Saiz et al. 2013</a></b>") 
+    E2("<b><a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/'>Gendrel, Hobert & Atlas 2016</a></b>")
+    F("<b><a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/'>Bentley et al. 2016</a></b>")
   end
   block:10sC
     columns 1
@@ -125,15 +139,15 @@ columns 4
 
   block:20sA
     columns 1
-    I("<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/'>Cook et al. 2020</a>")
-    J("<a href='http://openworm.org/ConnectomeToolbox/Brittin_2021'>Brittin et al. 2021</a>")
-    K("<a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021'>Witvliet et al. 2021</a>")
+    I("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2020/'>Cook et al. 2020</a></b>")
+    J("<b><a href='http://openworm.org/ConnectomeToolbox/Brittin_2021'>Brittin et al. 2021</a></b>")
+    K("<b><a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021'>Witvliet et al. 2021</a></b>")
     space
   end    
 
   block:20sB
     columns 1
-    NP("<a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023'>Ripoll-Sanchez et al. 2023</a>")
+    NP("<b><a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023'>Ripoll-Sanchez et al. 2023</a></b>")
     space
     space
     space
@@ -141,17 +155,17 @@ columns 4
 
   block:20sC
     columns 1
-    L("<a href='http://openworm.org/ConnectomeToolbox/Taylor_2021'>Taylor et al. 2021</a>")
-    M("<a href='http://openworm.org/ConnectomeToolbox/Yemini_2021'>Yemini et al. 2021</a>")
-    N("<a href='http://openworm.org/ConnectomeToolbox/Beets_2023'>Beets et al. 2023</a>")
+    L("<b><a href='http://openworm.org/ConnectomeToolbox/Taylor_2021'>Taylor et al. 2021</a></b>")
+    M("<b><a href='http://openworm.org/ConnectomeToolbox/Yemini_2021'>Yemini et al. 2021</a></b>")
+    N("<b><a href='http://openworm.org/ConnectomeToolbox/Beets_2023'>Beets et al. 2023</a></b>")
     space
   end    
   block:20sD
     columns 1
-    H("<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/'>Fenyves et al.2020</a>") 
-    P("<a href='http://openworm.org/ConnectomeToolbox/Randi_2023'>Randi et al. 2023</a>")
-    R("<a href='http://openworm.org/ConnectomeToolbox/Dag_2023'>Dag et al. 2023</a>")
-    T("<a href='http://openworm.org/ConnectomeToolbox/Atanas_2023'>Atanas et al. 2023</a>")
+    H("<b><a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/'>Fenyves et al.2020</a></b>") 
+    P("<b><a href='http://openworm.org/ConnectomeToolbox/Randi_2023'>Randi et al. 2023</a></b>")
+    R("<b><a href='http://openworm.org/ConnectomeToolbox/Dag_2023'>Dag et al. 2023</a></b>")
+    T("<b><a href='http://openworm.org/ConnectomeToolbox/Atanas_2023'>Atanas et al. 2023</a></b>")
   end     
 
     E --> H
@@ -248,7 +262,7 @@ columns 4
 
 ```
 
-gggg
+Another view on the data
 
 ```mermaid
 flowchart TD
