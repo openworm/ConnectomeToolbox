@@ -8,6 +8,8 @@
 
 from cect import print_
 
+DEFAULT_COLORMAP = ["white", "green", "black"]
+
 PREFERRED_NEURON_NAMES = [
     "ADAL",
     "ADAR",

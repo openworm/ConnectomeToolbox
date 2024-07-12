@@ -8,9 +8,7 @@ Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/Witvliet1_Full View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Full View** for **Witvliet1**...
     === "Electrical"
 
         ```plotly
@@ -19,19 +17,13 @@ Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 === "Pharynx View"
     === "Chemical Exc"
 
-        ```plotly
-        ---8<-- "./assets/Witvliet1_Pharynx View_Chemical_Exc.json"
-        ```
+        No connections of type **Chemical Exc** in the **Pharynx View** for **Witvliet1**...
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/Witvliet1_Pharynx View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Pharynx View** for **Witvliet1**...
     === "Electrical"
 
-        ```plotly
-        ---8<-- "./assets/Witvliet1_Pharynx View_Electrical.json"
-        ```
+        No connections of type **Electrical** in the **Pharynx View** for **Witvliet1**...
 === "Social View"
     === "Chemical Exc"
 
@@ -40,9 +32,7 @@ Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/Witvliet1_Social View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Social View** for **Witvliet1**...
     === "Electrical"
 
         ```plotly

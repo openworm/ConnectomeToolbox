@@ -4,6 +4,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import PHARYNX_CELLS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 
+from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import numpy as np
 
@@ -19,7 +20,7 @@ class NodeSet:
 
 
 class View:
-    def __init__(self, name, node_sets, synclass_sets={}, colormap="BuPu"):
+    def __init__(self, name, node_sets, synclass_sets={}, colormap=DEFAULT_COLORMAP):
         self.name = name
         self.node_sets = node_sets
         self.synclass_sets = synclass_sets

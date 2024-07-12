@@ -19,30 +19,20 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 === "Pharynx View"
     === "Chemical Exc"
 
-        ```plotly
-        ---8<-- "./assets/TestData_Pharynx View_Chemical_Exc.json"
-        ```
+        No connections of type **Chemical Exc** in the **Pharynx View** for **TestData**...
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/TestData_Pharynx View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Pharynx View** for **TestData**...
     === "Electrical"
 
-        ```plotly
-        ---8<-- "./assets/TestData_Pharynx View_Electrical.json"
-        ```
+        No connections of type **Electrical** in the **Pharynx View** for **TestData**...
 === "Social View"
     === "Chemical Exc"
 
-        ```plotly
-        ---8<-- "./assets/TestData_Social View_Chemical_Exc.json"
-        ```
+        No connections of type **Chemical Exc** in the **Social View** for **TestData**...
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/TestData_Social View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Social View** for **TestData**...
     === "Electrical"
 
         ```plotly

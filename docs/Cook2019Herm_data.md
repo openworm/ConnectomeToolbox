@@ -24,9 +24,7 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Pharynx View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Pharynx View** for **Cook2019Herm**...
     === "Electrical"
 
         ```plotly
@@ -40,9 +38,7 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Social View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Social View** for **Cook2019Herm**...
     === "Electrical"
 
         ```plotly

@@ -8,9 +8,7 @@ Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/White_A_Full View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Full View** for **White_A**...
     === "Electrical"
 
         ```plotly
@@ -19,19 +17,13 @@ Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 === "Pharynx View"
     === "Chemical Exc"
 
-        ```plotly
-        ---8<-- "./assets/White_A_Pharynx View_Chemical_Exc.json"
-        ```
+        No connections of type **Chemical Exc** in the **Pharynx View** for **White_A**...
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/White_A_Pharynx View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Pharynx View** for **White_A**...
     === "Electrical"
 
-        ```plotly
-        ---8<-- "./assets/White_A_Pharynx View_Electrical.json"
-        ```
+        No connections of type **Electrical** in the **Pharynx View** for **White_A**...
 === "Social View"
     === "Chemical Exc"
 
@@ -40,9 +32,7 @@ Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/White_A_Social View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Social View** for **White_A**...
     === "Electrical"
 
         ```plotly

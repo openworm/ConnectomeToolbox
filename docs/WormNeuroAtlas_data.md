@@ -24,9 +24,7 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Pharynx View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Pharynx View** for **WormNeuroAtlas**...
     === "Electrical"
 
         ```plotly
@@ -40,9 +38,7 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
         ```
     === "Chemical Inh"
 
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Social View_Chemical_Inh.json"
-        ```
+        No connections of type **Chemical Inh** in the **Social View** for **WormNeuroAtlas**...
     === "Electrical"
 
         ```plotly

@@ -133,6 +133,14 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(fig.to_json())
 
+    if np.sum(connectome.connections[synclass]) == 0:
+        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
+            indent,
+            synclass,
+            view_name,
+            reader_name,
+        )
+
     return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
         indent,
         indent,
@@ -217,6 +225,7 @@ for reader_name, reader in readers.items():
 
                     for sc in view.synclass_sets:
                         f.write(indent + '=== "%s"\n' % sc)
+
                         f.write(
                             get_matrix_markdown(
                                 reader_name, view.name, cv, sc, indent=indent + indent

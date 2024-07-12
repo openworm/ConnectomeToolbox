@@ -82,8 +82,12 @@ def main():
 
     import sys
 
+    from cect.ConnectomeReader import DEFAULT_COLORMAP
+
     if not "-nogui" in sys.argv:
-        fig = tdr_instance.to_plotly_matrix_fig("Acetylcholine")
+        fig = tdr_instance.to_plotly_matrix_fig(
+            "Acetylcholine", color_continuous_scale=DEFAULT_COLORMAP
+        )
 
         fig.show()
 
