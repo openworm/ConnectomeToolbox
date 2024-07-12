@@ -1,5 +1,6 @@
 ## The Multilayer Connectome of Caenorhabditis elegans
-*Barry Bentley, Robyn Branicky, Christopher L. Barnes, Yee Lian Chew, Eviatar Yemini, Edward T. Bullmore, Petra E. Vértes , William R. Schafer* <br> *Published: December 16, 2016* <br>*PLoS Comput Biol 12(12): e1005283. https://doi.org/10.1371/journal.pcbi.1005283*
+
+*Barry Bentley, Robyn Branicky, Christopher L. Barnes, Yee Lian Chew, Eviatar Yemini, Edward T. Bullmore, Petra E. Vértes , William R. Schafer* <br>*[PLoS Comput Biol 12(12): e1005283](https://doi.org/10.1371/journal.pcbi.1005283)*<br> *Published: December 16, 2016* 
 
 
 **Abstract:**

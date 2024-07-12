@@ -1,8 +1,8 @@
-## Synaptic polarity and sign-balance prediction using gene expression data in the Caenorhabditis elegans chemical synapse neuronal connectome network
+## Synaptic polarity and sign-balance prediction using gene expression data in the _Caenorhabditis elegans_ chemical synapse neuronal connectome network
 
 _Bánk G. Fenyves, Gábor S. Szilágyi, Zsolt Vassy, Csaba Sőti, Peter Csermely<br>
- *PLOS Computational Biology 16(12): e1007974*<br>
-Published: December 21, 2020 https://doi.org/10.1371/journal.pcbi.1007974_
+ *[PLOS Computational Biology 16(12): e1007974](0 https://doi.org/10.1371/journal.pcbi.1007974)*<br>
+Published: December 21, 202_
 
 **Summary**
 - Present a gene expression-based sign prediction of the ionotropic chemical synapse connectome of _C.elegans_

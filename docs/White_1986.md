@@ -2,10 +2,11 @@
 
 *By J.G.White, E.Southgate, J.N. Thomson and S.Brenner, F.R.S.*
 
-*Phil. Trans. R. Soc. Lond. B3141–340*<br>
+*[Phil. Trans. R. Soc. Lond. B3141–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056)*<br>
 *Published 12 November 1986*
 
 **Type of Connectomics Data**
+
 - Anatomical connectome: chemical synapses; electrical gap junctions
 
 | Datasets | Readers             | 
@@ -16,11 +17,12 @@
 
 
 **Summary**
+
 - The first complete connectome of the adult hermaphrodite _C.elegans_
 
 
-
 **Reliability of data**
+
 1. Human error: when following long featureless process bundles, it resulted in switch processes.
 2. Many processes run close to plane of sectioning and so it provides images with indistinct objects leading to problems in identification
 3. Similar errors of process identification in area of poor image quality caused by dirt or loss of sections on grid bars
