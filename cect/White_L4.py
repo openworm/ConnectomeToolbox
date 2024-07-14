@@ -5,8 +5,15 @@ from cect.WhiteDataReader import White_L4
 
 from cect.ConnectomeReader import analyse_connections
 
-read_data = White_L4.read_data
-read_muscle_data = White_L4.read_muscle_data
+
+def get_instance():
+    return White_L4()
+
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 READER_DESCRIPTION = (
     """Data extracted from **%s** for neuronal connectivity"""

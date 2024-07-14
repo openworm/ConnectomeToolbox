@@ -4,6 +4,8 @@ from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_body_wall_muscle
 
+from cect.ConnectomeDataset import ConnectomeDataset
+
 from openpyxl import load_workbook
 import os
 from cect import print_
@@ -12,9 +14,14 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
 
-class WitvlietDataReader:
+class WitvlietDataReader(ConnectomeDataset):
     def __init__(self, spreadsheet):
+        ConnectomeDataset.__init__(self)
         self.filename = "%s%s" % (spreadsheet_location, spreadsheet)
+
+        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        for conn in neuron_conns:
+            self.add_connection(conn)
 
     def read_data(self, include_nonconnected_cells=True):
         if not include_nonconnected_cells:

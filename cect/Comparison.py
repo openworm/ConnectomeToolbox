@@ -43,6 +43,7 @@ if quick:
         "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
         "Varshney": "cect.VarshneyDataReader",
         "White_L4": "cect.White_L4",
+        "White_whole": "cect.White_whole",
         "TestData": "cect.TestDataReader",
     }
 else:
@@ -120,8 +121,36 @@ def get_cell_link(cell_name, html=False):
         return cell_name
 
 
-for name, reader in readers.items():
-    print_("\n****** Importing dataset %s using %s ******" % (name, reader))
+def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="    "):
+    fig = connectome.to_plotly_matrix_fig(synclass)
+
+    asset_filename = "assets/%s_%s_%s.json" % (
+        reader_name,
+        view_name,
+        synclass.replace(" ", "_"),
+    )
+
+    with open("./docs/%s" % asset_filename, "w") as asset_file:
+        asset_file.write(fig.to_json())
+
+    if np.sum(connectome.connections[synclass]) == 0:
+        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
+            indent,
+            synclass,
+            view_name,
+            reader_name,
+        )
+
+    return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
+        indent,
+        indent,
+        asset_filename,
+        indent,
+    )
+
+
+for reader_name, reader in readers.items():
+    print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
 
     exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
@@ -170,39 +199,38 @@ for name, reader in readers.items():
     for nt in sorted(muscle_nts):
         m_nts_info += "%s (%i)<br/>" % (shorten_neurotransmitter(nt), muscle_nts[nt])
 
-    ref = "[%s](%s.md)" % (name, reader_pages[name]) if name in reader_pages else name
+    ref = (
+        "[%s](%s.md)" % (reader_name, reader_pages[reader_name])
+        if reader_name in reader_pages
+        else reader_name
+    )
 
-    if name in reader_pages:
-        filename = "docs/%s.md" % reader_pages[name]
+    if reader_name in reader_pages:
+        filename = "docs/%s.md" % reader_pages[reader_name]
 
         with open(filename, "w") as f:
-            f.write("## %s\n" % name)
+            f.write("## %s\n" % reader_name)
 
             f.write("%s\n" % READER_DESCRIPTION)
 
             if connectome is not None:
-                for synclass in connectome.connections:
-                    conn_array = connectome.connections[synclass]
+                from ConnectomeView import ALL_VIEWS
 
-                    syn_info = "%s (%i non-zero entries, %i total)" % (
-                        synclass,
-                        np.count_nonzero(conn_array),
-                        np.sum(conn_array),
-                    )
-                    print_(syn_info)
-                    # f.write('### %s'%synclass if first_synclass==synclass else '=== "%s"'%synclass)
-                    f.write('=== "%s"\n' % synclass)
-                    f.write("    %s\n" % syn_info)
-                    fig = connectome.to_plotly_matrix_fig(synclass)
+                indent = "    "
 
-                    asset_filename = "assets/%s_%s.json" % (name, synclass)
-                    with open("./docs/%s" % asset_filename, "w") as asset_file:
-                        asset_file.write(fig.to_json())
+                for view in ALL_VIEWS:
+                    cv = connectome.get_connectome_view(view)
 
-                    f.write(
-                        '\n    ```plotly\n    ---8<-- "./%s"\n    ```\n'
-                        % asset_filename
-                    )
+                    f.write('=== "%s"\n' % view.name)
+
+                    for sc in view.synclass_sets:
+                        f.write(indent + '=== "%s"\n' % sc)
+
+                        f.write(
+                            get_matrix_markdown(
+                                reader_name, view.name, cv, sc, indent=indent + indent
+                            )
+                        )
 
             cell_types = {
                 "Neurons": preferred,

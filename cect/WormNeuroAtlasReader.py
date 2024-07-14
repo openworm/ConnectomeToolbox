@@ -5,6 +5,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
+from cect.ConnectomeDataset import ConnectomeDataset
+
 import wormneuroatlas as wa
 
 
@@ -24,8 +26,11 @@ READER_DESCRIPTION = (
 )
 
 
-class WormNeuroAtlasReader(object):
+class WormNeuroAtlasReader(ConnectomeDataset):
     def __init__(self):
+        ConnectomeDataset.__init__(self)
+        print_("Initialising WormNeuroAtlasReader")
+
         self.atlas = wa.NeuroAtlas()
         syn_sign = wa.SynapseSign()
 
@@ -43,6 +48,10 @@ class WormNeuroAtlasReader(object):
                 self.all_cells[i] = "AWCL"
             if self.all_cells[i] == "AWCON":
                 self.all_cells[i] = "AWCR"
+
+        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        for conn in neuron_conns:
+            self.add_connection(conn)
 
     def determine_nt(self, neuron):
         if neuron in self.dom_glu:
@@ -63,8 +72,6 @@ class WormNeuroAtlasReader(object):
             return nt
 
     def read_data(self, include_nonconnected_cells=False):
-        print_("Initialising WormNeuroAtlasReader")
-
         conns = []
         gj = self.atlas.get_gap_junctions()
         cs = self.atlas.get_chemical_synapses()
@@ -114,10 +121,14 @@ class WormNeuroAtlasReader(object):
         return neurons, muscles, conns
 
 
-READER = WormNeuroAtlasReader()
+def get_instance():
+    return WormNeuroAtlasReader()
 
-read_data = READER.read_data
-read_muscle_data = READER.read_muscle_data
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 if __name__ == "__main__":
     cells, neuron_conns = read_data(include_nonconnected_cells=True)

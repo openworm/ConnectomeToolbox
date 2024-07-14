@@ -8,6 +8,8 @@
 
 from cect import print_
 
+DEFAULT_COLORMAP = ["white", "green", "black"]
+
 PREFERRED_NEURON_NAMES = [
     "ADAL",
     "ADAR",
@@ -410,6 +412,29 @@ PREFERRED_MUSCLE_NAMES = [
     "MVR23",
     "MVR24",
     "MVULVA",
+]
+
+PHARYNX_CELLS = [
+    "M1",
+    "M2L",
+    "M2R",
+    "M3L",
+    "M3R",
+    "M4",
+    "M5",
+    "I1L",
+    "I1R",
+    "I2L",
+    "I2R",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "MI",
+    "NSML",
+    "NSMR",
+    "MCL",
+    "MCR",
 ]
 
 

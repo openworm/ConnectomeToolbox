@@ -2,8 +2,267 @@
 
 Information on published connectomics data related to _C. elegans_. This is being developed as part of the [OpenWorm project](https://www.openworm.org).
 
-**Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work.**
+**Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work!**
 
+```mermaid
+block-beta
+columns 4
+
+t1["<b>Anatomical - Chemical/electrical</b>"]
+t2["<b>Extrasynaptic</b>"]
+t4["<b>Gene/protein expression</b>"]
+t3["<b>Functional</b>"]
+
+  style t1 fill:#ff6666
+  style t2 fill:#99bbff
+  style t3 fill:#ff80ff
+  style t4 fill:#85e085
+
+```
+```mermaid
+block-beta
+
+columns 4
+
+  block:70sA
+    columns 1
+    space    
+    A1("<b><a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/'>Albertson and Thomson 1976</a></b>")
+    space space space
+  end
+
+  block:70sB
+    columns 1
+    space
+  end
+
+  block:70sC
+    columns 1
+    space
+  end
+  
+  block:70sD
+    columns 1
+    space
+  end
+
+  block:80sA
+    columns 1
+    A("<b><a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a></b>")
+    space
+    B("<b><a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a></b>")
+    space
+    space
+  end
+
+  block:80sB
+    columns 1
+    space
+  end
+
+  block:80sC
+    columns 1
+    space
+  end
+  
+  block:80sD
+    columns 1
+    space
+  end
+
+  block:90sA
+    columns 1
+    space
+    A2("<b><a href='http://openworm.org/ConnectomeToolbox/Hall_1991/'>Hall & Russell 1991</a></b>") space space space
+  end
+  
+  block:90sB
+    columns 1
+    space
+  end
+
+  block:90sC
+    columns 1
+    space
+  end
+  
+  block:90sD
+    columns 1
+    space
+  end
+
+  block:00sA
+    columns 1
+    space
+  end
+
+  block:00sB
+    columns 1
+    space
+  end
+
+  block:00sC
+    columns 1
+    C("<b><a href='http://openworm.org/ConnectomeToolbox/Altun_2009/'>Altun et al. 2009</a></b>")
+    space space space
+  end
+  
+  block:00sD
+    columns 1
+    space
+  end
+
+  block:10sA
+    columns 1
+    D("<b><a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/'>Varshney et al.2011</a></b>") 
+    G("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2019/'>Cook et al. 2019</a></b>") 
+    space
+    space
+  end
+
+  block:10sB
+    columns 1
+    E("<b><a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a></b>")
+    E1("<b><a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/'>Serrano-Saiz et al. 2013</a></b>") 
+    E2("<b><a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/'>Gendrel, Hobert & Atlas 2016</a></b>")
+    F("<b><a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/'>Bentley et al. 2016</a></b>")
+  end
+  block:10sC
+    columns 1
+    space
+  end
+  block:10sD
+    columns 1
+    space
+  end
+
+
+  block:20sA
+    columns 1
+    I("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2020/'>Cook et al. 2020</a></b>")
+    J("<b><a href='http://openworm.org/ConnectomeToolbox/Brittin_2021'>Brittin et al. 2021</a></b>")
+    K("<b><a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021'>Witvliet et al. 2021</a></b>")
+    space
+  end    
+
+  block:20sB
+    columns 1
+    NP("<b><a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023'>Ripoll-Sanchez et al. 2023</a></b>")
+    space
+    space
+    space
+  end    
+
+  block:20sC
+    columns 1
+    L("<b><a href='http://openworm.org/ConnectomeToolbox/Taylor_2021'>Taylor et al. 2021</a></b>")
+    M("<b><a href='http://openworm.org/ConnectomeToolbox/Yemini_2021'>Yemini et al. 2021</a></b>")
+    N("<b><a href='http://openworm.org/ConnectomeToolbox/Beets_2023'>Beets et al. 2023</a></b>")
+    space
+  end    
+  block:20sD
+    columns 1
+    H("<b><a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/'>Fenyves et al.2020</a></b>") 
+    P("<b><a href='http://openworm.org/ConnectomeToolbox/Randi_2023'>Randi et al. 2023</a></b>")
+    R("<b><a href='http://openworm.org/ConnectomeToolbox/Dag_2023'>Dag et al. 2023</a></b>")
+    T("<b><a href='http://openworm.org/ConnectomeToolbox/Atanas_2023'>Atanas et al. 2023</a></b>")
+  end     
+
+    E --> H
+    E1 --> H
+    E2 --> H
+    E --> F
+    C --> L
+    L --> M
+    M --> N
+    A --> B
+    A1 --> A
+    A1 --> I
+    A  --> A2
+    A --> D
+    B --> D
+    A2 --> D
+    A --> G
+    A --> I
+    A --> J
+    A --> F
+    D --> F
+    A --> NP
+    A1 --> NP
+    F --> NP
+    L --> NP
+    K --> NP
+    D --> NP
+    A --> P
+    L --> P
+    N --> P
+    K --> P
+    NP --> P
+    F --> P
+    M --> R
+    T --> R
+    A --> R
+    K --> R
+
+  style 70sA fill:#eeeeee
+  style 70sB fill:#eeeeee
+  style 70sC fill:#eeeeee
+  style 70sD fill:#eeeeee
+  
+  style 80sA fill:#dddddd
+  style 80sB fill:#dddddd
+  style 80sC fill:#dddddd
+  style 80sD fill:#dddddd
+
+  style 90sA fill:#cccccc
+  style 90sB fill:#cccccc
+  style 90sC fill:#cccccc
+  style 90sD fill:#cccccc
+
+  style 00sA fill:#bbbbbb
+  style 00sB fill:#bbbbbb
+  style 00sC fill:#bbbbbb
+  style 00sD fill:#bbbbbb
+
+  style 10sA fill:#aaaaaa
+  style 10sB fill:#aaaaaa
+  style 10sC fill:#aaaaaa
+  style 10sD fill:#aaaaaa
+
+  style 20sA fill:#999999
+  style 20sB fill:#999999
+  style 20sC fill:#999999
+  style 20sD fill:#999999
+
+  style A1 fill:#ff6666
+  style A fill:#ff6666
+  style B fill:#ff6666
+  style A2 fill:#ff6666
+  style D fill:#ff6666
+  style J fill:#ff6666
+  style K fill:#ff6666
+  style G fill:#ff6666
+  style I fill:#ff6666
+
+  style E fill:#99bbff
+  style E1 fill:#99bbff
+  style E2 fill:#99bbff
+  style F fill:#99bbff
+  style NP fill:#99bbff
+
+  style H fill:#ff80ff
+  style P fill:#ff80ff
+  style R fill:#ff80ff
+  style T fill:#ff80ff
+
+  style C fill:#85e085
+  style L fill:#85e085
+  style M fill:#85e085
+  style N fill:#85e085
+
+```
+
+Another view on the data
 
 ```mermaid
 flowchart TD
@@ -14,26 +273,26 @@ flowchart TD
 
 
     subgraph 1970-1980
-    A1[<a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/' >Albertson & Thomson 1976</a>]:::anat
+    A1["<a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/' >Albertson & Thomson 1976</a>"]:::anat
     end
     subgraph 1980-1990
-    A[<a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a>]:::anat & B[<a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a>]:::anat
+    A["<a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a>"]:::anat & B["<a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a>"]:::anat
     end
 
     subgraph 1990-2000
-    A2[<a href='http://openworm.org/ConnectomeToolbox/Hall_1991/' >Hall & Russell 1991</a>]:::anat
+    A2["<a href='http://openworm.org/ConnectomeToolbox/Hall_1991/' >Hall & Russell 1991</a>"]:::anat
     end
 
     subgraph 2000-2010
-    C[<a href='http://openworm.org/ConnectomeToolbox/Altun_2009/' >Altun et al. 2009</a>]:::gene 
+    C["<a href='http://openworm.org/ConnectomeToolbox/Altun_2009/' >Altun et al. 2009</a>"]:::gene 
     end
 
     subgraph 2010-2020
-    D[<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/' >Varshney et al.2011</a>]:::anat & E[<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/' >Pereira et al. 2015</a>]:::es & E1[<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/' >Serrano-Saiz et al. 2013</a>]:::es  & E2[<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/' >Gendrel, Hobert & Atlas 2016</a>]:::es & F[<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/' >Bentley et al. 2016 </a>]:::es & G[<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/' >Cook et al. 2019</a>]:::anat & H[<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/' >Fenyves et al.2020</a>]:::func & I[<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/' >Cook et al. 2020</a>]:::anat
+    D["<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/' >Varshney et al.2011</a>"]:::anat & E["<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/' >Pereira et al. 2015</a>"]:::es & E1["<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/' >Serrano-Saiz et al. 2013</a>"]:::es  & E2["<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/' >Gendrel, Hobert & Atlas 2016</a>"]:::es & F["<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/' >Bentley et al. 2016 </a>"]:::es & G["<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/' >Cook et al. 2019</a>"]:::anat & H["<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/' >Fenyves et al.2020</a>"]:::func & I["<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/' >Cook et al. 2020</a>"]:::anat
     end
 
     subgraph 2020-2030
-    J[<a href='http://openworm.org/ConnectomeToolbox/Brittin_2021' >Brittin et al. 2021</a>]:::anat & K[<a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021' >Witvliet et al. 2021</a>]:::anat & L[<a href='http://openworm.org/ConnectomeToolbox/Taylor_2021' >Taylor et al. 2021</a>]:::gene & M[<a href='http://openworm.org/ConnectomeToolbox/Yemini_2021' >Yemini et al. 2021</a>]:::gene & N[<a href='http://openworm.org/ConnectomeToolbox/Beets_2023' >Beets et al. 2023</a>]:::gene & P[<a href='http://openworm.org/ConnectomeToolbox/Randi_2023' >Randi et al. 2023</a>]:::func & NP[<a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023' >Ripoll-Sanchez et al. 2023</a>]:::es & R[<a href='http://openworm.org/ConnectomeToolbox/Dag_2023' >Dag et al. 2023</a>]:::func & T[<a href='http://openworm.org/ConnectomeToolbox/Atanas_2023' >Atanas et al. 2023</a>]:::func
+    J["<a href='http://openworm.org/ConnectomeToolbox/Brittin_2021' >Brittin et al. 2021</a>"]:::anat & K["<a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021' >Witvliet et al. 2021</a>"]:::anat & L["<a href='http://openworm.org/ConnectomeToolbox/Taylor_2021' >Taylor et al. 2021</a>"]:::gene & M["<a href='http://openworm.org/ConnectomeToolbox/Yemini_2021' >Yemini et al. 2021</a>"]:::gene & N["<a href='http://openworm.org/ConnectomeToolbox/Beets_2023' >Beets et al. 2023</a>"]:::gene & P["<a href='http://openworm.org/ConnectomeToolbox/Randi_2023' >Randi et al. 2023</a>"]:::func & NP["<a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023' >Ripoll-Sanchez et al. 2023</a>"]:::es & R["<a href='http://openworm.org/ConnectomeToolbox/Dag_2023' >Dag et al. 2023</a>"]:::func & T["<a href='http://openworm.org/ConnectomeToolbox/Atanas_2023' >Atanas et al. 2023</a>"]:::func
     end     
 
 
