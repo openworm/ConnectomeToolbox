@@ -1,10 +1,12 @@
 site_name: C. elegans Connectome Toolbox
 theme:
-  name: material    
+  name: material
   favicon: images/favicon.ico
   logo: images/favicon.ico
   palette:
-    primary: green  
+    primary: green
+  features:
+    - content.tabs.link      
 
 plugins:
   - plotly
@@ -23,6 +25,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
 
 nav:
   - Overview: 'index.md'
@@ -60,5 +64,6 @@ nav:
     - 'Witvliet et al. 2021 - 1': 'Witvliet1_data.md'
     - 'Witvliet et al. 2021 - 2': 'Witvliet2_data.md'
     - 'WormNeuroAtlas': 'WormNeuroAtlas_data.md'
+    - 'Test': 'Test_data.md'
   - Python package:
     - 'Installation': 'Python.md'

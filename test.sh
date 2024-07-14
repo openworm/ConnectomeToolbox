@@ -14,7 +14,10 @@ python -m cect.SpreadsheetDataReader
 python -m cect.UpdatedSpreadsheetDataReader                                                                                                                                                                      
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
 #python -m cect.OpenWormReader                                                                                                                                                            
-python -m cect.VarshneyDataReader
+python -m cect.VarshneyDataReader       
+python -m cect.White_whole   -nogui                                                                                                                                              
+python -m cect.TestDataReader -nogui                                                                                                                                         
+python -m cect.ConnectomeView
 
 if [ "$quick_test" == 0 ]; then
 
@@ -27,7 +30,6 @@ if [ "$quick_test" == 0 ]; then
     python -m cect.WhiteDataReader
     python -m cect.White_A
     python -m cect.White_L4
-    python -m cect.White_whole
 fi
 
 python cect/Comparison.py $quick_test
