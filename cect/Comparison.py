@@ -121,6 +121,27 @@ def get_cell_link(cell_name, html=False):
         return cell_name
 
 
+def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
+
+    return indent+'''```vegalite
+    {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple....",
+    "data": {
+        "values": [
+        {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
+        {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
+        {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
+        "y": {"field": "b", "type": "quantitative"}
+    }
+    }
+```'''.replace('\n','\n'+indent)
+
 def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="    "):
     fig = connectome.to_plotly_matrix_fig(synclass)
 
@@ -206,52 +227,72 @@ for reader_name, reader in readers.items():
     )
 
     if reader_name in reader_pages:
-        filename = "docs/%s.md" % reader_pages[reader_name]
 
-        with open(filename, "w") as f:
-            f.write("## %s\n" % reader_name)
+        matrix_filename = "docs/%s.md" % reader_pages[reader_name]
+        graph_filename = "docs/%s_graph.md" % reader_pages[reader_name]
 
-            f.write("%s\n" % READER_DESCRIPTION)
+        for filename in [matrix_filename, graph_filename]:
+                
+            with open(filename, "w") as f:
 
-            if connectome is not None:
-                from ConnectomeView import ALL_VIEWS
+                matrix = filename==matrix_filename
 
-                indent = "    "
+                f.write("## %s\n" % reader_name)
+                f.write("%s\n\n" % READER_DESCRIPTION)
 
-                for view in ALL_VIEWS:
-                    cv = connectome.get_connectome_view(view)
+                f.write("[View as matrix](../%s/index.html) [View as graph](../%s_graph/index.html)\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
 
-                    f.write('=== "%s"\n' % view.name)
 
-                    for sc in view.synclass_sets:
-                        f.write(indent + '=== "%s"\n' % sc)
+                if connectome is not None:
+                    from ConnectomeView import ALL_VIEWS
 
-                        f.write(
-                            get_matrix_markdown(
-                                reader_name, view.name, cv, sc, indent=indent + indent
-                            )
-                        )
+                    indent = "    "
 
-            cell_types = {
-                "Neurons": preferred,
-                "Missing neurons": missing_preferred,
-                "Muscles": muscles,
-                "Other cells": not_in_preferred,
-            }
+                    for view in ALL_VIEWS:
+                        cv = connectome.get_connectome_view(view)
 
-            for t in cell_types:
-                f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
-                if len(cell_types[t]) > 0:
-                    f.write("<details><summary>Full list of %s</summary>\n" % t)
-                    ss = sorted(cell_types[t])
-                    for n in ss:
-                        f.write("%s" % (get_cell_link(n, True)))
-                        if n is not ss[-1]:
-                            f.write(" | ")
+                        f.write('=== "%s"\n' % view.name)
 
-                    f.write("\n</details>\n")
+                        for sc in view.synclass_sets:
+                            f.write(indent + '=== "%s"\n' % sc)
 
-        print_("Written page: %s" % filename)
+                            if matrix:
+                                f.write(
+                                    get_matrix_markdown(
+                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                    )
+                                )
+                                
+                            else:
+
+                                f.write(
+                                    get_2d_graph_markdown(
+                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                    )
+                                )
+                                f.write('\n'+indent + '---\n\n')
+                            
+
+                cell_types = {
+                    "Neurons": preferred,
+                    "Missing neurons": missing_preferred,
+                    "Muscles": muscles,
+                    "Other cells": not_in_preferred,
+                }
+
+                for t in cell_types:
+                    f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
+                    if len(cell_types[t]) > 0:
+                        f.write("<details><summary>Full list of %s</summary>\n" % t)
+                        ss = sorted(cell_types[t])
+                        for n in ss:
+                            f.write("%s" % (get_cell_link(n, True)))
+                            if n is not ss[-1]:
+                                f.write(" | ")
+
+                        f.write("\n</details>\n")
+
+            print_("Written page: %s" % filename)
 
     all_data[ref] = [
         len(preferred),
