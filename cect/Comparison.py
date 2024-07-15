@@ -240,7 +240,7 @@ for reader_name, reader in readers.items():
                 f.write("## %s\n" % reader_name)
                 f.write("%s\n\n" % READER_DESCRIPTION)
 
-                f.write("[View as matrix](../%s/index.html) [View as graph](../%s_graph/index.html)\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
+                #f.write("[View as matrix](../%s/index.html) [View as graph](../%s_graph/index.html)\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
 
 
                 if connectome is not None:

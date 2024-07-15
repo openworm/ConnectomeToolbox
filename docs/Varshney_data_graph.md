@@ -1,8 +1,6 @@
 ## Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
-[View as matrix](../Varshney_data/index.html) [View as graph](../Varshney_data_graph/index.html)
-
 === "Full View"
     === "Chemical Exc"
         ```vegalite
