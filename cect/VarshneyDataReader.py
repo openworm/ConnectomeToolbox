@@ -106,19 +106,5 @@ def main():
 
     print(my_instance.summary())
 
-    import sys
-
-    from cect.ConnectomeReader import DEFAULT_COLORMAP
-
-    if not "-nogui" in sys.argv:
-        fig = my_instance.to_plotly_network_fig("Generic_GJ")
-
-        
-        with open("./docs/assets/VarshneyNetwork_GJ.json","w") as f:
-                f.write(fig.to_json())
-
-        fig.show()
-
-
 if __name__ == "__main__":
     main()
