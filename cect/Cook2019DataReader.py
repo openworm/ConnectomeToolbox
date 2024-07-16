@@ -220,16 +220,5 @@ def main():
 
     print(tdr_instance.summary())
 
-    import sys
-
-    from cect.ConnectomeReader import DEFAULT_COLORMAP
-
-    if not "-nogui" in sys.argv:
-        fig1 = tdr_instance.to_plotly_network_fig("Acetylcholine")
-
-        fig1.show()
-
-
-
 if __name__ == "__main__":
     main()
