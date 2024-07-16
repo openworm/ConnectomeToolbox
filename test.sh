@@ -1,6 +1,6 @@
 set -ex
 
-pip install .
+pip install .[docs]
 
 quick_test=0
 
