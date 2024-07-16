@@ -1,198 +1,46 @@
 ## Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
+[View as matrix](../Varshney_data/index.html){ .md-button } [View as graph](../Varshney_data_graph/index.html){ .md-button }
+
 === "Full View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/Varshney_Full View_Chemical_Exc_graph.json"
+        ```
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Inh** in the **Full View** for **Varshney**...
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/Varshney_Full View_Electrical_graph.json"
+        ```
 === "Pharynx View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Exc** in the **Pharynx View** for **Varshney**...
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Inh** in the **Pharynx View** for **Varshney**...
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Electrical** in the **Pharynx View** for **Varshney**...
 === "Social View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/Varshney_Social View_Chemical_Exc_graph.json"
+        ```
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Inh** in the **Social View** for **Varshney**...
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/Varshney_Social View_Electrical_graph.json"
+        ```
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>

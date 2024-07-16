@@ -1,6 +1,8 @@
 ## TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
+[View as matrix](../Test_data/index.html){ .md-button } [View as graph](../Test_data_graph/index.html){ .md-button }
+
 === "Full View"
     === "Chemical Exc"
 

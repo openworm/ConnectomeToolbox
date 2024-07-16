@@ -123,24 +123,32 @@ def get_cell_link(cell_name, html=False):
 
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
 
-    return indent+'''```vegalite
-    {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple....",
-    "data": {
-        "values": [
-        {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-        {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-        {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-        ]
-    },
-    "mark": "bar",
-    "encoding": {
-        "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-        "y": {"field": "b", "type": "quantitative"}
-    }
-    }
-```'''.replace('\n','\n'+indent)
+    fig = connectome.to_plotly_graph_fig(synclass)
+
+    asset_filename = "assets/%s_%s_%s_graph.json" % (
+        reader_name,
+        view_name,
+        synclass.replace(" ", "_"),
+    )
+
+    with open("./docs/%s" % asset_filename, "w") as asset_file:
+        asset_file.write(fig.to_json())
+
+    if np.sum(connectome.connections[synclass]) == 0:
+        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
+            indent,
+            synclass,
+            view_name,
+            reader_name,
+        )
+
+    return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
+        indent,
+        indent,
+        asset_filename,
+        indent,
+    )
+
 
 def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="    "):
     fig = connectome.to_plotly_matrix_fig(synclass)
@@ -240,8 +248,7 @@ for reader_name, reader in readers.items():
                 f.write("## %s\n" % reader_name)
                 f.write("%s\n\n" % READER_DESCRIPTION)
 
-                #f.write("[View as matrix](../%s/index.html) [View as graph](../%s_graph/index.html)\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
-
+                f.write("[View as matrix](../%s/index.html){ .md-button } [View as graph](../%s_graph/index.html){ .md-button }\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
 
                 if connectome is not None:
                     from ConnectomeView import ALL_VIEWS
@@ -270,7 +277,6 @@ for reader_name, reader in readers.items():
                                         reader_name, view.name, cv, sc, indent=indent + indent
                                     )
                                 )
-                                f.write('\n'+indent + '---\n\n')
                             
 
                 cell_types = {

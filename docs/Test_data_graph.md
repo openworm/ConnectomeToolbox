@@ -1,198 +1,46 @@
 ## TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
+[View as matrix](../Test_data/index.html){ .md-button } [View as graph](../Test_data_graph/index.html){ .md-button }
+
 === "Full View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/TestData_Full View_Chemical_Exc_graph.json"
+        ```
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/TestData_Full View_Chemical_Inh_graph.json"
+        ```
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/TestData_Full View_Electrical_graph.json"
+        ```
 === "Pharynx View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Exc** in the **Pharynx View** for **TestData**...
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Inh** in the **Pharynx View** for **TestData**...
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Electrical** in the **Pharynx View** for **TestData**...
 === "Social View"
     === "Chemical Exc"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Exc** in the **Social View** for **TestData**...
     === "Chemical Inh"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        No connections of type **Chemical Inh** in the **Social View** for **TestData**...
     === "Electrical"
-        ```vegalite
-            {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "description": "A simple....",
-            "data": {
-                "values": [
-                {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-                {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-                {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
-                ]
-            },
-            "mark": "bar",
-            "encoding": {
-                "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-                "y": {"field": "b", "type": "quantitative"}
-            }
-            }
-        ```
-    ---
 
+        ```plotly
+        ---8<-- "./assets/TestData_Social View_Electrical_graph.json"
+        ```
 
 ### Neurons (12)
 <details><summary>Full list of Neurons</summary>
