@@ -21,3 +21,4 @@ _Donna G. Albertson and J. N. Thompson_ <br>  _[Phil. Trans. R. Soc. Lond. B2752
 
         ```plotly
         ---8<-- "./assets/White_whole_Pharynx View_Electrical.json"
+        ```
