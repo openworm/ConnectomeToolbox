@@ -1,6 +1,8 @@
 ## WormNeuroAtlas
 Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
+[View as matrix](../WormNeuroAtlas_data/index.html){ .md-button } [View as graph](../WormNeuroAtlas_data_graph/index.html){ .md-button }
+
 === "Full View"
     === "Chemical Exc"
 
