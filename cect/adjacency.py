@@ -3,6 +3,8 @@ from cect.VarshneyDataReader import read_data
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
+from cect.ConnectomeDataset import ConnectomeDataset
+
 
 def convert_to_array(cells,neuron_conns):
     num1 = []
@@ -53,4 +55,6 @@ def convert_to_array(cells,neuron_conns):
 if __name__ == "__main__":
     cells, neuron_conns = read_data(include_nonconnected_cells=True)
     convert_to_array(cells, neuron_conns)
+    ConnectomeDataset.to_plotly_network_fig("GABA")
+    
 

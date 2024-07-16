@@ -97,12 +97,27 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = my_instance.read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
+
+    print(my_instance.summary())
+
+    import sys
+
+    from cect.ConnectomeReader import DEFAULT_COLORMAP
+
+    if not "-nogui" in sys.argv:
+        fig = my_instance.to_plotly_network_fig("Generic_GJ")
+
+        
+        with open("./docs/assets/VarshneyNetwork_GJ.json","w") as f:
+                f.write(fig.to_json())
+
+        fig.show()
 
 
 if __name__ == "__main__":

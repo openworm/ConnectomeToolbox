@@ -38,6 +38,22 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
         ```plotly
         ---8<-- "./assets/Varshney_Social View_Electrical.json"
         ```
+=== "Network View"
+    === "Chemical Exc"
+
+        ```plotly
+        ---8<-- "./assets/VarshneyNetwork_Chemical_Exc.json"
+        ```
+    === "Chemical Inh"
+
+        No connections of type **Chemical Inh** in the **Network View** for **Varshney**...
+
+    === "Electrical"
+     
+        ```plotly
+        ---8<-- "./assets/VarshneyNetwork_GJ.json"
+        ```
+
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>
