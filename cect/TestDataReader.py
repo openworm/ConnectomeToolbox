@@ -88,7 +88,6 @@ def main():
         fig = tdr_instance.to_plotly_matrix_fig(
             "Acetylcholine", color_continuous_scale=DEFAULT_COLORMAP
         )
-
         fig.show()
 
 

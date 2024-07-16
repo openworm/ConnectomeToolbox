@@ -8,4 +8,6 @@ Volume 42, Issue 9,
 ISSN 2211-1247](https://doi.org/10.1016/j.celrep.2023.113058_)_
 <br> 
 
+**Summary**
 - They report a genome-wide peptide-GPCR interaction map in _C.elegans_
+- Used as part of the Python package WormNeuroAtlas to generate the functional atlas.
