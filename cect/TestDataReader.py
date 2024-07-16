@@ -89,7 +89,7 @@ def main():
             "Acetylcholine", color_continuous_scale=DEFAULT_COLORMAP
         )
 
-        fig1 = tdr_instance.to_plotly_network_fig("Acetylcholine")
+        fig1 = tdr_instance.to_plotly_graph_fig("Acetylcholine")
 
         fig.show()
         fig1.show()

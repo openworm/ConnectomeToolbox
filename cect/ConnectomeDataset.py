@@ -115,22 +115,6 @@ class ConnectomeDataset:
         return info
 
 
-    def to_plotly_graph_fig(self, synclass, color_continuous_scale=DEFAULT_COLORMAP):
-        
-        import plotly.express as px
-
-        conn_array = self.connections[synclass]
-
-        fig = px.imshow(
-            conn_array,
-            labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
-            x=self.nodes,
-            y=self.nodes,
-            color_continuous_scale=color_continuous_scale,
-        )
-
-        return fig
-
     def to_plotly_matrix_fig(self, synclass, color_continuous_scale=DEFAULT_COLORMAP):
         import plotly.express as px
 
@@ -146,7 +130,7 @@ class ConnectomeDataset:
 
         return fig
     
-    def to_plotly_network_fig(self, synclass):
+    def to_plotly_graph_fig(self, synclass):
         conn_array = self.connections[synclass]
         import plotly.graph_objects as go
         import networkx as nx
