@@ -1,5 +1,8 @@
 ## Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
+
+[View as matrix](../Varshney_data/index.html){ .md-button } [View as graph](../Varshney_data_graph/index.html){ .md-button }
+
 === "Full View"
     === "Chemical Exc"
 

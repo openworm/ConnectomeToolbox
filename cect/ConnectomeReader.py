@@ -412,6 +412,29 @@ PREFERRED_MUSCLE_NAMES = [
     "MVR23",
     "MVR24",
     "MVULVA",
+    "pm1",
+    "pm2D",
+    "pm2VL",
+    "pm2VR",
+    "pm3VL",
+    "pm3VR",
+    "pm4",
+    "pm5D",
+    "pm5VR",
+    "pm5VL",
+    "pm6",
+    "pm6D",
+    "pm6VR",
+    "pm6VL",
+    "pm7D",
+    "pm7VL",
+    "pm7VR",
+    "pm8",
+    "mc1",
+    "mc2dl",
+    "mc2dr",
+    "mc2V",
+    "mc3V",
 ]
 
 PHARYNX_CELLS = [
@@ -454,7 +477,7 @@ def convert_to_preferred_muscle_name(muscle):
 
 
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
+    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM","mc"]
 
 
 def get_body_wall_muscle_prefixes():

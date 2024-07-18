@@ -45,6 +45,8 @@ def get_synclass(cell, syntype):
             return "GABA"
         return "Acetylcholine"
 
+def get_instance():
+    return Cook2019DataReader()
 
 class Cook2019DataReader(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
@@ -203,17 +205,20 @@ class Cook2019DataReader(ConnectomeDataset):
 
         return neurons, muscles, conns
 
+tdr_instance = get_instance()
+read_data = tdr_instance.read_data
+read_muscle_data = tdr_instance.read_muscle_data
+
 
 def main():
-    cdr = Cook2019DataReader()
-    read_data = cdr.read_data
-    read_muscle_data = cdr.read_muscle_data
-
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = tdr_instance.read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
+    print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
+
+    print(tdr_instance.summary())
 
 if __name__ == "__main__":
     main()

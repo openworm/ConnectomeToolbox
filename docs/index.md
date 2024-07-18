@@ -265,6 +265,7 @@ columns 4
 Another view on the data
 
 ```mermaid
+%%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 flowchart TD
     classDef anat fill:#ff6666
     classDef gene fill:#85e085
