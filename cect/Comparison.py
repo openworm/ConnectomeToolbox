@@ -21,6 +21,7 @@ reader_pages = {
     "Witvliet2": "Witvliet2_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
+    "Cook2020":"Cook2020_data",
     "": "_data",
 }
 
@@ -44,6 +45,7 @@ if quick:
         "Varshney": "cect.VarshneyDataReader",
         "White_L4": "cect.White_L4",
         "White_whole": "cect.White_whole",
+        "Cook2020":"cect.Cook2020DataReader",
         "TestData": "cect.TestDataReader",
     }
 else:
@@ -59,6 +61,7 @@ else:
         "Witvliet2": "cect.WitvlietDataReader2",
         "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
         "Cook2019Herm": "cect.Cook2019HermReader",
+        "Cook2020":"cect.Cook2020DataReader",
         "TestData": "cect.TestDataReader",
     }
 

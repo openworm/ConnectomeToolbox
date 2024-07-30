@@ -430,11 +430,6 @@ PREFERRED_MUSCLE_NAMES = [
     "pm7VL",
     "pm7VR",
     "pm8",
-    "mc1",
-    "mc2dl",
-    "mc2dr",
-    "mc2V",
-    "mc3V",
 ]
 
 PHARYNX_CELLS = [

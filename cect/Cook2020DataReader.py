@@ -3,6 +3,9 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
+from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
+
 import os
 
 from cect import print_
@@ -80,10 +83,9 @@ class Cook2020DataReader(ConnectomeDataset):
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in neurons:
-                    neurons.append(pre)
-                if not post in muscles:
-                    muscles.append(post)
+                
+                if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
+                        muscles.append(post)
 
         return neurons, muscles, conns
 
