@@ -471,12 +471,14 @@ def convert_to_preferred_muscle_name(muscle):
         return "BWM"
     elif muscle == "pm3vl":
         return "pm3VL"
+    elif muscle == "pm3vr":
+        return "pm3VR"
     else:
         return muscle + "???"
 
 
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM","mc"]
+    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
 
 
 def get_body_wall_muscle_prefixes():
@@ -554,7 +556,7 @@ def check_neurons(cells):
     not_in_preferred = []
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
     for c in cells:
-        if not c in PREFERRED_NEURON_NAMES:
+        if not c in PREFERRED_NEURON_NAMES and not is_muscle(c):
             not_in_preferred.append(c)
         else:
             preferred.append(c)
