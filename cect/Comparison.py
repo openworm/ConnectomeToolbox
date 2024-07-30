@@ -44,8 +44,8 @@ readers = {
     "Varshney": ["cect.VarshneyDataReader", "Varshney_2011"],
     "White_L4": ["cect.White_L4", "White_1986"],
     "White_whole": ["cect.White_whole", "White_1986"],
-    "TestData": ["cect.TestDataReader", None]
-    "Cook2020" = ["cect.Cook2020Reader", "Cook_2020"]
+    "TestData": ["cect.TestDataReader", None],
+    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"]
 }
 if not quick:
     readers["White_A"] = ["cect.White_A", "White_1986"]
