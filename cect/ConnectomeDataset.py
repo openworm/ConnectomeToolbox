@@ -136,9 +136,7 @@ class ConnectomeDataset:
         import networkx as nx
 
         G = nx.Graph(conn_array)
-        pos = nx.spring_layout(G)
-
-    
+        pos = nx.spring_layout(G, seed=1)
         node_x = [pos[i][0] for i in G.nodes()]
         node_y = [pos[i][1] for i in G.nodes()]
 
