@@ -1,7 +1,7 @@
 ## Witvliet1
 Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
-[View as matrix](../Witvliet1_data/index.html){ .md-button } [View as graph](../Witvliet1_data_graph/index.html){ .md-button }
+[View as matrix](Witvliet1_data.md){ .md-button } [View as graph](Witvliet1_data_graph.md){ .md-button }
 
 === "Full View"
     === "Chemical Exc"

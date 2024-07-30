@@ -1,7 +1,7 @@
 ## White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
-[View as matrix](../White_whole_data/index.html){ .md-button } [View as graph](../White_whole_data_graph/index.html){ .md-button }
+[View as matrix](White_whole_data.md){ .md-button } [View as graph](White_whole_data_graph.md){ .md-button }
 
 === "Full View"
     === "Chemical Exc"

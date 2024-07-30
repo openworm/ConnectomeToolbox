@@ -3,9 +3,10 @@ _Witvliet, D., Mulcahy, B., Mitchell, J.K. et al_<br>
 *[Nature 596, 257–261](https://doi.org/10.1371/journal.pcbi.1001066)*<br>
 _Published: 4 August 2021_
 
-See [www.nemanode.org](www.nemanode.org)
 
-[Datasets](datasets/neurons/witvliet_2020)
+_**Datasets: [Witvliet1](Witvliet1_data.md) - [Witvliet2](Witvliet2_data.md)**_
+
+See also [www.nemanode.org](https://www.nemanode.org)
 
 **Data**
 

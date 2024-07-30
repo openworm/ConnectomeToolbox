@@ -3,6 +3,7 @@ _Lav R. Varshney, Beth L. Chen, Eric Paniagua, David H. Hall, Dmitri B. Chklovsk
 *[PLOS Computational Biology 7(2): e1001066](https://doi.org/10.1371/journal.pcbi.1001066)*<br>
 _Published: February 3, 2011_
 
+_**Dataset: [Varshney_2011](Varshney_data.md)**_
 
 **Data Acquisition**
 

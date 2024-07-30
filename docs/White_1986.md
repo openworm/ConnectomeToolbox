@@ -5,15 +5,11 @@
 *[Phil. Trans. R. Soc. Lond. B3141–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056)*<br>
 *Published 12 November 1986*
 
+_**Datasets: [White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)**_
+
 **Type of Connectomics Data**
 
 - Anatomical connectome: chemical synapses; electrical gap junctions
-
-| Datasets | Readers             | 
-| --------           | ------       |
-| [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_A.csv) | [White_A](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_A.py)  |
-| [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_L4.csv) | [White_L4](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_L4.py) |
-| [White_Whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/data/aconnectome_white_1986_whole.csv) |[White_whole](https://github.com/yasinthanvickneswaran/ConnectomeToolbox/blob/main/cect/White_whole.py) | 
 
 
 **Summary**

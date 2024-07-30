@@ -1,7 +1,7 @@
 ## Cook2019Herm
 Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
-[View as matrix](../Cook2019Herm_data/index.html){ .md-button } [View as graph](../Cook2019Herm_data_graph/index.html){ .md-button }
+[View as matrix](Cook2019Herm_data.md){ .md-button } [View as graph](Cook2019Herm_data_graph.md){ .md-button }
 
 === "Full View"
     === "Chemical Exc"
