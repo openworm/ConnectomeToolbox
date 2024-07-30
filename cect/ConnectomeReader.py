@@ -416,13 +416,15 @@ PREFERRED_MUSCLE_NAMES = [
     "pm2D",
     "pm2VL",
     "pm2VR",
+    "pm3D",
     "pm3VL",
     "pm3VR",
-    "pm4",
+    "pm4D",
+    "pm4VR",
+    "pm4VL",
     "pm5D",
     "pm5VR",
     "pm5VL",
-    "pm6",
     "pm6D",
     "pm6VR",
     "pm6VL",
@@ -467,6 +469,8 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDR%s" % muscle[6:]
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
+    elif muscle == "pm3vl":
+        return "pm3VL"
     else:
         return muscle + "???"
 
