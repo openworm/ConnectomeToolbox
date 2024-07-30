@@ -1,4 +1,6 @@
 ## Varshney
+[Source publication of dataset](Varshney_2011.md)
+
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [View as matrix](Varshney_data.md){ .md-button } [View as graph](Varshney_data_graph.md){ .md-button }

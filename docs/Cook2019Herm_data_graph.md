@@ -1,4 +1,6 @@
 ## Cook2019Herm
+[Source publication of dataset](Cook_2019.md)
+
 Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
 [View as matrix](Cook2019Herm_data.md){ .md-button } [View as graph](Cook2019Herm_data_graph.md){ .md-button }

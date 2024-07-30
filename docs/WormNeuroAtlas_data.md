@@ -1,4 +1,6 @@
 ## WormNeuroAtlas
+[Source publication of dataset](Randi_2023.md)
+
 Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
 [View as matrix](WormNeuroAtlas_data.md){ .md-button } [View as graph](WormNeuroAtlas_data_graph.md){ .md-button }

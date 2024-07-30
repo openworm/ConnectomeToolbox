@@ -1,4 +1,6 @@
 ## Witvliet1
+[Source publication of dataset](Witvliet_2021.md)
+
 Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
 [View as matrix](Witvliet1_data.md){ .md-button } [View as graph](Witvliet1_data_graph.md){ .md-button }
