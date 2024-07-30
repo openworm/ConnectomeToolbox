@@ -86,6 +86,8 @@ class Cook2020DataReader(ConnectomeDataset):
                 
                 if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
+                if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                        neurons.append(pre)
 
         return neurons, muscles, conns
 
