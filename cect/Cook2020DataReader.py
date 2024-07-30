@@ -15,7 +15,7 @@ READER_DESCRIPTION = (
 )
 
 
-class CookDataReader(ConnectomeDataset):
+class Cook2020DataReader(ConnectomeDataset):
     cells = []
     conns = []
 
@@ -39,30 +39,24 @@ class CookDataReader(ConnectomeDataset):
                 reader = csv.DictReader(f)
                 print_("Opened file: " + filename)
 
-                known_nonconnected_cells = ["CANL", "CANR"]
+                for row in reader:
+                    pre = str.strip(row["Source"])
+                    post = str.strip(row["Target"])
+                    num = float(row["Weight"])
+                    syntype = (str.strip(row["Type"]))
+                    synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
-            for row in reader:
-                pre = str.strip(row["Source"])
-                post = str.strip(row["Target"])
-                num = float(row["Weight"])
-                syntype = (str.strip(row["Type"]))
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
-
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
-
-            if include_nonconnected_cells:
-                for c in known_nonconnected_cells:
-                    if c not in self.cells:
-                        self.cells.append(c)
-
-        return self.cells, self.conns
+                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    if pre not in self.cells:
+                        self.cells.append(pre)
+                    if post not in self.cells:
+                        self.cells.append(post)
 
 
-    def read_muscle_data():
+            return self.cells, self.conns
+
+
+    def read_muscle_data(self):
         """
         Returns:
             neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
@@ -93,11 +87,18 @@ class CookDataReader(ConnectomeDataset):
 
         return neurons, muscles, conns
 
+def get_instance():
+    return Cook2020DataReader()
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = my_instance.read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
