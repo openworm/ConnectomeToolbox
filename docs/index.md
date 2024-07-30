@@ -335,28 +335,28 @@ flowchart TD
 
 ## Datasets
 
-| Papers                                                     | Features      | Datasets      | Readers |
-| -------------                                              | -----         | -----         | ---- |
-| [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |  N/A |
-| [White et al. 1986](White_1986.md)     | Anatomical |[N2U.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/wormwiring_N2U.txt)|  N/A |
-| [Durbin 1987](Durbin_1987.md)    | Anatomical |[Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)| N/A |
-| [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |  N/A |
-| [Altun et al. 2009](Altun_2009.md)   | Gene Expression |[Db.dump](datasets/neurons/Modified_celegans_db_dump.csv)| [OpenWormReader](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/OpenWormReader.py) |
-| [Varshney et al. 2011](Varshney_2011.md)  | Anatomical | [NeuronsConnect](datasets/neurons/NeuronConnectFormatted(1).xlsx)   | [SpreadsheetDataReader](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/SpreadsheetDataReader.py) |
-| [Pereira et al. 2015](Pereira_2015.md)  | Extrasynaptic |[Cholinergic neurons](https://doi.org/10.7554/eLife.12432.003) [NT_Map_herm](https://doi.org/10.7554/eLife.12432.009) [WormWiring](https://doi.org/10.7554/eLife.12432.010) [male_cholinergic](https://doi.org/10.7554/eLife.12432.016) [transcriptional_regulators](https://doi.org/10.7554/eLife.12432.019)| N/A |
-| [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | [csv](datasets/neurons/Bentley_et_al_2016_expression.csv) | N/A |
-| [Cook et al. 2019](Cook_2019.md)          | Anatomical |[herm_full_edgelist.csv](datasets/neurons/herm_full_edgelist.csv) | [UpdatedSpreadsheetDataReader](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/UpdatedSpreadsheetDataReader.py) [UpdatedSpreadsheetDataReader2](https://github.com/yasinthanvickneswaran/c302/blob/7c7fc016c73c500567c94414ee0b7f7a4829084f/c302/UpdatedSpreadsheetDataReader2.py) |
-| [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx) | N/A  |
-| [Cook et al. 2020](Cook_2020.md)    | Anatomical | [data]() | N/A  |
-| [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) [parsed](https://github.com/cabrittin/parsetrakem2)| N/A  |
-| [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | [physical.csv](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/physical_contact) [synapses.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/synapses) [skeletons.json](https://github.com/dwitvliet/nature2021/tree/0646af9d25896ae660f97d462eab2d67282f5625/data/skeletons) | N/A |
-| [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
-| [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | [data](https://zenodo.org/records/3906530) | N/A  |
-| [Beets et al. 2023](Beets_2023.md)    | Gene Expression | [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code) | N/A  |
-| [Dag et al. 2023](Dag_2023.md)    | Functional | N/A | N/A  |
-| [Atanas et al. 2023](Atanas_2023.md)    | Functional | [data](https://www.wormwideweb.org/dataset.html) | N/A  |
-| [Randi et al. 2023](Randi_2023.md)    | Functional | [data]() | N/A  |
-| [Ripoll-Sanchez et al. 2023](Ripoll_2023.md)    | Functional | [data]() | N/A  |
+| Papers                                                     | Features      | Datasets |
+| -------------                                              | -----         | ---- |
+| [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |
+| [White et al. 1986](White_1986.md)     | Anatomical | **[White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)** |
+| [Durbin 1987](Durbin_1987.md)    | Anatomical | *Work in progress: [Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)* |
+| [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |
+| [Altun et al. 2009](Altun_2009.md)   | Gene Expression |  *Work in progress: [data](https://docs.google.com/spreadsheets/d/1Jc9pOJAce8DdcgkTgkUXafhsBQdrer2Y47zrHsxlqWg/edit?gid=283505544#gid=283505544)* |
+| [Varshney et al. 2011](Varshney_2011.md)  | Anatomical | **[Varshney_2011](Varshney_data.md)** |
+| [Pereira et al. 2015](Pereira_2015.md)  | Extrasynaptic | *Work in progress: [Cholinergic neurons](https://doi.org/10.7554/eLife.12432.003) - [NT_Map_herm](https://doi.org/10.7554/eLife.12432.009) - [WormWiring](https://doi.org/10.7554/eLife.12432.010) - [male_cholinergic](https://doi.org/10.7554/eLife.12432.016) - [transcriptional_regulators](https://doi.org/10.7554/eLife.12432.019)* |
+| [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | *Work in progress: [csv](https://github.com/openworm/c302/blob/master/c302/data/Bentley_et_al_2016_expression.csv)* |
+| [Cook et al. 2019](Cook_2019.md)          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** |
+| [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
+| [Cook et al. 2020](Cook_2020.md)    | Anatomical | *Work in progress: [???](??)*  |
+| [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | *Work in progress: [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) - [parsed](https://github.com/cabrittin/parsetrakem2)*  |
+| [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | **[Witvliet1](Witvliet1_data.md) - [Witvliet2](Witvliet2_data.md)**|
+| [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
+| [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | *Work in progress: [data](https://zenodo.org/records/3906530)* |
+| [Beets et al. 2023](Beets_2023.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
+| [Dag et al. 2023](Dag_2023.md)    | Functional | N/A  |
+| [Atanas et al. 2023](Atanas_2023.md)    | Functional | *Work in progress: [data](https://www.wormwideweb.org/dataset.html)* |
+| [Randi et al. 2023](Randi_2023.md)    | Functional | **[WormNeuroAtlas](WormNeuroAtlas_data.md)**  |
+| [Ripoll-Sanchez et al. 2023](Ripoll_2023.md)    | Functional | *Work in progress: [data??](??)*  |
 
 
 
