@@ -1,7 +1,9 @@
 ## White_L4
+[Source publication of dataset](White_1986.md)
+
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
-[View as matrix](../White_L4_data/index.html){ .md-button } [View as graph](../White_L4_data_graph/index.html){ .md-button }
+[View as matrix](White_L4_data.md){ .md-button } [View as graph](White_L4_data_graph.md){ .md-button }
 
 === "Full View"
     === "Chemical Exc"

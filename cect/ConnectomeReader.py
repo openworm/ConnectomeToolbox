@@ -556,8 +556,9 @@ def check_neurons(cells):
     not_in_preferred = []
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
     for c in cells:
-        if not c in PREFERRED_NEURON_NAMES and not is_muscle(c):
-            not_in_preferred.append(c)
+        if not c in PREFERRED_NEURON_NAMES:
+            if not is_muscle(c):
+                not_in_preferred.append(c)
         else:
             preferred.append(c)
         if c in missing_preferred:

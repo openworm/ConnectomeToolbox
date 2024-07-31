@@ -22,7 +22,6 @@ reader_pages = {
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2020":"Cook2020_data",
-    "": "_data",
 }
 
 all_data[""] = [
@@ -37,34 +36,23 @@ all_data[""] = [
     "N->M neurotrans.",
 ]
 
-if quick:
-    readers = {
-        "SSData": "cect.SpreadsheetDataReader",
-        "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
-        "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
-        "Varshney": "cect.VarshneyDataReader",
-        "White_L4": "cect.White_L4",
-        "White_whole": "cect.White_whole",
-        "Cook2020":"cect.Cook2020DataReader",
-        "TestData": "cect.TestDataReader",
-    }
-else:
-    readers = {
-        "SSData": "cect.SpreadsheetDataReader",
-        "UpdSSData": "cect.UpdatedSpreadsheetDataReader",
-        "UpdSSData2": "cect.UpdatedSpreadsheetDataReader2",
-        "White_A": "cect.White_A",
-        "White_L4": "cect.White_L4",
-        "White_whole": "cect.White_whole",
-        "Varshney": "cect.VarshneyDataReader",
-        "Witvliet1": "cect.WitvlietDataReader1",
-        "Witvliet2": "cect.WitvlietDataReader2",
-        "WormNeuroAtlas": "cect.WormNeuroAtlasReader",
-        "Cook2019Herm": "cect.Cook2019HermReader",
-        "Cook2020":"cect.Cook2020DataReader",
-        "TestData": "cect.TestDataReader",
-    }
 
+readers = {
+    "SSData": ["cect.SpreadsheetDataReader", None],
+    "UpdSSData": ["cect.UpdatedSpreadsheetDataReader", None],
+    "UpdSSData2": ["cect.UpdatedSpreadsheetDataReader2", None],
+    "Varshney": ["cect.VarshneyDataReader", "Varshney_2011"],
+    "White_L4": ["cect.White_L4", "White_1986"],
+    "White_whole": ["cect.White_whole", "White_1986"],
+    "TestData": ["cect.TestDataReader", None],
+    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"]
+}
+if not quick:
+    readers["White_A"] = ["cect.White_A", "White_1986"]
+    readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
+    readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
+    readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+    readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
 def shorten_neurotransmitter(nt):
     return (
@@ -181,7 +169,11 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
     )
 
 
-for reader_name, reader in readers.items():
+for reader_name, reader_info in readers.items():
+
+    reader = reader_info[0]
+    decription_page = reader_info[1] if len(reader_info)>1 else None
+
     print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
 
     exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
@@ -249,9 +241,13 @@ for reader_name, reader in readers.items():
                 matrix = filename==matrix_filename
 
                 f.write("## %s\n" % reader_name)
+                if decription_page is not None:
+                    
+                    f.write("[Source publication of dataset](%s.md)\n\n" % decription_page)
+                    
                 f.write("%s\n\n" % READER_DESCRIPTION)
 
-                f.write("[View as matrix](../%s/index.html){ .md-button } [View as graph](../%s_graph/index.html){ .md-button }\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
+                f.write("[View as matrix](%s.md){ .md-button } [View as graph](%s_graph.md){ .md-button }\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
 
                 if connectome is not None:
                     from ConnectomeView import ALL_VIEWS
