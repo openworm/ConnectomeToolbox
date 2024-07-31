@@ -65,7 +65,7 @@ Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivi
 <a href="https://www.wormatlas.org/neurons/Individual Neurons/BWMframeset.html">BWM</a>
 </details>
 
-### Other cells (8)
+### Other cells (6)
 <details><summary>Full list of Other cells</summary>
-<a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/pmframeset.html">pm1</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/pmframeset.html">pm4</a>
+<a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVR</a>
 </details>

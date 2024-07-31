@@ -21,6 +21,7 @@ reader_pages = {
     "Witvliet2": "Witvliet2_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
+    "Cook2020":"Cook2020_data",
 }
 
 all_data[""] = [
@@ -43,7 +44,8 @@ readers = {
     "Varshney": ["cect.VarshneyDataReader", "Varshney_2011"],
     "White_L4": ["cect.White_L4", "White_1986"],
     "White_whole": ["cect.White_whole", "White_1986"],
-    "TestData": ["cect.TestDataReader", None]
+    "TestData": ["cect.TestDataReader", None],
+    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"]
 }
 if not quick:
     readers["White_A"] = ["cect.White_A", "White_1986"]
