@@ -3,6 +3,10 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
+from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
+from cect.ConnectomeReader import convert_to_preferred_muscle_name
+
 import os
 
 from cect import print_
@@ -15,7 +19,7 @@ READER_DESCRIPTION = (
 )
 
 
-class CookDataReader(ConnectomeDataset):
+class Cook2020DataReader(ConnectomeDataset):
     cells = []
     conns = []
 
@@ -39,30 +43,24 @@ class CookDataReader(ConnectomeDataset):
                 reader = csv.DictReader(f)
                 print_("Opened file: " + filename)
 
-                known_nonconnected_cells = ["CANL", "CANR"]
+                for row in reader:
+                    pre = str.strip(row["Source"])
+                    post = str.strip(row["Target"])
+                    num = float(row["Weight"])
+                    syntype = (str.strip(row["Type"]))
+                    synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
-            for row in reader:
-                pre = str.strip(row["Source"])
-                post = str.strip(row["Target"])
-                num = float(row["Weight"])
-                syntype = (str.strip(row["Type"]))
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
-
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
-
-            if include_nonconnected_cells:
-                for c in known_nonconnected_cells:
-                    if c not in self.cells:
-                        self.cells.append(c)
-
-        return self.cells, self.conns
+                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    if pre not in self.cells:
+                        self.cells.append(pre)
+                    if post not in self.cells:
+                        self.cells.append(post)
 
 
-    def read_muscle_data():
+            return self.cells, self.conns
+
+
+    def read_muscle_data(self):
         """
         Returns:
             neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
@@ -86,18 +84,27 @@ class CookDataReader(ConnectomeDataset):
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in neurons:
-                    neurons.append(pre)
-                if not post in muscles:
-                    muscles.append(post)
+                
+                if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
+                        convert_to_preferred_muscle_name("%s"%muscles)
+                        muscles.append(post)
+                if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                        neurons.append(pre)
 
         return neurons, muscles, conns
 
+def get_instance():
+    return Cook2020DataReader()
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = my_instance.read_data(include_nonconnected_cells=True)
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 

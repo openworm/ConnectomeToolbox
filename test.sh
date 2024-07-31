@@ -14,7 +14,8 @@ python -m cect.SpreadsheetDataReader
 python -m cect.UpdatedSpreadsheetDataReader                                                                                                                                                                      
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
 #python -m cect.OpenWormReader                                                                                                                                                            
-python -m cect.VarshneyDataReader       
+python -m cect.VarshneyDataReader
+python -m cect.Cook2020DataReader       
 python -m cect.White_whole   -nogui                                                                                                                                              
 python -m cect.TestDataReader -nogui                                                                                                                                         
 python -m cect.ConnectomeView

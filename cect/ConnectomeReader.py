@@ -416,13 +416,15 @@ PREFERRED_MUSCLE_NAMES = [
     "pm2D",
     "pm2VL",
     "pm2VR",
+    "pm3D",
     "pm3VL",
     "pm3VR",
-    "pm4",
+    "pm4D",
+    "pm4VR",
+    "pm4VL",
     "pm5D",
     "pm5VR",
     "pm5VL",
-    "pm6",
     "pm6D",
     "pm6VR",
     "pm6VL",
@@ -430,11 +432,6 @@ PREFERRED_MUSCLE_NAMES = [
     "pm7VL",
     "pm7VR",
     "pm8",
-    "mc1",
-    "mc2dl",
-    "mc2dr",
-    "mc2V",
-    "mc3V",
 ]
 
 PHARYNX_CELLS = [
@@ -472,12 +469,16 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDR%s" % muscle[6:]
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
+    elif muscle == "pm3vl":
+        return "pm3VL"
+    elif muscle == "pm3vr":
+        return "pm3VR"
     else:
         return muscle + "???"
 
 
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM","mc"]
+    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
 
 
 def get_body_wall_muscle_prefixes():
@@ -556,7 +557,8 @@ def check_neurons(cells):
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
     for c in cells:
         if not c in PREFERRED_NEURON_NAMES:
-            not_in_preferred.append(c)
+            if not is_muscle(c):
+                not_in_preferred.append(c)
         else:
             preferred.append(c)
         if c in missing_preferred:
