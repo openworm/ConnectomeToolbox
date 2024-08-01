@@ -5,6 +5,7 @@ from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import numpy as np
 
+
 class ConnectomeDataset:
     DEFAULT_DTYPE = np.float64
 
@@ -114,7 +115,6 @@ class ConnectomeDataset:
             )
         return info
 
-
     def to_plotly_matrix_fig(self, synclass, color_continuous_scale=DEFAULT_COLORMAP):
         import plotly.express as px
 
@@ -129,7 +129,7 @@ class ConnectomeDataset:
         )
 
         return fig
-    
+
     def to_plotly_graph_fig(self, synclass):
         conn_array = self.connections[synclass]
         import plotly.graph_objects as go
@@ -142,7 +142,7 @@ class ConnectomeDataset:
 
         edge_x = []
         edge_y = []
-        
+
         for edge in G.edges():
             x0, y0 = pos[edge[0]]
             x1, y1 = pos[edge[1]]
@@ -152,15 +152,17 @@ class ConnectomeDataset:
             edge_y.append(y0)
             edge_y.append(y1)
             edge_y.append(None)
-            
+
         # Add nodes to the figure
         edge_trace = go.Scatter(
-            x=edge_x, y=edge_y,
-            mode='lines',
+            x=edge_x,
+            y=edge_y,
+            mode="lines",
             text=self.nodes,
-            line=dict(color='red', width=1),
-            hoverinfo="none")
-        
+            line=dict(color="red", width=1),
+            hoverinfo="none",
+        )
+
         node_adjacencies = []
         node_text = []
         for node, adjacencies in enumerate(G.adjacency()):
@@ -168,43 +170,46 @@ class ConnectomeDataset:
 
         for i, node_value in enumerate(self.nodes):
             num_connections = node_adjacencies[i]
-            node_text.append(f"{node_value}<br>Number of connections: {num_connections}") 
+            node_text.append(
+                f"{node_value}<br>Number of connections: {num_connections}"
+            )
 
-        node_trace = go.Scatter(x=node_x, y=node_y,
-                         mode='markers',
-                         text=self.nodes,
-                         marker=dict(
-                            showscale=True,
-                            colorscale='YlGnBu',
-                            reversescale=True,
-                            color=[],
-                            size=10,
-                            colorbar=dict(
-                                thickness=15,
-                                title='Node Connections',
-                                xanchor='left',
-                                titleside='right'
-                            ),
-                            line_width=2),
-                         hoverinfo="text",
-                         )
-    
+        node_trace = go.Scatter(
+            x=node_x,
+            y=node_y,
+            mode="markers",
+            text=self.nodes,
+            marker=dict(
+                showscale=True,
+                colorscale="YlGnBu",
+                reversescale=True,
+                color=[],
+                size=10,
+                colorbar=dict(
+                    thickness=15,
+                    title="Node Connections",
+                    xanchor="left",
+                    titleside="right",
+                ),
+                line_width=2,
+            ),
+            hoverinfo="text",
+        )
+
         node_trace.marker.color = node_adjacencies
         node_trace.text = node_text
-      
 
-        fig = go.Figure(data=[edge_trace, node_trace],
-                        layout=go.Layout(
-                            showlegend=False,
-                            hovermode="closest",
-                            margin=dict(b=20,l=5,r=5,t=40),
-                            xaxis=dict(showgrid=False, zeroline=False),
-                            yaxis=dict(showgrid=False, zeroline=False),
-                        )
-           
+        fig = go.Figure(
+            data=[edge_trace, node_trace],
+            layout=go.Layout(
+                showlegend=False,
+                hovermode="closest",
+                margin=dict(b=20, l=5, r=5, t=40),
+                xaxis=dict(showgrid=False, zeroline=False),
+                yaxis=dict(showgrid=False, zeroline=False),
+            ),
         )
-        
-        
+
         return fig
 
 

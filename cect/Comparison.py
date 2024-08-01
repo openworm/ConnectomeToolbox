@@ -21,7 +21,7 @@ reader_pages = {
     "Witvliet2": "Witvliet2_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
-    "Cook2020":"Cook2020_data",
+    "Cook2020": "Cook2020_data",
 }
 
 all_data[""] = [
@@ -45,7 +45,7 @@ readers = {
     "White_L4": ["cect.White_L4", "White_1986"],
     "White_whole": ["cect.White_whole", "White_1986"],
     "TestData": ["cect.TestDataReader", None],
-    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"]
+    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
 }
 if not quick:
     readers["White_A"] = ["cect.White_A", "White_1986"]
@@ -53,6 +53,7 @@ if not quick:
     readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
     readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
     readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+
 
 def shorten_neurotransmitter(nt):
     return (
@@ -113,7 +114,6 @@ def get_cell_link(cell_name, html=False):
 
 
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
-
     fig = connectome.to_plotly_graph_fig(synclass)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
@@ -170,9 +170,8 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
 
 
 for reader_name, reader_info in readers.items():
-
     reader = reader_info[0]
-    decription_page = reader_info[1] if len(reader_info)>1 else None
+    decription_page = reader_info[1] if len(reader_info) > 1 else None
 
     print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
 
@@ -230,24 +229,25 @@ for reader_name, reader_info in readers.items():
     )
 
     if reader_name in reader_pages:
-
         matrix_filename = "docs/%s.md" % reader_pages[reader_name]
         graph_filename = "docs/%s_graph.md" % reader_pages[reader_name]
 
         for filename in [matrix_filename, graph_filename]:
-                
             with open(filename, "w") as f:
-
-                matrix = filename==matrix_filename
+                matrix = filename == matrix_filename
 
                 f.write("## %s\n" % reader_name)
                 if decription_page is not None:
-                    
-                    f.write("[Source publication of dataset](%s.md)\n\n" % decription_page)
-                    
+                    f.write(
+                        "[Source publication of dataset](%s.md)\n\n" % decription_page
+                    )
+
                 f.write("%s\n\n" % READER_DESCRIPTION)
 
-                f.write("[View as matrix](%s.md){ .md-button } [View as graph](%s_graph.md){ .md-button }\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
+                f.write(
+                    "[View as matrix](%s.md){ .md-button } [View as graph](%s_graph.md){ .md-button }\n\n"
+                    % (reader_pages[reader_name], reader_pages[reader_name])
+                )
 
                 if connectome is not None:
                     from ConnectomeView import ALL_VIEWS
@@ -265,18 +265,24 @@ for reader_name, reader_info in readers.items():
                             if matrix:
                                 f.write(
                                     get_matrix_markdown(
-                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                        reader_name,
+                                        view.name,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
                                 )
-                                
-                            else:
 
+                            else:
                                 f.write(
                                     get_2d_graph_markdown(
-                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                        reader_name,
+                                        view.name,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
                                 )
-                            
 
                 cell_types = {
                     "Neurons": preferred,

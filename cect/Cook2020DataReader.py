@@ -47,7 +47,7 @@ class Cook2020DataReader(ConnectomeDataset):
                     pre = str.strip(row["Source"])
                     post = str.strip(row["Target"])
                     num = float(row["Weight"])
-                    syntype = (str.strip(row["Type"]))
+                    syntype = str.strip(row["Type"])
                     synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                     self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
@@ -56,9 +56,7 @@ class Cook2020DataReader(ConnectomeDataset):
                     if post not in self.cells:
                         self.cells.append(post)
 
-
             return self.cells, self.conns
-
 
     def read_muscle_data(self):
         """
@@ -80,21 +78,23 @@ class Cook2020DataReader(ConnectomeDataset):
                 pre = str.strip(row["Source"])
                 post = str.strip(row["Target"])
                 num = float(row["Weight"])
-                syntype = (str.strip(row["Type"]))
+                syntype = str.strip(row["Type"])
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                
+
                 if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
-                        convert_to_preferred_muscle_name("%s"%muscles)
-                        muscles.append(post)
+                    convert_to_preferred_muscle_name("%s" % muscles)
+                    muscles.append(post)
                 if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
-                        neurons.append(pre)
+                    neurons.append(pre)
 
         return neurons, muscles, conns
 
+
 def get_instance():
     return Cook2020DataReader()
+
 
 my_instance = get_instance()
 
