@@ -15,7 +15,7 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%scne24932-sup-0004-supinfo4.csv" % spreadsheet_location
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity""" % filename
+    """Data extracted from **%s** for neuronal connectivity""" % filename.split('/')[-1]
 )
 
 

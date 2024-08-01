@@ -1,7 +1,7 @@
 ## Cook2020
 [Source publication of dataset](Cook_2020.md)
 
-Data extracted from **/home/padraig/anaconda2/envs/py310/lib/python3.10/site-packages/cect/data/cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
+Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
 [View as matrix](Cook2020_data.md){ .md-button } [View as graph](Cook2020_data_graph.md){ .md-button }
 
