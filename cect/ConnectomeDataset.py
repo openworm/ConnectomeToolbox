@@ -213,8 +213,8 @@ class ConnectomeDataset:
                 node_colours.append(node_set.color)
 
             node_text.append(
-                f"{node_value}<br>Number of connections: {num_connections}<br>%s"
-                % (node_set)
+                f"{node_value}<br>Number of connections: {num_connections}%s"
+                % ('')
             )
 
         node_trace = go.Scatter(

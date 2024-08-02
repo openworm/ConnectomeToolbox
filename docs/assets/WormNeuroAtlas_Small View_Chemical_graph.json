@@ -35,10 +35,10 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          1,
-          1,
-          1,
-          1
+          "#FF0000",
+          "#FF0000",
+          "#00FF00",
+          "#00FF00"
         ],
         "colorbar": {
           "thickness": 15,
@@ -90,7 +90,7 @@
           "width": 2
         },
         "reversescale": true,
-        "showscale": true,
+        "showscale": false,
         "size": 10
       },
       "mode": "markers",

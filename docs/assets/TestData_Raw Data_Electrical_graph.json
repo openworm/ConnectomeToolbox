@@ -49,18 +49,18 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          1,
-          1,
-          2,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000",
+          "#dd0000"
         ],
         "colorbar": {
           "thickness": 15,
@@ -112,7 +112,7 @@
           "width": 2
         },
         "reversescale": true,
-        "showscale": true,
+        "showscale": false,
         "size": 10
       },
       "mode": "markers",
