@@ -5,6 +5,17 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
 [View as matrix](Cook2020_data.md){ .md-button } [View as graph](Cook2020_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2020_Raw Data_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2020_Raw Data_Electrical.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -43,6 +54,13 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
     === "Electrical"
 
         No connections of type **Electrical** in the **Social View** for **Cook2020**...
+=== "Small View"
+    === "Chemical"
+
+        No connections of type **Chemical** in the **Small View** for **Cook2020**...
+    === "Electrical"
+
+        No connections of type **Electrical** in the **Small View** for **Cook2020**...
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>

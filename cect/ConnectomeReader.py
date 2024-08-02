@@ -314,7 +314,8 @@ PREFERRED_NEURON_NAMES = [
     "VD8",
     "VD9",
 ]
-PREFERRED_MUSCLE_NAMES = [
+
+BODY_WALL_MUSCLE_NAMES = [
     "MANAL",
     "MDL01",
     "MDL02",
@@ -411,7 +412,22 @@ PREFERRED_MUSCLE_NAMES = [
     "MVR22",
     "MVR23",
     "MVR24",
+]
+
+
+VULVAL_MUSCLE_NAMES = [
     "MVULVA",
+    "vm1AL",
+    "vm1PL",
+    "vm1PR",
+    "vm1AR",
+    "vm2AL",
+    "vm2AR",
+    "vm2PL",
+    "vm2PR",
+]
+
+PHARANGEAL_MUSCLE_NAMES = [
     "pm1",
     "pm2D",
     "pm2VL",
@@ -433,6 +449,11 @@ PREFERRED_MUSCLE_NAMES = [
     "pm7VR",
     "pm8",
 ]
+
+
+PREFERRED_MUSCLE_NAMES = (
+    BODY_WALL_MUSCLE_NAMES + PHARANGEAL_MUSCLE_NAMES + VULVAL_MUSCLE_NAMES
+)
 
 PHARYNX_CELLS = [
     "M1",

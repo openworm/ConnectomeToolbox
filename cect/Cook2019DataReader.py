@@ -17,6 +17,7 @@ from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_body_wall_muscle
 from cect.ConnectomeReader import remove_leading_index_zero
+from cect.ConnectomeReader import is_muscle
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -26,7 +27,6 @@ import os
 import numpy as np
 
 from cect import print_
-
 
 HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
@@ -147,12 +147,19 @@ class Cook2019DataReader(ConnectomeDataset):
                     pre = remove_leading_index_zero(
                         self.pre_cells[conn_type][pre_index]
                     )
+                    if is_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
+
                     post = remove_leading_index_zero(
                         self.post_cells[conn_type][post_index]
                     )
+                    if is_muscle(post):
+                        post = convert_to_preferred_muscle_name(post)
 
-                    if is_body_wall_muscle(post):
-                        continue  # post is a BWM so ignore
+                    if is_muscle(pre):
+                        continue  # pre is a muscle so ignore
+                    if is_muscle(post):
+                        continue  # post is a muscle so ignore
 
                     num = self.conn_nums[conn_type][pre_index, post_index]
                     if num > 0:

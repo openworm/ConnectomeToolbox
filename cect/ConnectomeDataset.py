@@ -81,9 +81,9 @@ class ConnectomeDataset:
                 view.name,
                 view.only_show_existing_nodes,
                 len(cv.nodes),
-                cv.nodes,
+                sorted(cv.nodes),
                 len(self.nodes),
-                self.nodes,
+                sorted(self.nodes),
             )
         )
 
