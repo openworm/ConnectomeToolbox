@@ -119,7 +119,9 @@ def _format_json(json_str):
 
 
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
-    fig = connectome.to_plotly_graph_fig(synclass)
+    view_name = view.name
+
+    fig = connectome.to_plotly_graph_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
         reader_name,
@@ -282,7 +284,7 @@ for reader_name, reader_info in readers.items():
                                 f.write(
                                     get_2d_graph_markdown(
                                         reader_name,
-                                        view.name,
+                                        view,
                                         cv,
                                         sc,
                                         indent=indent + indent,
