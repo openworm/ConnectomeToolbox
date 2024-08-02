@@ -5,6 +5,17 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
 
 [View as matrix](Cook2019Herm_data.md){ .md-button } [View as graph](Cook2019Herm_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2019Herm_Raw Data_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2019Herm_Raw Data_Electrical.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -49,6 +60,17 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Social View_Electrical.json"
         ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2019Herm_Small View_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Cook2019Herm_Small View_Electrical.json"
+        ```
 
 ### Neurons (302)
 <details><summary>Full list of Neurons</summary>
@@ -59,7 +81,7 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
 
 ### Muscles (0)
 
-### Other cells (40)
+### Other cells (39)
 <details><summary>Full list of Other cells</summary>
-<a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html">CEPshDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html">CEPshDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html">CEPshVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html">CEPshVR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVR</a> | bm | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Dframeset.html">e2D</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Vframeset.html">e2VL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Vframeset.html">e2VR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Dframeset.html">e3D</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Vframeset.html">e3VL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Vframeset.html">e3VR</a> | exc_cell | exc_gl | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1Aframeset.html">g1AL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1Aframeset.html">g1AR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1pframeset.html">g1p</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g2frameset.html">g2L</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g2frameset.html">g2R</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/hmcframeset.html">hmc</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/hypframeset.html">hyp</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/intframeset.html">int</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc1Dframeset.html">mc1DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc1Dframeset.html">mc1DR</a> | mc1V | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc2Dframeset.html">mc2DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc2Dframeset.html">mc2DR</a> | mc2V | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc3Dframeset.html">mc3DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc3Dframeset.html">mc3DR</a> | mc3V | mu_anal | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html">mu_intL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html">mu_intR</a> | mu_sph
+<a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html">CEPshDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html">CEPshDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html">CEPshVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html">CEPshVR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html">GLRDR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html">GLRR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html">GLRVR</a> | bm | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Dframeset.html">e2D</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Vframeset.html">e2VL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e2Vframeset.html">e2VR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Dframeset.html">e3D</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Vframeset.html">e3VL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/e3Vframeset.html">e3VR</a> | exc_cell | exc_gl | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1Aframeset.html">g1AL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1Aframeset.html">g1AR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g1pframeset.html">g1p</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g2frameset.html">g2L</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/g2frameset.html">g2R</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/hmcframeset.html">hmc</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/hypframeset.html">hyp</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/intframeset.html">int</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc1Dframeset.html">mc1DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc1Dframeset.html">mc1DR</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc2Dframeset.html">mc2DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc2Dframeset.html">mc2DR</a> | mc2V | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc3Dframeset.html">mc3DL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mc3Dframeset.html">mc3DR</a> | mc3V | mu_anal | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html">mu_intL</a> | <a href="https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html">mu_intR</a> | mu_sph
 </details>

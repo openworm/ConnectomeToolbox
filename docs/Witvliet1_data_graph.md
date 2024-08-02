@@ -5,6 +5,17 @@ Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
 [View as matrix](Witvliet1_data.md){ .md-button } [View as graph](Witvliet1_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Raw Data_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Raw Data_Electrical_graph.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -42,6 +53,17 @@ Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
         ```plotly
         ---8<-- "./assets/Witvliet1_Social View_Electrical_graph.json"
+        ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Small View_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Witvliet1_Small View_Electrical_graph.json"
         ```
 
 ### Neurons (181)

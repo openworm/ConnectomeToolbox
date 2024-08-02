@@ -348,7 +348,7 @@ flowchart TD
 | [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | *Work in progress: [csv](https://github.com/openworm/c302/blob/master/c302/data/Bentley_et_al_2016_expression.csv)* |
 | [Cook et al. 2019](Cook_2019.md)          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** |
 | [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
-| [Cook et al. 2020](Cook_2020.md)    | Anatomical | *Work in progress: [???](??)*  |
+| [Cook et al. 2020](Cook_2020.md)    | Anatomical | **[Cook 2020](Cook2020_data.md)**  |
 | [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | *Work in progress: [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) - [parsed](https://github.com/cabrittin/parsetrakem2)*  |
 | [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | **[Witvliet1](Witvliet1_data.md) - [Witvliet2](Witvliet2_data.md)**|
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |

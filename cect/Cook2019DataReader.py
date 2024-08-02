@@ -17,6 +17,7 @@ from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_body_wall_muscle
 from cect.ConnectomeReader import remove_leading_index_zero
+from cect.ConnectomeReader import is_muscle
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -26,7 +27,6 @@ import os
 import numpy as np
 
 from cect import print_
-
 
 HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
@@ -45,8 +45,10 @@ def get_synclass(cell, syntype):
             return "GABA"
         return "Acetylcholine"
 
+
 def get_instance():
     return Cook2019DataReader()
+
 
 class Cook2019DataReader(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
@@ -145,12 +147,19 @@ class Cook2019DataReader(ConnectomeDataset):
                     pre = remove_leading_index_zero(
                         self.pre_cells[conn_type][pre_index]
                     )
+                    if is_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
+
                     post = remove_leading_index_zero(
                         self.post_cells[conn_type][post_index]
                     )
+                    if is_muscle(post):
+                        post = convert_to_preferred_muscle_name(post)
 
-                    if is_body_wall_muscle(post):
-                        continue  # post is a BWM so ignore
+                    if is_muscle(pre):
+                        continue  # pre is a muscle so ignore
+                    if is_muscle(post):
+                        continue  # post is a muscle so ignore
 
                     num = self.conn_nums[conn_type][pre_index, post_index]
                     if num > 0:
@@ -205,6 +214,7 @@ class Cook2019DataReader(ConnectomeDataset):
 
         return neurons, muscles, conns
 
+
 tdr_instance = get_instance()
 read_data = tdr_instance.read_data
 read_muscle_data = tdr_instance.read_muscle_data
@@ -219,6 +229,7 @@ def main():
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     print(tdr_instance.summary())
+
 
 if __name__ == "__main__":
     main()
