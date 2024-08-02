@@ -169,15 +169,15 @@ class ConnectomeDataset:
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
-        node_x = [pos[i][0] for i in G.nodes()]
-        node_y = [pos[i][1] for i in G.nodes()]
+        node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
+        node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
         edge_x = []
         edge_y = []
 
         for edge in G.edges():
-            x0, y0 = pos[edge[0]]
-            x1, y1 = pos[edge[1]]
+            x0, y0 = (float("{:.6f}".format(a)) for a in pos[edge[0]])
+            x1, y1 = (float("{:.6f}".format(a)) for a in pos[edge[1]])
             edge_x.append(x0)
             edge_x.append(x1)
             edge_x.append(None)
