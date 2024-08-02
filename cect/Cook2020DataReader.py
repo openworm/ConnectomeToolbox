@@ -54,13 +54,15 @@ class Cook2020DataReader(ConnectomeDataset):
 
                     num = float(row["Weight"])
                     syntype = str.strip(row["Type"])
+                    if syntype == "Electrical":
+                        self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+
                     synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                     self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
                     if pre not in self.cells:
                         self.cells.append(pre)
-
                     if post not in self.cells:
                         self.cells.append(post)
 
@@ -91,6 +93,8 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_muscle_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
+                if syntype == "Electrical":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
@@ -121,7 +125,6 @@ def main():
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
-
-
+    
 if __name__ == "__main__":
     main()
