@@ -5,6 +5,17 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
 [View as matrix](WormNeuroAtlas_data.md){ .md-button } [View as graph](WormNeuroAtlas_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/WormNeuroAtlas_Raw Data_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/WormNeuroAtlas_Raw Data_Electrical_graph.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -48,6 +59,17 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
         ```plotly
         ---8<-- "./assets/WormNeuroAtlas_Social View_Electrical_graph.json"
+        ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/WormNeuroAtlas_Small View_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/WormNeuroAtlas_Small View_Electrical_graph.json"
         ```
 
 ### Neurons (300)
