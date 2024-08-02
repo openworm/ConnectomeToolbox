@@ -3,6 +3,7 @@ import cect
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
 from cect import print_
+import json
 
 import sys
 import numpy as np
@@ -113,6 +114,10 @@ def get_cell_link(cell_name, html=False):
         return cell_name
 
 
+def _format_json(json_str):
+    return json.dumps(json.loads(json_str), sort_keys=True, indent=2)
+
+
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
     fig = connectome.to_plotly_graph_fig(synclass)
 
@@ -123,7 +128,7 @@ def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
-        asset_file.write(fig.to_json())
+        asset_file.write(_format_json(fig.to_json()))
 
     if np.sum(connectome.connections[synclass]) == 0:
         return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
@@ -151,7 +156,7 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
-        asset_file.write(fig.to_json())
+        asset_file.write(_format_json(fig.to_json()))
 
     if np.sum(connectome.connections[synclass]) == 0:
         return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (

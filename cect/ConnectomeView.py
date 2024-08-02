@@ -60,8 +60,7 @@ for cell in (
     sorted(PREFERRED_NEURON_NAMES)
     + sorted(PREFERRED_MUSCLE_NAMES)
     + sorted(KNOWN_OTHER_CELLS)
-    + ["pm4"]
-):  # find source of pm4...
+):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 

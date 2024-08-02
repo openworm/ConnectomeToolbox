@@ -75,17 +75,18 @@ class ConnectomeDataset:
             else:
                 cv.nodes.append(n.name)
 
-        print(
-            "-- Creating view (%s, only_show_existing_nodes=%s) with %i nodes: %s\n  My %i nodes: %s"
-            % (
-                view.name,
-                view.only_show_existing_nodes,
-                len(cv.nodes),
-                sorted(cv.nodes),
-                len(self.nodes),
-                sorted(self.nodes),
+        if self.verbose:
+            print_(
+                "-- Creating view (%s, only_show_existing_nodes=%s) with %i nodes: %s\n  My %i nodes: %s"
+                % (
+                    view.name,
+                    view.only_show_existing_nodes,
+                    len(cv.nodes),
+                    sorted(cv.nodes),
+                    len(self.nodes),
+                    sorted(self.nodes),
+                )
             )
-        )
 
         for synclass_set in view.synclass_sets:
             cv.connections[synclass_set] = np.zeros(
