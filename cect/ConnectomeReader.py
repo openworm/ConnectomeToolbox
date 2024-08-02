@@ -457,6 +457,75 @@ PHARYNX_CELLS = [
     "MCR",
 ]
 
+KNOWN_OTHER_CELLS_COOK_19 = [
+    "CEPshDL",
+    "CEPshDR",
+    "CEPshVL",
+    "CEPshVR",
+    "GLRDL",
+    "GLRDR",
+    "GLRL",
+    "GLRR",
+    "GLRVL",
+    "GLRVR",
+    "bm",
+    "e2D",
+    "e2VL",
+    "e2VR",
+    "e3D",
+    "e3VL",
+    "e3VR",
+    "exc_cell",
+    "exc_gl",
+    "g1AL",
+    "g1AR",
+    "g1p",
+    "g2L",
+    "g2R",
+    "hmc",
+    "hyp",
+    "int",
+    "mc1DL",
+    "mc1DR",
+    "mc1V",
+    "mc2DL",
+    "mc2DR",
+    "mc2V",
+    "mc3DL",
+    "mc3DR",
+    "mc3V",
+    "mu_anal",
+    "mu_intL",
+    "mu_intR",
+    "mu_sph",
+]
+KNOWN_OTHER_CELLS_COOK_20 = [
+    "bm",
+    "e2DL",
+    "e2DR",
+    "e2V",
+    "e3D",
+    "e3VL",
+    "e3VR",
+    "g1AL",
+    "g1AR",
+    "g1P",
+    "g2L",
+    "g2R",
+    "mc2DL",
+    "mc2DR",
+    "mc2V",
+    "mc2dl",
+    "mc2dr",
+    "mc3V",
+]
+
+KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
+
+for cell in KNOWN_OTHER_CELLS_COOK_20:
+    if not cell in KNOWN_OTHER_CELLS:
+        KNOWN_OTHER_CELLS.append(cell)
+
 
 def convert_to_preferred_muscle_name(muscle):
     if muscle.startswith("BWM-VL"):
@@ -474,11 +543,14 @@ def convert_to_preferred_muscle_name(muscle):
     elif muscle == "pm3vr":
         return "pm3VR"
     else:
-        return muscle + "???"
+        if is_muscle(muscle):
+            return muscle
+        else:
+            return muscle + "???"
 
 
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um", "BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
+    return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
 
 
 def get_body_wall_muscle_prefixes():
@@ -496,7 +568,7 @@ def is_body_wall_muscle(cell):
 
 
 def is_neuron(cell):
-    return not is_body_wall_muscle(cell)
+    return not is_muscle(cell)
 
 
 def remove_leading_index_zero(cell):

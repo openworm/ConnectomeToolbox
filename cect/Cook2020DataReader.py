@@ -6,6 +6,7 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import convert_to_preferred_muscle_name
+from cect.ConnectomeReader import is_muscle
 
 import os
 
@@ -15,7 +16,7 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%scne24932-sup-0004-supinfo4.csv" % spreadsheet_location
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity""" % filename.split('/')[-1]
+    """Data extracted from **%s** for neuronal connectivity""" % filename.split("/")[-1]
 )
 
 
@@ -45,14 +46,21 @@ class Cook2020DataReader(ConnectomeDataset):
 
                 for row in reader:
                     pre = str.strip(row["Source"])
+                    if is_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
                     post = str.strip(row["Target"])
+                    if is_muscle(post):
+                        post = convert_to_preferred_muscle_name(post)
+
                     num = float(row["Weight"])
                     syntype = str.strip(row["Type"])
                     synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                     self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+
                     if pre not in self.cells:
                         self.cells.append(pre)
+
                     if post not in self.cells:
                         self.cells.append(post)
 
@@ -76,18 +84,22 @@ class Cook2020DataReader(ConnectomeDataset):
 
             for row in reader:
                 pre = str.strip(row["Source"])
+                if is_muscle(pre):
+                    pre = convert_to_preferred_muscle_name(pre)
                 post = str.strip(row["Target"])
+                if is_muscle(post):
+                    post = convert_to_preferred_muscle_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
-                if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
-                    convert_to_preferred_muscle_name("%s" % muscles)
-                    muscles.append(post)
-                if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
-                    neurons.append(pre)
+                if is_muscle(post):
+                    if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
+                        muscles.append(post)
+                    if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                        neurons.append(pre)
 
         return neurons, muscles, conns
 

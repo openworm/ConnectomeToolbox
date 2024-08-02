@@ -69,7 +69,23 @@ class ConnectomeDataset:
         cv = ConnectomeDataset()
 
         for n in view.node_sets:
-            cv.nodes.append(n.name)
+            if view.only_show_existing_nodes:
+                if n.name in self.nodes:
+                    cv.nodes.append(n.name)
+            else:
+                cv.nodes.append(n.name)
+
+        print(
+            "-- Creating view (%s, only_show_existing_nodes=%s) with %i nodes: %s\n  My %i nodes: %s"
+            % (
+                view.name,
+                view.only_show_existing_nodes,
+                len(cv.nodes),
+                cv.nodes,
+                len(self.nodes),
+                self.nodes,
+            )
+        )
 
         for synclass_set in view.synclass_sets:
             cv.connections[synclass_set] = np.zeros(
@@ -80,14 +96,29 @@ class ConnectomeDataset:
                 if synclass in self.connections:
                     conn_array = self.connections[synclass]
                     for pre in self.nodes:
-                        pre_index = view.get_index_of_cell(pre)
+                        pre_index = (
+                            cv.nodes.index(pre)
+                            if view.only_show_existing_nodes
+                            else view.get_index_of_cell(pre)
+                        )
                         for post in self.nodes:
-                            post_index = view.get_index_of_cell(post)
+                            post_index = (
+                                cv.nodes.index(post)
+                                if view.only_show_existing_nodes
+                                else view.get_index_of_cell(post)
+                            )
 
                             if self.verbose:
                                 print(
-                                    "Testing if %s (%i), %s (%s) in %s"
-                                    % (pre, pre_index, post, post_index, view.node_sets)
+                                    "-- Testing if %s (%i), %s (%s) in my %i node sets %s..."
+                                    % (
+                                        pre,
+                                        pre_index,
+                                        post,
+                                        post_index,
+                                        len(view.node_sets),
+                                        view.node_sets[:5],
+                                    )
                                 )
 
                             if pre_index >= 0 and post_index >= 0:

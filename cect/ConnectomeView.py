@@ -3,6 +3,8 @@ from cect import print_
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import PHARYNX_CELLS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
+from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
+from cect.ConnectomeReader import KNOWN_OTHER_CELLS
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
@@ -20,11 +22,19 @@ class NodeSet:
 
 
 class View:
-    def __init__(self, name, node_sets, synclass_sets={}, colormap=DEFAULT_COLORMAP):
+    def __init__(
+        self,
+        name,
+        node_sets,
+        synclass_sets={},
+        colormap=DEFAULT_COLORMAP,
+        only_show_existing_nodes=False,
+    ):
         self.name = name
         self.node_sets = node_sets
         self.synclass_sets = synclass_sets
         self.colormap = colormap
+        self.only_show_existing_nodes = only_show_existing_nodes
 
     def get_index_of_cell(self, cell):
         for i in range(len(self.node_sets)):
@@ -33,25 +43,45 @@ class View:
         return -1
 
 
-STANDARD_SYN_CLASSES = {
+EXC_INH_GJ_SYN_CLASSES = {
     "Chemical Exc": ["Acetylcholine", "Generic_CS"],
     "Chemical Inh": ["GABA"],
     "Electrical": ["Generic_GJ"],
 }
 
-FULL_VIEW = View("Full View", [], STANDARD_SYN_CLASSES)
+CHEM_GJ_SYN_CLASSES = {
+    "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
+    + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
+    "Electrical": ["Generic_GJ"],
+}
+
+RAW_VIEW = View("Raw Data", [], CHEM_GJ_SYN_CLASSES, only_show_existing_nodes=True)
+for cell in (
+    sorted(PREFERRED_NEURON_NAMES)
+    + sorted(PREFERRED_MUSCLE_NAMES)
+    + sorted(KNOWN_OTHER_CELLS)
+    + ["pm4"]
+):  # find source of pm4...
+    RAW_VIEW.node_sets.append(NodeSet(cell, [cell]))
+
+
+FULL_VIEW = View("Full View", [], EXC_INH_GJ_SYN_CLASSES)
 for cell in sorted(PREFERRED_NEURON_NAMES):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-PHARYNX_VIEW = View("Pharynx View", [], STANDARD_SYN_CLASSES)
+PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_SYN_CLASSES)
 for cell in sorted(PHARYNX_CELLS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SOCIAL_VIEW = View("Social View", [], STANDARD_SYN_CLASSES)
+SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_SYN_CLASSES)
 for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
     SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-ALL_VIEWS = [FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW]
+SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
+for cell in sorted(["ADAL", "ADAR", "ADFL", "ADFR"]):
+    SMALL_VIEW.node_sets.append(NodeSet(cell, [cell]))
+
+ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]
 
 
 if __name__ == "__main__":
@@ -60,7 +90,7 @@ if __name__ == "__main__":
     ns_p = NodeSet("PVCL", ["PVCL"])
     ns_a = NodeSet("AVBL", ["AVBL"])
 
-    v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], STANDARD_SYN_CLASSES)
+    v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
 
     from cect.TestDataReader import tdr_instance
 
