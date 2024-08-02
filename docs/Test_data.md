@@ -55,10 +55,14 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 === "Small View"
     === "Chemical"
 
-        No connections of type **Chemical** in the **Small View** for **TestData**...
+        ```plotly
+        ---8<-- "./assets/TestData_Small View_Chemical.json"
+        ```
     === "Electrical"
 
-        No connections of type **Electrical** in the **Small View** for **TestData**...
+        ```plotly
+        ---8<-- "./assets/TestData_Small View_Electrical.json"
+        ```
 
 ### Neurons (12)
 <details><summary>Full list of Neurons</summary>

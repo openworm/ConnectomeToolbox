@@ -4,6 +4,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import numpy as np
+import math
 
 
 class ConnectomeDataset:
@@ -198,6 +199,9 @@ class ConnectomeDataset:
         node_adjacencies = []
         node_colours = []
         node_text = []
+        node_sizes = []
+
+        DEFAULT_SIZE = 10
 
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
@@ -212,9 +216,11 @@ class ConnectomeDataset:
             if view.has_color():
                 node_colours.append(node_set.color)
 
+            node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
+
             node_text.append(
                 f"{node_value}<br>Number of connections: {num_connections}%s"
-                % ('')
+                % ("" if node_set.is_one_cell() else "<br>%s" % node_set.cells)
             )
 
         node_trace = go.Scatter(
@@ -227,18 +233,19 @@ class ConnectomeDataset:
                 colorscale="YlGnBu",
                 reversescale=True,
                 color=[],
-                size=10,
+                size=DEFAULT_SIZE,
                 colorbar=dict(
                     thickness=15,
                     title="Node Connections",
                     xanchor="left",
                     titleside="right",
                 ),
-                line_width=2,
+                line_width=1,
             ),
             hoverinfo="text",
         )
 
+        node_trace.marker.size = node_sizes
         node_trace.marker.color = node_colours
         node_trace.text = node_text
 

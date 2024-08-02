@@ -11,7 +11,14 @@
         "ADAL",
         "ADAR",
         "ADFL",
-        "ADFR"
+        "ADFR",
+        "DB",
+        "VB",
+        "DD",
+        "VD",
+        "DA",
+        "AS",
+        "VA"
       ],
       "type": "scatter",
       "x": [],
@@ -24,7 +31,14 @@
           "#FF0000",
           "#FF0000",
           "#00FF00",
-          "#00FF00"
+          "#00FF00",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103"
         ],
         "colorbar": {
           "thickness": 15,
@@ -73,31 +87,64 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": false,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          26.457513110645905,
+          33.166247903553995,
+          24.49489742783178,
+          36.05551275463989,
+          30.0,
+          47.958315233127195,
+          34.64101615137754
+        ]
       },
       "mode": "markers",
       "text": [
         "ADAL<br>Number of connections: 0",
         "ADAR<br>Number of connections: 0",
         "ADFL<br>Number of connections: 0",
-        "ADFR<br>Number of connections: 0"
+        "ADFR<br>Number of connections: 0",
+        "DB<br>Number of connections: 0<br>['DB1', 'DB2', 'DB3', 'DB4', 'DB5', 'DB6', 'DB7']",
+        "VB<br>Number of connections: 0<br>['VB1', 'VB10', 'VB11', 'VB2', 'VB3', 'VB4', 'VB5', 'VB6', 'VB7', 'VB8', 'VB9']",
+        "DD<br>Number of connections: 0<br>['DD1', 'DD2', 'DD3', 'DD4', 'DD5', 'DD6']",
+        "VD<br>Number of connections: 0<br>['VD1', 'VD10', 'VD11', 'VD12', 'VD13', 'VD2', 'VD3', 'VD4', 'VD5', 'VD6', 'VD7', 'VD8', 'VD9']",
+        "DA<br>Number of connections: 0<br>['DA1', 'DA2', 'DA3', 'DA4', 'DA5', 'DA6', 'DA7', 'DA8', 'DA9']",
+        "AS<br>Number of connections: 0<br>['AS1', 'AS10', 'AS11', 'AS2', 'AS3', 'AS4', 'AS5', 'AS6', 'AS7', 'AS8', 'AS9', 'ASEL', 'ASER', 'ASGL', 'ASGR', 'ASHL', 'ASHR', 'ASIL', 'ASIR', 'ASJL', 'ASJR', 'ASKL', 'ASKR']",
+        "VA<br>Number of connections: 0<br>['VA1', 'VA10', 'VA11', 'VA12', 'VA2', 'VA3', 'VA4', 'VA5', 'VA6', 'VA7', 'VA8', 'VA9']"
       ],
       "type": "scatter",
       "x": [
-        0.32191,
-        -0.988335,
-        -0.114522,
-        0.780947
+        0.078751,
+        -0.963925,
+        -0.219554,
+        0.250604,
+        0.62474,
+        0.549594,
+        -0.470054,
+        -0.879773,
+        0.860622,
+        -0.695228,
+        0.864223
       ],
       "y": [
-        1.0,
-        0.094815,
-        -0.988617,
-        -0.106198
+        0.903383,
+        -0.196462,
+        -1.0,
+        -0.866306,
+        -0.551202,
+        0.618897,
+        0.850816,
+        0.402063,
+        -0.104414,
+        -0.695376,
+        0.638601
       ]
     }
   ],

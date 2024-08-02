@@ -19,6 +19,9 @@ class NodeSet:
         self.cells = cells
         self.color = color
 
+    def is_one_cell(self):
+        return len(self.cells) == 1 and self.name == self.cells[0]
+
     def __repr__(self):
         return "NodeSet %s%s: %s" % (
             self.name,
@@ -95,10 +98,22 @@ for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
     SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
+
 for cell in sorted(["ADAL", "ADAR", "ADFL", "ADFR"]):
     SMALL_VIEW.node_sets.append(
         NodeSet(cell, [cell], color="#FF0000" if "ADA" in cell else "#00FF00")
     )
+
+motorneuron_prefixes = ["DB", "VB", "DD", "VD", "DA", "AS", "VA"]
+
+for prefix in motorneuron_prefixes:
+    SMALL_VIEW.node_sets.append(NodeSet(prefix, [], color="#be5103"))
+
+for cell in sorted(PREFERRED_NEURON_NAMES):
+    for prefix in motorneuron_prefixes:
+        if cell.startswith(prefix):
+            SMALL_VIEW.get_node_set(prefix).cells.append(cell)
+
 
 ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]
 

@@ -57,7 +57,9 @@ Data extracted from **witvliet_2020_8.xlsx** for neuronal connectivity
 === "Small View"
     === "Chemical"
 
-        No connections of type **Chemical** in the **Small View** for **Witvliet2**...
+        ```plotly
+        ---8<-- "./assets/Witvliet2_Small View_Chemical_graph.json"
+        ```
     === "Electrical"
 
         ```plotly
