@@ -317,6 +317,7 @@ def main3():
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
+
 if __name__ == "__main__":
     main1()
     main2()

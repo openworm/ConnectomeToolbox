@@ -11,23 +11,60 @@
         "ADAL",
         "ADAR",
         "ADFL",
-        "ADFR"
+        "ADFR",
+        "DB",
+        "VB",
+        "DD",
+        "VD",
+        "DA",
+        "AS",
+        "VA"
       ],
       "type": "scatter",
       "x": [
-        0.9321630033421241,
-        0.8153989120786089,
+        -0.231727,
+        -0.178169,
         null,
-        -0.9999999999999999,
-        -0.7475619154207329,
+        -0.231727,
+        -0.268619,
+        null,
+        -0.382709,
+        -0.287133,
+        null,
+        -0.382709,
+        -0.268619,
+        null,
+        -0.178169,
+        -0.268619,
+        null,
+        -0.287133,
+        -0.268619,
+        null,
+        -0.268619,
+        -0.268619,
         null
       ],
       "y": [
-        -0.1103918929197349,
-        -0.36413404116386977,
+        -0.298912,
+        -0.400344,
         null,
-        0.1774129304999807,
-        0.297113003583624,
+        -0.298912,
+        -0.456396,
+        null,
+        -0.504193,
+        -0.56203,
+        null,
+        -0.504193,
+        -0.456396,
+        null,
+        -0.400344,
+        -0.456396,
+        null,
+        -0.56203,
+        -0.456396,
+        null,
+        -0.456396,
+        -0.456396,
         null
       ]
     },
@@ -35,10 +72,17 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          1,
-          1,
-          1,
-          1
+          "#FF0000",
+          "#FF0000",
+          "#00FF00",
+          "#00FF00",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103"
         ],
         "colorbar": {
           "thickness": 15,
@@ -87,31 +131,64 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
-        "showscale": true,
-        "size": 10
+        "showscale": false,
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          26.457513110645905,
+          33.166247903553995,
+          24.49489742783178,
+          36.05551275463989,
+          30.0,
+          47.958315233127195,
+          34.64101615137754
+        ]
       },
       "mode": "markers",
       "text": [
-        "ADAL<br>Number of connections: 1",
-        "ADAR<br>Number of connections: 1",
-        "ADFL<br>Number of connections: 1",
-        "ADFR<br>Number of connections: 1"
+        "ADAL<br>Number of connections: 2",
+        "ADAR<br>Number of connections: 2",
+        "ADFL<br>Number of connections: 2",
+        "ADFR<br>Number of connections: 2",
+        "DB<br>Number of connections: 0<br>['DB1', 'DB2', 'DB3', 'DB4', 'DB5', 'DB6', 'DB7']",
+        "VB<br>Number of connections: 0<br>['VB1', 'VB10', 'VB11', 'VB2', 'VB3', 'VB4', 'VB5', 'VB6', 'VB7', 'VB8', 'VB9']",
+        "DD<br>Number of connections: 0<br>['DD1', 'DD2', 'DD3', 'DD4', 'DD5', 'DD6']",
+        "VD<br>Number of connections: 0<br>['VD1', 'VD10', 'VD11', 'VD12', 'VD13', 'VD2', 'VD3', 'VD4', 'VD5', 'VD6', 'VD7', 'VD8', 'VD9']",
+        "DA<br>Number of connections: 0<br>['DA1', 'DA2', 'DA3', 'DA4', 'DA5', 'DA6', 'DA7', 'DA8', 'DA9']",
+        "AS<br>Number of connections: 5<br>['AS1', 'AS10', 'AS11', 'AS2', 'AS3', 'AS4', 'AS5', 'AS6', 'AS7', 'AS8', 'AS9', 'ASEL', 'ASER', 'ASGL', 'ASGR', 'ASHL', 'ASHR', 'ASIL', 'ASIR', 'ASJL', 'ASJR', 'ASKL', 'ASKR']",
+        "VA<br>Number of connections: 0<br>['VA1', 'VA10', 'VA11', 'VA12', 'VA2', 'VA3', 'VA4', 'VA5', 'VA6', 'VA7', 'VA8', 'VA9']"
       ],
       "type": "scatter",
       "x": [
-        0.9321630033421241,
-        -0.9999999999999999,
-        0.8153989120786089,
-        -0.7475619154207329
+        -0.231727,
+        -0.382709,
+        -0.178169,
+        -0.287133,
+        0.673393,
+        0.289177,
+        -0.404324,
+        -1.0,
+        0.912519,
+        -0.268619,
+        0.877591
       ],
       "y": [
-        -0.1103918929197349,
-        0.1774129304999807,
-        -0.36413404116386977,
-        0.297113003583624
+        -0.298912,
+        -0.504193,
+        -0.400344,
+        -0.56203,
+        -0.627249,
+        0.813625,
+        0.955392,
+        0.403847,
+        -0.020429,
+        -0.456396,
+        0.696688
       ]
     }
   ],
