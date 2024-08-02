@@ -5,6 +5,7 @@ from cect.ConnectomeReader import PHARYNX_CELLS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import KNOWN_OTHER_CELLS
+from cect.ConnectomeReader import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
@@ -16,9 +17,14 @@ class NodeSet:
         self.name = name
         self.color = color
         self.cells = cells
+        self.color = color
 
     def __repr__(self):
-        return "NodeSet %s (%s): %s" % (self.name, self.color, self.cells)
+        return "NodeSet %s%s: %s" % (
+            self.name,
+            " (%s)" % self.color if self.color is not None else "",
+            self.cells,
+        )
 
 
 class View:
@@ -35,6 +41,18 @@ class View:
         self.synclass_sets = synclass_sets
         self.colormap = colormap
         self.only_show_existing_nodes = only_show_existing_nodes
+
+    def has_color(self):
+        for ns in self.node_sets:
+            if ns.color is not None:
+                return True
+        return False
+
+    def get_node_set(self, node_set_name):
+        for ns in self.node_sets:
+            if ns.name == node_set_name:
+                return ns
+        return None
 
     def get_index_of_cell(self, cell):
         for i in range(len(self.node_sets)):
@@ -61,7 +79,7 @@ for cell in (
     + sorted(PREFERRED_MUSCLE_NAMES)
     + sorted(KNOWN_OTHER_CELLS)
 ):
-    RAW_VIEW.node_sets.append(NodeSet(cell, [cell]))
+    RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 
 FULL_VIEW = View("Full View", [], EXC_INH_GJ_SYN_CLASSES)
@@ -78,7 +96,9 @@ for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
 
 SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
 for cell in sorted(["ADAL", "ADAR", "ADFL", "ADFR"]):
-    SMALL_VIEW.node_sets.append(NodeSet(cell, [cell]))
+    SMALL_VIEW.node_sets.append(
+        NodeSet(cell, [cell], color="#FF0000" if "ADA" in cell else "#00FF00")
+    )
 
 ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]
 

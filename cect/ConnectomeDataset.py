@@ -162,22 +162,22 @@ class ConnectomeDataset:
 
         return fig
 
-    def to_plotly_graph_fig(self, synclass):
+    def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
         import plotly.graph_objects as go
         import networkx as nx
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
-        node_x = [pos[i][0] for i in G.nodes()]
-        node_y = [pos[i][1] for i in G.nodes()]
+        node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
+        node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
         edge_x = []
         edge_y = []
 
         for edge in G.edges():
-            x0, y0 = pos[edge[0]]
-            x1, y1 = pos[edge[1]]
+            x0, y0 = (float("{:.6f}".format(a)) for a in pos[edge[0]])
+            x1, y1 = (float("{:.6f}".format(a)) for a in pos[edge[1]])
             edge_x.append(x0)
             edge_x.append(x1)
             edge_x.append(None)
@@ -196,14 +196,25 @@ class ConnectomeDataset:
         )
 
         node_adjacencies = []
+        node_colours = []
         node_text = []
+
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
+            if not view.has_color():
+                node_colours.append(len(adjacencies[1]))
 
         for i, node_value in enumerate(self.nodes):
             num_connections = node_adjacencies[i]
+
+            node_set = view.get_node_set(node_value)
+
+            if view.has_color():
+                node_colours.append(node_set.color)
+
             node_text.append(
-                f"{node_value}<br>Number of connections: {num_connections}"
+                f"{node_value}<br>Number of connections: {num_connections}<br>%s"
+                % (node_set)
             )
 
         node_trace = go.Scatter(
@@ -212,7 +223,7 @@ class ConnectomeDataset:
             mode="markers",
             text=self.nodes,
             marker=dict(
-                showscale=True,
+                showscale=not view.has_color(),
                 colorscale="YlGnBu",
                 reversescale=True,
                 color=[],
@@ -228,7 +239,7 @@ class ConnectomeDataset:
             hoverinfo="text",
         )
 
-        node_trace.marker.color = node_adjacencies
+        node_trace.marker.color = node_colours
         node_trace.text = node_text
 
         fig = go.Figure(
