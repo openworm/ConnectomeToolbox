@@ -5,7 +5,7 @@ from cect.ConnectomeReader import PHARANGEAL_NEURONS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import KNOWN_OTHER_CELLS
-from cect.ConnectomeReader import get_standard_color
+from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 

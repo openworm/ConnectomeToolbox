@@ -38,17 +38,6 @@ def convert_to_preferred_muscle_name(muscle):
             return muscle + "???"
 
 
-def get_standard_color(cell):
-    if is_muscle(cell):
-        return "#00dd00"
-    elif cell in PHARANGEAL_NEURONS:
-        return "#0000dd"
-    elif cell in PREFERRED_NEURON_NAMES:
-        return "#dd0000"
-    else:
-        return "#dddd00"
-
-
 def get_all_muscle_prefixes():
     return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
 

@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -49,18 +49,18 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000"
+          "#ff66cc",
+          "#ff66cc",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc"
         ],
         "colorbar": {
           "thickness": 15,

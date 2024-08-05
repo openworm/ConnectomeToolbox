@@ -192,7 +192,7 @@ class ConnectomeDataset:
             y=edge_y,
             mode="lines",
             text=self.nodes,
-            line=dict(color="red", width=1),
+            line=dict(color="grey", width=1),
             hoverinfo="none",
         )
 
