@@ -295,7 +295,7 @@ VENTRAL_CORD_MOTORNEURONS = [
     "VD13",
 ]
 
-HERM_SPECIFIC_NEURONS = [
+HERM_SPECIFIC_MOTORNEURONS = [
     "HSNL",
     "HSNR",
     "VC1",
@@ -349,13 +349,13 @@ MOTORNEURONS_COOK = (
     + SUBLATERAL_MOTORNEURONS_COOK
     + VENTRAL_CORD_MOTORNEURONS
     + PHARANGEAL_MOTORNEURONS
+    + HERM_SPECIFIC_MOTORNEURONS
 )
 
 PREFERRED_NEURON_NAMES_COOK = (
     INTERNEURONS_COOK
     + SENSORY_NEURONS_COOK
     + MOTORNEURONS_COOK
-    + HERM_SPECIFIC_NEURONS
     + PHARANGEAL_POLYMODAL_NEURONS
     + UNKNOWN_FUNCTION_NEURONS
 )
@@ -822,18 +822,20 @@ PREFERRED_MUSCLE_NAMES = (
     + ANAL_MUSCLE_NAMES
 )
 
-
-KNOWN_OTHER_CELLS_COOK_19 = [
-    "CEPshDL",
-    "CEPshDR",
-    "CEPshVL",
-    "CEPshVR",
+GLR_CELLS = [
     "GLRDL",
     "GLRDR",
     "GLRL",
     "GLRR",
     "GLRVL",
     "GLRVR",
+]
+
+KNOWN_OTHER_CELLS_COOK_19 = [
+    "CEPshDL",
+    "CEPshDR",
+    "CEPshVL",
+    "CEPshVR",
     "bm",
     "e2D",
     "e2VL",
@@ -864,7 +866,8 @@ KNOWN_OTHER_CELLS_COOK_19 = [
     "mu_intL",
     "mu_intR",
     "mu_sph",
-]
+] + GLR_CELLS
+
 KNOWN_OTHER_CELLS_COOK_20 = [
     "bm",
     "e2DL",
@@ -912,8 +915,37 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARANGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
+    elif cell in GLR_CELLS:
+        return WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"]
     else:
         return "#dddddd"
+
+
+def get_short_description(cell):
+    if cell in BODY_WALL_MUSCLE_NAMES:
+        return "Body wall muscle"
+    elif cell in VULVAL_MUSCLE_NAMES:
+        return "Vulval muscle"
+    elif cell in ODD_PHARANGEAL_MUSCLE_NAMES or cell in EVEN_PHARANGEAL_MUSCLE_NAMES:
+        return "Pharyngeal muscle"
+    elif cell in PHARANGEAL_INTERNEURONS:
+        return "Pharyngeal interneuron"
+    elif cell in PHARANGEAL_MOTORNEURONS:
+        return "Pharyngeal motor neuron"
+    elif cell in PHARANGEAL_POLYMODAL_NEURONS:
+        return "Pharyngeal polymodal neuron"
+    elif cell in HERM_SPECIFIC_MOTORNEURONS:
+        return "Hermaphrodite specific motor neuron"
+    elif cell in INTERNEURONS_NONPHARYNGEAL_COOK:
+        return "Interneuron"
+    elif cell in SENSORY_NEURONS_COOK:
+        return "Sensory neuron"
+    elif cell in MOTORNEURONS_COOK:
+        return "Motor neuron"
+    elif cell in GLR_CELLS:
+        return "GLR cell"
+    else:
+        return "???"
 
 
 def get_cell_link(cell_name, html=False):

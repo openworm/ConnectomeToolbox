@@ -151,17 +151,17 @@
       },
       "mode": "markers",
       "text": [
-        "ADAL<br>Number of connections: 2",
-        "ADAR<br>Number of connections: 2",
-        "ADFL<br>Number of connections: 2",
-        "ADFR<br>Number of connections: 2",
-        "DB<br>Number of connections: 0<br>['DB1', 'DB2', 'DB3', 'DB4', 'DB5', 'DB6', 'DB7']",
-        "VB<br>Number of connections: 0<br>['VB1', 'VB10', 'VB11', 'VB2', 'VB3', 'VB4', 'VB5', 'VB6', 'VB7', 'VB8', 'VB9']",
-        "DD<br>Number of connections: 0<br>['DD1', 'DD2', 'DD3', 'DD4', 'DD5', 'DD6']",
-        "VD<br>Number of connections: 0<br>['VD1', 'VD10', 'VD11', 'VD12', 'VD13', 'VD2', 'VD3', 'VD4', 'VD5', 'VD6', 'VD7', 'VD8', 'VD9']",
-        "DA<br>Number of connections: 0<br>['DA1', 'DA2', 'DA3', 'DA4', 'DA5', 'DA6', 'DA7', 'DA8', 'DA9']",
-        "AS<br>Number of connections: 5<br>['AS1', 'AS10', 'AS11', 'AS2', 'AS3', 'AS4', 'AS5', 'AS6', 'AS7', 'AS8', 'AS9', 'ASEL', 'ASER', 'ASGL', 'ASGR', 'ASHL', 'ASHR', 'ASIL', 'ASIR', 'ASJL', 'ASJR', 'ASKL', 'ASKR']",
-        "VA<br>Number of connections: 0<br>['VA1', 'VA10', 'VA11', 'VA12', 'VA2', 'VA3', 'VA4', 'VA5', 'VA6', 'VA7', 'VA8', 'VA9']"
+        "<b>ADAL</b><br>Interneuron<br>Number of connections: 2",
+        "<b>ADAR</b><br>Interneuron<br>Number of connections: 2",
+        "<b>ADFL</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>ADFR</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>DB</b><br>DB1, DB2, DB3, DB4, DB5, DB6, DB7<br>Number of connections: 0",
+        "<b>VB</b><br>VB1, VB10, VB11, VB2, VB3, VB4, VB5, VB6, VB7, VB8, VB9<br>Number of connections: 0",
+        "<b>DD</b><br>DD1, DD2, DD3, DD4, DD5, DD6<br>Number of connections: 0",
+        "<b>VD</b><br>VD1, VD10, VD11, VD12, VD13, VD2, VD3, VD4, VD5, VD6, VD7, VD8, VD9<br>Number of connections: 0",
+        "<b>DA</b><br>DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9<br>Number of connections: 0",
+        "<b>AS</b><br>AS1, AS10, AS11, AS2, AS3, AS4, AS5, AS6, AS7, AS8, AS9, ASEL, ASER, ASGL, ASGR, ASHL, ASHR, ASIL, ASIR, ASJL, ASJR, ASKL, ASKR<br>Number of connections: 5",
+        "<b>VA</b><br>VA1, VA10, VA11, VA12, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9<br>Number of connections: 0"
       ],
       "type": "scatter",
       "x": [

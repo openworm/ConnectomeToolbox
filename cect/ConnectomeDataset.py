@@ -2,6 +2,7 @@ from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
+from cect.Cells import get_short_description
 
 import numpy as np
 import math
@@ -219,8 +220,12 @@ class ConnectomeDataset:
             node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
 
             node_text.append(
-                f"{node_value}<br>Number of connections: {num_connections}%s"
-                % ("" if node_set.is_one_cell() else "<br>%s" % node_set.cells)
+                f"<b>{node_value}</b>%s<br>Number of connections: {num_connections}"
+                % (
+                    "<br>%s" % get_short_description(node_set.name)
+                    if node_set.is_one_cell()
+                    else "<br>%s" % ", ".join([c for c in node_set.cells])
+                )
             )
 
         node_trace = go.Scatter(

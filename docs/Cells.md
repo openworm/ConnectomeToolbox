@@ -258,6 +258,8 @@
 | DD4   | [DD4](https://www.wormatlas.org/neurons/Individual Neurons/DDframeset.html)     |
 | DD5   | [DD5](https://www.wormatlas.org/neurons/Individual Neurons/DDframeset.html)     |
 | DD6   | [DD6](https://www.wormatlas.org/neurons/Individual Neurons/DDframeset.html)     |
+| HSNL  | [HSNL](https://www.wormatlas.org/neurons/Individual Neurons/HSNframeset.html)   |
+| HSNR  | [HSNR](https://www.wormatlas.org/neurons/Individual Neurons/HSNframeset.html)   |
 | M1    | [M1](https://www.wormatlas.org/neurons/Individual Neurons/Mframeset.html)       |
 | M2L   | [M2L](https://www.wormatlas.org/neurons/Individual Neurons/M2frameset.html)     |
 | M2R   | [M2R](https://www.wormatlas.org/neurons/Individual Neurons/M2frameset.html)     |
@@ -327,6 +329,12 @@
 | VB7   | [VB7](https://www.wormatlas.org/neurons/Individual Neurons/VBframeset.html)     |
 | VB8   | [VB8](https://www.wormatlas.org/neurons/Individual Neurons/VBframeset.html)     |
 | VB9   | [VB9](https://www.wormatlas.org/neurons/Individual Neurons/VBframeset.html)     |
+| VC1   | [VC1](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
+| VC2   | [VC2](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
+| VC3   | [VC3](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
+| VC4   | [VC4](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
+| VC5   | [VC5](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
+| VC6   | [VC6](https://www.wormatlas.org/neurons/Individual Neurons/VCframeset.html)     |
 | VD1   | [VD1](https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html)     |
 | VD10  | [VD10](https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html)    |
 | VD11  | [VD11](https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html)    |
@@ -463,7 +471,7 @@
 
 #### ![#ffffcc](https://via.placeholder.com/15/ffffcc/ffffcc.png) Pseudocoelomic space
 #### ![#ff9900](https://via.placeholder.com/15/ff9900/ff9900.png) Basement membrane
-#### ![#cc9900](https://via.placeholder.com/15/cc9900/cc9900.png) Gir cell
+#### ![#cc9900](https://via.placeholder.com/15/cc9900/cc9900.png) Glr cell
 #### ![#ffcc00](https://via.placeholder.com/15/ffcc00/ffcc00.png) Coeloemocyte
 #### ![#ff6633](https://via.placeholder.com/15/ff6633/ff6633.png) Head mesodermal cell
 

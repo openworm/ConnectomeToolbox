@@ -139,13 +139,13 @@
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 1",
-        "ASKR<br>Number of connections: 1",
-        "AWBR<br>Number of connections: 1",
-        "IL2R<br>Number of connections: 2",
-        "RMGR<br>Number of connections: 6",
-        "RMHR<br>Number of connections: 1",
-        "URXR<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>RMGR</b><br>Interneuron<br>Number of connections: 6",
+        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 1",
+        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 2"
       ],
       "type": "scatter",
       "x": [
