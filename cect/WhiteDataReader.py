@@ -92,6 +92,8 @@ class White_A(ConnectomeDataset):
 
                 pre = remove_leading_index_zero(pre)
                 post = remove_leading_index_zero(post)
+                if synclass == "Generic_GJ":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # print ConnectionInfo(pre, post, num, syntype, synclass)
@@ -125,9 +127,10 @@ class White_A(ConnectomeDataset):
                 if is_neuron(pre):
                     pre = remove_leading_index_zero(pre)
                 post = convert_to_preferred_muscle_name(post)
+                if synclass == "Generic_GJ":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-
                 if is_neuron(pre) and pre not in neurons:
                     neurons.append(pre)
                 if post not in muscles:
@@ -173,6 +176,8 @@ class White_L4(ConnectomeDataset):
 
                 pre = remove_leading_index_zero(pre)
                 post = remove_leading_index_zero(post)
+                if synclass == "Generic_GJ":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # print ConnectionInfo(pre, post, num, syntype, synclass)
@@ -206,6 +211,8 @@ class White_L4(ConnectomeDataset):
                 if is_neuron(pre):
                     pre = remove_leading_index_zero(pre)
                 post = convert_to_preferred_muscle_name(post)
+                if synclass == "Generic_GJ":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
@@ -255,6 +262,8 @@ class White_whole(ConnectomeDataset):
                     continue  # pre or post is not a neuron
                 pre = remove_leading_index_zero(pre)
                 post = remove_leading_index_zero(post)
+                if synclass == "Generic_GJ":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # print ConnectionInfo(pre, post, num, syntype, synclass)
@@ -288,6 +297,8 @@ class White_whole(ConnectomeDataset):
                 if is_neuron(pre):
                     pre = remove_leading_index_zero(pre)
                     post = convert_to_preferred_muscle_name(post)
+                    if synclass == "Generic_GJ":
+                        conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                     conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 

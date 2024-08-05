@@ -1,0 +1,1677 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "width": 1
+      },
+      "mode": "lines",
+      "text": [
+        "I1L",
+        "I1R",
+        "I2L",
+        "I2R",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "M1",
+        "M2L",
+        "M2R",
+        "M3L",
+        "M3R",
+        "M4",
+        "M5",
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR",
+        "RIPL",
+        "RIPR",
+        "pm1",
+        "pm2D",
+        "pm2VL",
+        "pm2VR",
+        "pm3D",
+        "pm3VL",
+        "pm3VR",
+        "pm4D",
+        "pm4VL",
+        "pm4VR",
+        "pm5D",
+        "pm5VL",
+        "pm5VR",
+        "pm6D",
+        "pm6VL",
+        "pm6VR",
+        "pm7D",
+        "pm7VL",
+        "pm7VR",
+        "bm",
+        "e2DL",
+        "e2DR",
+        "e2V",
+        "e3D",
+        "e3VL",
+        "e3VR",
+        "g1AL",
+        "g1AR",
+        "g1P",
+        "g2L",
+        "g2R",
+        "mc2DL",
+        "mc2DR",
+        "mc2V",
+        "mc2dl",
+        "mc2dr",
+        "mc3V"
+      ],
+      "type": "scatter",
+      "x": [
+        0.01011,
+        0.014144,
+        null,
+        0.01011,
+        -0.037038,
+        null,
+        0.01011,
+        -0.042866,
+        null,
+        0.01011,
+        -0.019302,
+        null,
+        0.01011,
+        0.070537,
+        null,
+        -0.085328,
+        0.011673,
+        null,
+        -0.085328,
+        -0.042866,
+        null,
+        -0.085328,
+        -0.055093,
+        null,
+        -0.085328,
+        -0.151078,
+        null,
+        -0.085328,
+        -0.116133,
+        null,
+        -0.085328,
+        -0.139517,
+        null,
+        0.014144,
+        -0.067785,
+        null,
+        0.014144,
+        0.045284,
+        null,
+        -0.041768,
+        -0.02116,
+        null,
+        -0.041768,
+        -0.028667,
+        null,
+        -0.041768,
+        -0.055093,
+        null,
+        -0.041768,
+        -0.073488,
+        null,
+        0.011673,
+        -0.02116,
+        null,
+        0.011673,
+        0.025319,
+        null,
+        0.011673,
+        0.06409,
+        null,
+        0.011673,
+        -0.044618,
+        null,
+        -0.010805,
+        -0.028667,
+        null,
+        -0.010805,
+        -0.095569,
+        null,
+        -0.010805,
+        -0.034007,
+        null,
+        -0.115235,
+        -0.067785,
+        null,
+        -0.115235,
+        -0.028667,
+        null,
+        -0.115235,
+        -0.180899,
+        null,
+        -0.115235,
+        -0.082306,
+        null,
+        -0.115235,
+        -0.088512,
+        null,
+        -0.130451,
+        -0.095569,
+        null,
+        -0.02116,
+        -0.044618,
+        null,
+        -0.067785,
+        -0.095569,
+        null,
+        -0.067785,
+        -0.106715,
+        null,
+        -0.067785,
+        -0.019302,
+        null,
+        -0.067785,
+        -0.034007,
+        null,
+        -0.067785,
+        -0.082306,
+        null,
+        -0.028667,
+        -0.090774,
+        null,
+        -0.028667,
+        -0.042866,
+        null,
+        -0.028667,
+        0.025319,
+        null,
+        -0.028667,
+        -0.088512,
+        null,
+        -0.037038,
+        -0.055093,
+        null,
+        -0.037038,
+        -0.044618,
+        null,
+        -0.037038,
+        -0.034007,
+        null,
+        -0.037038,
+        -0.082306,
+        null,
+        -0.090774,
+        -0.139517,
+        null,
+        -0.090774,
+        -0.044618,
+        null,
+        -0.090774,
+        -0.062377,
+        null,
+        -0.090774,
+        -0.088512,
+        null,
+        -0.095569,
+        -0.095569,
+        null,
+        -0.095569,
+        -0.180899,
+        null,
+        -0.095569,
+        -0.044618,
+        null,
+        -0.095569,
+        -0.034007,
+        null,
+        -0.095569,
+        -0.062377,
+        null,
+        -0.095569,
+        -0.082306,
+        null,
+        -0.095569,
+        -0.088512,
+        null,
+        -0.180899,
+        -0.180899,
+        null,
+        -0.180899,
+        -0.253401,
+        null,
+        -0.180899,
+        -0.241106,
+        null,
+        0.025319,
+        0.06409,
+        null,
+        -0.07632,
+        -0.055093,
+        null,
+        -0.055093,
+        -0.044618,
+        null,
+        -0.170811,
+        -0.143384,
+        null,
+        0.055651,
+        0.045284,
+        null,
+        0.075453,
+        0.045284,
+        null,
+        -0.143361,
+        -0.143384,
+        null,
+        -0.109123,
+        -0.143384,
+        null,
+        -0.109123,
+        -0.073488,
+        null
+      ],
+      "y": [
+        -0.137436,
+        -0.236533,
+        null,
+        -0.137436,
+        -0.034581,
+        null,
+        -0.137436,
+        0.012499,
+        null,
+        -0.137436,
+        -0.207356,
+        null,
+        -0.137436,
+        -0.174025,
+        null,
+        0.081889,
+        0.102475,
+        null,
+        0.081889,
+        0.012499,
+        null,
+        0.081889,
+        0.105009,
+        null,
+        0.081889,
+        0.124107,
+        null,
+        0.081889,
+        0.13135,
+        null,
+        0.081889,
+        0.069539,
+        null,
+        -0.236533,
+        -0.159738,
+        null,
+        -0.236533,
+        -0.334216,
+        null,
+        0.171734,
+        0.113914,
+        null,
+        0.171734,
+        0.029377,
+        null,
+        0.171734,
+        0.105009,
+        null,
+        0.171734,
+        0.321264,
+        null,
+        0.102475,
+        0.113914,
+        null,
+        0.102475,
+        0.062234,
+        null,
+        0.102475,
+        0.100018,
+        null,
+        0.102475,
+        0.051142,
+        null,
+        -0.040073,
+        0.029377,
+        null,
+        -0.040073,
+        -0.075558,
+        null,
+        -0.040073,
+        -0.102084,
+        null,
+        -0.07022,
+        -0.159738,
+        null,
+        -0.07022,
+        0.029377,
+        null,
+        -0.07022,
+        -0.094645,
+        null,
+        -0.07022,
+        -0.097231,
+        null,
+        -0.07022,
+        -0.018441,
+        null,
+        -0.108626,
+        -0.075558,
+        null,
+        0.113914,
+        0.051142,
+        null,
+        -0.159738,
+        -0.075558,
+        null,
+        -0.159738,
+        -0.251785,
+        null,
+        -0.159738,
+        -0.207356,
+        null,
+        -0.159738,
+        -0.102084,
+        null,
+        -0.159738,
+        -0.097231,
+        null,
+        0.029377,
+        0.013196,
+        null,
+        0.029377,
+        0.012499,
+        null,
+        0.029377,
+        0.062234,
+        null,
+        0.029377,
+        -0.018441,
+        null,
+        -0.034581,
+        0.105009,
+        null,
+        -0.034581,
+        0.051142,
+        null,
+        -0.034581,
+        -0.102084,
+        null,
+        -0.034581,
+        -0.097231,
+        null,
+        0.013196,
+        0.069539,
+        null,
+        0.013196,
+        0.051142,
+        null,
+        0.013196,
+        -0.057207,
+        null,
+        0.013196,
+        -0.018441,
+        null,
+        -0.075558,
+        -0.075558,
+        null,
+        -0.075558,
+        -0.094645,
+        null,
+        -0.075558,
+        0.051142,
+        null,
+        -0.075558,
+        -0.102084,
+        null,
+        -0.075558,
+        -0.057207,
+        null,
+        -0.075558,
+        -0.097231,
+        null,
+        -0.075558,
+        -0.018441,
+        null,
+        -0.094645,
+        -0.094645,
+        null,
+        -0.094645,
+        -0.098338,
+        null,
+        -0.094645,
+        -0.135444,
+        null,
+        0.062234,
+        0.100018,
+        null,
+        0.17765,
+        0.105009,
+        null,
+        0.105009,
+        0.051142,
+        null,
+        0.585803,
+        0.55998,
+        null,
+        -0.375276,
+        -0.334216,
+        null,
+        -0.421601,
+        -0.334216,
+        null,
+        0.620284,
+        0.55998,
+        null,
+        0.447577,
+        0.55998,
+        null,
+        0.447577,
+        0.321264,
+        null
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "marker": {
+        "color": [
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#cc0033",
+          "#cc0033",
+          "#cc0033",
+          "#cc0033",
+          "#cc0033",
+          "#ff3300",
+          "#ff3300",
+          "#33cC00",
+          "#ccf199",
+          "#ccf199",
+          "#ccf199",
+          "#33cC00",
+          "#33cC00",
+          "#33cC00",
+          "#ccf199",
+          "#ccf199",
+          "#ccf199",
+          "#33cC00",
+          "#33cC00",
+          "#33cC00",
+          "#ccf199",
+          "#ccf199",
+          "#ccf199",
+          "#33cC00",
+          "#33cC00",
+          "#33cC00",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd",
+          "#dddddd"
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "side": "right",
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ]
+      },
+      "mode": "markers",
+      "text": [
+        "<b>I1L</b><br>Pharyngeal interneuron<br>Number of connections: 5",
+        "<b>I1R</b><br>Pharyngeal interneuron<br>Number of connections: 6",
+        "<b>I2L</b><br>Pharyngeal interneuron<br>Number of connections: 3",
+        "<b>I2R</b><br>Pharyngeal interneuron<br>Number of connections: 4",
+        "<b>I3</b><br>Pharyngeal interneuron<br>Number of connections: 5",
+        "<b>I4</b><br>Pharyngeal interneuron<br>Number of connections: 3",
+        "<b>I5</b><br>Pharyngeal interneuron<br>Number of connections: 5",
+        "<b>I6</b><br>Pharyngeal interneuron<br>Number of connections: 1",
+        "<b>M1</b><br>Pharyngeal motor neuron<br>Number of connections: 3",
+        "<b>M2L</b><br>Pharyngeal motor neuron<br>Number of connections: 7",
+        "<b>M2R</b><br>Pharyngeal motor neuron<br>Number of connections: 7",
+        "<b>M3L</b><br>Pharyngeal motor neuron<br>Number of connections: 5",
+        "<b>M3R</b><br>Pharyngeal motor neuron<br>Number of connections: 5",
+        "<b>M4</b><br>Pharyngeal motor neuron<br>Number of connections: 10",
+        "<b>M5</b><br>Pharyngeal motor neuron<br>Number of connections: 5",
+        "<b>MCL</b><br>Pharyngeal polymodal neuron<br>Number of connections: 1",
+        "<b>MCR</b><br>Pharyngeal polymodal neuron<br>Number of connections: 3",
+        "<b>MI</b><br>Pharyngeal polymodal neuron<br>Number of connections: 3",
+        "<b>NSML</b><br>Pharyngeal polymodal neuron<br>Number of connections: 1",
+        "<b>NSMR</b><br>Pharyngeal polymodal neuron<br>Number of connections: 5",
+        "<b>RIPL</b><br>Interneuron<br>Number of connections: 1",
+        "<b>RIPR</b><br>Interneuron<br>Number of connections: 1",
+        "<b>pm1</b><br>Pharyngeal muscle<br>Number of connections: 1",
+        "<b>pm2D</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm2VL</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm2VR</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm3D</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm3VL</b><br>Pharyngeal muscle<br>Number of connections: 1",
+        "<b>pm3VR</b><br>Pharyngeal muscle<br>Number of connections: 1",
+        "<b>pm4D</b><br>Pharyngeal muscle<br>Number of connections: 2",
+        "<b>pm4VL</b><br>Pharyngeal muscle<br>Number of connections: 2",
+        "<b>pm4VR</b><br>Pharyngeal muscle<br>Number of connections: 2",
+        "<b>pm5D</b><br>Pharyngeal muscle<br>Number of connections: 6",
+        "<b>pm5VL</b><br>Pharyngeal muscle<br>Number of connections: 4",
+        "<b>pm5VR</b><br>Pharyngeal muscle<br>Number of connections: 2",
+        "<b>pm6D</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm6VL</b><br>Pharyngeal muscle<br>Number of connections: 1",
+        "<b>pm6VR</b><br>Pharyngeal muscle<br>Number of connections: 1",
+        "<b>pm7D</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm7VL</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>pm7VR</b><br>Pharyngeal muscle<br>Number of connections: 0",
+        "<b>bm</b><br>???<br>Number of connections: 0",
+        "<b>e2DL</b><br>???<br>Number of connections: 1",
+        "<b>e2DR</b><br>???<br>Number of connections: 1",
+        "<b>e2V</b><br>???<br>Number of connections: 2",
+        "<b>e3D</b><br>???<br>Number of connections: 3",
+        "<b>e3VL</b><br>???<br>Number of connections: 3",
+        "<b>e3VR</b><br>???<br>Number of connections: 2",
+        "<b>g1AL</b><br>???<br>Number of connections: 4",
+        "<b>g1AR</b><br>???<br>Number of connections: 4",
+        "<b>g1P</b><br>???<br>Number of connections: 0",
+        "<b>g2L</b><br>???<br>Number of connections: 0",
+        "<b>g2R</b><br>???<br>Number of connections: 0",
+        "<b>mc2DL</b><br>???<br>Number of connections: 0",
+        "<b>mc2DR</b><br>???<br>Number of connections: 0",
+        "<b>mc2V</b><br>???<br>Number of connections: 0",
+        "<b>mc2dl</b><br>???<br>Number of connections: 0",
+        "<b>mc2dr</b><br>???<br>Number of connections: 0",
+        "<b>mc3V</b><br>???<br>Number of connections: 0"
+      ],
+      "type": "scatter",
+      "x": [
+        0.01011,
+        -0.085328,
+        0.014144,
+        -0.041768,
+        0.011673,
+        -0.010805,
+        -0.115235,
+        -0.130451,
+        -0.02116,
+        -0.067785,
+        -0.028667,
+        -0.037038,
+        -0.090774,
+        -0.095569,
+        -0.180899,
+        -0.106715,
+        -0.042866,
+        0.025319,
+        -0.07632,
+        -0.055093,
+        0.070537,
+        -0.151078,
+        -0.170811,
+        0.773353,
+        -0.219998,
+        -1.0,
+        -0.721,
+        0.055651,
+        -0.116133,
+        0.06409,
+        -0.019302,
+        -0.139517,
+        -0.044618,
+        -0.034007,
+        -0.062377,
+        0.531725,
+        -0.253401,
+        -0.241106,
+        0.93742,
+        0.647799,
+        0.858989,
+        0.59957,
+        0.075453,
+        -0.143361,
+        -0.109123,
+        -0.143384,
+        0.045284,
+        -0.073488,
+        -0.082306,
+        -0.088512,
+        -0.899628,
+        0.866849,
+        0.935416,
+        -0.737013,
+        0.224991,
+        -0.544627,
+        0.830532,
+        -0.8824,
+        0.484758
+      ],
+      "y": [
+        -0.137436,
+        0.081889,
+        -0.236533,
+        0.171734,
+        0.102475,
+        -0.040073,
+        -0.07022,
+        -0.108626,
+        0.113914,
+        -0.159738,
+        0.029377,
+        -0.034581,
+        0.013196,
+        -0.075558,
+        -0.094645,
+        -0.251785,
+        0.012499,
+        0.062234,
+        0.17765,
+        0.105009,
+        -0.174025,
+        0.124107,
+        0.585803,
+        -0.584359,
+        -0.966188,
+        0.212561,
+        -0.671654,
+        -0.375276,
+        0.13135,
+        0.100018,
+        -0.207356,
+        0.069539,
+        0.051142,
+        -0.102084,
+        -0.057207,
+        -0.852536,
+        -0.098338,
+        -0.135444,
+        -0.18251,
+        0.64029,
+        0.294579,
+        -0.700864,
+        -0.421601,
+        0.620284,
+        0.447577,
+        0.55998,
+        -0.334216,
+        0.321264,
+        -0.097231,
+        -0.018441,
+        -0.178644,
+        -0.38745,
+        0.091431,
+        0.747095,
+        0.954755,
+        -0.86534,
+        0.468493,
+        0.496449,
+        0.833267
+      ]
+    }
+  ],
+  "layout": {
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "#E5ECF6",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "white"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "#E5ECF6",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "bgcolor": "#E5ECF6",
+          "radialaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          },
+          "yaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          },
+          "zaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "bgcolor": "#E5ECF6",
+          "caxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "xaxis": {
+      "showgrid": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "showgrid": false,
+      "zeroline": false
+    }
+  }
+}

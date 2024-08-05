@@ -3,6 +3,17 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 
 [View as matrix](Test_data.md){ .md-button } [View as graph](Test_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/TestData_Raw Data_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/TestData_Raw Data_Electrical.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -40,6 +51,17 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 
         ```plotly
         ---8<-- "./assets/TestData_Social View_Electrical.json"
+        ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/TestData_Small View_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/TestData_Small View_Electrical.json"
         ```
 
 ### Neurons (12)

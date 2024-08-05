@@ -47,6 +47,8 @@ class WitvlietDataReader(ConnectomeDataset):
             syntype = str(row[2])
             num = int(row[3])
             synclass = "Generic_GJ" if "electrical" in syntype else "Generic_CS"
+            if synclass == "Generic_GJ":
+                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
             conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
@@ -78,6 +80,9 @@ class WitvlietDataReader(ConnectomeDataset):
                 post = convert_to_preferred_muscle_name(post)
             else:
                 continue
+
+            if synclass == "Generic_GJ":
+                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
             conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
             if pre not in neurons:

@@ -2,7 +2,9 @@ import cect
 
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
+from cect.Cells import get_cell_link
 from cect import print_
+import json
 
 import sys
 import numpy as np
@@ -21,7 +23,7 @@ reader_pages = {
     "Witvliet2": "Witvliet2_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
-    "Cook2020":"Cook2020_data",
+    "Cook2020": "Cook2020_data",
 }
 
 all_data[""] = [
@@ -45,7 +47,7 @@ readers = {
     "White_L4": ["cect.White_L4", "White_1986"],
     "White_whole": ["cect.White_whole", "White_1986"],
     "TestData": ["cect.TestDataReader", None],
-    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"]
+    "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
 }
 if not quick:
     readers["White_A"] = ["cect.White_A", "White_1986"]
@@ -53,6 +55,7 @@ if not quick:
     readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
     readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
     readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+
 
 def shorten_neurotransmitter(nt):
     return (
@@ -65,56 +68,14 @@ def shorten_neurotransmitter(nt):
     )
 
 
-# TODO: move elsewhere and make more generic
-def get_cell_link(cell_name, html=False):
-    url = None
-
-    known_indiv = ["SABD", "MI"]
-
-    if cell_name in known_indiv:
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name
-        )
-    elif cell_name[-2:].isnumeric():
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-2]
-        )
-    elif cell_name[-1].isdigit():
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-1]
-        )
-    elif (
-        cell_name.endswith("L")
-        or cell_name.endswith("R")
-        or cell_name.endswith("EV")
-        or cell_name.endswith("ED")
-        or cell_name.endswith("BD")
-    ):
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-1]
-        )
-    elif len(cell_name) == 3:
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name
-        )
-
-    if url is not None:
-        if html:
-            return '<a href="%s">%s</a>' % (url, cell_name)
-        else:
-            return "[%s](%s)" % (cell_name, url)
-    else:
-        return cell_name
+def _format_json(json_str):
+    return json.dumps(json.loads(json_str), sort_keys=True, indent=2)
 
 
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
+    view_name = view.name
 
-    fig = connectome.to_plotly_graph_fig(synclass)
+    fig = connectome.to_plotly_graph_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
         reader_name,
@@ -123,7 +84,7 @@ def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
-        asset_file.write(fig.to_json())
+        asset_file.write(_format_json(fig.to_json()))
 
     if np.sum(connectome.connections[synclass]) == 0:
         return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
@@ -151,7 +112,7 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
-        asset_file.write(fig.to_json())
+        asset_file.write(_format_json(fig.to_json()))
 
     if np.sum(connectome.connections[synclass]) == 0:
         return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
@@ -170,9 +131,8 @@ def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="  
 
 
 for reader_name, reader_info in readers.items():
-
     reader = reader_info[0]
-    decription_page = reader_info[1] if len(reader_info)>1 else None
+    decription_page = reader_info[1] if len(reader_info) > 1 else None
 
     print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
 
@@ -230,24 +190,25 @@ for reader_name, reader_info in readers.items():
     )
 
     if reader_name in reader_pages:
-
         matrix_filename = "docs/%s.md" % reader_pages[reader_name]
         graph_filename = "docs/%s_graph.md" % reader_pages[reader_name]
 
         for filename in [matrix_filename, graph_filename]:
-                
             with open(filename, "w") as f:
-
-                matrix = filename==matrix_filename
+                matrix = filename == matrix_filename
 
                 f.write("## %s\n" % reader_name)
                 if decription_page is not None:
-                    
-                    f.write("[Source publication of dataset](%s.md)\n\n" % decription_page)
-                    
+                    f.write(
+                        "[Source publication of dataset](%s.md)\n\n" % decription_page
+                    )
+
                 f.write("%s\n\n" % READER_DESCRIPTION)
 
-                f.write("[View as matrix](%s.md){ .md-button } [View as graph](%s_graph.md){ .md-button }\n\n" % (reader_pages[reader_name], reader_pages[reader_name]))
+                f.write(
+                    "[View as matrix](%s.md){ .md-button } [View as graph](%s_graph.md){ .md-button }\n\n"
+                    % (reader_pages[reader_name], reader_pages[reader_name])
+                )
 
                 if connectome is not None:
                     from ConnectomeView import ALL_VIEWS
@@ -265,18 +226,24 @@ for reader_name, reader_info in readers.items():
                             if matrix:
                                 f.write(
                                     get_matrix_markdown(
-                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                        reader_name,
+                                        view.name,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
                                 )
-                                
-                            else:
 
+                            else:
                                 f.write(
                                     get_2d_graph_markdown(
-                                        reader_name, view.name, cv, sc, indent=indent + indent
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
                                 )
-                            
 
                 cell_types = {
                     "Neurons": preferred,

@@ -5,6 +5,17 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [View as matrix](Varshney_data.md){ .md-button } [View as graph](Varshney_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Varshney_Raw Data_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Varshney_Raw Data_Electrical_graph.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -42,6 +53,17 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
         ```plotly
         ---8<-- "./assets/Varshney_Social View_Electrical_graph.json"
+        ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/Varshney_Small View_Chemical_graph.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/Varshney_Small View_Electrical_graph.json"
         ```
 
 ### Neurons (279)

@@ -5,6 +5,17 @@ Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
 [View as matrix](White_A_data.md){ .md-button } [View as graph](White_A_data_graph.md){ .md-button }
 
+=== "Raw Data"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/White_A_Raw Data_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/White_A_Raw Data_Electrical.json"
+        ```
 === "Full View"
     === "Chemical Exc"
 
@@ -42,6 +53,17 @@ Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
         ```plotly
         ---8<-- "./assets/White_A_Social View_Electrical.json"
+        ```
+=== "Small View"
+    === "Chemical"
+
+        ```plotly
+        ---8<-- "./assets/White_A_Small View_Chemical.json"
+        ```
+    === "Electrical"
+
+        ```plotly
+        ---8<-- "./assets/White_A_Small View_Electrical.json"
         ```
 
 ### Neurons (182)
