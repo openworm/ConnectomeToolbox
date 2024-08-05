@@ -9,7 +9,8 @@ if [[ ($# -eq 1) && ($1 == '-q') ]]; then
 fi
 
 ##   Test readers
-
+                                                                                                                       
+python -m cect.Cells
 python -m cect.SpreadsheetDataReader 
 python -m cect.UpdatedSpreadsheetDataReader                                                                                                                                                                      
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
@@ -18,7 +19,7 @@ python -m cect.VarshneyDataReader
 python -m cect.Cook2020DataReader       
 python -m cect.White_whole   -nogui                                                                                                                                              
 python -m cect.TestDataReader -nogui                                                                                                                                         
-python -m cect.ConnectomeView
+python -m cect.ConnectomeView        
 
 if [ "$quick_test" == 0 ]; then
 

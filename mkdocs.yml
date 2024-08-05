@@ -28,6 +28,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 nav:
   - Overview: 'index.md'
@@ -67,5 +70,7 @@ nav:
     - 'Witvliet et al. 2021 - 2': 'Witvliet2_data.md'
     - 'WormNeuroAtlas': 'WormNeuroAtlas_data.md'
     - 'Test': 'Test_data.md'
+  - Cells:
+    - 'C. elegans cells': 'Cells.md'
   - Python package:
     - 'Installation': 'Python.md'
