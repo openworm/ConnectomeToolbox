@@ -1,7 +1,7 @@
 from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
-from cect.ConnectomeReader import PHARYNX_CELLS
+from cect.ConnectomeReader import PHARANGEAL_NEURONS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import KNOWN_OTHER_CELLS
@@ -90,7 +90,7 @@ for cell in sorted(PREFERRED_NEURON_NAMES):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_SYN_CLASSES)
-for cell in sorted(PHARYNX_CELLS):
+for cell in sorted(PHARANGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_SYN_CLASSES)

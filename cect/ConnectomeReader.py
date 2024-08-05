@@ -10,7 +10,7 @@ from cect import print_
 
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
-from cect.Cells import PHARYNX_CELLS
+from cect.Cells import PHARANGEAL_NEURONS
 from cect.Cells import KNOWN_OTHER_CELLS
 
 DEFAULT_COLORMAP = ["white", "green", "black"]
@@ -41,7 +41,7 @@ def convert_to_preferred_muscle_name(muscle):
 def get_standard_color(cell):
     if is_muscle(cell):
         return "#00dd00"
-    elif cell in PHARYNX_CELLS:
+    elif cell in PHARANGEAL_NEURONS:
         return "#0000dd"
     elif cell in PREFERRED_NEURON_NAMES:
         return "#dd0000"

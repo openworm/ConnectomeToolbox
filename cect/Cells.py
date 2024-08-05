@@ -6,6 +6,345 @@
 
 ############################################################
 
+import pandas as pd
+
+SENSORY_NEURONS_COOK = [
+    "ASIL",
+    "ASIR",
+    "ASJL",
+    "ASJR",
+    "AWAL",
+    "AWAR",
+    "ASGL",
+    "ASGR",
+    "AWBL",
+    "AWBR",
+    "ASEL",
+    "ASER",
+    "ADFL",
+    "ADFR",
+    "AFDL",
+    "AFDR",
+    "AWCL",
+    "AWCR",
+    "ASKL",
+    "ASKR",
+    "ASHL",
+    "ASHR",
+    "ADLL",
+    "ADLR",
+    "BAGL",
+    "BAGR",
+    "URXL",
+    "URXR",
+    "ALNL",
+    "ALNR",
+    "PLNL",
+    "PLNR",
+    "SDQL",
+    "SDQR",
+    "AQR",
+    "PQR",
+    "ALML",
+    "ALMR",
+    "AVM",
+    "PVM",
+    "PLML",
+    "PLMR",
+    "FLPL",
+    "FLPR",
+    "DVA",
+    "PVDL",
+    "PVDR",
+    "ADEL",
+    "ADER",
+    "PDEL",
+    "PDER",
+    "PHAL",
+    "PHAR",
+    "PHBL",
+    "PHBR",
+    "PHCL",
+    "PHCR",
+    "IL2DL",
+    "IL2DR",
+    "IL2L",
+    "IL2R",
+    "IL2VL",
+    "IL2VR",
+    "CEPDL",
+    "CEPDR",
+    "CEPVL",
+    "CEPVR",
+    "URYDL",
+    "URYDR",
+    "URYVL",
+    "URYVR",
+    "OLLL",
+    "OLLR",
+    "OLQDL",
+    "OLQDR",
+    "OLQVL",
+    "OLQVR",
+    "IL1DL",
+    "IL1DR",
+    "IL1L",
+    "IL1R",
+    "IL1VL",
+    "IL1VR",
+]
+
+INTERNEURONS_COOK = [
+    "AINL",
+    "AINR",
+    "AIML",
+    "AIMR",
+    "RIH",
+    "URBL",
+    "URBR",
+    "RIR",
+    "AIYL",
+    "AIYR",
+    "AIAL",
+    "AIAR",
+    "AUAL",
+    "AUAR",
+    "AIZL",
+    "AIZR",
+    "RIS",
+    "ALA",
+    "PVQL",
+    "PVQR",
+    "ADAL",
+    "ADAR",
+    "RIFL",
+    "RIFR",
+    "BDUL",
+    "BDUR",
+    "PVR",
+    "AVFL",
+    "AVFR",
+    "AVHL",
+    "AVHR",
+    "PVPL",
+    "PVPR",
+    "LUAL",
+    "LUAR",
+    "PVNL",
+    "PVNR",
+    "AVG",
+    "DVB",
+    "RIBL",
+    "RIBR",
+    "RIGL",
+    "RIGR",
+    "RMGL",
+    "RMGR",
+    "AIBL",
+    "AIBR",
+    "RICL",
+    "RICR",
+    "SAADL",
+    "SAADR",
+    "SAAVL",
+    "SAAVR",
+    "AVKL",
+    "AVKR",
+    "DVC",
+    "AVJL",
+    "AVJR",
+    "PVT",
+    "AVDL",
+    "AVDR",
+    "AVL",
+    "PVWL",
+    "PVWR",
+    "RIAL",
+    "RIAR",
+    "RIML",
+    "RIMR",
+    "AVEL",
+    "AVER",
+    "RMFL",
+    "RMFR",
+    "RID",
+    "AVBL",
+    "AVBR",
+    "AVAL",
+    "AVAR",
+    "PVCL",
+    "PVCR",
+    "RIPL",
+    "RIPR",
+]
+
+HEAD_MOTORNEURONS_COOK = [
+    "URADL",
+    "URADR",
+    "URAVL",
+    "URAVR",
+    "RMEL",
+    "RMER",
+    "RMED",
+    "RMEV",
+    "RMDDL",
+    "RMDDR",
+    "RMDL",
+    "RMDR",
+    "RMDVL",
+    "RMDVR",
+    "RIVL",
+    "RIVR",
+    "RMHL",
+    "RMHR",
+]
+
+SUBLATERAL_MOTORNEURONS_COOK = [
+    "SABD",
+    "SABVL",
+    "SABVR",
+    "SMDDL",
+    "SMDDR",
+    "SMDVL",
+    "SMDVR",
+    "SMBDL",
+    "SMBDR",
+    "SMBVL",
+    "SMBVR",
+    "SIBDL",
+    "SIBDR",
+    "SIBVL",
+    "SIBVR",
+    "SIADL",
+    "SIADR",
+    "SIAVL",
+    "SIAVR",
+]
+
+VENTRAL_CORD_MOTORNEURONS = [
+    "DA1",
+    "DA2",
+    "DA3",
+    "DA4",
+    "DA5",
+    "DA6",
+    "DA7",
+    "DA8",
+    "DA9",
+    "PDA",
+    "DB1",
+    "DB2",
+    "DB3",
+    "DB4",
+    "DB5",
+    "DB6",
+    "DB7",
+    "AS1",
+    "AS2",
+    "AS3",
+    "AS4",
+    "AS5",
+    "AS6",
+    "AS7",
+    "AS8",
+    "AS9",
+    "AS10",
+    "AS11",
+    "PDB",
+    "DD1",
+    "DD2",
+    "DD3",
+    "DD4",
+    "DD5",
+    "DD6",
+    "VA1",
+    "VA2",
+    "VA3",
+    "VA4",
+    "VA5",
+    "VA6",
+    "VA7",
+    "VA8",
+    "VA9",
+    "VA10",
+    "VA11",
+    "VA12",
+    "VB1",
+    "VB2",
+    "VB3",
+    "VB4",
+    "VB5",
+    "VB6",
+    "VB7",
+    "VB8",
+    "VB9",
+    "VB10",
+    "VB11",
+    "VD1",
+    "VD2",
+    "VD3",
+    "VD4",
+    "VD5",
+    "VD6",
+    "VD7",
+    "VD8",
+    "VD9",
+    "VD10",
+    "VD11",
+    "VD12",
+    "VD13",
+]
+
+HERM_SPECIFIC_NEURONS = [
+    "HSNL",
+    "HSNR",
+    "VC1",
+    "VC2",
+    "VC3",
+    "VC4",
+    "VC5",
+    "VC6",
+]
+
+UNKNOWN_FUNCTION_NEURONS = ["CANL", "CANR"]
+
+
+PHARANGEAL_NEURONS = [
+    "M1",
+    "M2L",
+    "M2R",
+    "M3L",
+    "M3R",
+    "M4",
+    "M5",
+    "I1L",
+    "I1R",
+    "I2L",
+    "I2R",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "MI",
+    "NSML",
+    "NSMR",
+    "MCL",
+    "MCR",
+]
+
+MOTORNEURONS_COOK = (
+    HEAD_MOTORNEURONS_COOK + SUBLATERAL_MOTORNEURONS_COOK + VENTRAL_CORD_MOTORNEURONS
+)
+
+PREFERRED_NEURON_NAMES_COOK = (
+    INTERNEURONS_COOK
+    + SENSORY_NEURONS_COOK
+    + MOTORNEURONS_COOK
+    + HERM_SPECIFIC_NEURONS
+    + PHARANGEAL_NEURONS
+    + UNKNOWN_FUNCTION_NEURONS
+)
+
 
 PREFERRED_NEURON_NAMES = [
     "ADAL",
@@ -312,8 +651,14 @@ PREFERRED_NEURON_NAMES = [
     "VD9",
 ]
 
+for n in PREFERRED_NEURON_NAMES:
+    assert n in PREFERRED_NEURON_NAMES_COOK
+for n in PREFERRED_NEURON_NAMES_COOK:
+    assert n in PREFERRED_NEURON_NAMES
+
+assert len(PREFERRED_NEURON_NAMES_COOK) == len(PREFERRED_NEURON_NAMES)
+
 BODY_WALL_MUSCLE_NAMES = [
-    "MANAL",
     "MDL01",
     "MDL02",
     "MDL03",
@@ -412,6 +757,8 @@ BODY_WALL_MUSCLE_NAMES = [
 ]
 
 
+ANAL_MUSCLE_NAMES = ["MANAL"]
+
 VULVAL_MUSCLE_NAMES = [
     "MVULVA",
     "vm1AL",
@@ -449,31 +796,12 @@ PHARANGEAL_MUSCLE_NAMES = [
 
 
 PREFERRED_MUSCLE_NAMES = (
-    BODY_WALL_MUSCLE_NAMES + PHARANGEAL_MUSCLE_NAMES + VULVAL_MUSCLE_NAMES
+    BODY_WALL_MUSCLE_NAMES
+    + PHARANGEAL_MUSCLE_NAMES
+    + VULVAL_MUSCLE_NAMES
+    + ANAL_MUSCLE_NAMES
 )
 
-PHARYNX_CELLS = [
-    "M1",
-    "M2L",
-    "M2R",
-    "M3L",
-    "M3R",
-    "M4",
-    "M5",
-    "I1L",
-    "I1R",
-    "I2L",
-    "I2R",
-    "I3",
-    "I4",
-    "I5",
-    "I6",
-    "MI",
-    "NSML",
-    "NSMR",
-    "MCL",
-    "MCR",
-]
 
 KNOWN_OTHER_CELLS_COOK_19 = [
     "CEPshDL",
@@ -545,6 +873,67 @@ for cell in KNOWN_OTHER_CELLS_COOK_20:
         KNOWN_OTHER_CELLS.append(cell)
 
 
+def get_cell_link(cell_name, html=False):
+    url = None
+
+    known_indiv = ["SABD", "MI"]
+
+    if cell_name in known_indiv:
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name
+        )
+    elif cell_name[-2:].isnumeric():
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name[:-2]
+        )
+    elif cell_name[-1].isdigit():
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name[:-1]
+        )
+    elif (
+        cell_name.endswith("L")
+        or cell_name.endswith("R")
+        or cell_name.endswith("EV")
+        or cell_name.endswith("ED")
+        or cell_name.endswith("BD")
+    ):
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name[:-1]
+        )
+    elif len(cell_name) == 3:
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name
+        )
+
+    if url is not None:
+        if html:
+            return '<a href="%s">%s</a>' % (url, cell_name)
+        else:
+            return "[%s](%s)" % (cell_name, url)
+    else:
+        return cell_name
+
+
+def _generate_cell_table(cells):
+    all_data = {}
+
+    all_data[""] = ["Link"]
+
+    for cell in sorted(cells):
+        all_data[cell] = [get_cell_link(cell)]
+
+    df_all = pd.DataFrame(all_data).transpose()
+
+    mk = df_all.to_markdown()
+
+    return "%s\n\n" % mk
+
+
 if __name__ == "__main__":
     from cect.WormAtlasInfo import WA_COLORS
 
@@ -558,10 +947,20 @@ if __name__ == "__main__":
                 f.write("\n### %s\n\n" % cell_class)
 
                 for cell_type in WA_COLORS[sex][cell_class]:
-                    color = WA_COLORS[sex][cell_class][cell_type][1:]
-                    f.write(
-                        "- ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
-                            color, cell_type
+                    if not "General code" in cell_type:
+                        color = WA_COLORS[sex][cell_class][cell_type][1:]
+                        f.write(
+                            "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
+                                color, cell_type[0].upper() + cell_type[1:]
+                            )
                         )
-                    )
-                    f.write("")
+                        if cell_type == "body wall muscle":
+                            f.write(_generate_cell_table(BODY_WALL_MUSCLE_NAMES))
+                        elif cell_type == "interneuron":
+                            f.write(_generate_cell_table(INTERNEURONS_COOK))
+                        elif cell_type == "motor neuron":
+                            f.write(_generate_cell_table(MOTORNEURONS_COOK))
+                        elif cell_type == "sensory neuron":
+                            f.write(_generate_cell_table(SENSORY_NEURONS_COOK))
+                        elif cell_type == "neuron with unknown function":
+                            f.write(_generate_cell_table(UNKNOWN_FUNCTION_NEURONS))
