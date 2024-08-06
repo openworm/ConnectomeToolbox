@@ -1,12 +1,24 @@
 from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
-from cect.ConnectomeReader import PHARANGEAL_NEURONS
-from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
-from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
-from cect.ConnectomeReader import KNOWN_OTHER_CELLS
+
+from cect.Cells import PHARYNGEAL_NEURONS
+from cect.Cells import PREFERRED_NEURON_NAMES
+from cect.Cells import PREFERRED_MUSCLE_NAMES
+from cect.Cells import KNOWN_OTHER_CELLS
+
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
+
+from cect.Cells import BODY_WALL_MUSCLE_NAMES
+from cect.Cells import BODY_MUSCLES_COOK
+from cect.Cells import HEAD_MUSCLES_COOK
+from cect.Cells import HEAD_MOTORNEURONS_COOK
+from cect.Cells import SUBLATERAL_MOTORNEURONS_COOK
+from cect.Cells import VENTRAL_CORD_MOTORNEURONS
+from cect.Cells import HSN_MOTORNEURONS
+from cect.Cells import VC_HERM_MOTORNEURONS
+
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
@@ -98,7 +110,7 @@ for cell in sorted(PREFERRED_NEURON_NAMES):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_SYN_CLASSES)
-for cell in sorted(PHARANGEAL_NEURONS):
+for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_SYN_CLASSES)
@@ -107,27 +119,16 @@ for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
 
 SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
 
-for cell in sorted(["ADAL", "ADAR", "ADFL", "ADFR"]):
-    SMALL_VIEW.node_sets.append(
-        NodeSet(cell, [cell], color="#FF0000" if "ADA" in cell else "#00FF00")
-    )
-
-motorneuron_prefixes = ["DB", "VB", "DD", "VD", "DA", "AS", "VA"]
-
-for prefix in motorneuron_prefixes:
-    SMALL_VIEW.node_sets.append(NodeSet(prefix, [], color="#be5103"))
-
-for cell in sorted(PREFERRED_NEURON_NAMES):
-    for prefix in motorneuron_prefixes:
-        if cell.startswith(prefix):
-            SMALL_VIEW.get_node_set(prefix).cells.append(cell)
 
 for category in SENSORY_NEURONS_COOK_CATEGORIES:
+    color = "#b31b1b"
+    if category == "SN4":
+        color = "#FFC0CB"
     SMALL_VIEW.node_sets.append(
         NodeSet(
             category,
             SENSORY_NEURONS_COOK_CATEGORIES[category],
-            color="#b31b1b",
+            color=color,
             shape="triangle-up",
         )
     )
@@ -141,6 +142,33 @@ for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
             shape="hexagon2",
         )
     )
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("HMN", HEAD_MOTORNEURONS_COOK, color="#FFDF00", shape="circle")
+)
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("SMN", SUBLATERAL_MOTORNEURONS_COOK, color="#FF6000", shape="circle")
+)
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("MNVC", VENTRAL_CORD_MOTORNEURONS, color="#BFA700", shape="circle")
+)
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("VC", VC_HERM_MOTORNEURONS, color="#FF00FF", shape="circle")
+)
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("HSN", HSN_MOTORNEURONS, color="#FF00FF", shape="circle")
+)
+
+SMALL_VIEW.node_sets.append(
+    NodeSet("MUBODY", BODY_MUSCLES_COOK, color="#964B00", shape="square")
+)
+SMALL_VIEW.node_sets.append(
+    NodeSet("MUHEAD", HEAD_MUSCLES_COOK, color="#964B00", shape="square")
+)
 
 
 ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]

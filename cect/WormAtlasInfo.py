@@ -59,9 +59,9 @@ WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory duct"] = "#cccc99"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"] = {}
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["hypodermis"] = "#dcc3ac"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["seam cell"] = "#сс6633"
-WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cel, XXX cells"] = "#ff9999"
+WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cell, XXX cells"] = "#ff9999"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "sheath cel other than amphid sheath and phasmid"
+    "sheath cell other than amphid sheath and phasmid"
 ] = "#339999"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "amphid sheath and phasmid sheath"

@@ -10,7 +10,6 @@ from cect import print_
 
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
-from cect.Cells import PHARANGEAL_NEURONS
 from cect.Cells import KNOWN_OTHER_CELLS
 
 DEFAULT_COLORMAP = ["white", "green", "black"]

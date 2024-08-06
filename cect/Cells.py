@@ -304,6 +304,9 @@ HEAD_MOTORNEURONS_COOK = [
     "RMHR",
 ]
 
+for cell in HEAD_MOTORNEURONS_COOK:
+    cell_notes[cell] = "head motor neuron"
+
 SUBLATERAL_MOTORNEURONS_COOK = [
     "SABD",
     "SABVL",
@@ -325,6 +328,25 @@ SUBLATERAL_MOTORNEURONS_COOK = [
     "SIAVL",
     "SIAVR",
 ]
+
+
+for cell in SUBLATERAL_MOTORNEURONS_COOK:
+    cell_notes[cell] = "sublateral motor neuron"
+
+for cell in [
+    "SABD",
+    "SABVL",
+    "SABVR",
+    "SIBDL",
+    "SIBDR",
+    "SIBVL",
+    "SIBVR",
+    "SIADL",
+    "SIADR",
+    "SIAVL",
+    "SIAVR",
+]:
+    cell_notes[cell] += "; interneuron in White et al., 1986"
 
 VENTRAL_CORD_MOTORNEURONS = [
     "DA1",
@@ -400,9 +422,17 @@ VENTRAL_CORD_MOTORNEURONS = [
     "VD13",
 ]
 
-HERM_SPECIFIC_MOTORNEURONS = [
+for cell in VENTRAL_CORD_MOTORNEURONS:
+    cell_notes[cell] = "ventral cord motor neuron"
+
+
+HSN_MOTORNEURONS = [
     "HSNL",
     "HSNR",
+]
+
+
+VC_HERM_MOTORNEURONS = [
     "VC1",
     "VC2",
     "VC3",
@@ -411,10 +441,18 @@ HERM_SPECIFIC_MOTORNEURONS = [
     "VC6",
 ]
 
+HERM_SPECIFIC_MOTORNEURONS = HSN_MOTORNEURONS + VC_HERM_MOTORNEURONS
+
+for cell in HERM_SPECIFIC_MOTORNEURONS:
+    cell_notes[cell] = "hermaphrodite specific motor neuron"
+
 UNKNOWN_FUNCTION_NEURONS = ["CANL", "CANR"]
 
+for cell in UNKNOWN_FUNCTION_NEURONS:
+    cell_notes[cell] = "canal neuron"
 
-PHARANGEAL_MOTORNEURONS = [
+
+PHARYNGEAL_MOTORNEURONS = [
     "M1",
     "M2L",
     "M2R",
@@ -424,7 +462,10 @@ PHARANGEAL_MOTORNEURONS = [
     "M5",
 ]
 
-PHARANGEAL_INTERNEURONS = [
+for cell in PHARYNGEAL_MOTORNEURONS:
+    cell_notes[cell] = "pharyngeal motor neuron"
+
+PHARYNGEAL_INTERNEURONS = [
     "I1L",
     "I1R",
     "I2L",
@@ -435,7 +476,10 @@ PHARANGEAL_INTERNEURONS = [
     "I6",
 ]
 
-PHARANGEAL_POLYMODAL_NEURONS = [
+for cell in PHARYNGEAL_INTERNEURONS:
+    cell_notes[cell] = "pharyngeal interneuron"
+
+PHARYNGEAL_POLYMODAL_NEURONS = [
     "MI",
     "NSML",
     "NSMR",
@@ -443,17 +487,20 @@ PHARANGEAL_POLYMODAL_NEURONS = [
     "MCR",
 ]
 
-INTERNEURONS_COOK = INTERNEURONS_NONPHARYNGEAL_COOK + PHARANGEAL_INTERNEURONS
+for cell in PHARYNGEAL_POLYMODAL_NEURONS:
+    cell_notes[cell] = "pharyngeal polymodal neuron"
 
-PHARANGEAL_NEURONS = (
-    PHARANGEAL_INTERNEURONS + PHARANGEAL_MOTORNEURONS + PHARANGEAL_POLYMODAL_NEURONS
+INTERNEURONS_COOK = INTERNEURONS_NONPHARYNGEAL_COOK + PHARYNGEAL_INTERNEURONS
+
+PHARYNGEAL_NEURONS = (
+    PHARYNGEAL_INTERNEURONS + PHARYNGEAL_MOTORNEURONS + PHARYNGEAL_POLYMODAL_NEURONS
 )
 
 MOTORNEURONS_COOK = (
     HEAD_MOTORNEURONS_COOK
     + SUBLATERAL_MOTORNEURONS_COOK
     + VENTRAL_CORD_MOTORNEURONS
-    + PHARANGEAL_MOTORNEURONS
+    + PHARYNGEAL_MOTORNEURONS
     + HERM_SPECIFIC_MOTORNEURONS
 )
 
@@ -461,7 +508,7 @@ PREFERRED_NEURON_NAMES_COOK = (
     INTERNEURONS_COOK
     + SENSORY_NEURONS_COOK
     + MOTORNEURONS_COOK
-    + PHARANGEAL_POLYMODAL_NEURONS
+    + PHARYNGEAL_POLYMODAL_NEURONS
     + UNKNOWN_FUNCTION_NEURONS
 )
 
@@ -876,6 +923,18 @@ BODY_WALL_MUSCLE_NAMES = [
     "MVR24",
 ]
 
+HEAD_MUSCLES_COOK = []
+BODY_MUSCLES_COOK = []
+
+for bwm in BODY_WALL_MUSCLE_NAMES:
+    num = int(bwm[3:5])
+    if num < 8:
+        HEAD_MUSCLES_COOK.append(bwm)
+        cell_notes[bwm] = "head muscle"
+    else:
+        BODY_MUSCLES_COOK.append(bwm)
+        cell_notes[bwm] = "main body muscle"
+
 
 ANAL_MUSCLE_NAMES = ["MANAL"]
 
@@ -891,7 +950,7 @@ VULVAL_MUSCLE_NAMES = [
     "vm2PR",
 ]
 
-ODD_PHARANGEAL_MUSCLE_NAMES = [
+ODD_PHARYNGEAL_MUSCLE_NAMES = [
     "pm1",
     "pm3D",
     "pm3VL",
@@ -904,7 +963,7 @@ ODD_PHARANGEAL_MUSCLE_NAMES = [
     "pm7VR",
 ]
 
-EVEN_PHARANGEAL_MUSCLE_NAMES = [
+EVEN_PHARYNGEAL_MUSCLE_NAMES = [
     "pm2D",
     "pm2VL",
     "pm2VR",
@@ -917,12 +976,15 @@ EVEN_PHARANGEAL_MUSCLE_NAMES = [
     "pm8",
 ]
 
-PHARANGEAL_MUSCLE_NAMES = ODD_PHARANGEAL_MUSCLE_NAMES + EVEN_PHARANGEAL_MUSCLE_NAMES
 
+PHARYNGEAL_MUSCLE_NAMES = ODD_PHARYNGEAL_MUSCLE_NAMES + EVEN_PHARYNGEAL_MUSCLE_NAMES
+
+for cell in PHARYNGEAL_MUSCLE_NAMES:
+    cell_notes[cell] = "pharyngeal muscle"
 
 PREFERRED_MUSCLE_NAMES = (
     BODY_WALL_MUSCLE_NAMES
-    + PHARANGEAL_MUSCLE_NAMES
+    + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
     + ANAL_MUSCLE_NAMES
 )
@@ -936,11 +998,19 @@ GLR_CELLS = [
     "GLRVR",
 ]
 
-KNOWN_OTHER_CELLS_COOK_19 = [
+CEPSH_CELLS = [
     "CEPshDL",
     "CEPshDR",
     "CEPshVL",
     "CEPshVR",
+]
+
+GLIAL_CELLS = GLR_CELLS + CEPSH_CELLS
+
+for cell in GLIAL_CELLS:
+    cell_notes[cell] = "glial"
+
+KNOWN_OTHER_CELLS_COOK_19 = [
     "bm",
     "e2D",
     "e2VL",
@@ -971,7 +1041,7 @@ KNOWN_OTHER_CELLS_COOK_19 = [
     "mu_intL",
     "mu_intR",
     "mu_sph",
-] + GLR_CELLS
+] + GLIAL_CELLS
 
 KNOWN_OTHER_CELLS_COOK_20 = [
     "bm",
@@ -1008,9 +1078,9 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
     elif cell in VULVAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"]
-    elif cell in ODD_PHARANGEAL_MUSCLE_NAMES:
+    elif cell in ODD_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["odd numbered pharyngeal muscle"]
-    elif cell in EVEN_PHARANGEAL_MUSCLE_NAMES:
+    elif cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["even numbered pharyngeal muscle"]
     elif cell in INTERNEURONS_COOK:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
@@ -1018,10 +1088,14 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
     elif cell in MOTORNEURONS_COOK:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell in PHARANGEAL_POLYMODAL_NEURONS:
+    elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
     elif cell in GLR_CELLS:
         return WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"]
+    elif cell in CEPSH_CELLS:
+        return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
+            "sheath cell other than amphid sheath and phasmid"
+        ]
     else:
         return "#dddddd"
 
@@ -1031,13 +1105,13 @@ def get_short_description(cell):
         return "Body wall muscle"
     elif cell in VULVAL_MUSCLE_NAMES:
         return "Vulval muscle"
-    elif cell in ODD_PHARANGEAL_MUSCLE_NAMES or cell in EVEN_PHARANGEAL_MUSCLE_NAMES:
+    elif cell in ODD_PHARYNGEAL_MUSCLE_NAMES or cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
         return "Pharyngeal muscle"
-    elif cell in PHARANGEAL_INTERNEURONS:
+    elif cell in PHARYNGEAL_INTERNEURONS:
         return "Pharyngeal interneuron"
-    elif cell in PHARANGEAL_MOTORNEURONS:
+    elif cell in PHARYNGEAL_MOTORNEURONS:
         return "Pharyngeal motor neuron"
-    elif cell in PHARANGEAL_POLYMODAL_NEURONS:
+    elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return "Pharyngeal polymodal neuron"
     elif cell in HERM_SPECIFIC_MOTORNEURONS:
         return "Hermaphrodite specific motor neuron"
@@ -1145,5 +1219,14 @@ if __name__ == "__main__":
                             f.write(_generate_cell_table(MOTORNEURONS_COOK))
                         elif cell_type == "sensory neuron":
                             f.write(_generate_cell_table(SENSORY_NEURONS_COOK))
+                        elif cell_type == "odd numbered pharyngeal muscle":
+                            f.write(_generate_cell_table(ODD_PHARYNGEAL_MUSCLE_NAMES))
+                        elif cell_type == "even numbered pharyngeal muscle":
+                            f.write(_generate_cell_table(EVEN_PHARYNGEAL_MUSCLE_NAMES))
                         elif cell_type == "neuron with unknown function":
                             f.write(_generate_cell_table(UNKNOWN_FUNCTION_NEURONS))
+                        elif (
+                            cell_type
+                            == "sheath cell other than amphid sheath and phasmid"
+                        ):
+                            f.write(_generate_cell_table(CEPSH_CELLS))
