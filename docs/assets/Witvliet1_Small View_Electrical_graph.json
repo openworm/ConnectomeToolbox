@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -11,23 +11,42 @@
         "ADAL",
         "ADAR",
         "ADFL",
-        "ADFR"
+        "ADFR",
+        "DB",
+        "VB",
+        "DD",
+        "VD",
+        "DA",
+        "AS",
+        "VA"
       ],
       "type": "scatter",
       "x": [
-        -0.4505623888911574,
-        -0.21579601472438653,
+        -0.523516,
+        -0.411583,
         null,
-        -0.018981261131639515,
-        -0.21579601472438653,
+        -0.523516,
+        -0.666171,
+        null,
+        -0.343236,
+        -0.411583,
+        null,
+        -0.666171,
+        -0.666171,
         null
       ],
       "y": [
-        -0.1638224850845282,
-        -0.3176156051254281,
+        -0.638953,
+        -0.74968,
         null,
-        -0.5185619097900437,
-        -0.3176156051254281,
+        -0.638953,
+        -0.609354,
+        null,
+        -0.877515,
+        -0.74968,
+        null,
+        -0.609354,
+        -0.609354,
         null
       ]
     },
@@ -35,10 +54,17 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          0,
-          1,
-          1,
-          2
+          "#FF0000",
+          "#FF0000",
+          "#00FF00",
+          "#00FF00",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103",
+          "#be5103"
         ],
         "colorbar": {
           "thickness": 15,
@@ -87,31 +113,64 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
-        "showscale": true,
-        "size": 10
+        "showscale": false,
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          26.457513110645905,
+          33.166247903553995,
+          24.49489742783178,
+          36.05551275463989,
+          30.0,
+          47.958315233127195,
+          34.64101615137754
+        ]
       },
       "mode": "markers",
       "text": [
-        "ADAL<br>Number of connections: 0",
-        "ADAR<br>Number of connections: 1",
-        "ADFL<br>Number of connections: 1",
-        "ADFR<br>Number of connections: 2"
+        "<b>ADAL</b><br>Interneuron<br>Number of connections: 0",
+        "<b>ADAR</b><br>Interneuron<br>Number of connections: 2",
+        "<b>ADFL</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>ADFR</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>DB</b><br>DB1, DB2, DB3, DB4, DB5, DB6, DB7<br>Number of connections: 0",
+        "<b>VB</b><br>VB1, VB10, VB11, VB2, VB3, VB4, VB5, VB6, VB7, VB8, VB9<br>Number of connections: 0",
+        "<b>DD</b><br>DD1, DD2, DD3, DD4, DD5, DD6<br>Number of connections: 0",
+        "<b>VD</b><br>VD1, VD10, VD11, VD12, VD13, VD2, VD3, VD4, VD5, VD6, VD7, VD8, VD9<br>Number of connections: 0",
+        "<b>DA</b><br>DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9<br>Number of connections: 0",
+        "<b>AS</b><br>AS1, AS10, AS11, AS2, AS3, AS4, AS5, AS6, AS7, AS8, AS9, ASEL, ASER, ASGL, ASGR, ASHL, ASHR, ASIL, ASIR, ASJL, ASJR, ASKL, ASKR<br>Number of connections: 2",
+        "<b>VA</b><br>VA1, VA10, VA11, VA12, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9<br>Number of connections: 0"
       ],
       "type": "scatter",
       "x": [
-        0.6853396647471834,
-        -0.4505623888911574,
-        -0.018981261131639515,
-        -0.21579601472438653
+        0.146445,
+        -0.523516,
+        -0.343236,
+        -0.411583,
+        0.57674,
+        0.816043,
+        -0.452712,
+        -0.903387,
+        0.897808,
+        -0.666171,
+        0.863568
       ],
       "y": [
         1.0,
-        -0.1638224850845282,
-        -0.5185619097900437,
-        -0.3176156051254281
+        -0.638953,
+        -0.877515,
+        -0.74968,
+        -0.608474,
+        0.417497,
+        0.956315,
+        0.456876,
+        -0.141467,
+        -0.609354,
+        0.794754
       ]
     }
   ],

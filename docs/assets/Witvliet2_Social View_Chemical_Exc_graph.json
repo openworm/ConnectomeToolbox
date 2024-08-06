@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -18,31 +18,31 @@
       ],
       "type": "scatter",
       "x": [
-        0.14752469148099026,
-        0.294069803360583,
+        0.147525,
+        0.29407,
         null,
-        0.14752469148099026,
-        -0.021971421860678908,
+        0.147525,
+        -0.021971,
         null,
-        -0.2895302300752533,
-        -0.19326116844937627,
+        -0.28953,
+        -0.193261,
         null,
-        -0.021971421860678908,
-        -0.19326116844937627,
+        -0.021971,
+        -0.193261,
         null
       ],
       "y": [
-        -0.17992666945893665,
-        -0.37832047323842954,
+        -0.179927,
+        -0.37832,
         null,
-        -0.17992666945893665,
-        0.04867865867776412,
+        -0.179927,
+        0.048679,
         null,
-        0.4079709353750488,
-        0.27876990488843645,
+        0.407971,
+        0.27877,
         null,
-        0.04867865867776412,
-        0.27876990488843645,
+        0.048679,
+        0.27877,
         null
       ]
     },
@@ -105,40 +105,48 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": true,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ]
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 2",
-        "ASKR<br>Number of connections: 0",
-        "AWBR<br>Number of connections: 1",
-        "IL2R<br>Number of connections: 1",
-        "RMGR<br>Number of connections: 2",
-        "RMHR<br>Number of connections: 0",
-        "URXR<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 0",
+        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>RMGR</b><br>Interneuron<br>Number of connections: 2",
+        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 0",
+        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 2"
       ],
       "type": "scatter",
       "x": [
-        0.14752469148099026,
-        -0.9368316744562648,
-        0.294069803360583,
-        -0.2895302300752533,
-        -0.021971421860678908,
+        0.147525,
+        -0.936832,
+        0.29407,
+        -0.28953,
+        -0.021971,
         1.0,
-        -0.19326116844937627
+        -0.193261
       ],
       "y": [
-        -0.17992666945893665,
-        -0.6836390085784226,
-        -0.37832047323842954,
-        0.4079709353750488,
-        0.04867865867776412,
-        0.5064666523345394,
-        0.27876990488843645
+        -0.179927,
+        -0.683639,
+        -0.37832,
+        0.407971,
+        0.048679,
+        0.506467,
+        0.27877
       ]
     }
   ],

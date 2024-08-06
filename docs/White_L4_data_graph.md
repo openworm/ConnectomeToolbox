@@ -57,7 +57,9 @@ Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 === "Small View"
     === "Chemical"
 
-        No connections of type **Chemical** in the **Small View** for **White_L4**...
+        ```plotly
+        ---8<-- "./assets/White_L4_Small View_Chemical_graph.json"
+        ```
     === "Electrical"
 
         ```plotly

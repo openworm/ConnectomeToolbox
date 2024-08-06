@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -18,19 +18,19 @@
       ],
       "type": "scatter",
       "x": [
-        0.28380052939334866,
-        0.38834289104364134,
+        0.283801,
+        0.388343,
         null,
-        0.01679563403455194,
-        -0.005774207721779671,
+        0.016796,
+        -0.005774,
         null
       ],
       "y": [
-        -0.511814644900069,
-        -0.6601443606864624,
+        -0.511815,
+        -0.660144,
         null,
-        0.7281957788787103,
-        0.9065828420049407,
+        0.728196,
+        0.906583,
         null
       ]
     },
@@ -93,40 +93,48 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": true,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ]
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 1",
-        "ASKR<br>Number of connections: 0",
-        "AWBR<br>Number of connections: 1",
-        "IL2R<br>Number of connections: 0",
-        "RMGR<br>Number of connections: 1",
-        "RMHR<br>Number of connections: 0",
-        "URXR<br>Number of connections: 1"
+        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 0",
+        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 0",
+        "<b>RMGR</b><br>Interneuron<br>Number of connections: 1",
+        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 0",
+        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 1"
       ],
       "type": "scatter",
       "x": [
-        0.28380052939334866,
+        0.283801,
         -1.0,
-        0.38834289104364134,
-        -0.5315056278383102,
-        0.01679563403455194,
-        0.848340781088548,
-        -0.005774207721779671
+        0.388343,
+        -0.531506,
+        0.016796,
+        0.848341,
+        -0.005774
       ],
       "y": [
-        -0.511814644900069,
-        -0.04021453945802682,
-        -0.6601443606864624,
-        -0.7343000796128845,
-        0.7281957788787103,
-        0.31169500377379167,
-        0.9065828420049407
+        -0.511815,
+        -0.040215,
+        -0.660144,
+        -0.7343,
+        0.728196,
+        0.311695,
+        0.906583
       ]
     }
   ],

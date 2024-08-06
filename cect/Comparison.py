@@ -2,6 +2,7 @@ import cect
 
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
+from cect.Cells import get_cell_link
 from cect import print_
 import json
 
@@ -67,59 +68,14 @@ def shorten_neurotransmitter(nt):
     )
 
 
-# TODO: move elsewhere and make more generic
-def get_cell_link(cell_name, html=False):
-    url = None
-
-    known_indiv = ["SABD", "MI"]
-
-    if cell_name in known_indiv:
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name
-        )
-    elif cell_name[-2:].isnumeric():
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-2]
-        )
-    elif cell_name[-1].isdigit():
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-1]
-        )
-    elif (
-        cell_name.endswith("L")
-        or cell_name.endswith("R")
-        or cell_name.endswith("EV")
-        or cell_name.endswith("ED")
-        or cell_name.endswith("BD")
-    ):
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name[:-1]
-        )
-    elif len(cell_name) == 3:
-        url = (
-            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name
-        )
-
-    if url is not None:
-        if html:
-            return '<a href="%s">%s</a>' % (url, cell_name)
-        else:
-            return "[%s](%s)" % (cell_name, url)
-    else:
-        return cell_name
-
-
 def _format_json(json_str):
     return json.dumps(json.loads(json_str), sort_keys=True, indent=2)
 
 
 def get_2d_graph_markdown(reader_name, view_name, connectome, synclass, indent="    "):
-    fig = connectome.to_plotly_graph_fig(synclass)
+    view_name = view.name
+
+    fig = connectome.to_plotly_graph_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
         reader_name,
@@ -282,7 +238,7 @@ for reader_name, reader_info in readers.items():
                                 f.write(
                                     get_2d_graph_markdown(
                                         reader_name,
-                                        view.name,
+                                        view,
                                         cv,
                                         sc,
                                         indent=indent + indent,

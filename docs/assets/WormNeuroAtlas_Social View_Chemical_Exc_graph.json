@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -18,37 +18,37 @@
       ],
       "type": "scatter",
       "x": [
-        0.29368130451771235,
-        0.4669587604686466,
+        0.293681,
+        0.466959,
         null,
-        0.29368130451771235,
-        0.14243662465352014,
+        0.293681,
+        0.142437,
         null,
-        -0.18823972039169937,
-        -0.029957657600923282,
+        -0.18824,
+        -0.029958,
         null,
-        0.14243662465352014,
-        0.3151206883527436,
+        0.142437,
+        0.315121,
         null,
-        0.14243662465352014,
-        -0.029957657600923282,
+        0.142437,
+        -0.029958,
         null
       ],
       "y": [
-        0.018789162463780845,
-        -0.1577204327370614,
+        0.018789,
+        -0.15772,
         null,
-        0.018789162463780845,
-        0.18089624249287212,
+        0.018789,
+        0.180896,
         null,
-        0.2576618662139321,
-        0.2196473644015105,
+        0.257662,
+        0.219647,
         null,
-        0.18089624249287212,
-        0.4722657922012294,
+        0.180896,
+        0.472266,
         null,
-        0.18089624249287212,
-        0.2196473644015105,
+        0.180896,
+        0.219647,
         null
       ]
     },
@@ -111,40 +111,48 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": true,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ]
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 2",
-        "ASKR<br>Number of connections: 0",
-        "AWBR<br>Number of connections: 1",
-        "IL2R<br>Number of connections: 1",
-        "RMGR<br>Number of connections: 3",
-        "RMHR<br>Number of connections: 1",
-        "URXR<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 2",
+        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 0",
+        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 1",
+        "<b>RMGR</b><br>Interneuron<br>Number of connections: 3",
+        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 1",
+        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 2"
       ],
       "type": "scatter",
       "x": [
-        0.29368130451771235,
+        0.293681,
         -1.0,
-        0.4669587604686466,
-        -0.18823972039169937,
-        0.14243662465352014,
-        0.3151206883527436,
-        -0.029957657600923282
+        0.466959,
+        -0.18824,
+        0.142437,
+        0.315121,
+        -0.029958
       ],
       "y": [
-        0.018789162463780845,
-        -0.9915399950362633,
-        -0.1577204327370614,
-        0.2576618662139321,
-        0.18089624249287212,
-        0.4722657922012294,
-        0.2196473644015105
+        0.018789,
+        -0.99154,
+        -0.15772,
+        0.257662,
+        0.180896,
+        0.472266,
+        0.219647
       ]
     }
   ],
