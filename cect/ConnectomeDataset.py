@@ -201,6 +201,7 @@ class ConnectomeDataset:
         node_colours = []
         node_text = []
         node_sizes = []
+        node_shapes = []
 
         DEFAULT_SIZE = 10
 
@@ -218,6 +219,11 @@ class ConnectomeDataset:
                 node_colours.append(node_set.color)
 
             node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
+
+            if node_set.shape is not None:
+                node_shapes.append(node_set.shape)
+            else:
+                node_shapes.append("circle")
 
             node_text.append(
                 f"<b>{node_value}</b>%s<br>Number of connections: {num_connections}"
@@ -251,6 +257,7 @@ class ConnectomeDataset:
         )
 
         node_trace.marker.size = node_sizes
+        node_trace.marker.symbol = node_shapes
         node_trace.marker.color = node_colours
         node_trace.text = node_text
 

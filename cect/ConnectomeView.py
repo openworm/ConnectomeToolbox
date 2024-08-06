@@ -5,6 +5,7 @@ from cect.ConnectomeReader import PHARANGEAL_NEURONS
 from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import KNOWN_OTHER_CELLS
+from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
@@ -13,11 +14,12 @@ import numpy as np
 
 
 class NodeSet:
-    def __init__(self, name, cells, color=None):
+    def __init__(self, name, cells, color=None, shape=None):
         self.name = name
         self.color = color
         self.cells = cells
         self.color = color
+        self.shape = shape
 
     def is_one_cell(self):
         return len(self.cells) == 1 and self.name == self.cells[0]
@@ -25,7 +27,12 @@ class NodeSet:
     def __repr__(self):
         return "NodeSet %s%s: %s" % (
             self.name,
-            " (%s)" % self.color if self.color is not None else "",
+            " (%s)"
+            % (
+                "%s%s" % (self.color, self.shape if self.shape is not None else "")
+                if self.color is not None
+                else ""
+            ),
             self.cells,
         )
 
@@ -113,6 +120,16 @@ for cell in sorted(PREFERRED_NEURON_NAMES):
     for prefix in motorneuron_prefixes:
         if cell.startswith(prefix):
             SMALL_VIEW.get_node_set(prefix).cells.append(cell)
+
+for category in SENSORY_NEURONS_COOK_CATEGORIES:
+    SMALL_VIEW.node_sets.append(
+        NodeSet(
+            category,
+            SENSORY_NEURONS_COOK_CATEGORIES[category],
+            color="#b31b1b",
+            shape="triangle-up",
+        )
+    )
 
 
 ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]

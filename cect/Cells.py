@@ -2,13 +2,159 @@
 
 ############################################################
 
-#    Utilities for reading C. elegans connectome data
+#    Information on cells in C. elegans
+#    Much of this data taken from supplementary info of Ceook et al 2019
 
 ############################################################
 
 import pandas as pd
 
-SENSORY_NEURONS_COOK = [
+cell_notes = {}
+
+
+SENSORY_NEURONS_1_COOK = [
+    "IL2DL",
+    "IL2DR",
+    "IL2L",
+    "IL2R",
+    "IL2VL",
+    "IL2VR",
+    "CEPDL",
+    "CEPDR",
+    "CEPVL",
+    "CEPVR",
+    "OLQDL",
+    "OLQDR",
+    "OLQVL",
+    "OLQVR",
+    "URYDL",
+    "URYDR",
+    "URYVL",
+    "URYVR",
+    "OLLL",
+    "OLLR",
+    "IL1DL",
+    "IL1DR",
+    "IL1L",
+    "IL1R",
+    "IL1VL",
+    "IL1VR",
+]
+
+for cell in SENSORY_NEURONS_1_COOK:
+    cell_notes[cell] = "cephalic"
+
+SENSORY_NEURONS_2_COOK = [
+    "PHAL",
+    "PHAR",
+    "PHBL",
+    "PHBR",
+    "PHCL",
+    "PHCR",
+]
+
+for cell in SENSORY_NEURONS_2_COOK:
+    cell_notes[cell] = "phasmid"
+
+SENSORY_NEURONS_3_COOK = [
+    "ADEL",
+    "ADER",
+    "PDEL",
+    "PDER",
+    "ALML",
+    "ALMR",
+    "AVM",
+    "PVM",
+    "PLML",
+    "PLMR",
+    "FLPL",
+    "FLPR",
+    "DVA",
+    "PVDL",
+    "PVDR",
+]
+
+for cell in SENSORY_NEURONS_3_COOK:
+    cell_notes[cell] = "mechanosensory"
+
+
+SENSORY_NEURONS_4_COOK = [
+    "BAGL",
+    "BAGR",
+    "URXL",
+    "URXR",
+    "ALNL",
+    "ALNR",
+    "PLNL",
+    "PLNR",
+    "SDQL",
+    "SDQR",
+    "AQR",
+    "PQR",
+]
+
+for cell in SENSORY_NEURONS_4_COOK:
+    if cell in ["BAGL", "BAGR", "URXL", "URXR"]:
+        cell_notes[cell] = "O2, CO2, social signals, touch"
+    else:
+        cell_notes[cell] = "touch"
+
+
+SENSORY_NEURONS_5_COOK = [
+    "ASHL",
+    "ASHR",
+    "ADLL",
+    "ADLR",
+]
+
+for cell in SENSORY_NEURONS_5_COOK:
+    cell_notes[cell] = "amphid, nociceptive"
+
+SENSORY_NEURONS_6_COOK = [
+    "ASJL",
+    "ASJR",
+    "ASKL",
+    "ASKR",
+    "ASGL",
+    "ASGR",
+    "ASIL",
+    "ASIR",
+    "AFDL",
+    "AFDR",
+    "AWAL",
+    "AWAR",
+    "AWBL",
+    "AWBR",
+    "AWCL",
+    "AWCR",
+    "ASEL",
+    "ASER",
+    "ADFL",
+    "ADFR",
+]
+
+for cell in SENSORY_NEURONS_6_COOK:
+    cell_notes[cell] = "amphid"
+
+SENSORY_NEURONS_COOK = (
+    SENSORY_NEURONS_1_COOK
+    + SENSORY_NEURONS_2_COOK
+    + SENSORY_NEURONS_3_COOK
+    + SENSORY_NEURONS_4_COOK
+    + SENSORY_NEURONS_5_COOK
+    + SENSORY_NEURONS_6_COOK
+)
+
+SENSORY_NEURONS_COOK_CATEGORIES = {
+    "SN1": SENSORY_NEURONS_1_COOK,
+    "SN2": SENSORY_NEURONS_2_COOK,
+    "SN3": SENSORY_NEURONS_3_COOK,
+    "SN4": SENSORY_NEURONS_4_COOK,
+    "SN5": SENSORY_NEURONS_5_COOK,
+    "SN6": SENSORY_NEURONS_6_COOK,
+}
+
+SENSORY_NEURONS_COOK__ = [
     "ASIL",
     "ASIR",
     "ASJL",
