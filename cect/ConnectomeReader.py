@@ -559,10 +559,44 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDR%s" % muscle[6:]
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
+    elif muscle.startswith ("pm1"):
+        return "pm1"
+    elif muscle == "pm2vl":
+        return "pm2VL"
+    elif muscle == "pm2vr":
+        return "pm2VR"
+    elif muscle == "pm2d":
+        return "pm2D"
     elif muscle == "pm3vl":
         return "pm3VL"
     elif muscle == "pm3vr":
         return "pm3VR"
+    elif muscle == "pm3d":
+        return "pm3D"
+    elif muscle == "pm4vl":
+        return "pm4VL"
+    elif muscle == "pm4vr":
+        return "pm4VR"
+    elif muscle == "pm4d":
+        return "pm4D"
+    elif muscle == "pm5vl":
+        return "pm5VL"
+    elif muscle == "pm5vr":
+        return "pm5VR"
+    elif muscle == "pm5d":
+        return "pm5D"
+    elif muscle == "pm6vl":
+        return "pm6VL"
+    elif muscle == "pm6vr":
+        return "pm6VR"
+    elif muscle == "pm6d":
+        return "pm6D"
+    elif muscle == "pm7vl":
+        return "pm7VL"
+    elif muscle == "pm7vr":
+        return "pm7VR"
+    elif muscle == "pm7d":
+        return "pm7D"
     else:
         if is_muscle(muscle):
             return muscle

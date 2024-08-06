@@ -14,6 +14,7 @@ from cect import print_
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%scne24932-sup-0004-supinfo4.csv" % spreadsheet_location
+filename2 = "%scne24932-sup-0005-supinfo5.csv" % spreadsheet_location
 
 READER_DESCRIPTION = (
     """Data extracted from **%s** for neuronal connectivity""" % filename.split("/")[-1]
@@ -104,6 +105,32 @@ class Cook2020DataReader(ConnectomeDataset):
                         muscles.append(post)
                     if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
+
+        with open (filename2, "r") as f1:
+            reader = csv.DictReader(f1)
+            print_("Opened file: " + filename2)
+
+            for row in reader:
+                pre = str.strip(row["Source"])
+                if is_muscle(pre):
+                    pre = convert_to_preferred_muscle_name(pre)
+                post = str.strip(row["Target"])
+                if is_muscle(post):
+                    post = convert_to_preferred_muscle_name(post)
+                num = int(row["Weight"])
+                syntype = "Electrical"
+                if syntype == "Electrical":
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+
+                if is_muscle(post):
+                    if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
+                        muscles.append(post)
+                    if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                        neurons.append(pre)
+        
 
         return neurons, muscles, conns
 
