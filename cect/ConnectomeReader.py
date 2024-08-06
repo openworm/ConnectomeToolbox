@@ -26,16 +26,80 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDR%s" % muscle[6:]
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
+    elif muscle.startswith ("pm1"):
+        return "pm1"
+    elif muscle == "pm2vl":
+        return "pm2VL"
+    elif muscle == "pm2vr":
+        return "pm2VR"
+    elif muscle == "pm2d":
+        return "pm2D"
     elif muscle == "pm3vl":
         return "pm3VL"
     elif muscle == "pm3vr":
         return "pm3VR"
+    elif muscle == "pm3d":
+        return "pm3D"
+    elif muscle == "pm4vl":
+        return "pm4VL"
+    elif muscle == "pm4vr":
+        return "pm4VR"
+    elif muscle == "pm4d":
+        return "pm4D"
+    elif muscle == "pm5vl":
+        return "pm5VL"
+    elif muscle == "pm5vr":
+        return "pm5VR"
+    elif muscle == "pm5d":
+        return "pm5D"
+    elif muscle == "pm6vl":
+        return "pm6VL"
+    elif muscle == "pm6vr":
+        return "pm6VR"
+    elif muscle == "pm6d":
+        return "pm6D"
+    elif muscle == "pm7vl":
+        return "pm7VL"
+    elif muscle == "pm7vr":
+        return "pm7VR"
+    elif muscle == "pm7d":
+        return "pm7D"
     else:
         if is_muscle(muscle):
             return muscle
         else:
             return muscle + "???"
 
+def convert_to_preferred_mc_name(cell):
+    if cell == "mc1v":
+        return "mc1V"
+    if cell == "mc1dr":
+        return "mc1DR"
+    if cell == "mc1dl":
+        return "mc1DL"
+    if cell == "mc2v":
+        return "mc2V"
+    if cell == "mc2dr":
+        return "mc2DR"
+    if cell == "mc2dl":
+        return "mc2DL"
+    if cell == "mc3v":
+        return "mc3V"
+    if cell == "mc3dr":
+        return "mc3DR"
+    if cell == "mc3dl":
+        return "mc3DL"
+    else:
+        if is_marginal_cell(cell):
+            return cell
+
+
+def get_marginal_cell_prefixes():
+    return ["mc"]
+
+def is_marginal_cell(cell):
+    known_mc_prefix = get_marginal_cell_prefixes()
+    return cell.startswith(tuple(known_mc_prefix))
 
 def get_all_muscle_prefixes():
     return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
