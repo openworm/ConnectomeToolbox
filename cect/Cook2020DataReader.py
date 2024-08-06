@@ -7,6 +7,8 @@ from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_muscle
+from cect.ConnectomeReader import is_marginal_cell
+from cect.ConnectomeReader import convert_to_preferred_mc_name
 
 import os
 
@@ -52,9 +54,44 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = str.strip(row["Target"])
                     if is_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
-
+                    if is_marginal_cell(post):
+                        post = convert_to_preferred_mc_name(post)
                     num = float(row["Weight"])
                     syntype = str.strip(row["Type"])
+                    if syntype == "Electrical":
+                        self.conns.append(
+                            ConnectionInfo(post, pre, num, syntype, synclass)
+                        )
+
+                    synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+
+                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+
+                    if pre not in self.cells:
+                        self.cells.append(pre)
+                    if post not in self.cells:
+                        self.cells.append(post)
+
+            
+            with open(filename2, "r") as f:
+                reader = csv.DictReader(f)
+                print_("Opened file: " + filename)
+
+                for row in reader:
+                    pre = str.strip(row["Source"])
+                    if is_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
+                    if is_marginal_cell(pre):
+                        pre = convert_to_preferred_mc_name(pre)
+                    post = str.strip(row["Target"])
+                    
+                    if is_muscle(post):
+                        post = convert_to_preferred_muscle_name(post)
+                    if is_marginal_cell(post):
+                        post = convert_to_preferred_mc_name(post)
+
+                    num = float(row["Weight"])
+                    syntype = "Electrical"
                     if syntype == "Electrical":
                         self.conns.append(
                             ConnectionInfo(post, pre, num, syntype, synclass)
@@ -91,14 +128,19 @@ class Cook2020DataReader(ConnectomeDataset):
                 pre = str.strip(row["Source"])
                 if is_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
+                if is_marginal_cell(pre):
+                    pre = convert_to_preferred_mc_name(pre)
                 post = str.strip(row["Target"])
                 if is_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
+                if is_marginal_cell(post):
+                    post = convert_to_preferred_mc_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
+                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+
                 if syntype == "Electrical":
                     conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
@@ -108,31 +150,36 @@ class Cook2020DataReader(ConnectomeDataset):
                     if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
 
-        with open (filename2, "r") as f1:
-            reader = csv.DictReader(f1)
+        with open (filename2, "r") as f:
+            reader = csv.DictReader(f)
             print_("Opened file: " + filename2)
 
             for row in reader:
                 pre = str.strip(row["Source"])
                 if is_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
+                if is_marginal_cell(pre):
+                    pre = convert_to_preferred_mc_name(pre)
                 post = str.strip(row["Target"])
                 if is_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
-                num = int(row["Weight"])
+                if is_marginal_cell(post):
+                    post = convert_to_preferred_mc_name(post)
+                num = float(row["Weight"])
                 syntype = "Electrical"
+                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+
                 if syntype == "Electrical":
                     conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
+                
                 if is_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
                     if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
-        
 
         return neurons, muscles, conns
 

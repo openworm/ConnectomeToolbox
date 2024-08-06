@@ -71,6 +71,36 @@ def convert_to_preferred_muscle_name(muscle):
         else:
             return muscle + "???"
 
+def convert_to_preferred_mc_name(cell):
+    if cell == "mc1v":
+        return "mc1V"
+    if cell == "mc1dr":
+        return "mc1DR"
+    if cell == "mc1dl":
+        return "mc1DL"
+    if cell == "mc2v":
+        return "mc2V"
+    if cell == "mc2dr":
+        return "mc2DR"
+    if cell == "mc2dl":
+        return "mc2DL"
+    if cell == "mc3v":
+        return "mc3V"
+    if cell == "mc3dr":
+        return "mc3DR"
+    if cell == "mc3dl":
+        return "mc3DL"
+    else:
+        if is_marginal_cell(cell):
+            return cell
+
+
+def get_marginal_cell_prefixes():
+    return ["mc"]
+
+def is_marginal_cell(cell):
+    known_mc_prefix = get_marginal_cell_prefixes()
+    return cell.startswith(tuple(known_mc_prefix))
 
 def get_all_muscle_prefixes():
     return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
