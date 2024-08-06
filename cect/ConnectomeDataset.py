@@ -201,6 +201,7 @@ class ConnectomeDataset:
         node_colours = []
         node_text = []
         node_sizes = []
+        node_shapes = []
 
         DEFAULT_SIZE = 10
 
@@ -219,13 +220,26 @@ class ConnectomeDataset:
 
             node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
 
+            if node_set.shape is not None:
+                node_shapes.append(node_set.shape)
+            else:
+                node_shapes.append("circle")
+
+            if node_set.is_one_cell():
+                desc = get_short_description(node_set.name)
+            else:
+                desc = "Cells: "
+                cc = 0
+                for c in node_set.cells:
+                    if cc % 10 == 9:
+                        desc += c + "<br>"
+                    desc += c + ", "
+                    cc += 1
+                desc = desc[:-2]
+
             node_text.append(
                 f"<b>{node_value}</b>%s<br>Number of connections: {num_connections}"
-                % (
-                    "<br>%s" % get_short_description(node_set.name)
-                    if node_set.is_one_cell()
-                    else "<br>%s" % ", ".join([c for c in node_set.cells])
-                )
+                % ("<br>%s" % desc)
             )
 
         node_trace = go.Scatter(
@@ -251,6 +265,7 @@ class ConnectomeDataset:
         )
 
         node_trace.marker.size = node_sizes
+        node_trace.marker.symbol = node_shapes
         node_trace.marker.color = node_colours
         node_trace.text = node_text
 
