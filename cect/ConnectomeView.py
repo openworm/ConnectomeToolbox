@@ -6,6 +6,7 @@ from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
 from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import KNOWN_OTHER_CELLS
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
+from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
@@ -128,6 +129,16 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
             SENSORY_NEURONS_COOK_CATEGORIES[category],
             color="#b31b1b",
             shape="triangle-up",
+        )
+    )
+
+for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
+    SMALL_VIEW.node_sets.append(
+        NodeSet(
+            category,
+            INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES[category],
+            color="#16537E",
+            shape="hexagon2",
         )
     )
 

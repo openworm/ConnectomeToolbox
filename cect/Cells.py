@@ -154,101 +154,26 @@ SENSORY_NEURONS_COOK_CATEGORIES = {
     "SN6": SENSORY_NEURONS_6_COOK,
 }
 
-SENSORY_NEURONS_COOK__ = [
-    "ASIL",
-    "ASIR",
-    "ASJL",
-    "ASJR",
-    "AWAL",
-    "AWAR",
-    "ASGL",
-    "ASGR",
-    "AWBL",
-    "AWBR",
-    "ASEL",
-    "ASER",
-    "ADFL",
-    "ADFR",
-    "AFDL",
-    "AFDR",
-    "AWCL",
-    "AWCR",
-    "ASKL",
-    "ASKR",
-    "ASHL",
-    "ASHR",
-    "ADLL",
-    "ADLR",
-    "BAGL",
-    "BAGR",
-    "URXL",
-    "URXR",
-    "ALNL",
-    "ALNR",
-    "PLNL",
-    "PLNR",
-    "SDQL",
-    "SDQR",
-    "AQR",
-    "PQR",
-    "ALML",
-    "ALMR",
-    "AVM",
-    "PVM",
-    "PLML",
-    "PLMR",
-    "FLPL",
-    "FLPR",
-    "DVA",
-    "PVDL",
-    "PVDR",
-    "ADEL",
-    "ADER",
-    "PDEL",
-    "PDER",
-    "PHAL",
-    "PHAR",
-    "PHBL",
-    "PHBR",
-    "PHCL",
-    "PHCR",
-    "IL2DL",
-    "IL2DR",
-    "IL2L",
-    "IL2R",
-    "IL2VL",
-    "IL2VR",
-    "CEPDL",
-    "CEPDR",
-    "CEPVL",
-    "CEPVR",
-    "URYDL",
-    "URYDR",
-    "URYVL",
-    "URYVR",
-    "OLLL",
-    "OLLR",
-    "OLQDL",
-    "OLQDR",
-    "OLQVL",
-    "OLQVR",
-    "IL1DL",
-    "IL1DR",
-    "IL1L",
-    "IL1R",
-    "IL1VL",
-    "IL1VR",
-]
-
-INTERNEURONS_NONPHARYNGEAL_COOK = [
-    "AINL",
-    "AINR",
+INTERNEURONS_4_COOK = [
     "AIML",
     "AIMR",
+    "AINL",
+    "AINR",
     "RIH",
     "URBL",
     "URBR",
     "RIR",
+]
+
+for cell in INTERNEURONS_4_COOK:
+    cell_notes[cell] = "category 4 interneuron"
+
+INTERNEURONS_3_COOK = [
+    "PVQL",
+    "PVQR",
+    "ALA",
+    "BDUL",
+    "BDUR",
     "AIYL",
     "AIYR",
     "AIAL",
@@ -258,15 +183,10 @@ INTERNEURONS_NONPHARYNGEAL_COOK = [
     "AIZL",
     "AIZR",
     "RIS",
-    "ALA",
-    "PVQL",
-    "PVQR",
     "ADAL",
     "ADAR",
     "RIFL",
     "RIFR",
-    "BDUL",
-    "BDUR",
     "PVR",
     "AVFL",
     "AVFR",
@@ -274,45 +194,58 @@ INTERNEURONS_NONPHARYNGEAL_COOK = [
     "AVHR",
     "PVPL",
     "PVPR",
-    "LUAL",
-    "LUAR",
     "PVNL",
     "PVNR",
     "AVG",
+    "LUAL",
+    "LUAR",
     "DVB",
+]
+
+for cell in INTERNEURONS_3_COOK:
+    cell_notes[cell] = "layer 3 interneuron"
+
+INTERNEURONS_2_COOK = [
     "RIBL",
     "RIBR",
+    "AIBL",
+    "AIBR",
     "RIGL",
     "RIGR",
     "RMGL",
     "RMGR",
-    "AIBL",
-    "AIBR",
     "RICL",
     "RICR",
-    "SAADL",
     "SAADR",
     "SAAVL",
+    "SAADL",
     "SAAVR",
+    "RMFL",
+    "RMFR",
     "AVKL",
     "AVKR",
     "DVC",
-    "AVJL",
     "AVJR",
+    "AVJL",
     "PVT",
     "AVDL",
     "AVDR",
     "AVL",
     "PVWL",
     "PVWR",
+]
+
+
+for cell in INTERNEURONS_2_COOK:
+    cell_notes[cell] = "layer 2 interneuron"
+
+INTERNEURONS_1_COOK = [
     "RIAL",
     "RIAR",
     "RIML",
     "RIMR",
     "AVEL",
     "AVER",
-    "RMFL",
-    "RMFR",
     "RID",
     "AVBL",
     "AVBR",
@@ -320,9 +253,35 @@ INTERNEURONS_NONPHARYNGEAL_COOK = [
     "AVAR",
     "PVCL",
     "PVCR",
-    "RIPL",
-    "RIPR",
 ]
+
+for cell in INTERNEURONS_1_COOK:
+    cell_notes[cell] = "layer 1 interneuron"
+
+for cell in ["RIML", "RIMR"]:
+    cell_notes[cell] += "; motorneuron in White et al., 1986"
+
+INTERNEURONS_LINK_TO_PHARYNX_COOK = ["RIPL", "RIPR"]
+
+for cell in INTERNEURONS_LINK_TO_PHARYNX_COOK:
+    cell_notes[cell] = "linker to pharynx"
+
+INTERNEURONS_NONPHARYNGEAL_COOK = (
+    INTERNEURONS_1_COOK
+    + INTERNEURONS_2_COOK
+    + INTERNEURONS_3_COOK
+    + INTERNEURONS_4_COOK
+    + INTERNEURONS_LINK_TO_PHARYNX_COOK
+)
+
+INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES = {
+    "IN1": INTERNEURONS_1_COOK,
+    "IN2": INTERNEURONS_2_COOK,
+    "IN3": INTERNEURONS_3_COOK,
+    "IN4": INTERNEURONS_4_COOK,
+    "RIML": INTERNEURONS_LINK_TO_PHARYNX_COOK,
+}
+
 
 HEAD_MOTORNEURONS_COOK = [
     "URADL",
@@ -1094,7 +1053,7 @@ def get_short_description(cell):
         return "???"
 
 
-def get_cell_link(cell_name, html=False):
+def get_cell_link(cell_name, html=False, text=None):
     url = None
 
     known_indiv = ["SABD", "MI"]
@@ -1133,9 +1092,9 @@ def get_cell_link(cell_name, html=False):
 
     if url is not None:
         if html:
-            return '<a href="%s">%s</a>' % (url, cell_name)
+            return '<a href="%s">%s</a>' % (url, cell_name if text is None else text)
         else:
-            return "[%s](%s)" % (cell_name, url)
+            return "[%s](%s)" % (cell_name if text is None else text, url)
     else:
         return cell_name
 
@@ -1143,10 +1102,13 @@ def get_cell_link(cell_name, html=False):
 def _generate_cell_table(cells):
     all_data = {}
 
-    all_data[""] = ["Link"]
+    all_data[""] = ["Notes", "Link"]
 
     for cell in sorted(cells):
-        all_data[cell] = [get_cell_link(cell)]
+        all_data[cell] = [
+            cell_notes[cell] if cell in cell_notes else "-",
+            get_cell_link(cell, text="WormAtlas"),
+        ]
 
     df_all = pd.DataFrame(all_data).transpose()
 
