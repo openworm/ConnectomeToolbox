@@ -122,8 +122,8 @@ columns 4
 
   block:10sB
     columns 1
-    E("<b><a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a></b>")
     E1("<b><a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/'>Serrano-Saiz et al. 2013</a></b>") 
+    E("<b><a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a></b>")
     E2("<b><a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/'>Gendrel, Hobert & Atlas 2016</a></b>")
     F("<b><a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/'>Bentley et al. 2016</a></b>")
   end
