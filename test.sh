@@ -19,7 +19,8 @@ python -m cect.VarshneyDataReader
 python -m cect.Cook2020DataReader       
 python -m cect.White_whole   -nogui                                                                                                                                              
 python -m cect.TestDataReader -nogui                                                                                                                                         
-python -m cect.ConnectomeView        
+python -m cect.ConnectomeView                                                                                                                                   
+python -m cect.ConnectomeDataset
 
 if [ "$quick_test" == 0 ]; then
 

@@ -2,7 +2,7 @@ import cect
 
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_neurons
-from cect.Cells import get_cell_link
+from cect.Cells import get_cell_internal_link
 from cect import print_
 import json
 
@@ -258,7 +258,7 @@ for reader_name, reader_info in readers.items():
                         f.write("<details><summary>Full list of %s</summary>\n" % t)
                         ss = sorted(cell_types[t])
                         for n in ss:
-                            f.write("%s" % (get_cell_link(n, True)))
+                            f.write("%s" % (get_cell_internal_link(n, True)))
                             if n is not ss[-1]:
                                 f.write(" | ")
 

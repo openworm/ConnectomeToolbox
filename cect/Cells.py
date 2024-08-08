@@ -936,7 +936,7 @@ for bwm in BODY_WALL_MUSCLE_NAMES:
         cell_notes[bwm] = "main body muscle"
 
 
-ANAL_MUSCLE_NAMES = ["MANAL"]
+ANAL_SPHINCTER_MUSCLES = ["MANAL", "mu_sph", "mu_anal"]  # TODO: remove duplicate!
 
 VULVAL_MUSCLE_NAMES = [
     "MVULVA",
@@ -986,7 +986,7 @@ PREFERRED_MUSCLE_NAMES = (
     BODY_WALL_MUSCLE_NAMES
     + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
-    + ANAL_MUSCLE_NAMES
+    + ANAL_SPHINCTER_MUSCLES
 )
 
 GLR_CELLS = [
@@ -1010,24 +1010,7 @@ GLIAL_CELLS = GLR_CELLS + CEPSH_CELLS
 for cell in GLIAL_CELLS:
     cell_notes[cell] = "glial"
 
-KNOWN_OTHER_CELLS_COOK_19 = [
-    "bm",
-    "e2D",
-    "e2VL",
-    "e2VR",
-    "e3D",
-    "e3VL",
-    "e3VR",
-    "exc_cell",
-    "exc_gl",
-    "g1AL",
-    "g1AR",
-    "g1p",
-    "g2L",
-    "g2R",
-    "hmc",
-    "hyp",
-    "int",
+PHARYNGEAL_MARGINAL_CELLS = [
     "mc1DL",
     "mc1DR",
     "mc1V",
@@ -1037,38 +1020,93 @@ KNOWN_OTHER_CELLS_COOK_19 = [
     "mc3DL",
     "mc3DR",
     "mc3V",
-    "mu_anal",
-    "mu_intL",
-    "mu_intR",
-    "mu_sph",
-] + GLIAL_CELLS
+]
 
-KNOWN_OTHER_CELLS_COOK_20 = [
-    "bm",
+for cell in PHARYNGEAL_MARGINAL_CELLS:
+    cell_notes[cell] = "marginal cell of the pharynx"
+
+PHARYNGEAL_EPITHELIUM = [
     "e2DL",
     "e2DR",
+    "e2D",
     "e2V",
+    "e2VL",
+    "e2VR",
     "e3D",
     "e3VL",
     "e3VR",
+]
+
+for cell in PHARYNGEAL_EPITHELIUM:
+    cell_notes[cell] = "pharyngeal epithelium"
+
+PHARYNGEAL_GLIAL_CELL = [
     "g1AL",
     "g1AR",
+    "g1p",  # TODO remove!
     "g1P",
     "g2L",
     "g2R",
-    "mc2DL",
-    "mc2DR",
-    "mc2V",
-    "mc2dl",
-    "mc2dr",
-    "mc3V",
 ]
 
-KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
+for cell in PHARYNGEAL_GLIAL_CELL:
+    cell_notes[cell] = "pharyngeal glial cell"
 
-for cell in KNOWN_OTHER_CELLS_COOK_20:
-    if not cell in KNOWN_OTHER_CELLS:
-        KNOWN_OTHER_CELLS.append(cell)
+PHARYNGEAL_BASEMENT_MEMBRANE = ["bm"]
+cell_notes["bm"] = "pharyngeal basement membrane"
+
+EXCRETORY_CELL = [
+    "exc_cell",
+]
+cell_notes["exc_cell"] = "excretory cell"
+
+EXCRETORY_GLAND = [
+    "exc_gl",
+]
+cell_notes["exc_gl"] = "excretory gland"
+
+HEAD_MESODERMAL_CELL = [
+    "hmc",
+]
+cell_notes["hmc"] = "head mesodermal cell"
+
+HYPODERMIS = [
+    "hyp",
+]
+cell_notes["hyp"] = "hypodermis"
+
+INTESTINE = [
+    "int",
+]
+cell_notes["int"] = "intestine"
+
+INTESTINAL_MUSCLES = [
+    "mu_intL",
+    "mu_intR",
+]
+
+
+for cell in INTESTINAL_MUSCLES:
+    cell_notes[cell] = "intestinal muscles"
+
+
+KNOWN_OTHER_CELLS_COOK_19 = (
+    []
+    + GLIAL_CELLS
+    + PHARYNGEAL_MARGINAL_CELLS
+    + PHARYNGEAL_EPITHELIUM
+    + PHARYNGEAL_GLIAL_CELL
+    + PHARYNGEAL_BASEMENT_MEMBRANE
+    + EXCRETORY_CELL
+    + EXCRETORY_GLAND
+    + HEAD_MESODERMAL_CELL
+    + HYPODERMIS
+    + INTESTINE
+    + INTESTINAL_MUSCLES
+)
+
+
+KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
 
 def get_standard_color(cell):
@@ -1090,17 +1128,61 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
+    elif cell in PHARYNGEAL_MARGINAL_CELLS:
+        return WA_COLORS["Hermaphrodite"]["Alimentary System"][
+            "marginal cells (mc) of the pharynx"
+        ]
+    elif cell in PHARYNGEAL_EPITHELIUM:
+        return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"]
+    elif cell in PHARYNGEAL_GLIAL_CELL:
+        return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
+            "pharyngeal epithelium"
+        ]  # TODO: check!!
+    elif cell in PHARYNGEAL_BASEMENT_MEMBRANE:
+        return WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"]
     elif cell in GLR_CELLS:
         return WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"]
     elif cell in CEPSH_CELLS:
         return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
             "sheath cell other than amphid sheath and phasmid"
         ]
+    elif cell in UNKNOWN_FUNCTION_NEURONS:
+        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"][
+            "neuron with unknown function"
+        ]
+    elif cell in ANAL_SPHINCTER_MUSCLES:
+        return WA_COLORS["Hermaphrodite"]["Muscle"][
+            "sphincter and anal depressor muscle"
+        ]
+    elif cell in EXCRETORY_CELL:
+        return WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory cell"]
+    elif cell in EXCRETORY_GLAND:
+        return WA_COLORS["Hermaphrodite"]["Excretory System"]["gland cell"]
+    elif cell in HEAD_MESODERMAL_CELL:
+        return WA_COLORS["Hermaphrodite"]["Other Tissues"]["head mesodermal cell"]
+    elif cell in HYPODERMIS:
+        return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["hypodermis"]
+    elif cell in INTESTINE:
+        return WA_COLORS["Hermaphrodite"]["Alimentary System"]["intestinal cells"]
+    elif cell in INTESTINAL_MUSCLES:
+        return WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"]
+
     else:
-        return "#dddddd"
+        raise Exception("Unknown cell: %s!" % cell)
 
 
 def get_short_description(cell):
+    if cell in cell_notes:
+        desc = cell_notes[cell]
+        if cell in SENSORY_NEURONS_COOK:
+            desc = "Sensory neuron (%s)" % desc
+        return desc[0].upper() + desc[1:]
+
+    else:
+        return "???"
+
+
+"""
     if cell in BODY_WALL_MUSCLE_NAMES:
         return "Body wall muscle"
     elif cell in VULVAL_MUSCLE_NAMES:
@@ -1125,6 +1207,16 @@ def get_short_description(cell):
         return "GLR cell"
     else:
         return "???"
+"""
+
+
+def get_cell_internal_link(cell_name, html=False, text=None):
+    url = "../Cells/index.html#%s" % cell_name
+
+    if html:
+        return '<a href="%s">%s</a>' % (url, cell_name if text is None else text)
+    else:
+        return "[%s](%s)" % (cell_name if text is None else text, url)
 
 
 def get_cell_link(cell_name, html=False, text=None):
@@ -1132,7 +1224,16 @@ def get_cell_link(cell_name, html=False, text=None):
 
     known_indiv = ["SABD", "MI"]
 
-    if cell_name in known_indiv:
+    if (
+        cell_name
+        in PHARYNGEAL_MARGINAL_CELLS
+        + PHARYNGEAL_EPITHELIUM
+        + PHARYNGEAL_GLIAL_CELL
+        + PHARYNGEAL_BASEMENT_MEMBRANE
+        + PHARYNGEAL_MUSCLE_NAMES
+    ):
+        url = "https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11"
+    elif cell_name in known_indiv:
         url = (
             "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
             % cell_name
@@ -1179,8 +1280,10 @@ def _generate_cell_table(cells):
     all_data[""] = ["Notes", "Link"]
 
     for cell in sorted(cells):
-        all_data[cell] = [
-            cell_notes[cell] if cell in cell_notes else "-",
+        desc = cell_notes[cell] if cell in cell_notes else "???"
+        desc = desc[0].upper() + desc[1:]
+        all_data[f'<a name="{cell}"></a>{cell}'] = [
+            desc,
             get_cell_link(cell, text="WormAtlas"),
         ]
 
@@ -1223,6 +1326,18 @@ if __name__ == "__main__":
                             f.write(_generate_cell_table(ODD_PHARYNGEAL_MUSCLE_NAMES))
                         elif cell_type == "even numbered pharyngeal muscle":
                             f.write(_generate_cell_table(EVEN_PHARYNGEAL_MUSCLE_NAMES))
+                        elif cell_type == "marginal cells (mc) of the pharynx":
+                            f.write(_generate_cell_table(PHARYNGEAL_MARGINAL_CELLS))
+                        elif cell_type == "pharyngeal epithelium":
+                            f.write(
+                                _generate_cell_table(
+                                    PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL
+                                )
+                            )  # TODO: check!
+                        elif cell_type == "basement membrane":
+                            f.write(
+                                _generate_cell_table(PHARYNGEAL_BASEMENT_MEMBRANE)
+                            )  # TODO: check!
                         elif cell_type == "neuron with unknown function":
                             f.write(_generate_cell_table(UNKNOWN_FUNCTION_NEURONS))
                         elif (
@@ -1230,3 +1345,17 @@ if __name__ == "__main__":
                             == "sheath cell other than amphid sheath and phasmid"
                         ):
                             f.write(_generate_cell_table(CEPSH_CELLS))
+                        elif cell_type == "excretory cell":
+                            f.write(_generate_cell_table(EXCRETORY_CELL))
+                        elif cell_type == "sphincter and anal depressor muscle":
+                            f.write(_generate_cell_table(ANAL_SPHINCTER_MUSCLES))
+                        elif cell_type == "gland cell":
+                            f.write(_generate_cell_table(EXCRETORY_GLAND))
+                        elif cell_type == "head mesodermal cell":
+                            f.write(_generate_cell_table(HEAD_MESODERMAL_CELL))
+                        elif cell_type == "hypodermis":
+                            f.write(_generate_cell_table(HYPODERMIS))
+                        elif cell_type == "intestinal cells":
+                            f.write(_generate_cell_table(INTESTINE))
+                        elif cell_type == "intestinal muscle":
+                            f.write(_generate_cell_table(INTESTINAL_MUSCLES))

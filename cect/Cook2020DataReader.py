@@ -8,7 +8,7 @@ from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
 from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_muscle
 from cect.ConnectomeReader import is_marginal_cell
-from cect.ConnectomeReader import convert_to_preferred_mc_name
+from cect.ConnectomeReader import convert_to_preferred_phar_cell_name
 
 import os
 
@@ -55,7 +55,7 @@ class Cook2020DataReader(ConnectomeDataset):
                     if is_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
                     if is_marginal_cell(post):
-                        post = convert_to_preferred_mc_name(post)
+                        post = convert_to_preferred_phar_cell_name(post)
                     num = float(row["Weight"])
                     syntype = str.strip(row["Type"])
                     if syntype == "Electrical":
@@ -72,7 +72,6 @@ class Cook2020DataReader(ConnectomeDataset):
                     if post not in self.cells:
                         self.cells.append(post)
 
-            
             with open(filename2, "r") as f:
                 reader = csv.DictReader(f)
                 print_("Opened file: " + filename)
@@ -82,13 +81,13 @@ class Cook2020DataReader(ConnectomeDataset):
                     if is_muscle(pre):
                         pre = convert_to_preferred_muscle_name(pre)
                     if is_marginal_cell(pre):
-                        pre = convert_to_preferred_mc_name(pre)
+                        pre = convert_to_preferred_phar_cell_name(pre)
                     post = str.strip(row["Target"])
-                    
+
                     if is_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
                     if is_marginal_cell(post):
-                        post = convert_to_preferred_mc_name(post)
+                        post = convert_to_preferred_phar_cell_name(post)
 
                     num = float(row["Weight"])
                     syntype = "Electrical"
@@ -129,12 +128,12 @@ class Cook2020DataReader(ConnectomeDataset):
                 if is_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 if is_marginal_cell(pre):
-                    pre = convert_to_preferred_mc_name(pre)
+                    pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
                 if is_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
-                    post = convert_to_preferred_mc_name(post)
+                    post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
@@ -150,7 +149,7 @@ class Cook2020DataReader(ConnectomeDataset):
                     if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
 
-        with open (filename2, "r") as f:
+        with open(filename2, "r") as f:
             reader = csv.DictReader(f)
             print_("Opened file: " + filename2)
 
@@ -159,12 +158,12 @@ class Cook2020DataReader(ConnectomeDataset):
                 if is_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 if is_marginal_cell(pre):
-                    pre = convert_to_preferred_mc_name(pre)
+                    pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
                 if is_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
-                    post = convert_to_preferred_mc_name(post)
+                    post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = "Electrical"
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
@@ -174,7 +173,6 @@ class Cook2020DataReader(ConnectomeDataset):
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
-                
                 if is_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)

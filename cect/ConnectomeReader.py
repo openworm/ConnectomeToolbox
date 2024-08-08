@@ -26,7 +26,7 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDR%s" % muscle[6:]
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
-    elif muscle.startswith ("pm1"):
+    elif muscle.startswith("pm1"):
         return "pm1"
     elif muscle == "pm2vl":
         return "pm2VL"
@@ -70,25 +70,28 @@ def convert_to_preferred_muscle_name(muscle):
         else:
             return muscle + "???"
 
-def convert_to_preferred_mc_name(cell):
+
+def convert_to_preferred_phar_cell_name(cell):
     if cell == "mc1v":
         return "mc1V"
-    if cell == "mc1dr":
+    elif cell == "mc1dr":
         return "mc1DR"
-    if cell == "mc1dl":
+    elif cell == "mc1dl":
         return "mc1DL"
-    if cell == "mc2v":
+    elif cell == "mc2v":
         return "mc2V"
-    if cell == "mc2dr":
+    elif cell == "mc2dr":
         return "mc2DR"
-    if cell == "mc2dl":
+    elif cell == "mc2dl":
         return "mc2DL"
-    if cell == "mc3v":
+    elif cell == "mc3v":
         return "mc3V"
-    if cell == "mc3dr":
+    elif cell == "mc3dr":
         return "mc3DR"
-    if cell == "mc3dl":
+    elif cell == "mc3dl":
         return "mc3DL"
+    elif cell.lower() == "g1p":  # Different between cook 19 & 20
+        return "g1P"
     else:
         if is_marginal_cell(cell):
             return cell
@@ -97,12 +100,14 @@ def convert_to_preferred_mc_name(cell):
 def get_marginal_cell_prefixes():
     return ["mc"]
 
+
 def is_marginal_cell(cell):
     known_mc_prefix = get_marginal_cell_prefixes()
     return cell.startswith(tuple(known_mc_prefix))
 
+
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
+    return ["pm", "vm", "um", "mu_"] + get_body_wall_muscle_prefixes()
 
 
 def get_body_wall_muscle_prefixes():
