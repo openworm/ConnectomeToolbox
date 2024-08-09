@@ -76,9 +76,6 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 <a href="../Cells/index.html#CANL">CANL</a> | <a href="../Cells/index.html#CANR">CANR</a> | <a href="../Cells/index.html#I1L">I1L</a> | <a href="../Cells/index.html#I1R">I1R</a> | <a href="../Cells/index.html#I2L">I2L</a> | <a href="../Cells/index.html#I2R">I2R</a> | <a href="../Cells/index.html#I3">I3</a> | <a href="../Cells/index.html#I4">I4</a> | <a href="../Cells/index.html#I5">I5</a> | <a href="../Cells/index.html#I6">I6</a> | <a href="../Cells/index.html#M1">M1</a> | <a href="../Cells/index.html#M2L">M2L</a> | <a href="../Cells/index.html#M2R">M2R</a> | <a href="../Cells/index.html#M3L">M3L</a> | <a href="../Cells/index.html#M3R">M3R</a> | <a href="../Cells/index.html#M4">M4</a> | <a href="../Cells/index.html#M5">M5</a> | <a href="../Cells/index.html#MCL">MCL</a> | <a href="../Cells/index.html#MCR">MCR</a> | <a href="../Cells/index.html#MI">MI</a> | <a href="../Cells/index.html#NSML">NSML</a> | <a href="../Cells/index.html#NSMR">NSMR</a> | <a href="../Cells/index.html#VC6">VC6</a>
 </details>
 
-### Muscles (1)
-<details><summary>Full list of Muscles</summary>
-<a href="../Cells/index.html#NMJ">NMJ</a>
-</details>
+### Muscles (0)
 
 ### Other cells (0)

@@ -35,7 +35,7 @@ class SpreadsheetDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def read_data(self, include_nonconnected_cells=False, neuron_connect=False):
         # reading the NeuronConnectFormatted.xls file if neuron_connect = True

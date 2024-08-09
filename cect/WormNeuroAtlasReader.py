@@ -51,7 +51,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def determine_nt(self, neuron):
         if neuron in self.dom_glu:

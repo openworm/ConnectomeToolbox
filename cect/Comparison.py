@@ -1,7 +1,7 @@
 import cect
 
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeReader import check_neurons
+from cect.ConnectomeReader import check_cells
 from cect.Cells import get_cell_internal_link
 from cect import print_
 import json
@@ -141,61 +141,24 @@ def generate_comparison_page(quick: bool):
 
         reader_module = importlib.import_module(reader)
 
+        """
         # exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
         cells, neuron_conns = reader_module.read_data(include_nonconnected_cells=True)
 
         preferred, not_in_preferred, missing_preferred = check_neurons(cells)
 
-        neuron_nts = {}
-        connectome = None
+        connectome = None"""
 
         try:
             connectome = reader_module.get_instance()
+            preferred, not_in_preferred, missing_preferred, muscles = check_cells(
+                connectome.nodes
+            )
             print_("Adding full connectome info: %s" % connectome)
 
-        except:
-            print_("NOT adding full connectome info")
+        except Exception as e:
+            print_("NOT adding full connectome info (%s)" % e)
             connectome = None
-
-        for c in neuron_conns:
-            nt = c.synclass
-            if len(nt) == 0:
-                nt = "**MISSING**"
-
-            if not nt in neuron_nts:
-                neuron_nts[nt] = 0
-
-            neuron_nts[nt] += 1
-
-        nts_info = ""
-        for nt in sorted(neuron_nts.keys()):
-            nts_info += "%s (%i)<br/>" % (shorten_neurotransmitter(nt), neuron_nts[nt])
-
-        neurons2muscles, muscles, muscle_conns = reader_module.read_muscle_data()
-
-        muscle_nts = {}
-        for c in muscle_conns:
-            nt = c.synclass
-            if len(nt) == 0:
-                nt = "**MISSING**"
-
-            if not nt in muscle_nts:
-                muscle_nts[nt] = 0
-
-            muscle_nts[nt] += 1
-
-        m_nts_info = ""
-        for nt in sorted(muscle_nts):
-            m_nts_info += "%s (%i)<br/>" % (
-                shorten_neurotransmitter(nt),
-                muscle_nts[nt],
-            )
-
-        ref = (
-            "[%s](%s.md)" % (reader_name, reader_pages[reader_name])
-            if reader_name in reader_pages
-            else reader_name
-        )
 
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
@@ -276,6 +239,49 @@ def generate_comparison_page(quick: bool):
                             f.write("\n</details>\n")
 
                 print_("Written page: %s" % filename)
+
+        neurons, neuron_conns = connectome.get_neuron_to_neuron_conns()
+        neurons2muscles, muscles, muscle_conns = connectome.get_neuron_to_muscle_conns()
+
+        neuron_nts = {}
+
+        for c in neuron_conns:
+            nt = c.synclass
+            if len(nt) == 0:
+                nt = "**MISSING**"
+
+            if not nt in neuron_nts:
+                neuron_nts[nt] = 0
+
+            neuron_nts[nt] += 1
+
+        nts_info = ""
+        for nt in sorted(neuron_nts.keys()):
+            nts_info += "%s (%i)<br/>" % (shorten_neurotransmitter(nt), neuron_nts[nt])
+
+        muscle_nts = {}
+        for c in muscle_conns:
+            nt = c.synclass
+            if len(nt) == 0:
+                nt = "**MISSING**"
+
+            if not nt in muscle_nts:
+                muscle_nts[nt] = 0
+
+            muscle_nts[nt] += 1
+
+        m_nts_info = ""
+        for nt in sorted(muscle_nts):
+            m_nts_info += "%s (%i)<br/>" % (
+                shorten_neurotransmitter(nt),
+                muscle_nts[nt],
+            )
+
+        ref = (
+            "[%s](%s.md)" % (reader_name, reader_pages[reader_name])
+            if reader_name in reader_pages
+            else reader_name
+        )
 
         all_data[ref] = [
             len(preferred),

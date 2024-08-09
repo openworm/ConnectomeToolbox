@@ -24,6 +24,18 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDL%s" % muscle[6:]
     elif muscle.startswith("BWM-DR"):
         return "MDR%s" % muscle[6:]
+    elif muscle.startswith("dBWM"):
+        return (
+            "MD%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MD%s0%s" % (muscle[4], muscle[5])
+        )
+    elif muscle.startswith("vBWM"):
+        return (
+            "MV%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MV%s0%s" % (muscle[4], muscle[5])
+        )
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
     elif muscle.startswith("pm1"):
@@ -115,6 +127,8 @@ def get_body_wall_muscle_prefixes():
 
 
 def is_muscle(cell):
+    if cell in PREFERRED_MUSCLE_NAMES:
+        return True
     known_muscle_prefixes = get_all_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
@@ -125,14 +139,16 @@ def is_body_wall_muscle(cell):
 
 
 def is_neuron(cell):
-    return not is_muscle(cell)
+    return cell in PREFERRED_NEURON_NAMES
 
 
 def remove_leading_index_zero(cell):
     """
     Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
     """
-    if is_neuron(cell) and cell[-2:].startswith("0"):
+    if cell[:2] in ["DA", "AS", "DD", "DB", "VA", "VB", "VC", "VD"] and cell[
+        -2:
+    ].startswith("0"):
         return "%s%s" % (cell[:-2], cell[-1:])
     return cell
 
@@ -180,36 +196,44 @@ class ConnectionInfo:
         return self.__str__()
 
 
-def check_neurons(cells):
+def check_cells(cells):
     preferred = []
     not_in_preferred = []
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
+    muscles = []
+
     for c in cells:
-        if not c in PREFERRED_NEURON_NAMES:
+        if is_muscle(c):
+            muscles.append(c)
+        elif not c in PREFERRED_NEURON_NAMES:
             if not is_muscle(c):
                 not_in_preferred.append(c)
         else:
             preferred.append(c)
+
         if c in missing_preferred:
             missing_preferred.remove(c)
 
-    return preferred, not_in_preferred, missing_preferred
+    return preferred, not_in_preferred, missing_preferred, muscles
 
 
 def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns):
-    print_("Found %s cells: %s\n" % (len(cells), sorted(cells)))
+    print_("Found %s non-muscle cells: %s\n" % (len(cells), sorted(cells)))
     # assert(len(cells) == 302)
     # print_("Expected number of cells correct if include_nonconnected_cells=True")
 
-    preferred, not_in_preferred, missing_preferred = check_neurons(cells)
+    preferred, not_in_preferred, missing_preferred, muscles_ = check_cells(cells)
 
     print_(
         "Found %s non-neuron(s) here: %s\n"
         % (len(not_in_preferred), sorted(not_in_preferred))
     )
-    print_("Known neurons not present: %s\n" % (sorted(missing_preferred)))
+    print_(
+        "Known neurons not present (%i): %s\n"
+        % (len(missing_preferred), sorted(missing_preferred))
+    )
 
-    print_("Found %s connections..." % (len(neuron_conns)))
+    print_("Found %s neuron->neuron connections..." % (len(neuron_conns)))
     for c in neuron_conns[:5]:
         print_("   %s" % c)
 

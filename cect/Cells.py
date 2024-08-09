@@ -943,8 +943,19 @@ for bwm in BODY_WALL_MUSCLE_NAMES:
 
 ANAL_SPHINCTER_MUSCLES = ["MANAL", "mu_sph", "mu_anal"]  # TODO: remove duplicate!
 
+for cell in ANAL_SPHINCTER_MUSCLES:
+    cell_notes[cell] = "anal/sphincter muscle"
+
 VULVAL_MUSCLE_NAMES = [
     "MVULVA",
+    "um2AL",
+    "um2AR",
+    "um1AL",
+    "um1AR",
+    "um1PL",
+    "um1PR",
+    "um2PL",
+    "um2PR",
     "vm1AL",
     "vm1PL",
     "vm1PR",
@@ -954,6 +965,8 @@ VULVAL_MUSCLE_NAMES = [
     "vm2PL",
     "vm2PR",
 ]
+for cell in VULVAL_MUSCLE_NAMES:
+    cell_notes[cell] = "vulval muscle"
 
 ODD_PHARYNGEAL_MUSCLE_NAMES = [
     "pm1",
@@ -1292,7 +1305,71 @@ def _get_dataset_link(reader_name, html=False, text=None):
         return "[%s](%s)" % (reader_name if text is None else text, url)
 
 
-def _generate_cell_table(cells):
+def _generate_cell_table(cell_type, cells):
+    import plotly.express as px
+    import plotly.graph_objects as go
+    import numpy as np
+
+    from cect.Comparison import _format_json
+    from cect.Comparison import shorten_neurotransmitter
+
+    all_syn_types = set([])
+    for connectome in connectomes.values():
+        for st in connectome.connections:
+            all_syn_types.add(st)
+    fig_md = ""
+
+    for syn_type in all_syn_types:
+        fig = go.Figure()
+        fig.layout.showlegend = True
+
+        fig_md += '\n=== "%s"\n\n' % syn_type
+        fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
+
+        for reader_name, connectome in connectomes.items():
+            sorted_cells = sorted(cells)
+
+            indent = "    "
+            nonempty_fig_present = False
+            y = []
+            for cell in sorted_cells:
+                conns_from = connectome.get_connections_to(cell, syn_type)
+                y.append(len(conns_from))
+
+            if sum(y) > 0:
+                marker_symbol = "square"
+                dash = "solid"
+                if "GJ" in syn_type:
+                    marker_symbol = "circle"
+                    dash = "dot"
+
+                data = fig.add_scatter(
+                    name="%s %s" % (reader_name, shorten_neurotransmitter(syn_type)),
+                    x=sorted_cells,
+                    y=y,
+                    marker_symbol=marker_symbol,
+                    line=dict(dash=dash),
+                )
+                nonempty_fig_present = True
+
+        if nonempty_fig_present:
+            asset_filename = "assets/%s_%s_hist.json" % (
+                cell_type.replace(" ", "_"),
+                syn_type,
+            )
+
+            with open("./docs/%s" % asset_filename, "w") as asset_file:
+                asset_file.write(_format_json(fig.to_json()))
+
+            fig_md += '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n\n' % (
+                indent,
+                indent,
+                asset_filename,
+                indent,
+            )
+        else:
+            fig_md += "    No connections of this type found.\n\n"
+
     all_data = {}
 
     all_data[""] = ["Notes", "Datasets", "Link"]
@@ -1314,9 +1391,9 @@ def _generate_cell_table(cells):
 
     df_all = pd.DataFrame(all_data).transpose()
 
-    mk = df_all.to_markdown()
+    table_md = df_all.to_markdown()
 
-    return "%s\n\n" % mk
+    return "%s\n%s\n\n" % (fig_md, table_md)
 
 
 if __name__ == "__main__":
@@ -1344,51 +1421,82 @@ if __name__ == "__main__":
                             )
                         )
                         if cell_type == "body wall muscle":
-                            f.write(_generate_cell_table(BODY_WALL_MUSCLE_NAMES))
+                            f.write(
+                                _generate_cell_table(cell_type, BODY_WALL_MUSCLE_NAMES)
+                            )
                         elif cell_type == "interneuron":
-                            f.write(_generate_cell_table(INTERNEURONS_COOK))
+                            f.write(_generate_cell_table(cell_type, INTERNEURONS_COOK))
                         elif cell_type == "motor neuron":
-                            f.write(_generate_cell_table(MOTORNEURONS_COOK))
+                            f.write(_generate_cell_table(cell_type, MOTORNEURONS_COOK))
                         elif cell_type == "sensory neuron":
-                            f.write(_generate_cell_table(SENSORY_NEURONS_COOK))
+                            f.write(
+                                _generate_cell_table(cell_type, SENSORY_NEURONS_COOK)
+                            )
                         elif cell_type == "odd numbered pharyngeal muscle":
-                            f.write(_generate_cell_table(ODD_PHARYNGEAL_MUSCLE_NAMES))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, ODD_PHARYNGEAL_MUSCLE_NAMES
+                                )
+                            )
                         elif cell_type == "even numbered pharyngeal muscle":
-                            f.write(_generate_cell_table(EVEN_PHARYNGEAL_MUSCLE_NAMES))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, EVEN_PHARYNGEAL_MUSCLE_NAMES
+                                )
+                            )
                         elif cell_type == "polymodal neuron":
-                            f.write(_generate_cell_table(PHARYNGEAL_POLYMODAL_NEURONS))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, PHARYNGEAL_POLYMODAL_NEURONS
+                                )
+                            )
                         elif cell_type == "marginal cells (mc) of the pharynx":
-                            f.write(_generate_cell_table(PHARYNGEAL_MARGINAL_CELLS))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, PHARYNGEAL_MARGINAL_CELLS
+                                )
+                            )
                         elif cell_type == "pharyngeal epithelium":
                             f.write(
                                 _generate_cell_table(
-                                    PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL
+                                    cell_type,
+                                    PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL,
                                 )
                             )  # TODO: check!
                         elif cell_type == "basement membrane":
                             f.write(
-                                _generate_cell_table(PHARYNGEAL_BASEMENT_MEMBRANE)
+                                _generate_cell_table(
+                                    cell_type, PHARYNGEAL_BASEMENT_MEMBRANE
+                                )
                             )  # TODO: check!
                         elif cell_type == "neuron with unknown function":
-                            f.write(_generate_cell_table(UNKNOWN_FUNCTION_NEURONS))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, UNKNOWN_FUNCTION_NEURONS
+                                )
+                            )
                         elif (
                             cell_type
                             == "sheath cell other than amphid sheath and phasmid"
                         ):
-                            f.write(_generate_cell_table(CEPSH_CELLS))
+                            f.write(_generate_cell_table(cell_type, CEPSH_CELLS))
                         elif cell_type == "excretory cell":
-                            f.write(_generate_cell_table(EXCRETORY_CELL))
+                            f.write(_generate_cell_table(cell_type, EXCRETORY_CELL))
                         elif cell_type == "sphincter and anal depressor muscle":
-                            f.write(_generate_cell_table(ANAL_SPHINCTER_MUSCLES))
+                            f.write(
+                                _generate_cell_table(cell_type, ANAL_SPHINCTER_MUSCLES)
+                            )
                         elif cell_type == "gland cell":
-                            f.write(_generate_cell_table(EXCRETORY_GLAND))
+                            f.write(_generate_cell_table(cell_type, EXCRETORY_GLAND))
                         elif cell_type == "head mesodermal cell":
-                            f.write(_generate_cell_table(HEAD_MESODERMAL_CELL))
+                            f.write(
+                                _generate_cell_table(cell_type, HEAD_MESODERMAL_CELL)
+                            )
                         elif cell_type == "hypodermis":
-                            f.write(_generate_cell_table(HYPODERMIS))
+                            f.write(_generate_cell_table(cell_type, HYPODERMIS))
                         elif cell_type == "intestinal cells":
-                            f.write(_generate_cell_table(INTESTINE))
+                            f.write(_generate_cell_table(cell_type, INTESTINE))
                         elif cell_type == "intestinal muscle":
-                            f.write(_generate_cell_table(INTESTINAL_MUSCLES))
+                            f.write(_generate_cell_table(cell_type, INTESTINAL_MUSCLES))
                         elif cell_type == "GLR cell":
-                            f.write(_generate_cell_table(GLR_CELLS))
+                            f.write(_generate_cell_table(cell_type, GLR_CELLS))

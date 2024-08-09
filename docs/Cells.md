@@ -4,162 +4,414 @@
 ### Muscle
 
 #### ![#006600](https://via.placeholder.com/15/006600/006600.png) Intestinal muscle
-|                               | 0                  | 1        | 2                                                                                     |
-|:------------------------------|:-------------------|:---------|:--------------------------------------------------------------------------------------|
-|                               | Notes              | Datasets | Link                                                                                  |
-| <a name="mu_intL"></a>mu_intL | Intestinal muscles |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html) |
-| <a name="mu_intR"></a>mu_intR | Intestinal muscles |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html) |
 
-#### ![#99c66](https://via.placeholder.com/15/99c66/99c66.png) Vulval muscle
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/intestinal_muscle_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/intestinal_muscle_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                               | 0                  | 1                                          | 2                                                                                     |
+|:------------------------------|:-------------------|:-------------------------------------------|:--------------------------------------------------------------------------------------|
+|                               | Notes              | Datasets                                   | Link                                                                                  |
+| <a name="mu_intL"></a>mu_intL | Intestinal muscles | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html) |
+| <a name="mu_intR"></a>mu_intR | Intestinal muscles | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/mu_intframeset.html) |
+
+#### ![#99cc66](https://via.placeholder.com/15/99cc66/99cc66.png) Vulval muscle
 #### ![#336600](https://via.placeholder.com/15/336600/336600.png) Body wall muscle
-|                           | 0                | 1        | 2                                                                                  |
-|:--------------------------|:-----------------|:---------|:-----------------------------------------------------------------------------------|
-|                           | Notes            | Datasets | Link                                                                               |
-| <a name="MDL01"></a>MDL01 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL02"></a>MDL02 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL03"></a>MDL03 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL04"></a>MDL04 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL05"></a>MDL05 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL06"></a>MDL06 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL07"></a>MDL07 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL08"></a>MDL08 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL09"></a>MDL09 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL10"></a>MDL10 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL11"></a>MDL11 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL12"></a>MDL12 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL13"></a>MDL13 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL14"></a>MDL14 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL15"></a>MDL15 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL16"></a>MDL16 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL17"></a>MDL17 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL18"></a>MDL18 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL19"></a>MDL19 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL20"></a>MDL20 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL21"></a>MDL21 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL22"></a>MDL22 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL23"></a>MDL23 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDL24"></a>MDL24 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
-| <a name="MDR01"></a>MDR01 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR02"></a>MDR02 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR03"></a>MDR03 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR04"></a>MDR04 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR05"></a>MDR05 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR06"></a>MDR06 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR07"></a>MDR07 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR08"></a>MDR08 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR09"></a>MDR09 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR10"></a>MDR10 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR11"></a>MDR11 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR12"></a>MDR12 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR13"></a>MDR13 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR14"></a>MDR14 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR15"></a>MDR15 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR16"></a>MDR16 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR17"></a>MDR17 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR18"></a>MDR18 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR19"></a>MDR19 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR20"></a>MDR20 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR21"></a>MDR21 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR22"></a>MDR22 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR23"></a>MDR23 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MDR24"></a>MDR24 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
-| <a name="MVL01"></a>MVL01 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL02"></a>MVL02 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL03"></a>MVL03 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL04"></a>MVL04 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL05"></a>MVL05 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL06"></a>MVL06 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL07"></a>MVL07 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL08"></a>MVL08 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL09"></a>MVL09 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL10"></a>MVL10 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL11"></a>MVL11 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL12"></a>MVL12 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL13"></a>MVL13 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL14"></a>MVL14 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL15"></a>MVL15 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL16"></a>MVL16 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL17"></a>MVL17 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL18"></a>MVL18 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL19"></a>MVL19 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL20"></a>MVL20 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL21"></a>MVL21 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL22"></a>MVL22 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVL23"></a>MVL23 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
-| <a name="MVR01"></a>MVR01 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR02"></a>MVR02 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR03"></a>MVR03 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR04"></a>MVR04 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR05"></a>MVR05 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR06"></a>MVR06 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR07"></a>MVR07 | Head muscle      |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR08"></a>MVR08 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR09"></a>MVR09 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR10"></a>MVR10 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR11"></a>MVR11 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR12"></a>MVR12 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR13"></a>MVR13 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR14"></a>MVR14 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR15"></a>MVR15 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR16"></a>MVR16 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR17"></a>MVR17 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR18"></a>MVR18 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR19"></a>MVR19 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR20"></a>MVR20 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR21"></a>MVR21 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR22"></a>MVR22 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR23"></a>MVR23 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
-| <a name="MVR24"></a>MVR24 | Main body muscle |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/body_wall_muscle_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+
+    ```plotly
+    ---8<-- "./assets/body_wall_muscle_GABA_hist.json"
+    ```
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/body_wall_muscle_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                           | 0                | 1                                          | 2                                                                                  |
+|:--------------------------|:-----------------|:-------------------------------------------|:-----------------------------------------------------------------------------------|
+|                           | Notes            | Datasets                                   | Link                                                                               |
+| <a name="MDL01"></a>MDL01 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL02"></a>MDL02 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL03"></a>MDL03 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL04"></a>MDL04 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL05"></a>MDL05 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL06"></a>MDL06 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL07"></a>MDL07 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL08"></a>MDL08 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL09"></a>MDL09 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL10"></a>MDL10 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL11"></a>MDL11 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL12"></a>MDL12 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL13"></a>MDL13 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL14"></a>MDL14 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL15"></a>MDL15 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL16"></a>MDL16 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL17"></a>MDL17 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL18"></a>MDL18 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL19"></a>MDL19 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL20"></a>MDL20 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL21"></a>MDL21 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL22"></a>MDL22 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL23"></a>MDL23 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDL24"></a>MDL24 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDLframeset.html) |
+| <a name="MDR01"></a>MDR01 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR02"></a>MDR02 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR03"></a>MDR03 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR04"></a>MDR04 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR05"></a>MDR05 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR06"></a>MDR06 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR07"></a>MDR07 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR08"></a>MDR08 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR09"></a>MDR09 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR10"></a>MDR10 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR11"></a>MDR11 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR12"></a>MDR12 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR13"></a>MDR13 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR14"></a>MDR14 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR15"></a>MDR15 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR16"></a>MDR16 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR17"></a>MDR17 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR18"></a>MDR18 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR19"></a>MDR19 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR20"></a>MDR20 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR21"></a>MDR21 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR22"></a>MDR22 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR23"></a>MDR23 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MDR24"></a>MDR24 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MDRframeset.html) |
+| <a name="MVL01"></a>MVL01 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL02"></a>MVL02 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL03"></a>MVL03 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL04"></a>MVL04 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL05"></a>MVL05 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL06"></a>MVL06 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL07"></a>MVL07 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL08"></a>MVL08 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL09"></a>MVL09 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL10"></a>MVL10 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL11"></a>MVL11 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL12"></a>MVL12 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL13"></a>MVL13 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL14"></a>MVL14 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL15"></a>MVL15 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL16"></a>MVL16 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL17"></a>MVL17 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL18"></a>MVL18 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL19"></a>MVL19 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL20"></a>MVL20 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL21"></a>MVL21 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL22"></a>MVL22 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVL23"></a>MVL23 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVLframeset.html) |
+| <a name="MVR01"></a>MVR01 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR02"></a>MVR02 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR03"></a>MVR03 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR04"></a>MVR04 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR05"></a>MVR05 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR06"></a>MVR06 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR07"></a>MVR07 | Head muscle      | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR08"></a>MVR08 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR09"></a>MVR09 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR10"></a>MVR10 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR11"></a>MVR11 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR12"></a>MVR12 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR13"></a>MVR13 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR14"></a>MVR14 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR15"></a>MVR15 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR16"></a>MVR16 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR17"></a>MVR17 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR18"></a>MVR18 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR19"></a>MVR19 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR20"></a>MVR20 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR21"></a>MVR21 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR22"></a>MVR22 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR23"></a>MVR23 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
+| <a name="MVR24"></a>MVR24 | Main body muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MVRframeset.html) |
 
 #### ![#99cc00](https://via.placeholder.com/15/99cc00/99cc00.png) Uterine muscle
 #### ![#669900](https://via.placeholder.com/15/669900/669900.png) Sphincter and anal depressor muscle
-|                               | 0     | 1        | 2                                                                                   |
-|:------------------------------|:------|:---------|:------------------------------------------------------------------------------------|
-|                               | Notes | Datasets | Link                                                                                |
-| <a name="MANAL"></a>MANAL     | ???   |          | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MANAframeset.html) |
-| <a name="mu_anal"></a>mu_anal | ???   |          | mu_anal                                                                             |
-| <a name="mu_sph"></a>mu_sph   | ???   |          | mu_sph                                                                              |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/sphincter_and_anal_depressor_muscle_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+    No connections of this type found.
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                               | 0                     | 1                                          | 2                                                                                   |
+|:------------------------------|:----------------------|:-------------------------------------------|:------------------------------------------------------------------------------------|
+|                               | Notes                 | Datasets                                   | Link                                                                                |
+| <a name="MANAL"></a>MANAL     | Anal/sphincter muscle |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/MANAframeset.html) |
+| <a name="mu_anal"></a>mu_anal | Anal/sphincter muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | mu_anal                                                                             |
+| <a name="mu_sph"></a>mu_sph   | Anal/sphincter muscle | [Cook2019Herm](Cook2019Herm_data_graph.md) | mu_sph                                                                              |
 
 #### ![#33cC00](https://via.placeholder.com/15/33cC00/33cC00.png) Odd numbered pharyngeal muscle
-|                           | 0                 | 1                                  | 2                                                                                                                                |
-|:--------------------------|:------------------|:-----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
-|                           | Notes             | Datasets                           | Link                                                                                                                             |
-| <a name="pm1"></a>pm1     | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm3D"></a>pm3D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm3VL"></a>pm3VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm3VR"></a>pm3VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm5D"></a>pm5D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm5VL"></a>pm5VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm5VR"></a>pm5VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm7D"></a>pm7D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm7VL"></a>pm7VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm7VR"></a>pm7VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/odd_numbered_pharyngeal_muscle_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/odd_numbered_pharyngeal_muscle_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                           | 0                 | 1                                                                              | 2                                                                                                                                |
+|:--------------------------|:------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
+|                           | Notes             | Datasets                                                                       | Link                                                                                                                             |
+| <a name="pm1"></a>pm1     | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm3D"></a>pm3D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm3VL"></a>pm3VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm3VR"></a>pm3VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm5D"></a>pm5D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm5VL"></a>pm5VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm5VR"></a>pm5VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm7D"></a>pm7D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm7VL"></a>pm7VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm7VR"></a>pm7VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 
 #### ![#ccf199](https://via.placeholder.com/15/ccf199/ccf199.png) Even numbered pharyngeal muscle
-|                           | 0                 | 1                                  | 2                                                                                                                                |
-|:--------------------------|:------------------|:-----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
-|                           | Notes             | Datasets                           | Link                                                                                                                             |
-| <a name="pm2D"></a>pm2D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm2VL"></a>pm2VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm2VR"></a>pm2VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm4D"></a>pm4D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm4VL"></a>pm4VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm4VR"></a>pm4VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm6D"></a>pm6D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm6VL"></a>pm6VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm6VR"></a>pm6VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="pm8"></a>pm8     | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/even_numbered_pharyngeal_muscle_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/even_numbered_pharyngeal_muscle_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                           | 0                 | 1                                                                              | 2                                                                                                                                |
+|:--------------------------|:------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
+|                           | Notes             | Datasets                                                                       | Link                                                                                                                             |
+| <a name="pm2D"></a>pm2D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm2VL"></a>pm2VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm2VR"></a>pm2VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm4D"></a>pm4D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm4VL"></a>pm4VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm4VR"></a>pm4VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm6D"></a>pm6D   | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm6VL"></a>pm6VL | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm6VR"></a>pm6VR | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="pm8"></a>pm8     | Pharyngeal muscle | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 
 
 ### Alimentary System
 
 #### ![#cc33cc](https://via.placeholder.com/15/cc33cc/cc33cc.png) Marginal cells (mc) of the pharynx
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/marginal_cells_(mc)_of_the_pharynx_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/marginal_cells_(mc)_of_the_pharynx_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                           | 0                            | 1                                                                              | 2                                                                                                                                |
 |:--------------------------|:-----------------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
 |                           | Notes                        | Datasets                                                                       | Link                                                                                                                             |
 | <a name="mc1DL"></a>mc1DL | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 | <a name="mc1DR"></a>mc1DR | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
-| <a name="mc1V"></a>mc1V   | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md)                                             | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
+| <a name="mc1V"></a>mc1V   | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 | <a name="mc2DL"></a>mc2DL | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 | <a name="mc2DR"></a>mc2DR | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 | <a name="mc2V"></a>mc2V   | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
@@ -168,6 +420,45 @@
 | <a name="mc3V"></a>mc3V   | Marginal cell of the pharynx | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 
 #### ![#ffccff](https://via.placeholder.com/15/ffccff/ffccff.png) Intestinal cells
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+    No connections of this type found.
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/intestinal_cells_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                       | 0         | 1                                          | 2                                                                                  |
 |:----------------------|:----------|:-------------------------------------------|:-----------------------------------------------------------------------------------|
 |                       | Notes     | Datasets                                   | Link                                                                               |
@@ -187,6 +478,51 @@
 ### Nervous Tissue
 
 #### ![#ff3300](https://via.placeholder.com/15/ff3300/ff3300.png) Interneuron
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/interneuron_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+
+    ```plotly
+    ---8<-- "./assets/interneuron_GABA_hist.json"
+    ```
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/interneuron_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                           | 0                                                      | 1                                                                                                                                                                                                                                                                                                                                                              | 2                                                                                   |
 |:--------------------------|:-------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
 |                           | Notes                                                  | Datasets                                                                                                                                                                                                                                                                                                                                                       | Link                                                                                |
@@ -281,6 +617,51 @@
 | <a name="URBR"></a>URBR   | Category 4 interneuron                                 | [Varshney](Varshney_data_graph.md), [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [WormNeuroAtlas](WormNeuroAtlas_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                     | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/URBframeset.html)  |
 
 #### ![#9966cc](https://via.placeholder.com/15/9966cc/9966cc.png) Motor neuron
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/motor_neuron_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+
+    ```plotly
+    ---8<-- "./assets/motor_neuron_GABA_hist.json"
+    ```
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/motor_neuron_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                           | 0                                                          | 1                                                                                                                                                                                                                                                                                                                          | 2                                                                                   |
 |:--------------------------|:-----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
 |                           | Notes                                                      | Datasets                                                                                                                                                                                                                                                                                                                   | Link                                                                                |
@@ -409,6 +790,48 @@
 | <a name="VD9"></a>VD9     | Ventral cord motor neuron                                  | [Varshney](Varshney_data_graph.md), [White_whole](White_whole_data_graph.md), [WormNeuroAtlas](WormNeuroAtlas_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                                                                                                                                   | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/VDframeset.html)   |
 
 #### ![#ff66cc](https://via.placeholder.com/15/ff66cc/ff66cc.png) Sensory neuron
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/sensory_neuron_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/sensory_neuron_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                           | 0                              | 1                                                                                                                                                                                                                                                                                                                                                              | 2                                                                                   |
 |:--------------------------|:-------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
 |                           | Notes                          | Datasets                                                                                                                                                                                                                                                                                                                                                       | Link                                                                                |
@@ -497,6 +920,48 @@
 | <a name="URYVR"></a>URYVR | Cephalic                       | [Varshney](Varshney_data_graph.md), [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [WormNeuroAtlas](WormNeuroAtlas_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                     | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/URYVframeset.html) |
 
 #### ![#cc0033](https://via.placeholder.com/15/cc0033/cc0033.png) Polymodal neuron
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/polymodal_neuron_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/polymodal_neuron_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                         | 0                           | 1                                                                                                                                                                        | 2                                                                                  |
 |:------------------------|:----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
 |                         | Notes                       | Datasets                                                                                                                                                                 | Link                                                                               |
@@ -507,11 +972,53 @@
 | <a name="NSMR"></a>NSMR | Pharyngeal polymodal neuron | [White_whole](White_whole_data_graph.md), [Cook2020](Cook2020_data_graph.md), [WormNeuroAtlas](WormNeuroAtlas_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/NSMframeset.html) |
 
 #### ![#990033](https://via.placeholder.com/15/990033/990033.png) Neuron with unknown function
-|                         | 0            | 1                                                                                | 2                                                                                  |
-|:------------------------|:-------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
-|                         | Notes        | Datasets                                                                         | Link                                                                               |
-| <a name="CANL"></a>CANL | Canal neuron | [Cook2019Herm](Cook2019Herm_data_graph.md)                                       | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CANframeset.html) |
-| <a name="CANR"></a>CANR | Canal neuron | [Witvliet1](Witvliet1_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CANframeset.html) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/neuron_with_unknown_function_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/neuron_with_unknown_function_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                         | 0            | 1                                          | 2                                                                                  |
+|:------------------------|:-------------|:-------------------------------------------|:-----------------------------------------------------------------------------------|
+|                         | Notes        | Datasets                                   | Link                                                                               |
+| <a name="CANL"></a>CANL | Canal neuron | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CANframeset.html) |
+| <a name="CANR"></a>CANR | Canal neuron | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CANframeset.html) |
 
 
 ### Excretory System
@@ -519,12 +1026,96 @@
 #### ![#ecf781](https://via.placeholder.com/15/ecf781/ecf781.png) Excretory pore cell
 #### ![#сс9966](https://via.placeholder.com/15/сс9966/сс9966.png) Duct cell
 #### ![#9999cc](https://via.placeholder.com/15/9999cc/9999cc.png) Gland cell
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/gland_cell_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/gland_cell_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                             | 0               | 1                                          | 2      |
 |:----------------------------|:----------------|:-------------------------------------------|:-------|
 |                             | Notes           | Datasets                                   | Link   |
 | <a name="exc_gl"></a>exc_gl | Excretory gland | [Cook2019Herm](Cook2019Herm_data_graph.md) | exc_gl |
 
 #### ![#cc3366](https://via.placeholder.com/15/cc3366/cc3366.png) Excretory cell
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/excretory_cell_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/excretory_cell_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                                 | 0              | 1                                          | 2        |
 |:--------------------------------|:---------------|:-------------------------------------------|:---------|
 |                                 | Notes          | Datasets                                   | Link     |
@@ -535,6 +1126,48 @@
 ### Epithelial Tissue
 
 #### ![#dcc3ac](https://via.placeholder.com/15/dcc3ac/dcc3ac.png) Hypodermis
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/hypodermis_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/hypodermis_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                       | 0          | 1                                          | 2                                                                                  |
 |:----------------------|:-----------|:-------------------------------------------|:-----------------------------------------------------------------------------------|
 |                       | Notes      | Datasets                                   | Link                                                                               |
@@ -543,18 +1176,102 @@
 #### ![#сс6633](https://via.placeholder.com/15/сс6633/сс6633.png) Seam cell
 #### ![#ff9999](https://via.placeholder.com/15/ff9999/ff9999.png) Socket cell, XXX cells
 #### ![#339999](https://via.placeholder.com/15/339999/339999.png) Sheath cell other than amphid sheath and phasmid
-|                               | 0     | 1                                                                                                                                                                                            | 2                                                                                     |
-|:------------------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|
-|                               | Notes | Datasets                                                                                                                                                                                     | Link                                                                                  |
-| <a name="CEPshDL"></a>CEPshDL | Glial | [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                                                       | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html) |
-| <a name="CEPshDR"></a>CEPshDR | Glial | [White_A](White_A_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                     | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html) |
-| <a name="CEPshVL"></a>CEPshVL | Glial | [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html) |
-| <a name="CEPshVR"></a>CEPshVR | Glial | [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/sheath_cell_other_than_amphid_sheath_and_phasmid_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/sheath_cell_other_than_amphid_sheath_and_phasmid_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                               | 0     | 1                                          | 2                                                                                     |
+|:------------------------------|:------|:-------------------------------------------|:--------------------------------------------------------------------------------------|
+|                               | Notes | Datasets                                   | Link                                                                                  |
+| <a name="CEPshDL"></a>CEPshDL | Glial | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html) |
+| <a name="CEPshDR"></a>CEPshDR | Glial | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshDframeset.html) |
+| <a name="CEPshVL"></a>CEPshVL | Glial | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html) |
+| <a name="CEPshVR"></a>CEPshVR | Glial | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/CEPshVframeset.html) |
 
 #### ![#01fecc](https://via.placeholder.com/15/01fecc/01fecc.png) Amphid sheath and phasmid sheath
 #### ![#996633](https://via.placeholder.com/15/996633/996633.png) Pharyngeal-intestinal valve, intestinal rectal valve 
 #### ![#cccc00](https://via.placeholder.com/15/cccc00/cccc00.png) Arcade cell
 #### ![#996699](https://via.placeholder.com/15/996699/996699.png) Pharyngeal epithelium
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/pharyngeal_epithelium_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/pharyngeal_epithelium_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                         | 0                     | 1                                                                              | 2                                                                                                                                |
 |:------------------------|:----------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
 |                         | Notes                 | Datasets                                                                       | Link                                                                                                                             |
@@ -581,24 +1298,144 @@
 
 #### ![#ffffcc](https://via.placeholder.com/15/ffffcc/ffffcc.png) Pseudocoelomic space
 #### ![#ff9900](https://via.placeholder.com/15/ff9900/ff9900.png) Basement membrane
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+    No connections of this type found.
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/basement_membrane_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                     | 0                            | 1                                                                              | 2                                                                                                                                |
 |:--------------------|:-----------------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
 |                     | Notes                        | Datasets                                                                       | Link                                                                                                                             |
 | <a name="bm"></a>bm | Pharyngeal basement membrane | [Cook2020](Cook2020_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11) |
 
 #### ![#cc9900](https://via.placeholder.com/15/cc9900/cc9900.png) GLR cell
-|                           | 0        | 1                                                                                                                                                                                                                                      | 2                                                                                   |
-|:--------------------------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
-|                           | Notes    | Datasets                                                                                                                                                                                                                               | Link                                                                                |
-| <a name="GLRDL"></a>GLRDL | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                                                           | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html) |
-| <a name="GLRDR"></a>GLRDR | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                     | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html) |
-| <a name="GLRL"></a>GLRL   | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                                                           | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html)  |
-| <a name="GLRR"></a>GLRR   | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html)  |
-| <a name="GLRVL"></a>GLRVL | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet2](Witvliet2_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                       | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html) |
-| <a name="GLRVR"></a>GLRVR | GLR cell | [White_whole](White_whole_data_graph.md), [White_A](White_A_data_graph.md), [White_L4](White_L4_data_graph.md), [Witvliet1](Witvliet1_data_graph.md), [Cook2019Herm](Cook2019Herm_data_graph.md)                                       | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html) |
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/GLR_cell_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+
+    ```plotly
+    ---8<-- "./assets/GLR_cell_Acetylcholine_hist.json"
+    ```
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
+|                           | 0        | 1                                          | 2                                                                                   |
+|:--------------------------|:---------|:-------------------------------------------|:------------------------------------------------------------------------------------|
+|                           | Notes    | Datasets                                   | Link                                                                                |
+| <a name="GLRDL"></a>GLRDL | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html) |
+| <a name="GLRDR"></a>GLRDR | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRDframeset.html) |
+| <a name="GLRL"></a>GLRL   | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html)  |
+| <a name="GLRR"></a>GLRR   | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRframeset.html)  |
+| <a name="GLRVL"></a>GLRVL | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html) |
+| <a name="GLRVR"></a>GLRVR | GLR cell | [Cook2019Herm](Cook2019Herm_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/GLRVframeset.html) |
 
 #### ![#ffcc00](https://via.placeholder.com/15/ffcc00/ffcc00.png) Coeloemocyte
 #### ![#ff6633](https://via.placeholder.com/15/ff6633/ff6633.png) Head mesodermal cell
+
+=== "Generic_GJ"
+
+    Connections to these cells of type: Generic_GJ
+
+
+    ```plotly
+    ---8<-- "./assets/head_mesodermal_cell_Generic_GJ_hist.json"
+    ```
+
+
+=== "Glutamate"
+
+    Connections to these cells of type: Glutamate
+
+    No connections of this type found.
+
+
+=== "GABA"
+
+    Connections to these cells of type: GABA
+
+    No connections of this type found.
+
+
+=== "Acetylcholine"
+
+    Connections to these cells of type: Acetylcholine
+
+    No connections of this type found.
+
+
+=== "Generic_CS"
+
+    Connections to these cells of type: Generic_CS
+
+    No connections of this type found.
+
+
 |                       | 0                    | 1                                          | 2                                                                                  |
 |:----------------------|:---------------------|:-------------------------------------------|:-----------------------------------------------------------------------------------|
 |                       | Notes                | Datasets                                   | Link                                                                               |

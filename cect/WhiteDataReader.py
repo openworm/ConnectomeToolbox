@@ -72,7 +72,7 @@ class White_A(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def read_data(self, include_nonconnected_cells=False):
         conns = []
@@ -156,7 +156,7 @@ class White_L4(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def read_data(self, include_nonconnected_cells=False):
         conns = []
@@ -243,7 +243,7 @@ class White_whole(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def read_data(self, include_nonconnected_cells=False):
         conns = []

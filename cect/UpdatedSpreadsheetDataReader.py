@@ -13,6 +13,7 @@ import csv
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeDataset import ConnectomeDataset
 import os
 
 from cect import print_
@@ -98,87 +99,97 @@ def parse_row(row):
     return pre, post, num, syntype, synclass
 
 
-def read_data(include_nonconnected_cells=False):
-    """
-    Args:
-        include_nonconnected_cells (bool): Also append neurons without known connections to other neurons to the 'cells' list. True if they should get appended, False otherwise.
-    Returns:
-        cells (:obj:`list` of :obj:`str`): List of neurons
-        conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
-    """
+class UpdatedSpreadsheetDataReader(ConnectomeDataset):
+    def read_data(self, include_nonconnected_cells=False):
+        """
+        Args:
+            include_nonconnected_cells (bool): Also append neurons without known connections to other neurons to the 'cells' list. True if they should get appended, False otherwise.
+        Returns:
+            cells (:obj:`list` of :obj:`str`): List of neurons
+            conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
+        """
 
-    conns = []
-    cells = []
+        conns = []
+        cells = []
 
-    with open(filename, "r") as f:
-        reader = csv.DictReader(f)
-        print_("Opened file: " + filename)
+        with open(filename, "r") as f:
+            reader = csv.DictReader(f)
+            print_("Opened file: " + filename)
 
-        known_nonconnected_cells = ["CANL", "CANR"]
+            known_nonconnected_cells = ["CANL", "CANR"]
 
-        for row in reader:
-            pre, post, num, syntype, synclass = parse_row(row)
+            for row in reader:
+                pre, post, num, syntype, synclass = parse_row(row)
 
-            if not is_neuron(pre) or not is_neuron(post):
-                continue  # pre or post is not a neuron
+                if not is_neuron(pre) or not is_neuron(post):
+                    continue  # pre or post is not a neuron
 
-            pre = remove_leading_index_zero(pre)
-            post = remove_leading_index_zero(post)
-
-            conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-            # print ConnectionInfo(pre, post, num, syntype, synclass)
-            if pre not in cells:
-                cells.append(pre)
-            if post not in cells:
-                cells.append(post)
-
-        if include_nonconnected_cells:
-            for c in known_nonconnected_cells:
-                if c not in cells:
-                    cells.append(c)
-
-    return cells, conns
-
-
-def read_muscle_data():
-    """
-    Returns:
-        neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
-        muscles (:obj:`list` of :obj:`str`): List of muscle cells.
-        conns (:obj:`list` of :obj:`ConnectionInfo`): List of neuron-muscle connections.
-    """
-
-    neurons = []
-    muscles = []
-    conns = []
-
-    with open(filename, "r") as f:
-        reader = csv.DictReader(f)
-        print_("Opened file: " + filename)
-
-        for row in reader:
-            pre, post, num, syntype, synclass = parse_row(row)
-
-            if not (
-                is_neuron(pre) or is_body_wall_muscle(pre)
-            ) or not is_body_wall_muscle(post):
-                continue
-
-            if is_neuron(pre):
                 pre = remove_leading_index_zero(pre)
-            else:
-                pre = get_old_muscle_name(pre)
-            post = get_old_muscle_name(post)
+                post = remove_leading_index_zero(post)
 
-            conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-            if is_neuron(pre) and pre not in neurons:
-                neurons.append(pre)
-            elif is_body_wall_muscle(pre) and pre not in muscles:
-                muscles.append(pre)
-            if post not in muscles:
-                muscles.append(post)
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                # print ConnectionInfo(pre, post, num, syntype, synclass)
+                if pre not in cells:
+                    cells.append(pre)
+                if post not in cells:
+                    cells.append(post)
 
-    return neurons, muscles, conns
+            if include_nonconnected_cells:
+                for c in known_nonconnected_cells:
+                    if c not in cells:
+                        cells.append(c)
+
+        return cells, conns
+
+    def read_muscle_data(self):
+        """
+        Returns:
+            neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
+            muscles (:obj:`list` of :obj:`str`): List of muscle cells.
+            conns (:obj:`list` of :obj:`ConnectionInfo`): List of neuron-muscle connections.
+        """
+
+        neurons = []
+        muscles = []
+        conns = []
+
+        with open(filename, "r") as f:
+            reader = csv.DictReader(f)
+            print_("Opened file: " + filename)
+
+            for row in reader:
+                pre, post, num, syntype, synclass = parse_row(row)
+
+                if not (
+                    is_neuron(pre) or is_body_wall_muscle(pre)
+                ) or not is_body_wall_muscle(post):
+                    continue
+
+                if is_neuron(pre):
+                    pre = remove_leading_index_zero(pre)
+                else:
+                    pre = get_old_muscle_name(pre)
+                post = get_old_muscle_name(post)
+
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                if is_neuron(pre) and pre not in neurons:
+                    neurons.append(pre)
+                elif is_body_wall_muscle(pre) and pre not in muscles:
+                    muscles.append(pre)
+                if post not in muscles:
+                    muscles.append(post)
+
+        return neurons, muscles, conns
+
+
+def get_instance():
+    return UpdatedSpreadsheetDataReader()
+
+
+my_instance = get_instance()
+
+read_data = my_instance.read_data
+read_muscle_data = my_instance.read_muscle_data
 
 
 def main():

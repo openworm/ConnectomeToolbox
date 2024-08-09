@@ -3,6 +3,8 @@ from cect import print_
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 from cect.Cells import get_short_description
+from cect.ConnectomeReader import is_neuron
+from cect.ConnectomeReader import is_muscle
 
 import numpy as np
 import math
@@ -16,6 +18,7 @@ class ConnectomeDataset:
     def __init__(self):
         self.nodes = []
         self.connections = {}
+        self.connection_infos = []
 
         self.view = None
 
@@ -29,9 +32,11 @@ class ConnectomeDataset:
 
             self.connections[c] = new_conn_array
 
-    def add_connection(self, conn):
+    def add_connection_info(self, conn: ConnectionInfo):
         if self.verbose:
             print_("----   Adding: %s" % conn)
+
+        self.connection_infos.append(conn)
 
         if not conn.synclass in self.connections:
             if len(self.connections) == 0:
@@ -65,8 +70,43 @@ class ConnectomeDataset:
                 % (pre_index, post_index, self.nodes, conn_array)
             )
 
+    def read_data(self, include_nonconnected_cells=False, neuron_connect=True):
+        if not include_nonconnected_cells:
+            raise Exception("Option include_nonconnected_cells=False not supported")
+        return self.get_neuron_to_neuron_conns()
+
+    def get_neuron_to_neuron_conns(self):
+        neurons = set([])
+        neuron_conns = []
+        for conn_info in self.connection_infos:
+            if is_neuron(conn_info.pre_cell) and is_neuron(conn_info.post_cell):
+                neurons.add(conn_info.pre_cell)
+                neurons.add(conn_info.post_cell)
+                neuron_conns.append(conn_info)
+        return list(neurons), neuron_conns
+
+    def read_muscle_data(self):
+        return self.get_neuron_to_muscle_conns()
+
+    def get_neuron_to_muscle_conns(self):
+        neurons = set([])
+        muscles = set([])
+        conns = []
+
+        for conn_info in self.connection_infos:
+            if is_neuron(conn_info.pre_cell) and is_muscle(conn_info.post_cell):
+                neurons.add(conn_info.pre_cell)
+                muscles.add(conn_info.post_cell)
+                conns.append(conn_info)
+
+        return list(neurons), list(muscles), conns
+
     def get_connections_from(self, node, synclass):
+        if synclass not in self.connections:
+            return {}
         conn_array = self.connections[synclass]
+        if not node in self.nodes:
+            return {}
         index = self.nodes.index(node)
         slice = conn_array[index]
         conns = {}
@@ -103,7 +143,11 @@ class ConnectomeDataset:
         return info[:-2]
 
     def get_connections_to(self, node, synclass):
+        if synclass not in self.connections:
+            return {}
         conn_array = self.connections[synclass]
+        if not node in self.nodes:
+            return {}
         index = self.nodes.index(node)
         slice = conn_array.T[index]
         conns = {}
@@ -346,13 +390,13 @@ class ConnectomeDataset:
 if __name__ == "__main__":
     cds = ConnectomeDataset()
 
-    cds.add_connection(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
-    cds.add_connection(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
-    cds.add_connection(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
-    cds.add_connection(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
-    cds.add_connection(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
 
-    cds.add_connection(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+    cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
 
     print(cds.summary())
 
