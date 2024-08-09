@@ -126,22 +126,36 @@
           10.0,
           10.0,
           10.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
         ]
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 1",
-        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 1",
-        "<b>AVBL</b><br>Interneuron<br>Number of connections: 2",
-        "<b>DB4</b><br>Motor neuron<br>Number of connections: 1",
-        "<b>DD4</b><br>Motor neuron<br>Number of connections: 0",
-        "<b>PVCL</b><br>Interneuron<br>Number of connections: 0",
-        "<b>VA3</b><br>Motor neuron<br>Number of connections: 0",
-        "<b>VA6</b><br>Motor neuron<br>Number of connections: 0",
-        "<b>VB2</b><br>Motor neuron<br>Number of connections: 0",
-        "<b>VB6</b><br>Motor neuron<br>Number of connections: 1",
-        "<b>VD3</b><br>Motor neuron<br>Number of connections: 0",
-        "<b>VD6</b><br>Motor neuron<br>Number of connections: 0"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns out: <b>ASKR</b>: 1",
+        "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 1",
+        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>DB4</b>: 4, <b>VB6</b>: 3",
+        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns out: <b>AVBL</b>: 4",
+        "<b>DD4</b><br>Ventral cord motor neuron",
+        "<b>PVCL</b><br>Layer 1 interneuron",
+        "<b>VA3</b><br>Ventral cord motor neuron",
+        "<b>VA6</b><br>Ventral cord motor neuron",
+        "<b>VB2</b><br>Ventral cord motor neuron",
+        "<b>VB6</b><br>Ventral cord motor neuron<br>Conns out: <b>AVBL</b>: 3",
+        "<b>VD3</b><br>Ventral cord motor neuron",
+        "<b>VD6</b><br>Ventral cord motor neuron"
       ],
       "type": "scatter",
       "x": [

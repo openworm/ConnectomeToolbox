@@ -65,6 +65,54 @@ class ConnectomeDataset:
                 % (pre_index, post_index, self.nodes, conn_array)
             )
 
+    def get_connections_from(self, node, synclass):
+        conn_array = self.connections[synclass]
+        index = self.nodes.index(node)
+        slice = conn_array[index]
+        conns = {}
+        for idn, n in enumerate(self.nodes):
+            num = slice[idn]
+            if num > 0:
+                conns[n] = num
+        return conns
+
+    def get_connections_summary(self, node, synclass, direction, bold_cells=False):
+        if direction == "from":
+            conns = self.get_connections_from(node, synclass)
+        elif direction == "to":
+            conns = self.get_connections_to(node, synclass)
+
+        ordered = dict(
+            sorted(conns.items(), key=lambda key_val: key_val[1], reverse=True)
+        )
+        vals = [
+            "%s: %s"
+            % (
+                k if not bold_cells else "<b>%s</b>" % k,
+                int(v) if v == int(v) else v,
+            )
+            for k, v in ordered.items()
+        ]
+        info = ""
+        count = 0
+        for v in vals:
+            if len(info.split("<br>")[-1]) > 80:
+                info += "<br>"
+            info += v + ", "
+
+        return info[:-2]
+
+    def get_connections_to(self, node, synclass):
+        conn_array = self.connections[synclass]
+        index = self.nodes.index(node)
+        slice = conn_array.T[index]
+        conns = {}
+        for idn, n in enumerate(self.nodes):
+            num = slice[idn]
+            if num > 0:
+                conns[n] = num
+        return conns
+
     def get_connectome_view(self, view):
         self.view = view
 
@@ -201,6 +249,7 @@ class ConnectomeDataset:
         node_colours = []
         node_text = []
         node_sizes = []
+        node_shapes = []
 
         DEFAULT_SIZE = 10
 
@@ -219,14 +268,39 @@ class ConnectomeDataset:
 
             node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
 
-            node_text.append(
-                f"<b>{node_value}</b>%s<br>Number of connections: {num_connections}"
-                % (
-                    "<br>%s" % get_short_description(node_set.name)
-                    if node_set.is_one_cell()
-                    else "<br>%s" % ", ".join([c for c in node_set.cells])
-                )
+            if node_set.shape is not None:
+                node_shapes.append(node_set.shape)
+            else:
+                node_shapes.append("circle")
+
+            if node_set.is_one_cell():
+                desc = get_short_description(node_set.name)
+            else:
+                desc = "Cells: "
+                cc = 0
+                for c in node_set.cells:
+                    if cc % 10 == 9:
+                        desc += c + "<br>"
+                    desc += c + ", "
+                    cc += 1
+                desc = desc[:-2]
+
+            text = f"<b>{node_value}</b>"
+            text += "<br>%s" % desc
+
+            into = self.get_connections_summary(
+                node_value, synclass, "to", bold_cells=True
             )
+            if len(into) > 0:
+                text += f"<br>Conns in: {into}"
+
+            out_of = self.get_connections_summary(
+                node_value, synclass, "from", bold_cells=True
+            )
+            if len(out_of) > 0:
+                text += f"<br>Conns out: {out_of}"
+
+            node_text.append(text)
 
         node_trace = go.Scatter(
             x=node_x,
@@ -251,6 +325,7 @@ class ConnectomeDataset:
         )
 
         node_trace.marker.size = node_sizes
+        node_trace.marker.symbol = node_shapes
         node_trace.marker.color = node_colours
         node_trace.text = node_text
 
@@ -272,8 +347,16 @@ if __name__ == "__main__":
     cds = ConnectomeDataset()
 
     cds.add_connection(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
+    cds.add_connection(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
+    cds.add_connection(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
+    cds.add_connection(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
     cds.add_connection(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
 
     cds.add_connection(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
 
-    cds.summary()
+    print(cds.summary())
+
+    print(cds.get_connections_from("VA6", "Acetylcholine"))
+    print("From: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "from"))
+    print("To: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "to"))
+    print(cds.get_connections_to("DD4", "Acetylcholine"))

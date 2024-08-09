@@ -59,15 +59,15 @@ WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory duct"] = "#cccc99"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"] = {}
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["hypodermis"] = "#dcc3ac"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["seam cell"] = "#сс6633"
-WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cel, XXX cells"] = "#ff9999"
+WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cell, XXX cells"] = "#ff9999"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "sheath cel other than amphid sheath and phasmid"
+    "sheath cell other than amphid sheath and phasmid"
 ] = "#339999"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "amphid sheath and phasmid sheath"
 ] = "#01fecc"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "pharyngeal-intestinal vavle, intestinal rectal valve "
+    "pharyngeal-intestinal valve, intestinal rectal valve "
 ] = "#996633"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["arcade cell"] = "#cccc00"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"] = "#996699"
@@ -83,7 +83,7 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
 WA_COLORS["Hermaphrodite"]["Other Tissues"] = {}
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["pseudocoelomic space"] = "#ffffcc"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"] = "#ff9900"
-WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"] = "#cc9900"
+WA_COLORS["Hermaphrodite"]["Other Tissues"]["GLR cell"] = "#cc9900"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["coeloemocyte"] = "#ffcc00"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["head mesodermal cell"] = "#ff6633"
 

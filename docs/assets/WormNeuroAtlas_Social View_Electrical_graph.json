@@ -141,17 +141,26 @@
           10.0,
           10.0,
           10.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
         ]
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 2",
-        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 2",
-        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
-        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 2",
-        "<b>RMGR</b><br>Interneuron<br>Number of connections: 6",
-        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 1",
-        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>RMGR</b>: 5, <b>ASKR</b>: 1<br>Conns out: <b>RMGR</b>: 5, <b>ASKR</b>: 1",
+        "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns in: <b>RMGR</b>: 6, <b>ASHR</b>: 1<br>Conns out: <b>RMGR</b>: 6, <b>ASHR</b>: 1",
+        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns in: <b>RMGR</b>: 5<br>Conns out: <b>RMGR</b>: 5",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>RMGR</b>: 6, <b>URXR</b>: 5<br>Conns out: <b>RMGR</b>: 6, <b>URXR</b>: 5",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASKR</b>: 6, <b>IL2R</b>: 6, <b>RMHR</b>: 6, <b>URXR</b>: 6, <b>ASHR</b>: 5, <b>AWBR</b>: 5<br>Conns out: <b>ASKR</b>: 6, <b>IL2R</b>: 6, <b>RMHR</b>: 6, <b>URXR</b>: 6, <b>ASHR</b>: 5, <b>AWBR</b>: 5",
+        "<b>RMHR</b><br>Head motor neuron<br>Conns in: <b>RMGR</b>: 6<br>Conns out: <b>RMGR</b>: 6",
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 6, <b>IL2R</b>: 5<br>Conns out: <b>RMGR</b>: 6, <b>IL2R</b>: 5"
       ],
       "type": "scatter",
       "x": [
