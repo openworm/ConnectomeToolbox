@@ -10,7 +10,7 @@ fi
 
 ##   Test readers
                                                                                                                        
-python -m cect.Cells
+python -m cect.Cells $quick_test
 python -m cect.SpreadsheetDataReader 
 python -m cect.UpdatedSpreadsheetDataReader                                                                                                                                                                      
 python -m cect.UpdatedSpreadsheetDataReader2                                                                                                                                                                  
@@ -35,7 +35,7 @@ if [ "$quick_test" == 0 ]; then
     python -m cect.White_L4
 fi
 
-python cect/Comparison.py $quick_test
+python -m cect.Comparison $quick_test
 mkdocs build
 
 echo

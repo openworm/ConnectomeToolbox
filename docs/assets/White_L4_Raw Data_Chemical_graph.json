@@ -7968,9 +7968,9 @@
         "<b>URYVR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>RIBR</b>: 1, <b>RIH</b>: 1<br>Conns out: <b>RMDDR</b>: 6, <b>IL1VR</b>: 4, <b>AVEL</b>: 3, <b>SMDVL</b>: 3, <b>RIBR</b>: 2, <br><b>RMDVL</b>: 2, <b>AVBL</b>: 1, <b>OLLR</b>: 1, <b>RMDL</b>: 1, <b>RMEV</b>: 1, <br><b>SIBDR</b>: 1",
         "<b>CEPshVL</b><br>Glial<br>Conns in: <b>AINR</b>: 3, <b>AIML</b>: 1, <b>ALA</b>: 1, <b>ASIL</b>: 1, <b>DVC</b>: 1, <b>PVQL</b>: 1",
         "<b>CEPshVR</b><br>Glial<br>Conns in: <b>ALA</b>: 3, <b>AINL</b>: 2, <b>ASIR</b>: 1, <b>BDUR</b>: 1, <b>PVNR</b>: 1",
-        "<b>GLRR</b><br>Glial",
-        "<b>GLRVL</b><br>Glial<br>Conns in: <b>IL2VL</b>: 1",
-        "<b>GLRVR</b><br>Glial<br>Conns in: <b>IL2VR</b>: 1"
+        "<b>GLRR</b><br>GLR cell",
+        "<b>GLRVL</b><br>GLR cell<br>Conns in: <b>IL2VL</b>: 1",
+        "<b>GLRVR</b><br>GLR cell<br>Conns in: <b>IL2VR</b>: 1"
       ],
       "type": "scatter",
       "x": [

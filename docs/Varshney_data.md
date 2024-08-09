@@ -3,7 +3,7 @@
 
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
-[View as matrix](Varshney_data.md){ .md-button } [View as graph](Varshney_data_graph.md){ .md-button }
+[View as graph](Varshney_data_graph.md){ .md-button } [View as matrix](Varshney_data.md){ .md-button }
 
 === "Raw Data"
     === "Chemical"

@@ -3,7 +3,7 @@
 
 Data extracted from **witvliet_2020_8.xlsx** for neuronal connectivity
 
-[View as matrix](Witvliet2_data.md){ .md-button } [View as graph](Witvliet2_data_graph.md){ .md-button }
+[View as graph](Witvliet2_data_graph.md){ .md-button } [View as matrix](Witvliet2_data.md){ .md-button }
 
 === "Raw Data"
     === "Chemical"

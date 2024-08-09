@@ -11030,9 +11030,9 @@
         "<b>CEPshDR</b><br>Glial<br>Conns in: <b>AIMR</b>: 4, <b>ADEL</b>: 1, <b>ALA</b>: 1, <b>ASIR</b>: 1, <b>AVHR</b>: 1, <b>IL2DR</b>: 1",
         "<b>CEPshVL</b><br>Glial<br>Conns in: <b>AINR</b>: 5, <b>ASIL</b>: 3, <b>ASGL</b>: 1, <b>BDUL</b>: 1, <b>CEPVL</b>: 1, <br><b>PVNL</b>: 1, <b>PVT</b>: 1, <b>RIH</b>: 1",
         "<b>CEPshVR</b><br>Glial<br>Conns in: <b>ASIR</b>: 8, <b>ADER</b>: 5, <b>AINL</b>: 3, <b>AIMR</b>: 2, <b>ALA</b>: 2, <b>ASJR</b>: 1, <br><b>PVNL</b>: 1, <b>PVQR</b>: 1, <b>PVT</b>: 1, <b>RIH</b>: 1, <b>RMFL</b>: 1",
-        "<b>GLRDR</b><br>Glial<br>Conns in: <b>IL2DR</b>: 1, <b>RIH</b>: 1",
-        "<b>GLRR</b><br>Glial<br>Conns in: <b>IL1R</b>: 1, <b>IL1VR</b>: 1, <b>URAVR</b>: 1",
-        "<b>GLRVL</b><br>Glial<br>Conns in: <b>IL2VL</b>: 2"
+        "<b>GLRDR</b><br>GLR cell<br>Conns in: <b>IL2DR</b>: 1, <b>RIH</b>: 1",
+        "<b>GLRR</b><br>GLR cell<br>Conns in: <b>IL1R</b>: 1, <b>IL1VR</b>: 1, <b>URAVR</b>: 1",
+        "<b>GLRVL</b><br>GLR cell<br>Conns in: <b>IL2VL</b>: 2"
       ],
       "type": "scatter",
       "x": [

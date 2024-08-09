@@ -8,8 +8,13 @@
 ############################################################
 
 import pandas as pd
+import sys
+
+from cect.WormAtlasInfo import WA_COLORS
 
 cell_notes = {}
+
+connectomes = None
 
 
 SENSORY_NEURONS_1_COOK = [
@@ -998,6 +1003,9 @@ GLR_CELLS = [
     "GLRVR",
 ]
 
+for cell in GLR_CELLS:
+    cell_notes[cell] = "GLR cell"
+
 CEPSH_CELLS = [
     "CEPshDL",
     "CEPshDR",
@@ -1005,10 +1013,11 @@ CEPSH_CELLS = [
     "CEPshVR",
 ]
 
+for cell in CEPSH_CELLS:
+    cell_notes[cell] = "glial"
+
 GLIAL_CELLS = GLR_CELLS + CEPSH_CELLS
 
-for cell in GLIAL_CELLS:
-    cell_notes[cell] = "glial"
 
 PHARYNGEAL_MARGINAL_CELLS = [
     "mc1DL",
@@ -1141,7 +1150,7 @@ def get_standard_color(cell):
     elif cell in PHARYNGEAL_BASEMENT_MEMBRANE:
         return WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"]
     elif cell in GLR_CELLS:
-        return WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"]
+        return WA_COLORS["Hermaphrodite"]["Other Tissues"]["GLR cell"]
     elif cell in CEPSH_CELLS:
         return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
             "sheath cell other than amphid sheath and phasmid"
@@ -1274,16 +1283,32 @@ def get_cell_link(cell_name, html=False, text=None):
         return cell_name
 
 
+def _get_dataset_link(reader_name, html=False, text=None):
+    url = "%s_data_graph.md" % reader_name
+
+    if html:
+        return '<a href="%s">%s</a>' % (url, reader_name if text is None else text)
+    else:
+        return "[%s](%s)" % (reader_name if text is None else text, url)
+
+
 def _generate_cell_table(cells):
     all_data = {}
 
-    all_data[""] = ["Notes", "Link"]
+    all_data[""] = ["Notes", "Datasets", "Link"]
 
     for cell in sorted(cells):
         desc = cell_notes[cell] if cell in cell_notes else "???"
         desc = desc[0].upper() + desc[1:]
+
+        datasets = " "
+        for reader_name, conn in connectomes.items():
+            if cell in conn.nodes:
+                datasets += "%s, " % _get_dataset_link(reader_name)
+
         all_data[f'<a name="{cell}"></a>{cell}'] = [
             desc,
+            datasets[:-2],
             get_cell_link(cell, text="WormAtlas"),
         ]
 
@@ -1295,7 +1320,11 @@ def _generate_cell_table(cells):
 
 
 if __name__ == "__main__":
-    from cect.WormAtlasInfo import WA_COLORS
+    quick = len(sys.argv) > 1 and eval(sys.argv[1])
+
+    from cect.Comparison import generate_comparison_page
+
+    connectomes = generate_comparison_page(quick)
 
     filename = "docs/Cells.md"
 
@@ -1326,6 +1355,8 @@ if __name__ == "__main__":
                             f.write(_generate_cell_table(ODD_PHARYNGEAL_MUSCLE_NAMES))
                         elif cell_type == "even numbered pharyngeal muscle":
                             f.write(_generate_cell_table(EVEN_PHARYNGEAL_MUSCLE_NAMES))
+                        elif cell_type == "polymodal neuron":
+                            f.write(_generate_cell_table(PHARYNGEAL_POLYMODAL_NEURONS))
                         elif cell_type == "marginal cells (mc) of the pharynx":
                             f.write(_generate_cell_table(PHARYNGEAL_MARGINAL_CELLS))
                         elif cell_type == "pharyngeal epithelium":
@@ -1359,3 +1390,5 @@ if __name__ == "__main__":
                             f.write(_generate_cell_table(INTESTINE))
                         elif cell_type == "intestinal muscle":
                             f.write(_generate_cell_table(INTESTINAL_MUSCLES))
+                        elif cell_type == "GLR cell":
+                            f.write(_generate_cell_table(GLR_CELLS))

@@ -5047,12 +5047,12 @@
         "<b>VD7</b><br>Ventral cord motor neuron<br>Conns in: <b>VA9</b>: 1, <b>VD6</b>: 1<br>Conns out: <b>VA9</b>: 1, <b>VD6</b>: 1",
         "<b>VD8</b><br>Ventral cord motor neuron<br>Conns in: <b>DD4</b>: 1, <b>VA8</b>: 1<br>Conns out: <b>DD4</b>: 1, <b>VA8</b>: 1",
         "<b>VD9</b><br>Ventral cord motor neuron<br>Conns in: <b>VD10</b>: 5, <b>PDER</b>: 1<br>Conns out: <b>VD10</b>: 5, <b>PDER</b>: 1",
-        "<b>GLRDL</b><br>Glial<br>Conns in: <b>RMED</b>: 1<br>Conns out: <b>RMED</b>: 1",
-        "<b>GLRDR</b><br>Glial<br>Conns in: <b>RMED</b>: 1<br>Conns out: <b>RMED</b>: 1",
-        "<b>GLRL</b><br>Glial<br>Conns in: <b>RMEL</b>: 1<br>Conns out: <b>RMEL</b>: 1",
-        "<b>GLRR</b><br>Glial<br>Conns in: <b>RMER</b>: 1<br>Conns out: <b>RMER</b>: 1",
-        "<b>GLRVL</b><br>Glial<br>Conns in: <b>RMEV</b>: 1<br>Conns out: <b>RMEV</b>: 1",
-        "<b>GLRVR</b><br>Glial<br>Conns in: <b>RMEV</b>: 1<br>Conns out: <b>RMEV</b>: 1"
+        "<b>GLRDL</b><br>GLR cell<br>Conns in: <b>RMED</b>: 1<br>Conns out: <b>RMED</b>: 1",
+        "<b>GLRDR</b><br>GLR cell<br>Conns in: <b>RMED</b>: 1<br>Conns out: <b>RMED</b>: 1",
+        "<b>GLRL</b><br>GLR cell<br>Conns in: <b>RMEL</b>: 1<br>Conns out: <b>RMEL</b>: 1",
+        "<b>GLRR</b><br>GLR cell<br>Conns in: <b>RMER</b>: 1<br>Conns out: <b>RMER</b>: 1",
+        "<b>GLRVL</b><br>GLR cell<br>Conns in: <b>RMEV</b>: 1<br>Conns out: <b>RMEV</b>: 1",
+        "<b>GLRVR</b><br>GLR cell<br>Conns in: <b>RMEV</b>: 1<br>Conns out: <b>RMEV</b>: 1"
       ],
       "type": "scatter",
       "x": [

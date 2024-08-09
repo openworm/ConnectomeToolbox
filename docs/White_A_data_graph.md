@@ -3,7 +3,7 @@
 
 Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
-[View as matrix](White_A_data.md){ .md-button } [View as graph](White_A_data_graph.md){ .md-button }
+[View as graph](White_A_data_graph.md){ .md-button } [View as matrix](White_A_data.md){ .md-button }
 
 === "Raw Data"
     === "Chemical"

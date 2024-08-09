@@ -2724,9 +2724,9 @@
         "<b>URYVR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>AVAL</b>: 2, <b>AVEL</b>: 2, <b>RIGR</b>: 2<br>Conns out: <b>AVAL</b>: 2, <b>AVEL</b>: 2, <b>RIGR</b>: 2",
         "<b>CEPshVL</b><br>Glial",
         "<b>CEPshVR</b><br>Glial",
-        "<b>GLRR</b><br>Glial<br>Conns in: <b>RMEL</b>: 2<br>Conns out: <b>RMEL</b>: 2",
-        "<b>GLRVL</b><br>Glial<br>Conns in: <b>RMEV</b>: 2<br>Conns out: <b>RMEV</b>: 2",
-        "<b>GLRVR</b><br>Glial<br>Conns in: <b>RMEV</b>: 2<br>Conns out: <b>RMEV</b>: 2"
+        "<b>GLRR</b><br>GLR cell<br>Conns in: <b>RMEL</b>: 2<br>Conns out: <b>RMEL</b>: 2",
+        "<b>GLRVL</b><br>GLR cell<br>Conns in: <b>RMEV</b>: 2<br>Conns out: <b>RMEV</b>: 2",
+        "<b>GLRVR</b><br>GLR cell<br>Conns in: <b>RMEV</b>: 2<br>Conns out: <b>RMEV</b>: 2"
       ],
       "type": "scatter",
       "x": [

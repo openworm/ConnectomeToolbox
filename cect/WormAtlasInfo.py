@@ -83,7 +83,7 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
 WA_COLORS["Hermaphrodite"]["Other Tissues"] = {}
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["pseudocoelomic space"] = "#ffffcc"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"] = "#ff9900"
-WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"] = "#cc9900"
+WA_COLORS["Hermaphrodite"]["Other Tissues"]["GLR cell"] = "#cc9900"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["coeloemocyte"] = "#ffcc00"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["head mesodermal cell"] = "#ff6633"
 
