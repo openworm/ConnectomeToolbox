@@ -1,0 +1,1711 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "width": 1
+      },
+      "mode": "lines",
+      "text": [
+        "I1L",
+        "I1R",
+        "I2L",
+        "I2R",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "M1",
+        "M2L",
+        "M2R",
+        "M3L",
+        "M3R",
+        "M4",
+        "M5",
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "type": "scatter",
+      "x": [
+        0.381326,
+        -0.290605,
+        null,
+        0.381326,
+        0.016613,
+        null,
+        0.381326,
+        -0.001278,
+        null,
+        0.381326,
+        0.52861,
+        null,
+        0.381326,
+        0.23739,
+        null,
+        0.381326,
+        0.119867,
+        null,
+        0.381326,
+        0.236709,
+        null,
+        0.381326,
+        0.596653,
+        null,
+        0.381326,
+        0.15821,
+        null,
+        0.381326,
+        -0.106705,
+        null,
+        0.272913,
+        -0.290605,
+        null,
+        0.272913,
+        -0.403279,
+        null,
+        0.272913,
+        0.016613,
+        null,
+        0.272913,
+        -0.001278,
+        null,
+        0.272913,
+        -0.377284,
+        null,
+        0.272913,
+        0.52861,
+        null,
+        0.272913,
+        0.532384,
+        null,
+        0.272913,
+        0.23739,
+        null,
+        0.272913,
+        0.119867,
+        null,
+        0.272913,
+        -0.307274,
+        null,
+        0.272913,
+        0.236709,
+        null,
+        0.272913,
+        0.596653,
+        null,
+        0.272913,
+        0.15821,
+        null,
+        0.272913,
+        -0.106705,
+        null,
+        0.272913,
+        -0.185671,
+        null,
+        -0.290605,
+        -0.403279,
+        null,
+        -0.290605,
+        0.025527,
+        null,
+        -0.290605,
+        -0.001278,
+        null,
+        -0.290605,
+        -0.434107,
+        null,
+        -0.290605,
+        -0.377284,
+        null,
+        -0.290605,
+        0.119867,
+        null,
+        -0.290605,
+        -0.307274,
+        null,
+        -0.290605,
+        -0.106705,
+        null,
+        -0.290605,
+        -0.185671,
+        null,
+        -0.403279,
+        0.025527,
+        null,
+        -0.403279,
+        -0.001278,
+        null,
+        -0.403279,
+        -0.377284,
+        null,
+        -0.403279,
+        0.532384,
+        null,
+        -0.403279,
+        -0.307274,
+        null,
+        -0.403279,
+        0.236709,
+        null,
+        -0.403279,
+        -0.106705,
+        null,
+        -0.403279,
+        -0.185671,
+        null,
+        0.016613,
+        -0.001278,
+        null,
+        0.016613,
+        -0.377284,
+        null,
+        0.016613,
+        0.52861,
+        null,
+        0.016613,
+        0.532384,
+        null,
+        0.016613,
+        0.23739,
+        null,
+        0.016613,
+        0.119867,
+        null,
+        0.016613,
+        -0.307274,
+        null,
+        0.016613,
+        0.236709,
+        null,
+        0.016613,
+        0.596653,
+        null,
+        0.016613,
+        0.15821,
+        null,
+        0.016613,
+        -0.185671,
+        null,
+        0.025527,
+        -0.001278,
+        null,
+        0.025527,
+        0.52861,
+        null,
+        0.025527,
+        0.23739,
+        null,
+        0.025527,
+        0.119867,
+        null,
+        0.025527,
+        0.15821,
+        null,
+        0.025527,
+        -0.106705,
+        null,
+        0.025527,
+        -0.185671,
+        null,
+        0.025527,
+        -0.377284,
+        null,
+        0.025527,
+        0.532384,
+        null,
+        0.025527,
+        -0.307274,
+        null,
+        -0.001278,
+        -0.377284,
+        null,
+        -0.001278,
+        0.52861,
+        null,
+        -0.001278,
+        0.23739,
+        null,
+        -0.001278,
+        0.119867,
+        null,
+        -0.001278,
+        -0.307274,
+        null,
+        -0.001278,
+        -1.0,
+        null,
+        -0.001278,
+        0.596653,
+        null,
+        -0.001278,
+        0.15821,
+        null,
+        -0.001278,
+        -0.106705,
+        null,
+        -0.001278,
+        -0.185671,
+        null,
+        -0.001278,
+        0.532384,
+        null,
+        -0.434107,
+        -0.307274,
+        null,
+        -0.434107,
+        -0.106705,
+        null,
+        -0.434107,
+        -0.185671,
+        null,
+        -0.377284,
+        -0.307274,
+        null,
+        -0.377284,
+        -1.0,
+        null,
+        -0.377284,
+        0.15821,
+        null,
+        -0.377284,
+        -0.106705,
+        null,
+        0.52861,
+        0.23739,
+        null,
+        0.52861,
+        0.119867,
+        null,
+        0.52861,
+        0.532384,
+        null,
+        0.52861,
+        -0.307274,
+        null,
+        0.52861,
+        0.15821,
+        null,
+        0.532384,
+        0.23739,
+        null,
+        0.532384,
+        0.119867,
+        null,
+        0.532384,
+        -0.185671,
+        null,
+        0.532384,
+        0.15821,
+        null,
+        0.23739,
+        0.119867,
+        null,
+        0.23739,
+        0.236709,
+        null,
+        0.23739,
+        0.15821,
+        null,
+        0.23739,
+        -0.106705,
+        null,
+        0.23739,
+        -0.307274,
+        null,
+        0.119867,
+        -0.307274,
+        null,
+        0.119867,
+        0.236709,
+        null,
+        0.119867,
+        0.15821,
+        null,
+        0.119867,
+        -0.106705,
+        null,
+        0.119867,
+        -0.185671,
+        null,
+        -0.307274,
+        -0.307274,
+        null,
+        -0.307274,
+        0.236709,
+        null,
+        -0.307274,
+        -0.106705,
+        null,
+        0.236709,
+        0.15821,
+        null,
+        0.15821,
+        -0.106705,
+        null,
+        0.15821,
+        -0.185671,
+        null,
+        -0.106705,
+        -0.106705,
+        null,
+        -0.106705,
+        -0.185671,
+        null
+      ],
+      "y": [
+        -0.310616,
+        -0.301284,
+        null,
+        -0.310616,
+        0.341355,
+        null,
+        -0.310616,
+        0.093952,
+        null,
+        -0.310616,
+        -0.223282,
+        null,
+        -0.310616,
+        -0.182816,
+        null,
+        -0.310616,
+        -0.06771,
+        null,
+        -0.310616,
+        0.600274,
+        null,
+        -0.310616,
+        0.475154,
+        null,
+        -0.310616,
+        0.147774,
+        null,
+        -0.310616,
+        -0.443747,
+        null,
+        0.304209,
+        -0.301284,
+        null,
+        0.304209,
+        -0.030588,
+        null,
+        0.304209,
+        0.341355,
+        null,
+        0.304209,
+        0.093952,
+        null,
+        0.304209,
+        0.204002,
+        null,
+        0.304209,
+        -0.223282,
+        null,
+        0.304209,
+        0.116322,
+        null,
+        0.304209,
+        -0.182816,
+        null,
+        0.304209,
+        -0.06771,
+        null,
+        0.304209,
+        -0.498992,
+        null,
+        0.304209,
+        0.600274,
+        null,
+        0.304209,
+        0.475154,
+        null,
+        0.304209,
+        0.147774,
+        null,
+        0.304209,
+        -0.443747,
+        null,
+        0.304209,
+        -0.09255,
+        null,
+        -0.301284,
+        -0.030588,
+        null,
+        -0.301284,
+        -0.250348,
+        null,
+        -0.301284,
+        0.093952,
+        null,
+        -0.301284,
+        -0.780117,
+        null,
+        -0.301284,
+        0.204002,
+        null,
+        -0.301284,
+        -0.06771,
+        null,
+        -0.301284,
+        -0.498992,
+        null,
+        -0.301284,
+        -0.443747,
+        null,
+        -0.301284,
+        -0.09255,
+        null,
+        -0.030588,
+        -0.250348,
+        null,
+        -0.030588,
+        0.093952,
+        null,
+        -0.030588,
+        0.204002,
+        null,
+        -0.030588,
+        0.116322,
+        null,
+        -0.030588,
+        -0.498992,
+        null,
+        -0.030588,
+        0.600274,
+        null,
+        -0.030588,
+        -0.443747,
+        null,
+        -0.030588,
+        -0.09255,
+        null,
+        0.341355,
+        0.093952,
+        null,
+        0.341355,
+        0.204002,
+        null,
+        0.341355,
+        -0.223282,
+        null,
+        0.341355,
+        0.116322,
+        null,
+        0.341355,
+        -0.182816,
+        null,
+        0.341355,
+        -0.06771,
+        null,
+        0.341355,
+        -0.498992,
+        null,
+        0.341355,
+        0.600274,
+        null,
+        0.341355,
+        0.475154,
+        null,
+        0.341355,
+        0.147774,
+        null,
+        0.341355,
+        -0.09255,
+        null,
+        -0.250348,
+        0.093952,
+        null,
+        -0.250348,
+        -0.223282,
+        null,
+        -0.250348,
+        -0.182816,
+        null,
+        -0.250348,
+        -0.06771,
+        null,
+        -0.250348,
+        0.147774,
+        null,
+        -0.250348,
+        -0.443747,
+        null,
+        -0.250348,
+        -0.09255,
+        null,
+        -0.250348,
+        0.204002,
+        null,
+        -0.250348,
+        0.116322,
+        null,
+        -0.250348,
+        -0.498992,
+        null,
+        0.093952,
+        0.204002,
+        null,
+        0.093952,
+        -0.223282,
+        null,
+        0.093952,
+        -0.182816,
+        null,
+        0.093952,
+        -0.06771,
+        null,
+        0.093952,
+        -0.498992,
+        null,
+        0.093952,
+        0.89901,
+        null,
+        0.093952,
+        0.475154,
+        null,
+        0.093952,
+        0.147774,
+        null,
+        0.093952,
+        -0.443747,
+        null,
+        0.093952,
+        -0.09255,
+        null,
+        0.093952,
+        0.116322,
+        null,
+        -0.780117,
+        -0.498992,
+        null,
+        -0.780117,
+        -0.443747,
+        null,
+        -0.780117,
+        -0.09255,
+        null,
+        0.204002,
+        -0.498992,
+        null,
+        0.204002,
+        0.89901,
+        null,
+        0.204002,
+        0.147774,
+        null,
+        0.204002,
+        -0.443747,
+        null,
+        -0.223282,
+        -0.182816,
+        null,
+        -0.223282,
+        -0.06771,
+        null,
+        -0.223282,
+        0.116322,
+        null,
+        -0.223282,
+        -0.498992,
+        null,
+        -0.223282,
+        0.147774,
+        null,
+        0.116322,
+        -0.182816,
+        null,
+        0.116322,
+        -0.06771,
+        null,
+        0.116322,
+        -0.09255,
+        null,
+        0.116322,
+        0.147774,
+        null,
+        -0.182816,
+        -0.06771,
+        null,
+        -0.182816,
+        0.600274,
+        null,
+        -0.182816,
+        0.147774,
+        null,
+        -0.182816,
+        -0.443747,
+        null,
+        -0.182816,
+        -0.498992,
+        null,
+        -0.06771,
+        -0.498992,
+        null,
+        -0.06771,
+        0.600274,
+        null,
+        -0.06771,
+        0.147774,
+        null,
+        -0.06771,
+        -0.443747,
+        null,
+        -0.06771,
+        -0.09255,
+        null,
+        -0.498992,
+        -0.498992,
+        null,
+        -0.498992,
+        0.600274,
+        null,
+        -0.498992,
+        -0.443747,
+        null,
+        0.600274,
+        0.147774,
+        null,
+        0.147774,
+        -0.443747,
+        null,
+        0.147774,
+        -0.09255,
+        null,
+        -0.443747,
+        -0.443747,
+        null,
+        -0.443747,
+        -0.09255,
+        null
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "marker": {
+        "color": [
+          10,
+          15,
+          11,
+          10,
+          13,
+          12,
+          17,
+          4,
+          10,
+          10,
+          10,
+          12,
+          14,
+          14,
+          2,
+          8,
+          4,
+          13,
+          14,
+          11
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "side": "right",
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": true,
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
+      },
+      "mode": "markers",
+      "text": [
+        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>M3R</b>: 3, <b>I2L</b>: 1.5, <b>I5</b>: 1.5, <b>I3</b>: 0.5, <b>MI</b>: 0.5<br>Conns out: <b>M3L</b>: 10, <b>NSML</b>: 5.5, <b>I5</b>: 4.5, <b>M2L</b>: 3, <b>I3</b>: 2.5, <br><b>MCL</b>: 2, <b>MCR</b>: 2, <b>MI</b>: 2, <b>M3R</b>: 1.5, <b>I2L</b>: 1",
+        "<b>I1R</b><br>Pharyngeal interneuron<br>Conns in: <b>I5</b>: 2, <b>I2R</b>: 1, <b>M1</b>: 1, <b>I3</b>: 0.5<br>Conns out: <b>M3R</b>: 6, <b>MCR</b>: 4.5, <b>MCL</b>: 4, <b>M2R</b>: 3.5, <b>I2R</b>: 3, <b>I5</b>: 2, <br><b>NSMR</b>: 1.5, <b>I2L</b>: 1, <b>I3</b>: 1, <b>M1</b>: 1, <b>M4</b>: 1, <b>MI</b>: 1, <br><b>NSML</b>: 1, <b>M2L</b>: 0.5, <b>M3L</b>: 0.5",
+        "<b>I2L</b><br>Pharyngeal interneuron<br>Conns in: <b>I5</b>: 3.5, <b>I2R</b>: 3, <b>I6</b>: 2, <b>I1L</b>: 1, <b>I1R</b>: 1, <b>M1</b>: 1, <br><b>NSMR</b>: 1, <b>M4</b>: 0.5, <b>NSML</b>: 0.5<br>Conns out: <b>NSMR</b>: 25, <b>NSML</b>: 16, <b>I4</b>: 15.5, <b>I2R</b>: 4, <b>I5</b>: 2, <b>M3R</b>: 2, <br><b>M4</b>: 2, <b>I1L</b>: 1.5, <b>M1</b>: 1.5, <b>I6</b>: 1",
+        "<b>I2R</b><br>Pharyngeal interneuron<br>Conns in: <b>I4</b>: 7, <b>I2L</b>: 4, <b>I1R</b>: 3, <b>I5</b>: 3, <b>M1</b>: 2.5, <b>NSML</b>: 0.5<br>Conns out: <b>NSML</b>: 32.5, <b>I4</b>: 15.5, <b>NSMR</b>: 8.5, <b>I5</b>: 4, <b>I2L</b>: 3, <br><b>M1</b>: 2.5, <b>M2R</b>: 1.5, <b>I1R</b>: 1, <b>M4</b>: 1, <b>MCL</b>: 0.5",
+        "<b>I3</b><br>Pharyngeal interneuron<br>Conns in: <b>I5</b>: 10.5, <b>I1L</b>: 2.5, <b>M2L</b>: 1.5, <b>MI</b>: 1.5, <b>I1R</b>: 1, <br><b>M1</b>: 1<br>Conns out: <b>M3R</b>: 3, <b>I5</b>: 2.5, <b>MCL</b>: 2.5, <b>MCR</b>: 2.5, <b>M3L</b>: 2, <b>M4</b>: 2, <br><b>M1</b>: 1.5, <b>M2L</b>: 1.5, <b>NSMR</b>: 1.5, <b>I1L</b>: 0.5, <b>I1R</b>: 0.5, <br><b>M2R</b>: 0.5, <b>MI</b>: 0.5",
+        "<b>I4</b><br>Pharyngeal interneuron<br>Conns in: <b>I2L</b>: 15.5, <b>I2R</b>: 15.5, <b>M2L</b>: 8, <b>I5</b>: 7, <b>NSMR</b>: 2.5, <br><b>NSML</b>: 2, <b>M2R</b>: 1, <b>MI</b>: 1, <b>M1</b>: 0.5, <b>M4</b>: 0.5<br>Conns out: <b>M3R</b>: 23.5, <b>NSMR</b>: 13.5, <b>NSML</b>: 8.5, <b>I2R</b>: 7, <b>M3L</b>: 6.5, <br><b>M2L</b>: 4, <b>I5</b>: 2, <b>MI</b>: 1",
+        "<b>I5</b><br>Pharyngeal interneuron<br>Conns in: <b>I1L</b>: 4.5, <b>I2R</b>: 4, <b>M2R</b>: 3, <b>I3</b>: 2.5, <b>M1</b>: 2.5, <b>I1R</b>: 2, <br><b>I2L</b>: 2, <b>I4</b>: 2, <b>M2L</b>: 2, <b>M5</b>: 1, <b>M4</b>: 0.5, <b>NSML</b>: 0.5<br>Conns out: <b>M4</b>: 18.5, <b>NSMR</b>: 17.5, <b>M3L</b>: 12.5, <b>I3</b>: 10.5, <b>MI</b>: 7.5, <br><b>I4</b>: 7, <b>NSML</b>: 5, <b>M2L</b>: 4, <b>I2L</b>: 3.5, <b>MCR</b>: 3.5, <b>I2R</b>: 3, <br><b>M1</b>: 3, <b>I1R</b>: 2, <b>M3R</b>: 2, <b>M5</b>: 2, <b>I1L</b>: 1.5",
+        "<b>I6</b><br>Pharyngeal interneuron<br>Conns in: <b>NSMR</b>: 2, <b>I2L</b>: 1<br>Conns out: <b>M4</b>: 9.5, <b>NSML</b>: 8, <b>I2L</b>: 2, <b>NSMR</b>: 1",
+        "<b>M1</b><br>Pharyngeal motor neuron<br>Conns in: <b>MI</b>: 7, <b>I5</b>: 3, <b>I2R</b>: 2.5, <b>I2L</b>: 1.5, <b>I3</b>: 1.5, <b>I1R</b>: 1, <br><b>M5</b>: 1<br>Conns out: <b>MI</b>: 7.5, <b>NSML</b>: 5, <b>I2R</b>: 2.5, <b>I5</b>: 2.5, <b>I1R</b>: 1, <b>I2L</b>: 1, <br><b>I3</b>: 1, <b>M4</b>: 1, <b>M5</b>: 1, <b>I4</b>: 0.5",
+        "<b>M2L</b><br>Pharyngeal motor neuron<br>Conns in: <b>I4</b>: 4, <b>I5</b>: 4, <b>MI</b>: 3.5, <b>I1L</b>: 3, <b>I3</b>: 1.5, <b>M2R</b>: 1, <br><b>M4</b>: 1, <b>I1R</b>: 0.5<br>Conns out: <b>I4</b>: 8, <b>M3L</b>: 3, <b>I5</b>: 2, <b>I3</b>: 1.5, <b>M3R</b>: 0.5",
+        "<b>M2R</b><br>Pharyngeal motor neuron<br>Conns in: <b>I1R</b>: 3.5, <b>MI</b>: 2, <b>I2R</b>: 1.5, <b>I3</b>: 0.5<br>Conns out: <b>I5</b>: 3, <b>M3L</b>: 2, <b>M3R</b>: 2, <b>I4</b>: 1, <b>M2L</b>: 1, <b>NSMR</b>: 1",
+        "<b>M3L</b><br>Pharyngeal motor neuron<br>Conns in: <b>I5</b>: 12.5, <b>I1L</b>: 10, <b>I4</b>: 6.5, <b>NSML</b>: 6.5, <b>MI</b>: 5.5, <br><b>M2L</b>: 3, <b>I3</b>: 2, <b>M2R</b>: 2, <b>M4</b>: 1, <b>I1R</b>: 0.5<br>Conns out: <b>M3R</b>: 1, <b>NSML</b>: 1, <b>MCL</b>: 0.5, <b>MI</b>: 0.5",
+        "<b>M3R</b><br>Pharyngeal motor neuron<br>Conns in: <b>I4</b>: 23.5, <b>NSMR</b>: 7.5, <b>I1R</b>: 6, <b>I3</b>: 3, <b>I2L</b>: 2, <b>I5</b>: 2, <br><b>M2R</b>: 2, <b>MI</b>: 2, <b>I1L</b>: 1.5, <b>M3L</b>: 1, <b>M2L</b>: 0.5, <b>NSML</b>: 0.5<br>Conns out: <b>I1L</b>: 3, <b>MI</b>: 3, <b>M4</b>: 1, <b>MCL</b>: 1",
+        "<b>M4</b><br>Pharyngeal motor neuron<br>Conns in: <b>I5</b>: 18.5, <b>M4</b>: 15, <b>NSML</b>: 12.5, <b>I6</b>: 9.5, <b>I2L</b>: 2, <br><b>I3</b>: 2, <b>I1R</b>: 1, <b>I2R</b>: 1, <b>M1</b>: 1, <b>M3R</b>: 1<br>Conns out: <b>M4</b>: 15, <b>M2L</b>: 1, <b>M3L</b>: 1, <b>I2L</b>: 0.5, <b>I4</b>: 0.5, <b>I5</b>: 0.5, <br><b>MCL</b>: 0.5",
+        "<b>M5</b><br>Pharyngeal motor neuron<br>Conns in: <b>I5</b>: 2, <b>M1</b>: 1<br>Conns out: <b>I5</b>: 1, <b>M1</b>: 1",
+        "<b>MCL</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I1R</b>: 4, <b>I3</b>: 2.5, <b>MI</b>: 2.5, <b>I1L</b>: 2, <b>M3R</b>: 1, <b>I2R</b>: 0.5, <br><b>M3L</b>: 0.5, <b>M4</b>: 0.5",
+        "<b>MCR</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I1R</b>: 4.5, <b>I5</b>: 3.5, <b>I3</b>: 2.5, <b>I1L</b>: 2",
+        "<b>MI</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I5</b>: 7.5, <b>M1</b>: 7.5, <b>M3R</b>: 3, <b>I1L</b>: 2, <b>I1R</b>: 1, <b>I4</b>: 1, <br><b>I3</b>: 0.5, <b>M3L</b>: 0.5<br>Conns out: <b>M1</b>: 7, <b>M3L</b>: 5.5, <b>M2L</b>: 3.5, <b>MCL</b>: 2.5, <b>M2R</b>: 2, <b>M3R</b>: 2, <br><b>NSML</b>: 2, <b>I3</b>: 1.5, <b>NSMR</b>: 1.5, <b>I4</b>: 1, <b>I1L</b>: 0.5",
+        "<b>NSML</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I2R</b>: 32.5, <b>I2L</b>: 16, <b>I4</b>: 8.5, <b>I6</b>: 8, <b>I1L</b>: 5.5, <br><b>I5</b>: 5, <b>M1</b>: 5, <b>MI</b>: 2, <b>I1R</b>: 1, <b>M3L</b>: 1, <b>NSML</b>: 0.5<br>Conns out: <b>M4</b>: 12.5, <b>NSMR</b>: 7, <b>M3L</b>: 6.5, <b>I4</b>: 2, <b>I2L</b>: 0.5, <br><b>I2R</b>: 0.5, <b>I5</b>: 0.5, <b>M3R</b>: 0.5, <b>NSML</b>: 0.5",
+        "<b>NSMR</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I2L</b>: 25, <b>I5</b>: 17.5, <b>I4</b>: 13.5, <b>I2R</b>: 8.5, <b>NSML</b>: 7, <br><b>I1R</b>: 1.5, <b>I3</b>: 1.5, <b>MI</b>: 1.5, <b>I6</b>: 1, <b>M2R</b>: 1<br>Conns out: <b>M3R</b>: 7.5, <b>I4</b>: 2.5, <b>I6</b>: 2, <b>I2L</b>: 1"
+      ],
+      "type": "scatter",
+      "x": [
+        0.381326,
+        0.272913,
+        -0.290605,
+        -0.403279,
+        0.016613,
+        0.025527,
+        -0.001278,
+        -0.434107,
+        -0.377284,
+        0.52861,
+        0.532384,
+        0.23739,
+        0.119867,
+        -0.307274,
+        -1.0,
+        0.236709,
+        0.596653,
+        0.15821,
+        -0.106705,
+        -0.185671
+      ],
+      "y": [
+        -0.310616,
+        0.304209,
+        -0.301284,
+        -0.030588,
+        0.341355,
+        -0.250348,
+        0.093952,
+        -0.780117,
+        0.204002,
+        -0.223282,
+        0.116322,
+        -0.182816,
+        -0.06771,
+        -0.498992,
+        0.89901,
+        0.600274,
+        0.475154,
+        0.147774,
+        -0.443747,
+        -0.09255
+      ]
+    }
+  ],
+  "layout": {
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "#E5ECF6",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "white"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "#E5ECF6",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "bgcolor": "#E5ECF6",
+          "radialaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          },
+          "yaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          },
+          "zaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "gridwidth": 2,
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "bgcolor": "#E5ECF6",
+          "caxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "xaxis": {
+      "showgrid": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "showgrid": false,
+      "zeroline": false
+    }
+  }
+}
