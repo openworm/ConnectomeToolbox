@@ -136,13 +136,13 @@
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron<br>Number of connections: 2",
-        "<b>ASKR</b><br>Sensory neuron<br>Number of connections: 0",
-        "<b>AWBR</b><br>Sensory neuron<br>Number of connections: 1",
-        "<b>IL2R</b><br>Sensory neuron<br>Number of connections: 1",
-        "<b>RMGR</b><br>Interneuron<br>Number of connections: 3",
-        "<b>RMHR</b><br>Motor neuron<br>Number of connections: 1",
-        "<b>URXR</b><br>Sensory neuron<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>RMGR</b>: 4, <b>AWBR</b>: 2",
+        "<b>ASKR</b><br>Sensory neuron (amphid)",
+        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ASHR</b>: 2",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URXR</b>: 6<br>Conns out: <b>URXR</b>: 2",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>URXR</b>: 7<br>Conns out: <b>ASHR</b>: 4, <b>URXR</b>: 3, <b>RMHR</b>: 1",
+        "<b>RMHR</b><br>Head motor neuron<br>Conns in: <b>RMGR</b>: 1",
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 3, <b>IL2R</b>: 2<br>Conns out: <b>RMGR</b>: 7, <b>IL2R</b>: 6"
       ],
       "type": "scatter",
       "x": [

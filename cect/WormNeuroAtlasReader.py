@@ -49,9 +49,9 @@ class WormNeuroAtlasReader(ConnectomeDataset):
             if self.all_cells[i] == "AWCON":
                 self.all_cells[i] = "AWCR"
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
     def determine_nt(self, neuron):
         if neuron in self.dom_glu:
@@ -71,7 +71,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
 
             return nt
 
-    def read_data(self, include_nonconnected_cells=False):
+    def read_data(self):
         conns = []
         gj = self.atlas.get_gap_junctions()
         cs = self.atlas.get_chemical_synapses()
@@ -109,10 +109,11 @@ class WormNeuroAtlasReader(ConnectomeDataset):
                     if not post in connected_cells:
                         connected_cells.append(post)
 
-        if include_nonconnected_cells:
+        """if include_nonconnected_cells:
             return self.all_cells, conns
-        else:
-            return connected_cells, conns
+        else:"""
+
+        return connected_cells, conns
 
     def read_muscle_data(self):
         neurons = []
@@ -131,7 +132,7 @@ read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data
 
 if __name__ == "__main__":
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

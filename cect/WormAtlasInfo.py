@@ -8,7 +8,7 @@ WA_COLORS["Hermaphrodite"] = {}
 # MUSCLE
 WA_COLORS["Hermaphrodite"]["Muscle"] = {}
 WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"] = "#006600"
-WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"] = "#99c66"
+WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"] = "#99cc66"
 WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"] = "#336600"
 WA_COLORS["Hermaphrodite"]["Muscle"]["uterine muscle"] = "#99cc00"
 WA_COLORS["Hermaphrodite"]["Muscle"]["sphincter and anal depressor muscle"] = "#669900"
@@ -67,7 +67,7 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "amphid sheath and phasmid sheath"
 ] = "#01fecc"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "pharyngeal-intestinal vavle, intestinal rectal valve "
+    "pharyngeal-intestinal valve, intestinal rectal valve "
 ] = "#996633"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["arcade cell"] = "#cccc00"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"] = "#996699"
@@ -83,7 +83,7 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
 WA_COLORS["Hermaphrodite"]["Other Tissues"] = {}
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["pseudocoelomic space"] = "#ffffcc"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"] = "#ff9900"
-WA_COLORS["Hermaphrodite"]["Other Tissues"]["glr cell"] = "#cc9900"
+WA_COLORS["Hermaphrodite"]["Other Tissues"]["GLR cell"] = "#cc9900"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["coeloemocyte"] = "#ffcc00"
 WA_COLORS["Hermaphrodite"]["Other Tissues"]["head mesodermal cell"] = "#ff6633"
 
