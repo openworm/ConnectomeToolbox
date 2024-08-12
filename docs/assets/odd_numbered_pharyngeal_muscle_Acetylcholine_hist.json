@@ -7,6 +7,40 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "White_whole ACh",
+      "type": "scatter",
+      "x": [
+        "pm1",
+        "pm3D",
+        "pm3VL",
+        "pm3VR",
+        "pm5D",
+        "pm5VL",
+        "pm5VR",
+        "pm7D",
+        "pm7VL",
+        "pm7VR"
+      ],
+      "y": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "Cook2019Herm ACh",
       "type": "scatter",
       "x": [

@@ -7,6 +7,50 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "White_A ACh",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        0,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "White_L4 ACh",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        0,
+        0,
+        6,
+        5
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "Cook2019Herm ACh",
       "type": "scatter",
       "x": [

@@ -7,6 +7,32 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "White_L4 ACh",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "Cook2019Herm ACh",
       "type": "scatter",
       "x": [
