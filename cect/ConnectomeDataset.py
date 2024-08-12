@@ -253,7 +253,7 @@ class ConnectomeDataset:
             color_continuous_scale=color_continuous_scale,
         )
 
-        max_ticks = 30  
+        max_ticks = 25  
         step = max(1, len(self.nodes) // max_ticks)
 
         selected_indices = list(range(0, len(self.nodes), step))
