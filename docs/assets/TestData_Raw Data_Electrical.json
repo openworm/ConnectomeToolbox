@@ -6,33 +6,33 @@
       "name": "0",
       "type": "heatmap",
       "x": [
-        "ASHR",
-        "ASKR",
-        "AVBL",
-        "DB4",
-        "DD4",
-        "PVCL",
-        "VA3",
-        "VA6",
-        "VB2",
-        "VB6",
-        "VD3",
-        "VD6"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff3300;\">AVBL</span>",
+        "<span style=\"color:#9966cc;\">DB4</span>",
+        "<span style=\"color:#9966cc;\">DD4</span>",
+        "<span style=\"color:#ff3300;\">PVCL</span>",
+        "<span style=\"color:#9966cc;\">VA3</span>",
+        "<span style=\"color:#9966cc;\">VA6</span>",
+        "<span style=\"color:#9966cc;\">VB2</span>",
+        "<span style=\"color:#9966cc;\">VB6</span>",
+        "<span style=\"color:#9966cc;\">VD3</span>",
+        "<span style=\"color:#9966cc;\">VD6</span>"
       ],
       "xaxis": "x",
       "y": [
-        "ASHR",
-        "ASKR",
-        "AVBL",
-        "DB4",
-        "DD4",
-        "PVCL",
-        "VA3",
-        "VA6",
-        "VB2",
-        "VB6",
-        "VD3",
-        "VD6"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff3300;\">AVBL</span>",
+        "<span style=\"color:#9966cc;\">DB4</span>",
+        "<span style=\"color:#9966cc;\">DD4</span>",
+        "<span style=\"color:#ff3300;\">PVCL</span>",
+        "<span style=\"color:#9966cc;\">VA3</span>",
+        "<span style=\"color:#9966cc;\">VA6</span>",
+        "<span style=\"color:#9966cc;\">VB2</span>",
+        "<span style=\"color:#9966cc;\">VB6</span>",
+        "<span style=\"color:#9966cc;\">VD3</span>",
+        "<span style=\"color:#9966cc;\">VD6</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -1050,83 +1050,23 @@
     },
     "xaxis": {
       "anchor": "y",
-      "automargin": true,
       "constrain": "domain",
       "domain": [
         0.0,
         1.0
       ],
       "scaleanchor": "y",
-      "tickmode": "array",
-      "ticktext": [
-        "<span style=\"color:#ff66cc\">ASHR</span>",
-        "<span style=\"color:#ff66cc\">ASKR</span>",
-        "<span style=\"color:#ff3300\">AVBL</span>",
-        "<span style=\"color:#9966cc\">DB4</span>",
-        "<span style=\"color:#9966cc\">DD4</span>",
-        "<span style=\"color:#ff3300\">PVCL</span>",
-        "<span style=\"color:#9966cc\">VA3</span>",
-        "<span style=\"color:#9966cc\">VA6</span>",
-        "<span style=\"color:#9966cc\">VB2</span>",
-        "<span style=\"color:#9966cc\">VB6</span>",
-        "<span style=\"color:#9966cc\">VD3</span>",
-        "<span style=\"color:#9966cc\">VD6</span>"
-      ],
-      "tickvals": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
       "title": {
         "text": "Postsynaptic"
       }
     },
     "yaxis": {
       "anchor": "x",
-      "automargin": true,
       "autorange": "reversed",
       "constrain": "domain",
       "domain": [
         0.0,
         1.0
-      ],
-      "tickmode": "array",
-      "ticktext": [
-        "<span style=\"color:#ff66cc\">ASHR</span>",
-        "<span style=\"color:#ff66cc\">ASKR</span>",
-        "<span style=\"color:#ff3300\">AVBL</span>",
-        "<span style=\"color:#9966cc\">DB4</span>",
-        "<span style=\"color:#9966cc\">DD4</span>",
-        "<span style=\"color:#ff3300\">PVCL</span>",
-        "<span style=\"color:#9966cc\">VA3</span>",
-        "<span style=\"color:#9966cc\">VA6</span>",
-        "<span style=\"color:#9966cc\">VB2</span>",
-        "<span style=\"color:#9966cc\">VB6</span>",
-        "<span style=\"color:#9966cc\">VD3</span>",
-        "<span style=\"color:#9966cc\">VD6</span>"
-      ],
-      "tickvals": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
       ],
       "title": {
         "text": "Presynaptic"

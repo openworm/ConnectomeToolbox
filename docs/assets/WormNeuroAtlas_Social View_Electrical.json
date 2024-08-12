@@ -6,23 +6,23 @@
       "name": "0",
       "type": "heatmap",
       "x": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff66cc;\">AWBR</span>",
+        "<span style=\"color:#ff66cc;\">IL2R</span>",
+        "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">RMHR</span>",
+        "<span style=\"color:#ff66cc;\">URXR</span>"
       ],
       "xaxis": "x",
       "y": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff66cc;\">AWBR</span>",
+        "<span style=\"color:#ff66cc;\">IL2R</span>",
+        "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">RMHR</span>",
+        "<span style=\"color:#ff66cc;\">URXR</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -935,63 +935,23 @@
     },
     "xaxis": {
       "anchor": "y",
-      "automargin": true,
       "constrain": "domain",
       "domain": [
         0.0,
         1.0
       ],
       "scaleanchor": "y",
-      "tickmode": "array",
-      "ticktext": [
-        "<span style=\"color:#ff66cc\">ASHR</span>",
-        "<span style=\"color:#ff66cc\">ASKR</span>",
-        "<span style=\"color:#ff66cc\">AWBR</span>",
-        "<span style=\"color:#ff66cc\">IL2R</span>",
-        "<span style=\"color:#ff3300\">RMGR</span>",
-        "<span style=\"color:#9966cc\">RMHR</span>",
-        "<span style=\"color:#ff66cc\">URXR</span>"
-      ],
-      "tickvals": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
       "title": {
         "text": "Postsynaptic"
       }
     },
     "yaxis": {
       "anchor": "x",
-      "automargin": true,
       "autorange": "reversed",
       "constrain": "domain",
       "domain": [
         0.0,
         1.0
-      ],
-      "tickmode": "array",
-      "ticktext": [
-        "<span style=\"color:#ff66cc\">ASHR</span>",
-        "<span style=\"color:#ff66cc\">ASKR</span>",
-        "<span style=\"color:#ff66cc\">AWBR</span>",
-        "<span style=\"color:#ff66cc\">IL2R</span>",
-        "<span style=\"color:#ff3300\">RMGR</span>",
-        "<span style=\"color:#9966cc\">RMHR</span>",
-        "<span style=\"color:#ff66cc\">URXR</span>"
-      ],
-      "tickvals": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
       ],
       "title": {
         "text": "Presynaptic"

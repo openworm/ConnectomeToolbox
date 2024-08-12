@@ -243,39 +243,23 @@ class ConnectomeDataset:
     def to_plotly_matrix_fig(self, synclass, color_continuous_scale=DEFAULT_COLORMAP):
         import plotly.express as px
 
-        conn_array = self.connections[synclass]
+        def get_color_html(color, node):
+            return f'<span style="color:{color};">{node}</span>'
 
+        conn_array = self.connections[synclass]
+        
+        node_colors = [get_standard_color(node) for node in self.nodes]
+
+        x_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
+        y_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
+      
+        # Create the figure
         fig = px.imshow(
             conn_array,
             labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
-            x=self.nodes,
-            y=self.nodes,
+            x=x_ticktext,
+            y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
-        )
-
-        max_ticks = 25  
-        step = max(1, len(self.nodes) // max_ticks)
-
-        selected_indices = list(range(0, len(self.nodes), step))
-        selected_nodes = [self.nodes[i] for i in selected_indices]
-        
-        selected_colors = [get_standard_color(node) for node in selected_nodes]
-
-        
-
-        fig.update_layout(
-            xaxis=dict(
-                tickmode='array',
-                tickvals=selected_indices,
-                ticktext=[f'<span style="color:{color}">{node}</span>' for node, color in zip(selected_nodes, selected_colors)],
-                automargin=True
-            ),
-            yaxis=dict(
-                tickmode='array',
-                tickvals=selected_indices,
-                ticktext=[f'<span style="color:{color}">{node}</span>' for node, color in zip(selected_nodes, selected_colors)],
-                automargin=True
-            )
         )
 
         return fig
