@@ -70,11 +70,11 @@ class White_A(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False):
+    def read_data(self):
         conns = []
         cells = []
 
@@ -82,7 +82,7 @@ class White_A(ConnectomeDataset):
             print_("Opened file: " + White_A.filename)
             f.readline()
 
-            known_nonconnected_cells = ["CANL", "CANR"]
+            # known_nonconnected_cells = ["CANL", "CANR"]
 
             for line in f:
                 pre, post, num, syntype, synclass = parse_line(line)
@@ -102,10 +102,10 @@ class White_A(ConnectomeDataset):
                 if post not in cells:
                     cells.append(post)
 
-            if include_nonconnected_cells:
+            """if include_nonconnected_cells:
                 for c in known_nonconnected_cells:
                     if c not in cells:
-                        cells.append(c)
+                        cells.append(c)"""
 
         return cells, conns
 
@@ -141,7 +141,7 @@ class White_A(ConnectomeDataset):
 
 def main1():
     ww = White_A()
-    cells, neuron_conns = ww.read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = ww.read_data()
     neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
@@ -154,11 +154,11 @@ class White_L4(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False):
+    def read_data(self):
         conns = []
         cells = []
 
@@ -166,7 +166,7 @@ class White_L4(ConnectomeDataset):
             print_("Opened file: " + White_L4.filename)
             f.readline()
 
-            known_nonconnected_cells = ["CANL", "CANR"]
+            # known_nonconnected_cells = ["CANL", "CANR"]
 
             for line in f:
                 pre, post, num, syntype, synclass = parse_line(line)
@@ -186,10 +186,10 @@ class White_L4(ConnectomeDataset):
                 if post not in cells:
                     cells.append(post)
 
-            if include_nonconnected_cells:
+            """if include_nonconnected_cells:
                 for c in known_nonconnected_cells:
                     if c not in cells:
-                        cells.append(c)
+                        cells.append(c)"""
 
             return cells, conns
 
@@ -226,7 +226,7 @@ class White_L4(ConnectomeDataset):
 
 def main2():
     ww = White_L4()
-    cells, neuron_conns = ww.read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = ww.read_data()
     neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
@@ -241,11 +241,11 @@ class White_whole(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False):
+    def read_data(self):
         conns = []
         cells = []
 
@@ -253,7 +253,7 @@ class White_whole(ConnectomeDataset):
             print_("Opened file: " + White_whole.filename)
             f.readline()
 
-            known_nonconnected_cells = ["CANL", "CANR"]
+            # known_nonconnected_cells = ["CANL", "CANR"]
 
             for line in f:
                 pre, post, num, syntype, synclass = parse_line(line)
@@ -272,10 +272,10 @@ class White_whole(ConnectomeDataset):
                 if post not in cells:
                     cells.append(post)
 
-            if include_nonconnected_cells:
+            """if include_nonconnected_cells:
                 for c in known_nonconnected_cells:
                     if c not in cells:
-                        cells.append(c)
+                        cells.append(c)"""
 
         return cells, conns
 
@@ -312,7 +312,7 @@ class White_whole(ConnectomeDataset):
 
 def main3():
     ww = White_whole()
-    cells, neuron_conns = ww.read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = ww.read_data()
     neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

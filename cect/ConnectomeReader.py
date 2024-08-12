@@ -197,7 +197,7 @@ class ConnectionInfo:
 
 
 def check_cells(cells):
-    preferred = []
+    in_preferred = []
     not_in_preferred = []
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
     muscles = []
@@ -209,18 +209,31 @@ def check_cells(cells):
             if not is_muscle(c):
                 not_in_preferred.append(c)
         else:
-            preferred.append(c)
+            in_preferred.append(c)
 
         if c in missing_preferred:
             missing_preferred.remove(c)
 
-    return preferred, not_in_preferred, missing_preferred, muscles
+    print(
+        "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
+        % (
+            len(cells),
+            len(in_preferred),
+            in_preferred,
+            len(not_in_preferred),
+            not_in_preferred,
+            len(missing_preferred),
+            missing_preferred,
+            len(muscles),
+            muscles,
+        )
+    )
+
+    return in_preferred, not_in_preferred, missing_preferred, muscles
 
 
 def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns):
     print_("Found %s non-muscle cells: %s\n" % (len(cells), sorted(cells)))
-    # assert(len(cells) == 302)
-    # print_("Expected number of cells correct if include_nonconnected_cells=True")
 
     preferred, not_in_preferred, missing_preferred, muscles_ = check_cells(cells)
 
@@ -326,7 +339,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
 if __name__ == "__main__":
     from SpreadsheetDataReader import read_data, read_muscle_data
 
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

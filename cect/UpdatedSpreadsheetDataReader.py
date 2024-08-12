@@ -100,10 +100,9 @@ def parse_row(row):
 
 
 class UpdatedSpreadsheetDataReader(ConnectomeDataset):
-    def read_data(self, include_nonconnected_cells=False):
+    def read_data(self):
         """
         Args:
-            include_nonconnected_cells (bool): Also append neurons without known connections to other neurons to the 'cells' list. True if they should get appended, False otherwise.
         Returns:
             cells (:obj:`list` of :obj:`str`): List of neurons
             conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
@@ -116,7 +115,7 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
             reader = csv.DictReader(f)
             print_("Opened file: " + filename)
 
-            known_nonconnected_cells = ["CANL", "CANR"]
+            # known_nonconnected_cells = ["CANL", "CANR"]
 
             for row in reader:
                 pre, post, num, syntype, synclass = parse_row(row)
@@ -134,10 +133,10 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
                 if post not in cells:
                     cells.append(post)
 
-            if include_nonconnected_cells:
+            """if include_nonconnected_cells:
                 for c in known_nonconnected_cells:
                     if c not in cells:
-                        cells.append(c)
+                        cells.append(c)"""
 
         return cells, conns
 
@@ -193,7 +192,7 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

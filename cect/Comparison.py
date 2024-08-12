@@ -143,7 +143,7 @@ def generate_comparison_page(quick: bool):
 
         """
         # exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
-        cells, neuron_conns = reader_module.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = reader_module.read_data()
 
         preferred, not_in_preferred, missing_preferred = check_neurons(cells)
 

@@ -70,9 +70,7 @@ class ConnectomeDataset:
                 % (pre_index, post_index, self.nodes, conn_array)
             )
 
-    def read_data(self, include_nonconnected_cells=False, neuron_connect=True):
-        if not include_nonconnected_cells:
-            raise Exception("Option include_nonconnected_cells=False not supported")
+    def read_data(self):
         return self.get_neuron_to_neuron_conns()
 
     def get_neuron_to_neuron_conns(self):
@@ -263,11 +261,20 @@ class ConnectomeDataset:
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
+
+        for i, node_value in enumerate(self.nodes):
+            node_set = view.get_node_set(node_value)
+            if node_set.position is not None:
+                pos[i] = node_set.position
+
         node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
         node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
         edge_x = []
         edge_y = []
+        weights = []
+
+        import random
 
         for edge in G.edges():
             x0, y0 = (float("{:.6f}".format(a)) for a in pos[edge[0]])

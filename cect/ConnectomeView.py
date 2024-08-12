@@ -27,12 +27,13 @@ import numpy as np
 
 
 class NodeSet:
-    def __init__(self, name, cells, color=None, shape=None):
+    def __init__(self, name, cells, color=None, shape=None, position=None):
         self.name = name
         self.color = color
         self.cells = cells
         self.color = color
         self.shape = shape
+        self.position = position
 
     def is_one_cell(self):
         return len(self.cells) == 1 and self.name == self.cells[0]
@@ -119,10 +120,18 @@ for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
 
 SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
 
+sn_pos = {
+    "SN1": (2, 2.8),
+    "SN2": (6.1, 2.9),
+    "SN3": (6, 4.3),
+    "SN4": (2.4, 3.6),
+    "SN5": (3.4, 5.3),
+    "SN6": (4, 5.4),
+}
 
 for category in SENSORY_NEURONS_COOK_CATEGORIES:
     color = "#b31b1b"
-    if category == "SN4":
+    if category == "SN1":
         color = "#FFC0CB"
     SMALL_VIEW.node_sets.append(
         NodeSet(
@@ -130,44 +139,75 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
             SENSORY_NEURONS_COOK_CATEGORIES[category],
             color=color,
             shape="triangle-up",
+            position=sn_pos[category],
         )
     )
+
+in_pos = {"IN1": (4.2, 3.3), "IN2": (3.4, 4.2), "IN3": (5.1, 4.4), "IN4": (2.3, 4.8)}
 
 for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
-    SMALL_VIEW.node_sets.append(
-        NodeSet(
-            category,
-            INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES[category],
-            color="#16537E",
-            shape="hexagon2",
+    if category is not "RIML":
+        SMALL_VIEW.node_sets.append(
+            NodeSet(
+                category,
+                INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES[category],
+                color="#16537E",
+                shape="hexagon2",
+                position=in_pos[category],
+            )
         )
+
+SMALL_VIEW.node_sets.append(
+    NodeSet(
+        "HMN",
+        HEAD_MOTORNEURONS_COOK,
+        color="#FFDF00",
+        shape="circle",
+        position=(3.2, 2.2),
     )
-
-SMALL_VIEW.node_sets.append(
-    NodeSet("HMN", HEAD_MOTORNEURONS_COOK, color="#FFDF00", shape="circle")
 )
 
 SMALL_VIEW.node_sets.append(
-    NodeSet("SMN", SUBLATERAL_MOTORNEURONS_COOK, color="#FF6000", shape="circle")
+    NodeSet(
+        "SMN",
+        SUBLATERAL_MOTORNEURONS_COOK,
+        color="#FF6000",
+        shape="circle",
+        position=(4.5, 2.2),
+    )
 )
 
 SMALL_VIEW.node_sets.append(
-    NodeSet("MNVC", VENTRAL_CORD_MOTORNEURONS, color="#BFA700", shape="circle")
+    NodeSet(
+        "MNVC",
+        VENTRAL_CORD_MOTORNEURONS,
+        color="#BFA700",
+        shape="circle",
+        position=(7.1, 1),
+    )
 )
 
 SMALL_VIEW.node_sets.append(
-    NodeSet("VC", VC_HERM_MOTORNEURONS, color="#FF00FF", shape="circle")
+    NodeSet(
+        "VC", VC_HERM_MOTORNEURONS, color="#FF00FF", shape="circle", position=(7.8, 3.3)
+    )
 )
 
 SMALL_VIEW.node_sets.append(
-    NodeSet("HSN", HSN_MOTORNEURONS, color="#FF00FF", shape="circle")
+    NodeSet(
+        "HSN", HSN_MOTORNEURONS, color="#FF00FF", shape="circle", position=(6.3, 5.9)
+    )
 )
 
 SMALL_VIEW.node_sets.append(
-    NodeSet("MUBODY", BODY_MUSCLES_COOK, color="#964B00", shape="square")
+    NodeSet(
+        "MUBODY", BODY_MUSCLES_COOK, color="#964B00", shape="square", position=(5, 0.73)
+    )
 )
 SMALL_VIEW.node_sets.append(
-    NodeSet("MUHEAD", HEAD_MUSCLES_COOK, color="#964B00", shape="square")
+    NodeSet(
+        "MUHEAD", HEAD_MUSCLES_COOK, color="#964B00", shape="square", position=(3.1, 1)
+    )
 )
 
 

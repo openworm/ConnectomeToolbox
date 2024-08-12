@@ -7,6 +7,32 @@
       "marker": {
         "symbol": "circle"
       },
+      "name": "Witvliet1 Gen_GJ",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "dot"
+      },
+      "marker": {
+        "symbol": "circle"
+      },
       "name": "Cook2019Herm Gen_GJ",
       "type": "scatter",
       "x": [

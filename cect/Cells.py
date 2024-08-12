@@ -1319,7 +1319,7 @@ def _generate_cell_table(cell_type, cells):
             all_syn_types.add(st)
     fig_md = ""
 
-    for syn_type in all_syn_types:
+    for syn_type in sorted(all_syn_types):
         fig = go.Figure()
         fig.layout.showlegend = True
 

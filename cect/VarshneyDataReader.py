@@ -25,35 +25,34 @@ class VarshneyDataReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False, neuron_connect=True):
-        if neuron_connect:
-            filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
-            wb = load_workbook(filename)
-            sheet = wb.worksheets[0]
-            print_("Opened the Excel file: " + filename)
+    def read_data(self):
+        filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
+        wb = load_workbook(filename)
+        sheet = wb.worksheets[0]
+        print_("Opened the Excel file: " + filename)
 
-            for row in sheet.iter_rows(
-                min_row=2, values_only=True
-            ):  # Assuming data starts from the second row
-                pre = str(row[0])
-                post = str(row[1])
+        for row in sheet.iter_rows(
+            min_row=2, values_only=True
+        ):  # Assuming data starts from the second row
+            pre = str(row[0])
+            post = str(row[1])
 
-                if not post == NMJ_ENDPOINT:
-                    syntype = str(row[2])
-                    num = int(row[3])
-                    synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
+            if not post == NMJ_ENDPOINT:
+                syntype = str(row[2])
+                num = int(row[3])
+                synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
 
-                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                    if pre not in self.cells:
-                        self.cells.append(pre)
-                    if post not in self.cells:
-                        self.cells.append(post)
+                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                if pre not in self.cells:
+                    self.cells.append(pre)
+                if post not in self.cells:
+                    self.cells.append(post)
 
-            return self.cells, self.conns
+        return self.cells, self.conns
 
     def read_muscle_data(self):
         conns = []
@@ -97,7 +96,7 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = my_instance.read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = my_instance.read_data()
     neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

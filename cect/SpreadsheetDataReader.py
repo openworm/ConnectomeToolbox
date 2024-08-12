@@ -33,12 +33,13 @@ class SpreadsheetDataReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False, neuron_connect=False):
+    def read_data(self):
         # reading the NeuronConnectFormatted.xls file if neuron_connect = True
+        neuron_connect = False
         if neuron_connect:
             filename = "%sNeuronConnectFormatted.xlsx" % spreadsheet_location
             rb = open_workbook(filename)
@@ -65,7 +66,7 @@ class SpreadsheetDataReader(ConnectomeDataset):
 
             print_("Opened Excel file: " + filename)
 
-            known_nonconnected_cells = ["CANL", "CANR", "VC6"]
+            # known_nonconnected_cells = ["CANL", "CANR", "VC6"]
 
             for row in range(1, rb.sheet_by_index(0).nrows):
                 pre = str(rb.sheet_by_index(0).cell(row, 0).value)
@@ -80,9 +81,9 @@ class SpreadsheetDataReader(ConnectomeDataset):
                 if post not in self.cells:
                     self.cells.append(post)
 
-            if include_nonconnected_cells:
+            """if include_nonconnected_cells:
                 for c in known_nonconnected_cells:
-                    self.cells.append(c)
+                    self.cells.append(c)"""
 
             return self.cells, self.conns
 
@@ -125,7 +126,7 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
