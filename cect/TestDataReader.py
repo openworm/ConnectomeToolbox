@@ -24,11 +24,11 @@ class TestDataReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection(conn)
+            self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False, neuron_connect=True):
+    def read_data(self):
         self.conns.append(ConnectionInfo("PVCL", "AVBL", 7, "Send", "Acetylcholine"))
         self.conns.append(ConnectionInfo("PVCL", "DB4", 6, "Send", "Acetylcholine"))
         self.conns.append(ConnectionInfo("PVCL", "VB6", 2, "Send", "Acetylcholine"))
@@ -71,7 +71,7 @@ read_muscle_data = tdr_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = tdr_instance.read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = tdr_instance.read_data()
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
