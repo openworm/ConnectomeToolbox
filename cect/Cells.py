@@ -988,6 +988,7 @@ EVEN_PHARYNGEAL_MUSCLE_NAMES = [
     "pm4D",
     "pm4VR",
     "pm4VL",
+    "pm4_UNSPECIFIED",
     "pm6D",
     "pm6VR",
     "pm6VL",
@@ -1000,11 +1001,18 @@ PHARYNGEAL_MUSCLE_NAMES = ODD_PHARYNGEAL_MUSCLE_NAMES + EVEN_PHARYNGEAL_MUSCLE_N
 for cell in PHARYNGEAL_MUSCLE_NAMES:
     cell_notes[cell] = "pharyngeal muscle"
 
+UNSPECIFIED_BODY_WALL_MUSCLES = ["BWM"]
+
+
+cell_notes["BWM"] = "unspecified body wall muscle"
+
+
 PREFERRED_MUSCLE_NAMES = (
     BODY_WALL_MUSCLE_NAMES
     + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
+    + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
 GLR_CELLS = [
@@ -1134,7 +1142,7 @@ KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 def get_standard_color(cell):
     from cect.WormAtlasInfo import WA_COLORS
 
-    if cell in BODY_WALL_MUSCLE_NAMES:
+    if cell in BODY_WALL_MUSCLE_NAMES + UNSPECIFIED_BODY_WALL_MUSCLES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
     elif cell in VULVAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"]
@@ -1236,9 +1244,17 @@ def get_cell_internal_link(cell_name, html=False, text=None):
     url = "../Cells/index.html#%s" % cell_name
 
     if html:
-        return '<a href="%s">%s</a>' % (url, cell_name if text is None else text)
+        return '<a href="%s" title="%s">%s</a>' % (
+            url,
+            get_short_description(cell_name),
+            cell_name if text is None else text,
+        )
     else:
-        return "[%s](%s)" % (cell_name if text is None else text, url)
+        return '[%s "%s"](%s)' % (
+            cell_name if text is None else text,
+            get_short_description(cell_name),
+            url,
+        )
 
 
 def get_cell_link(cell_name, html=False, text=None):

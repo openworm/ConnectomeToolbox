@@ -15,7 +15,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import is_body_wall_muscle
+from cect.ConnectomeReader import is_muscle
+from cect.ConnectomeReader import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -23,15 +24,6 @@ from cect.ConnectomeDataset import ConnectomeDataset
 import os
 
 from cect import print_
-
-
-def remove_leading_index_zero(cell):
-    """
-    Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
-    """
-    if is_neuron(cell) and cell[-2:].startswith("0"):
-        return "%s%s" % (cell[:-2], cell[-1:])
-    return cell
 
 
 def get_syntype(syntype):
@@ -63,23 +55,27 @@ def parse_line(line):
     return pre, post, num, syntype, synclass
 
 
-class White_A(ConnectomeDataset):
-    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
-    filename = "%saconnectome_white_1986_A.csv" % spreadsheet_location
+class WhiteDataReader(ConnectomeDataset):
+    verbose = False
 
-    def __init__(self):
+    def __init__(self, spreadsheet_filename):
         ConnectomeDataset.__init__(self)
+        self.filename = spreadsheet_filename
 
-        cells, neuron_conns = self.read_data()
-        for conn in neuron_conns:
+        neurons, muscles, other_cells, conns = self.read_all_data()
+        # neurons, conns = self.read_data()
+
+        for conn in conns:
             self.add_connection_info(conn)
 
-    def read_data(self):
+    def read_all_data(self):
+        neurons = set([])
+        muscles = set([])
+        other_cells = set([])
         conns = []
-        cells = []
 
-        with open(White_A.filename, "r") as f:
-            print_("Opened file: " + White_A.filename)
+        with open(self.filename, "r") as f:
+            print_("Opened file: " + self.filename)
             f.readline()
 
             # known_nonconnected_cells = ["CANL", "CANR"]
@@ -87,35 +83,38 @@ class White_A(ConnectomeDataset):
             for line in f:
                 pre, post, num, syntype, synclass = parse_line(line)
 
-                if not is_neuron(pre) or not is_neuron(post):
-                    continue  # pre or post is not a neuron
-
                 pre = remove_leading_index_zero(pre)
                 post = remove_leading_index_zero(post)
+
+                if is_muscle(pre):
+                    pre = convert_to_preferred_muscle_name(pre)
+
+                if is_muscle(post):
+                    post = convert_to_preferred_muscle_name(post)
+
                 if synclass == "Generic_GJ":
                     conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                # print ConnectionInfo(pre, post, num, syntype, synclass)
-                if pre not in cells:
-                    cells.append(pre)
-                if post not in cells:
-                    cells.append(post)
 
-            """if include_nonconnected_cells:
-                for c in known_nonconnected_cells:
-                    if c not in cells:
-                        cells.append(c)"""
+                for p in [pre, post]:
+                    if is_neuron(p):
+                        neurons.add(pre)
+                    elif is_muscle(p):
+                        muscles.add(pre)
+                    else:
+                        other_cells.add(p)
 
-        return cells, conns
+        return list(neurons), list(muscles), list(other_cells), conns
 
+    """
     def read_muscle_data(self):
         neurons = []
         muscles = []
         conns = []
 
-        with open(White_A.filename, "r") as f:
-            print_("Opened file: " + White_A.filename)
+        with open(self.filename, "r") as f:
+            print_("Opened file: " + self.filename)
             f.readline()
 
             for line in f:
@@ -136,17 +135,10 @@ class White_A(ConnectomeDataset):
                 if post not in muscles:
                     muscles.append(post)
 
-            return neurons, muscles, conns
+            return neurons, muscles, conns"""
 
 
-def main1():
-    ww = White_A()
-    cells, neuron_conns = ww.read_data()
-    neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
-
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
-
-
+'''
 class White_L4(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%saconnectome_white_1986_L4.csv" % spreadsheet_location
@@ -229,9 +221,9 @@ def main2():
     cells, neuron_conns = ww.read_data()
     neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)'''
 
-
+'''
 class White_whole(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
@@ -315,10 +307,15 @@ def main3():
     cells, neuron_conns = ww.read_data()
     neurons2muscles, muscles, muscle_conns = ww.read_muscle_data()
 
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)'''
 
 
 if __name__ == "__main__":
-    main1()
-    main2()
-    main3()
+    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+    filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
+    wdr = WhiteDataReader(filename)
+
+    cells, neuron_conns = wdr.read_data()
+    neurons2muscles, muscles, muscle_conns = wdr.read_muscle_data()
+
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

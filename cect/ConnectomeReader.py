@@ -58,6 +58,8 @@ def convert_to_preferred_muscle_name(muscle):
         return "pm4VR"
     elif muscle == "pm4d":
         return "pm4D"
+    elif muscle == "pm4":
+        return "pm4_UNSPECIFIED"
     elif muscle == "pm5vl":
         return "pm5VL"
     elif muscle == "pm5vr":
@@ -214,20 +216,21 @@ def check_cells(cells):
         if c in missing_preferred:
             missing_preferred.remove(c)
 
-    print(
-        "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
-        % (
-            len(cells),
-            len(in_preferred),
-            in_preferred,
-            len(not_in_preferred),
-            not_in_preferred,
-            len(missing_preferred),
-            missing_preferred,
-            len(muscles),
-            muscles,
+    if False:
+        print(
+            "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
+            % (
+                len(cells),
+                len(in_preferred),
+                in_preferred,
+                len(not_in_preferred),
+                not_in_preferred,
+                len(missing_preferred),
+                missing_preferred,
+                len(muscles),
+                muscles,
+            )
         )
-    )
 
     return in_preferred, not_in_preferred, missing_preferred, muscles
 

@@ -1,13 +1,17 @@
 # Temporary class to allow this to be used in comparison notebook.
 # Should be tidied up.
 
-from cect.WhiteDataReader import White_L4
-
+from cect.WhiteDataReader import WhiteDataReader
 from cect.ConnectomeReader import analyse_connections
+
+import os
 
 
 def get_instance():
-    return White_L4()
+    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+    filename = "%saconnectome_white_1986_L4.csv" % spreadsheet_location
+
+    return WhiteDataReader(filename)
 
 
 my_instance = get_instance()
@@ -17,7 +21,7 @@ read_muscle_data = my_instance.read_muscle_data
 
 READER_DESCRIPTION = (
     """Data extracted from **%s** for neuronal connectivity"""
-    % White_L4.filename.split("/")[-1]
+    % my_instance.filename.split("/")[-1]
 )
 
 
