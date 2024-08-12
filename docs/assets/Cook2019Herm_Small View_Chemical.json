@@ -1224,24 +1224,23 @@
       "scaleanchor": "y",
       "tickmode": "array",
       "ticktext": [
-        "<span style=\"color:#dddddd\">SN1</span>",
-        "<span style=\"color:#dddddd\">SN2</span>",
-        "<span style=\"color:#dddddd\">SN3</span>",
-        "<span style=\"color:#dddddd\">SN4</span>",
-        "<span style=\"color:#dddddd\">SN5</span>",
-        "<span style=\"color:#dddddd\">SN6</span>",
-        "<span style=\"color:#dddddd\">IN1</span>",
-        "<span style=\"color:#dddddd\">IN2</span>",
-        "<span style=\"color:#dddddd\">IN3</span>",
-        "<span style=\"color:#dddddd\">IN4</span>",
-        "<span style=\"color:#ff3300\">RIML</span>",
-        "<span style=\"color:#dddddd\">HMN</span>",
-        "<span style=\"color:#dddddd\">SMN</span>",
-        "<span style=\"color:#dddddd\">MNVC</span>",
-        "<span style=\"color:#dddddd\">VC</span>",
-        "<span style=\"color:#dddddd\">HSN</span>",
-        "<span style=\"color:#dddddd\">MUBODY</span>",
-        "<span style=\"color:#dddddd\">MUHEAD</span>"
+        "<span style=\"color:#ff66cc\">SN1</span>",
+        "<span style=\"color:#ff66cc\">SN2</span>",
+        "<span style=\"color:#ff66cc\">SN3</span>",
+        "<span style=\"color:#ff66cc\">SN4</span>",
+        "<span style=\"color:#ff66cc\">SN5</span>",
+        "<span style=\"color:#ff66cc\">SN6</span>",
+        "<span style=\"color:#ff3300\">IN1</span>",
+        "<span style=\"color:#ff3300\">IN2</span>",
+        "<span style=\"color:#ff3300\">IN3</span>",
+        "<span style=\"color:#ff3300\">IN4</span>",
+        "<span style=\"color:#9966cc\">HMN</span>",
+        "<span style=\"color:#9966cc\">SMN</span>",
+        "<span style=\"color:#9966cc\">MNVC</span>",
+        "<span style=\"color:#9966cc\">VC</span>",
+        "<span style=\"color:#9966cc\">HSN</span>",
+        "<span style=\"color:#336600\">MUBODY</span>",
+        "<span style=\"color:#336600\">MUHEAD</span>"
       ],
       "tickvals": [
         0,
@@ -1260,8 +1259,7 @@
         13,
         14,
         15,
-        16,
-        17
+        16
       ],
       "title": {
         "text": "Postsynaptic"
@@ -1278,24 +1276,23 @@
       ],
       "tickmode": "array",
       "ticktext": [
-        "<span style=\"color:#dddddd\">SN1</span>",
-        "<span style=\"color:#dddddd\">SN2</span>",
-        "<span style=\"color:#dddddd\">SN3</span>",
-        "<span style=\"color:#dddddd\">SN4</span>",
-        "<span style=\"color:#dddddd\">SN5</span>",
-        "<span style=\"color:#dddddd\">SN6</span>",
-        "<span style=\"color:#dddddd\">IN1</span>",
-        "<span style=\"color:#dddddd\">IN2</span>",
-        "<span style=\"color:#dddddd\">IN3</span>",
-        "<span style=\"color:#dddddd\">IN4</span>",
-        "<span style=\"color:#ff3300\">RIML</span>",
-        "<span style=\"color:#dddddd\">HMN</span>",
-        "<span style=\"color:#dddddd\">SMN</span>",
-        "<span style=\"color:#dddddd\">MNVC</span>",
-        "<span style=\"color:#dddddd\">VC</span>",
-        "<span style=\"color:#dddddd\">HSN</span>",
-        "<span style=\"color:#dddddd\">MUBODY</span>",
-        "<span style=\"color:#dddddd\">MUHEAD</span>"
+        "<span style=\"color:#ff66cc\">SN1</span>",
+        "<span style=\"color:#ff66cc\">SN2</span>",
+        "<span style=\"color:#ff66cc\">SN3</span>",
+        "<span style=\"color:#ff66cc\">SN4</span>",
+        "<span style=\"color:#ff66cc\">SN5</span>",
+        "<span style=\"color:#ff66cc\">SN6</span>",
+        "<span style=\"color:#ff3300\">IN1</span>",
+        "<span style=\"color:#ff3300\">IN2</span>",
+        "<span style=\"color:#ff3300\">IN3</span>",
+        "<span style=\"color:#ff3300\">IN4</span>",
+        "<span style=\"color:#9966cc\">HMN</span>",
+        "<span style=\"color:#9966cc\">SMN</span>",
+        "<span style=\"color:#9966cc\">MNVC</span>",
+        "<span style=\"color:#9966cc\">VC</span>",
+        "<span style=\"color:#9966cc\">HSN</span>",
+        "<span style=\"color:#336600\">MUBODY</span>",
+        "<span style=\"color:#336600\">MUHEAD</span>"
       ],
       "tickvals": [
         0,
@@ -1314,8 +1311,7 @@
         13,
         14,
         15,
-        16,
-        17
+        16
       ],
       "title": {
         "text": "Presynaptic"

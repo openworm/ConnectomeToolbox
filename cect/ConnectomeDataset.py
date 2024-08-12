@@ -258,7 +258,10 @@ class ConnectomeDataset:
 
         selected_indices = list(range(0, len(self.nodes), step))
         selected_nodes = [self.nodes[i] for i in selected_indices]
+        
         selected_colors = [get_standard_color(node) for node in selected_nodes]
+
+        
 
         fig.update_layout(
             xaxis=dict(
