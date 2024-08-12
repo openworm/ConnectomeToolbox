@@ -3,6 +3,7 @@ from cect import print_
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 from cect.Cells import get_short_description
+from cect.Cells import get_standard_color
 
 import numpy as np
 import math
@@ -162,7 +163,31 @@ class ConnectomeDataset:
             color_continuous_scale=color_continuous_scale,
         )
 
+        max_ticks = 30  
+        step = max(1, len(self.nodes) // max_ticks)
+
+        selected_indices = list(range(0, len(self.nodes), step))
+        selected_nodes = [self.nodes[i] for i in selected_indices]
+        selected_colors = [get_standard_color(node) for node in selected_nodes]
+
+        fig.update_layout(
+            xaxis=dict(
+                tickmode='array',
+                tickvals=selected_indices,
+                ticktext=[f'<span style="color:{color}">{node}</span>' for node, color in zip(selected_nodes, selected_colors)],
+                automargin=True
+            ),
+            yaxis=dict(
+                tickmode='array',
+                tickvals=selected_indices,
+                ticktext=[f'<span style="color:{color}">{node}</span>' for node, color in zip(selected_nodes, selected_colors)],
+                automargin=True
+            )
+        )
+
         return fig
+
+
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
