@@ -32,10 +32,3 @@ def main1():
 
 if __name__ == "__main__":
     main1()
-
-    import sys
-
-    if not "-nogui" in sys.argv:
-        fig = my_instance.to_plotly_matrix_fig("Acetylcholine")
-
-        fig.show()

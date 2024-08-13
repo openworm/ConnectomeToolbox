@@ -29,14 +29,6 @@ def main1():
     cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
-    from cect.ConnectomeView import SMALL_VIEW
-    from cect.ConnectomeReader import DEFAULT_COLORMAP
-
-    fig = my_instance.to_plotly_matrix_fig(
-                "Acetylcholine", SMALL_VIEW, color_continuous_scale=DEFAULT_COLORMAP
-            )
-
-    fig.show()
 
 if __name__ == "__main__":
     main1()
