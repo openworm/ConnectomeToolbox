@@ -26,5 +26,6 @@ def main1():
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
+
 if __name__ == "__main__":
     main1()

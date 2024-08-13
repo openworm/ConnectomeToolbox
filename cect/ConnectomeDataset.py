@@ -240,20 +240,32 @@ class ConnectomeDataset:
             )
         return info
 
-    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=DEFAULT_COLORMAP):
+    def to_plotly_matrix_fig(
+        self, synclass, view, color_continuous_scale=DEFAULT_COLORMAP
+    ):
         import plotly.express as px
-        
-        conn_array = self.connections[synclass] 
-        def get_color_html(color, node):                
-            return f'<span style="color:{color};">{node}</span>'
-    
-        
-        node_colors = [(view.get_node_set(node).color if view.has_color() else 
-                       get_standard_color(node)) for node in self.nodes]
 
-        x_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
-        y_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
-      
+        conn_array = self.connections[synclass]
+
+        def get_color_html(color, node):
+            return f'<span style="color:{color};">{node}</span>'
+
+        node_colors = [
+            (
+                view.get_node_set(node).color
+                if view.has_color()
+                else get_standard_color(node)
+            )
+            for node in self.nodes
+        ]
+
+        x_ticktext = [
+            get_color_html(color, node) for node, color in zip(self.nodes, node_colors)
+        ]
+        y_ticktext = [
+            get_color_html(color, node) for node, color in zip(self.nodes, node_colors)
+        ]
+
         fig = px.imshow(
             conn_array,
             labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
@@ -263,8 +275,6 @@ class ConnectomeDataset:
         )
 
         return fig
-
-
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
