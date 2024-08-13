@@ -124,11 +124,11 @@ def generate_comparison_page(quick: bool):
         "White_whole": ["cect.White_whole", "White_1986"],
         "TestData": ["cect.TestDataReader", None],
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
+        "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
     if not quick:
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]

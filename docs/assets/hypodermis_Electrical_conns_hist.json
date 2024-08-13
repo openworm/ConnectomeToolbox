@@ -1,167 +1,24 @@
 {
   "data": [
     {
-      "hoverinfo": "none",
       "line": {
-        "color": "grey",
-        "width": 1
+        "dash": "solid"
       },
-      "mode": "lines",
-      "text": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
-      ],
-      "type": "scatter",
-      "x": [
-        0.20452,
-        0.096835,
-        null,
-        0.20452,
-        0.283573,
-        null,
-        0.096835,
-        0.007365,
-        null
-      ],
-      "y": [
-        0.024251,
-        0.227347,
-        null,
-        0.024251,
-        -0.111892,
-        null,
-        0.227347,
-        0.412873,
-        null
-      ]
-    },
-    {
-      "hoverinfo": "text",
       "marker": {
-        "color": [
-          2,
-          0,
-          1,
-          0,
-          2,
-          0,
-          1
-        ],
-        "colorbar": {
-          "thickness": 15,
-          "title": {
-            "side": "right",
-            "text": "Node Connections"
-          },
-          "xanchor": "left"
-        },
-        "colorscale": [
-          [
-            0.0,
-            "rgb(255,255,217)"
-          ],
-          [
-            0.125,
-            "rgb(237,248,177)"
-          ],
-          [
-            0.25,
-            "rgb(199,233,180)"
-          ],
-          [
-            0.375,
-            "rgb(127,205,187)"
-          ],
-          [
-            0.5,
-            "rgb(65,182,196)"
-          ],
-          [
-            0.625,
-            "rgb(29,145,192)"
-          ],
-          [
-            0.75,
-            "rgb(34,94,168)"
-          ],
-          [
-            0.875,
-            "rgb(37,52,148)"
-          ],
-          [
-            1.0,
-            "rgb(8,29,88)"
-          ]
-        ],
-        "line": {
-          "width": 1
-        },
-        "reversescale": true,
-        "showscale": true,
-        "size": [
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0
-        ],
-        "symbol": [
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle"
-        ]
+        "symbol": "square"
       },
-      "mode": "markers",
-      "text": [
-        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2, <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 2",
-        "<b>ASKR</b><br>Sensory neuron (amphid)",
-        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ASHR</b>: 2",
-        "<b>IL2R</b><br>Sensory neuron (cephalic)",
-        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 2, <b>URXR</b>: 1<br>Conns out: <b>ASHR</b>: 1, <b>URXR</b>: 1",
-        "<b>RMHR</b><br>Head motor neuron",
-        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 1"
-      ],
+      "name": "Cook2019Herm Electrical conns",
       "type": "scatter",
       "x": [
-        0.20452,
-        -1.0,
-        0.283573,
-        -0.405246,
-        0.096835,
-        0.812953,
-        0.007365
+        "hyp"
       ],
       "y": [
-        0.024251,
-        -0.169164,
-        -0.111892,
-        -0.835167,
-        0.227347,
-        0.45175,
-        0.412873
+        59
       ]
     }
   ],
   "layout": {
-    "hovermode": "closest",
-    "margin": {
-      "b": 20,
-      "l": 5,
-      "r": 5,
-      "t": 40
-    },
-    "showlegend": false,
+    "showlegend": true,
     "template": {
       "data": {
         "bar": [
@@ -977,14 +834,6 @@
           "zerolinewidth": 2
         }
       }
-    },
-    "xaxis": {
-      "showgrid": false,
-      "zeroline": false
-    },
-    "yaxis": {
-      "showgrid": false,
-      "zeroline": false
     }
   }
 }
