@@ -1,402 +1,104 @@
 {
   "data": [
     {
-      "coloraxis": "coloraxis",
-      "hovertemplate": "Postsynaptic: %{x}<br>Presynaptic: %{y}<br>Synapses: %{z}<extra></extra>",
-      "name": "0",
-      "type": "heatmap",
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "White_whole Chemical conns out",
+      "type": "scatter",
       "x": [
-        "<span style=\"color:#FFC0CB;\">SN1</span>",
-        "<span style=\"color:#b31b1b;\">SN2</span>",
-        "<span style=\"color:#b31b1b;\">SN3</span>",
-        "<span style=\"color:#b31b1b;\">SN4</span>",
-        "<span style=\"color:#b31b1b;\">SN5</span>",
-        "<span style=\"color:#b31b1b;\">SN6</span>",
-        "<span style=\"color:#16537E;\">IN1</span>",
-        "<span style=\"color:#16537E;\">IN2</span>",
-        "<span style=\"color:#16537E;\">IN3</span>",
-        "<span style=\"color:#16537E;\">IN4</span>",
-        "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#FF6000;\">SMN</span>",
-        "<span style=\"color:#BFA700;\">MNVC</span>",
-        "<span style=\"color:#FF00FF;\">VC</span>",
-        "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#964B00;\">MUBODY</span>",
-        "<span style=\"color:#964B00;\">MUHEAD</span>"
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
       ],
-      "xaxis": "x",
       "y": [
-        "<span style=\"color:#FFC0CB;\">SN1</span>",
-        "<span style=\"color:#b31b1b;\">SN2</span>",
-        "<span style=\"color:#b31b1b;\">SN3</span>",
-        "<span style=\"color:#b31b1b;\">SN4</span>",
-        "<span style=\"color:#b31b1b;\">SN5</span>",
-        "<span style=\"color:#b31b1b;\">SN6</span>",
-        "<span style=\"color:#16537E;\">IN1</span>",
-        "<span style=\"color:#16537E;\">IN2</span>",
-        "<span style=\"color:#16537E;\">IN3</span>",
-        "<span style=\"color:#16537E;\">IN4</span>",
-        "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#FF6000;\">SMN</span>",
-        "<span style=\"color:#BFA700;\">MNVC</span>",
-        "<span style=\"color:#FF00FF;\">VC</span>",
-        "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#964B00;\">MUBODY</span>",
-        "<span style=\"color:#964B00;\">MUHEAD</span>"
+        0,
+        0,
+        7,
+        1,
+        3
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2020 Chemical conns out",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
       ],
-      "yaxis": "y",
-      "z": [
-        [
-          123.0,
-          0.0,
-          3.0,
-          6.0,
-          1.0,
-          1.0,
-          42.0,
-          47.0,
-          6.0,
-          28.0,
-          191.0,
-          48.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          25.0,
-          10.0,
-          0.0,
-          0.0,
-          0.0,
-          62.0,
-          4.0,
-          16.0,
-          0.0,
-          0.0,
-          0.0,
-          17.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          14.0,
-          0.0,
-          75.0,
-          2.0,
-          0.0,
-          0.0,
-          146.0,
-          83.0,
-          33.0,
-          7.0,
-          9.0,
-          16.0,
-          23.0,
-          0.0,
-          2.0,
-          0.0,
-          0.0
-        ],
-        [
-          1.0,
-          0.0,
-          6.0,
-          6.0,
-          2.0,
-          0.0,
-          52.0,
-          55.0,
-          9.0,
-          0.0,
-          5.0,
-          11.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          0.0,
-          3.0,
-          13.0,
-          35.0,
-          39.0,
-          21.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          1.0,
-          4.0,
-          53.0,
-          13.0,
-          26.0,
-          146.0,
-          14.0,
-          0.0,
-          7.0,
-          0.0,
-          0.0,
-          3.0,
-          0.0,
-          0.0
-        ],
-        [
-          3.0,
-          0.0,
-          10.0,
-          1.0,
-          0.0,
-          0.0,
-          127.0,
-          50.0,
-          13.0,
-          0.0,
-          47.0,
-          57.0,
-          349.0,
-          1.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        [
-          3.0,
-          0.0,
-          10.0,
-          11.0,
-          2.0,
-          1.0,
-          163.0,
-          124.0,
-          23.0,
-          7.0,
-          32.0,
-          72.0,
-          46.0,
-          0.0,
-          2.0,
-          0.0,
-          0.0
-        ],
-        [
-          10.0,
-          4.0,
-          15.0,
-          11.0,
-          9.0,
-          37.0,
-          209.0,
-          151.0,
-          113.0,
-          6.0,
-          9.0,
-          30.0,
-          25.0,
-          2.0,
-          12.0,
-          0.0,
-          0.0
-        ],
-        [
-          27.0,
-          0.0,
-          3.0,
-          18.0,
-          0.0,
-          24.0,
-          17.0,
-          24.0,
-          40.0,
-          0.0,
-          6.0,
-          6.0,
-          0.0,
-          0.0,
-          4.0,
-          0.0,
-          0.0
-        ],
-        [
-          8.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          20.0,
-          10.0,
-          1.0,
-          0.0,
-          43.0,
-          12.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0,
-          30.0,
-          11.0,
-          1.0,
-          0.0,
-          15.0,
-          8.0,
-          1.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0,
-          0.0,
-          18.0,
-          15.0,
-          5.0,
-          0.0,
-          0.0,
-          1.0,
-          996.0,
-          1.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          1.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          2.0,
-          13.0,
-          10.0,
-          3.0,
-          0.0,
-          0.0,
-          109.0,
-          23.0,
-          2.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          5.0,
-          6.0,
-          2.0,
-          9.0,
-          15.0,
-          0.0,
-          0.0,
-          4.0,
-          6.0,
-          5.0,
-          4.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ]
+      "y": [
+        2,
+        3,
+        15,
+        14,
+        9
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "WormNeuroAtlas Chemical conns out",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Herm Chemical conns out",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        2,
+        3,
+        15,
+        11,
+        10
       ]
     }
   ],
   "layout": {
-    "coloraxis": {
-      "colorbar": {
-        "title": {
-          "text": "Synapses"
-        }
-      },
-      "colorscale": [
-        [
-          0.0,
-          "white"
-        ],
-        [
-          0.5,
-          "green"
-        ],
-        [
-          1.0,
-          "black"
-        ]
-      ]
-    },
-    "margin": {
-      "t": 60
-    },
+    "showlegend": true,
     "template": {
       "data": {
         "bar": [
@@ -1211,30 +913,6 @@
           "zerolinecolor": "white",
           "zerolinewidth": 2
         }
-      }
-    },
-    "xaxis": {
-      "anchor": "y",
-      "constrain": "domain",
-      "domain": [
-        0.0,
-        1.0
-      ],
-      "scaleanchor": "y",
-      "title": {
-        "text": "Postsynaptic"
-      }
-    },
-    "yaxis": {
-      "anchor": "x",
-      "autorange": "reversed",
-      "constrain": "domain",
-      "domain": [
-        0.0,
-        1.0
-      ],
-      "title": {
-        "text": "Presynaptic"
       }
     }
   }

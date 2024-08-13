@@ -44,13 +44,20 @@ class VarshneyDataReader(ConnectomeDataset):
             if not post == NMJ_ENDPOINT:
                 syntype = str(row[2])
                 num = int(row[3])
-                synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
+                synclass = (
+                    "Generic_GJ"
+                    if syntype == "EJ"
+                    else "Generic_CS"
+                    if (syntype == "Sp" or syntype == "S")
+                    else None
+                )
 
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
+                if synclass is not None:
+                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    if pre not in self.cells:
+                        self.cells.append(pre)
+                    if post not in self.cells:
+                        self.cells.append(post)
 
         return self.cells, self.conns
 
@@ -58,7 +65,7 @@ class VarshneyDataReader(ConnectomeDataset):
         conns = []
         neurons = []
         muscles = []
-
+        """
         filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
         wb = load_workbook(filename)
         sheet = wb.worksheets[0]
@@ -80,7 +87,7 @@ class VarshneyDataReader(ConnectomeDataset):
                 if pre not in neurons:
                     neurons.append(pre)
                 if not post in muscles:
-                    muscles.append(post)
+                    muscles.append(post)"""
 
         return neurons, muscles, conns
 

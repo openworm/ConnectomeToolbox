@@ -33,9 +33,11 @@ if [ "$quick_test" == 0 ]; then
     python -m cect.WhiteDataReader
     python -m cect.White_A
     python -m cect.White_L4
+
+    python -m cect.Comparison 0
+    
 fi
 
-python -m cect.Comparison $quick_test
 mkdocs build
 
 echo

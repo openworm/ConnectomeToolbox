@@ -18,25 +18,25 @@
       ],
       "type": "scatter",
       "x": [
-        0.194921,
-        0.27984,
+        0.20452,
+        0.096835,
         null,
-        0.194921,
-        0.106524,
+        0.20452,
+        0.283573,
         null,
-        0.106524,
-        0.009427,
+        0.096835,
+        0.007365,
         null
       ],
       "y": [
-        0.045278,
-        -0.090255,
+        0.024251,
+        0.227347,
         null,
-        0.045278,
-        0.197053,
+        0.024251,
+        -0.111892,
         null,
-        0.197053,
-        0.382608,
+        0.227347,
+        0.412873,
         null
       ]
     },
@@ -124,32 +124,32 @@
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2, <b>RMGR</b>: 2<br>Conns out: <b>AWBR</b>: 2, <b>RMGR</b>: 1",
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2, <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 2",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
-        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 2<br>Conns out: <b>ASHR</b>: 2",
+        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ASHR</b>: 2",
         "<b>IL2R</b><br>Sensory neuron (cephalic)",
-        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 1, <b>URXR</b>: 1<br>Conns out: <b>ASHR</b>: 2, <b>URXR</b>: 1",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 2, <b>URXR</b>: 1<br>Conns out: <b>ASHR</b>: 1, <b>URXR</b>: 1",
         "<b>RMHR</b><br>Head motor neuron",
         "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 1"
       ],
       "type": "scatter",
       "x": [
-        0.194921,
+        0.20452,
         -1.0,
-        0.27984,
-        -0.393937,
-        0.106524,
-        0.803225,
-        0.009427
+        0.283573,
+        -0.405246,
+        0.096835,
+        0.812953,
+        0.007365
       ],
       "y": [
-        0.045278,
-        -0.174515,
-        -0.090255,
-        -0.837229,
-        0.197053,
-        0.477061,
-        0.382608
+        0.024251,
+        -0.169164,
+        -0.111892,
+        -0.835167,
+        0.227347,
+        0.45175,
+        0.412873
       ]
     }
   ],
