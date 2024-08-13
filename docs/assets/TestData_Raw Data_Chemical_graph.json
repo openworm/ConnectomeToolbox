@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -85,18 +85,18 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000",
-          "#dd0000"
+          "#ff66cc",
+          "#ff66cc",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc"
         ],
         "colorbar": {
           "thickness": 15,
@@ -145,26 +145,53 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": false,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 0",
-        "ASKR<br>Number of connections: 0",
-        "AVBL<br>Number of connections: 1",
-        "DB4<br>Number of connections: 3",
-        "DD4<br>Number of connections: 2",
-        "PVCL<br>Number of connections: 3",
-        "VA3<br>Number of connections: 1",
-        "VA6<br>Number of connections: 1",
-        "VB2<br>Number of connections: 1",
-        "VB6<br>Number of connections: 2",
-        "VD3<br>Number of connections: 2",
-        "VD6<br>Number of connections: 2"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)",
+        "<b>ASKR</b><br>Sensory neuron (amphid)",
+        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>PVCL</b>: 7",
+        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 6<br>Conns out: <b>VD6</b>: 14, <b>DD4</b>: 2",
+        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns in: <b>VB6</b>: 32, <b>DB4</b>: 2",
+        "<b>PVCL</b><br>Layer 1 interneuron<br>Conns out: <b>AVBL</b>: 7, <b>DB4</b>: 6, <b>VB6</b>: 2",
+        "<b>VA3</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
+        "<b>VA6</b><br>Ventral cord motor neuron<br>Conns in: <b>VD6</b>: 3<br>Conns out: <b>VD6</b>: 6",
+        "<b>VB2</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
+        "<b>VB6</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 2<br>Conns out: <b>DD4</b>: 32",
+        "<b>VD3</b><br>Ventral cord motor neuron<br>Conns out: <b>VA3</b>: 2, <b>VB2</b>: 2",
+        "<b>VD6</b><br>Ventral cord motor neuron<br>Conns in: <b>DB4</b>: 14, <b>VA6</b>: 6<br>Conns out: <b>VA6</b>: 3"
       ],
       "type": "scatter",
       "x": [

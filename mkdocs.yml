@@ -28,6 +28,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 nav:
   - Overview: 'index.md'
@@ -57,15 +60,17 @@ nav:
     - 'Randi et al. 2023': 'Randi_2023.md'
   
   - 'Data sets':
-    - 'White et al. 1986 - A': 'White_A_data.md'
-    - 'White et al. 1986 - L4': 'White_L4_data.md'
-    - 'White et al. 1986 - whole': 'White_whole_data.md'
-    - 'Varshney et al. 2011': 'Varshney_data.md'
-    - 'Cook et al. 2019': 'Cook2019Herm_data.md'
-    - 'Cook et al. 2020': 'Cook2020_data.md'
-    - 'Witvliet et al. 2021 - 1': 'Witvliet1_data.md'
-    - 'Witvliet et al. 2021 - 2': 'Witvliet2_data.md'
-    - 'WormNeuroAtlas': 'WormNeuroAtlas_data.md'
-    - 'Test': 'Test_data.md'
+    - 'White et al. 1986 - A (N2U)': 'White_A_data_graph.md'
+    - 'White et al. 1986 - L4 (JSH)': 'White_L4_data_graph.md'
+    - 'White et al. 1986 - whole': 'White_whole_data_graph.md'
+    - 'Varshney et al. 2011': 'Varshney_data_graph.md'
+    - 'Cook et al. 2019': 'Cook2019Herm_data_graph.md'
+    - 'Cook et al. 2020': 'Cook2020_data_graph.md'
+    - 'Witvliet et al. 2021 - 1': 'Witvliet1_data_graph.md'
+    - 'Witvliet et al. 2021 - 2': 'Witvliet2_data_graph.md'
+    - 'WormNeuroAtlas': 'WormNeuroAtlas_data_graph.md'
+    - 'Test': 'Test_data_graph.md'
+  - Cells:
+    - 'C. elegans cells': 'Cells.md'
   - Python package:
     - 'Installation': 'Python.md'

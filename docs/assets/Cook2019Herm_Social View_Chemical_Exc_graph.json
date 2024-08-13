@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "red",
+        "color": "grey",
         "width": 1
       },
       "mode": "lines",
@@ -123,21 +123,38 @@
           ]
         ],
         "line": {
-          "width": 2
+          "width": 1
         },
         "reversescale": true,
         "showscale": true,
-        "size": 10
+        "size": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
       },
       "mode": "markers",
       "text": [
-        "ASHR<br>Number of connections: 3",
-        "ASKR<br>Number of connections: 0",
-        "AWBR<br>Number of connections: 2",
-        "IL2R<br>Number of connections: 2",
-        "RMGR<br>Number of connections: 3",
-        "RMHR<br>Number of connections: 0",
-        "URXR<br>Number of connections: 3"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ASHR</b>: 2, <b>AWBR</b>: 2, <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 6, <b>ASHR</b>: 2",
+        "<b>ASKR</b><br>Sensory neuron (amphid)",
+        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns in: <b>URXR</b>: 2<br>Conns out: <b>ASHR</b>: 2",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>RMGR</b>: 2<br>Conns out: <b>RMGR</b>: 1, <b>URXR</b>: 1",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 6, <b>URXR</b>: 6, <b>IL2R</b>: 1<br>Conns out: <b>URXR</b>: 3, <b>IL2R</b>: 2, <b>ASHR</b>: 1",
+        "<b>RMHR</b><br>Head motor neuron",
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 3, <b>IL2R</b>: 1<br>Conns out: <b>RMGR</b>: 6, <b>AWBR</b>: 2"
       ],
       "type": "scatter",
       "x": [

@@ -2,550 +2,17 @@
 
 ############################################################
 
-#    Utilities for reading/writing/parsing NeuroML 2 files
+#    Utilities for reading C. elegans connectome data
 
 ############################################################
 
 from cect import print_
 
+from cect.Cells import PREFERRED_NEURON_NAMES
+from cect.Cells import PREFERRED_MUSCLE_NAMES
+from cect.Cells import KNOWN_OTHER_CELLS
+
 DEFAULT_COLORMAP = ["white", "green", "black"]
-
-PREFERRED_NEURON_NAMES = [
-    "ADAL",
-    "ADAR",
-    "ADEL",
-    "ADER",
-    "ADFL",
-    "ADFR",
-    "ADLL",
-    "ADLR",
-    "AFDL",
-    "AFDR",
-    "AIAL",
-    "AIAR",
-    "AIBL",
-    "AIBR",
-    "AIML",
-    "AIMR",
-    "AINL",
-    "AINR",
-    "AIYL",
-    "AIYR",
-    "AIZL",
-    "AIZR",
-    "ALA",
-    "ALML",
-    "ALMR",
-    "ALNL",
-    "ALNR",
-    "AQR",
-    "AS1",
-    "AS10",
-    "AS11",
-    "AS2",
-    "AS3",
-    "AS4",
-    "AS5",
-    "AS6",
-    "AS7",
-    "AS8",
-    "AS9",
-    "ASEL",
-    "ASER",
-    "ASGL",
-    "ASGR",
-    "ASHL",
-    "ASHR",
-    "ASIL",
-    "ASIR",
-    "ASJL",
-    "ASJR",
-    "ASKL",
-    "ASKR",
-    "AUAL",
-    "AUAR",
-    "AVAL",
-    "AVAR",
-    "AVBL",
-    "AVBR",
-    "AVDL",
-    "AVDR",
-    "AVEL",
-    "AVER",
-    "AVFL",
-    "AVFR",
-    "AVG",
-    "AVHL",
-    "AVHR",
-    "AVJL",
-    "AVJR",
-    "AVKL",
-    "AVKR",
-    "AVL",
-    "AVM",
-    "AWAL",
-    "AWAR",
-    "AWBL",
-    "AWBR",
-    "AWCL",
-    "AWCR",
-    "BAGL",
-    "BAGR",
-    "BDUL",
-    "BDUR",
-    "CANL",
-    "CANR",
-    "CEPDL",
-    "CEPDR",
-    "CEPVL",
-    "CEPVR",
-    "DA1",
-    "DA2",
-    "DA3",
-    "DA4",
-    "DA5",
-    "DA6",
-    "DA7",
-    "DA8",
-    "DA9",
-    "DB1",
-    "DB2",
-    "DB3",
-    "DB4",
-    "DB5",
-    "DB6",
-    "DB7",
-    "DD1",
-    "DD2",
-    "DD3",
-    "DD4",
-    "DD5",
-    "DD6",
-    "DVA",
-    "DVB",
-    "DVC",
-    "FLPL",
-    "FLPR",
-    "HSNL",
-    "HSNR",
-    "I1L",
-    "I1R",
-    "I2L",
-    "I2R",
-    "I3",
-    "I4",
-    "I5",
-    "I6",
-    "IL1DL",
-    "IL1DR",
-    "IL1L",
-    "IL1R",
-    "IL1VL",
-    "IL1VR",
-    "IL2DL",
-    "IL2DR",
-    "IL2L",
-    "IL2R",
-    "IL2VL",
-    "IL2VR",
-    "LUAL",
-    "LUAR",
-    "M1",
-    "M2L",
-    "M2R",
-    "M3L",
-    "M3R",
-    "M4",
-    "M5",
-    "MCL",
-    "MCR",
-    "MI",
-    "NSML",
-    "NSMR",
-    "OLLL",
-    "OLLR",
-    "OLQDL",
-    "OLQDR",
-    "OLQVL",
-    "OLQVR",
-    "PDA",
-    "PDB",
-    "PDEL",
-    "PDER",
-    "PHAL",
-    "PHAR",
-    "PHBL",
-    "PHBR",
-    "PHCL",
-    "PHCR",
-    "PLML",
-    "PLMR",
-    "PLNL",
-    "PLNR",
-    "PQR",
-    "PVCL",
-    "PVCR",
-    "PVDL",
-    "PVDR",
-    "PVM",
-    "PVNL",
-    "PVNR",
-    "PVPL",
-    "PVPR",
-    "PVQL",
-    "PVQR",
-    "PVR",
-    "PVT",
-    "PVWL",
-    "PVWR",
-    "RIAL",
-    "RIAR",
-    "RIBL",
-    "RIBR",
-    "RICL",
-    "RICR",
-    "RID",
-    "RIFL",
-    "RIFR",
-    "RIGL",
-    "RIGR",
-    "RIH",
-    "RIML",
-    "RIMR",
-    "RIPL",
-    "RIPR",
-    "RIR",
-    "RIS",
-    "RIVL",
-    "RIVR",
-    "RMDDL",
-    "RMDDR",
-    "RMDL",
-    "RMDR",
-    "RMDVL",
-    "RMDVR",
-    "RMED",
-    "RMEL",
-    "RMER",
-    "RMEV",
-    "RMFL",
-    "RMFR",
-    "RMGL",
-    "RMGR",
-    "RMHL",
-    "RMHR",
-    "SAADL",
-    "SAADR",
-    "SAAVL",
-    "SAAVR",
-    "SABD",
-    "SABVL",
-    "SABVR",
-    "SDQL",
-    "SDQR",
-    "SIADL",
-    "SIADR",
-    "SIAVL",
-    "SIAVR",
-    "SIBDL",
-    "SIBDR",
-    "SIBVL",
-    "SIBVR",
-    "SMBDL",
-    "SMBDR",
-    "SMBVL",
-    "SMBVR",
-    "SMDDL",
-    "SMDDR",
-    "SMDVL",
-    "SMDVR",
-    "URADL",
-    "URADR",
-    "URAVL",
-    "URAVR",
-    "URBL",
-    "URBR",
-    "URXL",
-    "URXR",
-    "URYDL",
-    "URYDR",
-    "URYVL",
-    "URYVR",
-    "VA1",
-    "VA10",
-    "VA11",
-    "VA12",
-    "VA2",
-    "VA3",
-    "VA4",
-    "VA5",
-    "VA6",
-    "VA7",
-    "VA8",
-    "VA9",
-    "VB1",
-    "VB10",
-    "VB11",
-    "VB2",
-    "VB3",
-    "VB4",
-    "VB5",
-    "VB6",
-    "VB7",
-    "VB8",
-    "VB9",
-    "VC1",
-    "VC2",
-    "VC3",
-    "VC4",
-    "VC5",
-    "VC6",
-    "VD1",
-    "VD10",
-    "VD11",
-    "VD12",
-    "VD13",
-    "VD2",
-    "VD3",
-    "VD4",
-    "VD5",
-    "VD6",
-    "VD7",
-    "VD8",
-    "VD9",
-]
-
-BODY_WALL_MUSCLE_NAMES = [
-    "MANAL",
-    "MDL01",
-    "MDL02",
-    "MDL03",
-    "MDL04",
-    "MDL05",
-    "MDL06",
-    "MDL07",
-    "MDL08",
-    "MDL09",
-    "MDL10",
-    "MDL11",
-    "MDL12",
-    "MDL13",
-    "MDL14",
-    "MDL15",
-    "MDL16",
-    "MDL17",
-    "MDL18",
-    "MDL19",
-    "MDL20",
-    "MDL21",
-    "MDL22",
-    "MDL23",
-    "MDL24",
-    "MDR01",
-    "MDR02",
-    "MDR03",
-    "MDR04",
-    "MDR05",
-    "MDR06",
-    "MDR07",
-    "MDR08",
-    "MDR09",
-    "MDR10",
-    "MDR11",
-    "MDR12",
-    "MDR13",
-    "MDR14",
-    "MDR15",
-    "MDR16",
-    "MDR17",
-    "MDR18",
-    "MDR19",
-    "MDR20",
-    "MDR21",
-    "MDR22",
-    "MDR23",
-    "MDR24",
-    "MVL01",
-    "MVL02",
-    "MVL03",
-    "MVL04",
-    "MVL05",
-    "MVL06",
-    "MVL07",
-    "MVL08",
-    "MVL09",
-    "MVL10",
-    "MVL11",
-    "MVL12",
-    "MVL13",
-    "MVL14",
-    "MVL15",
-    "MVL16",
-    "MVL17",
-    "MVL18",
-    "MVL19",
-    "MVL20",
-    "MVL21",
-    "MVL22",
-    "MVL23",
-    "MVR01",
-    "MVR02",
-    "MVR03",
-    "MVR04",
-    "MVR05",
-    "MVR06",
-    "MVR07",
-    "MVR08",
-    "MVR09",
-    "MVR10",
-    "MVR11",
-    "MVR12",
-    "MVR13",
-    "MVR14",
-    "MVR15",
-    "MVR16",
-    "MVR17",
-    "MVR18",
-    "MVR19",
-    "MVR20",
-    "MVR21",
-    "MVR22",
-    "MVR23",
-    "MVR24",
-]
-
-
-VULVAL_MUSCLE_NAMES = [
-    "MVULVA",
-    "vm1AL",
-    "vm1PL",
-    "vm1PR",
-    "vm1AR",
-    "vm2AL",
-    "vm2AR",
-    "vm2PL",
-    "vm2PR",
-]
-
-PHARANGEAL_MUSCLE_NAMES = [
-    "pm1",
-    "pm2D",
-    "pm2VL",
-    "pm2VR",
-    "pm3D",
-    "pm3VL",
-    "pm3VR",
-    "pm4D",
-    "pm4VR",
-    "pm4VL",
-    "pm5D",
-    "pm5VR",
-    "pm5VL",
-    "pm6D",
-    "pm6VR",
-    "pm6VL",
-    "pm7D",
-    "pm7VL",
-    "pm7VR",
-    "pm8",
-]
-
-
-PREFERRED_MUSCLE_NAMES = (
-    BODY_WALL_MUSCLE_NAMES + PHARANGEAL_MUSCLE_NAMES + VULVAL_MUSCLE_NAMES
-)
-
-PHARYNX_CELLS = [
-    "M1",
-    "M2L",
-    "M2R",
-    "M3L",
-    "M3R",
-    "M4",
-    "M5",
-    "I1L",
-    "I1R",
-    "I2L",
-    "I2R",
-    "I3",
-    "I4",
-    "I5",
-    "I6",
-    "MI",
-    "NSML",
-    "NSMR",
-    "MCL",
-    "MCR",
-]
-
-KNOWN_OTHER_CELLS_COOK_19 = [
-    "CEPshDL",
-    "CEPshDR",
-    "CEPshVL",
-    "CEPshVR",
-    "GLRDL",
-    "GLRDR",
-    "GLRL",
-    "GLRR",
-    "GLRVL",
-    "GLRVR",
-    "bm",
-    "e2D",
-    "e2VL",
-    "e2VR",
-    "e3D",
-    "e3VL",
-    "e3VR",
-    "exc_cell",
-    "exc_gl",
-    "g1AL",
-    "g1AR",
-    "g1p",
-    "g2L",
-    "g2R",
-    "hmc",
-    "hyp",
-    "int",
-    "mc1DL",
-    "mc1DR",
-    "mc1V",
-    "mc2DL",
-    "mc2DR",
-    "mc2V",
-    "mc3DL",
-    "mc3DR",
-    "mc3V",
-    "mu_anal",
-    "mu_intL",
-    "mu_intR",
-    "mu_sph",
-]
-KNOWN_OTHER_CELLS_COOK_20 = [
-    "bm",
-    "e2DL",
-    "e2DR",
-    "e2V",
-    "e3D",
-    "e3VL",
-    "e3VR",
-    "g1AL",
-    "g1AR",
-    "g1P",
-    "g2L",
-    "g2R",
-    "mc2DL",
-    "mc2DR",
-    "mc2V",
-    "mc2dl",
-    "mc2dr",
-    "mc3V",
-]
-
-KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
-
-for cell in KNOWN_OTHER_CELLS_COOK_20:
-    if not cell in KNOWN_OTHER_CELLS:
-        KNOWN_OTHER_CELLS.append(cell)
 
 
 def convert_to_preferred_muscle_name(muscle):
@@ -557,12 +24,60 @@ def convert_to_preferred_muscle_name(muscle):
         return "MDL%s" % muscle[6:]
     elif muscle.startswith("BWM-DR"):
         return "MDR%s" % muscle[6:]
+    elif muscle.startswith("dBWM"):
+        return (
+            "MD%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MD%s0%s" % (muscle[4], muscle[5])
+        )
+    elif muscle.startswith("vBWM"):
+        return (
+            "MV%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MV%s0%s" % (muscle[4], muscle[5])
+        )
     elif muscle == "LegacyBodyWallMuscles":
         return "BWM"
+    elif muscle.startswith("pm1"):
+        return "pm1"
+    elif muscle == "pm2vl":
+        return "pm2VL"
+    elif muscle == "pm2vr":
+        return "pm2VR"
+    elif muscle == "pm2d":
+        return "pm2D"
     elif muscle == "pm3vl":
         return "pm3VL"
     elif muscle == "pm3vr":
         return "pm3VR"
+    elif muscle == "pm3d":
+        return "pm3D"
+    elif muscle == "pm4vl":
+        return "pm4VL"
+    elif muscle == "pm4vr":
+        return "pm4VR"
+    elif muscle == "pm4d":
+        return "pm4D"
+    elif muscle == "pm4":
+        return "pm4_UNSPECIFIED"
+    elif muscle == "pm5vl":
+        return "pm5VL"
+    elif muscle == "pm5vr":
+        return "pm5VR"
+    elif muscle == "pm5d":
+        return "pm5D"
+    elif muscle == "pm6vl":
+        return "pm6VL"
+    elif muscle == "pm6vr":
+        return "pm6VR"
+    elif muscle == "pm6d":
+        return "pm6D"
+    elif muscle == "pm7vl":
+        return "pm7VL"
+    elif muscle == "pm7vr":
+        return "pm7VR"
+    elif muscle == "pm7d":
+        return "pm7D"
     else:
         if is_muscle(muscle):
             return muscle
@@ -570,19 +85,43 @@ def convert_to_preferred_muscle_name(muscle):
             return muscle + "???"
 
 
-def get_standard_color(cell):
-    if is_muscle(cell):
-        return "#00dd00"
-    elif cell in PHARYNX_CELLS:
-        return "#0000dd"
-    elif cell in PREFERRED_NEURON_NAMES:
-        return "#dd0000"
+def convert_to_preferred_phar_cell_name(cell):
+    if cell == "mc1v":
+        return "mc1V"
+    elif cell == "mc1dr":
+        return "mc1DR"
+    elif cell == "mc1dl":
+        return "mc1DL"
+    elif cell == "mc2v":
+        return "mc2V"
+    elif cell == "mc2dr":
+        return "mc2DR"
+    elif cell == "mc2dl":
+        return "mc2DL"
+    elif cell == "mc3v":
+        return "mc3V"
+    elif cell == "mc3dr":
+        return "mc3DR"
+    elif cell == "mc3dl":
+        return "mc3DL"
+    elif cell.lower() == "g1p":  # Different between cook 19 & 20
+        return "g1P"
     else:
-        return "#dddd00"
+        if is_marginal_cell(cell):
+            return cell
+
+
+def get_marginal_cell_prefixes():
+    return ["mc"]
+
+
+def is_marginal_cell(cell):
+    known_mc_prefix = get_marginal_cell_prefixes()
+    return cell.startswith(tuple(known_mc_prefix))
 
 
 def get_all_muscle_prefixes():
-    return ["pm", "vm", "um"] + get_body_wall_muscle_prefixes()
+    return ["pm", "vm", "um", "mu_"] + get_body_wall_muscle_prefixes()
 
 
 def get_body_wall_muscle_prefixes():
@@ -590,6 +129,8 @@ def get_body_wall_muscle_prefixes():
 
 
 def is_muscle(cell):
+    if cell in PREFERRED_MUSCLE_NAMES:
+        return True
     known_muscle_prefixes = get_all_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
@@ -600,14 +141,16 @@ def is_body_wall_muscle(cell):
 
 
 def is_neuron(cell):
-    return not is_muscle(cell)
+    return cell in PREFERRED_NEURON_NAMES
 
 
 def remove_leading_index_zero(cell):
     """
     Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
     """
-    if is_neuron(cell) and cell[-2:].startswith("0"):
+    if cell[:2] in ["DA", "AS", "DD", "DB", "VA", "VB", "VC", "VD"] and cell[
+        -2:
+    ].startswith("0"):
         return "%s%s" % (cell[:-2], cell[-1:])
     return cell
 
@@ -655,36 +198,58 @@ class ConnectionInfo:
         return self.__str__()
 
 
-def check_neurons(cells):
-    preferred = []
+def check_cells(cells):
+    in_preferred = []
     not_in_preferred = []
     missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
+    muscles = []
+
     for c in cells:
-        if not c in PREFERRED_NEURON_NAMES:
+        if is_muscle(c):
+            muscles.append(c)
+        elif not c in PREFERRED_NEURON_NAMES:
             if not is_muscle(c):
                 not_in_preferred.append(c)
         else:
-            preferred.append(c)
+            in_preferred.append(c)
+
         if c in missing_preferred:
             missing_preferred.remove(c)
 
-    return preferred, not_in_preferred, missing_preferred
+    if False:
+        print(
+            "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
+            % (
+                len(cells),
+                len(in_preferred),
+                in_preferred,
+                len(not_in_preferred),
+                not_in_preferred,
+                len(missing_preferred),
+                missing_preferred,
+                len(muscles),
+                muscles,
+            )
+        )
+
+    return in_preferred, not_in_preferred, missing_preferred, muscles
 
 
 def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns):
-    print_("Found %s cells: %s\n" % (len(cells), sorted(cells)))
-    # assert(len(cells) == 302)
-    # print_("Expected number of cells correct if include_nonconnected_cells=True")
+    print_("Found %s non-muscle cells: %s\n" % (len(cells), sorted(cells)))
 
-    preferred, not_in_preferred, missing_preferred = check_neurons(cells)
+    preferred, not_in_preferred, missing_preferred, muscles_ = check_cells(cells)
 
     print_(
         "Found %s non-neuron(s) here: %s\n"
         % (len(not_in_preferred), sorted(not_in_preferred))
     )
-    print_("Known neurons not present: %s\n" % (sorted(missing_preferred)))
+    print_(
+        "Known neurons not present (%i): %s\n"
+        % (len(missing_preferred), sorted(missing_preferred))
+    )
 
-    print_("Found %s connections..." % (len(neuron_conns)))
+    print_("Found %s neuron->neuron connections..." % (len(neuron_conns)))
     for c in neuron_conns[:5]:
         print_("   %s" % c)
 
@@ -777,7 +342,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
 if __name__ == "__main__":
     from SpreadsheetDataReader import read_data, read_muscle_data
 
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
+    cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

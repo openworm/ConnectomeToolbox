@@ -2,10 +2,7 @@
 
 ############################################################
 
-#    A simple script to read the values in herm_full_edgelist.csv.
-
-#    This is on of a number of interchangeable "Readers" which can
-#    be used to get connection data for c302
+#    A script to read the values of Cook et al 2019
 
 ############################################################
 
@@ -32,7 +29,6 @@ HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
 
 pre_range = {HERM_CHEM: range(4, 304), HERM_GAP_SYMM: range(4, 472)}
-
 post_range = {HERM_CHEM: range(4, 457), HERM_GAP_SYMM: range(4, 472)}
 
 
@@ -123,108 +119,72 @@ class Cook2019DataReader(ConnectomeDataset):
                     )
                 )
 
-        cells, neuron_conns = self.read_data(include_nonconnected_cells=True)
-        for conn in neuron_conns:
-            self.add_connection(conn)
+        neurons, muscles, other_cells, conns = self.read_all_data()
 
-    def read_data(self, include_nonconnected_cells=False):
+        for conn in conns:
+            self.add_connection_info(conn)
+
+    def read_all_data(self):
         """
-        Args:
-            include_nonconnected_cells (bool): Also append neurons without known connections to other neurons to the 'cells' list. True if they should get appended, False otherwise.
         Returns:
             cells (:obj:`list` of :obj:`str`): List of neurons
             conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
         """
 
-        if not include_nonconnected_cells:
-            raise Exception("Option include_nonconnected_cells=False not supported")
-
+        neurons = set([])
+        muscles = set([])
+        other_cells = set([])
         conns = []
-        cells = []
+
         for conn_type in [HERM_CHEM, HERM_GAP_SYMM]:
             for pre_index in range(len(self.pre_cells[conn_type])):
                 for post_index in range(len(self.post_cells[conn_type])):
+                    num = self.conn_nums[conn_type][pre_index, post_index]
+
                     pre = remove_leading_index_zero(
                         self.pre_cells[conn_type][pre_index]
                     )
-                    if is_muscle(pre):
-                        pre = convert_to_preferred_muscle_name(pre)
-
                     post = remove_leading_index_zero(
                         self.post_cells[conn_type][post_index]
                     )
+                    if self.verbose and num > 0:
+                        print("Conn %s -> %s #%i" % (pre, post, num))
+
+                    if is_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
+
                     if is_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
 
-                    if is_muscle(pre):
-                        continue  # pre is a muscle so ignore
-                    if is_muscle(post):
-                        continue  # post is a muscle so ignore
-
-                    num = self.conn_nums[conn_type][pre_index, post_index]
                     if num > 0:
                         syntype = "Send" if conn_type == HERM_CHEM else "GapJunction"
                         synclass = get_synclass(pre, syntype)
 
-                        conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                        # print ConnectionInfo(pre, post, num, syntype, synclass)
-                        if pre not in cells:
-                            cells.append(pre)
-                        if post not in cells:
-                            cells.append(post)
+                        ci = ConnectionInfo(pre, post, num, syntype, synclass)
+                        if self.verbose:
+                            print("Conn: %s" % (ci))
+                        conns.append(ci)
 
-        return cells, conns
+                        for p in [pre, post]:
+                            if is_neuron(p):
+                                neurons.add(pre)
+                            elif is_muscle(p):
+                                muscles.add(pre)
+                            else:
+                                other_cells.add(p)
 
-    def read_muscle_data(self):
-        """
-        Returns:
-            neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
-            muscles (:obj:`list` of :obj:`str`): List of muscle cells.
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of neuron-muscle connections.
-        """
-
-        neurons = []
-        muscles = []
-        conns = []
-
-        """
-        with open(filename, 'r') as f:
-            reader = csv.DictReader(f)
-            print_("Opened file: " + filename)
-
-            for row in reader:
-                pre, post, num, syntype, synclass = parse_row(row)
-
-                if not (is_neuron(pre) or is_body_wall_muscle(pre)) or not is_body_wall_muscle(post):
-                    continue
-
-                if is_neuron(pre):
-                    pre = remove_leading_index_zero(pre)
-                else:
-                    pre = get_old_muscle_name(pre)
-                post = get_old_muscle_name(post)
-
-                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if is_neuron(pre) and pre not in neurons:
-                    neurons.append(pre)
-                elif is_body_wall_muscle(pre) and pre not in muscles:
-                    muscles.append(pre)
-                if post not in muscles:
-                    muscles.append(post)"""
-
-        return neurons, muscles, conns
+        return list(neurons), list(muscles), list(other_cells), conns
 
 
 tdr_instance = get_instance()
-read_data = tdr_instance.read_data
-read_muscle_data = tdr_instance.read_muscle_data
 
 
 def main():
-    cells, neuron_conns = tdr_instance.read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
+    neurons, muscles, other_cells, conns = tdr_instance.read_all_data()
 
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    # neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
+
+    # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
