@@ -1,6 +1,8 @@
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeReader import DEFAULT_COLORMAP
+from cect.Cells import get_standard_color
 
 import os
 from cect import print_
@@ -62,12 +64,40 @@ class TestDataReader(ConnectomeDataset):
         muscles = []
 
         return neurons, muscles, conns
+    
+    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=DEFAULT_COLORMAP):
+        import plotly.express as px
+        
+        conn_array = self.connections[synclass] 
+        def get_color_html(color, node):                
+            return f'<span style="color:{color};">{node}</span>'
+    
+        
+        node_colors = [(view.get_node_set(node).color if view.has_color() else 
+                       get_standard_color(node)) for node in self.nodes]
+
+        x_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
+        y_ticktext = [get_color_html(color, node) for node, color in zip(self.nodes, node_colors)]
+      
+        # Create the figure
+        fig = px.imshow(
+            conn_array,
+            labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
+            x=x_ticktext,
+            y=y_ticktext,
+            color_continuous_scale=color_continuous_scale,
+        )
+
+        return fig
+
 
 
 tdr_instance = get_instance()
 
 read_data = tdr_instance.read_data
 read_muscle_data = tdr_instance.read_muscle_data
+
+
 
 
 def main():
@@ -82,11 +112,11 @@ def main():
 
     import sys
 
-    from cect.ConnectomeReader import DEFAULT_COLORMAP
+    from cect.ConnectomeView import SMALL_VIEW
 
     if not "-nogui" in sys.argv:
         fig = tdr_instance.to_plotly_matrix_fig(
-            "Acetylcholine", color_continuous_scale=DEFAULT_COLORMAP
+            "Acetylcholine", SMALL_VIEW, color_continuous_scale=DEFAULT_COLORMAP
         )
 
         fig.show()

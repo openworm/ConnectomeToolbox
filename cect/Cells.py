@@ -1144,10 +1144,6 @@ def get_standard_color(cell):
 
     if cell in BODY_WALL_MUSCLE_NAMES + UNSPECIFIED_BODY_WALL_MUSCLES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
-    elif cell == "MUBODY":
-        return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
-    elif cell == "MUHEAD":
-        return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
     elif cell in VULVAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"]
     elif cell in ODD_PHARYNGEAL_MUSCLE_NAMES:
@@ -1156,39 +1152,9 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["even numbered pharyngeal muscle"]
     elif cell in INTERNEURONS_COOK:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-    elif cell == "IN1":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-    elif cell == "IN2":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-    elif cell == "IN3":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-    elif cell == "IN4":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
     elif cell in SENSORY_NEURONS_COOK:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN1":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN2":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN3":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN4":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN5":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell == "SN6":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
     elif cell in MOTORNEURONS_COOK:
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell == "HMN":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell == "SMN":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell == "MNVC":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell == "VC":
-        return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-    elif cell == "HSN":
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
@@ -1230,7 +1196,6 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Alimentary System"]["intestinal cells"]
     elif cell in INTESTINAL_MUSCLES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"]
-
     else:
         raise Exception("Unknown cell: %s!" % cell)
 

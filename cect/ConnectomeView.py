@@ -229,6 +229,7 @@ if __name__ == "__main__":
     v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
 
     from cect.TestDataReader import tdr_instance
+    print(NodeSet(SMALL_VIEW, SMALL_VIEW))
 
     print(tdr_instance.summary())
 

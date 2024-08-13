@@ -85,8 +85,10 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     )
 
 
-def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="    "):
-    fig = connectome.to_plotly_matrix_fig(synclass)
+def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
+    view_name = view.name
+
+    fig = connectome.to_plotly_matrix_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s.json" % (
         reader_name,
@@ -201,7 +203,7 @@ def generate_comparison_page(quick: bool):
                                     f.write(
                                         get_matrix_markdown(
                                             reader_name,
-                                            view.name,
+                                            view,
                                             cv,
                                             sc,
                                             indent=indent + indent,
