@@ -8,7 +8,7 @@ WA_COLORS["Hermaphrodite"] = {}
 # MUSCLE
 WA_COLORS["Hermaphrodite"]["Muscle"] = {}
 WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"] = "#006600"
-WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"] = "#99c66"
+WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"] = "#99cc66"
 WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"] = "#336600"
 WA_COLORS["Hermaphrodite"]["Muscle"]["uterine muscle"] = "#99cc00"
 WA_COLORS["Hermaphrodite"]["Muscle"]["sphincter and anal depressor muscle"] = "#669900"

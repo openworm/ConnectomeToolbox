@@ -1,7 +1,7 @@
 import cect
 
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeReader import check_neurons
+from cect.ConnectomeReader import check_cells
 from cect.Cells import get_cell_internal_link
 from cect import print_
 import json
@@ -22,21 +22,27 @@ reader_pages = {
     "White_whole": "White_whole_data",
     "Witvliet1": "Witvliet1_data",
     "Witvliet2": "Witvliet2_data",
+    "Witvliet3": "Witvliet3_data",
+    "Witvliet4": "Witvliet4_data",
+    "Witvliet5": "Witvliet5_data",
+    "Witvliet6": "Witvliet6_data",
+    "Witvliet7": "Witvliet7_data",
+    "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2020": "Cook2020_data",
 }
 
 all_data[""] = [
-    "Num neurons",
-    "Missing neurons",
-    "Non neurons",
-    "Num muscles",
-    "Num N->N conns",
-    "Num N with ->M",
-    "Num N->M conns",
-    "N->N neurotrans.",
-    "N->M neurotrans.",
+    "Num<br/>neurons",
+    "Missing<br/>neurons",
+    "Non<br/>neurons",
+    "Num<br/>muscles",
+    "Num N->N<br/>conns",
+    "Num N<br/>with ->M",
+    "Num N->M<br/>conns",
+    "N->N<br/>neurotrans.",
+    "N->M<br/>neurotrans.",
 ]
 
 
@@ -44,10 +50,12 @@ def shorten_neurotransmitter(nt):
     return (
         nt.replace("Acetylcholine", "ACh")
         .replace("Serotonin", "5HT")
-        .replace("Glutamate", "Glu")
-        .replace("Tyramine", "Tyr")
-        .replace("FMRFamide", "FMRFam")
+        .replace("Glutamate", "Glu.")
+        .replace("Tyramine", "Tyr.")
+        .replace("FMRFamide", "FMRFam.")
         .replace("Generic_", "Gen_")
+        .replace("Octapamine", "Octapa.")
+        .replace("Dopamine", "Dopa.")
     )
 
 
@@ -85,8 +93,10 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     )
 
 
-def get_matrix_markdown(reader_name, view_name, connectome, synclass, indent="    "):
-    fig = connectome.to_plotly_matrix_fig(synclass)
+def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
+    view_name = view.name
+
+    fig = connectome.to_plotly_matrix_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s.json" % (
         reader_name,
@@ -124,12 +134,19 @@ def generate_comparison_page(quick: bool):
         "White_whole": ["cect.White_whole", "White_1986"],
         "TestData": ["cect.TestDataReader", None],
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
+        "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+
     if not quick:
+        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
+        readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
+        readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
+        readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
+        readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
+        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
-        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
@@ -141,61 +158,24 @@ def generate_comparison_page(quick: bool):
 
         reader_module = importlib.import_module(reader)
 
+        """
         # exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
-        cells, neuron_conns = reader_module.read_data(include_nonconnected_cells=True)
+        cells, neuron_conns = reader_module.read_data()
 
         preferred, not_in_preferred, missing_preferred = check_neurons(cells)
 
-        neuron_nts = {}
-        connectome = None
+        connectome = None"""
 
         try:
             connectome = reader_module.get_instance()
+            preferred, not_in_preferred, missing_preferred, muscles = check_cells(
+                connectome.nodes
+            )
             print_("Adding full connectome info: %s" % connectome)
 
-        except:
-            print_("NOT adding full connectome info")
+        except Exception as e:
+            print_("NOT adding full connectome info (%s)" % e)
             connectome = None
-
-        for c in neuron_conns:
-            nt = c.synclass
-            if len(nt) == 0:
-                nt = "**MISSING**"
-
-            if not nt in neuron_nts:
-                neuron_nts[nt] = 0
-
-            neuron_nts[nt] += 1
-
-        nts_info = ""
-        for nt in sorted(neuron_nts.keys()):
-            nts_info += "%s (%i)<br/>" % (shorten_neurotransmitter(nt), neuron_nts[nt])
-
-        neurons2muscles, muscles, muscle_conns = reader_module.read_muscle_data()
-
-        muscle_nts = {}
-        for c in muscle_conns:
-            nt = c.synclass
-            if len(nt) == 0:
-                nt = "**MISSING**"
-
-            if not nt in muscle_nts:
-                muscle_nts[nt] = 0
-
-            muscle_nts[nt] += 1
-
-        m_nts_info = ""
-        for nt in sorted(muscle_nts):
-            m_nts_info += "%s (%i)<br/>" % (
-                shorten_neurotransmitter(nt),
-                muscle_nts[nt],
-            )
-
-        ref = (
-            "[%s](%s.md)" % (reader_name, reader_pages[reader_name])
-            if reader_name in reader_pages
-            else reader_name
-        )
 
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
@@ -238,7 +218,7 @@ def generate_comparison_page(quick: bool):
                                     f.write(
                                         get_matrix_markdown(
                                             reader_name,
-                                            view.name,
+                                            view,
                                             cv,
                                             sc,
                                             indent=indent + indent,
@@ -276,6 +256,49 @@ def generate_comparison_page(quick: bool):
                             f.write("\n</details>\n")
 
                 print_("Written page: %s" % filename)
+
+        neurons, neuron_conns = connectome.get_neuron_to_neuron_conns()
+        neurons2muscles, muscles, muscle_conns = connectome.get_neuron_to_muscle_conns()
+
+        neuron_nts = {}
+
+        for c in neuron_conns:
+            nt = c.synclass
+            if len(nt) == 0:
+                nt = "**MISSING**"
+
+            if not nt in neuron_nts:
+                neuron_nts[nt] = 0
+
+            neuron_nts[nt] += 1
+
+        nts_info = ""
+        for nt in sorted(neuron_nts.keys()):
+            nts_info += "%s (%i)<br/>" % (shorten_neurotransmitter(nt), neuron_nts[nt])
+
+        muscle_nts = {}
+        for c in muscle_conns:
+            nt = c.synclass
+            if len(nt) == 0:
+                nt = "**MISSING**"
+
+            if not nt in muscle_nts:
+                muscle_nts[nt] = 0
+
+            muscle_nts[nt] += 1
+
+        m_nts_info = ""
+        for nt in sorted(muscle_nts):
+            m_nts_info += "%s (%i)<br/>" % (
+                shorten_neurotransmitter(nt),
+                muscle_nts[nt],
+            )
+
+        ref = (
+            "[%s](%s.md)" % (reader_name, reader_pages[reader_name])
+            if reader_name in reader_pages
+            else reader_name
+        )
 
         all_data[ref] = [
             len(preferred),
