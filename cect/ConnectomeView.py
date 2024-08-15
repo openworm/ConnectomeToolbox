@@ -6,6 +6,9 @@ from cect.Cells import PHARYNGEAL_NEURONS
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import KNOWN_OTHER_CELLS
+from cect.Cells import MOTORNEURONS_COOK
+from cect.Cells import SENSORY_NEURONS_COOK
+from cect.Cells import INTERNEURONS_COOK
 
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
@@ -18,6 +21,9 @@ from cect.Cells import SUBLATERAL_MOTORNEURONS_COOK
 from cect.Cells import VENTRAL_CORD_MOTORNEURONS
 from cect.Cells import HSN_MOTORNEURONS
 from cect.Cells import VC_HERM_MOTORNEURONS
+from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import PHARYNGEAL_INTERNEURONS
+from cect.Cells import PHARYNGEAL_MOTORNEURONS
 
 from cect.Cells import get_standard_color
 
@@ -107,7 +113,19 @@ for cell in (
 
 
 FULL_VIEW = View("Full View", [], EXC_INH_GJ_SYN_CLASSES)
-for cell in sorted(PREFERRED_NEURON_NAMES):
+for cell in (
+    sorted(SENSORY_NEURONS_COOK)
+    + sorted(INTERNEURONS_NONPHARYNGEAL_COOK)
+    + sorted(
+        HEAD_MOTORNEURONS_COOK
+        + VENTRAL_CORD_MOTORNEURONS
+        + SUBLATERAL_MOTORNEURONS_COOK
+        + HSN_MOTORNEURONS
+    )
+    + sorted(PHARYNGEAL_NEURONS)
+    + sorted(PHARYNGEAL_INTERNEURONS)
+    + sorted(PHARYNGEAL_MOTORNEURONS)
+):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
 PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_SYN_CLASSES)
@@ -223,6 +241,8 @@ if __name__ == "__main__":
     v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
 
     from cect.TestDataReader import tdr_instance
+
+    print(NodeSet(SMALL_VIEW, SMALL_VIEW))
 
     print(tdr_instance.summary())
 

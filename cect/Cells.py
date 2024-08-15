@@ -1197,7 +1197,6 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Alimentary System"]["intestinal cells"]
     elif cell in INTESTINAL_MUSCLES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"]
-
     else:
         raise Exception("Unknown cell: %s!" % cell)
 

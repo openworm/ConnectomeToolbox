@@ -6,23 +6,23 @@
       "name": "0",
       "type": "heatmap",
       "x": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff66cc;\">AWBR</span>",
+        "<span style=\"color:#ff66cc;\">IL2R</span>",
+        "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">RMHR</span>",
+        "<span style=\"color:#ff66cc;\">URXR</span>"
       ],
       "xaxis": "x",
       "y": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
+        "<span style=\"color:#ff66cc;\">ASHR</span>",
+        "<span style=\"color:#ff66cc;\">ASKR</span>",
+        "<span style=\"color:#ff66cc;\">AWBR</span>",
+        "<span style=\"color:#ff66cc;\">IL2R</span>",
+        "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">RMHR</span>",
+        "<span style=\"color:#ff66cc;\">URXR</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -31,61 +31,61 @@
           0.0,
           0.0,
           0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          2.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
           2.0,
           0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          1.0
-        ],
-        [
-          2.0,
-          1.0,
-          1.0,
-          1.0,
-          0.0,
-          1.0,
-          1.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          1.0,
-          1.0,
           0.0,
           0.0
         ]

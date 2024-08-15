@@ -1,8 +1,10 @@
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import os
+import sys
 from cect import print_
 
 
@@ -80,18 +82,13 @@ def main():
 
     print(tdr_instance.summary())
 
-    import sys
+    from cect.ConnectomeView import RAW_VIEW
 
-    from cect.ConnectomeReader import DEFAULT_COLORMAP
-
+    fig = tdr_instance.to_plotly_matrix_fig(
+        "Acetylcholine", RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP
+    )
     if not "-nogui" in sys.argv:
-        fig = tdr_instance.to_plotly_matrix_fig(
-            "Acetylcholine", color_continuous_scale=DEFAULT_COLORMAP
-        )
-
-        fig1 = tdr_instance.to_plotly_graph_fig("Acetylcholine")
         fig.show()
-        fig1.show()
 
 
 if __name__ == "__main__":

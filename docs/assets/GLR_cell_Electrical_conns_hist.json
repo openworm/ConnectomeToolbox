@@ -33,7 +33,85 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Witvliet1 Electrical conns",
+      "name": "Witvliet2 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet4 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet6 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet7 Electrical conns",
       "type": "scatter",
       "x": [
         "GLRDL",
