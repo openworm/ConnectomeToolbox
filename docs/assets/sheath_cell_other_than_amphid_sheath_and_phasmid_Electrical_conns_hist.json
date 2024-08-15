@@ -7,7 +7,29 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Witvliet1 Electrical conns",
+      "name": "Witvliet5 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet7 Electrical conns",
       "type": "scatter",
       "x": [
         "CEPshDL",

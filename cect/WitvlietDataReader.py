@@ -14,6 +14,13 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
 
+def fix_witvliet_cell_naming(cell):
+    if cell == "excgl":
+        return "exc_gl"
+    else:
+        return cell
+
+
 class WitvlietDataReader(ConnectomeDataset):
     verbose = False
 
@@ -42,8 +49,8 @@ class WitvlietDataReader(ConnectomeDataset):
             pre = str(row[0])
             post = str(row[1])
 
-            pre = remove_leading_index_zero(pre)
-            post = remove_leading_index_zero(post)
+            pre = fix_witvliet_cell_naming(remove_leading_index_zero(pre))
+            post = fix_witvliet_cell_naming(remove_leading_index_zero(post))
 
             if self.verbose and num > 0:
                 print("Conn %s -> %s #%i" % (pre, post, num))

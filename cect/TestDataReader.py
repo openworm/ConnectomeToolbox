@@ -4,6 +4,7 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import os
+import sys
 from cect import print_
 
 
@@ -86,7 +87,8 @@ def main():
     fig = tdr_instance.to_plotly_matrix_fig(
         "Acetylcholine", RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP
     )
-    fig.show()
+    if not "-nogui" in sys.argv:
+        fig.show()
 
 
 if __name__ == "__main__":

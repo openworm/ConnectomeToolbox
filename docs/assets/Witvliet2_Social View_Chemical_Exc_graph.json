@@ -17,46 +17,20 @@
         "URXR"
       ],
       "type": "scatter",
-      "x": [
-        0.147525,
-        0.29407,
-        null,
-        0.147525,
-        -0.021971,
-        null,
-        -0.28953,
-        -0.193261,
-        null,
-        -0.021971,
-        -0.193261,
-        null
-      ],
-      "y": [
-        -0.179927,
-        -0.37832,
-        null,
-        -0.179927,
-        0.048679,
-        null,
-        0.407971,
-        0.27877,
-        null,
-        0.048679,
-        0.27877,
-        null
-      ]
+      "x": [],
+      "y": []
     },
     {
       "hoverinfo": "text",
       "marker": {
         "color": [
-          2,
           0,
-          1,
-          1,
-          2,
           0,
-          2
+          0,
+          0,
+          0,
+          0,
+          0
         ],
         "colorbar": {
           "thickness": 15,
@@ -130,32 +104,32 @@
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>RMGR</b>: 1<br>Conns out: <b>AWBR</b>: 1, <b>RMGR</b>: 1",
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
-        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 1",
-        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URXR</b>: 3<br>Conns out: <b>URXR</b>: 1",
-        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 1, <b>URXR</b>: 1<br>Conns out: <b>ASHR</b>: 1, <b>URXR</b>: 1",
+        "<b>AWBR</b><br>Sensory neuron (amphid)",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)",
+        "<b>RMGR</b><br>Layer 2 interneuron",
         "<b>RMHR</b><br>Head motor neuron",
-        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>IL2R</b>: 1, <b>RMGR</b>: 1<br>Conns out: <b>IL2R</b>: 3, <b>RMGR</b>: 1"
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)"
       ],
       "type": "scatter",
       "x": [
-        0.147525,
-        -0.936832,
-        0.29407,
-        -0.28953,
-        -0.021971,
-        1.0,
-        -0.193261
+        0.250422,
+        -1.0,
+        -0.483166,
+        0.227871,
+        0.785579,
+        0.81386,
+        -0.594565
       ],
       "y": [
-        -0.179927,
-        -0.683639,
-        -0.37832,
-        0.407971,
-        0.048679,
-        0.506467,
-        0.27877
+        0.952468,
+        -0.101164,
+        -0.895159,
+        -0.849979,
+        -0.360541,
+        0.403293,
+        0.851081
       ]
     }
   ],

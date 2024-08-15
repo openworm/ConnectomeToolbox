@@ -18,37 +18,19 @@
       ],
       "type": "scatter",
       "x": [
-        0.131002,
-        0.095782,
+        -0.392063,
+        -0.58023,
         null,
-        -0.087959,
-        0.095782,
-        null,
-        -0.087959,
-        0.02019,
-        null,
-        0.095782,
-        0.294345,
-        null,
-        0.095782,
-        0.02019,
+        -0.392063,
+        -0.203457,
         null
       ],
       "y": [
-        -0.347345,
-        -0.080138,
+        0.117118,
+        0.129744,
         null,
-        -0.034598,
-        -0.080138,
-        null,
-        -0.034598,
-        0.092477,
-        null,
-        -0.080138,
-        -0.063729,
-        null,
-        -0.080138,
-        0.092477,
+        0.117118,
+        0.104961,
         null
       ]
     },
@@ -56,13 +38,13 @@
       "hoverinfo": "text",
       "marker": {
         "color": [
-          0,
-          0,
-          1,
           2,
-          4,
           1,
-          2
+          0,
+          0,
+          1,
+          0,
+          0
         ],
         "colorbar": {
           "thickness": 15,
@@ -136,32 +118,32 @@
       },
       "mode": "markers",
       "text": [
-        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)",
-        "<b>ASKR</b><br>Sensory neuron (amphid)",
-        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns in: <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 1",
-        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>RMGR</b>: 2, <b>URXR</b>: 1<br>Conns out: <b>RMGR</b>: 2, <b>URXR</b>: 1",
-        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>IL2R</b>: 2, <b>RMHR</b>: 2, <b>URXR</b>: 2, <b>AWBR</b>: 1<br>Conns out: <b>IL2R</b>: 2, <b>RMHR</b>: 2, <b>URXR</b>: 2, <b>AWBR</b>: 1",
-        "<b>RMHR</b><br>Head motor neuron<br>Conns in: <b>RMGR</b>: 2<br>Conns out: <b>RMGR</b>: 2",
-        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>RMGR</b>: 2, <b>IL2R</b>: 1<br>Conns out: <b>RMGR</b>: 2, <b>IL2R</b>: 1"
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ASKR</b>: 1, <b>RMGR</b>: 1<br>Conns out: <b>ASKR</b>: 1, <b>RMGR</b>: 1",
+        "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 1<br>Conns out: <b>ASHR</b>: 1",
+        "<b>AWBR</b><br>Sensory neuron (amphid)",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 1<br>Conns out: <b>ASHR</b>: 1",
+        "<b>RMHR</b><br>Head motor neuron",
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)"
       ],
       "type": "scatter",
       "x": [
-        0.546468,
-        -0.999827,
-        0.131002,
-        -0.087959,
-        0.095782,
-        0.294345,
-        0.02019
+        -0.392063,
+        -0.58023,
+        -0.242628,
+        0.543347,
+        -0.203457,
+        0.951789,
+        -0.076758
       ],
       "y": [
-        1.0,
-        -0.566667,
-        -0.347345,
-        -0.034598,
-        -0.080138,
-        -0.063729,
-        0.092477
+        0.117118,
+        0.129744,
+        -0.989997,
+        -0.793485,
+        0.104961,
+        0.431659,
+        1.0
       ]
     }
   ],

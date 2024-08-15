@@ -22,21 +22,27 @@ reader_pages = {
     "White_whole": "White_whole_data",
     "Witvliet1": "Witvliet1_data",
     "Witvliet2": "Witvliet2_data",
+    "Witvliet3": "Witvliet3_data",
+    "Witvliet4": "Witvliet4_data",
+    "Witvliet5": "Witvliet5_data",
+    "Witvliet6": "Witvliet6_data",
+    "Witvliet7": "Witvliet7_data",
+    "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2020": "Cook2020_data",
 }
 
 all_data[""] = [
-    "Num neurons",
-    "Missing neurons",
-    "Non neurons",
-    "Num muscles",
-    "Num N->N conns",
-    "Num N with ->M",
-    "Num N->M conns",
-    "N->N neurotrans.",
-    "N->M neurotrans.",
+    "Num<br/>neurons",
+    "Missing<br/>neurons",
+    "Non<br/>neurons",
+    "Num<br/>muscles",
+    "Num N->N<br/>conns",
+    "Num N<br/>with ->M",
+    "Num N->M<br/>conns",
+    "N->N<br/>neurotrans.",
+    "N->M<br/>neurotrans.",
 ]
 
 
@@ -44,10 +50,12 @@ def shorten_neurotransmitter(nt):
     return (
         nt.replace("Acetylcholine", "ACh")
         .replace("Serotonin", "5HT")
-        .replace("Glutamate", "Glu")
-        .replace("Tyramine", "Tyr")
-        .replace("FMRFamide", "FMRFam")
+        .replace("Glutamate", "Glu.")
+        .replace("Tyramine", "Tyr.")
+        .replace("FMRFamide", "FMRFam.")
         .replace("Generic_", "Gen_")
+        .replace("Octapamine", "Octapa.")
+        .replace("Dopamine", "Dopa.")
     )
 
 
@@ -128,10 +136,17 @@ def generate_comparison_page(quick: bool):
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+
     if not quick:
+        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
+        readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
+        readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
+        readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
+        readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
+        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
