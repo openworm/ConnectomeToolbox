@@ -11,6 +11,7 @@ import pandas as pd
 import sys
 
 from cect.WormAtlasInfo import WA_COLORS
+from cect import print_
 
 cell_notes = {}
 
@@ -1328,38 +1329,51 @@ def _generate_cell_table(cell_type, cells):
     from cect.Comparison import _format_json
     from cect.Comparison import shorten_neurotransmitter
 
-    all_syn_types = set([])
-    for connectome in connectomes.values():
-        for st in connectome.connections:
-            all_syn_types.add(st)
+    print_(" - Adding table for %s" % cell_type)
+
+    syn_summaries = {
+        "Chemical conns in": ["Acetylcholine", "Generic_CS", "GABA"],
+        "Chemical conns out": ["Acetylcholine", "Generic_CS", "GABA"],
+        "Electrical conns": ["Generic_GJ"],
+    }
+
     fig_md = ""
 
-    for syn_type in sorted(all_syn_types):
+    for syn_summary in syn_summaries:
         fig = go.Figure()
         fig.layout.showlegend = True
 
-        fig_md += '\n=== "%s"\n\n' % syn_type
-        fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
+        fig_md += '\n=== "%s"\n\n' % syn_summary
+        # fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
 
+        nonempty_fig_present = False
         for reader_name, connectome in connectomes.items():
             sorted_cells = sorted(cells)
 
             indent = "    "
-            nonempty_fig_present = False
             y = []
             for cell in sorted_cells:
-                conns_from = connectome.get_connections_to(cell, syn_type)
-                y.append(len(conns_from))
+                syn_types = syn_summaries[syn_summary]
+                total_y = 0
+                for syn_type in syn_types:
+                    if "out" in syn_summary:
+                        conns_here = connectome.get_connections_from(cell, syn_type)
+                    else:
+                        conns_here = connectome.get_connections_to(cell, syn_type)
+                    print_(
+                        "Conns: %i for %s of type %s (%s)"
+                        % (len(conns_here), cell, syn_type, syn_summary)
+                    )
+                    total_y += len(conns_here)
+
+                y.append(total_y)
 
             if sum(y) > 0:
                 marker_symbol = "square"
                 dash = "solid"
-                if "GJ" in syn_type:
-                    marker_symbol = "circle"
-                    dash = "dot"
 
                 data = fig.add_scatter(
-                    name="%s %s" % (reader_name, shorten_neurotransmitter(syn_type)),
+                    name="%s %s" % (reader_name, syn_summary),
                     x=sorted_cells,
                     y=y,
                     marker_symbol=marker_symbol,
@@ -1370,7 +1384,7 @@ def _generate_cell_table(cell_type, cells):
         if nonempty_fig_present:
             asset_filename = "assets/%s_%s_hist.json" % (
                 cell_type.replace(" ", "_"),
-                syn_type,
+                syn_summary.replace(" ", "_"),
             )
 
             with open("./docs/%s" % asset_filename, "w") as asset_file:

@@ -4,6 +4,7 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 import os
+import sys
 from cect import print_
 
 
@@ -63,15 +64,12 @@ class TestDataReader(ConnectomeDataset):
         muscles = []
 
         return neurons, muscles, conns
-    
 
 
 tdr_instance = get_instance()
 
 read_data = tdr_instance.read_data
 read_muscle_data = tdr_instance.read_muscle_data
-
-
 
 
 def main():
@@ -86,8 +84,12 @@ def main():
 
     from cect.ConnectomeView import RAW_VIEW
 
-    fig = tdr_instance.to_plotly_matrix_fig("Acetylcholine", RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP)
-    fig.show()
+    fig = tdr_instance.to_plotly_matrix_fig(
+        "Acetylcholine", RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP
+    )
+    if not "-nogui" in sys.argv:
+        fig.show()
+
 
 if __name__ == "__main__":
     main()
