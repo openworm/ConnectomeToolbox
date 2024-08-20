@@ -1907,3 +1907,9 @@ if __name__ == "__main__":
                             f.write(
                                 _generate_cell_table(cell_type, MALE_DIAGONAL_MUSCLES)
                             )
+                        elif cell_type == "ray structural cell":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_RAY_STRUCTURAL_CELLS
+                                )
+                            )

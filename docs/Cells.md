@@ -1528,3 +1528,65 @@
 #### ![#339999](https://via.placeholder.com/15/339999/339999.png) Sheath cell (spicules, hook or post-cloacal sensilla)
 #### ![#ff9999](https://via.placeholder.com/15/ff9999/ff9999.png) Socket cell (spicules, hook or post-cloacal sensilla)
 #### ![#006666](https://via.placeholder.com/15/006666/006666.png) Ray structural cell
+
+=== "Chemical conns in"
+
+
+    ```plotly
+    ---8<-- "./assets/ray_structural_cell_Chemical_conns_in_hist.json"
+    ```
+
+
+=== "Chemical conns out"
+
+    No connections of this type found.
+
+
+=== "Electrical conns"
+
+
+    ```plotly
+    ---8<-- "./assets/ray_structural_cell_Electrical_conns_hist.json"
+    ```
+
+
+|                           | 0                        | 1                                          | 2                                                                                   |
+|:--------------------------|:-------------------------|:-------------------------------------------|:------------------------------------------------------------------------------------|
+|                           | Notes                    | Datasets                                   | Link                                                                                |
+| <a name="R1shL"></a>R1shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R1shframeset.html) |
+| <a name="R1shR"></a>R1shR | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R1shframeset.html) |
+| <a name="R1stL"></a>R1stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R1stframeset.html) |
+| <a name="R1stR"></a>R1stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R1stframeset.html) |
+| <a name="R2shL"></a>R2shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R2shframeset.html) |
+| <a name="R2shR"></a>R2shR | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R2shframeset.html) |
+| <a name="R2stL"></a>R2stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R2stframeset.html) |
+| <a name="R2stR"></a>R2stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R2stframeset.html) |
+| <a name="R3shL"></a>R3shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R3shframeset.html) |
+| <a name="R3shR"></a>R3shR | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R3shframeset.html) |
+| <a name="R3stL"></a>R3stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R3stframeset.html) |
+| <a name="R3stR"></a>R3stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R3stframeset.html) |
+| <a name="R4shL"></a>R4shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R4shframeset.html) |
+| <a name="R4shR"></a>R4shR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R4shframeset.html) |
+| <a name="R4stL"></a>R4stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R4stframeset.html) |
+| <a name="R4stR"></a>R4stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R4stframeset.html) |
+| <a name="R5shL"></a>R5shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R5shframeset.html) |
+| <a name="R5shR"></a>R5shR | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R5shframeset.html) |
+| <a name="R5stL"></a>R5stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R5stframeset.html) |
+| <a name="R5stR"></a>R5stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R5stframeset.html) |
+| <a name="R6shL"></a>R6shL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R6shframeset.html) |
+| <a name="R6shR"></a>R6shR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R6shframeset.html) |
+| <a name="R6stL"></a>R6stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R6stframeset.html) |
+| <a name="R6stR"></a>R6stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R6stframeset.html) |
+| <a name="R7shL"></a>R7shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R7shframeset.html) |
+| <a name="R7shR"></a>R7shR | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R7shframeset.html) |
+| <a name="R7stL"></a>R7stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R7stframeset.html) |
+| <a name="R7stR"></a>R7stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R7stframeset.html) |
+| <a name="R8shL"></a>R8shL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R8shframeset.html) |
+| <a name="R8shR"></a>R8shR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R8shframeset.html) |
+| <a name="R8stL"></a>R8stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R8stframeset.html) |
+| <a name="R8stR"></a>R8stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R8stframeset.html) |
+| <a name="R9shL"></a>R9shL | Male ray structural cell | [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R9shframeset.html) |
+| <a name="R9shR"></a>R9shR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R9shframeset.html) |
+| <a name="R9stL"></a>R9stL | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R9stframeset.html) |
+| <a name="R9stR"></a>R9stR | Male ray structural cell |                                            | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/R9stframeset.html) |
+
