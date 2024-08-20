@@ -30,6 +30,7 @@ reader_pages = {
     "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Cook2019Herm": "Cook2019Herm_data",
+    "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
 }
 
@@ -149,6 +150,7 @@ def generate_comparison_page(quick: bool):
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
     for reader_name, reader_info in readers.items():
         reader = reader_info[0]
@@ -207,6 +209,7 @@ def generate_comparison_page(quick: bool):
                         indent = "    "
 
                         for view in ALL_VIEWS:
+                            print_("Generating view: %s" % view.name)
                             cv = connectome.get_connectome_view(view)
 
                             f.write('=== "%s"\n' % view.name)

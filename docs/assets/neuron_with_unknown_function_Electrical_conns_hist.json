@@ -35,6 +35,24 @@
         4,
         4
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "CANL",
+        "CANR"
+      ],
+      "y": [
+        4,
+        4
+      ]
     }
   ],
   "layout": {

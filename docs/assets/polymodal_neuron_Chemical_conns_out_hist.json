@@ -95,6 +95,30 @@
         11,
         10
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Chemical conns out",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        2,
+        3,
+        15,
+        11,
+        10
+      ]
     }
   ],
   "layout": {

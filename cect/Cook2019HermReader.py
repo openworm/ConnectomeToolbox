@@ -1,5 +1,5 @@
-# Temporary class to allow this to be used in comparison notebook.
-# Should be tidied up.
+# Reader for Cook et al 2019 data
+
 
 from cect.Cook2019DataReader import Cook2019DataReader
 
@@ -7,7 +7,7 @@ from cect.ConnectomeReader import analyse_connections
 
 
 def get_instance():
-    return Cook2019DataReader()
+    return Cook2019DataReader("Hermaphodite")
 
 
 my_instance = get_instance()

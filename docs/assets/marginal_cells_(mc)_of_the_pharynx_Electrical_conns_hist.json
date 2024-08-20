@@ -63,6 +63,38 @@
         6,
         5
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "mc1DL",
+        "mc1DR",
+        "mc1V",
+        "mc2DL",
+        "mc2DR",
+        "mc2V",
+        "mc3DL",
+        "mc3DR",
+        "mc3V"
+      ],
+      "y": [
+        5,
+        4,
+        4,
+        4,
+        4,
+        2,
+        6,
+        6,
+        5
+      ]
     }
   ],
   "layout": {
