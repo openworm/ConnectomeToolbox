@@ -241,6 +241,28 @@
         4,
         8
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        2,
+        1,
+        7,
+        4
+      ]
     }
   ],
   "layout": {

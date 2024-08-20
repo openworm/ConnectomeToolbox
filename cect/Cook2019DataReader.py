@@ -27,9 +27,26 @@ from cect import print_
 
 HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
+MALE_CHEM = "male chemical"
+MALE_GAP_SYMM = "male gap jn symmetric"
 
-pre_range = {HERM_CHEM: range(4, 304), HERM_GAP_SYMM: range(4, 472)}
-post_range = {HERM_CHEM: range(4, 457), HERM_GAP_SYMM: range(4, 472)}
+SEX_SPECIFIC_SHEETS = {
+    "Hermaphodite": [HERM_CHEM, HERM_GAP_SYMM],
+    "Male": [MALE_CHEM, MALE_GAP_SYMM],
+}
+
+pre_range = {
+    HERM_CHEM: range(4, 304),
+    HERM_GAP_SYMM: range(4, 472),
+    MALE_CHEM: range(4, 386),
+    MALE_GAP_SYMM: range(4, 472),
+}
+post_range = {
+    HERM_CHEM: range(4, 457),
+    HERM_GAP_SYMM: range(4, 472),
+    MALE_CHEM: range(4, 579),
+    MALE_GAP_SYMM: range(4, 589),
+}
 
 
 def get_synclass(cell, syntype):
@@ -42,18 +59,15 @@ def get_synclass(cell, syntype):
         return "Acetylcholine"
 
 
-def get_instance():
-    return Cook2019DataReader()
-
-
 class Cook2019DataReader(ConnectomeDataset):
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
     verbose = False
 
-    def __init__(self):
+    def __init__(self, sex):
         ConnectomeDataset.__init__(self)
+        self.sex = sex
 
         wb = load_workbook(self.filename)
         print_("Opened the Excel file: " + self.filename)
@@ -62,7 +76,7 @@ class Cook2019DataReader(ConnectomeDataset):
         self.post_cells = {}
         self.conn_nums = {}
 
-        for conn_type in [HERM_CHEM, HERM_GAP_SYMM]:
+        for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             sheet = wb.get_sheet_by_name(conn_type)
             print("Looking at sheet: %s" % conn_type)
 
@@ -105,7 +119,7 @@ class Cook2019DataReader(ConnectomeDataset):
                     row = 4 + i
                     col = 4 + j
                     val = sheet.cell(row=row, column=col).value
-                    # print('Cell (%i,%i) [row %i, col %i] = %s'%(i,j,row, col, val))
+                    print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
                     if val is not None:
                         self.conn_nums[conn_type][i, j] = int(val)
 
@@ -136,7 +150,7 @@ class Cook2019DataReader(ConnectomeDataset):
         other_cells = set([])
         conns = []
 
-        for conn_type in [HERM_CHEM, HERM_GAP_SYMM]:
+        for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             for pre_index in range(len(self.pre_cells[conn_type])):
                 for post_index in range(len(self.post_cells[conn_type])):
                     num = self.conn_nums[conn_type][pre_index, post_index]
@@ -157,7 +171,7 @@ class Cook2019DataReader(ConnectomeDataset):
                         post = convert_to_preferred_muscle_name(post)
 
                     if num > 0:
-                        syntype = "Send" if conn_type == HERM_CHEM else "GapJunction"
+                        syntype = "Send" if "chemical" in conn_type else "GapJunction"
                         synclass = get_synclass(pre, syntype)
 
                         ci = ConnectionInfo(pre, post, num, syntype, synclass)
@@ -176,15 +190,14 @@ class Cook2019DataReader(ConnectomeDataset):
         return list(neurons), list(muscles), list(other_cells), conns
 
 
-tdr_instance = get_instance()
-
-
 def main():
-    neurons, muscles, other_cells, conns = tdr_instance.read_all_data()
+    tdr_instance = Cook2019DataReader("Hermaphodite")
 
-    # neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
+    cells, neuron_conns = tdr_instance.read_data()
 
-    # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
+
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 

@@ -95,6 +95,30 @@
         2,
         6
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        1,
+        4,
+        3,
+        2,
+        6
+      ]
     }
   ],
   "layout": {
