@@ -278,8 +278,18 @@ class ConnectomeDataset:
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
+        print("==============")
+        print(f"Generating: {synclass} for {view.name}")
+
+        DEFAULT_NODE_SIZE = 15
+
+        def get_node_size(node_set):
+            return DEFAULT_NODE_SIZE * math.sqrt(len(node_set.cells))
+
         import plotly.graph_objects as go
         import networkx as nx
+
+        gap_junction = synclass == "Electrical"
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
@@ -292,39 +302,78 @@ class ConnectomeDataset:
         node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
         node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
-        edge_x = []
-        edge_y = []
-        weights = []
-
-        import random
+        edge_traces = []
 
         for edge in G.edges():
-            x0, y0 = (float("{:.6f}".format(a)) for a in pos[edge[0]])
-            x1, y1 = (float("{:.6f}".format(a)) for a in pos[edge[1]])
-            edge_x.append(x0)
-            edge_x.append(x1)
-            edge_x.append(None)
-            edge_y.append(y0)
-            edge_y.append(y1)
-            edge_y.append(None)
+            dirs = [[edge[0], edge[1]], [edge[1], edge[0]]]
+            for dir_ in dirs:
+                edge_x = []
+                edge_y = []
+                from_node_set = view.get_node_set(self.nodes[dir_[0]])
 
-        # Add nodes to the figure
-        edge_trace = go.Scatter(
-            x=edge_x,
-            y=edge_y,
-            mode="lines",
-            text=self.nodes,
-            line=dict(color="grey", width=1),
-            hoverinfo="none",
-        )
+                conn_weight = conn_array[dir_[0], dir_[1]]
+                weight = min(10, math.sqrt(conn_weight))
+                opposite_dir_weight = math.sqrt(conn_array[dir_[1], dir_[0]])
+
+                straight = edge[0] != edge[1] and (
+                    gap_junction or opposite_dir_weight == 0
+                )  # i.e. connections in both dirs, so add a curve...
+
+                if weight > 0:
+                    x0, y0 = (float("{:.6f}".format(a)) for a in pos[dir_[0]])
+                    x1, y1 = (float("{:.6f}".format(a)) for a in pos[dir_[1]])
+
+                    edge_x.append(x0)
+                    edge_y.append(y0)
+
+                    if x0 != x1 and y0 != y1:
+                        if not straight:
+                            L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
+                            offset = 0.2
+                            edge_x.append(((x0 + x1) / 2) + offset * ((y0 - y1)))
+                            edge_y.append(((y0 + y1) / 2) + offset * ((x1 - x0)))
+                    else:
+                        circle_offset_a = get_node_size(from_node_set) / 100
+
+                        edge_x.append(x0 - circle_offset_a)
+                        edge_y.append(y0 + circle_offset_a / 3)
+                        edge_x.append(x0 - circle_offset_a / 3)
+                        edge_y.append(y0 + circle_offset_a)
+
+                    edge_x.append(x1)
+                    edge_y.append(y1)
+                    # edge_x.append(None)
+                    # edge_y.append(None)
+
+                    print(
+                        f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}"
+                    )
+                    line_color = "grey"
+                    if gap_junction:
+                        line_color = "#ff6f6f "
+                    elif from_node_set.color is not None:
+                        line_color = from_node_set.color
+
+                    # Add edges to the figure
+                    edge_trace = go.Scatter(
+                        x=edge_x,
+                        y=edge_y,
+                        mode="lines",
+                        # marker=dict(symbol="arrow",size=weight * 3,angleref="previous",     ),
+                        line=dict(
+                            color=line_color,
+                            width=weight,
+                        ),
+                        hoverinfo="none",
+                        line_shape="spline" if not straight else "linear",
+                    )
+                    edge_traces.append(edge_trace)
 
         node_adjacencies = []
         node_colours = []
         node_text = []
         node_sizes = []
         node_shapes = []
-
-        DEFAULT_SIZE = 10
 
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
@@ -339,7 +388,7 @@ class ConnectomeDataset:
             if view.has_color():
                 node_colours.append(node_set.color)
 
-            node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
+            node_sizes.append(get_node_size(node_set))
 
             if node_set.shape is not None:
                 node_shapes.append(node_set.shape)
@@ -385,7 +434,7 @@ class ConnectomeDataset:
                 colorscale="YlGnBu",
                 reversescale=True,
                 color=[],
-                size=DEFAULT_SIZE,
+                size=DEFAULT_NODE_SIZE,
                 colorbar=dict(
                     thickness=15,
                     title="Node Connections",
@@ -394,6 +443,7 @@ class ConnectomeDataset:
                 ),
                 line_width=1,
             ),
+            opacity=0.9,
             hoverinfo="text",
         )
 
@@ -403,14 +453,20 @@ class ConnectomeDataset:
         node_trace.text = node_text
 
         fig = go.Figure(
-            data=[edge_trace, node_trace],
+            data=edge_traces + [node_trace],
             layout=go.Layout(
                 showlegend=False,
                 hovermode="closest",
                 margin=dict(b=20, l=5, r=5, t=40),
                 xaxis=dict(showgrid=False, zeroline=False),
                 yaxis=dict(showgrid=False, zeroline=False),
+                width=800,
+                height=800,
             ),
+        )
+        fig.update_yaxes(
+            scaleanchor="x",
+            scaleratio=1,
         )
 
         return fig

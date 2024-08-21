@@ -189,7 +189,7 @@ SMALL_VIEW.node_sets.append(
     NodeSet(
         "SMN",
         SUBLATERAL_MOTORNEURONS_COOK,
-        color="#FF6000",
+        color="#e59636",
         shape="circle",
         position=(4.5, 2.2),
     )
@@ -199,7 +199,7 @@ SMALL_VIEW.node_sets.append(
     NodeSet(
         "MNVC",
         VENTRAL_CORD_MOTORNEURONS,
-        color="#BFA700",
+        color="#B2832b",
         shape="circle",
         position=(7.1, 1),
     )
@@ -219,12 +219,12 @@ SMALL_VIEW.node_sets.append(
 
 SMALL_VIEW.node_sets.append(
     NodeSet(
-        "MUBODY", BODY_MUSCLES_COOK, color="#964B00", shape="square", position=(5, 0.73)
+        "MUBODY", BODY_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(5, 0.73)
     )
 )
 SMALL_VIEW.node_sets.append(
     NodeSet(
-        "MUHEAD", HEAD_MUSCLES_COOK, color="#964B00", shape="square", position=(3.1, 1)
+        "MUHEAD", HEAD_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(3.1, 1)
     )
 )
 
