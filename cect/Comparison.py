@@ -124,8 +124,9 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     )
 
 
-def generate_comparison_page(quick: bool):
+def generate_comparison_page(quick: bool, color_table=False):
     connectomes = {}
+    all_connectomes = {}
 
     readers = {
         "SSData": ["cect.SpreadsheetDataReader", None],
@@ -152,8 +153,12 @@ def generate_comparison_page(quick: bool):
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
+    main_mk = "# Comparison between data readers\n"
+    table = ""
+
     for reader_name, reader_info in readers.items():
         reader = reader_info[0]
+
         decription_page = reader_info[1] if len(reader_info) > 1 else None
 
         print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
@@ -170,6 +175,7 @@ def generate_comparison_page(quick: bool):
 
         try:
             connectome = reader_module.get_instance()
+            all_connectomes[reader_name] = connectome
             preferred, not_in_preferred, missing_preferred, muscles = check_cells(
                 connectome.nodes
             )
@@ -325,11 +331,45 @@ def generate_comparison_page(quick: bool):
 
     # h = HTML(df_all.to_html(escape=False, index=False))
 
-    mk = df_all.to_markdown()
+    from cect.Cells import COOK_GROUPING_1
+
+    if color_table:
+        STYLE = '"width:80px"'
+        table += f"<table>\n  <tr>\n    <th style={STYLE}>Group</th>\n"
+
+        for reader_name, reader_info in readers.items():
+            table += f"    <th style={STYLE}>{reader_name}</th>\n"
+
+        for group in COOK_GROUPING_1:
+            table += f"  <tr>\n<td >{group}</th>\n"
+
+            for reader_name, reader_info in readers.items():
+                connectome = all_connectomes[reader_name]
+                cells_here = ""
+                for cell in sorted(COOK_GROUPING_1[group]):
+                    if cell in connectome.nodes:
+                        cells_here += "%s&nbsp;" % get_cell_internal_link(
+                            cell, html=True, use_color=True
+                        )
+                    else:
+                        pass  # cells_here+='<s>%s</s>&nbsp;'%cell
+
+                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 5:
+                        cells_here += "<br/>\n"
+
+                table += f"    <td >{cells_here}</th>\n"
+
+            table += "  </tr>\n"
+
+        table += "  </tr>\n</table>\n"
+
+        main_mk += table
+
+    main_mk += df_all.to_markdown()
 
     filename = "docs/Comparison.md"
     with open(filename, "w") as f:
-        f.write(mk)
+        f.write(main_mk)
 
     print_("Written page: %s" % filename)
 
@@ -339,6 +379,6 @@ def generate_comparison_page(quick: bool):
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    connectomes = generate_comparison_page(quick)
+    connectomes = generate_comparison_page(quick, color_table=True)
 
     print("Finished. All loaded connectomes:\n%s" % connectomes)

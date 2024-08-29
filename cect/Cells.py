@@ -633,6 +633,14 @@ PREFERRED_NEURON_NAMES_COOK = (
 )
 
 
+COOK_GROUPING_1 = {
+    "Interneurons": INTERNEURONS_COOK,
+    "Sensory neuons": SENSORY_NEURONS_COOK,
+    "Motorneurons": MOTORNEURONS_COOK,
+    "Pharyngeal polymodal neurons": PHARYNGEAL_POLYMODAL_NEURONS,
+    "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
+}
+
 PREFERRED_NEURON_NAMES = [
     "ADAL",
     "ADAR",
@@ -1259,6 +1267,15 @@ PREFERRED_MUSCLE_NAMES = (
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
+COOK_GROUPING_1["Body wall muscles"] = BODY_WALL_MUSCLE_NAMES
+COOK_GROUPING_1["Other muscles"] = (
+    PHARYNGEAL_MUSCLE_NAMES
+    + VULVAL_MUSCLE_NAMES
+    + ANAL_SPHINCTER_MUSCLES
+    + MALE_SPECIFIC_MUSCLES
+    + UNSPECIFIED_BODY_WALL_MUSCLES
+)
+
 GLR_CELLS = [
     "GLRDL",
     "GLRDR",
@@ -1379,11 +1396,18 @@ KNOWN_OTHER_CELLS_COOK_19 = (
     + INTESTINAL_MUSCLES
 )
 
+COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
+
 
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
 KNOWN_OTHER_CELLS += (
     MALE_SPECIFIC_NEURONS + MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+)
+
+COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
+COOK_GROUPING_1["Male other cells"] = (
+    MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
 )
 
 
@@ -1527,14 +1551,19 @@ def get_short_description(cell):
 """
 
 
-def get_cell_internal_link(cell_name, html=False, text=None):
+def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
     url = "../Cells/index.html#%s" % cell_name
 
     if html:
+        link_text = cell_name if text is None else text
+        if use_color:
+            color = get_standard_color(cell_name)
+            link_text = f'<span style="color:{color};">{link_text}</span>'
+
         return '<a href="%s" title="%s">%s</a>' % (
             url,
             get_short_description(cell_name),
-            cell_name if text is None else text,
+            link_text,
         )
     else:
         return '[%s "%s"](%s)' % (
