@@ -30,9 +30,9 @@ WA_COLORS["Hermaphrodite"]["Reproductive System"]["DTC and somatic gonad"] = "#9
 WA_COLORS["Hermaphrodite"]["Reproductive System"]["embryo"] = "#6699cc"
 WA_COLORS["Hermaphrodite"]["Reproductive System"]["uterus"] = "#99cccc"
 WA_COLORS["Hermaphrodite"]["Reproductive System"]["spermatheca"] = "#3399ff"
-WA_COLORS["Hermaphrodite"]["Reproductive System"][
-    "spermatheca-uterine valve"
-] = "#666699"
+WA_COLORS["Hermaphrodite"]["Reproductive System"]["spermatheca-uterine valve"] = (
+    "#666699"
+)
 
 # NERVOUS TISSUE
 WA_COLORS["Hermaphrodite"]["Nervous Tissue"] = {}
@@ -63,9 +63,9 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cell, XXX cells"] = "#ff
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "sheath cell other than amphid sheath and phasmid"
 ] = "#339999"
-WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "amphid sheath and phasmid sheath"
-] = "#01fecc"
+WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["amphid sheath and phasmid sheath"] = (
+    "#01fecc"
+)
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "pharyngeal-intestinal valve, intestinal rectal valve "
 ] = "#996633"
@@ -74,9 +74,9 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"] = "#996
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "rectal epithelium (U, F, K, K', Y, B)"
 ] = "#996666"
-WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "rectal gland, pharyngeal glands"
-] = "#ccccff"
+WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["rectal gland, pharyngeal glands"] = (
+    "#ccccff"
+)
 
 
 # OTHER TISSUES
@@ -95,8 +95,8 @@ WA_COLORS["Male"]["Muscle"] = {}
 WA_COLORS["Male"]["Muscle"]["diagonal muscles"] = "#66cc66"
 WA_COLORS["Male"]["Muscle"]["anterior outer longitudinal muscles"] = "#666633"
 WA_COLORS["Male"]["Muscle"]["posterior outer longitudinal muscles"] = "#999933"
-WA_COLORS["Male"]["Muscle"]["anterior niner longitudinal muscles"] = "#99cc33"
-WA_COLORS["Male"]["Muscle"]["posterior niner longitudinal muscles"] = "#ccff33"
+WA_COLORS["Male"]["Muscle"]["anterior inner longitudinal muscles"] = "#99cc33"
+WA_COLORS["Male"]["Muscle"]["posterior inner longitudinal muscles"] = "#ccff33"
 WA_COLORS["Male"]["Muscle"]["caudal inner longitudinal muscles"] = "#99cc99"
 WA_COLORS["Male"]["Muscle"]["spicule retractor muscles"] = "#669966"
 WA_COLORS["Male"]["Muscle"]["spicule protractor muscles"] = "#99ff99"

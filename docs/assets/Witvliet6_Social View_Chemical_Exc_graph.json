@@ -4,34 +4,58 @@
       "hoverinfo": "none",
       "line": {
         "color": "grey",
-        "width": 1
+        "shape": "spline",
+        "width": 1.0
       },
       "mode": "lines",
-      "text": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
-      ],
       "type": "scatter",
       "x": [
         0.054427,
-        -0.044266,
-        null,
-        -0.044266,
-        -0.169565,
-        null
+        0.036418699999999984,
+        -0.044266
       ],
       "y": [
         0.821043,
+        0.7229589,
+        0.664352
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.044266,
+        -0.02625769999999998,
+        0.054427
+      ],
+      "y": [
         0.664352,
-        null,
-        0.664352,
+        0.7624361000000001,
+        0.821043
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.169565,
+        -0.044266
+      ],
+      "y": [
         0.615217,
-        null
+        0.664352
       ]
     },
     {
@@ -98,13 +122,13 @@
         "reversescale": true,
         "showscale": true,
         "size": [
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
         ],
         "symbol": [
           "circle",
@@ -117,6 +141,7 @@
         ]
       },
       "mode": "markers",
+      "opacity": 0.9,
       "text": [
         "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 1",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
@@ -148,6 +173,7 @@
     }
   ],
   "layout": {
+    "height": 800,
     "hovermode": "closest",
     "margin": {
       "b": 20,
@@ -972,11 +998,14 @@
         }
       }
     },
+    "width": 800,
     "xaxis": {
       "showgrid": false,
       "zeroline": false
     },
     "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
       "showgrid": false,
       "zeroline": false
     }

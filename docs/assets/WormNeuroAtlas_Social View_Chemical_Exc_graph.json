@@ -4,52 +4,134 @@
       "hoverinfo": "none",
       "line": {
         "color": "grey",
-        "width": 1
+        "shape": "linear",
+        "width": 1.4142135623730951
       },
       "mode": "lines",
-      "text": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
-      ],
       "type": "scatter",
       "x": [
-        0.293681,
         0.466959,
-        null,
-        0.293681,
-        0.142437,
-        null,
-        -0.18824,
-        -0.029958,
-        null,
-        0.142437,
-        0.315121,
-        null,
-        0.142437,
-        -0.029958,
-        null
+        0.293681
       ],
       "y": [
-        0.018789,
         -0.15772,
-        null,
-        0.018789,
+        0.018789
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "linear",
+        "width": 2.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.142437,
+        0.293681
+      ],
+      "y": [
         0.180896,
-        null,
+        0.018789
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.18824,
+        -0.101496,
+        -0.029958
+      ],
+      "y": [
         0.257662,
+        0.27031089999999997,
+        0.219647
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 2.449489742783178
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.029958,
+        -0.116702,
+        -0.18824
+      ],
+      "y": [
         0.219647,
-        null,
+        0.2069981,
+        0.257662
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "linear",
+        "width": 1.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.142437,
+        0.315121
+      ],
+      "y": [
         0.180896,
-        0.472266,
-        null,
+        0.472266
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.7320508075688772
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.142437,
+        0.0484893,
+        -0.029958
+      ],
+      "y": [
         0.180896,
+        0.16579249999999998,
+        0.219647
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 2.6457513110645907
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.029958,
+        0.06398970000000001,
+        0.142437
+      ],
+      "y": [
         0.219647,
-        null
+        0.2347505,
+        0.180896
       ]
     },
     {
@@ -116,13 +198,13 @@
         "reversescale": true,
         "showscale": true,
         "size": [
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
         ],
         "symbol": [
           "circle",
@@ -135,6 +217,7 @@
         ]
       },
       "mode": "markers",
+      "opacity": 0.9,
       "text": [
         "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>RMGR</b>: 4, <b>AWBR</b>: 2",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
@@ -166,6 +249,7 @@
     }
   ],
   "layout": {
+    "height": 800,
     "hovermode": "closest",
     "margin": {
       "b": 20,
@@ -990,11 +1074,14 @@
         }
       }
     },
+    "width": 800,
     "xaxis": {
       "showgrid": false,
       "zeroline": false
     },
     "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
       "showgrid": false,
       "zeroline": false
     }

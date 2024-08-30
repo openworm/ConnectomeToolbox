@@ -29,7 +29,7 @@
       "y": [
         0,
         1,
-        0,
+        1,
         2,
         0,
         0,
@@ -52,6 +52,50 @@
         "symbol": "square"
       },
       "name": "Cook2019Herm Electrical conns",
+      "type": "scatter",
+      "x": [
+        "e2D",
+        "e2DL",
+        "e2DR",
+        "e2V",
+        "e2VL",
+        "e2VR",
+        "e3D",
+        "e3VL",
+        "e3VR",
+        "g1AL",
+        "g1AR",
+        "g1P",
+        "g1p",
+        "g2L",
+        "g2R"
+      ],
+      "y": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        3,
+        3,
+        2,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
       "type": "scatter",
       "x": [
         "e2D",

@@ -1,19 +1,12 @@
-from cect import print_
-
-from cect.ConnectomeReader import ConnectionInfo
-
 from cect.Cells import PHARYNGEAL_NEURONS
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import KNOWN_OTHER_CELLS
-from cect.Cells import MOTORNEURONS_COOK
 from cect.Cells import SENSORY_NEURONS_COOK
-from cect.Cells import INTERNEURONS_COOK
 
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 
-from cect.Cells import BODY_WALL_MUSCLE_NAMES
 from cect.Cells import BODY_MUSCLES_COOK
 from cect.Cells import HEAD_MUSCLES_COOK
 from cect.Cells import HEAD_MOTORNEURONS_COOK
@@ -28,8 +21,6 @@ from cect.Cells import PHARYNGEAL_MOTORNEURONS
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
-
-import numpy as np
 
 
 class NodeSet:
@@ -164,7 +155,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
 in_pos = {"IN1": (4.2, 3.3), "IN2": (3.4, 4.2), "IN3": (5.1, 4.4), "IN4": (2.3, 4.8)}
 
 for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
-    if category is not "RIML":
+    if category != "RIML":
         SMALL_VIEW.node_sets.append(
             NodeSet(
                 category,
@@ -189,7 +180,7 @@ SMALL_VIEW.node_sets.append(
     NodeSet(
         "SMN",
         SUBLATERAL_MOTORNEURONS_COOK,
-        color="#FF6000",
+        color="#e59636",
         shape="circle",
         position=(4.5, 2.2),
     )
@@ -199,7 +190,7 @@ SMALL_VIEW.node_sets.append(
     NodeSet(
         "MNVC",
         VENTRAL_CORD_MOTORNEURONS,
-        color="#BFA700",
+        color="#B2832b",
         shape="circle",
         position=(7.1, 1),
     )
@@ -219,12 +210,12 @@ SMALL_VIEW.node_sets.append(
 
 SMALL_VIEW.node_sets.append(
     NodeSet(
-        "MUBODY", BODY_MUSCLES_COOK, color="#964B00", shape="square", position=(5, 0.73)
+        "MUBODY", BODY_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(5, 0.73)
     )
 )
 SMALL_VIEW.node_sets.append(
     NodeSet(
-        "MUHEAD", HEAD_MUSCLES_COOK, color="#964B00", shape="square", position=(3.1, 1)
+        "MUHEAD", HEAD_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(3.1, 1)
     )
 )
 

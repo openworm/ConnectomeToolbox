@@ -10,7 +10,6 @@ from cect import print_
 
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
-from cect.Cells import KNOWN_OTHER_CELLS
 
 DEFAULT_COLORMAP = ["white", "green", "black"]
 
@@ -207,7 +206,7 @@ def check_cells(cells):
     for c in cells:
         if is_muscle(c):
             muscles.append(c)
-        elif not c in PREFERRED_NEURON_NAMES:
+        elif c not in PREFERRED_NEURON_NAMES:
             if not is_muscle(c):
                 not_in_preferred.append(c)
         else:
@@ -258,7 +257,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
     nts_tot = {}
     for c in neuron_conns:
         nt = c.synclass
-        if not nt in nts:
+        if nt not in nts:
             nts[nt] = 0
             nts_tot[nt] = 0
         nts[nt] += 1
@@ -277,7 +276,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
     print_("Found %s muscles: %s\n" % (len(muscles), sorted(muscles)))
     not_in_preferred = []
     for m in muscles:
-        if not m in PREFERRED_MUSCLE_NAMES:
+        if m not in PREFERRED_MUSCLE_NAMES:
             not_in_preferred.append(m)
 
     print_(
@@ -305,7 +304,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
     nts_tot = {}
     for c in muscle_conns:
         nt = c.synclass
-        if not nt in nts:
+        if nt not in nts:
             nts[nt] = 0
             nts_tot[nt] = 0
         nts[nt] += 1
@@ -325,7 +324,7 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
         if c.pre_cell in core_set and c.post_cell in core_set:
             print_(str(c))
 
-    print_details_on = ["AVBR", "NSMR"]
+    print_details_on = ["ADAL"]
     for cd in print_details_on:
         print_("\n\nAll outgoing connections of %s:\n" % (cd))
         for c in neuron_conns:

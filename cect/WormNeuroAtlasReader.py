@@ -1,5 +1,4 @@
 import logging
-import re
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
@@ -104,9 +103,9 @@ class WormNeuroAtlasReader(ConnectomeDataset):
                     connection = True
 
                 if connection:
-                    if not pre in connected_cells:
+                    if pre not in connected_cells:
                         connected_cells.append(pre)
-                    if not post in connected_cells:
+                    if post not in connected_cells:
                         connected_cells.append(post)
 
         """if include_nonconnected_cells:

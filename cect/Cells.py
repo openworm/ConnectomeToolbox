@@ -452,6 +452,120 @@ HERM_SPECIFIC_MOTORNEURONS = HSN_MOTORNEURONS + VC_HERM_MOTORNEURONS
 for cell in HERM_SPECIFIC_MOTORNEURONS:
     cell_notes[cell] = "hermaphrodite specific motor neuron"
 
+
+MALE_HEAD_INTERNEURONS = ["MCML", "MCMR"]
+for cell in MALE_HEAD_INTERNEURONS:
+    cell_notes[cell] = "male head interneuron"
+
+MALE_HEAD_SENSORY_NEURONS = ["CEMDL", "CEMDR", "CEMVL", "CEMVR"]
+for cell in MALE_HEAD_SENSORY_NEURONS:
+    cell_notes[cell] = "male head sensory neuron"
+
+MALE_SENSORY_NEURONS = [
+    "R1AL",
+    "R1AR",
+    "R1BL",
+    "R1BR",
+    "R2AL",
+    "R2AR",
+    "R2BL",
+    "R2BR",
+    "R3AL",
+    "R3AR",
+    "R3BL",
+    "R3BR",
+    "R4AL",
+    "R4AR",
+    "R4BL",
+    "R4BR",
+    "R5AL",
+    "R5AR",
+    "R5BL",
+    "R5BR",
+    "R6AL",
+    "R6AR",
+    "R6BL",
+    "R6BR",
+    "R7AL",
+    "R7AR",
+    "R7BL",
+    "R7BR",
+    "R8AL",
+    "R8AR",
+    "R8BL",
+    "R8BR",
+    "R9AL",
+    "R9AR",
+    "R9BL",
+    "R9BR",
+    "PHDL",
+    "PHDR",
+    "HOA",
+    "HOB",
+    "PCAL",
+    "PCAR",
+    "PCBL",
+    "PCBR",
+    "PCCL",
+    "PCCR",
+    "SPCL",
+    "SPCR",
+    "SPDL",
+    "SPDR",
+    "SPVL",
+    "SPVR",
+]
+
+for cell in MALE_SENSORY_NEURONS:
+    cell_notes[cell] = "male sensory neuron"
+
+MALE_INTERNEURONS = [
+    "PVV",
+    "PVX",
+    "PVY",
+    "PVZ",
+    "DVE",
+    "DVF",
+    "DX1",
+    "DX2",
+    "DX3",
+    "EF1",
+    "EF2",
+    "EF3",
+    "PDC",
+    "PGA",
+    "CA01",
+    "CA02",
+    "CA03",
+    "CA04",
+    "CA05",
+    "CA06",
+    "CA07",
+    "CA08",
+    "CA09",
+    "CP01",
+    "CP02",
+    "CP03",
+    "CP04",
+    "CP05",
+    "CP06",
+    "CP07",
+    "CP08",
+    "CP09",
+]
+
+
+for cell in MALE_INTERNEURONS:
+    cell_notes[cell] = "male interneuron"
+
+
+MALE_SPECIFIC_NEURONS = (
+    MALE_HEAD_INTERNEURONS
+    + MALE_HEAD_SENSORY_NEURONS
+    + MALE_INTERNEURONS
+    + MALE_SENSORY_NEURONS
+)
+
 UNKNOWN_FUNCTION_NEURONS = ["CANL", "CANR"]
 
 for cell in UNKNOWN_FUNCTION_NEURONS:
@@ -518,6 +632,14 @@ PREFERRED_NEURON_NAMES_COOK = (
     + UNKNOWN_FUNCTION_NEURONS
 )
 
+
+COOK_GROUPING_1 = {
+    "Interneurons": INTERNEURONS_COOK,
+    "Sensory neurons": SENSORY_NEURONS_COOK,
+    "Motorneurons": MOTORNEURONS_COOK,
+    "Pharyngeal polymodal neurons": PHARYNGEAL_POLYMODAL_NEURONS,
+    "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
+}
 
 PREFERRED_NEURON_NAMES = [
     "ADAL",
@@ -1004,8 +1126,136 @@ for cell in PHARYNGEAL_MUSCLE_NAMES:
 
 UNSPECIFIED_BODY_WALL_MUSCLES = ["BWM"]
 
-
 cell_notes["BWM"] = "unspecified body wall muscle"
+
+MALE_DIAGONAL_MUSCLES = [
+    "dglL1",
+    "dglL2",
+    "dglL3",
+    "dglL4",
+    "dglL5",
+    "dglL6",
+    "dglL7",
+    "dglR1",
+    "dglR2",
+    "dglR3",
+    "dglR4",
+    "dglR5",
+    "dglR6",
+    "dglR7",
+    "dglR8",
+]
+for cell in MALE_DIAGONAL_MUSCLES:
+    cell_notes[cell] = "diagonal muscle (male specific)"
+
+
+MALE_ANTERIOR_OBLIQUE_MUSCLES = ["aobL", "aobR"]
+for cell in MALE_ANTERIOR_OBLIQUE_MUSCLES:
+    cell_notes[cell] = "anterior oblique (male specific)"
+MALE_POSTERIOR_OBLIQUE_MUSCLES = ["pobL", "pobR"]
+for cell in MALE_POSTERIOR_OBLIQUE_MUSCLES:
+    cell_notes[cell] = "posterior oblique (male specific)"
+
+MALE_GUBERNACULAR_ERECTOR_MUSCLES = ["gecL", "gecR"]
+for cell in MALE_GUBERNACULAR_ERECTOR_MUSCLES:
+    cell_notes[cell] = "gubernacular erector (male specific)"
+MALE_GUBERNACULAR_RETRACTOR_MUSCLES = ["grtL", "grtR"]
+for cell in MALE_GUBERNACULAR_RETRACTOR_MUSCLES:
+    cell_notes[cell] = "gubernacular retractor (male specific)"
+
+MALE_CAUDAL_LONGITUDINAL_MUSCLES = ["cdlL", "cdlR"]
+for cell in MALE_CAUDAL_LONGITUDINAL_MUSCLES:
+    cell_notes[cell] = "caudal longitudinal muscle (male specific)"
+
+MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES = ["ailL", "ailR"]
+for cell in MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES:
+    cell_notes[cell] = "anterior inner longitudinal muscle (male specific)"
+MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES = ["pilL", "pilR"]
+for cell in MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES:
+    cell_notes[cell] = "posterior inner longitudinal muscle (male specific)"
+MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES = ["polL", "polR"]
+for cell in MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES:
+    cell_notes[cell] = "posterior outer longitudinal muscle (male specific)"
+
+MALE_DORSAL_SPICULE_PROTRACTOR = ["dspL", "dspR"]
+for cell in MALE_DORSAL_SPICULE_PROTRACTOR:
+    cell_notes[cell] = "dorsal spicule protractor (male specific)"
+MALE_VENTRAL_SPICULE_PROTRACTOR = ["vspL", "vspR"]
+for cell in MALE_VENTRAL_SPICULE_PROTRACTOR:
+    cell_notes[cell] = "ventral spicule protractor (male specific)"
+
+MALE_DORSAL_SPICULE_RETRACTOR = ["dsrL", "dsrR"]
+for cell in MALE_DORSAL_SPICULE_RETRACTOR:
+    cell_notes[cell] = "dorsal spicule retractor (male specific)"
+MALE_VENTRAL_SPICULE_RETRACTOR = ["vsrL", "vsrR"]
+for cell in MALE_VENTRAL_SPICULE_RETRACTOR:
+    cell_notes[cell] = "ventral spicule retractor (male specific)"
+
+MALE_SPECIFIC_MUSCLES = (
+    MALE_DIAGONAL_MUSCLES
+    + MALE_ANTERIOR_OBLIQUE_MUSCLES
+    + MALE_POSTERIOR_OBLIQUE_MUSCLES
+    + MALE_GUBERNACULAR_ERECTOR_MUSCLES
+    + MALE_GUBERNACULAR_RETRACTOR_MUSCLES
+    + MALE_CAUDAL_LONGITUDINAL_MUSCLES
+    + MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES
+    + MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES
+    + MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES
+    + MALE_DORSAL_SPICULE_PROTRACTOR
+    + MALE_VENTRAL_SPICULE_PROTRACTOR
+    + MALE_DORSAL_SPICULE_RETRACTOR
+    + MALE_VENTRAL_SPICULE_RETRACTOR
+)
+
+
+GONAD_CELL = ["gonad"]
+cell_notes["gonad"] = "gonad (male specific)"
+
+PROCTODEUM_CELL = ["proctodeum"]
+cell_notes["proctodeum"] = "proctodeum (male specific)"
+
+# TODO: remove sh versions, R1shL, etc from here!!!
+MALE_RAY_STRUCTURAL_CELLS = [
+    "R1stL",
+    "R1stR",
+    "R2stL",
+    "R2stR",
+    "R3stL",
+    "R3stR",
+    "R4stL",
+    "R4stR",
+    "R5stL",
+    "R5stR",
+    "R6stL",
+    "R6stR",
+    "R7stL",
+    "R7stR",
+    "R8stL",
+    "R8stR",
+    "R9stL",
+    "R9stR",
+    "R1shL",
+    "R1shR",
+    "R2shL",
+    "R2shR",
+    "R3shL",
+    "R3shR",
+    "R4shL",
+    "R4shR",
+    "R5shL",
+    "R5shR",
+    "R6shL",
+    "R6shR",
+    "R7shL",
+    "R7shR",
+    "R8shL",
+    "R8shR",
+    "R9shL",
+    "R9shR",
+]
+
+for cell in MALE_RAY_STRUCTURAL_CELLS:
+    cell_notes[cell] = "male ray structural cell"
 
 
 PREFERRED_MUSCLE_NAMES = (
@@ -1013,6 +1263,16 @@ PREFERRED_MUSCLE_NAMES = (
     + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
+    + MALE_SPECIFIC_MUSCLES
+    + UNSPECIFIED_BODY_WALL_MUSCLES
+)
+
+COOK_GROUPING_1["Body wall muscles"] = BODY_WALL_MUSCLE_NAMES
+COOK_GROUPING_1["Other muscles"] = (
+    PHARYNGEAL_MUSCLE_NAMES
+    + VULVAL_MUSCLE_NAMES
+    + ANAL_SPHINCTER_MUSCLES
+    + MALE_SPECIFIC_MUSCLES
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
@@ -1136,8 +1396,19 @@ KNOWN_OTHER_CELLS_COOK_19 = (
     + INTESTINAL_MUSCLES
 )
 
+COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
+
 
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
+
+KNOWN_OTHER_CELLS += (
+    MALE_SPECIFIC_NEURONS + MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+)
+
+COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
+COOK_GROUPING_1["Male other cells"] = (
+    MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+)
 
 
 def get_standard_color(cell):
@@ -1151,9 +1422,11 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["odd numbered pharyngeal muscle"]
     elif cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["even numbered pharyngeal muscle"]
-    elif cell in INTERNEURONS_COOK:
+    elif cell in INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-    elif cell in SENSORY_NEURONS_COOK:
+    elif (
+        cell in SENSORY_NEURONS_COOK + MALE_HEAD_SENSORY_NEURONS + MALE_SENSORY_NEURONS
+    ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
     elif cell in MOTORNEURONS_COOK:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
@@ -1197,6 +1470,44 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Alimentary System"]["intestinal cells"]
     elif cell in INTESTINAL_MUSCLES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["intestinal muscle"]
+
+    elif cell in MALE_DIAGONAL_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["diagonal muscles"]
+    elif cell in MALE_ANTERIOR_OBLIQUE_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["anterior oblique muscles"]
+    elif cell in MALE_POSTERIOR_OBLIQUE_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["posterior oblique muscles"]
+    elif cell in MALE_GUBERNACULAR_ERECTOR_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["gubernacular erector muscles"]
+    elif cell in MALE_GUBERNACULAR_RETRACTOR_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["gubernacular retractor muscles"]
+    elif cell in MALE_CAUDAL_LONGITUDINAL_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["caudal inner longitudinal muscles"]
+    elif cell in MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["anterior inner longitudinal muscles"]
+    elif cell in MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["posterior inner longitudinal muscles"]
+    elif cell in MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES:
+        return WA_COLORS["Male"]["Muscle"]["posterior outer longitudinal muscles"]
+    elif (
+        cell in MALE_DORSAL_SPICULE_PROTRACTOR
+        or cell in MALE_VENTRAL_SPICULE_PROTRACTOR
+    ):
+        return WA_COLORS["Male"]["Muscle"]["spicule protractor muscles"]
+
+    elif (
+        cell in MALE_DORSAL_SPICULE_RETRACTOR or cell in MALE_VENTRAL_SPICULE_RETRACTOR
+    ):
+        return WA_COLORS["Male"]["Muscle"]["spicule retractor muscles"]
+
+    elif cell in MALE_RAY_STRUCTURAL_CELLS:
+        return WA_COLORS["Male"]["Epithelial Tissue"]["ray structural cell"]
+
+    elif cell in PROCTODEUM_CELL:
+        return WA_COLORS["Male"]["Reproductive System"]["proctodeum"]
+    elif cell in GONAD_CELL:
+        return WA_COLORS["Male"]["Reproductive System"]["vas deferens"]
+
     else:
         raise Exception("Unknown cell: %s!" % cell)
 
@@ -1240,14 +1551,19 @@ def get_short_description(cell):
 """
 
 
-def get_cell_internal_link(cell_name, html=False, text=None):
+def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
     url = "../Cells/index.html#%s" % cell_name
 
     if html:
+        link_text = cell_name if text is None else text
+        if use_color:
+            color = get_standard_color(cell_name)
+            link_text = f'<span style="color:{color};">{link_text}</span>'
+
         return '<a href="%s" title="%s">%s</a>' % (
             url,
             get_short_description(cell_name),
-            cell_name if text is None else text,
+            link_text,
         )
     else:
         return '[%s "%s"](%s)' % (
@@ -1322,12 +1638,9 @@ def _get_dataset_link(reader_name, html=False, text=None):
 
 
 def _generate_cell_table(cell_type, cells):
-    import plotly.express as px
     import plotly.graph_objects as go
-    import numpy as np
 
     from cect.Comparison import _format_json
-    from cect.Comparison import shorten_neurotransmitter
 
     print_(" - Adding table for %s" % cell_type)
 
@@ -1372,7 +1685,7 @@ def _generate_cell_table(cell_type, cells):
                 marker_symbol = "square"
                 dash = "solid"
 
-                data = fig.add_scatter(
+                fig.add_scatter(
                     name="%s %s" % (reader_name, syn_summary),
                     x=sorted_cells,
                     y=y,
@@ -1442,7 +1755,7 @@ if __name__ == "__main__":
                 f.write("\n### %s\n\n" % cell_class)
 
                 for cell_type in WA_COLORS[sex][cell_class]:
-                    if not "General code" in cell_type:
+                    if "General code" not in cell_type:
                         color = WA_COLORS[sex][cell_class][cell_type][1:]
                         f.write(
                             "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
@@ -1454,12 +1767,24 @@ if __name__ == "__main__":
                                 _generate_cell_table(cell_type, BODY_WALL_MUSCLE_NAMES)
                             )
                         elif cell_type == "interneuron":
-                            f.write(_generate_cell_table(cell_type, INTERNEURONS_COOK))
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type,
+                                    INTERNEURONS_COOK
+                                    + MALE_HEAD_INTERNEURONS
+                                    + MALE_INTERNEURONS,
+                                )
+                            )
                         elif cell_type == "motor neuron":
                             f.write(_generate_cell_table(cell_type, MOTORNEURONS_COOK))
                         elif cell_type == "sensory neuron":
                             f.write(
-                                _generate_cell_table(cell_type, SENSORY_NEURONS_COOK)
+                                _generate_cell_table(
+                                    cell_type,
+                                    SENSORY_NEURONS_COOK
+                                    + MALE_HEAD_SENSORY_NEURONS
+                                    + MALE_SENSORY_NEURONS,
+                                )
                             )
                         elif cell_type == "odd numbered pharyngeal muscle":
                             f.write(
@@ -1529,3 +1854,88 @@ if __name__ == "__main__":
                             f.write(_generate_cell_table(cell_type, INTESTINAL_MUSCLES))
                         elif cell_type == "GLR cell":
                             f.write(_generate_cell_table(cell_type, GLR_CELLS))
+
+                        elif cell_type == "diagonal muscles":
+                            f.write(
+                                _generate_cell_table(cell_type, MALE_DIAGONAL_MUSCLES)
+                            )
+                        elif cell_type == "posterior outer longitudinal muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES
+                                )
+                            )
+                        elif cell_type == "anterior inner longitudinal muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES
+                                )
+                            )
+                        elif cell_type == "posterior inner longitudinal muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES
+                                )
+                            )
+                        elif cell_type == "caudal inner longitudinal muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_CAUDAL_LONGITUDINAL_MUSCLES
+                                )
+                            )
+                        elif cell_type == "spicule retractor muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type,
+                                    MALE_VENTRAL_SPICULE_RETRACTOR
+                                    + MALE_DORSAL_SPICULE_RETRACTOR,
+                                )
+                            )
+                        elif cell_type == "spicule protractor muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type,
+                                    MALE_VENTRAL_SPICULE_PROTRACTOR
+                                    + MALE_DORSAL_SPICULE_PROTRACTOR,
+                                )
+                            )
+                        elif cell_type == "gubernacular retractor muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_GUBERNACULAR_RETRACTOR_MUSCLES
+                                )
+                            )
+                        elif cell_type == "gubernacular erector muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_GUBERNACULAR_ERECTOR_MUSCLES
+                                )
+                            )
+                        elif cell_type == "anterior oblique muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_ANTERIOR_OBLIQUE_MUSCLES
+                                )
+                            )
+                        elif cell_type == "posterior oblique muscles":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_POSTERIOR_OBLIQUE_MUSCLES
+                                )
+                            )
+
+                        elif cell_type == "vas deferens":
+                            f.write(_generate_cell_table(cell_type, GONAD_CELL))
+                        elif cell_type == "proctodeum":
+                            f.write(_generate_cell_table(cell_type, PROCTODEUM_CELL))
+
+                        elif cell_type == "diagonal muscles":
+                            f.write(
+                                _generate_cell_table(cell_type, MALE_DIAGONAL_MUSCLES)
+                            )
+                        elif cell_type == "ray structural cell":
+                            f.write(
+                                _generate_cell_table(
+                                    cell_type, MALE_RAY_STRUCTURAL_CELLS
+                                )
+                            )

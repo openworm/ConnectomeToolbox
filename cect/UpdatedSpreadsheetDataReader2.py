@@ -100,6 +100,17 @@ def parse_row(row):
 
 
 class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
+    def __init__(self):
+        ConnectomeDataset.__init__(self)
+
+        cells, neuron_conns = self.read_data()
+        for conn in neuron_conns:
+            self.add_connection_info(conn)
+
+        neurons2muscles, muscles, muscle_conns = self.read_muscle_data()
+        for conn in muscle_conns:
+            self.add_connection_info(conn)
+
     def read_data(self):
         """
         Args:

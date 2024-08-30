@@ -19,6 +19,26 @@
         4,
         3
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "MANAL",
+        "mu_anal",
+        "mu_sph"
+      ],
+      "y": [
+        0,
+        2,
+        2
+      ]
     }
   ],
   "layout": {
