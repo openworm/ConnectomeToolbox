@@ -9,7 +9,6 @@
 
 ############################################################
 
-import csv
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections

@@ -9,6 +9,7 @@
 
 ############################################################
 
+from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
@@ -19,7 +20,6 @@ import os
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
-from cect import print_
 
 READER_DESCRIPTION = (
     """Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity"""
@@ -35,6 +35,10 @@ class SpreadsheetDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
+            self.add_connection_info(conn)
+
+        neurons2muscles, muscles, muscle_conns = self.read_muscle_data()
+        for conn in muscle_conns:
             self.add_connection_info(conn)
 
     def read_data(self):

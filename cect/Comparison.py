@@ -1,6 +1,3 @@
-import cect
-
-from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_cells
 from cect.Cells import get_cell_internal_link
 from cect import print_
@@ -271,12 +268,17 @@ def generate_comparison_page(quick: bool, color_table=False):
 
         neuron_nts = {}
 
+        print_(
+            "\n\n  = Adding table entry for: %s with %i neurons"
+            % (connectome, len(neurons))
+        )
+
         for c in neuron_conns:
             nt = c.synclass
             if len(nt) == 0:
                 nt = "**MISSING**"
 
-            if not nt in neuron_nts:
+            if nt not in neuron_nts:
                 neuron_nts[nt] = 0
 
             neuron_nts[nt] += 1
@@ -291,7 +293,7 @@ def generate_comparison_page(quick: bool, color_table=False):
             if len(nt) == 0:
                 nt = "**MISSING**"
 
-            if not nt in muscle_nts:
+            if nt not in muscle_nts:
                 muscle_nts[nt] = 0
 
             muscle_nts[nt] += 1
@@ -324,9 +326,9 @@ def generate_comparison_page(quick: bool, color_table=False):
     print_("\nFinished loading all the data from the readers!")
 
     import pandas as pd
-    import numpy as np
 
     df_all = pd.DataFrame(all_data).transpose()
+    pd.set_option("max_colwidth", 30)
     # df_all.set_index("Values")
 
     # h = HTML(df_all.to_html(escape=False, index=False))

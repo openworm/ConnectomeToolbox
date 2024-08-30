@@ -87,7 +87,7 @@ def main():
     fig = tdr_instance.to_plotly_matrix_fig(
         "Acetylcholine", RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP
     )
-    if not "-nogui" in sys.argv:
+    if "-nogui" not in sys.argv:
         fig.show()
 
 

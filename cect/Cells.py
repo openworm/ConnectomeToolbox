@@ -635,7 +635,7 @@ PREFERRED_NEURON_NAMES_COOK = (
 
 COOK_GROUPING_1 = {
     "Interneurons": INTERNEURONS_COOK,
-    "Sensory neuons": SENSORY_NEURONS_COOK,
+    "Sensory neurons": SENSORY_NEURONS_COOK,
     "Motorneurons": MOTORNEURONS_COOK,
     "Pharyngeal polymodal neurons": PHARYNGEAL_POLYMODAL_NEURONS,
     "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
@@ -1638,12 +1638,9 @@ def _get_dataset_link(reader_name, html=False, text=None):
 
 
 def _generate_cell_table(cell_type, cells):
-    import plotly.express as px
     import plotly.graph_objects as go
-    import numpy as np
 
     from cect.Comparison import _format_json
-    from cect.Comparison import shorten_neurotransmitter
 
     print_(" - Adding table for %s" % cell_type)
 
@@ -1688,7 +1685,7 @@ def _generate_cell_table(cell_type, cells):
                 marker_symbol = "square"
                 dash = "solid"
 
-                data = fig.add_scatter(
+                fig.add_scatter(
                     name="%s %s" % (reader_name, syn_summary),
                     x=sorted_cells,
                     y=y,
@@ -1758,7 +1755,7 @@ if __name__ == "__main__":
                 f.write("\n### %s\n\n" % cell_class)
 
                 for cell_type in WA_COLORS[sex][cell_class]:
-                    if not "General code" in cell_type:
+                    if "General code" not in cell_type:
                         color = WA_COLORS[sex][cell_class][cell_type][1:]
                         f.write(
                             "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(

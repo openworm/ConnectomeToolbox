@@ -1018,10 +1018,7 @@
 
 === "Chemical conns out"
 
-
-    ```plotly
-    ---8<-- "./assets/pharyngeal_epithelium_Chemical_conns_out_hist.json"
-    ```
+    No connections of this type found.
 
 
 === "Electrical conns"

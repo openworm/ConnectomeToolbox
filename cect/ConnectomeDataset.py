@@ -39,7 +39,7 @@ class ConnectomeDataset:
 
         self.connection_infos.append(conn)
 
-        if not conn.synclass in self.connections:
+        if conn.synclass not in self.connections:
             if len(self.connections) == 0:
                 self.connections[conn.synclass] = np.zeros(
                     [0, 0], dtype=self.DEFAULT_DTYPE
@@ -50,11 +50,11 @@ class ConnectomeDataset:
                     existing.shape, dtype=self.DEFAULT_DTYPE
                 )
 
-        if not conn.pre_cell in self.nodes:
+        if conn.pre_cell not in self.nodes:
             self.nodes.append(conn.pre_cell)
             self._expand_conn_arrays()
 
-        if not conn.post_cell in self.nodes:
+        if conn.post_cell not in self.nodes:
             self.nodes.append(conn.post_cell)
             self._expand_conn_arrays()
 
@@ -104,7 +104,7 @@ class ConnectomeDataset:
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
-        if not node in self.nodes:
+        if node not in self.nodes:
             return {}
         index = self.nodes.index(node)
         slice = conn_array[index]
@@ -133,7 +133,6 @@ class ConnectomeDataset:
             for k, v in ordered.items()
         ]
         info = ""
-        count = 0
         for v in vals:
             if len(info.split("<br>")[-1]) > 80:
                 info += "<br>"
@@ -145,7 +144,7 @@ class ConnectomeDataset:
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
-        if not node in self.nodes:
+        if node not in self.nodes:
             return {}
         index = self.nodes.index(node)
         slice = conn_array.T[index]
@@ -216,11 +215,11 @@ class ConnectomeDataset:
                                 )
 
                             if pre_index >= 0 and post_index >= 0:
-                                cv.connections[synclass_set][
-                                    pre_index, post_index
-                                ] += conn_array[
-                                    self.nodes.index(pre), self.nodes.index(post)
-                                ]
+                                cv.connections[synclass_set][pre_index, post_index] += (
+                                    conn_array[
+                                        self.nodes.index(pre), self.nodes.index(post)
+                                    ]
+                                )
 
         return cv
 
@@ -273,13 +272,20 @@ class ConnectomeDataset:
             y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
         )
+        fig.update(
+            data=[
+                {
+                    "hovertemplate": "<b>%{x}</b> -> <b>%{y}</b>: <b>%{z}</b><extra></extra> "
+                }
+            ]
+        )
 
         return fig
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
-        print("==============")
-        print(f"Generating: {synclass} for {view.name}")
+        print_("==============")
+        print_(f"Generating: {synclass} for {view.name}")
 
         DEFAULT_NODE_SIZE = 15
 
@@ -328,10 +334,10 @@ class ConnectomeDataset:
 
                     if x0 != x1 and y0 != y1:
                         if not straight:
-                            L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
+                            # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
                             offset = 0.2
-                            edge_x.append(((x0 + x1) / 2) + offset * ((y0 - y1)))
-                            edge_y.append(((y0 + y1) / 2) + offset * ((x1 - x0)))
+                            edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
+                            edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
                     else:
                         circle_offset_a = get_node_size(from_node_set) / 100
 
@@ -345,9 +351,9 @@ class ConnectomeDataset:
                     # edge_x.append(None)
                     # edge_y.append(None)
 
-                    print(
+                    """print(
                         f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}"
-                    )
+                    )"""
                     line_color = "grey"
                     if gap_junction:
                         line_color = "#ff6f6f "
@@ -381,7 +387,7 @@ class ConnectomeDataset:
                 node_colours.append(len(adjacencies[1]))
 
         for i, node_value in enumerate(self.nodes):
-            num_connections = node_adjacencies[i]
+            # num_connections = node_adjacencies[i]
 
             node_set = view.get_node_set(node_value)
 

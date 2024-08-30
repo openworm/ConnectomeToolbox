@@ -1,19 +1,12 @@
-from cect import print_
-
-from cect.ConnectomeReader import ConnectionInfo
-
 from cect.Cells import PHARYNGEAL_NEURONS
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import KNOWN_OTHER_CELLS
-from cect.Cells import MOTORNEURONS_COOK
 from cect.Cells import SENSORY_NEURONS_COOK
-from cect.Cells import INTERNEURONS_COOK
 
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 
-from cect.Cells import BODY_WALL_MUSCLE_NAMES
 from cect.Cells import BODY_MUSCLES_COOK
 from cect.Cells import HEAD_MUSCLES_COOK
 from cect.Cells import HEAD_MOTORNEURONS_COOK
@@ -28,8 +21,6 @@ from cect.Cells import PHARYNGEAL_MOTORNEURONS
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
-
-import numpy as np
 
 
 class NodeSet:
@@ -164,7 +155,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
 in_pos = {"IN1": (4.2, 3.3), "IN2": (3.4, 4.2), "IN3": (5.1, 4.4), "IN4": (2.3, 4.8)}
 
 for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
-    if category is not "RIML":
+    if category != "RIML":
         SMALL_VIEW.node_sets.append(
             NodeSet(
                 category,

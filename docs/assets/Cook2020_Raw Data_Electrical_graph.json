@@ -113,6 +113,42 @@
       "line": {
         "color": "#ff6f6f ",
         "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.07989,
+        -0.048422
+      ],
+      "y": [
+        0.062446,
+        0.151485
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        -0.048422,
+        -0.07989
+      ],
+      "y": [
+        0.151485,
+        0.062446
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
         "width": 1.0
       },
       "mode": "lines",
@@ -141,24 +177,6 @@
       ],
       "y": [
         -0.045562,
-        0.062446
-      ]
-    },
-    {
-      "hoverinfo": "none",
-      "line": {
-        "color": "#ff6f6f ",
-        "shape": "linear",
-        "width": 1.4142135623730951
-      },
-      "mode": "lines",
-      "type": "scatter",
-      "x": [
-        -0.048422,
-        -0.07989
-      ],
-      "y": [
-        0.151485,
         0.062446
       ]
     },
@@ -4233,6 +4251,24 @@
       "line": {
         "color": "#ff6f6f ",
         "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.280876,
+        0.354571
+      ],
+      "y": [
+        0.053561,
+        0.072563
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
         "width": 1.0
       },
       "mode": "lines",
@@ -4697,7 +4733,7 @@
       "mode": "markers",
       "opacity": 0.9,
       "text": [
-        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>I2L</b>: 2, <b>RIPL</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1, <b>pm4VL</b>: 1<br>Conns out: <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1, <b>pm4VL</b>: 1",
+        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>I2L</b>: 2, <b>RIPL</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1, <b>pm4VL</b>: 1<br>Conns out: <b>I2L</b>: 2, <b>RIPL</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1, <b>pm4VL</b>: 1",
         "<b>I1R</b><br>Pharyngeal interneuron<br>Conns in: <b>MCR</b>: 4, <b>pm3VR</b>: 3, <b>NSMR</b>: 2, <b>RIPR</b>: 2, <b>pm4VR</b>: 2, <br><b>I3</b>: 1<br>Conns out: <b>MCR</b>: 4, <b>pm3VR</b>: 3, <b>NSMR</b>: 2, <b>RIPR</b>: 2, <b>pm4VR</b>: 2, <br><b>I3</b>: 1",
         "<b>I2L</b><br>Pharyngeal interneuron<br>Conns in: <b>I1L</b>: 2, <b>e3VL</b>: 2, <b>M2L</b>: 1<br>Conns out: <b>I1L</b>: 2, <b>e3VL</b>: 2, <b>M2L</b>: 1",
         "<b>I2R</b><br>Pharyngeal interneuron<br>Conns in: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1, <b>e3VR</b>: 1<br>Conns out: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1, <b>e3VR</b>: 1",
@@ -4717,7 +4753,7 @@
         "<b>MI</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>M2R</b>: 5, <b>pm4D</b>: 3, <b>I3</b>: 1<br>Conns out: <b>M2R</b>: 5, <b>pm4D</b>: 3, <b>I3</b>: 1",
         "<b>NSML</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>NSMR</b>: 2<br>Conns out: <b>NSMR</b>: 2",
         "<b>NSMR</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I1R</b>: 2, <b>I2R</b>: 2, <b>NSML</b>: 2, <b>pm5D</b>: 2, <b>M3L</b>: 1<br>Conns out: <b>I1R</b>: 2, <b>I2R</b>: 2, <b>NSML</b>: 2, <b>pm5D</b>: 2, <b>M3L</b>: 1",
-        "<b>RIPL</b><br>Linker to pharynx<br>Conns out: <b>I1L</b>: 2",
+        "<b>RIPL</b><br>Linker to pharynx<br>Conns in: <b>I1L</b>: 2<br>Conns out: <b>I1L</b>: 2",
         "<b>RIPR</b><br>Linker to pharynx<br>Conns in: <b>I1R</b>: 2<br>Conns out: <b>I1R</b>: 2",
         "<b>pm1</b><br>Pharyngeal muscle<br>Conns in: <b>e3D</b>: 4, <b>pm2D</b>: 3, <b>pm2VL</b>: 3, <b>pm2VR</b>: 3<br>Conns out: <b>e3D</b>: 4, <b>pm2D</b>: 3, <b>pm2VL</b>: 3, <b>pm2VR</b>: 3",
         "<b>pm2D</b><br>Pharyngeal muscle<br>Conns in: <b>pm1</b>: 3, <b>pm3D</b>: 3<br>Conns out: <b>pm1</b>: 3, <b>pm3D</b>: 3",
@@ -4741,9 +4777,9 @@
         "<b>pm8</b><br>Pharyngeal muscle<br>Conns in: <b>pm7D</b>: 3, <b>pm7VL</b>: 3, <b>pm7VR</b>: 3, <b>mc3DL</b>: 3, <b>mc3DR</b>: 3, <br><b>mc3V</b>: 3<br>Conns out: <b>pm7D</b>: 3, <b>pm7VL</b>: 3, <b>pm7VR</b>: 3, <b>mc3DL</b>: 3, <b>mc3DR</b>: 3, <br><b>mc3V</b>: 3",
         "<b>bm</b><br>Pharyngeal basement membrane",
         "<b>e2DL</b><br>Pharyngeal epithelium<br>Conns in: <b>e3VL</b>: 1<br>Conns out: <b>e3VL</b>: 1",
-        "<b>e2DR</b><br>Pharyngeal epithelium<br>Conns out: <b>e3D</b>: 2",
+        "<b>e2DR</b><br>Pharyngeal epithelium<br>Conns in: <b>e3D</b>: 2<br>Conns out: <b>e3D</b>: 2",
         "<b>e2V</b><br>Pharyngeal epithelium<br>Conns in: <b>e3D</b>: 1, <b>e3VR</b>: 1<br>Conns out: <b>e3D</b>: 1, <b>e3VR</b>: 1",
-        "<b>e3D</b><br>Pharyngeal epithelium<br>Conns in: <b>pm1</b>: 4, <b>e2DR</b>: 2, <b>e2V</b>: 1<br>Conns out: <b>pm1</b>: 4, <b>e2V</b>: 1",
+        "<b>e3D</b><br>Pharyngeal epithelium<br>Conns in: <b>pm1</b>: 4, <b>e2DR</b>: 2, <b>e2V</b>: 1<br>Conns out: <b>pm1</b>: 4, <b>e2DR</b>: 2, <b>e2V</b>: 1",
         "<b>e3VL</b><br>Pharyngeal epithelium<br>Conns in: <b>pm3VL</b>: 4, <b>I2L</b>: 2, <b>e2DL</b>: 1<br>Conns out: <b>pm3VL</b>: 4, <b>I2L</b>: 2, <b>e2DL</b>: 1",
         "<b>e3VR</b><br>Pharyngeal epithelium<br>Conns in: <b>I2R</b>: 1, <b>e2V</b>: 1<br>Conns out: <b>I2R</b>: 1, <b>e2V</b>: 1",
         "<b>g1AL</b><br>Pharyngeal glial cell<br>Conns in: <b>M4</b>: 7, <b>I5</b>: 4, <b>M2L</b>: 2, <b>M3L</b>: 2<br>Conns out: <b>M4</b>: 7, <b>I5</b>: 4, <b>M2L</b>: 2, <b>M3L</b>: 2",

@@ -28,6 +28,24 @@
       "mode": "lines",
       "type": "scatter",
       "x": [
+        0.106642,
+        0.13423
+      ],
+      "y": [
+        -0.026253,
+        -0.02303
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
         0.068031,
         0.058857
       ],
@@ -2219,7 +2237,7 @@
         "<b>RIH</b><br>Category 4 interneuron",
         "<b>RIML</b><br>Layer 1 interneuron; motorneuron in White et al., 1986",
         "<b>RIMR</b><br>Layer 1 interneuron; motorneuron in White et al., 1986",
-        "<b>RIPL</b><br>Linker to pharynx<br>Conns out: <b>I1L</b>: 2",
+        "<b>RIPL</b><br>Linker to pharynx<br>Conns in: <b>I1L</b>: 2<br>Conns out: <b>I1L</b>: 2",
         "<b>RIPR</b><br>Linker to pharynx<br>Conns in: <b>I1R</b>: 2<br>Conns out: <b>I1R</b>: 2",
         "<b>RIR</b><br>Category 4 interneuron",
         "<b>RIS</b><br>Layer 3 interneuron",
@@ -2343,7 +2361,7 @@
         "<b>VD7</b><br>Ventral cord motor neuron",
         "<b>VD8</b><br>Ventral cord motor neuron",
         "<b>VD9</b><br>Ventral cord motor neuron",
-        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1<br>Conns out: <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1",
+        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1<br>Conns out: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1",
         "<b>I1R</b><br>Pharyngeal interneuron<br>Conns in: <b>MCR</b>: 4, <b>RIPR</b>: 2, <b>NSMR</b>: 2, <b>I3</b>: 1<br>Conns out: <b>MCR</b>: 4, <b>RIPR</b>: 2, <b>NSMR</b>: 2, <b>I3</b>: 1",
         "<b>I2L</b><br>Pharyngeal interneuron<br>Conns in: <b>I1L</b>: 2, <b>M2L</b>: 1<br>Conns out: <b>I1L</b>: 2, <b>M2L</b>: 1",
         "<b>I2R</b><br>Pharyngeal interneuron<br>Conns in: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1<br>Conns out: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1",
@@ -2363,7 +2381,7 @@
         "<b>MI</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>M2R</b>: 5, <b>I3</b>: 1<br>Conns out: <b>M2R</b>: 5, <b>I3</b>: 1",
         "<b>NSML</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>NSMR</b>: 2<br>Conns out: <b>NSMR</b>: 2",
         "<b>NSMR</b><br>Pharyngeal polymodal neuron<br>Conns in: <b>I1R</b>: 2, <b>I2R</b>: 2, <b>NSML</b>: 2, <b>M3L</b>: 1<br>Conns out: <b>I1R</b>: 2, <b>I2R</b>: 2, <b>NSML</b>: 2, <b>M3L</b>: 1",
-        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1<br>Conns out: <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1",
+        "<b>I1L</b><br>Pharyngeal interneuron<br>Conns in: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1<br>Conns out: <b>RIPL</b>: 2, <b>I2L</b>: 2, <b>M3L</b>: 1, <b>MCR</b>: 1",
         "<b>I1R</b><br>Pharyngeal interneuron<br>Conns in: <b>MCR</b>: 4, <b>RIPR</b>: 2, <b>NSMR</b>: 2, <b>I3</b>: 1<br>Conns out: <b>MCR</b>: 4, <b>RIPR</b>: 2, <b>NSMR</b>: 2, <b>I3</b>: 1",
         "<b>I2L</b><br>Pharyngeal interneuron<br>Conns in: <b>I1L</b>: 2, <b>M2L</b>: 1<br>Conns out: <b>I1L</b>: 2, <b>M2L</b>: 1",
         "<b>I2R</b><br>Pharyngeal interneuron<br>Conns in: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1<br>Conns out: <b>NSMR</b>: 2, <b>M1</b>: 1, <b>M2R</b>: 1",

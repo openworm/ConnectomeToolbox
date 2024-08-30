@@ -2,7 +2,7 @@
   "data": [
     {
       "coloraxis": "coloraxis",
-      "hovertemplate": "Postsynaptic: %{x}<br>Presynaptic: %{y}<br>Synapses: %{z}<extra></extra>",
+      "hovertemplate": "<b>%{x}</b> -> <b>%{y}</b>: <b>%{z}</b><extra></extra> ",
       "name": "0",
       "type": "heatmap",
       "x": [
@@ -159,7 +159,7 @@
           0.0,
           0.0,
           0.0,
-          0.0,
+          2.0,
           0.0,
           0.0,
           0.0,
@@ -3173,7 +3173,7 @@
           0.0,
           0.0,
           0.0,
-          0.0,
+          2.0,
           1.0,
           0.0,
           0.0,
