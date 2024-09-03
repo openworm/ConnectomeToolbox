@@ -2,7 +2,7 @@
   "data": [
     {
       "coloraxis": "coloraxis",
-      "hovertemplate": "<b>%{x}</b> -> <b>%{y}</b>: <b>%{z}</b><extra></extra> ",
+      "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> ",
       "name": "0",
       "type": "heatmap",
       "x": [
@@ -96734,9 +96734,11 @@
   ],
   "layout": {
     "coloraxis": {
+      "cmax": 12.0,
+      "cmin": 0.0,
       "colorbar": {
         "title": {
-          "text": "Synapses"
+          "text": "Weight"
         }
       },
       "colorscale": [

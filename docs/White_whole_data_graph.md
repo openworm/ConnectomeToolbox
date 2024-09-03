@@ -11,66 +11,71 @@ Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivi
         ```plotly
         ---8<-- "./assets/White_whole_Raw Data_Chemical_graph.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Raw Data_Electrical_graph.json"
         ```
+
 === "Full View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/White_whole_Full View_Chemical_Exc_graph.json"
         ```
+
     === "Chemical Inh"
 
         ```plotly
         ---8<-- "./assets/White_whole_Full View_Chemical_Inh_graph.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Full View_Electrical_graph.json"
         ```
+
 === "Pharynx View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/White_whole_Pharynx View_Chemical_Exc_graph.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Pharynx View** for **White_whole**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Pharynx View_Electrical_graph.json"
         ```
+
 === "Social View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/White_whole_Social View_Chemical_Exc_graph.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Social View** for **White_whole**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Social View_Electrical_graph.json"
         ```
+
 === "Small View"
     === "Chemical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Small View_Chemical_graph.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/White_whole_Small View_Electrical_graph.json"
         ```
+
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

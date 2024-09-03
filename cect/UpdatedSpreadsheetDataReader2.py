@@ -111,7 +111,7 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
         for conn in muscle_conns:
             self.add_connection_info(conn)
 
-    def read_data(self):
+    def read_data(self, include_nonconnected_cells=False):
         """
         Args:
         Returns:
@@ -141,6 +141,13 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
                     cells.append(pre)
                 if post not in cells:
                     cells.append(post)
+
+            if include_nonconnected_cells:
+                from cect.Cells import PREFERRED_NEURON_NAMES
+
+                for c in PREFERRED_NEURON_NAMES:
+                    if c not in cells:
+                        cells.append(c)
 
         return cells, conns
 

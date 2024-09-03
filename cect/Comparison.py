@@ -29,6 +29,10 @@ reader_pages = {
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
+    "Randi2023": "Randi2023_data",
+    "SSData": "SSDR_data",
+    "UpdSSData": "UpdSSData_data",
+    "UpdSSData2": "UpdSSData2_data",
 }
 
 all_data[""] = [
@@ -64,6 +68,9 @@ def _format_json(json_str):
 def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "):
     view_name = view.name
 
+    if np.sum(connectome.connections[synclass]) == 0:
+        return None
+
     fig = connectome.to_plotly_graph_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
@@ -74,14 +81,6 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
-
-    if np.sum(connectome.connections[synclass]) == 0:
-        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
-            indent,
-            synclass,
-            view_name,
-            reader_name,
-        )
 
     return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
         indent,
@@ -94,6 +93,9 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     view_name = view.name
 
+    if np.sum(connectome.connections[synclass]) == 0:
+        return None
+
     fig = connectome.to_plotly_matrix_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s.json" % (
@@ -105,14 +107,6 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    if np.sum(connectome.connections[synclass]) == 0:
-        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
-            indent,
-            synclass,
-            view_name,
-            reader_name,
-        )
-
     return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
         indent,
         indent,
@@ -121,7 +115,7 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     )
 
 
-def generate_comparison_page(quick: bool, color_table=False):
+def generate_comparison_page(quick: bool, color_table=True):
     connectomes = {}
     all_connectomes = {}
 
@@ -135,6 +129,8 @@ def generate_comparison_page(quick: bool, color_table=False):
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+
+    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
     if not quick:
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
@@ -218,28 +214,27 @@ def generate_comparison_page(quick: bool, color_table=False):
                             f.write('=== "%s"\n' % view.name)
 
                             for sc in view.synclass_sets:
-                                f.write(indent + '=== "%s"\n' % sc)
-
                                 if matrix:
-                                    f.write(
-                                        get_matrix_markdown(
-                                            reader_name,
-                                            view,
-                                            cv,
-                                            sc,
-                                            indent=indent + indent,
-                                        )
+                                    mkdown_fig = get_matrix_markdown(
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
 
                                 else:
+                                    mkdown_fig = get_2d_graph_markdown(
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
+                                    )
+
+                                if mkdown_fig is not None:
                                     f.write(
-                                        get_2d_graph_markdown(
-                                            reader_name,
-                                            view,
-                                            cv,
-                                            sc,
-                                            indent=indent + indent,
-                                        )
+                                        indent + '=== "%s"\n%s\n' % (sc, mkdown_fig)
                                     )
 
                     cell_types = {

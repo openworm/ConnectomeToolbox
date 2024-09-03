@@ -17,6 +17,7 @@ from cect.ConnectomeDataset import ConnectomeDataset
 
 from xlrd import open_workbook
 import os
+import sys
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
@@ -27,11 +28,10 @@ READER_DESCRIPTION = (
 
 
 class SpreadsheetDataReader(ConnectomeDataset):
-    cells = []
-    conns = []
-
     def __init__(self):
         ConnectomeDataset.__init__(self)
+
+        print("Initialising SpreadsheetDataReader...")
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
@@ -41,10 +41,13 @@ class SpreadsheetDataReader(ConnectomeDataset):
         for conn in muscle_conns:
             self.add_connection_info(conn)
 
-    def read_data(self):
+    def read_data(self, include_nonconnected_cells=False):
+        cells = []
+        conns = []
         # reading the NeuronConnectFormatted.xls file if neuron_connect = True
         neuron_connect = False
         if neuron_connect:
+            """
             filename = "%sNeuronConnectFormatted.xlsx" % spreadsheet_location
             rb = open_workbook(filename)
             print_("Opened the Excel file: " + filename)
@@ -62,34 +65,36 @@ class SpreadsheetDataReader(ConnectomeDataset):
                 if post not in self.cells:
                     self.cells.append(post)
 
-            return self.cells, self.conns
+            return self.cells, self.conns"""
 
         else:
             filename = "%sCElegansNeuronTables.xls" % spreadsheet_location
             rb = open_workbook(filename)
 
-            print_("Opened Excel file: " + filename)
+            sheet = 0
+            print_("Opened sheet %i in Excel file: %s" % (sheet, filename))
 
-            # known_nonconnected_cells = ["CANL", "CANR", "VC6"]
-
-            for row in range(1, rb.sheet_by_index(0).nrows):
+            for row in range(1, rb.sheet_by_index(sheet).nrows):
                 pre = str(rb.sheet_by_index(0).cell(row, 0).value)
                 post = str(rb.sheet_by_index(0).cell(row, 1).value)
                 syntype = rb.sheet_by_index(0).cell(row, 2).value
                 num = int(rb.sheet_by_index(0).cell(row, 3).value)
                 synclass = rb.sheet_by_index(0).cell(row, 4).value
 
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                if pre not in cells:
+                    cells.append(pre)
+                if post not in cells:
+                    cells.append(post)
 
-            """if include_nonconnected_cells:
-                for c in known_nonconnected_cells:
-                    self.cells.append(c)"""
+            if include_nonconnected_cells:
+                from cect.Cells import PREFERRED_NEURON_NAMES
 
-            return self.cells, self.conns
+                for c in PREFERRED_NEURON_NAMES:
+                    if c not in cells:
+                        cells.append(c)
+
+        return cells, conns
 
     def read_muscle_data(self):
         conns = []
@@ -99,9 +104,10 @@ class SpreadsheetDataReader(ConnectomeDataset):
         filename = "%sCElegansNeuronTables.xls" % spreadsheet_location
         rb = open_workbook(filename)
 
-        print_("Opened Excel file: " + filename)
+        sheet = 1
+        print_("Opened sheet %i in Excel file: %s" % (sheet, filename))
 
-        sheet = rb.sheet_by_index(1)
+        sheet = rb.sheet_by_index(sheet)
 
         for row in range(1, sheet.nrows):
             pre = str(sheet.cell(row, 0).value)
@@ -130,12 +136,17 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 def main():
+    print("Analysing...")
+
     cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
+
+    if "-nogui" not in sys.argv:
+        my_instance.connection_number_plot("Acetylcholine")
 
 
 if __name__ == "__main__":

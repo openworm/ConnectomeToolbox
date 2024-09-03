@@ -11,10 +11,7 @@ import wormneuroatlas as wa
 
 ############################################################
 
-#   A simple script to read the values in WormNeuroAtlas
-
-#    This is on of a number of interchangeable "Readers" which can
-#    be used to get connection data for c302
+#   A script to read the values in WormNeuroAtlas
 
 ############################################################
 
@@ -25,9 +22,21 @@ READER_DESCRIPTION = (
 )
 
 
+def get_all_cells(watlas):
+    all_cells = watlas.neuron_ids
+    for i in range(len(all_cells)):
+        if all_cells[i] == "AWCOFF":
+            all_cells[i] = "AWCL"
+        if all_cells[i] == "AWCON":
+            all_cells[i] = "AWCR"
+
+    return all_cells
+
+
 class WormNeuroAtlasReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
+
         print_("Initialising WormNeuroAtlasReader")
 
         self.atlas = wa.NeuroAtlas()
@@ -41,12 +50,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
         self.alt_ach = syn_sign.get_neurons_producing("ACh", mode="alternative")
         self.alt_gaba = syn_sign.get_neurons_producing("GABA", mode="alternative")
 
-        self.all_cells = self.atlas.neuron_ids
-        for i in range(len(self.all_cells)):
-            if self.all_cells[i] == "AWCOFF":
-                self.all_cells[i] = "AWCL"
-            if self.all_cells[i] == "AWCON":
-                self.all_cells[i] = "AWCR"
+        self.all_cells = get_all_cells(self.atlas)
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:

@@ -2,13 +2,18 @@ from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
+from cect.ConnectomeReader import POS_NEG_COLORMAP
 from cect.Cells import get_short_description
 from cect.Cells import get_standard_color
+from cect.Cells import is_bilateral_left
+from cect.Cells import is_bilateral_right
+from cect.Cells import are_bilateral_pair
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_muscle
 
 import numpy as np
 import math
+import sys
 
 
 class ConnectomeDataset:
@@ -100,7 +105,7 @@ class ConnectomeDataset:
 
         return list(neurons), list(muscles), conns
 
-    def get_connections_from(self, node, synclass):
+    def get_connections_from(self, node, synclass, ordered_by_weight=False):
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
@@ -110,9 +115,11 @@ class ConnectomeDataset:
         slice = conn_array[index]
         conns = {}
         for idn, n in enumerate(self.nodes):
-            num = slice[idn]
-            if num > 0:
-                conns[n] = num
+            weight = slice[idn]
+            if weight != 0:
+                conns[n] = weight
+        if ordered_by_weight:
+            conns = dict(sorted(conns.items(), key=lambda item: item[1], reverse=True))
         return conns
 
     def get_connections_summary(self, node, synclass, direction, bold_cells=False):
@@ -140,7 +147,7 @@ class ConnectomeDataset:
 
         return info[:-2]
 
-    def get_connections_to(self, node, synclass):
+    def get_connections_to(self, node, synclass, ordered_by_weight=False):
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
@@ -150,9 +157,11 @@ class ConnectomeDataset:
         slice = conn_array.T[index]
         conns = {}
         for idn, n in enumerate(self.nodes):
-            num = slice[idn]
-            if num > 0:
-                conns[n] = num
+            weight = slice[idn]
+            if weight != 0:
+                conns[n] = weight
+        if ordered_by_weight:
+            conns = dict(sorted(conns.items(), key=lambda item: item[1], reverse=True))
         return conns
 
     def get_connectome_view(self, view):
@@ -239,12 +248,20 @@ class ConnectomeDataset:
             )
         return info
 
-    def to_plotly_matrix_fig(
-        self, synclass, view, color_continuous_scale=DEFAULT_COLORMAP
-    ):
+    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=None):
         import plotly.express as px
 
         conn_array = self.connections[synclass]
+
+        zmin = np.min(conn_array)
+        zmax = np.max(conn_array)
+        color_continuous_scale = DEFAULT_COLORMAP
+
+        if synclass == "Functional":
+            color_continuous_scale = POS_NEG_COLORMAP
+            largest = max(abs(zmin), abs(zmax))
+            zmin = -1 * largest
+            zmax = largest
 
         def get_color_html(color, node):
             return f'<span style="color:{color};">{node}</span>'
@@ -267,15 +284,18 @@ class ConnectomeDataset:
 
         fig = px.imshow(
             conn_array,
-            labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
+            labels=dict(x="Postsynaptic", y="Presynaptic", color="Weight"),
             x=x_ticktext,
             y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
+            zmin=zmin,
+            zmax=zmax,
         )
+
         fig.update(
             data=[
                 {
-                    "hovertemplate": "<b>%{x}</b> -> <b>%{y}</b>: <b>%{z}</b><extra></extra> "
+                    "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> "
                 }
             ]
         )
@@ -318,8 +338,8 @@ class ConnectomeDataset:
                 from_node_set = view.get_node_set(self.nodes[dir_[0]])
 
                 conn_weight = conn_array[dir_[0], dir_[1]]
-                weight = min(10, math.sqrt(conn_weight))
-                opposite_dir_weight = math.sqrt(conn_array[dir_[1], dir_[0]])
+                weight = min(10, math.sqrt(abs(conn_weight)))
+                opposite_dir_weight = math.sqrt(abs(conn_array[dir_[1], dir_[0]]))
 
                 straight = edge[0] != edge[1] and (
                     gap_junction or opposite_dir_weight == 0
@@ -477,15 +497,85 @@ class ConnectomeDataset:
 
         return fig
 
+    def connection_number_plot(self, synclass):  # Todo: get better name
+        from cect.Cells import COOK_GROUPING_1
+        from cect.Cells import get_standard_color
+        from matplotlib import pyplot as plt
+
+        for group in COOK_GROUPING_1:
+            print_(" = Adding plot for %s" % group)
+            xs = []
+            ys = []
+            labels = []
+            colors = []
+            markers = []
+            fill_styles = []
+            pre_cells = sorted(COOK_GROUPING_1[group])
+
+            for pre_cell_index in range(len(pre_cells)):
+                pre_cell = pre_cells[pre_cell_index]
+                conns = self.get_connections_from(
+                    pre_cell, synclass, ordered_by_weight=True
+                )
+                for post_cell in conns:
+                    weight = conns[post_cell]
+                    colors.append(get_standard_color(post_cell))
+                    xs.append(pre_cell_index)
+                    ys.append(weight)
+                    labels.append(pre_cell)
+                    if weight < 0:
+                        fill_styles.append("none")
+                    else:
+                        fill_styles.append("full")
+
+                    if are_bilateral_pair(pre_cell, post_cell):
+                        markers.append("D")
+                    elif is_bilateral_left(pre_cell):
+                        markers.append(">")
+                    elif is_bilateral_right(pre_cell):
+                        markers.append("<")
+                    else:
+                        markers.append("o")
+
+                    print_(
+                        f"  Adding {pre_cell}->{post_cell} with weight {weight} ({markers[-1]})"
+                    )
+
+            if len(xs) > 0:
+                fig, ax = plt.subplots()
+                plt.title("Conns of type: %s from cells in: %s" % (synclass, group))
+
+                for i in zip(labels, ys, colors, markers, fill_styles):
+                    plt.plot(
+                        i[0], i[1], linewidth=0, color=i[2], marker=i[3], fillstyle=i[4]
+                    )
+
+                plt.setp(
+                    ax.get_xticklabels(),
+                    rotation=90,
+                    ha="center",
+                    rotation_mode="default",
+                )
+
+                # ax.set_xticks(ticks=range(len(pre_cells)), labels=pre_cells)
+
+        plt.show()
+
 
 if __name__ == "__main__":
     cds = ConnectomeDataset()
 
     cds.add_connection_info(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
+
     cds.add_connection_info(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
+
+    cds.add_connection_info(ConnectionInfo("AVFL", "AVHL", 2, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFR", "AVHL", 3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", -3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
 
@@ -495,3 +585,6 @@ if __name__ == "__main__":
     print("From: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "from"))
     print("To: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "to"))
     print(cds.get_connections_to("DD4", "Acetylcholine"))
+
+    if "-nogui" not in sys.argv:
+        cds.connection_number_plot("Acetylcholine")
