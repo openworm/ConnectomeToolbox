@@ -2,7 +2,7 @@
   "data": [
     {
       "coloraxis": "coloraxis",
-      "hovertemplate": "Postsynaptic: %{x}<br>Presynaptic: %{y}<br>Synapses: %{z}<extra></extra>",
+      "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> ",
       "name": "0",
       "type": "heatmap",
       "x": [
@@ -159,7 +159,7 @@
           0.0,
           0.0,
           0.0,
-          0.0,
+          2.0,
           0.0,
           0.0,
           0.0,
@@ -3173,7 +3173,7 @@
           0.0,
           0.0,
           0.0,
-          0.0,
+          2.0,
           1.0,
           0.0,
           0.0,
@@ -4238,9 +4238,11 @@
   ],
   "layout": {
     "coloraxis": {
+      "cmax": 9.0,
+      "cmin": 0.0,
       "colorbar": {
         "title": {
-          "text": "Synapses"
+          "text": "Weight"
         }
       },
       "colorscale": [

@@ -4,40 +4,98 @@
       "hoverinfo": "none",
       "line": {
         "color": "grey",
-        "width": 1
+        "shape": "spline",
+        "width": 1.4142135623730951
       },
       "mode": "lines",
-      "text": [
-        "ASHR",
-        "ASKR",
-        "AWBR",
-        "IL2R",
-        "RMGR",
-        "RMHR",
-        "URXR"
-      ],
       "type": "scatter",
       "x": [
         0.20452,
-        0.096835,
-        null,
-        0.20452,
-        0.283573,
-        null,
-        0.096835,
-        0.007365,
-        null
+        0.11005830000000003,
+        0.096835
       ],
       "y": [
         0.024251,
+        0.104262,
+        0.227347
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.096835,
+        0.19129670000000001,
+        0.20452
+      ],
+      "y": [
         0.227347,
-        null,
-        0.024251,
+        0.147336,
+        0.024251
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.283573,
+        0.20452
+      ],
+      "y": [
         -0.111892,
-        null,
+        0.024251
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.096835,
+        0.014994800000000003,
+        0.007365
+      ],
+      "y": [
         0.227347,
+        0.302216,
+        0.412873
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "grey",
+        "shape": "spline",
+        "width": 1.0
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        0.007365,
+        0.0892052,
+        0.096835
+      ],
+      "y": [
         0.412873,
-        null
+        0.338004,
+        0.227347
       ]
     },
     {
@@ -104,13 +162,13 @@
         "reversescale": true,
         "showscale": true,
         "size": [
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0,
-          10.0
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
         ],
         "symbol": [
           "circle",
@@ -123,6 +181,7 @@
         ]
       },
       "mode": "markers",
+      "opacity": 0.9,
       "text": [
         "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2, <b>RMGR</b>: 1<br>Conns out: <b>RMGR</b>: 2",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
@@ -154,6 +213,7 @@
     }
   ],
   "layout": {
+    "height": 800,
     "hovermode": "closest",
     "margin": {
       "b": 20,
@@ -978,11 +1038,14 @@
         }
       }
     },
+    "width": 800,
     "xaxis": {
       "showgrid": false,
       "zeroline": false
     },
     "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
       "showgrid": false,
       "zeroline": false
     }

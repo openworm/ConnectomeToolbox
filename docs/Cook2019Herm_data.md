@@ -11,66 +11,71 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Raw Data_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Raw Data_Electrical.json"
         ```
+
 === "Full View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Full View_Chemical_Exc.json"
         ```
+
     === "Chemical Inh"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Full View_Chemical_Inh.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Full View_Electrical.json"
         ```
+
 === "Pharynx View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Pharynx View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Pharynx View** for **Cook2019Herm**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Pharynx View_Electrical.json"
         ```
+
 === "Social View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Social View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Social View** for **Cook2019Herm**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Social View_Electrical.json"
         ```
+
 === "Small View"
     === "Chemical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Small View_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2019Herm_Small View_Electrical.json"
         ```
+
 
 ### Neurons (302)
 <details><summary>Full list of Neurons</summary>

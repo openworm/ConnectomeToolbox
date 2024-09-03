@@ -13,6 +13,20 @@ import sys
 from cect.WormAtlasInfo import WA_COLORS
 from cect import print_
 
+
+ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
+    "Acetylcholine",
+    "Acetylcholine_Tyramine",
+    "Dopamine",
+    "FMRFamide",
+    "GABA",
+    "Glutamate",
+    "Octapamine",
+    "Serotonin",
+    "Serotonin_Acetylcholine",
+    "Serotonin_Glutamate",
+]
+
 cell_notes = {}
 
 connectomes = None
@@ -632,6 +646,14 @@ PREFERRED_NEURON_NAMES_COOK = (
     + UNKNOWN_FUNCTION_NEURONS
 )
 
+
+COOK_GROUPING_1 = {
+    "Interneurons": INTERNEURONS_COOK,
+    "Sensory neurons": SENSORY_NEURONS_COOK,
+    "Motorneurons": MOTORNEURONS_COOK,
+    "Pharyngeal polymodal neurons": PHARYNGEAL_POLYMODAL_NEURONS,
+    "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
+}
 
 PREFERRED_NEURON_NAMES = [
     "ADAL",
@@ -1259,6 +1281,15 @@ PREFERRED_MUSCLE_NAMES = (
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
+COOK_GROUPING_1["Body wall muscles"] = BODY_WALL_MUSCLE_NAMES
+COOK_GROUPING_1["Other muscles"] = (
+    PHARYNGEAL_MUSCLE_NAMES
+    + VULVAL_MUSCLE_NAMES
+    + ANAL_SPHINCTER_MUSCLES
+    + MALE_SPECIFIC_MUSCLES
+    + UNSPECIFIED_BODY_WALL_MUSCLES
+)
+
 GLR_CELLS = [
     "GLRDL",
     "GLRDR",
@@ -1379,12 +1410,55 @@ KNOWN_OTHER_CELLS_COOK_19 = (
     + INTESTINAL_MUSCLES
 )
 
+COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
+
 
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
 KNOWN_OTHER_CELLS += (
     MALE_SPECIFIC_NEURONS + MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
 )
+
+COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
+COOK_GROUPING_1["Male other cells"] = (
+    MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+)
+
+ALL_PREFERRED_CELL_NAMES = (
+    PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + KNOWN_OTHER_CELLS
+)
+
+
+def is_bilateral_left(cell):
+    if (
+        cell in ALL_PREFERRED_CELL_NAMES
+        and cell.endswith("L")
+        and cell[:-1] + "R" in ALL_PREFERRED_CELL_NAMES
+    ):
+        return True
+    else:
+        return False
+
+
+def is_bilateral_right(cell):
+    if (
+        cell in ALL_PREFERRED_CELL_NAMES
+        and cell.endswith("R")
+        and cell[:-1] + "L" in ALL_PREFERRED_CELL_NAMES
+    ):
+        return True
+    else:
+        return False
+
+
+def are_bilateral_pair(cell_a, cell_b):
+    if cell_a[:-1] == cell_b[:-1] and (
+        (cell_a[-1] == "L" and cell_b[-1] == "R")
+        or (cell_b[-1] == "L" and cell_a[-1] == "R")
+    ):
+        return True
+    else:
+        return False
 
 
 def get_standard_color(cell):
@@ -1527,14 +1601,19 @@ def get_short_description(cell):
 """
 
 
-def get_cell_internal_link(cell_name, html=False, text=None):
+def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
     url = "../Cells/index.html#%s" % cell_name
 
     if html:
+        link_text = cell_name if text is None else text
+        if use_color:
+            color = get_standard_color(cell_name)
+            link_text = f'<span style="color:{color};">{link_text}</span>'
+
         return '<a href="%s" title="%s">%s</a>' % (
             url,
             get_short_description(cell_name),
-            cell_name if text is None else text,
+            link_text,
         )
     else:
         return '[%s "%s"](%s)' % (
@@ -1609,22 +1688,21 @@ def _get_dataset_link(reader_name, html=False, text=None):
 
 
 def _generate_cell_table(cell_type, cells):
-    import plotly.express as px
     import plotly.graph_objects as go
-    import numpy as np
 
     from cect.Comparison import _format_json
-    from cect.Comparison import shorten_neurotransmitter
 
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": ["Acetylcholine", "Generic_CS", "GABA"],
-        "Chemical conns out": ["Acetylcholine", "Generic_CS", "GABA"],
+        "Chemical conns in": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
         "Electrical conns": ["Generic_GJ"],
     }
 
     fig_md = ""
+
+    verbose = False
 
     for syn_summary in syn_summaries:
         fig = go.Figure()
@@ -1647,10 +1725,11 @@ def _generate_cell_table(cell_type, cells):
                         conns_here = connectome.get_connections_from(cell, syn_type)
                     else:
                         conns_here = connectome.get_connections_to(cell, syn_type)
-                    print_(
-                        "Conns: %i for %s of type %s (%s)"
-                        % (len(conns_here), cell, syn_type, syn_summary)
-                    )
+                    if verbose:
+                        print_(
+                            "Conns: %i for %s of type %s (%s)"
+                            % (len(conns_here), cell, syn_type, syn_summary)
+                        )
                     total_y += len(conns_here)
 
                 y.append(total_y)
@@ -1659,7 +1738,7 @@ def _generate_cell_table(cell_type, cells):
                 marker_symbol = "square"
                 dash = "solid"
 
-                data = fig.add_scatter(
+                fig.add_scatter(
                     name="%s %s" % (reader_name, syn_summary),
                     x=sorted_cells,
                     y=y,
@@ -1729,7 +1808,7 @@ if __name__ == "__main__":
                 f.write("\n### %s\n\n" % cell_class)
 
                 for cell_type in WA_COLORS[sex][cell_class]:
-                    if not "General code" in cell_type:
+                    if "General code" not in cell_type:
                         color = WA_COLORS[sex][cell_class][cell_type][1:]
                         f.write(
                             "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(

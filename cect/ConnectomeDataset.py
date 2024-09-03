@@ -2,13 +2,18 @@ from cect import print_
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
+from cect.ConnectomeReader import POS_NEG_COLORMAP
 from cect.Cells import get_short_description
 from cect.Cells import get_standard_color
+from cect.Cells import is_bilateral_left
+from cect.Cells import is_bilateral_right
+from cect.Cells import are_bilateral_pair
 from cect.ConnectomeReader import is_neuron
 from cect.ConnectomeReader import is_muscle
 
 import numpy as np
 import math
+import sys
 
 
 class ConnectomeDataset:
@@ -39,7 +44,7 @@ class ConnectomeDataset:
 
         self.connection_infos.append(conn)
 
-        if not conn.synclass in self.connections:
+        if conn.synclass not in self.connections:
             if len(self.connections) == 0:
                 self.connections[conn.synclass] = np.zeros(
                     [0, 0], dtype=self.DEFAULT_DTYPE
@@ -50,11 +55,11 @@ class ConnectomeDataset:
                     existing.shape, dtype=self.DEFAULT_DTYPE
                 )
 
-        if not conn.pre_cell in self.nodes:
+        if conn.pre_cell not in self.nodes:
             self.nodes.append(conn.pre_cell)
             self._expand_conn_arrays()
 
-        if not conn.post_cell in self.nodes:
+        if conn.post_cell not in self.nodes:
             self.nodes.append(conn.post_cell)
             self._expand_conn_arrays()
 
@@ -100,19 +105,21 @@ class ConnectomeDataset:
 
         return list(neurons), list(muscles), conns
 
-    def get_connections_from(self, node, synclass):
+    def get_connections_from(self, node, synclass, ordered_by_weight=False):
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
-        if not node in self.nodes:
+        if node not in self.nodes:
             return {}
         index = self.nodes.index(node)
         slice = conn_array[index]
         conns = {}
         for idn, n in enumerate(self.nodes):
-            num = slice[idn]
-            if num > 0:
-                conns[n] = num
+            weight = slice[idn]
+            if weight != 0:
+                conns[n] = weight
+        if ordered_by_weight:
+            conns = dict(sorted(conns.items(), key=lambda item: item[1], reverse=True))
         return conns
 
     def get_connections_summary(self, node, synclass, direction, bold_cells=False):
@@ -133,7 +140,6 @@ class ConnectomeDataset:
             for k, v in ordered.items()
         ]
         info = ""
-        count = 0
         for v in vals:
             if len(info.split("<br>")[-1]) > 80:
                 info += "<br>"
@@ -141,19 +147,21 @@ class ConnectomeDataset:
 
         return info[:-2]
 
-    def get_connections_to(self, node, synclass):
+    def get_connections_to(self, node, synclass, ordered_by_weight=False):
         if synclass not in self.connections:
             return {}
         conn_array = self.connections[synclass]
-        if not node in self.nodes:
+        if node not in self.nodes:
             return {}
         index = self.nodes.index(node)
         slice = conn_array.T[index]
         conns = {}
         for idn, n in enumerate(self.nodes):
-            num = slice[idn]
-            if num > 0:
-                conns[n] = num
+            weight = slice[idn]
+            if weight != 0:
+                conns[n] = weight
+        if ordered_by_weight:
+            conns = dict(sorted(conns.items(), key=lambda item: item[1], reverse=True))
         return conns
 
     def get_connectome_view(self, view):
@@ -216,11 +224,11 @@ class ConnectomeDataset:
                                 )
 
                             if pre_index >= 0 and post_index >= 0:
-                                cv.connections[synclass_set][
-                                    pre_index, post_index
-                                ] += conn_array[
-                                    self.nodes.index(pre), self.nodes.index(post)
-                                ]
+                                cv.connections[synclass_set][pre_index, post_index] += (
+                                    conn_array[
+                                        self.nodes.index(pre), self.nodes.index(post)
+                                    ]
+                                )
 
         return cv
 
@@ -240,12 +248,20 @@ class ConnectomeDataset:
             )
         return info
 
-    def to_plotly_matrix_fig(
-        self, synclass, view, color_continuous_scale=DEFAULT_COLORMAP
-    ):
+    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=None):
         import plotly.express as px
 
         conn_array = self.connections[synclass]
+
+        zmin = np.min(conn_array)
+        zmax = np.max(conn_array)
+        color_continuous_scale = DEFAULT_COLORMAP
+
+        if synclass == "Functional":
+            color_continuous_scale = POS_NEG_COLORMAP
+            largest = max(abs(zmin), abs(zmax))
+            zmin = -1 * largest
+            zmax = largest
 
         def get_color_html(color, node):
             return f'<span style="color:{color};">{node}</span>'
@@ -268,18 +284,38 @@ class ConnectomeDataset:
 
         fig = px.imshow(
             conn_array,
-            labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
+            labels=dict(x="Postsynaptic", y="Presynaptic", color="Weight"),
             x=x_ticktext,
             y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
+            zmin=zmin,
+            zmax=zmax,
+        )
+
+        fig.update(
+            data=[
+                {
+                    "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> "
+                }
+            ]
         )
 
         return fig
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
+        print_("==============")
+        print_(f"Generating: {synclass} for {view.name}")
+
+        DEFAULT_NODE_SIZE = 15
+
+        def get_node_size(node_set):
+            return DEFAULT_NODE_SIZE * math.sqrt(len(node_set.cells))
+
         import plotly.graph_objects as go
         import networkx as nx
+
+        gap_junction = synclass == "Electrical"
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
@@ -292,31 +328,72 @@ class ConnectomeDataset:
         node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
         node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
-        edge_x = []
-        edge_y = []
-        weights = []
-
-        import random
+        edge_traces = []
 
         for edge in G.edges():
-            x0, y0 = (float("{:.6f}".format(a)) for a in pos[edge[0]])
-            x1, y1 = (float("{:.6f}".format(a)) for a in pos[edge[1]])
-            edge_x.append(x0)
-            edge_x.append(x1)
-            edge_x.append(None)
-            edge_y.append(y0)
-            edge_y.append(y1)
-            edge_y.append(None)
+            dirs = [[edge[0], edge[1]], [edge[1], edge[0]]]
+            for dir_ in dirs:
+                edge_x = []
+                edge_y = []
+                from_node_set = view.get_node_set(self.nodes[dir_[0]])
 
-        # Add nodes to the figure
-        edge_trace = go.Scatter(
-            x=edge_x,
-            y=edge_y,
-            mode="lines",
-            text=self.nodes,
-            line=dict(color="grey", width=1),
-            hoverinfo="none",
-        )
+                conn_weight = conn_array[dir_[0], dir_[1]]
+                weight = min(10, math.sqrt(abs(conn_weight)))
+                opposite_dir_weight = math.sqrt(abs(conn_array[dir_[1], dir_[0]]))
+
+                straight = edge[0] != edge[1] and (
+                    gap_junction or opposite_dir_weight == 0
+                )  # i.e. connections in both dirs, so add a curve...
+
+                if weight > 0:
+                    x0, y0 = (float("{:.6f}".format(a)) for a in pos[dir_[0]])
+                    x1, y1 = (float("{:.6f}".format(a)) for a in pos[dir_[1]])
+
+                    edge_x.append(x0)
+                    edge_y.append(y0)
+
+                    if x0 != x1 and y0 != y1:
+                        if not straight:
+                            # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
+                            offset = 0.2
+                            edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
+                            edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
+                    else:
+                        circle_offset_a = get_node_size(from_node_set) / 100
+
+                        edge_x.append(x0 - circle_offset_a)
+                        edge_y.append(y0 + circle_offset_a / 3)
+                        edge_x.append(x0 - circle_offset_a / 3)
+                        edge_y.append(y0 + circle_offset_a)
+
+                    edge_x.append(x1)
+                    edge_y.append(y1)
+                    # edge_x.append(None)
+                    # edge_y.append(None)
+
+                    """print(
+                        f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}"
+                    )"""
+                    line_color = "grey"
+                    if gap_junction:
+                        line_color = "#ff6f6f "
+                    elif from_node_set.color is not None:
+                        line_color = from_node_set.color
+
+                    # Add edges to the figure
+                    edge_trace = go.Scatter(
+                        x=edge_x,
+                        y=edge_y,
+                        mode="lines",
+                        # marker=dict(symbol="arrow",size=weight * 3,angleref="previous",     ),
+                        line=dict(
+                            color=line_color,
+                            width=weight,
+                        ),
+                        hoverinfo="none",
+                        line_shape="spline" if not straight else "linear",
+                    )
+                    edge_traces.append(edge_trace)
 
         node_adjacencies = []
         node_colours = []
@@ -324,22 +401,20 @@ class ConnectomeDataset:
         node_sizes = []
         node_shapes = []
 
-        DEFAULT_SIZE = 10
-
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
             if not view.has_color():
                 node_colours.append(len(adjacencies[1]))
 
         for i, node_value in enumerate(self.nodes):
-            num_connections = node_adjacencies[i]
+            # num_connections = node_adjacencies[i]
 
             node_set = view.get_node_set(node_value)
 
             if view.has_color():
                 node_colours.append(node_set.color)
 
-            node_sizes.append(DEFAULT_SIZE * math.sqrt(len(node_set.cells)))
+            node_sizes.append(get_node_size(node_set))
 
             if node_set.shape is not None:
                 node_shapes.append(node_set.shape)
@@ -385,7 +460,7 @@ class ConnectomeDataset:
                 colorscale="YlGnBu",
                 reversescale=True,
                 color=[],
-                size=DEFAULT_SIZE,
+                size=DEFAULT_NODE_SIZE,
                 colorbar=dict(
                     thickness=15,
                     title="Node Connections",
@@ -394,6 +469,7 @@ class ConnectomeDataset:
                 ),
                 line_width=1,
             ),
+            opacity=0.9,
             hoverinfo="text",
         )
 
@@ -403,17 +479,87 @@ class ConnectomeDataset:
         node_trace.text = node_text
 
         fig = go.Figure(
-            data=[edge_trace, node_trace],
+            data=edge_traces + [node_trace],
             layout=go.Layout(
                 showlegend=False,
                 hovermode="closest",
                 margin=dict(b=20, l=5, r=5, t=40),
                 xaxis=dict(showgrid=False, zeroline=False),
                 yaxis=dict(showgrid=False, zeroline=False),
+                width=800,
+                height=800,
             ),
+        )
+        fig.update_yaxes(
+            scaleanchor="x",
+            scaleratio=1,
         )
 
         return fig
+
+    def connection_number_plot(self, synclass):  # Todo: get better name
+        from cect.Cells import COOK_GROUPING_1
+        from cect.Cells import get_standard_color
+        from matplotlib import pyplot as plt
+
+        for group in COOK_GROUPING_1:
+            print_(" = Adding plot for %s" % group)
+            xs = []
+            ys = []
+            labels = []
+            colors = []
+            markers = []
+            fill_styles = []
+            pre_cells = sorted(COOK_GROUPING_1[group])
+
+            for pre_cell_index in range(len(pre_cells)):
+                pre_cell = pre_cells[pre_cell_index]
+                conns = self.get_connections_from(
+                    pre_cell, synclass, ordered_by_weight=True
+                )
+                for post_cell in conns:
+                    weight = conns[post_cell]
+                    colors.append(get_standard_color(post_cell))
+                    xs.append(pre_cell_index)
+                    ys.append(weight)
+                    labels.append(pre_cell)
+                    if weight < 0:
+                        fill_styles.append("none")
+                    else:
+                        fill_styles.append("full")
+
+                    if are_bilateral_pair(pre_cell, post_cell):
+                        markers.append("D")
+                    elif is_bilateral_left(pre_cell):
+                        markers.append(">")
+                    elif is_bilateral_right(pre_cell):
+                        markers.append("<")
+                    else:
+                        markers.append("o")
+
+                    print_(
+                        f"  Adding {pre_cell}->{post_cell} with weight {weight} ({markers[-1]})"
+                    )
+
+            if len(xs) > 0:
+                fig, ax = plt.subplots()
+                plt.title("Conns of type: %s from cells in: %s" % (synclass, group))
+
+                for i in zip(labels, ys, colors, markers, fill_styles):
+                    plt.plot(
+                        i[0], i[1], linewidth=0, color=i[2], marker=i[3], fillstyle=i[4]
+                    )
+
+                plt.setp(
+                    ax.get_xticklabels(),
+                    rotation=90,
+                    ha="center",
+                    rotation_mode="default",
+                )
+
+                # ax.set_xticks(ticks=range(len(pre_cells)), labels=pre_cells)
+
+        plt.show()
 
 
 if __name__ == "__main__":
@@ -421,9 +567,15 @@ if __name__ == "__main__":
 
     cds.add_connection_info(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
+
     cds.add_connection_info(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
+
+    cds.add_connection_info(ConnectionInfo("AVFL", "AVHL", 2, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFR", "AVHL", 3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", -3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
 
@@ -433,3 +585,6 @@ if __name__ == "__main__":
     print("From: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "from"))
     print("To: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "to"))
     print(cds.get_connections_to("DD4", "Acetylcholine"))
+
+    if "-nogui" not in sys.argv:
+        cds.connection_number_plot("Acetylcholine")

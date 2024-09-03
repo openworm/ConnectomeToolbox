@@ -6,13 +6,11 @@
 
 ############################################################
 
-import csv
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import is_body_wall_muscle
 from cect.ConnectomeReader import remove_leading_index_zero
 from cect.ConnectomeReader import is_muscle
 
@@ -119,7 +117,7 @@ class Cook2019DataReader(ConnectomeDataset):
                     row = 4 + i
                     col = 4 + j
                     val = sheet.cell(row=row, column=col).value
-                    print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
+                    # print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
                     if val is not None:
                         self.conn_nums[conn_type][i, j] = int(val)
 

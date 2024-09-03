@@ -3,45 +3,37 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "grey",
-        "width": 1
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 1.0
       },
       "mode": "lines",
-      "text": [
-        "SN1",
-        "SN2",
-        "SN3",
-        "SN4",
-        "SN5",
-        "SN6",
-        "IN1",
-        "IN2",
-        "IN3",
-        "IN4",
-        "HMN",
-        "SMN",
-        "MNVC",
-        "VC",
-        "HSN",
-        "MUBODY",
-        "MUHEAD"
-      ],
       "type": "scatter",
       "x": [
         3.4,
-        4.0,
-        null,
-        4.2,
-        7.1,
-        null
+        4.0
       ],
       "y": [
         5.3,
-        5.4,
-        null,
-        3.3,
+        5.4
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 2.6457513110645907
+      },
+      "mode": "lines",
+      "type": "scatter",
+      "x": [
+        7.1,
+        4.2
+      ],
+      "y": [
         1.0,
-        null
+        3.3
       ]
     },
     {
@@ -59,12 +51,12 @@
           "#16537E",
           "#16537E",
           "#FFDF00",
-          "#FF6000",
-          "#BFA700",
+          "#e59636",
+          "#B2832b",
           "#FF00FF",
           "#FF00FF",
-          "#964B00",
-          "#964B00"
+          "#5a2d0d",
+          "#5a2d0d"
         ],
         "colorbar": {
           "thickness": 15,
@@ -118,23 +110,23 @@
         "reversescale": true,
         "showscale": false,
         "size": [
-          50.99019513592785,
-          24.49489742783178,
-          38.72983346207417,
-          34.64101615137754,
-          20.0,
-          44.721359549995796,
-          36.05551275463989,
-          51.96152422706632,
-          55.67764362830022,
-          28.284271247461902,
-          42.426406871192846,
-          43.58898943540674,
-          84.2614977317636,
-          24.49489742783178,
-          14.142135623730951,
-          81.85352771872451,
-          52.91502622129181
+          76.48529270389177,
+          36.74234614174767,
+          58.09475019311125,
+          51.96152422706631,
+          30.0,
+          67.0820393249937,
+          54.08326913195984,
+          77.94228634059948,
+          83.51646544245033,
+          42.42640687119285,
+          63.63961030678927,
+          65.3834841531101,
+          126.39224659764538,
+          36.74234614174767,
+          21.213203435596427,
+          122.78029157808676,
+          79.37253933193772
         ],
         "symbol": [
           "triangle-up",
@@ -157,6 +149,7 @@
         ]
       },
       "mode": "markers",
+      "opacity": 0.9,
       "text": [
         "<b>SN1</b><br>Cells: IL2DL, IL2DR, IL2L, IL2R, IL2VL, IL2VR, CEPDL, CEPDR, CEPVL, CEPVR<br>CEPVR, OLQDL, OLQDR, OLQVL, OLQVR, URYDL, URYDR, URYVL, URYVR, OLLL, OLLR<br>OLLR, IL1DL, IL1DR, IL1L, IL1R, IL1VL, IL1VR",
         "<b>SN2</b><br>Cells: PHAL, PHAR, PHBL, PHBR, PHCL, PHCR",
@@ -218,6 +211,7 @@
     }
   ],
   "layout": {
+    "height": 800,
     "hovermode": "closest",
     "margin": {
       "b": 20,
@@ -1042,11 +1036,14 @@
         }
       }
     },
+    "width": 800,
     "xaxis": {
       "showgrid": false,
       "zeroline": false
     },
     "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
       "showgrid": false,
       "zeroline": false
     }

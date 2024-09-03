@@ -2,7 +2,7 @@
   "data": [
     {
       "coloraxis": "coloraxis",
-      "hovertemplate": "Postsynaptic: %{x}<br>Presynaptic: %{y}<br>Synapses: %{z}<extra></extra>",
+      "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> ",
       "name": "0",
       "type": "heatmap",
       "x": [
@@ -17,12 +17,12 @@
         "<span style=\"color:#16537E;\">IN3</span>",
         "<span style=\"color:#16537E;\">IN4</span>",
         "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#FF6000;\">SMN</span>",
-        "<span style=\"color:#BFA700;\">MNVC</span>",
+        "<span style=\"color:#e59636;\">SMN</span>",
+        "<span style=\"color:#B2832b;\">MNVC</span>",
         "<span style=\"color:#FF00FF;\">VC</span>",
         "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#964B00;\">MUBODY</span>",
-        "<span style=\"color:#964B00;\">MUHEAD</span>"
+        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
+        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
       ],
       "xaxis": "x",
       "y": [
@@ -37,12 +37,12 @@
         "<span style=\"color:#16537E;\">IN3</span>",
         "<span style=\"color:#16537E;\">IN4</span>",
         "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#FF6000;\">SMN</span>",
-        "<span style=\"color:#BFA700;\">MNVC</span>",
+        "<span style=\"color:#e59636;\">SMN</span>",
+        "<span style=\"color:#B2832b;\">MNVC</span>",
         "<span style=\"color:#FF00FF;\">VC</span>",
         "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#964B00;\">MUBODY</span>",
-        "<span style=\"color:#964B00;\">MUHEAD</span>"
+        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
+        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -374,9 +374,11 @@
   ],
   "layout": {
     "coloraxis": {
+      "cmax": 2274.0,
+      "cmin": 0.0,
       "colorbar": {
         "title": {
-          "text": "Synapses"
+          "text": "Weight"
         }
       },
       "colorscale": [

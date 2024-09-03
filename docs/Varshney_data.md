@@ -11,60 +11,53 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
         ```plotly
         ---8<-- "./assets/Varshney_Raw Data_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Varshney_Raw Data_Electrical.json"
         ```
+
 === "Full View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Varshney_Full View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Full View** for **Varshney**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Varshney_Full View_Electrical.json"
         ```
+
 === "Pharynx View"
-    === "Chemical Exc"
-
-        No connections of type **Chemical Exc** in the **Pharynx View** for **Varshney**...
-    === "Chemical Inh"
-
-        No connections of type **Chemical Inh** in the **Pharynx View** for **Varshney**...
-    === "Electrical"
-
-        No connections of type **Electrical** in the **Pharynx View** for **Varshney**...
 === "Social View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Varshney_Social View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Social View** for **Varshney**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Varshney_Social View_Electrical.json"
         ```
+
 === "Small View"
     === "Chemical"
 
         ```plotly
         ---8<-- "./assets/Varshney_Small View_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Varshney_Small View_Electrical.json"
         ```
+
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>

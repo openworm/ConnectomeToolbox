@@ -52,9 +52,6 @@ class WitvlietDataReader(ConnectomeDataset):
             pre = fix_witvliet_cell_naming(remove_leading_index_zero(pre))
             post = fix_witvliet_cell_naming(remove_leading_index_zero(post))
 
-            if self.verbose and num > 0:
-                print("Conn %s -> %s #%i" % (pre, post, num))
-
             if is_muscle(pre):
                 pre = convert_to_preferred_muscle_name(pre)
 
@@ -63,6 +60,10 @@ class WitvlietDataReader(ConnectomeDataset):
 
             syntype = str(row[2])
             num = int(row[3])
+
+            if self.verbose and num > 0:
+                print("Conn %s -> %s #%i" % (pre, post, num))
+
             synclass = "Generic_GJ" if "electrical" in syntype else "Generic_CS"
             if synclass == "Generic_GJ":
                 conns.append(ConnectionInfo(post, pre, num, syntype, synclass))

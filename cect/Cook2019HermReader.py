@@ -2,8 +2,9 @@
 
 
 from cect.Cook2019DataReader import Cook2019DataReader
-
 from cect.ConnectomeReader import analyse_connections
+
+import sys
 
 
 def get_instance():
@@ -22,9 +23,12 @@ READER_DESCRIPTION = (
 
 
 def main1():
-    cells, neuron_conns = read_data()
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = my_instance.read_data()
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+
+    if "-nogui" not in sys.argv:
+        my_instance.connection_number_plot("Acetylcholine")
 
 
 if __name__ == "__main__":
