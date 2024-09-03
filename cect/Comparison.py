@@ -29,6 +29,10 @@ reader_pages = {
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
+    "Randi2023": "Randi2023_data",
+    "SSData": "SSDR_data",
+    "UpdSSData": "UpdSSData_data",
+    "UpdSSData2": "UpdSSData2_data",
 }
 
 all_data[""] = [
@@ -121,7 +125,7 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     )
 
 
-def generate_comparison_page(quick: bool, color_table=False):
+def generate_comparison_page(quick: bool, color_table=True):
     connectomes = {}
     all_connectomes = {}
 
@@ -135,6 +139,8 @@ def generate_comparison_page(quick: bool, color_table=False):
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+
+    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
     if not quick:
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]

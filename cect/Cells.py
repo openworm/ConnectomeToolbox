@@ -13,6 +13,20 @@ import sys
 from cect.WormAtlasInfo import WA_COLORS
 from cect import print_
 
+
+ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
+    "Acetylcholine",
+    "Acetylcholine_Tyramine",
+    "Dopamine",
+    "FMRFamide",
+    "GABA",
+    "Glutamate",
+    "Octapamine",
+    "Serotonin",
+    "Serotonin_Acetylcholine",
+    "Serotonin_Glutamate",
+]
+
 cell_notes = {}
 
 connectomes = None
@@ -1410,6 +1424,42 @@ COOK_GROUPING_1["Male other cells"] = (
     MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
 )
 
+ALL_PREFERRED_CELL_NAMES = (
+    PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + KNOWN_OTHER_CELLS
+)
+
+
+def is_bilateral_left(cell):
+    if (
+        cell in ALL_PREFERRED_CELL_NAMES
+        and cell.endswith("L")
+        and cell[:-1] + "R" in ALL_PREFERRED_CELL_NAMES
+    ):
+        return True
+    else:
+        return False
+
+
+def is_bilateral_right(cell):
+    if (
+        cell in ALL_PREFERRED_CELL_NAMES
+        and cell.endswith("R")
+        and cell[:-1] + "L" in ALL_PREFERRED_CELL_NAMES
+    ):
+        return True
+    else:
+        return False
+
+
+def are_bilateral_pair(cell_a, cell_b):
+    if cell_a[:-1] == cell_b[:-1] and (
+        (cell_a[-1] == "L" and cell_b[-1] == "R")
+        or (cell_b[-1] == "L" and cell_a[-1] == "R")
+    ):
+        return True
+    else:
+        return False
+
 
 def get_standard_color(cell):
     from cect.WormAtlasInfo import WA_COLORS
@@ -1645,8 +1695,8 @@ def _generate_cell_table(cell_type, cells):
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": ["Acetylcholine", "Generic_CS", "GABA"],
-        "Chemical conns out": ["Acetylcholine", "Generic_CS", "GABA"],
+        "Chemical conns in": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
         "Electrical conns": ["Generic_GJ"],
     }
 

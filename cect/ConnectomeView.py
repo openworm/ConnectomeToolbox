@@ -18,9 +18,13 @@ from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import PHARYNGEAL_INTERNEURONS
 from cect.Cells import PHARYNGEAL_MOTORNEURONS
 
+from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
+
+import copy
 
 
 class NodeSet:
@@ -82,11 +86,18 @@ class View:
         return -1
 
 
+putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
+putative_exc_syn_class.remove("GABA")
+
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical Exc": ["Acetylcholine", "Generic_CS"],
+    "Chemical Exc": ["Generic_CS"] + putative_exc_syn_class,
     "Chemical Inh": ["GABA"],
     "Electrical": ["Generic_GJ"],
 }
+
+EXC_INH_GJ_FUNC_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
+EXC_INH_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
+
 
 CHEM_GJ_SYN_CLASSES = {
     "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
@@ -94,7 +105,11 @@ CHEM_GJ_SYN_CLASSES = {
     "Electrical": ["Generic_GJ"],
 }
 
-RAW_VIEW = View("Raw Data", [], CHEM_GJ_SYN_CLASSES, only_show_existing_nodes=True)
+CHEM_GJ_FUNC_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
+CHEM_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
+
+
+RAW_VIEW = View("Raw Data", [], CHEM_GJ_FUNC_SYN_CLASSES, only_show_existing_nodes=True)
 for cell in (
     sorted(PREFERRED_NEURON_NAMES)
     + sorted(PREFERRED_MUSCLE_NAMES)
@@ -119,15 +134,15 @@ for cell in (
 ):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_SYN_CLASSES)
+PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
 for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_SYN_CLASSES)
+SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
 for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
     SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SMALL_VIEW = View("Small View", [], CHEM_GJ_SYN_CLASSES)
+SMALL_VIEW = View("Small View", [], CHEM_GJ_FUNC_SYN_CLASSES)
 
 sn_pos = {
     "SN1": (2, 2.8),

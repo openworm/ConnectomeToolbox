@@ -117,7 +117,7 @@ class Cook2019DataReader(ConnectomeDataset):
                     row = 4 + i
                     col = 4 + j
                     val = sheet.cell(row=row, column=col).value
-                    print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
+                    # print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
                     if val is not None:
                         self.conn_nums[conn_type][i, j] = int(val)
 
