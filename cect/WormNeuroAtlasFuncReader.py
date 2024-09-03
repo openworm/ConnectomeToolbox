@@ -61,7 +61,7 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
 
                 connection = False
 
-                bound = 0.4
+                bound = 10
 
                 dff_ij_orig = dff[apost, apre][0]
 
@@ -70,7 +70,7 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
                     if (apost == apre or math.isnan(dff_ij_orig))
                     else max(-1 * bound, min(bound, dff_ij_orig))
                 )
-                dff_ij = dff_ij_orig
+                # dff_ij = dff_ij_orig
 
                 q_ij = q[apost, apre]
 
