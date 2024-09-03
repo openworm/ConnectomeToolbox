@@ -12,7 +12,7 @@ from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 
 DEFAULT_COLORMAP = ["white", "green", "black"]
-POS_NEG_COLORMAP = "Spectral_r"
+POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
 
 
 def convert_to_preferred_muscle_name(muscle):

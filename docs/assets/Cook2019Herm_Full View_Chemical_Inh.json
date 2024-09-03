@@ -96734,9 +96734,11 @@
   ],
   "layout": {
     "coloraxis": {
+      "cmax": 13.0,
+      "cmin": 0.0,
       "colorbar": {
         "title": {
-          "text": "Synapses"
+          "text": "Weight"
         }
       },
       "colorscale": [

@@ -13,6 +13,12 @@ Data extracted from the **WormNeuroAtlas package** for functional connectivity
         ```
 
 === "Full View"
+    === "Functional"
+
+        ```plotly
+        ---8<-- "./assets/Randi2023_Full View_Functional_graph.json"
+        ```
+
 === "Pharynx View"
     === "Functional"
 

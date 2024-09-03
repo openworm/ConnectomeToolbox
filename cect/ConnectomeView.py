@@ -118,7 +118,8 @@ for cell in (
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 
-FULL_VIEW = View("Full View", [], EXC_INH_GJ_SYN_CLASSES)
+FULL_VIEW = View("Full View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+
 for cell in (
     sorted(SENSORY_NEURONS_COOK)
     + sorted(INTERNEURONS_NONPHARYNGEAL_COOK)

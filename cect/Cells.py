@@ -1702,6 +1702,8 @@ def _generate_cell_table(cell_type, cells):
 
     fig_md = ""
 
+    verbose = False
+
     for syn_summary in syn_summaries:
         fig = go.Figure()
         fig.layout.showlegend = True
@@ -1723,10 +1725,11 @@ def _generate_cell_table(cell_type, cells):
                         conns_here = connectome.get_connections_from(cell, syn_type)
                     else:
                         conns_here = connectome.get_connections_to(cell, syn_type)
-                    print_(
-                        "Conns: %i for %s of type %s (%s)"
-                        % (len(conns_here), cell, syn_type, syn_summary)
-                    )
+                    if verbose:
+                        print_(
+                            "Conns: %i for %s of type %s (%s)"
+                            % (len(conns_here), cell, syn_type, syn_summary)
+                        )
                     total_y += len(conns_here)
 
                 y.append(total_y)

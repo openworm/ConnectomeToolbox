@@ -253,9 +253,15 @@ class ConnectomeDataset:
 
         conn_array = self.connections[synclass]
 
-        color_continuous_scale = (
-            POS_NEG_COLORMAP if synclass == "Functional" else DEFAULT_COLORMAP
-        )
+        zmin = np.min(conn_array)
+        zmax = np.max(conn_array)
+        color_continuous_scale = DEFAULT_COLORMAP
+
+        if synclass == "Functional":
+            color_continuous_scale = POS_NEG_COLORMAP
+            largest = max(abs(zmin), abs(zmax))
+            zmin = -1 * largest
+            zmax = largest
 
         def get_color_html(color, node):
             return f'<span style="color:{color};">{node}</span>'
@@ -278,11 +284,14 @@ class ConnectomeDataset:
 
         fig = px.imshow(
             conn_array,
-            labels=dict(x="Postsynaptic", y="Presynaptic", color="Synapses"),
+            labels=dict(x="Postsynaptic", y="Presynaptic", color="Weight"),
             x=x_ticktext,
             y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
+            zmin=zmin,
+            zmax=zmax,
         )
+
         fig.update(
             data=[
                 {

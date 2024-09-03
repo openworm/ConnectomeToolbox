@@ -28,7 +28,7 @@ if [ "$quick_test" == 0 ]; then
     #python -m cect.WormNeuroAtlasReader -nogui
     #python -m cect.WitvlietDataReader1
     #python -m cect.WitvlietDataReader2
-    #python -m cect.WhiteDataReader
+    python -m cect.WhiteDataReader
     #python -m cect.White_A
     #python -m cect.White_L4
 
