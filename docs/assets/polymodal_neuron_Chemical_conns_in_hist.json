@@ -127,30 +127,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "WormNeuroAtlas Chemical conns in",
-      "type": "scatter",
-      "x": [
-        "MCL",
-        "MCR",
-        "MI",
-        "NSML",
-        "NSMR"
-      ],
-      "y": [
-        3,
-        3,
-        0,
-        8,
-        8
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Chemical conns in",
       "type": "scatter",
       "x": [
@@ -190,6 +166,30 @@
         6,
         10,
         10
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "WormNeuroAtlas Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        3,
+        3,
+        0,
+        8,
+        8
       ]
     }
   ],

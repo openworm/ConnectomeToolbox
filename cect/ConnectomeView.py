@@ -19,6 +19,7 @@ from cect.Cells import PHARYNGEAL_INTERNEURONS
 from cect.Cells import PHARYNGEAL_MOTORNEURONS
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
 
 from cect.Cells import get_standard_color
 
@@ -93,6 +94,7 @@ EXC_INH_GJ_SYN_CLASSES = {
     "Chemical Exc": ["Generic_CS"] + putative_exc_syn_class,
     "Chemical Inh": ["GABA"],
     "Electrical": ["Generic_GJ"],
+    "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
 
 EXC_INH_GJ_FUNC_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
@@ -103,6 +105,7 @@ CHEM_GJ_SYN_CLASSES = {
     "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
     + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
     "Electrical": ["Generic_GJ"],
+    "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
 
 CHEM_GJ_FUNC_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
