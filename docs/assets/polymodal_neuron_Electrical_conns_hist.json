@@ -127,30 +127,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "WormNeuroAtlas Electrical conns",
-      "type": "scatter",
-      "x": [
-        "MCL",
-        "MCR",
-        "MI",
-        "NSML",
-        "NSMR"
-      ],
-      "y": [
-        5,
-        5,
-        12,
-        0,
-        0
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Electrical conns",
       "type": "scatter",
       "x": [
@@ -190,6 +166,30 @@
         3,
         2,
         6
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "WormNeuroAtlas Electrical conns",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        5,
+        5,
+        12,
+        0,
+        0
       ]
     }
   ],
