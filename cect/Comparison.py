@@ -33,6 +33,8 @@ reader_pages = {
     "SSData": "SSDR_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "Bentley2016_MA": "Bentley2016_MA_data",
+    "Bentley2016_PEP": "Bentley2016_PEP_data",
 }
 
 all_data[""] = [
@@ -129,8 +131,10 @@ def generate_comparison_page(quick: bool, color_table=True):
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+    # readers = {}
 
-    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+    readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+    readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
 
     if not quick:
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
@@ -142,9 +146,10 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
     main_mk = "# Comparison between data readers\n"
     table = ""
