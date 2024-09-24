@@ -100,7 +100,18 @@ def parse_row(row):
 
 
 class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
-    def read_data(self):
+    def __init__(self):
+        ConnectomeDataset.__init__(self)
+
+        cells, neuron_conns = self.read_data()
+        for conn in neuron_conns:
+            self.add_connection_info(conn)
+
+        neurons2muscles, muscles, muscle_conns = self.read_muscle_data()
+        for conn in muscle_conns:
+            self.add_connection_info(conn)
+
+    def read_data(self, include_nonconnected_cells=False):
         """
         Args:
         Returns:
@@ -130,6 +141,13 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
                     cells.append(pre)
                 if post not in cells:
                     cells.append(post)
+
+            if include_nonconnected_cells:
+                from cect.Cells import PREFERRED_NEURON_NAMES
+
+                for c in PREFERRED_NEURON_NAMES:
+                    if c not in cells:
+                        cells.append(c)
 
         return cells, conns
 

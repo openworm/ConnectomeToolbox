@@ -7,6 +7,78 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "SSData Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        0,
+        0,
+        5,
+        4,
+        4
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "UpdSSData Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        6,
+        3,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "UpdSSData2 Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        6,
+        3,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "White_whole Chemical conns in",
       "type": "scatter",
       "x": [
@@ -55,30 +127,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "WormNeuroAtlas Chemical conns in",
-      "type": "scatter",
-      "x": [
-        "MCL",
-        "MCR",
-        "MI",
-        "NSML",
-        "NSMR"
-      ],
-      "y": [
-        3,
-        3,
-        0,
-        5,
-        5
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Chemical conns in",
       "type": "scatter",
       "x": [
@@ -118,6 +166,30 @@
         6,
         10,
         10
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "WormNeuroAtlas Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "MCL",
+        "MCR",
+        "MI",
+        "NSML",
+        "NSMR"
+      ],
+      "y": [
+        3,
+        3,
+        0,
+        8,
+        8
       ]
     }
   ],

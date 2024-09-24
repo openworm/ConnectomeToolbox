@@ -1,6 +1,3 @@
-import cect
-
-from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeReader import check_cells
 from cect.Cells import get_cell_internal_link
 from cect import print_
@@ -32,6 +29,12 @@ reader_pages = {
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
+    "Randi2023": "Randi2023_data",
+    "SSData": "SSDR_data",
+    "UpdSSData": "UpdSSData_data",
+    "UpdSSData2": "UpdSSData2_data",
+    "Bentley2016_MA": "Bentley2016_MA_data",
+    "Bentley2016_PEP": "Bentley2016_PEP_data",
 }
 
 all_data[""] = [
@@ -67,6 +70,9 @@ def _format_json(json_str):
 def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "):
     view_name = view.name
 
+    if np.sum(connectome.connections[synclass]) == 0:
+        return None
+
     fig = connectome.to_plotly_graph_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
@@ -77,14 +83,6 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
-
-    if np.sum(connectome.connections[synclass]) == 0:
-        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
-            indent,
-            synclass,
-            view_name,
-            reader_name,
-        )
 
     return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
         indent,
@@ -97,6 +95,9 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     view_name = view.name
 
+    if np.sum(connectome.connections[synclass]) == 0:
+        return None
+
     fig = connectome.to_plotly_matrix_fig(synclass, view)
 
     asset_filename = "assets/%s_%s_%s.json" % (
@@ -108,14 +109,6 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    if np.sum(connectome.connections[synclass]) == 0:
-        return "\n%sNo connections of type **%s** in the **%s** for **%s**...\n" % (
-            indent,
-            synclass,
-            view_name,
-            reader_name,
-        )
-
     return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
         indent,
         indent,
@@ -124,8 +117,9 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     )
 
 
-def generate_comparison_page(quick: bool):
+def generate_comparison_page(quick: bool, color_table=True):
     connectomes = {}
+    all_connectomes = {}
 
     readers = {
         "SSData": ["cect.SpreadsheetDataReader", None],
@@ -137,6 +131,10 @@ def generate_comparison_page(quick: bool):
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
     }
+    # readers = {}
+
+    readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+    readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
 
     if not quick:
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
@@ -148,12 +146,17 @@ def generate_comparison_page(quick: bool):
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+
+    main_mk = "# Comparison between data readers\n"
+    table = ""
 
     for reader_name, reader_info in readers.items():
         reader = reader_info[0]
+
         decription_page = reader_info[1] if len(reader_info) > 1 else None
 
         print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
@@ -170,6 +173,7 @@ def generate_comparison_page(quick: bool):
 
         try:
             connectome = reader_module.get_instance()
+            all_connectomes[reader_name] = connectome
             preferred, not_in_preferred, missing_preferred, muscles = check_cells(
                 connectome.nodes
             )
@@ -215,28 +219,27 @@ def generate_comparison_page(quick: bool):
                             f.write('=== "%s"\n' % view.name)
 
                             for sc in view.synclass_sets:
-                                f.write(indent + '=== "%s"\n' % sc)
-
                                 if matrix:
-                                    f.write(
-                                        get_matrix_markdown(
-                                            reader_name,
-                                            view,
-                                            cv,
-                                            sc,
-                                            indent=indent + indent,
-                                        )
+                                    mkdown_fig = get_matrix_markdown(
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
                                     )
 
                                 else:
+                                    mkdown_fig = get_2d_graph_markdown(
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent + indent,
+                                    )
+
+                                if mkdown_fig is not None:
                                     f.write(
-                                        get_2d_graph_markdown(
-                                            reader_name,
-                                            view,
-                                            cv,
-                                            sc,
-                                            indent=indent + indent,
-                                        )
+                                        indent + '=== "%s"\n%s\n' % (sc, mkdown_fig)
                                     )
 
                     cell_types = {
@@ -265,12 +268,17 @@ def generate_comparison_page(quick: bool):
 
         neuron_nts = {}
 
+        print_(
+            "\n\n  = Adding table entry for: %s with %i neurons"
+            % (connectome, len(neurons))
+        )
+
         for c in neuron_conns:
             nt = c.synclass
             if len(nt) == 0:
                 nt = "**MISSING**"
 
-            if not nt in neuron_nts:
+            if nt not in neuron_nts:
                 neuron_nts[nt] = 0
 
             neuron_nts[nt] += 1
@@ -285,7 +293,7 @@ def generate_comparison_page(quick: bool):
             if len(nt) == 0:
                 nt = "**MISSING**"
 
-            if not nt in muscle_nts:
+            if nt not in muscle_nts:
                 muscle_nts[nt] = 0
 
             muscle_nts[nt] += 1
@@ -318,18 +326,52 @@ def generate_comparison_page(quick: bool):
     print_("\nFinished loading all the data from the readers!")
 
     import pandas as pd
-    import numpy as np
 
     df_all = pd.DataFrame(all_data).transpose()
+    pd.set_option("max_colwidth", 30)
     # df_all.set_index("Values")
 
     # h = HTML(df_all.to_html(escape=False, index=False))
 
-    mk = df_all.to_markdown()
+    from cect.Cells import COOK_GROUPING_1
+
+    if color_table:
+        STYLE = '"width:80px"'
+        table += f"<table>\n  <tr>\n    <th style={STYLE}>Group</th>\n"
+
+        for reader_name, reader_info in readers.items():
+            table += f"    <th style={STYLE}>{reader_name}</th>\n"
+
+        for group in COOK_GROUPING_1:
+            table += f"  <tr>\n<td >{group}</th>\n"
+
+            for reader_name, reader_info in readers.items():
+                connectome = all_connectomes[reader_name]
+                cells_here = ""
+                for cell in sorted(COOK_GROUPING_1[group]):
+                    if cell in connectome.nodes:
+                        cells_here += "%s&nbsp;" % get_cell_internal_link(
+                            cell, html=True, use_color=True
+                        )
+                    else:
+                        pass  # cells_here+='<s>%s</s>&nbsp;'%cell
+
+                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 5:
+                        cells_here += "<br/>\n"
+
+                table += f"    <td >{cells_here}</th>\n"
+
+            table += "  </tr>\n"
+
+        table += "  </tr>\n</table>\n"
+
+        main_mk += table
+
+    main_mk += df_all.to_markdown()
 
     filename = "docs/Comparison.md"
     with open(filename, "w") as f:
-        f.write(mk)
+        f.write(main_mk)
 
     print_("Written page: %s" % filename)
 
@@ -339,6 +381,6 @@ def generate_comparison_page(quick: bool):
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    connectomes = generate_comparison_page(quick)
+    connectomes = generate_comparison_page(quick, color_table=True)
 
     print("Finished. All loaded connectomes:\n%s" % connectomes)

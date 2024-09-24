@@ -56,10 +56,11 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
-                if syntype == "Electrical":
-                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+
+                if syntype == "Electrical":
+                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 

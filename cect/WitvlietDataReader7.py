@@ -1,5 +1,4 @@
 from cect.WitvlietDataReader import WitvlietDataReader
-from cect.ConnectomeReader import analyse_connections
 
 
 def get_instance():

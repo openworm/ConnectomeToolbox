@@ -11,56 +11,41 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
         ```plotly
         ---8<-- "./assets/Cook2020_Raw Data_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2020_Raw Data_Electrical.json"
         ```
+
 === "Full View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Cook2020_Full View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Full View** for **Cook2020**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2020_Full View_Electrical.json"
         ```
+
 === "Pharynx View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Cook2020_Pharynx View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Pharynx View** for **Cook2020**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Cook2020_Pharynx View_Electrical.json"
         ```
+
 === "Social View"
-    === "Chemical Exc"
-
-        No connections of type **Chemical Exc** in the **Social View** for **Cook2020**...
-    === "Chemical Inh"
-
-        No connections of type **Chemical Inh** in the **Social View** for **Cook2020**...
-    === "Electrical"
-
-        No connections of type **Electrical** in the **Social View** for **Cook2020**...
 === "Small View"
-    === "Chemical"
-
-        No connections of type **Chemical** in the **Small View** for **Cook2020**...
-    === "Electrical"
-
-        No connections of type **Electrical** in the **Small View** for **Cook2020**...
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>

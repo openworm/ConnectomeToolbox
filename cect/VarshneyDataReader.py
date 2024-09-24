@@ -5,6 +5,8 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from openpyxl import load_workbook
 
 import os
+import sys
+
 from cect import print_
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
@@ -110,7 +112,8 @@ def main():
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
-    print(my_instance.summary())
+    if "-nogui" not in sys.argv:
+        my_instance.connection_number_plot("Generic_CS")
 
 
 if __name__ == "__main__":

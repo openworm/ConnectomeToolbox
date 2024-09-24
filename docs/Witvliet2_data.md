@@ -11,58 +11,47 @@ Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
         ```plotly
         ---8<-- "./assets/Witvliet2_Raw Data_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Raw Data_Electrical.json"
         ```
+
 === "Full View"
     === "Chemical Exc"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Full View_Chemical_Exc.json"
         ```
-    === "Chemical Inh"
 
-        No connections of type **Chemical Inh** in the **Full View** for **Witvliet2**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Full View_Electrical.json"
         ```
+
 === "Pharynx View"
-    === "Chemical Exc"
-
-        No connections of type **Chemical Exc** in the **Pharynx View** for **Witvliet2**...
-    === "Chemical Inh"
-
-        No connections of type **Chemical Inh** in the **Pharynx View** for **Witvliet2**...
-    === "Electrical"
-
-        No connections of type **Electrical** in the **Pharynx View** for **Witvliet2**...
 === "Social View"
-    === "Chemical Exc"
-
-        No connections of type **Chemical Exc** in the **Social View** for **Witvliet2**...
-    === "Chemical Inh"
-
-        No connections of type **Chemical Inh** in the **Social View** for **Witvliet2**...
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Social View_Electrical.json"
         ```
+
 === "Small View"
     === "Chemical"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Small View_Chemical.json"
         ```
+
     === "Electrical"
 
         ```plotly
         ---8<-- "./assets/Witvliet2_Small View_Electrical.json"
         ```
+
 
 ### Neurons (162)
 <details><summary>Full list of Neurons</summary>

@@ -2,7 +2,7 @@
 
 _Randi, F., Sharma, A.K., Dvali, S., Leifer, M.<br> [Nature 623, 406–414 (2023)](https://doi.org/10.1038/s41586-023-06683-4)_
 
-_**Dataset: [WormNeuroAtlas](WormNeuroAtlas_data.md)**_
+_**Dataset: [WormNeuroAtlas - Anatomical](WormNeuroAtlas_data.md) - [WormNeuroAtlas - Functional](Randi2023_data.md)**_
 
 **Summary**
 
