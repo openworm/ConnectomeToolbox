@@ -14,7 +14,9 @@ _**Datasets: [White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White
 
 **Summary**
 
-- The first complete connectome of the adult hermaphrodite _C.elegans_
+- Showed the first connectome of the adult hermaphrodite _C.elegans_ via electron microscopy
+- Consolidated the naming scheme of the 302 neurons
+- Established the criteria for identifying chemical synapses and gap junctions from electron microscope reconstructions.
 
 
 **Reliability of data**

@@ -20,7 +20,6 @@ See also [www.nemanode.org](https://www.nemanode.org)
 - every neuron, glia and muscle was annotated for chemical synapses to generate a connectome of the brain.
 - Gap junctions were partially annotated and excluded from analyses.
 - Chemical synapse weight was assessed by both the number and size of synapses.
-- Each presynaptic active zone was volumetrically reconstructed to determine synapse sizes. (insert data)
 
 **Connection classification**
 
@@ -37,7 +36,7 @@ See also [www.nemanode.org](https://www.nemanode.org)
 
 **Minimally corrected dataset (N2U, Cook et al., 2019)**
 
-- WormAtlas hosts a wiring of N2U connectome from (Cook et al).
+- WormAtlas hosts a wiring of N2U connectome from (Cook et al. 2019)
 - They noted errors in muscle identification and synapse annotation in this reannotation
   - corrected identity of muscle pairs (VL1-VL2, VR1-VR2, DL2-DL3, DR2-DR3, DL5-DL6, DR5-DR6, VL5-VL6, VR5-VR6)
   - muscles were not traced at all in the brain, and only one of more than 50 synapses onto muscle VR2 was annotated
@@ -48,10 +47,3 @@ See also [www.nemanode.org](https://www.nemanode.org)
 - improvement in sample prepation and analysis are needed to reach the same level of confidence and throughput as they reached for chemical synaptic networks throughout development
 - analysed only one connectome at most timepoints
   - could not assess animal-to-animal variability at each age 
-
-**Abstract**
-
-- use serial EM to reconstruct the full brain of eight isogenic _C.elegans_ individuals across postnatal stages to investigate how to changes with age.
-- overall geometry of the brain is preserved from birth to adulthood, but substantial changes in chemical synaptic connectivity emerge on this consistent scaffold
-- comparing connectomes between individuals between individuals reveal substantial differences in connectivity that make each brain partly unique.
-- comparing connectomes across maturation reveal consistent wiring changes between different neurons
