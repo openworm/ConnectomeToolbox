@@ -6,7 +6,7 @@ from hiveplotlib.node import split_nodes_on_variable
 from hiveplotlib.viz import hive_plot_viz
 from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
 
-# import pprint
+import pprint
 import sys
 
 from cect.WormAtlasInfo import WA_COLORS
@@ -15,8 +15,21 @@ INTERNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
 SENSORY_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
 MOTORNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
 
+INTERNEURON = "Interneuron"
+MOTORNEURON = "Motorneuron"
+SENSORY = "Sensory"
+
 if __name__ == "__main__":
-    sz = 5
+    sz = 3
+
+    from cect.TestDataReader import get_instance
+
+    synclass = "Acetylcholine"
+    """
+    from cect.VarshneyDataReader import get_instance
+    synclass = 'Generic_CS' """
+
+    test_conn = get_instance()
 
     G = nx.stochastic_block_model(
         sizes=[sz, sz, sz],
@@ -24,14 +37,17 @@ if __name__ == "__main__":
         directed=True,
         seed=0,
     )
+    G = test_conn.to_networkx_graph(synclass)
+
     nodes, edges = networkx_to_nodes_edges(G)
+    # for node in nodes:
 
     print(nodes)
     print(edges)
 
-    # print(pprint.pprint(nx.node_link_data(G)))
+    print(pprint.pprint(nx.node_link_data(G)))
 
-    blocks_dict = split_nodes_on_variable(nodes, variable_name="block")
+    blocks_dict = split_nodes_on_variable(nodes, variable_name="SIM_class")
     print(blocks_dict)
 
     splits = list(blocks_dict.values())
@@ -43,7 +59,7 @@ if __name__ == "__main__":
     # add degree information to Node instances
     for node in nodes:
         deg = degrees[node.unique_id]
-        block = node.data["block"]
+        block = node.data["SIM_class"]
         node.add_data(data={"degree": deg})
 
         print(f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}")
@@ -56,22 +72,17 @@ if __name__ == "__main__":
         repeat_axes=[True, True, True],
         repeat_edge_kwargs={"color": "grey"},
     )
-    node_kwargs = {
-        "color": ["red"] * sz,
-    }
 
-    '''
     for ax in hp.axes:
         if "1" in ax:
-            hp.axes[ax].long_name = "Interneuron"
+            hp.axes[ax].long_name = INTERNEURON
         if "2" in ax:
-            hp.axes[ax].long_name = "Sensory"
+            hp.axes[ax].long_name = MOTORNEURON
         if "3" in ax:
-            hp.axes[ax].long_name = "Motorneurons"'''
+            hp.axes[ax].long_name = SENSORY
 
     for ax_name in hp.axes:
         ax = hp.axes[ax_name]
-        # print(dir(ax))
         print(f" - Axis {ax.long_name}, {ax.start}->{ax.end}...")
 
     hp.add_edge_kwargs(
@@ -85,7 +96,7 @@ if __name__ == "__main__":
         axis_id_1="Group 2",
         axis_id_2="Group 1_repeat",
         a2_to_a1=False,
-        color=SENSORY_COLOR,
+        color=MOTORNEURON_COLOR,
     )
     hp.add_edge_kwargs(
         axis_id_1="Group 1",
@@ -97,19 +108,19 @@ if __name__ == "__main__":
         axis_id_1="Group 3_repeat",
         axis_id_2="Group 1",
         a2_to_a1=False,
-        color=MOTORNEURON_COLOR,
+        color=SENSORY_COLOR,
     )
     hp.add_edge_kwargs(
         axis_id_1="Group 3",
         axis_id_2="Group 2_repeat",
         a2_to_a1=False,
-        color=MOTORNEURON_COLOR,
+        color=SENSORY_COLOR,
     )
     hp.add_edge_kwargs(
         axis_id_1="Group 2_repeat",
         axis_id_2="Group 3",
         a2_to_a1=False,
-        color=SENSORY_COLOR,
+        color=MOTORNEURON_COLOR,
     )
 
     plotly = False
@@ -118,32 +129,32 @@ if __name__ == "__main__":
     if plotly:
         fig = plotly_hive_plot_viz(
             hp,
-            node_kwargs=node_kwargs,
         )
         # ax.set_title("Stochastic Block Model, Base Hive Plot Visualization", y=1.05, size=20)
         # fig.update_traces(mode="markers+lines", hovertemplate=None)
         fig.update_layout(hovermode="closest")
 
-        # fig.update(data=[{"hoverinfo": "skip"}])
+        fig.update(data=[{"hoverinfo": "skip"}])
 
         # print(dir(fig))
         count = 0
         for d in fig.data:
             if d["mode"] == "markers":
                 nrn_num = len(d["x"])
-                d["hovertemplate"] = " - %{text} -"
+                d["hovertemplate"] = "%{text}<extra></extra>"
                 d.pop("hoverinfo", None)
 
                 if count == 0 or count == 1:
                     d["marker"]["color"] = [INTERNEURON_COLOR] * nrn_num
                     type_ = "Interneuron"
                 if count == 2 or count == 3:
-                    d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
-                    type_ = "Sensory"
-                if count == 4 or count == 5:
                     d["marker"]["color"] = [MOTORNEURON_COLOR] * nrn_num
                     type_ = "Motorneuron"
-                d["text"] = ["%s %i" % (type_, i) for i in range(nrn_num)]
+                if count == 4 or count == 5:
+                    d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
+                    type_ = "Sensory"
+
+                d["text"] = ["%s (%s)" % (n, degrees[n]) for n in blocks_dict[type_]]
 
                 print(d)
                 count += 1
@@ -164,7 +175,7 @@ if __name__ == "__main__":
 
         print("Done")
     else:
-        fig, ax = hive_plot_viz(hp, node_kwargs=node_kwargs)
+        fig, ax = hive_plot_viz(hp)
         ax.set_title(
             "Stochastic Block Model, Base Hive Plot Visualization", y=1.05, size=20
         )
