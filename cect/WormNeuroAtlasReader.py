@@ -4,6 +4,9 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
+
 from cect.ConnectomeDataset import ConnectomeDataset
 
 import wormneuroatlas as wa
@@ -64,7 +67,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
         elif neuron in self.dom_gaba:
             return "GABA"
         else:
-            nt = "Generic_CS"
+            nt = GENERIC_CHEM_SYN
             if neuron in self.alt_glu:
                 nt += "_Glutamate"
             if neuron in self.alt_ach:
@@ -92,7 +95,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
                 num = gji[0]
                 if num > 0:
                     # print("Gap junc (%s (%i) -> %s (%i): %s"%(pre, apre, post, apost, gji))
-                    synclass = "Generic_GJ"
+                    synclass = GENERIC_ELEC_SYN
                     syntype = "GapJunction"
                     conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                     connection = True

@@ -2,6 +2,9 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
+
 from openpyxl import load_workbook
 
 import os
@@ -47,9 +50,9 @@ class VarshneyDataReader(ConnectomeDataset):
                 syntype = str(row[2])
                 num = int(row[3])
                 synclass = (
-                    "Generic_GJ"
+                    GENERIC_ELEC_SYN
                     if syntype == "EJ"
-                    else "Generic_CS"
+                    else GENERIC_CHEM_SYN
                     if (syntype == "Sp" or syntype == "S")
                     else None
                 )
@@ -67,29 +70,6 @@ class VarshneyDataReader(ConnectomeDataset):
         conns = []
         neurons = []
         muscles = []
-        """
-        filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
-        wb = load_workbook(filename)
-        sheet = wb.worksheets[0]
-
-        print_("Opened Excel file: " + filename)
-
-        for row in sheet.iter_rows(
-            min_row=2, values_only=True
-        ):  # Assuming data starts from the second row
-            pre = str(row[0])
-            post = str(row[1])
-
-            if post == NMJ_ENDPOINT:
-                syntype = str(row[2])
-                num = int(row[3])
-                synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
-
-                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if pre not in neurons:
-                    neurons.append(pre)
-                if not post in muscles:
-                    muscles.append(post)"""
 
         return neurons, muscles, conns
 
@@ -113,7 +93,7 @@ def main():
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     if "-nogui" not in sys.argv:
-        my_instance.connection_number_plot("Generic_CS")
+        my_instance.connection_number_plot(GENERIC_CHEM_SYN)
 
 
 if __name__ == "__main__":

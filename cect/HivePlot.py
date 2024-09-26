@@ -31,16 +31,9 @@ if __name__ == "__main__":
 
     test_conn = get_instance()
 
-    G = nx.stochastic_block_model(
-        sizes=[sz, sz, sz],
-        p=[[0.2, 0.2, 0.2], [0.2, 0.2, 0.2], [0.2, 0.2, 0.2]],
-        directed=True,
-        seed=0,
-    )
     G = test_conn.to_networkx_graph(synclass)
 
     nodes, edges = networkx_to_nodes_edges(G)
-    # for node in nodes:
 
     print(nodes)
     print(edges)

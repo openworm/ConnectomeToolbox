@@ -27,6 +27,9 @@ ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "Serotonin_Glutamate",
 ]
 
+GENERIC_CHEM_SYN = "Generic_CS"
+GENERIC_ELEC_SYN = "Generic_GJ"
+
 EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
 MONOAMINERGIC_SYN_CLASS = "Monoaminergic"
 PEPTIDERGIC_SYN_CLASS = "Peptidergic"
@@ -1701,9 +1704,9 @@ def _generate_cell_table(cell_type, cells):
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Chemical conns out": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Electrical conns": ["Generic_GJ"],
+        "Chemical conns in": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Electrical conns": [GENERIC_ELEC_SYN],
     }
 
     fig_md = ""
