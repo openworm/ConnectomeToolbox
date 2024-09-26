@@ -1,79 +1,23 @@
-## White_whole
-[Source publication of dataset](White_1986.md)
-
+## Dataset: White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
-[View as graph](White_whole_data_graph.md){ .md-button } [View as matrix](White_whole_data.md){ .md-button }
+[Source publication of dataset](White_1986.md)
+
+[Raw Data](White_whole_data.md){ .md-button .md-button--primary } [Neurons](Neurons_White_whole_data.md){ .md-button  } [Pharynx](Pharynx_White_whole_data.md){ .md-button  } [Social Network](Social_White_whole_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_whole_data.md){ .md-button  } 
+
+[Graph :material-graphql:](White_whole_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](White_whole_data.md){ .md-button .md-button--primary }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/White_whole_Raw Data_Chemical.json"
+        { "file_path": "./assets/White_whole_Raw_Chemical.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/White_whole_Raw Data_Electrical.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Chemical_Exc.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Chemical_Inh.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Pharynx View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Pharynx View_Electrical.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Social View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Small View_Electrical.json"
+        { "file_path": "./assets/White_whole_Raw_Electrical.json" }
         ```
 
 

@@ -58,12 +58,14 @@ class NodeSet:
 class View:
     def __init__(
         self,
+        id,
         name,
         node_sets,
         synclass_sets={},
         colormap=DEFAULT_COLORMAP,
         only_show_existing_nodes=False,
     ):
+        self.id = id
         self.name = name
         self.node_sets = node_sets
         self.synclass_sets = synclass_sets
@@ -115,7 +117,9 @@ CHEM_GJ_FUNC_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
 CHEM_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
 
 
-RAW_VIEW = View("Raw Data", [], CHEM_GJ_FUNC_SYN_CLASSES, only_show_existing_nodes=True)
+RAW_VIEW = View(
+    "Raw", "Raw Data", [], CHEM_GJ_FUNC_SYN_CLASSES, only_show_existing_nodes=True
+)
 for cell in (
     sorted(PREFERRED_NEURON_NAMES)
     + sorted(PREFERRED_MUSCLE_NAMES)
@@ -124,7 +128,7 @@ for cell in (
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 
-FULL_VIEW = View("Full View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+FULL_VIEW = View("Neurons", "Neurons", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
 
 for cell in (
     sorted(SENSORY_NEURONS_COOK)
@@ -141,15 +145,15 @@ for cell in (
 ):
     FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+PHARYNX_VIEW = View("Pharynx", "Pharynx", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
 for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+SOCIAL_VIEW = View("Social", "Social Network", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
 for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
     SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SMALL_VIEW = View("Small View", [], CHEM_GJ_FUNC_SYN_CLASSES)
+COOK_FIG3_VIEW = View("Full1", "Cook 2019 Fig 3", [], CHEM_GJ_FUNC_SYN_CLASSES)
 
 sn_pos = {
     "SN1": (2, 2.8),
@@ -164,7 +168,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
     color = "#b31b1b"
     if category == "SN1":
         color = "#FFC0CB"
-    SMALL_VIEW.node_sets.append(
+    COOK_FIG3_VIEW.node_sets.append(
         NodeSet(
             category,
             SENSORY_NEURONS_COOK_CATEGORIES[category],
@@ -178,7 +182,7 @@ in_pos = {"IN1": (4.2, 3.3), "IN2": (3.4, 4.2), "IN3": (5.1, 4.4), "IN4": (2.3, 
 
 for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
     if category != "RIML":
-        SMALL_VIEW.node_sets.append(
+        COOK_FIG3_VIEW.node_sets.append(
             NodeSet(
                 category,
                 INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES[category],
@@ -188,7 +192,7 @@ for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
             )
         )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "HMN",
         HEAD_MOTORNEURONS_COOK,
@@ -198,7 +202,7 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "SMN",
         SUBLATERAL_MOTORNEURONS_COOK,
@@ -208,7 +212,7 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MNVC",
         VENTRAL_CORD_MOTORNEURONS,
@@ -218,31 +222,31 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "VC", VC_HERM_MOTORNEURONS, color="#FF00FF", shape="circle", position=(7.8, 3.3)
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "HSN", HSN_MOTORNEURONS, color="#FF00FF", shape="circle", position=(6.3, 5.9)
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MUBODY", BODY_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(5, 0.73)
     )
 )
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MUHEAD", HEAD_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(3.1, 1)
     )
 )
 
 
-ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]
+ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, COOK_FIG3_VIEW]
 
 
 if __name__ == "__main__":
@@ -251,11 +255,11 @@ if __name__ == "__main__":
     ns_p = NodeSet("PVCL", ["PVCL"])
     ns_a = NodeSet("AVBL", ["AVBL"])
 
-    v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
+    v1 = View("VandD", "V and D", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
 
     from cect.TestDataReader import tdr_instance
 
-    print(NodeSet(SMALL_VIEW, SMALL_VIEW))
+    print(NodeSet(COOK_FIG3_VIEW, COOK_FIG3_VIEW))
 
     print(tdr_instance.summary())
 

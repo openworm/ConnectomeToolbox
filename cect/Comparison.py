@@ -68,7 +68,7 @@ def _format_json(json_str):
 
 
 def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "):
-    view_name = view.name
+    view_id = view.id
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
@@ -77,14 +77,14 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     asset_filename = "assets/%s_%s_%s_graph.json" % (
         reader_name,
-        view_name,
+        view_id.replace(" ", "_"),
         synclass.replace(" ", "_"),
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
+    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
         asset_filename,
@@ -93,7 +93,7 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
 
 def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
-    view_name = view.name
+    view_id = view.id
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
@@ -102,14 +102,14 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     asset_filename = "assets/%s_%s_%s.json" % (
         reader_name,
-        view_name,
+        view_id.replace(" ", "_"),
         synclass.replace(" ", "_"),
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    return '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n' % (
+    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
         asset_filename,
@@ -133,10 +133,9 @@ def generate_comparison_page(quick: bool, color_table=True):
     }
     # readers = {}
 
-    readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-    readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
-
     if not quick:
+        readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+        readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
         readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
@@ -159,17 +158,11 @@ def generate_comparison_page(quick: bool, color_table=True):
 
         decription_page = reader_info[1] if len(reader_info) > 1 else None
 
-        print_("\n****** Importing dataset %s using %s ******" % (reader_name, reader))
+        print_(
+            "\n****** Importing dataset %s using %s ******\n" % (reader_name, reader)
+        )
 
         reader_module = importlib.import_module(reader)
-
-        """
-        # exec("from %s import read_data, read_muscle_data, READER_DESCRIPTION" % reader)
-        cells, neuron_conns = reader_module.read_data()
-
-        preferred, not_in_preferred, missing_preferred = check_neurons(cells)
-
-        connectome = None"""
 
         try:
             connectome = reader_module.get_instance()
@@ -186,34 +179,76 @@ def generate_comparison_page(quick: bool, color_table=True):
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
 
-            matrix_filename = "docs/%s.md" % reader_pages[reader_name]
-            graph_filename = "docs/%s_graph.md" % reader_pages[reader_name]
+            if connectome is not None:
+                from cect.ConnectomeView import ALL_VIEWS
 
-            for filename in [graph_filename, matrix_filename]:
-                with open(filename, "w") as f:
-                    matrix = filename == matrix_filename
+                indent = "    "
 
-                    f.write("## %s\n" % reader_name)
-                    if decription_page is not None:
-                        f.write(
-                            "[Source publication of dataset](%s.md)\n\n"
-                            % decription_page
-                        )
+                for view in ALL_VIEWS:
+                    print_("Generating view: %s (%s)" % (view.name, view.id))
 
-                    f.write("%s\n\n" % reader_module.READER_DESCRIPTION)
+                    view_prefix = "" if view.id == "Raw" else "%s_" % view.id
 
-                    f.write(
-                        "[View as graph](%s_graph.md){ .md-button } [View as matrix](%s.md){ .md-button }\n\n"
-                        % (reader_pages[reader_name], reader_pages[reader_name])
+                    matrix_filename = "docs/%s%s.md" % (
+                        view_prefix,
+                        reader_pages[reader_name],
+                    )
+                    graph_filename = "docs/%s%s_graph.md" % (
+                        view_prefix,
+                        reader_pages[reader_name],
                     )
 
-                    if connectome is not None:
-                        from cect.ConnectomeView import ALL_VIEWS
+                    for filename in [graph_filename, matrix_filename]:
+                        with open(filename, "w") as f:
+                            graph = "graph" in filename
+                            matrix = not (graph)
 
-                        indent = "    "
+                            f.write("## Dataset: %s\n" % reader_name)
 
-                        for view in ALL_VIEWS:
-                            print_("Generating view: %s" % view.name)
+                            f.write("%s\n\n" % reader_module.READER_DESCRIPTION)
+
+                            if decription_page is not None:
+                                f.write(
+                                    "[Source publication of dataset](%s.md)\n\n"
+                                    % decription_page
+                                )
+
+                            for viewb in ALL_VIEWS:
+                                viewb_prefix = (
+                                    "" if viewb.id == "Raw" else "%s_" % viewb.id
+                                )
+
+                                f.write(
+                                    "[%s](%s%s%s.md){ .md-button %s } "
+                                    % (
+                                        viewb.name,
+                                        viewb_prefix,
+                                        reader_pages[reader_name],
+                                        "_graph" if graph else "",
+                                        ".md-button--primary"
+                                        if view.id == viewb.id
+                                        else "",
+                                    )
+                                )
+                            f.write("\n\n")
+
+                            f.write(
+                                "[Graph :material-graphql:](%s%s_graph.md){ .md-button %s } "
+                                % (
+                                    view_prefix,
+                                    reader_pages[reader_name],
+                                    ".md-button--primary" if graph else "",
+                                )
+                            )
+                            f.write(
+                                "[Matrix :material-checkerboard:](%s%s.md){ .md-button %s }\n\n"
+                                % (
+                                    view_prefix,
+                                    reader_pages[reader_name],
+                                    ".md-button--primary" if matrix else "",
+                                )
+                            )
+
                             cv = connectome.get_connectome_view(view)
 
                             f.write('=== "%s"\n' % view.name)
@@ -242,26 +277,31 @@ def generate_comparison_page(quick: bool, color_table=True):
                                         indent + '=== "%s"\n%s\n' % (sc, mkdown_fig)
                                     )
 
-                    cell_types = {
-                        "Neurons": preferred,
-                        "Missing neurons": missing_preferred,
-                        "Muscles": muscles,
-                        "Other cells": not_in_preferred,
-                    }
+                            cell_types = {
+                                "Neurons": preferred,
+                                "Missing neurons": missing_preferred,
+                                "Muscles": muscles,
+                                "Other cells": not_in_preferred,
+                            }
 
-                    for t in cell_types:
-                        f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
-                        if len(cell_types[t]) > 0:
-                            f.write("<details><summary>Full list of %s</summary>\n" % t)
-                            ss = sorted(cell_types[t])
-                            for n in ss:
-                                f.write("%s" % (get_cell_internal_link(n, True)))
-                                if n is not ss[-1]:
-                                    f.write(" | ")
+                            for t in cell_types:
+                                f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
+                                if len(cell_types[t]) > 0:
+                                    f.write(
+                                        "<details><summary>Full list of %s</summary>\n"
+                                        % t
+                                    )
+                                    ss = sorted(cell_types[t])
+                                    for n in ss:
+                                        f.write(
+                                            "%s" % (get_cell_internal_link(n, True))
+                                        )
+                                        if n is not ss[-1]:
+                                            f.write(" | ")
 
-                            f.write("\n</details>\n")
+                                    f.write("\n</details>\n")
 
-                print_("Written page: %s" % filename)
+                        print_("Written page: %s" % filename)
 
         neurons, neuron_conns = connectome.get_neuron_to_neuron_conns()
         neurons2muscles, muscles, muscle_conns = connectome.get_neuron_to_muscle_conns()

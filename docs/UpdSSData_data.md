@@ -1,77 +1,21 @@
-## UpdSSData
+## Dataset: UpdSSData
 Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity
 
-[View as graph](UpdSSData_data_graph.md){ .md-button } [View as matrix](UpdSSData_data.md){ .md-button }
+[Raw Data](UpdSSData_data.md){ .md-button .md-button--primary } [Neurons](Neurons_UpdSSData_data.md){ .md-button  } [Pharynx](Pharynx_UpdSSData_data.md){ .md-button  } [Social Network](Social_UpdSSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData_data.md){ .md-button  } 
+
+[Graph :material-graphql:](UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](UpdSSData_data.md){ .md-button .md-button--primary }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/UpdSSData_Raw Data_Chemical.json"
+        { "file_path": "./assets/UpdSSData_Raw_Chemical.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/UpdSSData_Raw Data_Electrical.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Full View_Chemical_Exc.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Full View_Chemical_Inh.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Pharynx View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Pharynx View_Electrical.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Social View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData_Small View_Electrical.json"
+        { "file_path": "./assets/UpdSSData_Raw_Electrical.json" }
         ```
 
 

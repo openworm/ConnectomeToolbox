@@ -1,79 +1,23 @@
-## Cook2019Herm
-[Source publication of dataset](Cook_2019.md)
-
+## Dataset: Cook2019Herm
 Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
-[View as graph](Cook2019Herm_data_graph.md){ .md-button } [View as matrix](Cook2019Herm_data.md){ .md-button }
+[Source publication of dataset](Cook_2019.md)
+
+[Raw Data](Cook2019Herm_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Cook2019Herm_data_graph.md){ .md-button  } [Pharynx](Pharynx_Cook2019Herm_data_graph.md){ .md-button  } [Social Network](Social_Cook2019Herm_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2019Herm_data_graph.md){ .md-button  } 
+
+[Graph :material-graphql:](Cook2019Herm_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Cook2019Herm_data.md){ .md-button  }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/Cook2019Herm_Raw Data_Chemical_graph.json"
+        { "file_path": "./assets/Cook2019Herm_Raw_Chemical_graph.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/Cook2019Herm_Raw Data_Electrical_graph.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Full View_Chemical_Exc_graph.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Full View_Chemical_Inh_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Pharynx View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Pharynx View_Electrical_graph.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2019Herm_Small View_Electrical_graph.json"
+        { "file_path": "./assets/Cook2019Herm_Raw_Electrical_graph.json" }
         ```
 
 

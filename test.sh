@@ -14,12 +14,12 @@ fi
 ##   Test readers
                                                                                                                     
 python -m cect.Cells $quick_test
-                                                                                                                                          
-python -m cect.TestDataReader -nogui                                                                                                                                         
-python -m cect.ConnectomeView                                                                                                                             
-python -m cect.ConnectomeDataset -nogui
 
 if [ "$quick_test" == 0 ]; then
+                                                                                                                                          
+    python -m cect.TestDataReader -nogui                                                                                                                                         
+    python -m cect.ConnectomeView                                                                                                                             
+    python -m cect.ConnectomeDataset -nogui
 
     # Note: all run when Cells above called...
     

@@ -1,61 +1,23 @@
-## Witvliet7
-[Source publication of dataset](Witvliet_2021.md)
-
+## Dataset: Witvliet7
 Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
-[View as graph](Witvliet7_data_graph.md){ .md-button } [View as matrix](Witvliet7_data.md){ .md-button }
+[Source publication of dataset](Witvliet_2021.md)
+
+[Raw Data](Witvliet7_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Witvliet7_data_graph.md){ .md-button  } [Pharynx](Pharynx_Witvliet7_data_graph.md){ .md-button  } [Social Network](Social_Witvliet7_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet7_data_graph.md){ .md-button  } 
+
+[Graph :material-graphql:](Witvliet7_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Witvliet7_data.md){ .md-button  }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/Witvliet7_Raw Data_Chemical_graph.json"
+        { "file_path": "./assets/Witvliet7_Raw_Chemical_graph.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/Witvliet7_Raw Data_Electrical_graph.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Full View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet7_Small View_Electrical_graph.json"
+        { "file_path": "./assets/Witvliet7_Raw_Electrical_graph.json" }
         ```
 
 

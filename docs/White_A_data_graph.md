@@ -1,61 +1,23 @@
-## White_A
-[Source publication of dataset](White_1986.md)
-
+## Dataset: White_A
 Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
-[View as graph](White_A_data_graph.md){ .md-button } [View as matrix](White_A_data.md){ .md-button }
+[Source publication of dataset](White_1986.md)
+
+[Raw Data](White_A_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_White_A_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_A_data_graph.md){ .md-button  } [Social Network](Social_White_A_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_A_data_graph.md){ .md-button  } 
+
+[Graph :material-graphql:](White_A_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_A_data.md){ .md-button  }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/White_A_Raw Data_Chemical_graph.json"
+        { "file_path": "./assets/White_A_Raw_Chemical_graph.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/White_A_Raw Data_Electrical_graph.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Full View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_A_Small View_Electrical_graph.json"
+        { "file_path": "./assets/White_A_Raw_Electrical_graph.json" }
         ```
 
 

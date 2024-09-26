@@ -1,37 +1,17 @@
-## Bentley2016_MA
-[Source publication of dataset](Bentley_2016.md)
-
+## Dataset: Bentley2016_MA
 Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity
 
-[View as graph](Bentley2016_MA_data_graph.md){ .md-button } [View as matrix](Bentley2016_MA_data.md){ .md-button }
+[Source publication of dataset](Bentley_2016.md)
+
+[Raw Data](Bentley2016_MA_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Bentley2016_MA_data.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_MA_data.md){ .md-button  } [Social Network](Social_Bentley2016_MA_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Bentley2016_MA_data.md){ .md-button  } 
+
+[Graph :material-graphql:](Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Bentley2016_MA_data.md){ .md-button .md-button--primary }
 
 === "Raw Data"
     === "Extrasynaptic"
 
         ```plotly
-        ---8<-- "./assets/Bentley2016_MA_Raw Data_Extrasynaptic.json"
-        ```
-
-=== "Full View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_MA_Full View_Extrasynaptic.json"
-        ```
-
-=== "Pharynx View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_MA_Pharynx View_Extrasynaptic.json"
-        ```
-
-=== "Social View"
-=== "Small View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_MA_Small View_Extrasynaptic.json"
+        { "file_path": "./assets/Bentley2016_MA_Raw_Extrasynaptic.json" }
         ```
 
 

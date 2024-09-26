@@ -1,59 +1,21 @@
-## TestData
+## Dataset: TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
-[View as graph](Test_data_graph.md){ .md-button } [View as matrix](Test_data.md){ .md-button }
+[Raw Data](Test_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Test_data.md){ .md-button  } [Pharynx](Pharynx_Test_data.md){ .md-button  } [Social Network](Social_Test_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data.md){ .md-button  } 
+
+[Graph :material-graphql:](Test_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Test_data.md){ .md-button .md-button--primary }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/TestData_Raw Data_Chemical.json"
+        { "file_path": "./assets/TestData_Raw_Chemical.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/TestData_Raw Data_Electrical.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Full View_Chemical_Exc.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Full View_Chemical_Inh.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/TestData_Small View_Electrical.json"
+        { "file_path": "./assets/TestData_Raw_Electrical.json" }
         ```
 
 

@@ -1,77 +1,21 @@
-## SSData
+## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[View as graph](SSDR_data_graph.md){ .md-button } [View as matrix](SSDR_data.md){ .md-button }
+[Raw Data](SSDR_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_SSDR_data_graph.md){ .md-button  } [Pharynx](Pharynx_SSDR_data_graph.md){ .md-button  } [Social Network](Social_SSDR_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data_graph.md){ .md-button  } 
+
+[Graph :material-graphql:](SSDR_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](SSDR_data.md){ .md-button  }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/SSData_Raw Data_Chemical_graph.json"
+        { "file_path": "./assets/SSData_Raw_Chemical_graph.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/SSData_Raw Data_Electrical_graph.json"
-        ```
-
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Full View_Chemical_Exc_graph.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Full View_Chemical_Inh_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Pharynx View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Pharynx View_Electrical_graph.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/SSData_Small View_Electrical_graph.json"
+        { "file_path": "./assets/SSData_Raw_Electrical_graph.json" }
         ```
 
 

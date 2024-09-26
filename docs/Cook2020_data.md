@@ -1,51 +1,25 @@
-## Cook2020
-[Source publication of dataset](Cook_2020.md)
-
+## Dataset: Cook2020
 Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
-[View as graph](Cook2020_data_graph.md){ .md-button } [View as matrix](Cook2020_data.md){ .md-button }
+[Source publication of dataset](Cook_2020.md)
+
+[Raw Data](Cook2020_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Cook2020_data.md){ .md-button  } [Pharynx](Pharynx_Cook2020_data.md){ .md-button  } [Social Network](Social_Cook2020_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2020_data.md){ .md-button  } 
+
+[Graph :material-graphql:](Cook2020_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Cook2020_data.md){ .md-button .md-button--primary }
 
 === "Raw Data"
     === "Chemical"
 
         ```plotly
-        ---8<-- "./assets/Cook2020_Raw Data_Chemical.json"
+        { "file_path": "./assets/Cook2020_Raw_Chemical.json" }
         ```
 
     === "Electrical"
 
         ```plotly
-        ---8<-- "./assets/Cook2020_Raw Data_Electrical.json"
+        { "file_path": "./assets/Cook2020_Raw_Electrical.json" }
         ```
 
-=== "Full View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Full View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Pharynx View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Pharynx View_Electrical.json"
-        ```
-
-=== "Social View"
-=== "Small View"
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>
