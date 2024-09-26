@@ -80,40 +80,6 @@ class WitvlietDataReader(ConnectomeDataset):
 
         return list(neurons), list(muscles), list(other_cells), conns
 
-    """
-    def read_muscle_data(self):
-        conns = []
-        neurons = []
-        muscles = []
-
-        wb = load_workbook(self.filename)
-        sheet = wb.worksheets[0]
-
-        print_("Opened Excel file: " + self.filename)
-
-        for row in sheet.iter_rows(min_row=2, values_only=True):
-            pre = str(row[0])
-            post = str(row[1])
-            syntype = str(row[2])
-            num = int(row[3])
-            synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
-
-            if post.startswith("BWM-"):
-                post = convert_to_preferred_muscle_name(post)
-            else:
-                continue
-
-            if synclass == "Generic_GJ":
-                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
-
-            conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-            if pre not in neurons:
-                neurons.append(pre)
-            if post not in muscles:
-                muscles.append(post)
-
-        return neurons, muscles, conns"""
-
 
 def main1():
     wdr = WitvlietDataReader("witvliet_2020_7.xlsx")
