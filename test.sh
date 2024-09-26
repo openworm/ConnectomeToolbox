@@ -1,7 +1,7 @@
 set -ex
 
-ruff format cect/*
-ruff check cect/*
+ruff format cect/*.py
+ruff check cect/*.py
 
 pip install .[docs]
 
