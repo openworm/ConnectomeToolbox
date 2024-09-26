@@ -21,9 +21,6 @@ NMJ_ENDPOINT = "NMJ"
 
 
 class VarshneyDataReader(ConnectomeDataset):
-    cells = []
-    conns = []
-
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
@@ -32,6 +29,9 @@ class VarshneyDataReader(ConnectomeDataset):
             self.add_connection_info(conn)
 
     def read_data(self):
+        cells = []
+        conns = []
+
         filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
         wb = load_workbook(filename)
         sheet = wb.worksheets[0]
@@ -55,13 +55,13 @@ class VarshneyDataReader(ConnectomeDataset):
                 )
 
                 if synclass is not None:
-                    self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                    if pre not in self.cells:
-                        self.cells.append(pre)
-                    if post not in self.cells:
-                        self.cells.append(post)
+                    conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    if pre not in cells:
+                        cells.append(pre)
+                    if post not in cells:
+                        cells.append(post)
 
-        return self.cells, self.conns
+        return cells, conns
 
     def read_muscle_data(self):
         conns = []
