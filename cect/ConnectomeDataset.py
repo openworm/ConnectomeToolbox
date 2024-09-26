@@ -14,6 +14,7 @@ from cect.ConnectomeReader import is_muscle
 import numpy as np
 import math
 import sys
+import networkx as nx
 
 
 class ConnectomeDataset:
@@ -37,6 +38,36 @@ class ConnectomeDataset:
             new_conn_array[: conn_array.shape[0], : conn_array.shape[1]] = conn_array
 
             self.connections[c] = new_conn_array
+
+    def to_networkx_graph(self, synclass):
+        import networkx as nx
+
+        conn_array = self.connections[synclass]
+
+        G = nx.DiGraph(conn_array)
+        mapping = {}
+
+        for n_id in range(len(self.nodes)):
+            mapping[n_id] = self.nodes[n_id]
+
+        Gn = nx.relabel_nodes(G, mapping)
+
+        from cect.Cells import SENSORY_NEURONS_COOK
+        from cect.Cells import INTERNEURONS_COOK
+        from cect.Cells import MOTORNEURONS_COOK
+
+        for nn_id in Gn.nodes:
+            nn = Gn.nodes[nn_id]
+            if nn_id in SENSORY_NEURONS_COOK:
+                nn["SIM_class"] = "Sensory"
+            elif nn_id in MOTORNEURONS_COOK:
+                nn["SIM_class"] = "Motorneuron"
+            elif nn_id in INTERNEURONS_COOK:
+                nn["SIM_class"] = "Interneuron"
+            else:
+                nn["SIM_class"] = "???"
+
+        return Gn
 
     def add_connection_info(self, conn: ConnectionInfo):
         if self.verbose:
@@ -588,3 +619,8 @@ if __name__ == "__main__":
 
     if "-nogui" not in sys.argv:
         cds.connection_number_plot("Acetylcholine")
+
+    G = cds.to_networkx_graph("Acetylcholine")
+    import pprint
+
+    print(pprint.pprint(nx.node_link_data(G)))
