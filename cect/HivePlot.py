@@ -1,23 +1,4 @@
-import matplotlib.pyplot as plt
-import networkx as nx
-from hiveplotlib import hive_plot_n_axes
-from hiveplotlib.converters import networkx_to_nodes_edges
-from hiveplotlib.node import split_nodes_on_variable
-from hiveplotlib.viz import hive_plot_viz
-from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
-
-import pprint
 import sys
-
-from cect.WormAtlasInfo import WA_COLORS
-
-INTERNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
-SENSORY_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-MOTORNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
-
-INTERNEURON = "Interneuron"
-MOTORNEURON = "Motorneuron"
-SENSORY = "Sensory"
 
 if __name__ == "__main__":
     sz = 3
@@ -25,13 +6,46 @@ if __name__ == "__main__":
     from cect.TestDataReader import get_instance
 
     synclass = "Acetylcholine"
-    """
-    from cect.VarshneyDataReader import get_instance
-    synclass = 'Generic_CS' """
+
+    """from cect.VarshneyDataReader import get_instance
+
+    synclass = "Generic_CS"
+    from cect.White_whole import get_instance
+
+    synclass = "Acetylcholine"
+    from cect.Cook2019HermReader import get_instance
+
+    synclass = "Acetylcholine"
+    from cect.Cook2020DataReader import get_instance """
 
     test_conn = get_instance()
 
-    G = test_conn.to_networkx_graph(synclass)
+    fig = test_conn.to_plotly_hive_plot_fig(synclass, None)
+
+    import json
+
+    def _format_json(json_str):
+        return json.dumps(json.loads(json_str), sort_keys=True, indent=2)
+
+    with open("hive.json", "w") as asset_file:
+        asset_file.write(_format_json(fig.to_json()))
+
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    if "-nogui" not in sys.argv:
+        fig.show()
+
+    print("Done")
+
+    """G = test_conn.to_networkx_graph(synclass)
+
+    nids = [n for n in G.nodes]
+
+    for n_id in nids:
+        node = G.nodes[n_id]
+        if node["SIM_class"] == "Other":
+            G.remove_node(n_id)
 
     nodes, edges = networkx_to_nodes_edges(G)
 
@@ -40,14 +54,21 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    blocks_dict = split_nodes_on_variable(nodes, variable_name="SIM_class")
+    blocks_dict_unordered = split_nodes_on_variable(nodes, variable_name="SIM_class")
+    print("Unordered: %s (%s)" % (blocks_dict_unordered, type(blocks_dict_unordered)))
+    blocks_dict = {}
+    for k in ["Interneuron", "Motorneuron", "Sensory"]:
+        blocks_dict[k] = blocks_dict_unordered[k]
+
     print(blocks_dict)
 
     splits = list(blocks_dict.values())
-    print(splits)
+    print("Splits: %s" % splits)
 
     # pull out degree information from nodes
     degrees = dict(G.degree)
+    in_degrees = dict(G.in_degree)
+    out_degrees = dict(G.out_degree)
 
     # add degree information to Node instances
     for node in nodes:
@@ -147,9 +168,12 @@ if __name__ == "__main__":
                     d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
                     type_ = "Sensory"
 
-                d["text"] = ["%s (%s)" % (n, degrees[n]) for n in blocks_dict[type_]]
+                d["text"] = [
+                    "%s (in: %s, out: %s)" % (n, in_degrees[n], out_degrees[n])
+                    for n in blocks_dict[type_]
+                ]
 
-                print(d)
+                # print(d)
                 count += 1
 
         import json
@@ -173,3 +197,4 @@ if __name__ == "__main__":
             "Stochastic Block Model, Base Hive Plot Visualization", y=1.05, size=20
         )
         plt.show()
+        """

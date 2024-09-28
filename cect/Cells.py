@@ -1438,6 +1438,39 @@ ALL_PREFERRED_CELL_NAMES = (
 )
 
 
+def get_SIM_class(cell):
+    """
+    PROVISIONAL method to return whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+
+    Parameters:
+    cell: which cell to assess
+
+    Returns:
+    str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+    """
+
+    pharyngeal_polymodal_to_class_motor = [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCL",
+        "MCR",
+    ]
+    pharyngeal_polymodal_to_class_sensory = [
+        "NSML",
+        "NSMR",
+    ]
+
+    if cell in SENSORY_NEURONS_COOK + pharyngeal_polymodal_to_class_sensory:
+        return "Sensory"
+    elif cell in MOTORNEURONS_COOK + pharyngeal_polymodal_to_class_motor:
+        return "Motorneuron"
+    elif cell in INTERNEURONS_COOK:
+        return "Interneuron"
+    else:
+        return "Other"
+
+
 def is_bilateral_left(cell):
     if (
         cell in ALL_PREFERRED_CELL_NAMES

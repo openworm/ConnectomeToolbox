@@ -117,16 +117,39 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
     )
 
 
+def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
+    view_id = view.id
+
+    if np.sum(connectome.connections[synclass]) == 0:
+        return None
+
+    fig = connectome.to_plotly_hive_plot_fig(synclass, view)
+
+    if fig is None:
+        return "No plottable connections of this type..."
+
+    asset_filename = "assets/%s_%s_%s_hiveplot.json" % (
+        reader_name,
+        view_id.replace(" ", "_"),
+        synclass.replace(" ", "_"),
+    )
+
+    with open("./docs/%s" % asset_filename, "w") as asset_file:
+        asset_file.write(_format_json(fig.to_json()))
+
+    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
+        indent,
+        indent,
+        asset_filename,
+        indent,
+    )
+
+
 def generate_comparison_page(quick: bool, color_table=True):
     connectomes = {}
     all_connectomes = {}
 
     readers = {
-        "SSData": ["cect.SpreadsheetDataReader", None],
-        "UpdSSData": ["cect.UpdatedSpreadsheetDataReader", None],
-        "UpdSSData2": ["cect.UpdatedSpreadsheetDataReader2", None],
-        "Varshney": ["cect.VarshneyDataReader", "Varshney_2011"],
-        "White_whole": ["cect.White_whole", "White_1986"],
         "TestData": ["cect.TestDataReader", None],
         "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
         "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
@@ -197,11 +220,22 @@ def generate_comparison_page(quick: bool, color_table=True):
                         view_prefix,
                         reader_pages[reader_name],
                     )
+                    hiveplot_filename = "docs/%s%s_hiveplot.md" % (
+                        view_prefix,
+                        reader_pages[reader_name],
+                    )
 
-                    for filename in [graph_filename, matrix_filename]:
+                    for filename in [
+                        graph_filename,
+                        matrix_filename,
+                        hiveplot_filename,
+                    ]:
                         with open(filename, "w") as f:
                             graph = "graph" in filename
-                            matrix = not (graph)
+                            hiveplot = "hiveplot" in filename
+                            matrix = not graph and not hiveplot
+
+                            f.write("---\ntitle: %s\n---\n\n" % reader_name)
 
                             f.write("## Dataset: %s\n" % reader_name)
 
@@ -224,12 +258,15 @@ def generate_comparison_page(quick: bool, color_table=True):
                                         viewb.name,
                                         viewb_prefix,
                                         reader_pages[reader_name],
-                                        "_graph" if graph else "",
+                                        "_graph"
+                                        if graph
+                                        else ("_hiveplot" if hiveplot else ""),
                                         ".md-button--primary"
                                         if view.id == viewb.id
                                         else "",
                                     )
                                 )
+                            f.write("\n\n**%s**" % view.description)
                             f.write("\n\n")
 
                             f.write(
@@ -241,17 +278,27 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
                             )
                             f.write(
-                                "[Matrix :material-checkerboard:](%s%s.md){ .md-button %s }\n\n"
+                                "[Matrix :material-checkerboard:](%s%s.md){ .md-button %s } "
                                 % (
                                     view_prefix,
                                     reader_pages[reader_name],
                                     ".md-button--primary" if matrix else "",
                                 )
                             )
+                            f.write(
+                                "[Hive plot :material-star-three-points-outline:](%s%s_hiveplot.md){ .md-button %s }\n\n"
+                                % (
+                                    view_prefix,
+                                    reader_pages[reader_name],
+                                    ".md-button--primary" if hiveplot else "",
+                                )
+                            )
 
                             cv = connectome.get_connectome_view(view)
 
-                            f.write('=== "%s"\n' % view.name)
+                            # f.write('=== "%s"\n' % view.name)
+
+                            no_conns = True
 
                             for sc in view.synclass_sets:
                                 if matrix:
@@ -260,22 +307,33 @@ def generate_comparison_page(quick: bool, color_table=True):
                                         view,
                                         cv,
                                         sc,
-                                        indent=indent + indent,
+                                        indent=indent,
                                     )
 
-                                else:
+                                elif graph:
                                     mkdown_fig = get_2d_graph_markdown(
                                         reader_name,
                                         view,
                                         cv,
                                         sc,
-                                        indent=indent + indent,
+                                        indent=indent,
+                                    )
+
+                                elif hiveplot:
+                                    mkdown_fig = get_hive_plot_markdown(
+                                        reader_name,
+                                        view,
+                                        cv,
+                                        sc,
+                                        indent=indent,
                                     )
 
                                 if mkdown_fig is not None:
-                                    f.write(
-                                        indent + '=== "%s"\n%s\n' % (sc, mkdown_fig)
-                                    )
+                                    no_conns = False
+                                    f.write('=== "%s"\n%s\n' % (sc, mkdown_fig))
+
+                            if no_conns:
+                                f.write("No connections present in this view\n")
 
                             cell_types = {
                                 "Neurons": preferred,

@@ -15,6 +15,9 @@ import numpy as np
 import math
 import sys
 import networkx as nx
+import pprint
+
+from cect.Cells import get_SIM_class
 
 
 class ConnectomeDataset:
@@ -52,20 +55,9 @@ class ConnectomeDataset:
 
         Gn = nx.relabel_nodes(G, mapping)
 
-        from cect.Cells import SENSORY_NEURONS_COOK
-        from cect.Cells import INTERNEURONS_COOK
-        from cect.Cells import MOTORNEURONS_COOK
-
         for nn_id in Gn.nodes:
             nn = Gn.nodes[nn_id]
-            if nn_id in SENSORY_NEURONS_COOK:
-                nn["SIM_class"] = "Sensory"
-            elif nn_id in MOTORNEURONS_COOK:
-                nn["SIM_class"] = "Motorneuron"
-            elif nn_id in INTERNEURONS_COOK:
-                nn["SIM_class"] = "Interneuron"
-            else:
-                nn["SIM_class"] = "???"
+            nn["SIM_class"] = get_SIM_class(nn_id)
 
         return Gn
 
@@ -241,8 +233,8 @@ class ConnectomeDataset:
                                 else view.get_index_of_cell(post)
                             )
 
-                            if self.verbose:
-                                print(
+                            if self.verbose and False:
+                                print_(
                                     "-- Testing if %s (%i), %s (%s) in my %i node sets %s..."
                                     % (
                                         pre,
@@ -335,6 +327,7 @@ class ConnectomeDataset:
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
+
         print_("==============")
         print_(f"Generating: {synclass} for {view.name}")
 
@@ -528,6 +521,193 @@ class ConnectomeDataset:
 
         return fig
 
+    def to_plotly_hive_plot_fig(self, synclass, view):
+        from hiveplotlib import hive_plot_n_axes
+        from hiveplotlib.converters import networkx_to_nodes_edges
+        from hiveplotlib.node import split_nodes_on_variable
+        from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
+
+        print_("==============")
+        print_(f"Generating: {synclass} for {view}")
+
+        verbose = False
+        # print(self.summary())
+        cv = self
+
+        G = cv.to_networkx_graph(synclass)
+
+        nids = [n for n in G.nodes]
+
+        for n_id in nids:
+            node = G.nodes[n_id]
+            if node["SIM_class"] == "Other":
+                G.remove_node(n_id)
+
+        if len(G.nodes) == 0:
+            return None
+
+        nodes, edges = networkx_to_nodes_edges(G)
+
+        blocks_dict_unordered = split_nodes_on_variable(
+            nodes, variable_name="SIM_class"
+        )
+
+        if verbose:
+            print_(nodes)
+            print_(edges)
+            print_(pprint.pprint(nx.node_link_data(G)))
+
+            print_(
+                "Unordered: %s (%s)"
+                % (blocks_dict_unordered, type(blocks_dict_unordered))
+            )
+
+        INTERNEURON = "Interneuron"
+        MOTORNEURON = "Motorneuron"
+        SENSORY = "Sensory"
+
+        blocks_dict = {}
+        for k in [INTERNEURON, MOTORNEURON, SENSORY]:
+            if k not in blocks_dict_unordered:
+                blocks_dict[k] = []
+            else:
+                blocks_dict[k] = blocks_dict_unordered[k]
+
+        splits = list(blocks_dict.values())
+
+        # pull out degree information from nodes
+        degrees = dict(G.degree)
+        in_degrees = dict(G.in_degree)
+        out_degrees = dict(G.out_degree)
+
+        # add degree information to Node instances
+        for node in nodes:
+            deg = degrees[node.unique_id]
+            block = node.data["SIM_class"]
+            node.add_data(data={"degree": deg})
+
+            if verbose:
+                print_(
+                    f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}"
+                )
+
+        hp = hive_plot_n_axes(
+            node_list=nodes,
+            edges=edges,
+            axes_assignments=splits,
+            sorting_variables=["degree"] * 3,
+            repeat_axes=[True, True, True],
+            repeat_edge_kwargs={"color": "grey"},
+            vmins=[0] * 3,
+            vmaxes=[max(degrees.values())] * 3,
+        )
+
+        for ax in hp.axes:
+            if "1" in ax:
+                hp.axes[ax].long_name = INTERNEURON
+            if "2" in ax:
+                hp.axes[ax].long_name = MOTORNEURON
+            if "3" in ax:
+                hp.axes[ax].long_name = SENSORY
+
+        for ax_name in hp.axes:
+            ax = hp.axes[ax_name]
+            if verbose:
+                print_(f" - Axis {ax.long_name}, {ax.start}->{ax.end}...")
+
+        from cect.WormAtlasInfo import WA_COLORS
+
+        INTERNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
+        SENSORY_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
+        MOTORNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
+
+        hp.add_edge_kwargs(
+            axis_id_1="Group 1_repeat",
+            axis_id_2="Group 2",
+            a2_to_a1=False,
+            color=INTERNEURON_COLOR,
+        )
+
+        hp.add_edge_kwargs(
+            axis_id_1="Group 2",
+            axis_id_2="Group 1_repeat",
+            a2_to_a1=False,
+            color=MOTORNEURON_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 1",
+            axis_id_2="Group 3_repeat",
+            a2_to_a1=False,
+            color=INTERNEURON_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 3_repeat",
+            axis_id_2="Group 1",
+            a2_to_a1=False,
+            color=SENSORY_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 3",
+            axis_id_2="Group 2_repeat",
+            a2_to_a1=False,
+            color=SENSORY_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 2_repeat",
+            axis_id_2="Group 3",
+            a2_to_a1=False,
+            color=MOTORNEURON_COLOR,
+        )
+
+        fig = plotly_hive_plot_viz(
+            hp,
+            width=800,
+            height=800,
+        )
+        # ax.set_title("Stochastic Block Model, Base Hive Plot Visualization", y=1.05, size=20)
+        # fig.update_traces(mode="markers+lines", hovertemplate=None)
+        fig.update_layout(hovermode="closest")
+
+        fig.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)")
+
+        fig.update(data=[{"hoverinfo": "skip"}])
+
+        # print(dir(fig))
+        count = 0
+        for d in fig.data:
+            if d["mode"] == "markers":
+                nrn_num = len(d["x"])
+                d["hovertemplate"] = "%{text}<extra></extra>"
+                d.pop("hoverinfo", None)
+
+                if count == 0 or count == 1:
+                    d["marker"]["color"] = [INTERNEURON_COLOR] * nrn_num
+                    type_ = "Interneuron"
+                if count == 2 or count == 3:
+                    d["marker"]["color"] = [MOTORNEURON_COLOR] * nrn_num
+                    type_ = "Motorneuron"
+                if count == 4 or count == 5:
+                    d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
+                    type_ = "Sensory"
+
+                text_at_point = {}
+
+                for n_index in range(len(blocks_dict[type_])):
+                    n = blocks_dict[type_][n_index]
+                    x = d["x"][n_index]
+                    n_text = "%s (in: %s, out: %s)" % (n, in_degrees[n], out_degrees[n])
+                    if x in text_at_point:
+                        text_at_point[x] += "<br>%s" % n_text
+                    else:
+                        text_at_point[x] = n_text
+
+                d["text"] = [text_at_point[x] for x in d["x"]]
+
+                # print(d)
+                count += 1
+
+        return fig
+
     def connection_number_plot(self, synclass):  # Todo: get better name
         from cect.Cells import COOK_GROUPING_1
         from cect.Cells import get_standard_color
@@ -608,19 +788,32 @@ if __name__ == "__main__":
     cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", -3, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
+    cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
+
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
 
     print(cds.summary())
 
-    print(cds.get_connections_from("VA6", "Acetylcholine"))
-    print("From: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "from"))
-    print("To: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "to"))
-    print(cds.get_connections_to("DD4", "Acetylcholine"))
+    synclass = "Acetylcholine"
 
+    print(cds.get_connections_from("VA6", synclass))
+    print("From: %s" % cds.get_connections_summary("VA6", synclass, "from"))
+    print("To: %s" % cds.get_connections_summary("VA6", synclass, "to"))
+    print(cds.get_connections_to("DD4", synclass))
+
+    """
     if "-nogui" not in sys.argv:
-        cds.connection_number_plot("Acetylcholine")
+        cds.connection_number_plot("Acetylcholine")"""
 
-    G = cds.to_networkx_graph("Acetylcholine")
+    G = cds.to_networkx_graph(synclass)
     import pprint
 
     print(pprint.pprint(nx.node_link_data(G)))
+
+    fig = cds.to_plotly_hive_plot_fig(synclass, None)
+
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    if "-nogui" not in sys.argv:
+        fig.show()
