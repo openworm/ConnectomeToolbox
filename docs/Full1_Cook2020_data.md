@@ -1,3 +1,7 @@
+---
+title: Cook2020
+---
+
 ## Dataset: Cook2020
 Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
@@ -5,9 +9,11 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
 [Raw Data](Cook2020_data.md){ .md-button  } [Neurons](Neurons_Cook2020_data.md){ .md-button  } [Pharynx](Pharynx_Cook2020_data.md){ .md-button  } [Social Network](Social_Cook2020_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2020_data.md){ .md-button .md-button--primary } 
 
-[Graph :material-graphql:](Full1_Cook2020_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_Cook2020_data.md){ .md-button .md-button--primary }
+**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-=== "Cook 2019 Fig 3"
+[Graph :material-graphql:](Full1_Cook2020_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_Cook2020_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_Cook2020_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>

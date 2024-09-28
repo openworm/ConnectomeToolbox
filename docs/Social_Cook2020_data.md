@@ -1,3 +1,7 @@
+---
+title: Cook2020
+---
+
 ## Dataset: Cook2020
 Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
@@ -5,9 +9,11 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
 [Raw Data](Cook2020_data.md){ .md-button  } [Neurons](Neurons_Cook2020_data.md){ .md-button  } [Pharynx](Pharynx_Cook2020_data.md){ .md-button  } [Social Network](Social_Cook2020_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Cook2020_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Cook2020_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Cook2020_data.md){ .md-button .md-button--primary }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
+[Graph :material-graphql:](Social_Cook2020_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Cook2020_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_Cook2020_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>

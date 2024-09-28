@@ -1,3 +1,7 @@
+---
+title: Bentley2016_MA
+---
+
 ## Dataset: Bentley2016_MA
 Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity
 
@@ -5,14 +9,15 @@ Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivit
 
 [Raw Data](Bentley2016_MA_data.md){ .md-button  } [Neurons](Neurons_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Bentley2016_MA_data.md){ .md-button  } [Social Network](Social_Bentley2016_MA_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Bentley2016_MA_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Bentley2016_MA_data.md){ .md-button .md-button--primary }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Extrasynaptic"
+[Graph :material-graphql:](Neurons_Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_Bentley2016_MA_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Bentley2016_MA_Neurons_Extrasynaptic.json" }
-        ```
+=== "Extrasynaptic"
+
+    ```plotly
+    { "file_path": "./assets/Bentley2016_MA_Neurons_Extrasynaptic.json" }
+    ```
 
 
 ### Neurons (233)

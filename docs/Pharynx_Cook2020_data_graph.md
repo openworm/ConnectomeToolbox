@@ -1,3 +1,7 @@
+---
+title: Cook2020
+---
+
 ## Dataset: Cook2020
 Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
 [Raw Data](Cook2020_data_graph.md){ .md-button  } [Neurons](Neurons_Cook2020_data_graph.md){ .md-button  } [Pharynx](Pharynx_Cook2020_data_graph.md){ .md-button .md-button--primary } [Social Network](Social_Cook2020_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2020_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Pharynx_Cook2020_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_Cook2020_data.md){ .md-button  }
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-=== "Pharynx"
-    === "Chemical Exc"
+[Graph :material-graphql:](Pharynx_Cook2020_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_Cook2020_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_Cook2020_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Cook2020_Pharynx_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Cook2020_Pharynx_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Cook2020_Pharynx_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Cook2020_Pharynx_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (22)

@@ -1,22 +1,27 @@
+---
+title: TestData
+---
+
 ## Dataset: TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
 [Raw Data](Test_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Test_data_graph.md){ .md-button  } [Pharynx](Pharynx_Test_data_graph.md){ .md-button  } [Social Network](Social_Test_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Test_data.md){ .md-button  }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Test_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Test_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/TestData_Raw_Chemical_graph.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/TestData_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/TestData_Raw_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/TestData_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (13)

@@ -1,3 +1,7 @@
+---
+title: Witvliet4
+---
+
 ## Dataset: Witvliet4
 Data extracted from **witvliet_2020_4.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **witvliet_2020_4.xlsx** for neuronal connectivity
 
 [Raw Data](Witvliet4_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Witvliet4_data_graph.md){ .md-button  } [Pharynx](Pharynx_Witvliet4_data_graph.md){ .md-button  } [Social Network](Social_Witvliet4_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet4_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Witvliet4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Witvliet4_data.md){ .md-button  }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](Witvliet4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Witvliet4_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Witvliet4_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Witvliet4_Raw_Chemical_graph.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Witvliet4_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Witvliet4_Raw_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Witvliet4_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (168)

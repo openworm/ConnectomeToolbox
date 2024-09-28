@@ -1,22 +1,27 @@
+---
+title: SSData
+---
+
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
 [Raw Data](SSDR_data.md){ .md-button  } [Neurons](Neurons_SSDR_data.md){ .md-button  } [Pharynx](Pharynx_SSDR_data.md){ .md-button  } [Social Network](Social_SSDR_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_SSDR_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_SSDR_data.md){ .md-button .md-button--primary }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Chemical Exc"
+[Graph :material-graphql:](Social_SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_SSDR_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_SSDR_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/SSData_Social_Chemical_Exc.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/SSData_Social_Chemical_Exc.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/SSData_Social_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/SSData_Social_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

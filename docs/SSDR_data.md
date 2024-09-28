@@ -1,22 +1,27 @@
+---
+title: SSData
+---
+
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
 [Raw Data](SSDR_data.md){ .md-button .md-button--primary } [Neurons](Neurons_SSDR_data.md){ .md-button  } [Pharynx](Pharynx_SSDR_data.md){ .md-button  } [Social Network](Social_SSDR_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data.md){ .md-button  } 
 
-[Graph :material-graphql:](SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](SSDR_data.md){ .md-button .md-button--primary }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](SSDR_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](SSDR_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/SSData_Raw_Chemical.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/SSData_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/SSData_Raw_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/SSData_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

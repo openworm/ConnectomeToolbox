@@ -1,22 +1,27 @@
+---
+title: UpdSSData
+---
+
 ## Dataset: UpdSSData
 Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity
 
 [Raw Data](UpdSSData_data.md){ .md-button  } [Neurons](Neurons_UpdSSData_data.md){ .md-button  } [Pharynx](Pharynx_UpdSSData_data.md){ .md-button .md-button--primary } [Social Network](Social_UpdSSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Pharynx_UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_UpdSSData_data.md){ .md-button .md-button--primary }
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-=== "Pharynx"
-    === "Chemical Exc"
+[Graph :material-graphql:](Pharynx_UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_UpdSSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Pharynx_UpdSSData_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/UpdSSData_Pharynx_Chemical_Exc.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/UpdSSData_Pharynx_Chemical_Exc.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/UpdSSData_Pharynx_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/UpdSSData_Pharynx_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

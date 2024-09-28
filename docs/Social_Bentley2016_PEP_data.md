@@ -1,3 +1,7 @@
+---
+title: Bentley2016_PEP
+---
+
 ## Dataset: Bentley2016_PEP
 Data extracted from the **WormNeuroAtlas package** for peptidergic connectivity
 
@@ -5,14 +9,15 @@ Data extracted from the **WormNeuroAtlas package** for peptidergic connectivity
 
 [Raw Data](Bentley2016_PEP_data.md){ .md-button  } [Neurons](Neurons_Bentley2016_PEP_data.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_PEP_data.md){ .md-button  } [Social Network](Social_Bentley2016_PEP_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Bentley2016_PEP_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Bentley2016_PEP_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_PEP_data.md){ .md-button .md-button--primary }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Extrasynaptic"
+[Graph :material-graphql:](Social_Bentley2016_PEP_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_PEP_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_Bentley2016_PEP_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Bentley2016_PEP_Social_Extrasynaptic.json" }
-        ```
+=== "Extrasynaptic"
+
+    ```plotly
+    { "file_path": "./assets/Bentley2016_PEP_Social_Extrasynaptic.json" }
+    ```
 
 
 ### Neurons (300)

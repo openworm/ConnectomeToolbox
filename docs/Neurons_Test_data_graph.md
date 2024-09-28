@@ -1,28 +1,33 @@
+---
+title: TestData
+---
+
 ## Dataset: TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
 [Raw Data](Test_data_graph.md){ .md-button  } [Neurons](Neurons_Test_data_graph.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Test_data_graph.md){ .md-button  } [Social Network](Social_Test_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Test_data.md){ .md-button  }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Chemical Exc"
+[Graph :material-graphql:](Neurons_Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Test_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_Test_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/TestData_Neurons_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Chemical Inh"
+    ```plotly
+    { "file_path": "./assets/TestData_Neurons_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/TestData_Neurons_Chemical_Inh_graph.json" }
-        ```
+=== "Chemical Inh"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/TestData_Neurons_Chemical_Inh_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/TestData_Neurons_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/TestData_Neurons_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (13)

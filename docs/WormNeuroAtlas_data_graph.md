@@ -1,3 +1,7 @@
+---
+title: WormNeuroAtlas
+---
+
 ## Dataset: WormNeuroAtlas
 Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
 [Raw Data](WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_WormNeuroAtlas_data_graph.md){ .md-button  } [Pharynx](Pharynx_WormNeuroAtlas_data_graph.md){ .md-button  } [Social Network](Social_WormNeuroAtlas_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_WormNeuroAtlas_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](WormNeuroAtlas_data.md){ .md-button  }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](WormNeuroAtlas_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](WormNeuroAtlas_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/WormNeuroAtlas_Raw_Chemical_graph.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/WormNeuroAtlas_Raw_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (298)

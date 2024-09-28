@@ -1,3 +1,7 @@
+---
+title: Varshney
+---
+
 ## Dataset: Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [Raw Data](Varshney_data_graph.md){ .md-button  } [Neurons](Neurons_Varshney_data_graph.md){ .md-button  } [Pharynx](Pharynx_Varshney_data_graph.md){ .md-button  } [Social Network](Social_Varshney_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Varshney_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Varshney_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Varshney_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Chemical Exc"
+[Graph :material-graphql:](Social_Varshney_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Varshney_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Varshney_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Social_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Varshney_Social_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Social_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Varshney_Social_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (279)

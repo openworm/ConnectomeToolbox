@@ -1,16 +1,21 @@
+---
+title: TestData
+---
+
 ## Dataset: TestData
 Dummy dataset used for testing webpage/graph generation - do not use!
 
 [Raw Data](Test_data_graph.md){ .md-button  } [Neurons](Neurons_Test_data_graph.md){ .md-button  } [Pharynx](Pharynx_Test_data_graph.md){ .md-button  } [Social Network](Social_Test_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Test_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Test_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Electrical"
+[Graph :material-graphql:](Social_Test_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Test_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Test_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/TestData_Social_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/TestData_Social_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (13)

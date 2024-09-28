@@ -1,3 +1,7 @@
+---
+title: Randi2023
+---
+
 ## Dataset: Randi2023
 Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
@@ -5,14 +9,15 @@ Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
 [Raw Data](Randi2023_data.md){ .md-button  } [Neurons](Neurons_Randi2023_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Randi2023_data.md){ .md-button  } [Social Network](Social_Randi2023_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Randi2023_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Randi2023_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Randi2023_data.md){ .md-button .md-button--primary }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Functional"
+[Graph :material-graphql:](Neurons_Randi2023_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Randi2023_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_Randi2023_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Randi2023_Neurons_Functional.json" }
-        ```
+=== "Functional"
+
+    ```plotly
+    { "file_path": "./assets/Randi2023_Neurons_Functional.json" }
+    ```
 
 
 ### Neurons (181)

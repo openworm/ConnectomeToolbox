@@ -1,3 +1,7 @@
+---
+title: Cook2019Herm
+---
+
 ## Dataset: Cook2019Herm
 Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
 
 [Raw Data](Cook2019Herm_data_graph.md){ .md-button  } [Neurons](Neurons_Cook2019Herm_data_graph.md){ .md-button  } [Pharynx](Pharynx_Cook2019Herm_data_graph.md){ .md-button  } [Social Network](Social_Cook2019Herm_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Cook2019Herm_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Cook2019Herm_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Cook2019Herm_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Chemical Exc"
+[Graph :material-graphql:](Social_Cook2019Herm_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Cook2019Herm_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Cook2019Herm_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Cook2019Herm_Social_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Cook2019Herm_Social_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Cook2019Herm_Social_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Cook2019Herm_Social_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (302)

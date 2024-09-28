@@ -1,3 +1,7 @@
+---
+title: White_L4
+---
+
 ## Dataset: White_L4
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
 [Raw Data](White_L4_data.md){ .md-button  } [Neurons](Neurons_White_L4_data.md){ .md-button  } [Pharynx](Pharynx_White_L4_data.md){ .md-button  } [Social Network](Social_White_L4_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_L4_data.md){ .md-button .md-button--primary } 
 
-[Graph :material-graphql:](Full1_White_L4_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_White_L4_data.md){ .md-button .md-button--primary }
+**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-=== "Cook 2019 Fig 3"
-    === "Chemical"
+[Graph :material-graphql:](Full1_White_L4_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_White_L4_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_White_L4_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/White_L4_Full1_Chemical.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/White_L4_Full1_Chemical.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_L4_Full1_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/White_L4_Full1_Electrical.json" }
+    ```
 
 
 ### Neurons (178)

@@ -1,3 +1,7 @@
+---
+title: White_whole
+---
+
 ## Dataset: White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
@@ -5,26 +9,27 @@ Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivi
 
 [Raw Data](White_whole_data.md){ .md-button  } [Neurons](Neurons_White_whole_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_White_whole_data.md){ .md-button  } [Social Network](Social_White_whole_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_whole_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_White_whole_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_White_whole_data.md){ .md-button .md-button--primary }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Chemical Exc"
+[Graph :material-graphql:](Neurons_White_whole_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_White_whole_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_White_whole_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Neurons_Chemical_Exc.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Chemical Inh"
+    ```plotly
+    { "file_path": "./assets/White_whole_Neurons_Chemical_Exc.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Neurons_Chemical_Inh.json" }
-        ```
+=== "Chemical Inh"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/White_whole_Neurons_Chemical_Inh.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Neurons_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/White_whole_Neurons_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

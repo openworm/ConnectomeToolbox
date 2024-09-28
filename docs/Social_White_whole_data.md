@@ -1,3 +1,7 @@
+---
+title: White_whole
+---
+
 ## Dataset: White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivi
 
 [Raw Data](White_whole_data.md){ .md-button  } [Neurons](Neurons_White_whole_data.md){ .md-button  } [Pharynx](Pharynx_White_whole_data.md){ .md-button  } [Social Network](Social_White_whole_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_White_whole_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_White_whole_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_White_whole_data.md){ .md-button .md-button--primary }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Chemical Exc"
+[Graph :material-graphql:](Social_White_whole_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_White_whole_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_White_whole_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Social_Chemical_Exc.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/White_whole_Social_Chemical_Exc.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Social_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/White_whole_Social_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

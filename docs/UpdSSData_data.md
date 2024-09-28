@@ -1,22 +1,27 @@
+---
+title: UpdSSData
+---
+
 ## Dataset: UpdSSData
 Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity
 
 [Raw Data](UpdSSData_data.md){ .md-button .md-button--primary } [Neurons](Neurons_UpdSSData_data.md){ .md-button  } [Pharynx](Pharynx_UpdSSData_data.md){ .md-button  } [Social Network](Social_UpdSSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData_data.md){ .md-button  } 
 
-[Graph :material-graphql:](UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](UpdSSData_data.md){ .md-button .md-button--primary }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](UpdSSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](UpdSSData_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/UpdSSData_Raw_Chemical.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/UpdSSData_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/UpdSSData_Raw_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/UpdSSData_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (300)

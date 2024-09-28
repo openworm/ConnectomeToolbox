@@ -1,3 +1,7 @@
+---
+title: White_L4
+---
+
 ## Dataset: White_L4
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
@@ -5,9 +9,11 @@ Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
 [Raw Data](White_L4_data_graph.md){ .md-button  } [Neurons](Neurons_White_L4_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_L4_data_graph.md){ .md-button .md-button--primary } [Social Network](Social_White_L4_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_L4_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Pharynx_White_L4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_White_L4_data.md){ .md-button  }
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-=== "Pharynx"
+[Graph :material-graphql:](Pharynx_White_L4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_White_L4_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_White_L4_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (178)
 <details><summary>Full list of Neurons</summary>

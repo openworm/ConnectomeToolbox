@@ -1,3 +1,7 @@
+---
+title: Randi2023
+---
+
 ## Dataset: Randi2023
 Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
@@ -5,14 +9,15 @@ Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
 [Raw Data](Randi2023_data_graph.md){ .md-button  } [Neurons](Neurons_Randi2023_data_graph.md){ .md-button  } [Pharynx](Pharynx_Randi2023_data_graph.md){ .md-button  } [Social Network](Social_Randi2023_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Randi2023_data_graph.md){ .md-button .md-button--primary } 
 
-[Graph :material-graphql:](Full1_Randi2023_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_Randi2023_data.md){ .md-button  }
+**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-=== "Cook 2019 Fig 3"
-    === "Functional"
+[Graph :material-graphql:](Full1_Randi2023_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_Randi2023_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Full1_Randi2023_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Randi2023_Full1_Functional_graph.json" }
-        ```
+=== "Functional"
+
+    ```plotly
+    { "file_path": "./assets/Randi2023_Full1_Functional_graph.json" }
+    ```
 
 
 ### Neurons (181)

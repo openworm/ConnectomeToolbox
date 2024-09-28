@@ -1,3 +1,7 @@
+---
+title: Witvliet2
+---
+
 ## Dataset: Witvliet2
 Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
 
 [Raw Data](Witvliet2_data_graph.md){ .md-button  } [Neurons](Neurons_Witvliet2_data_graph.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Witvliet2_data_graph.md){ .md-button  } [Social Network](Social_Witvliet2_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet2_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Witvliet2_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Witvliet2_data.md){ .md-button  }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Chemical Exc"
+[Graph :material-graphql:](Neurons_Witvliet2_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Witvliet2_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_Witvliet2_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Witvliet2_Neurons_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Witvliet2_Neurons_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Witvliet2_Neurons_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Witvliet2_Neurons_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (162)

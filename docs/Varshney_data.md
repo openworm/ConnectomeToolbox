@@ -1,3 +1,7 @@
+---
+title: Varshney
+---
+
 ## Dataset: Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [Raw Data](Varshney_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Varshney_data.md){ .md-button  } [Pharynx](Pharynx_Varshney_data.md){ .md-button  } [Social Network](Social_Varshney_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Varshney_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Varshney_data.md){ .md-button .md-button--primary }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Varshney_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Varshney_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Raw_Chemical.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Varshney_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Raw_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Varshney_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (279)

@@ -1,3 +1,7 @@
+---
+title: Bentley2016_MA
+---
+
 ## Dataset: Bentley2016_MA
 Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity
 
@@ -5,9 +9,11 @@ Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivit
 
 [Raw Data](Bentley2016_MA_data.md){ .md-button  } [Neurons](Neurons_Bentley2016_MA_data.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_MA_data.md){ .md-button  } [Social Network](Social_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Bentley2016_MA_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_MA_data.md){ .md-button .md-button--primary }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
+[Graph :material-graphql:](Social_Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_Bentley2016_MA_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (233)
 <details><summary>Full list of Neurons</summary>

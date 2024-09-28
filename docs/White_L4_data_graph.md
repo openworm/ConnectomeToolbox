@@ -1,3 +1,7 @@
+---
+title: White_L4
+---
+
 ## Dataset: White_L4
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
 [Raw Data](White_L4_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_White_L4_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_L4_data_graph.md){ .md-button  } [Social Network](Social_White_L4_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_L4_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](White_L4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_L4_data.md){ .md-button  }
+**All of the cells present in the original connectome dataset**
 
-=== "Raw Data"
-    === "Chemical"
+[Graph :material-graphql:](White_L4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_L4_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](White_L4_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/White_L4_Raw_Chemical_graph.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/White_L4_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_L4_Raw_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/White_L4_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (178)

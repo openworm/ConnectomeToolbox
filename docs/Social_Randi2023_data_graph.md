@@ -1,3 +1,7 @@
+---
+title: Randi2023
+---
+
 ## Dataset: Randi2023
 Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
@@ -5,14 +9,15 @@ Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
 [Raw Data](Randi2023_data_graph.md){ .md-button  } [Neurons](Neurons_Randi2023_data_graph.md){ .md-button  } [Pharynx](Pharynx_Randi2023_data_graph.md){ .md-button  } [Social Network](Social_Randi2023_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Randi2023_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Randi2023_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Randi2023_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Functional"
+[Graph :material-graphql:](Social_Randi2023_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Randi2023_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Randi2023_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Randi2023_Social_Functional_graph.json" }
-        ```
+=== "Functional"
+
+    ```plotly
+    { "file_path": "./assets/Randi2023_Social_Functional_graph.json" }
+    ```
 
 
 ### Neurons (181)

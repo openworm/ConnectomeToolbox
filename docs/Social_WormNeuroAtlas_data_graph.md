@@ -1,3 +1,7 @@
+---
+title: WormNeuroAtlas
+---
+
 ## Dataset: WormNeuroAtlas
 Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
 [Raw Data](WormNeuroAtlas_data_graph.md){ .md-button  } [Neurons](Neurons_WormNeuroAtlas_data_graph.md){ .md-button  } [Pharynx](Pharynx_WormNeuroAtlas_data_graph.md){ .md-button  } [Social Network](Social_WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_WormNeuroAtlas_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_WormNeuroAtlas_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Chemical Exc"
+[Graph :material-graphql:](Social_WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_WormNeuroAtlas_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_WormNeuroAtlas_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/WormNeuroAtlas_Social_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Social_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/WormNeuroAtlas_Social_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Social_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (298)

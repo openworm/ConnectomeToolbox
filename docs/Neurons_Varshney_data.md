@@ -1,3 +1,7 @@
+---
+title: Varshney
+---
+
 ## Dataset: Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [Raw Data](Varshney_data.md){ .md-button  } [Neurons](Neurons_Varshney_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Varshney_data.md){ .md-button  } [Social Network](Social_Varshney_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Varshney_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Varshney_data.md){ .md-button .md-button--primary }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Chemical Exc"
+[Graph :material-graphql:](Neurons_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Varshney_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_Varshney_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Neurons_Chemical_Exc.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Varshney_Neurons_Chemical_Exc.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Varshney_Neurons_Electrical.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Varshney_Neurons_Electrical.json" }
+    ```
 
 
 ### Neurons (279)

@@ -1,3 +1,7 @@
+---
+title: Witvliet3
+---
+
 ## Dataset: Witvliet3
 Data extracted from **witvliet_2020_3.xlsx** for neuronal connectivity
 
@@ -5,9 +9,11 @@ Data extracted from **witvliet_2020_3.xlsx** for neuronal connectivity
 
 [Raw Data](Witvliet3_data_graph.md){ .md-button  } [Neurons](Neurons_Witvliet3_data_graph.md){ .md-button  } [Pharynx](Pharynx_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Social Network](Social_Witvliet3_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet3_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Pharynx_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_Witvliet3_data.md){ .md-button  }
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-=== "Pharynx"
+[Graph :material-graphql:](Pharynx_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_Witvliet3_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_Witvliet3_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (162)
 <details><summary>Full list of Neurons</summary>

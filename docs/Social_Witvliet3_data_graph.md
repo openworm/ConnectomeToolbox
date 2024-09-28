@@ -1,3 +1,7 @@
+---
+title: Witvliet3
+---
+
 ## Dataset: Witvliet3
 Data extracted from **witvliet_2020_3.xlsx** for neuronal connectivity
 
@@ -5,14 +9,15 @@ Data extracted from **witvliet_2020_3.xlsx** for neuronal connectivity
 
 [Raw Data](Witvliet3_data_graph.md){ .md-button  } [Neurons](Neurons_Witvliet3_data_graph.md){ .md-button  } [Pharynx](Pharynx_Witvliet3_data_graph.md){ .md-button  } [Social Network](Social_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Witvliet3_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Social_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Witvliet3_data.md){ .md-button  }
+**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-=== "Social Network"
-    === "Electrical"
+[Graph :material-graphql:](Social_Witvliet3_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_Witvliet3_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Witvliet3_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Witvliet3_Social_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Witvliet3_Social_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (162)

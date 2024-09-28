@@ -1,3 +1,7 @@
+---
+title: Cook2019Male
+---
+
 ## Dataset: Cook2019Male
 Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
@@ -5,26 +9,27 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
 
 [Raw Data](Cook2019Male_data_graph.md){ .md-button  } [Neurons](Neurons_Cook2019Male_data_graph.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Cook2019Male_data_graph.md){ .md-button  } [Social Network](Social_Cook2019Male_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2019Male_data_graph.md){ .md-button  } 
 
-[Graph :material-graphql:](Neurons_Cook2019Male_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Cook2019Male_data.md){ .md-button  }
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-=== "Neurons"
-    === "Chemical Exc"
+[Graph :material-graphql:](Neurons_Cook2019Male_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_Cook2019Male_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_Cook2019Male_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/Cook2019Male_Neurons_Chemical_Exc_graph.json" }
-        ```
+=== "Chemical Exc"
 
-    === "Chemical Inh"
+    ```plotly
+    { "file_path": "./assets/Cook2019Male_Neurons_Chemical_Exc_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Cook2019Male_Neurons_Chemical_Inh_graph.json" }
-        ```
+=== "Chemical Inh"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Cook2019Male_Neurons_Chemical_Inh_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/Cook2019Male_Neurons_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/Cook2019Male_Neurons_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (292)

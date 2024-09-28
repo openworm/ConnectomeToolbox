@@ -1,3 +1,7 @@
+---
+title: Varshney
+---
+
 ## Dataset: Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
@@ -5,9 +9,11 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
 [Raw Data](Varshney_data.md){ .md-button  } [Neurons](Neurons_Varshney_data.md){ .md-button  } [Pharynx](Pharynx_Varshney_data.md){ .md-button .md-button--primary } [Social Network](Social_Varshney_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Varshney_data.md){ .md-button  } 
 
-[Graph :material-graphql:](Pharynx_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_Varshney_data.md){ .md-button .md-button--primary }
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-=== "Pharynx"
+[Graph :material-graphql:](Pharynx_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_Varshney_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Pharynx_Varshney_data_hiveplot.md){ .md-button  }
+
+No connections present in this view
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>

@@ -1,3 +1,7 @@
+---
+title: White_whole
+---
+
 ## Dataset: White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
@@ -5,20 +9,21 @@ Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivi
 
 [Raw Data](White_whole_data_graph.md){ .md-button  } [Neurons](Neurons_White_whole_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_whole_data_graph.md){ .md-button  } [Social Network](Social_White_whole_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_whole_data_graph.md){ .md-button .md-button--primary } 
 
-[Graph :material-graphql:](Full1_White_whole_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_White_whole_data.md){ .md-button  }
+**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-=== "Cook 2019 Fig 3"
-    === "Chemical"
+[Graph :material-graphql:](Full1_White_whole_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_White_whole_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Full1_White_whole_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Full1_Chemical_graph.json" }
-        ```
+=== "Chemical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/White_whole_Full1_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        { "file_path": "./assets/White_whole_Full1_Electrical_graph.json" }
-        ```
+=== "Electrical"
+
+    ```plotly
+    { "file_path": "./assets/White_whole_Full1_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (300)
