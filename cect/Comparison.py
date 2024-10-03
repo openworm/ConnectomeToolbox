@@ -149,17 +149,18 @@ def generate_comparison_page(quick: bool, color_table=True):
     connectomes = {}
     all_connectomes = {}
 
-    readers = {
-        "SSData": ["cect.SpreadsheetDataReader", None],
-        "UpdSSData": ["cect.UpdatedSpreadsheetDataReader", None],
-        "UpdSSData2": ["cect.UpdatedSpreadsheetDataReader2", None],
-        "Varshney": ["cect.VarshneyDataReader", "Varshney_2011"],
-        "White_whole": ["cect.White_whole", "White_1986"],
-        "TestData": ["cect.TestDataReader", None],
-        "Cook2020": ["cect.Cook2020DataReader", "Cook_2020"],
-        "Witvliet1": ["cect.WitvlietDataReader1", "Witvliet_2021"],
-    }
-    # readers = {}
+    readers = {}
+
+    if not quick:
+        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
+        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
+        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+
+    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
+    readers["White_whole"] = ["cect.White_whole", "White_1986"]
+    readers["TestData"] = ["cect.TestDataReader", None]
+    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+    readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
 
     if not quick:
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]

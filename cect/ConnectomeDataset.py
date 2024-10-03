@@ -328,18 +328,24 @@ class ConnectomeDataset:
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
+        verbose = False
+
         print_("==============")
-        print_(f"Generating: {synclass} for {view.name}")
+        print_(
+            f"Generating: {synclass} for {view.name}, {view.synclass_sets[synclass]}"
+        )
 
         DEFAULT_NODE_SIZE = 15
 
         def get_node_size(node_set):
+            if node_set.size is not None:
+                return node_set.size
             return DEFAULT_NODE_SIZE * math.sqrt(len(node_set.cells))
 
         import plotly.graph_objects as go
         import networkx as nx
 
-        gap_junction = synclass == "Electrical"
+        gap_junction = synclass == "Electrical" or "All" in synclass
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
@@ -376,13 +382,21 @@ class ConnectomeDataset:
                     edge_x.append(x0)
                     edge_y.append(y0)
 
-                    if x0 != x1 and y0 != y1:
+                    if x0 != x1 or y0 != y1:
+                        if verbose:
+                            print_(f" - Different points ({x0},{y0}) -> ({x1},{y1})")
                         if not straight:
+                            if verbose:
+                                print_(" - 2 way connections")
                             # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
                             offset = 0.2
                             edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
                             edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
                     else:
+                        if verbose:
+                            print_(
+                                f" - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
+                            )
                         circle_offset_a = get_node_size(from_node_set) / 100
 
                         edge_x.append(x0 - circle_offset_a)
@@ -395,9 +409,10 @@ class ConnectomeDataset:
                     # edge_x.append(None)
                     # edge_y.append(None)
 
-                    """print(
-                        f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}"
-                    )"""
+                    if verbose:
+                        print_(
+                            f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
+                        )
                     line_color = "grey"
                     if gap_junction:
                         line_color = "#ff6f6f "
@@ -430,6 +445,8 @@ class ConnectomeDataset:
             if not view.has_color():
                 node_colours.append(len(adjacencies[1]))
 
+        add_text = False
+
         for i, node_value in enumerate(self.nodes):
             # num_connections = node_adjacencies[i]
 
@@ -442,6 +459,7 @@ class ConnectomeDataset:
 
             if node_set.shape is not None:
                 node_shapes.append(node_set.shape)
+                add_text = True
             else:
                 node_shapes.append("circle")
 
@@ -477,8 +495,8 @@ class ConnectomeDataset:
         node_trace = go.Scatter(
             x=node_x,
             y=node_y,
-            mode="markers",
-            text=self.nodes,
+            mode="markers+text" if add_text else "markers",
+            text=["<b>%s</b>" % n for n in self.nodes],
             marker=dict(
                 showscale=not view.has_color(),
                 colorscale="YlGnBu",
@@ -493,14 +511,14 @@ class ConnectomeDataset:
                 ),
                 line_width=1,
             ),
-            opacity=0.9,
+            opacity=1,
             hoverinfo="text",
         )
 
         node_trace.marker.size = node_sizes
         node_trace.marker.symbol = node_shapes
         node_trace.marker.color = node_colours
-        node_trace.text = node_text
+        node_trace.hovertext = node_text
 
         fig = go.Figure(
             data=edge_traces + [node_trace],
@@ -518,6 +536,7 @@ class ConnectomeDataset:
             scaleanchor="x",
             scaleratio=1,
         )
+        fig.update_traces(textposition="middle center", textfont=dict(color="black"))
 
         return fig
 
@@ -789,8 +808,14 @@ if __name__ == "__main__":
     cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
     cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("ASHR", "RMGR", 6, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AWBR", "ASHR", 2, "Send", "Acetylcholine"))
 
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+
+    cds.add_connection_info(
+        ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")
+    )
 
     print(cds.summary())
 
@@ -810,7 +835,17 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    fig = cds.to_plotly_hive_plot_fig(synclass, None)
+    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
+    from cect.ConnectomeView import SOCIAL_VIEW as view
+
+    cds2 = cds.get_connectome_view(view)
+
+    print(cds2.summary())
+
+    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
 

@@ -48,6 +48,9 @@ class TestDataReader(ConnectomeDataset):
 
         self.conns.append(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
 
+        self.conns.append(ConnectionInfo("ASHR", "RMGR", 6, "Send", "Acetylcholine"))
+        self.conns.append(ConnectionInfo("AWBR", "ASHR", 2, "Send", "Acetylcholine"))
+
         self.conns.append(
             ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")
         )

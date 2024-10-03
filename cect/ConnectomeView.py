@@ -31,13 +31,14 @@ import copy
 
 
 class NodeSet:
-    def __init__(self, name, cells, color=None, shape=None, position=None):
+    def __init__(self, name, cells, color=None, shape=None, position=None, size=None):
         self.name = name
         self.color = color
         self.cells = cells
         self.color = color
         self.shape = shape
         self.position = position
+        self.size = size
 
     def is_one_cell(self):
         return len(self.cells) == 1 and self.name == self.cells[0]
@@ -107,6 +108,14 @@ EXC_INH_GJ_SYN_CLASSES = {
 EXC_INH_GJ_FUNC_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
 EXC_INH_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
 
+ALL_SYN_CLASSES = {
+    "All synapses": [GENERIC_CHEM_SYN]
+    + putative_exc_syn_class
+    + ["GABA"]
+    + [GENERIC_ELEC_SYN]
+    + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+    + ["Functional"]
+}
 
 CHEM_GJ_SYN_CLASSES = {
     "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
@@ -175,8 +184,38 @@ SOCIAL_VIEW = View(
     [],
     EXC_INH_GJ_FUNC_SYN_CLASSES,
 )
-for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
-    SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
+
+len_scale = 1.5
+
+soc_positions = {
+    "RMG": (0, 0),
+    "RMH": (0, len_scale),
+    "URX": (0.7 * len_scale, 0.7 * len_scale),
+    "AWB": (len_scale, 0),
+    "IL2": (0.7 * len_scale, -0.7 * len_scale),
+    "ADL": (-0.7 * len_scale, -0.7 * len_scale),
+    "ASH": (-1 * len_scale, 0),
+    "ASK": (-0.7 * len_scale, 0.7 * len_scale),
+}
+
+for cell_pair in sorted(soc_positions.keys()):
+    color = "grey"
+    shape = "triangle-up"
+
+    if cell_pair in ["RMG", "RMH"]:
+        color = "lightgrey"
+        shape = "octagon"
+
+    ns = NodeSet(
+        cell_pair,
+        ["%sL" % cell_pair, "%sR" % cell_pair],
+        color=color,
+        shape=shape,
+        position=soc_positions[cell_pair],
+        size=len_scale * 80,
+    )
+
+    SOCIAL_VIEW.node_sets.append(ns)
 
 COOK_FIG3_VIEW = View(
     "Full1",
