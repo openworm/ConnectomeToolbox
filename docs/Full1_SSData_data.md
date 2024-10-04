@@ -5,22 +5,22 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data.md){ .md-button  } [Neurons](Neurons_SSDR_data.md){ .md-button  } [Pharynx](Pharynx_SSDR_data.md){ .md-button  } [Social Network](Social_SSDR_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_SSDR_data.md){ .md-button  } 
+[Raw Data](SSData_data.md){ .md-button  } [Neurons](Neurons_SSData_data.md){ .md-button  } [Pharynx](Pharynx_SSData_data.md){ .md-button  } [Social Network](Social_SSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data.md){ .md-button .md-button--primary } 
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
+**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-[Graph :material-graphql:](Social_SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_SSDR_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_SSDR_data_hiveplot.md){ .md-button  }
+[Graph :material-graphql:](Full1_SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_SSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_SSData_data_hiveplot.md){ .md-button  }
 
-=== "Chemical Exc"
+=== "Chemical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Social_Chemical_Exc.json" }
+    { "file_path": "./assets/SSData_Full1_Chemical.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Social_Electrical.json" }
+    { "file_path": "./assets/SSData_Full1_Electrical.json" }
     ```
 
 

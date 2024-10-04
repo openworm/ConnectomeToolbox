@@ -5,28 +5,22 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data_graph.md){ .md-button  } [Neurons](Neurons_SSDR_data_graph.md){ .md-button .md-button--primary } [Pharynx](Pharynx_SSDR_data_graph.md){ .md-button  } [Social Network](Social_SSDR_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data_graph.md){ .md-button  } 
+[Raw Data](SSData_data.md){ .md-button  } [Neurons](Neurons_SSData_data.md){ .md-button  } [Pharynx](Pharynx_SSData_data.md){ .md-button .md-button--primary } [Social Network](Social_SSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data.md){ .md-button  } 
 
-**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
+**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Neurons_SSDR_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Neurons_SSDR_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_SSDR_data_hiveplot.md){ .md-button  }
+[Graph :material-graphql:](Pharynx_SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_SSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Pharynx_SSData_data_hiveplot.md){ .md-button  }
 
 === "Chemical Exc"
 
     ```plotly
-    { "file_path": "./assets/SSData_Neurons_Chemical_Exc_graph.json" }
-    ```
-
-=== "Chemical Inh"
-
-    ```plotly
-    { "file_path": "./assets/SSData_Neurons_Chemical_Inh_graph.json" }
+    { "file_path": "./assets/SSData_Pharynx_Chemical_Exc.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Neurons_Electrical_graph.json" }
+    { "file_path": "./assets/SSData_Pharynx_Electrical.json" }
     ```
 
 

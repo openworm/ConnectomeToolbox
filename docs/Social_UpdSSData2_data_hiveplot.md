@@ -12,17 +12,9 @@ Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_e
 [Graph :material-graphql:](Social_UpdSSData2_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_UpdSSData2_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_UpdSSData2_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
-
-    ```plotly
-    { "file_path": "./assets/UpdSSData2_Social_Chemical_Exc_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/UpdSSData2_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

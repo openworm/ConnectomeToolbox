@@ -30,7 +30,7 @@ reader_pages = {
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
     "Randi2023": "Randi2023_data",
-    "SSData": "SSDR_data",
+    "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
     "Bentley2016_MA": "Bentley2016_MA_data",

@@ -5,22 +5,28 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data_graph.md){ .md-button  } [Neurons](Neurons_SSDR_data_graph.md){ .md-button  } [Pharynx](Pharynx_SSDR_data_graph.md){ .md-button  } [Social Network](Social_SSDR_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_SSDR_data_graph.md){ .md-button  } 
+[Raw Data](SSData_data_hiveplot.md){ .md-button  } [Neurons](Neurons_SSData_data_hiveplot.md){ .md-button .md-button--primary } [Pharynx](Pharynx_SSData_data_hiveplot.md){ .md-button  } [Social Network](Social_SSData_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data_hiveplot.md){ .md-button  } 
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
+**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Social_SSDR_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_SSDR_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_SSDR_data_hiveplot.md){ .md-button  }
+[Graph :material-graphql:](Neurons_SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_SSData_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_SSData_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
 
     ```plotly
-    { "file_path": "./assets/SSData_Social_Chemical_Exc_graph.json" }
+    { "file_path": "./assets/SSData_Neurons_Chemical_Exc_hiveplot.json" }
+    ```
+
+=== "Chemical Inh"
+
+    ```plotly
+    { "file_path": "./assets/SSData_Neurons_Chemical_Inh_hiveplot.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Social_Electrical_graph.json" }
+    { "file_path": "./assets/SSData_Neurons_Electrical_hiveplot.json" }
     ```
 
 

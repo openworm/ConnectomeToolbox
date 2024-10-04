@@ -5,16 +5,24 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data_hiveplot.md){ .md-button  } [Neurons](Neurons_SSDR_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_SSDR_data_hiveplot.md){ .md-button  } [Social Network](Social_SSDR_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data_hiveplot.md){ .md-button .md-button--primary } 
+[Raw Data](SSData_data_graph.md){ .md-button  } [Neurons](Neurons_SSData_data_graph.md){ .md-button  } [Pharynx](Pharynx_SSData_data_graph.md){ .md-button  } [Social Network](Social_SSData_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data_graph.md){ .md-button .md-button--primary } 
 
 **A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-[Graph :material-graphql:](Full1_SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_SSDR_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Full1_SSDR_data_hiveplot.md){ .md-button .md-button--primary }
+[Graph :material-graphql:](Full1_SSData_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_SSData_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Full1_SSData_data_hiveplot.md){ .md-button  }
 
 === "Chemical"
-No plottable connections of this type...
+
+    ```plotly
+    { "file_path": "./assets/SSData_Full1_Chemical_graph.json" }
+    ```
+
 === "Electrical"
-No plottable connections of this type...
+
+    ```plotly
+    { "file_path": "./assets/SSData_Full1_Electrical_graph.json" }
+    ```
+
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

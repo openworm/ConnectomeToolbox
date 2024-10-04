@@ -14,17 +14,9 @@ Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 [Graph :material-graphql:](Social_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Varshney_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Varshney_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
-
-    ```plotly
-    { "file_path": "./assets/Varshney_Social_Chemical_Exc_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/Varshney_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (279)
 <details><summary>Full list of Neurons</summary>

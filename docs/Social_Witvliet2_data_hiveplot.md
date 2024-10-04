@@ -13,12 +13,10 @@ Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
 
 [Graph :material-graphql:](Social_Witvliet2_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Witvliet2_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Witvliet2_data_hiveplot.md){ .md-button .md-button--primary }
 
+=== "Chemical Exc"
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/Witvliet2_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (162)
 <details><summary>Full list of Neurons</summary>

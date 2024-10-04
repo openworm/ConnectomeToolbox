@@ -14,11 +14,7 @@ Data extracted from the **WormNeuroAtlas package** for functional connectivity
 [Graph :material-graphql:](Social_Randi2023_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Randi2023_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Randi2023_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Functional"
-
-    ```plotly
-    { "file_path": "./assets/Randi2023_Social_Functional_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (181)
 <details><summary>Full list of Neurons</summary>

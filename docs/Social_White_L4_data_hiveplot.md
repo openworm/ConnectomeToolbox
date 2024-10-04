@@ -14,17 +14,9 @@ Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 [Graph :material-graphql:](Social_White_L4_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_White_L4_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_White_L4_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
-
-    ```plotly
-    { "file_path": "./assets/White_L4_Social_Chemical_Exc_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/White_L4_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (178)
 <details><summary>Full list of Neurons</summary>

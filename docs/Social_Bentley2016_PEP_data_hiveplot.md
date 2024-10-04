@@ -14,11 +14,7 @@ Data extracted from the **WormNeuroAtlas package** for peptidergic connectivity
 [Graph :material-graphql:](Social_Bentley2016_PEP_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_PEP_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Bentley2016_PEP_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Extrasynaptic"
-
-    ```plotly
-    { "file_path": "./assets/Bentley2016_PEP_Social_Extrasynaptic_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

@@ -14,17 +14,9 @@ Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal con
 [Graph :material-graphql:](Social_Cook2019Male_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Cook2019Male_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Cook2019Male_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
-
-    ```plotly
-    { "file_path": "./assets/Cook2019Male_Social_Chemical_Exc_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/Cook2019Male_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (292)
 <details><summary>Full list of Neurons</summary>

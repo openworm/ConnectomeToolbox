@@ -436,6 +436,7 @@ class ConnectomeDataset:
 
         node_adjacencies = []
         node_colours = []
+        node_font_colors = {}
         node_text = []
         node_sizes = []
         node_shapes = []
@@ -454,6 +455,27 @@ class ConnectomeDataset:
 
             if view.has_color():
                 node_colours.append(node_set.color)
+
+                if "#" in node_set.color:
+                    h = node_set.color[1:]
+                    rgb = tuple((int(h[i : i + 2], 16) / 256) for i in (0, 2, 4))
+                else:
+                    import webcolors
+
+                    rgb = webcolors.name_to_rgb(node_set.color)
+
+                # https://stackoverflow.com/questions/3942878
+                if (
+                    float(rgb[0]) * 0.299 + float(rgb[1]) * 0.587 + float(rgb[2]) * 0.2
+                ) > 0.35:
+                    fcolor = "#000000"
+                else:
+                    fcolor = "#ffffff"
+                node_font_colors[node_value] = fcolor
+                if verbose:
+                    print_(
+                        f"For node {node_value}, with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
+                    )
 
             node_sizes.append(get_node_size(node_set))
 
@@ -496,7 +518,11 @@ class ConnectomeDataset:
             x=node_x,
             y=node_y,
             mode="markers+text" if add_text else "markers",
-            text=["<b>%s</b>" % n for n in self.nodes],
+            text=[
+                '<span style="color:%s;font-size:1.0em"><b>%s</b></span>'
+                % (node_font_colors[n] if n in node_font_colors else "black", n)
+                for n in self.nodes
+            ],
             marker=dict(
                 showscale=not view.has_color(),
                 colorscale="YlGnBu",
@@ -536,7 +562,7 @@ class ConnectomeDataset:
             scaleanchor="x",
             scaleratio=1,
         )
-        fig.update_traces(textposition="middle center", textfont=dict(color="black"))
+        fig.update_traces(textposition="middle center")
 
         return fig
 
@@ -610,13 +636,20 @@ class ConnectomeDataset:
                     f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}"
                 )
 
+        num_steps_for_edge_curves = 25
+
         hp = hive_plot_n_axes(
             node_list=nodes,
             edges=edges,
             axes_assignments=splits,
             sorting_variables=["degree"] * 3,
             repeat_axes=[True, True, True],
-            repeat_edge_kwargs={"color": "grey"},
+            repeat_edge_kwargs={
+                "color": "grey",
+                "num_steps": num_steps_for_edge_curves,
+            },
+            cw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
+            ccw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
             vmins=[0] * 3,
             vmaxes=[max(degrees.values())] * 3,
         )
@@ -835,9 +868,9 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
-    from cect.ConnectomeView import SOCIAL_VIEW as view
+    # from cect.ConnectomeView import SOCIAL_VIEW as view
+    from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
     cds2 = cds.get_connectome_view(view)
 

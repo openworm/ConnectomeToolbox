@@ -14,17 +14,9 @@ Data extracted from **witvliet_2020_5.xlsx** for neuronal connectivity
 [Graph :material-graphql:](Social_Witvliet5_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Witvliet5_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_Witvliet5_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical Exc"
-
-    ```plotly
-    { "file_path": "./assets/Witvliet5_Social_Chemical_Exc_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 === "Electrical"
-
-    ```plotly
-    { "file_path": "./assets/Witvliet5_Social_Electrical_hiveplot.json" }
-    ```
-
+No plottable connections of this type...
 
 ### Neurons (174)
 <details><summary>Full list of Neurons</summary>

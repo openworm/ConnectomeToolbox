@@ -13,6 +13,12 @@ Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
 
 [Graph :material-graphql:](Social_Witvliet2_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Witvliet2_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_Witvliet2_data_hiveplot.md){ .md-button  }
 
+=== "Chemical Exc"
+
+    ```plotly
+    { "file_path": "./assets/Witvliet2_Social_Chemical_Exc.json" }
+    ```
+
 === "Electrical"
 
     ```plotly

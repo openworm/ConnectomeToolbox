@@ -67,10 +67,8 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
                 weight = connectome[apost, apre][0]
 
                 if weight != 0:
-                    print(
-                        "%s conn (%s (%i) -> %s (%i):\t%s "
-                        % (self.synclass, pre, apre, post, apost, weight)
-                    )
+                    # print_( "%s conn (%s (%i) -> %s (%i):\t%s " % (self.synclass, pre, apre, post, apost, weight)       )
+
                     conns.append(
                         ConnectionInfo(pre, post, weight, syntype, self.synclass)
                     )

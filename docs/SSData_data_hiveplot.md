@@ -5,22 +5,22 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data.md){ .md-button .md-button--primary } [Neurons](Neurons_SSDR_data.md){ .md-button  } [Pharynx](Pharynx_SSDR_data.md){ .md-button  } [Social Network](Social_SSDR_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data.md){ .md-button  } 
+[Raw Data](SSData_data_hiveplot.md){ .md-button .md-button--primary } [Neurons](Neurons_SSData_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_SSData_data_hiveplot.md){ .md-button  } [Social Network](Social_SSData_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data_hiveplot.md){ .md-button  } 
 
 **All of the cells present in the original connectome dataset**
 
-[Graph :material-graphql:](SSDR_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](SSDR_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](SSDR_data_hiveplot.md){ .md-button  }
+[Graph :material-graphql:](SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](SSData_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](SSData_data_hiveplot.md){ .md-button .md-button--primary }
 
 === "Chemical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Raw_Chemical.json" }
+    { "file_path": "./assets/SSData_Raw_Chemical_hiveplot.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/SSData_Raw_Electrical.json" }
+    { "file_path": "./assets/SSData_Raw_Electrical_hiveplot.json" }
     ```
 
 

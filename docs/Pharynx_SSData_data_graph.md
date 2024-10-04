@@ -5,11 +5,11 @@ title: SSData
 ## Dataset: SSData
 Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSDR_data_graph.md){ .md-button  } [Neurons](Neurons_SSDR_data_graph.md){ .md-button  } [Pharynx](Pharynx_SSDR_data_graph.md){ .md-button .md-button--primary } [Social Network](Social_SSDR_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSDR_data_graph.md){ .md-button  } 
+[Raw Data](SSData_data_graph.md){ .md-button  } [Neurons](Neurons_SSData_data_graph.md){ .md-button  } [Pharynx](Pharynx_SSData_data_graph.md){ .md-button .md-button--primary } [Social Network](Social_SSData_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data_graph.md){ .md-button  } 
 
 **Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Pharynx_SSDR_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_SSDR_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_SSDR_data_hiveplot.md){ .md-button  }
+[Graph :material-graphql:](Pharynx_SSData_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Pharynx_SSData_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_SSData_data_hiveplot.md){ .md-button  }
 
 === "Chemical Exc"
 
