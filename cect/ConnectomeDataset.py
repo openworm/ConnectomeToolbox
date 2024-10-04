@@ -564,6 +564,18 @@ class ConnectomeDataset:
         )
         fig.update_traces(textposition="middle center")
 
+        if "Cook" in view.name:
+            fig.update_layout(
+                template="plotly_white",
+            )
+        else:
+            fig.update_layout(
+                template="plotly_dark",
+            )
+
+        fig.update_xaxes(visible=False)
+        fig.update_yaxes(visible=False)
+
         return fig
 
     def to_plotly_hive_plot_fig(self, synclass, view):
@@ -720,7 +732,11 @@ class ConnectomeDataset:
         # fig.update_traces(mode="markers+lines", hovertemplate=None)
         fig.update_layout(hovermode="closest")
 
-        fig.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)")
+        fig.update_layout(
+            template="plotly_dark",
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
 
         fig.update(data=[{"hoverinfo": "skip"}])
 

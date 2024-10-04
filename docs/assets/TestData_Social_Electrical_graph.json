@@ -8,27 +8,39 @@
         "width": 1.0
       },
       "mode": "lines",
+      "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.680561,
-        -0.818387
+        -1.5,
+        -1.05
       ],
       "y": [
-        0.284952,
-        0.209318
+        0.0,
+        1.05
       ]
     },
     {
       "hoverinfo": "text",
+      "hovertext": [
+        "<b>ADL</b><br>Cells: ADLL, ADLR",
+        "<b>ASH</b><br>Cells: ASHL, ASHR<br>Conns out: <b>ASK</b>: 1",
+        "<b>ASK</b><br>Cells: ASKL, ASKR<br>Conns in: <b>ASH</b>: 1",
+        "<b>AWB</b><br>Cells: AWBL, AWBR",
+        "<b>IL2</b><br>Cells: IL2L, IL2R",
+        "<b>RMG</b><br>Cells: RMGL, RMGR",
+        "<b>RMH</b><br>Cells: RMHL, RMHR",
+        "<b>URX</b><br>Cells: URXL, URXR"
+      ],
       "marker": {
         "color": [
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
+          "grey",
+          "grey",
+          "grey",
+          "grey",
+          "grey",
+          "lightgrey",
+          "lightgrey",
+          "grey"
         ],
         "colorbar": {
           "thickness": 15,
@@ -80,55 +92,61 @@
           "width": 1
         },
         "reversescale": true,
-        "showscale": true,
+        "showscale": false,
         "size": [
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0,
-          15.0
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0,
+          120.0
         ],
         "symbol": [
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle",
-          "circle"
+          "triangle-up",
+          "triangle-up",
+          "triangle-up",
+          "triangle-up",
+          "triangle-up",
+          "octagon",
+          "octagon",
+          "triangle-up"
         ]
       },
-      "mode": "markers",
-      "opacity": 0.9,
+      "mode": "markers+text",
+      "opacity": 1,
       "text": [
-        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns out: <b>ASKR</b>: 1",
-        "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 1",
-        "<b>AWBR</b><br>Sensory neuron (amphid)",
-        "<b>IL2R</b><br>Sensory neuron (cephalic)",
-        "<b>RMGR</b><br>Layer 2 interneuron",
-        "<b>RMHR</b><br>Head motor neuron",
-        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)"
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASH</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASK</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWB</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMG</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMH</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URX</b></span>"
       ],
+      "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.680561,
-        -0.818387,
-        -0.393505,
-        0.314961,
-        0.865731,
-        0.792712,
-        -0.08095
+        -1.05,
+        -1.5,
+        -1.05,
+        1.5,
+        1.05,
+        0.0,
+        0.0,
+        1.05
       ],
       "y": [
-        0.284952,
-        0.209318,
-        -0.898484,
-        -0.821636,
-        -0.295283,
-        0.521133,
-        1.0
+        -1.05,
+        0.0,
+        1.05,
+        0.0,
+        -1.05,
+        0.0,
+        1.5,
+        1.05
       ]
     }
   ],
@@ -147,14 +165,14 @@
         "bar": [
           {
             "error_x": {
-              "color": "#2a3f5f"
+              "color": "#f2f5fa"
             },
             "error_y": {
-              "color": "#2a3f5f"
+              "color": "#f2f5fa"
             },
             "marker": {
               "line": {
-                "color": "#E5ECF6",
+                "color": "rgb(17,17,17)",
                 "width": 0.5
               },
               "pattern": {
@@ -170,7 +188,7 @@
           {
             "marker": {
               "line": {
-                "color": "#E5ECF6",
+                "color": "rgb(17,17,17)",
                 "width": 0.5
               },
               "pattern": {
@@ -185,18 +203,18 @@
         "carpet": [
           {
             "aaxis": {
-              "endlinecolor": "#2a3f5f",
-              "gridcolor": "white",
-              "linecolor": "white",
-              "minorgridcolor": "white",
-              "startlinecolor": "#2a3f5f"
+              "endlinecolor": "#A2B1C6",
+              "gridcolor": "#506784",
+              "linecolor": "#506784",
+              "minorgridcolor": "#506784",
+              "startlinecolor": "#A2B1C6"
             },
             "baxis": {
-              "endlinecolor": "#2a3f5f",
-              "gridcolor": "white",
-              "linecolor": "white",
-              "minorgridcolor": "white",
-              "startlinecolor": "#2a3f5f"
+              "endlinecolor": "#A2B1C6",
+              "gridcolor": "#506784",
+              "linecolor": "#506784",
+              "minorgridcolor": "#506784",
+              "startlinecolor": "#A2B1C6"
             },
             "type": "carpet"
           }
@@ -514,10 +532,10 @@
         ],
         "scatter": [
           {
-            "fillpattern": {
-              "fillmode": "overlay",
-              "size": 10,
-              "solidity": 0.2
+            "marker": {
+              "line": {
+                "color": "#283442"
+              }
             },
             "type": "scatter"
           }
@@ -564,9 +582,8 @@
         "scattergl": [
           {
             "marker": {
-              "colorbar": {
-                "outlinewidth": 0,
-                "ticks": ""
+              "line": {
+                "color": "#283442"
               }
             },
             "type": "scattergl"
@@ -671,18 +688,18 @@
           {
             "cells": {
               "fill": {
-                "color": "#EBF0F8"
+                "color": "#506784"
               },
               "line": {
-                "color": "white"
+                "color": "rgb(17,17,17)"
               }
             },
             "header": {
               "fill": {
-                "color": "#C8D4E3"
+                "color": "#2a3f5f"
               },
               "line": {
-                "color": "white"
+                "color": "rgb(17,17,17)"
               }
             },
             "type": "table"
@@ -691,7 +708,7 @@
       },
       "layout": {
         "annotationdefaults": {
-          "arrowcolor": "#2a3f5f",
+          "arrowcolor": "#f2f5fa",
           "arrowhead": 0,
           "arrowwidth": 1
         },
@@ -847,113 +864,123 @@
           "#FECB52"
         ],
         "font": {
-          "color": "#2a3f5f"
+          "color": "#f2f5fa"
         },
         "geo": {
-          "bgcolor": "white",
-          "lakecolor": "white",
-          "landcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
+          "lakecolor": "rgb(17,17,17)",
+          "landcolor": "rgb(17,17,17)",
           "showlakes": true,
           "showland": true,
-          "subunitcolor": "white"
+          "subunitcolor": "#506784"
         },
         "hoverlabel": {
           "align": "left"
         },
         "hovermode": "closest",
         "mapbox": {
-          "style": "light"
+          "style": "dark"
         },
-        "paper_bgcolor": "white",
-        "plot_bgcolor": "#E5ECF6",
+        "paper_bgcolor": "rgb(17,17,17)",
+        "plot_bgcolor": "rgb(17,17,17)",
         "polar": {
           "angularaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
-          "bgcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
           "radialaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           }
         },
         "scene": {
           "xaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           },
           "yaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           },
           "zaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           }
         },
         "shapedefaults": {
           "line": {
-            "color": "#2a3f5f"
+            "color": "#f2f5fa"
           }
+        },
+        "sliderdefaults": {
+          "bgcolor": "#C8D4E3",
+          "bordercolor": "rgb(17,17,17)",
+          "borderwidth": 1,
+          "tickwidth": 0
         },
         "ternary": {
           "aaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
           "baxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
-          "bgcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
           "caxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           }
         },
         "title": {
           "x": 0.05
         },
+        "updatemenudefaults": {
+          "bgcolor": "#506784",
+          "borderwidth": 0
+        },
         "xaxis": {
           "automargin": true,
-          "gridcolor": "white",
-          "linecolor": "white",
+          "gridcolor": "#283442",
+          "linecolor": "#506784",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "white",
+          "zerolinecolor": "#283442",
           "zerolinewidth": 2
         },
         "yaxis": {
           "automargin": true,
-          "gridcolor": "white",
-          "linecolor": "white",
+          "gridcolor": "#283442",
+          "linecolor": "#506784",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "white",
+          "zerolinecolor": "#283442",
           "zerolinewidth": 2
         }
       }
@@ -961,12 +988,14 @@
     "width": 800,
     "xaxis": {
       "showgrid": false,
+      "visible": false,
       "zeroline": false
     },
     "yaxis": {
       "scaleanchor": "x",
       "scaleratio": 1,
       "showgrid": false,
+      "visible": false,
       "zeroline": false
     }
   }

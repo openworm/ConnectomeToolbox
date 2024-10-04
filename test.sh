@@ -9,6 +9,9 @@ quick_test=0
 
 if [[ ($# -eq 1) && ($1 == '-q') ]]; then
     quick_test=1
+else
+    mv docs/*data*md /tmp  2>/dev/null || true
+    mv docs/assets/*json /tmp  2>/dev/null || true
 fi
 
 ##   Test readers
@@ -16,7 +19,8 @@ fi
 python -m cect.Cells $quick_test
 
 if [ "$quick_test" == 0 ]; then
-                                                                                                                                          
+
+
     python -m cect.TestDataReader -nogui                                                                                                                                         
     python -m cect.ConnectomeView                                                                                                                             
     python -m cect.ConnectomeDataset -nogui
