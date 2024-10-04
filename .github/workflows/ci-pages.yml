@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
       - uses: actions/cache@v4
         with:
@@ -26,7 +28,23 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: |
-          pip install .[docs]
-
+  
+      - name: Install HDF5 for pytables on macos-latest
+        if: ${{ matrix.runs-on == 'macos-latest' }}
+        run: |
+          brew install hdf5
+          
+          
+      - name: Install full package
+        run: |
+          pip install .[all]
+          pip list
+          
+          
+      - name: Run test script to regenerate
+        run: |
+          ./test.sh
+          ls -alt docs/
+          ls -alt docs/assets/
+  
       - run: mkdocs gh-deploy --force

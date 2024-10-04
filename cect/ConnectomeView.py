@@ -20,6 +20,8 @@ from cect.Cells import PHARYNGEAL_MOTORNEURONS
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
 
 from cect.Cells import get_standard_color
 
@@ -29,13 +31,14 @@ import copy
 
 
 class NodeSet:
-    def __init__(self, name, cells, color=None, shape=None, position=None):
+    def __init__(self, name, cells, color=None, shape=None, position=None, size=None):
         self.name = name
         self.color = color
         self.cells = cells
         self.color = color
         self.shape = shape
         self.position = position
+        self.size = size
 
     def is_one_cell(self):
         return len(self.cells) == 1 and self.name == self.cells[0]
@@ -56,13 +59,17 @@ class NodeSet:
 class View:
     def __init__(
         self,
+        id,
         name,
+        description,
         node_sets,
         synclass_sets={},
         colormap=DEFAULT_COLORMAP,
         only_show_existing_nodes=False,
     ):
+        self.id = id
         self.name = name
+        self.description = description
         self.node_sets = node_sets
         self.synclass_sets = synclass_sets
         self.colormap = colormap
@@ -88,23 +95,32 @@ class View:
 
 
 putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
+
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical Exc": ["Generic_CS"] + putative_exc_syn_class,
+    "Chemical Exc": [GENERIC_CHEM_SYN] + putative_exc_syn_class,
     "Chemical Inh": ["GABA"],
-    "Electrical": ["Generic_GJ"],
+    "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
 
 EXC_INH_GJ_FUNC_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
 EXC_INH_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
 
+ALL_SYN_CLASSES = {
+    "All synapses": [GENERIC_CHEM_SYN]
+    + putative_exc_syn_class
+    + ["GABA"]
+    + [GENERIC_ELEC_SYN]
+    + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+    + ["Functional"]
+}
 
 CHEM_GJ_SYN_CLASSES = {
     "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
     + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
-    "Electrical": ["Generic_GJ"],
+    "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
 
@@ -112,7 +128,14 @@ CHEM_GJ_FUNC_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
 CHEM_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
 
 
-RAW_VIEW = View("Raw Data", [], CHEM_GJ_FUNC_SYN_CLASSES, only_show_existing_nodes=True)
+RAW_VIEW = View(
+    "Raw",
+    "Raw Data",
+    "All of the cells present in the original connectome dataset",
+    [],
+    CHEM_GJ_FUNC_SYN_CLASSES,
+    only_show_existing_nodes=True,
+)
 for cell in (
     sorted(PREFERRED_NEURON_NAMES)
     + sorted(PREFERRED_MUSCLE_NAMES)
@@ -121,7 +144,13 @@ for cell in (
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 
-FULL_VIEW = View("Full View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+NEURONS_VIEW = View(
+    "Neurons",
+    "Neurons",
+    "All 302 hermaphrodite neurons (whether present or not in the connectome dataset)",
+    [],
+    EXC_INH_GJ_FUNC_SYN_CLASSES,
+)
 
 for cell in (
     sorted(SENSORY_NEURONS_COOK)
@@ -136,17 +165,65 @@ for cell in (
     + sorted(PHARYNGEAL_INTERNEURONS)
     + sorted(PHARYNGEAL_MOTORNEURONS)
 ):
-    FULL_VIEW.node_sets.append(NodeSet(cell, [cell]))
+    NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-PHARYNX_VIEW = View("Pharynx View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
+PHARYNX_VIEW = View(
+    "Pharynx",
+    "Pharynx",
+    "Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)",
+    [],
+    EXC_INH_GJ_FUNC_SYN_CLASSES,
+)
 for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
 
-SOCIAL_VIEW = View("Social View", [], EXC_INH_GJ_FUNC_SYN_CLASSES)
-for cell in sorted(["RMGR", "ASHR", "ASKR", "AWBR", "IL2R", "RMHR", "URXR"]):
-    SOCIAL_VIEW.node_sets.append(NodeSet(cell, [cell]))
+SOCIAL_VIEW = View(
+    "Social",
+    "Social Network",
+    "Hub and spoke circuit for social behavior as in Macosko et al. 2009",
+    [],
+    EXC_INH_GJ_FUNC_SYN_CLASSES,
+)
 
-SMALL_VIEW = View("Small View", [], CHEM_GJ_FUNC_SYN_CLASSES)
+len_scale = 1.5
+
+soc_positions = {
+    "RMG": (0, 0),
+    "RMH": (0, len_scale),
+    "URX": (0.7 * len_scale, 0.7 * len_scale),
+    "AWB": (len_scale, 0),
+    "IL2": (0.7 * len_scale, -0.7 * len_scale),
+    "ADL": (-0.7 * len_scale, -0.7 * len_scale),
+    "ASH": (-1 * len_scale, 0),
+    "ASK": (-0.7 * len_scale, 0.7 * len_scale),
+}
+
+for cell_pair in sorted(soc_positions.keys()):
+    color = "grey"
+    shape = "triangle-up"
+
+    if cell_pair in ["RMG", "RMH"]:
+        color = "lightgrey"
+        shape = "octagon"
+
+    ns = NodeSet(
+        cell_pair,
+        ["%sL" % cell_pair, "%sR" % cell_pair],
+        color=color,
+        shape=shape,
+        position=soc_positions[cell_pair],
+        size=len_scale * 80,
+    )
+
+    SOCIAL_VIEW.node_sets.append(ns)
+
+COOK_FIG3_VIEW = View(
+    "Full1",
+    "Cook 2019 Fig 3",
+    "A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019",
+    [],
+    CHEM_GJ_FUNC_SYN_CLASSES,
+)
 
 sn_pos = {
     "SN1": (2, 2.8),
@@ -161,7 +238,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
     color = "#b31b1b"
     if category == "SN1":
         color = "#FFC0CB"
-    SMALL_VIEW.node_sets.append(
+    COOK_FIG3_VIEW.node_sets.append(
         NodeSet(
             category,
             SENSORY_NEURONS_COOK_CATEGORIES[category],
@@ -175,7 +252,7 @@ in_pos = {"IN1": (4.2, 3.3), "IN2": (3.4, 4.2), "IN3": (5.1, 4.4), "IN4": (2.3, 
 
 for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
     if category != "RIML":
-        SMALL_VIEW.node_sets.append(
+        COOK_FIG3_VIEW.node_sets.append(
             NodeSet(
                 category,
                 INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES[category],
@@ -185,7 +262,7 @@ for category in INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES:
             )
         )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "HMN",
         HEAD_MOTORNEURONS_COOK,
@@ -195,7 +272,7 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "SMN",
         SUBLATERAL_MOTORNEURONS_COOK,
@@ -205,7 +282,7 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MNVC",
         VENTRAL_CORD_MOTORNEURONS,
@@ -215,31 +292,31 @@ SMALL_VIEW.node_sets.append(
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "VC", VC_HERM_MOTORNEURONS, color="#FF00FF", shape="circle", position=(7.8, 3.3)
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "HSN", HSN_MOTORNEURONS, color="#FF00FF", shape="circle", position=(6.3, 5.9)
     )
 )
 
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MUBODY", BODY_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(5, 0.73)
     )
 )
-SMALL_VIEW.node_sets.append(
+COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MUHEAD", HEAD_MUSCLES_COOK, color="#5a2d0d", shape="square", position=(3.1, 1)
     )
 )
 
 
-ALL_VIEWS = [RAW_VIEW, FULL_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, SMALL_VIEW]
+ALL_VIEWS = [RAW_VIEW, NEURONS_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, COOK_FIG3_VIEW]
 
 
 if __name__ == "__main__":
@@ -248,16 +325,35 @@ if __name__ == "__main__":
     ns_p = NodeSet("PVCL", ["PVCL"])
     ns_a = NodeSet("AVBL", ["AVBL"])
 
-    v1 = View("VandD", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES)
+    v1 = View(
+        "VandD", "V and D", "desc", [ns_d, ns_v, ns_a, ns_p], EXC_INH_GJ_SYN_CLASSES
+    )
+
+    v2 = View(
+        "Donly",
+        "Donly",
+        "desc",
+        [NodeSet("DB4", ["DB4"]), NodeSet("DD4", ["DD4"])],
+        EXC_INH_GJ_SYN_CLASSES,
+    )
 
     from cect.TestDataReader import tdr_instance
 
-    print(NodeSet(SMALL_VIEW, SMALL_VIEW))
+    print(NodeSet(COOK_FIG3_VIEW, COOK_FIG3_VIEW))
 
     print(tdr_instance.summary())
 
-    print("----------------")
+    print("------- v1 ---------")
     print(tdr_instance.get_connectome_view(v1).summary())
 
-    print("----------------")
+    print("-------- Social --------")
     print(tdr_instance.get_connectome_view(SOCIAL_VIEW).summary())
+
+    print("------- v2 ---------")
+    print(tdr_instance.get_connectome_view(v2).summary())
+
+    print("------- Raw ---------")
+    print(tdr_instance.get_connectome_view(RAW_VIEW).summary())
+
+    print("------- Neurons ---------")
+    print(tdr_instance.get_connectome_view(NEURONS_VIEW).summary())

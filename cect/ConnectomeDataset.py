@@ -14,6 +14,10 @@ from cect.ConnectomeReader import is_muscle
 import numpy as np
 import math
 import sys
+import networkx as nx
+import pprint
+
+from cect.Cells import get_SIM_class
 
 
 class ConnectomeDataset:
@@ -37,6 +41,25 @@ class ConnectomeDataset:
             new_conn_array[: conn_array.shape[0], : conn_array.shape[1]] = conn_array
 
             self.connections[c] = new_conn_array
+
+    def to_networkx_graph(self, synclass):
+        import networkx as nx
+
+        conn_array = self.connections[synclass]
+
+        G = nx.DiGraph(conn_array)
+        mapping = {}
+
+        for n_id in range(len(self.nodes)):
+            mapping[n_id] = self.nodes[n_id]
+
+        Gn = nx.relabel_nodes(G, mapping)
+
+        for nn_id in Gn.nodes:
+            nn = Gn.nodes[nn_id]
+            nn["SIM_class"] = get_SIM_class(nn_id)
+
+        return Gn
 
     def add_connection_info(self, conn: ConnectionInfo):
         if self.verbose:
@@ -210,8 +233,8 @@ class ConnectomeDataset:
                                 else view.get_index_of_cell(post)
                             )
 
-                            if self.verbose:
-                                print(
+                            if self.verbose and False:
+                                print_(
                                     "-- Testing if %s (%i), %s (%s) in my %i node sets %s..."
                                     % (
                                         pre,
@@ -304,18 +327,25 @@ class ConnectomeDataset:
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
+
+        verbose = False
+
         print_("==============")
-        print_(f"Generating: {synclass} for {view.name}")
+        print_(
+            f"Generating: {synclass} for {view.name}, {view.synclass_sets[synclass]}"
+        )
 
         DEFAULT_NODE_SIZE = 15
 
         def get_node_size(node_set):
+            if node_set.size is not None:
+                return node_set.size
             return DEFAULT_NODE_SIZE * math.sqrt(len(node_set.cells))
 
         import plotly.graph_objects as go
         import networkx as nx
 
-        gap_junction = synclass == "Electrical"
+        gap_junction = synclass == "Electrical" or "All" in synclass
 
         G = nx.Graph(conn_array)
         pos = nx.spring_layout(G, seed=1)
@@ -352,13 +382,21 @@ class ConnectomeDataset:
                     edge_x.append(x0)
                     edge_y.append(y0)
 
-                    if x0 != x1 and y0 != y1:
+                    if x0 != x1 or y0 != y1:
+                        if verbose:
+                            print_(f" - Different points ({x0},{y0}) -> ({x1},{y1})")
                         if not straight:
+                            if verbose:
+                                print_(" - 2 way connections")
                             # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
                             offset = 0.2
                             edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
                             edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
                     else:
+                        if verbose:
+                            print_(
+                                f" - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
+                            )
                         circle_offset_a = get_node_size(from_node_set) / 100
 
                         edge_x.append(x0 - circle_offset_a)
@@ -371,9 +409,10 @@ class ConnectomeDataset:
                     # edge_x.append(None)
                     # edge_y.append(None)
 
-                    """print(
-                        f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}"
-                    )"""
+                    if verbose:
+                        print_(
+                            f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
+                        )
                     line_color = "grey"
                     if gap_junction:
                         line_color = "#ff6f6f "
@@ -397,6 +436,7 @@ class ConnectomeDataset:
 
         node_adjacencies = []
         node_colours = []
+        node_font_colors = {}
         node_text = []
         node_sizes = []
         node_shapes = []
@@ -406,6 +446,8 @@ class ConnectomeDataset:
             if not view.has_color():
                 node_colours.append(len(adjacencies[1]))
 
+        add_text = False
+
         for i, node_value in enumerate(self.nodes):
             # num_connections = node_adjacencies[i]
 
@@ -414,10 +456,32 @@ class ConnectomeDataset:
             if view.has_color():
                 node_colours.append(node_set.color)
 
+                if "#" in node_set.color:
+                    h = node_set.color[1:]
+                    rgb = tuple((int(h[i : i + 2], 16) / 256) for i in (0, 2, 4))
+                else:
+                    import webcolors
+
+                    rgb = webcolors.name_to_rgb(node_set.color)
+
+                # https://stackoverflow.com/questions/3942878
+                if (
+                    float(rgb[0]) * 0.299 + float(rgb[1]) * 0.587 + float(rgb[2]) * 0.2
+                ) > 0.35:
+                    fcolor = "#000000"
+                else:
+                    fcolor = "#ffffff"
+                node_font_colors[node_value] = fcolor
+                if verbose:
+                    print_(
+                        f"For node {node_value}, with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
+                    )
+
             node_sizes.append(get_node_size(node_set))
 
             if node_set.shape is not None:
                 node_shapes.append(node_set.shape)
+                add_text = True
             else:
                 node_shapes.append("circle")
 
@@ -453,8 +517,12 @@ class ConnectomeDataset:
         node_trace = go.Scatter(
             x=node_x,
             y=node_y,
-            mode="markers",
-            text=self.nodes,
+            mode="markers+text" if add_text else "markers",
+            text=[
+                '<span style="color:%s;font-size:1.0em"><b>%s</b></span>'
+                % (node_font_colors[n] if n in node_font_colors else "black", n)
+                for n in self.nodes
+            ],
             marker=dict(
                 showscale=not view.has_color(),
                 colorscale="YlGnBu",
@@ -469,14 +537,14 @@ class ConnectomeDataset:
                 ),
                 line_width=1,
             ),
-            opacity=0.9,
+            opacity=1,
             hoverinfo="text",
         )
 
         node_trace.marker.size = node_sizes
         node_trace.marker.symbol = node_shapes
         node_trace.marker.color = node_colours
-        node_trace.text = node_text
+        node_trace.hovertext = node_text
 
         fig = go.Figure(
             data=edge_traces + [node_trace],
@@ -494,6 +562,201 @@ class ConnectomeDataset:
             scaleanchor="x",
             scaleratio=1,
         )
+        fig.update_traces(textposition="middle center")
+
+        return fig
+
+    def to_plotly_hive_plot_fig(self, synclass, view):
+        from hiveplotlib import hive_plot_n_axes
+        from hiveplotlib.converters import networkx_to_nodes_edges
+        from hiveplotlib.node import split_nodes_on_variable
+        from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
+
+        print_("==============")
+        print_(f"Generating: {synclass} for {view}")
+
+        verbose = False
+        # print(self.summary())
+        cv = self
+
+        G = cv.to_networkx_graph(synclass)
+
+        nids = [n for n in G.nodes]
+
+        for n_id in nids:
+            node = G.nodes[n_id]
+            if node["SIM_class"] == "Other":
+                G.remove_node(n_id)
+
+        if len(G.nodes) == 0:
+            return None
+
+        nodes, edges = networkx_to_nodes_edges(G)
+
+        blocks_dict_unordered = split_nodes_on_variable(
+            nodes, variable_name="SIM_class"
+        )
+
+        if verbose:
+            print_(nodes)
+            print_(edges)
+            print_(pprint.pprint(nx.node_link_data(G)))
+
+            print_(
+                "Unordered: %s (%s)"
+                % (blocks_dict_unordered, type(blocks_dict_unordered))
+            )
+
+        INTERNEURON = "Interneuron"
+        MOTORNEURON = "Motorneuron"
+        SENSORY = "Sensory"
+
+        blocks_dict = {}
+        for k in [INTERNEURON, MOTORNEURON, SENSORY]:
+            if k not in blocks_dict_unordered:
+                blocks_dict[k] = []
+            else:
+                blocks_dict[k] = blocks_dict_unordered[k]
+
+        splits = list(blocks_dict.values())
+
+        # pull out degree information from nodes
+        degrees = dict(G.degree)
+        in_degrees = dict(G.in_degree)
+        out_degrees = dict(G.out_degree)
+
+        # add degree information to Node instances
+        for node in nodes:
+            deg = degrees[node.unique_id]
+            block = node.data["SIM_class"]
+            node.add_data(data={"degree": deg})
+
+            if verbose:
+                print_(
+                    f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}"
+                )
+
+        num_steps_for_edge_curves = 25
+
+        hp = hive_plot_n_axes(
+            node_list=nodes,
+            edges=edges,
+            axes_assignments=splits,
+            sorting_variables=["degree"] * 3,
+            repeat_axes=[True, True, True],
+            repeat_edge_kwargs={
+                "color": "grey",
+                "num_steps": num_steps_for_edge_curves,
+            },
+            cw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
+            ccw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
+            vmins=[0] * 3,
+            vmaxes=[max(degrees.values())] * 3,
+        )
+
+        for ax in hp.axes:
+            if "1" in ax:
+                hp.axes[ax].long_name = INTERNEURON
+            if "2" in ax:
+                hp.axes[ax].long_name = MOTORNEURON
+            if "3" in ax:
+                hp.axes[ax].long_name = SENSORY
+
+        for ax_name in hp.axes:
+            ax = hp.axes[ax_name]
+            if verbose:
+                print_(f" - Axis {ax.long_name}, {ax.start}->{ax.end}...")
+
+        from cect.WormAtlasInfo import WA_COLORS
+
+        INTERNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
+        SENSORY_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
+        MOTORNEURON_COLOR = WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
+
+        hp.add_edge_kwargs(
+            axis_id_1="Group 1_repeat",
+            axis_id_2="Group 2",
+            a2_to_a1=False,
+            color=INTERNEURON_COLOR,
+        )
+
+        hp.add_edge_kwargs(
+            axis_id_1="Group 2",
+            axis_id_2="Group 1_repeat",
+            a2_to_a1=False,
+            color=MOTORNEURON_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 1",
+            axis_id_2="Group 3_repeat",
+            a2_to_a1=False,
+            color=INTERNEURON_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 3_repeat",
+            axis_id_2="Group 1",
+            a2_to_a1=False,
+            color=SENSORY_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 3",
+            axis_id_2="Group 2_repeat",
+            a2_to_a1=False,
+            color=SENSORY_COLOR,
+        )
+        hp.add_edge_kwargs(
+            axis_id_1="Group 2_repeat",
+            axis_id_2="Group 3",
+            a2_to_a1=False,
+            color=MOTORNEURON_COLOR,
+        )
+
+        fig = plotly_hive_plot_viz(
+            hp,
+            width=800,
+            height=800,
+        )
+        # ax.set_title("Stochastic Block Model, Base Hive Plot Visualization", y=1.05, size=20)
+        # fig.update_traces(mode="markers+lines", hovertemplate=None)
+        fig.update_layout(hovermode="closest")
+
+        fig.update_layout(plot_bgcolor="rgba(0, 0, 0, 0)")
+
+        fig.update(data=[{"hoverinfo": "skip"}])
+
+        # print(dir(fig))
+        count = 0
+        for d in fig.data:
+            if d["mode"] == "markers":
+                nrn_num = len(d["x"])
+                d["hovertemplate"] = "%{text}<extra></extra>"
+                d.pop("hoverinfo", None)
+
+                if count == 0 or count == 1:
+                    d["marker"]["color"] = [INTERNEURON_COLOR] * nrn_num
+                    type_ = "Interneuron"
+                if count == 2 or count == 3:
+                    d["marker"]["color"] = [MOTORNEURON_COLOR] * nrn_num
+                    type_ = "Motorneuron"
+                if count == 4 or count == 5:
+                    d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
+                    type_ = "Sensory"
+
+                text_at_point = {}
+
+                for n_index in range(len(blocks_dict[type_])):
+                    n = blocks_dict[type_][n_index]
+                    x = d["x"][n_index]
+                    n_text = "%s (in: %s, out: %s)" % (n, in_degrees[n], out_degrees[n])
+                    if x in text_at_point:
+                        text_at_point[x] += "<br>%s" % n_text
+                    else:
+                        text_at_point[x] = n_text
+
+                d["text"] = [text_at_point[x] for x in d["x"]]
+
+                # print(d)
+                count += 1
 
         return fig
 
@@ -577,14 +840,48 @@ if __name__ == "__main__":
     cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", -3, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
+    cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("ASHR", "RMGR", 6, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AWBR", "ASHR", 2, "Send", "Acetylcholine"))
+
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+
+    cds.add_connection_info(
+        ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")
+    )
 
     print(cds.summary())
 
-    print(cds.get_connections_from("VA6", "Acetylcholine"))
-    print("From: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "from"))
-    print("To: %s" % cds.get_connections_summary("VA6", "Acetylcholine", "to"))
-    print(cds.get_connections_to("DD4", "Acetylcholine"))
+    synclass = "Acetylcholine"
 
+    print(cds.get_connections_from("VA6", synclass))
+    print("From: %s" % cds.get_connections_summary("VA6", synclass, "from"))
+    print("To: %s" % cds.get_connections_summary("VA6", synclass, "to"))
+    print(cds.get_connections_to("DD4", synclass))
+
+    """
     if "-nogui" not in sys.argv:
-        cds.connection_number_plot("Acetylcholine")
+        cds.connection_number_plot("Acetylcholine")"""
+
+    G = cds.to_networkx_graph(synclass)
+    import pprint
+
+    print(pprint.pprint(nx.node_link_data(G)))
+
+    # from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import SOCIAL_VIEW as view
+    from cect.ConnectomeView import COOK_FIG3_VIEW as view
+
+    cds2 = cds.get_connectome_view(view)
+
+    print(cds2.summary())
+
+    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    if "-nogui" not in sys.argv:
+        fig.show()

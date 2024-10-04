@@ -1,44 +1,23 @@
-## Randi2023
-[Source publication of dataset](Randi_2023.md)
+---
+title: Randi2023
+---
 
+## Dataset: Randi2023
 Data extracted from the **WormNeuroAtlas package** for functional connectivity
 
-[View as graph](Randi2023_data_graph.md){ .md-button } [View as matrix](Randi2023_data.md){ .md-button }
+[Source publication of dataset](Randi_2023.md)
 
-=== "Raw Data"
-    === "Functional"
+[Raw Data](Randi2023_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Randi2023_data.md){ .md-button  } [Pharynx](Pharynx_Randi2023_data.md){ .md-button  } [Social Network](Social_Randi2023_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Randi2023_data.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Randi2023_Raw Data_Functional.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-=== "Full View"
-    === "Functional"
+[Graph :material-graphql:](Randi2023_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Randi2023_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Randi2023_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Randi2023_Full View_Functional.json"
-        ```
+=== "Functional"
 
-=== "Pharynx View"
-    === "Functional"
-
-        ```plotly
-        ---8<-- "./assets/Randi2023_Pharynx View_Functional.json"
-        ```
-
-=== "Social View"
-    === "Functional"
-
-        ```plotly
-        ---8<-- "./assets/Randi2023_Social View_Functional.json"
-        ```
-
-=== "Small View"
-    === "Functional"
-
-        ```plotly
-        ---8<-- "./assets/Randi2023_Small View_Functional.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/Randi2023_Raw_Functional.json" }
+    ```
 
 
 ### Neurons (181)

@@ -1,62 +1,29 @@
-## White_L4
-[Source publication of dataset](White_1986.md)
+---
+title: White_L4
+---
 
+## Dataset: White_L4
 Data extracted from **aconnectome_white_1986_L4.csv** for neuronal connectivity
 
-[View as graph](White_L4_data_graph.md){ .md-button } [View as matrix](White_L4_data.md){ .md-button }
+[Source publication of dataset](White_1986.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](White_L4_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_White_L4_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_L4_data_graph.md){ .md-button  } [Social Network](Social_White_L4_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_L4_data_graph.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/White_L4_Raw Data_Chemical_graph.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](White_L4_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_L4_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](White_L4_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/White_L4_Raw Data_Electrical_graph.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/White_L4_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/White_L4_Full View_Chemical_Exc_graph.json"
-        ```
+=== "Electrical"
 
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_L4_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_L4_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_L4_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/White_L4_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_L4_Small View_Electrical_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/White_L4_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (178)

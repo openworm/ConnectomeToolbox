@@ -1,62 +1,29 @@
-## Varshney
-[Source publication of dataset](Varshney_2011.md)
+---
+title: Varshney
+---
 
+## Dataset: Varshney
 Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
-[View as graph](Varshney_data_graph.md){ .md-button } [View as matrix](Varshney_data.md){ .md-button }
+[Source publication of dataset](Varshney_2011.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](Varshney_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Varshney_data.md){ .md-button  } [Pharynx](Pharynx_Varshney_data.md){ .md-button  } [Social Network](Social_Varshney_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Varshney_data.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Varshney_Raw Data_Chemical.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Varshney_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Varshney_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Varshney_Raw Data_Electrical.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/Varshney_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/Varshney_Full View_Chemical_Exc.json"
-        ```
+=== "Electrical"
 
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Varshney_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Varshney_Social View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Varshney_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/Varshney_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Varshney_Small View_Electrical.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/Varshney_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (279)

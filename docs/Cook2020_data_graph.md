@@ -1,51 +1,30 @@
-## Cook2020
-[Source publication of dataset](Cook_2020.md)
+---
+title: Cook2020
+---
 
+## Dataset: Cook2020
 Data extracted from **cne24932-sup-0004-supinfo4.csv** for neuronal connectivity
 
-[View as graph](Cook2020_data_graph.md){ .md-button } [View as matrix](Cook2020_data.md){ .md-button }
+[Source publication of dataset](Cook_2020.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](Cook2020_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Cook2020_data_graph.md){ .md-button  } [Pharynx](Pharynx_Cook2020_data_graph.md){ .md-button  } [Social Network](Social_Cook2020_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2020_data_graph.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Cook2020_Raw Data_Chemical_graph.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](Cook2020_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Cook2020_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Cook2020_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Cook2020_Raw Data_Electrical_graph.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/Cook2020_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/Cook2020_Full View_Chemical_Exc_graph.json"
-        ```
+=== "Electrical"
 
-    === "Electrical"
+    ```plotly
+    { "file_path": "./assets/Cook2020_Raw_Electrical_graph.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/Cook2020_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Pharynx View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Cook2020_Pharynx View_Electrical_graph.json"
-        ```
-
-=== "Social View"
-=== "Small View"
 
 ### Neurons (22)
 <details><summary>Full list of Neurons</summary>

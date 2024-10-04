@@ -7,6 +7,9 @@ from cect.ConnectomeReader import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
+
 from openpyxl import load_workbook
 import os
 from cect import print_
@@ -64,8 +67,8 @@ class WitvlietDataReader(ConnectomeDataset):
             if self.verbose and num > 0:
                 print("Conn %s -> %s #%i" % (pre, post, num))
 
-            synclass = "Generic_GJ" if "electrical" in syntype else "Generic_CS"
-            if synclass == "Generic_GJ":
+            synclass = GENERIC_ELEC_SYN if "electrical" in syntype else GENERIC_CHEM_SYN
+            if synclass == GENERIC_ELEC_SYN:
                 conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
             conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
@@ -79,40 +82,6 @@ class WitvlietDataReader(ConnectomeDataset):
                     other_cells.add(p)
 
         return list(neurons), list(muscles), list(other_cells), conns
-
-    """
-    def read_muscle_data(self):
-        conns = []
-        neurons = []
-        muscles = []
-
-        wb = load_workbook(self.filename)
-        sheet = wb.worksheets[0]
-
-        print_("Opened Excel file: " + self.filename)
-
-        for row in sheet.iter_rows(min_row=2, values_only=True):
-            pre = str(row[0])
-            post = str(row[1])
-            syntype = str(row[2])
-            num = int(row[3])
-            synclass = "Generic_GJ" if "EJ" in syntype else "Generic_CS"
-
-            if post.startswith("BWM-"):
-                post = convert_to_preferred_muscle_name(post)
-            else:
-                continue
-
-            if synclass == "Generic_GJ":
-                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
-
-            conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-            if pre not in neurons:
-                neurons.append(pre)
-            if post not in muscles:
-                muscles.append(post)
-
-        return neurons, muscles, conns"""
 
 
 def main1():

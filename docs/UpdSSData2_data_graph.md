@@ -1,78 +1,27 @@
-## UpdSSData2
+---
+title: UpdSSData2
+---
+
+## Dataset: UpdSSData2
 Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist_MODIFIED.csv** for neuronal connectivity
 
-[View as graph](UpdSSData2_data_graph.md){ .md-button } [View as matrix](UpdSSData2_data.md){ .md-button }
+[Raw Data](UpdSSData2_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_UpdSSData2_data_graph.md){ .md-button  } [Pharynx](Pharynx_UpdSSData2_data_graph.md){ .md-button  } [Social Network](Social_UpdSSData2_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData2_data_graph.md){ .md-button  } 
 
-=== "Raw Data"
-    === "Chemical"
+**All of the cells present in the original connectome dataset**
 
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Raw Data_Chemical_graph.json"
-        ```
+[Graph :material-graphql:](UpdSSData2_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](UpdSSData2_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](UpdSSData2_data_hiveplot.md){ .md-button  }
 
-    === "Electrical"
+=== "Chemical"
 
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Raw Data_Electrical_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/UpdSSData2_Raw_Chemical_graph.json" }
+    ```
 
-=== "Full View"
-    === "Chemical Exc"
+=== "Electrical"
 
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Full View_Chemical_Exc_graph.json"
-        ```
-
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Full View_Chemical_Inh_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Pharynx View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Pharynx View_Electrical_graph.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/UpdSSData2_Small View_Electrical_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/UpdSSData2_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (300)

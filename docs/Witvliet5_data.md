@@ -1,62 +1,29 @@
-## Witvliet5
-[Source publication of dataset](Witvliet_2021.md)
+---
+title: Witvliet5
+---
 
+## Dataset: Witvliet5
 Data extracted from **witvliet_2020_5.xlsx** for neuronal connectivity
 
-[View as graph](Witvliet5_data_graph.md){ .md-button } [View as matrix](Witvliet5_data.md){ .md-button }
+[Source publication of dataset](Witvliet_2021.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](Witvliet5_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Witvliet5_data.md){ .md-button  } [Pharynx](Pharynx_Witvliet5_data.md){ .md-button  } [Social Network](Social_Witvliet5_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet5_data.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Raw Data_Chemical.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](Witvliet5_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Witvliet5_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Witvliet5_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Raw Data_Electrical.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/Witvliet5_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Full View_Chemical_Exc.json"
-        ```
+=== "Electrical"
 
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Social View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet5_Small View_Electrical.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/Witvliet5_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (174)

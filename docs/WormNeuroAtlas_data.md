@@ -1,80 +1,29 @@
-## WormNeuroAtlas
-[Source publication of dataset](Randi_2023.md)
+---
+title: WormNeuroAtlas
+---
 
+## Dataset: WormNeuroAtlas
 Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
-[View as graph](WormNeuroAtlas_data_graph.md){ .md-button } [View as matrix](WormNeuroAtlas_data.md){ .md-button }
+[Source publication of dataset](Randi_2023.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](WormNeuroAtlas_data.md){ .md-button .md-button--primary } [Neurons](Neurons_WormNeuroAtlas_data.md){ .md-button  } [Pharynx](Pharynx_WormNeuroAtlas_data.md){ .md-button  } [Social Network](Social_WormNeuroAtlas_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_WormNeuroAtlas_data.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Raw Data_Chemical.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](WormNeuroAtlas_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](WormNeuroAtlas_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](WormNeuroAtlas_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Raw Data_Electrical.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Raw_Chemical.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Full View_Chemical_Exc.json"
-        ```
+=== "Electrical"
 
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Full View_Chemical_Inh.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Full View_Electrical.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Pharynx View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Pharynx View_Electrical.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Social View_Chemical_Exc.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Social View_Electrical.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Small View_Chemical.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/WormNeuroAtlas_Small View_Electrical.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/WormNeuroAtlas_Raw_Electrical.json" }
+    ```
 
 
 ### Neurons (298)

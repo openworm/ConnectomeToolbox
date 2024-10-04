@@ -27,6 +27,9 @@ ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "Serotonin_Glutamate",
 ]
 
+GENERIC_CHEM_SYN = "Generic_CS"
+GENERIC_ELEC_SYN = "Generic_GJ"
+
 EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
 MONOAMINERGIC_SYN_CLASS = "Monoaminergic"
 PEPTIDERGIC_SYN_CLASS = "Peptidergic"
@@ -1435,6 +1438,39 @@ ALL_PREFERRED_CELL_NAMES = (
 )
 
 
+def get_SIM_class(cell):
+    """
+    PROVISIONAL method to return whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+
+    Parameters:
+    cell: which cell to assess
+
+    Returns:
+    str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+    """
+
+    pharyngeal_polymodal_to_class_motor = [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCL",
+        "MCR",
+    ]
+    pharyngeal_polymodal_to_class_sensory = [
+        "NSML",
+        "NSMR",
+    ]
+
+    if cell in SENSORY_NEURONS_COOK + pharyngeal_polymodal_to_class_sensory:
+        return "Sensory"
+    elif cell in MOTORNEURONS_COOK + pharyngeal_polymodal_to_class_motor:
+        return "Motorneuron"
+    elif cell in INTERNEURONS_COOK:
+        return "Interneuron"
+    else:
+        return "Other"
+
+
 def is_bilateral_left(cell):
     if (
         cell in ALL_PREFERRED_CELL_NAMES
@@ -1701,9 +1737,9 @@ def _generate_cell_table(cell_type, cells):
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Chemical conns out": ["Generic_CS"] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Electrical conns": ["Generic_GJ"],
+        "Chemical conns in": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Electrical conns": [GENERIC_ELEC_SYN],
     }
 
     fig_md = ""

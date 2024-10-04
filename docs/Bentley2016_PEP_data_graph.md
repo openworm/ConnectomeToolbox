@@ -1,44 +1,23 @@
-## Bentley2016_PEP
-[Source publication of dataset](Bentley_2016.md)
+---
+title: Bentley2016_PEP
+---
 
+## Dataset: Bentley2016_PEP
 Data extracted from the **WormNeuroAtlas package** for peptidergic connectivity
 
-[View as graph](Bentley2016_PEP_data_graph.md){ .md-button } [View as matrix](Bentley2016_PEP_data.md){ .md-button }
+[Source publication of dataset](Bentley_2016.md)
 
-=== "Raw Data"
-    === "Extrasynaptic"
+[Raw Data](Bentley2016_PEP_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Bentley2016_PEP_data_graph.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_PEP_data_graph.md){ .md-button  } [Social Network](Social_Bentley2016_PEP_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Bentley2016_PEP_data_graph.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Bentley2016_PEP_Raw Data_Extrasynaptic_graph.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-=== "Full View"
-    === "Extrasynaptic"
+[Graph :material-graphql:](Bentley2016_PEP_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Bentley2016_PEP_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Bentley2016_PEP_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Bentley2016_PEP_Full View_Extrasynaptic_graph.json"
-        ```
+=== "Extrasynaptic"
 
-=== "Pharynx View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_PEP_Pharynx View_Extrasynaptic_graph.json"
-        ```
-
-=== "Social View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_PEP_Social View_Extrasynaptic_graph.json"
-        ```
-
-=== "Small View"
-    === "Extrasynaptic"
-
-        ```plotly
-        ---8<-- "./assets/Bentley2016_PEP_Small View_Extrasynaptic_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/Bentley2016_PEP_Raw_Extrasynaptic_graph.json" }
+    ```
 
 
 ### Neurons (300)

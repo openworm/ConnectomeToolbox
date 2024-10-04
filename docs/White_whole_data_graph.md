@@ -1,80 +1,29 @@
-## White_whole
-[Source publication of dataset](White_1986.md)
+---
+title: White_whole
+---
 
+## Dataset: White_whole
 Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
-[View as graph](White_whole_data_graph.md){ .md-button } [View as matrix](White_whole_data.md){ .md-button }
+[Source publication of dataset](White_1986.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](White_whole_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_White_whole_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_whole_data_graph.md){ .md-button  } [Social Network](Social_White_whole_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_whole_data_graph.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/White_whole_Raw Data_Chemical_graph.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](White_whole_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_whole_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](White_whole_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/White_whole_Raw Data_Electrical_graph.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/White_whole_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Chemical_Exc_graph.json"
-        ```
+=== "Electrical"
 
-    === "Chemical Inh"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Chemical_Inh_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Pharynx View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Pharynx View_Electrical_graph.json"
-        ```
-
-=== "Social View"
-    === "Chemical Exc"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Social View_Chemical_Exc_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/White_whole_Small View_Electrical_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/White_whole_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (300)

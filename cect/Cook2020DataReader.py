@@ -9,6 +9,8 @@ from cect.ConnectomeReader import convert_to_preferred_muscle_name
 from cect.ConnectomeReader import is_muscle
 from cect.ConnectomeReader import is_marginal_cell
 from cect.ConnectomeReader import convert_to_preferred_phar_cell_name
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
 
 import os
 
@@ -57,7 +59,9 @@ class Cook2020DataReader(ConnectomeDataset):
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
 
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+                synclass = (
+                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                )
 
                 if syntype == "Electrical":
                     self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
@@ -91,7 +95,9 @@ class Cook2020DataReader(ConnectomeDataset):
                 if syntype == "Electrical":
                     self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+                synclass = (
+                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                )
 
                 self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
@@ -131,7 +137,9 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+                synclass = (
+                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                )
 
                 if syntype == "Electrical":
                     conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
@@ -161,7 +169,9 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = "Electrical"
-                synclass = "Generic_GJ" if "Electrical" in syntype else "Generic_CS"
+                synclass = (
+                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                )
 
                 if syntype == "Electrical":
                     conns.append(ConnectionInfo(post, pre, num, syntype, synclass))

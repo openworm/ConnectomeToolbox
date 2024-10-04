@@ -1,56 +1,29 @@
-## Witvliet2
-[Source publication of dataset](Witvliet_2021.md)
+---
+title: Witvliet2
+---
 
+## Dataset: Witvliet2
 Data extracted from **witvliet_2020_2.xlsx** for neuronal connectivity
 
-[View as graph](Witvliet2_data_graph.md){ .md-button } [View as matrix](Witvliet2_data.md){ .md-button }
+[Source publication of dataset](Witvliet_2021.md)
 
-=== "Raw Data"
-    === "Chemical"
+[Raw Data](Witvliet2_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_Witvliet2_data_graph.md){ .md-button  } [Pharynx](Pharynx_Witvliet2_data_graph.md){ .md-button  } [Social Network](Social_Witvliet2_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet2_data_graph.md){ .md-button  } 
 
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Raw Data_Chemical_graph.json"
-        ```
+**All of the cells present in the original connectome dataset**
 
-    === "Electrical"
+[Graph :material-graphql:](Witvliet2_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Witvliet2_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Witvliet2_data_hiveplot.md){ .md-button  }
 
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Raw Data_Electrical_graph.json"
-        ```
+=== "Chemical"
 
-=== "Full View"
-    === "Chemical Exc"
+    ```plotly
+    { "file_path": "./assets/Witvliet2_Raw_Chemical_graph.json" }
+    ```
 
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Full View_Chemical_Exc_graph.json"
-        ```
+=== "Electrical"
 
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Full View_Electrical_graph.json"
-        ```
-
-=== "Pharynx View"
-=== "Social View"
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Social View_Electrical_graph.json"
-        ```
-
-=== "Small View"
-    === "Chemical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Small View_Chemical_graph.json"
-        ```
-
-    === "Electrical"
-
-        ```plotly
-        ---8<-- "./assets/Witvliet2_Small View_Electrical_graph.json"
-        ```
+    ```plotly
+    { "file_path": "./assets/Witvliet2_Raw_Electrical_graph.json" }
+    ```
 
 
 ### Neurons (162)
