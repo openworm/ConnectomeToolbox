@@ -6,39 +6,43 @@
       "name": "0",
       "type": "heatmap",
       "x": [
-        "<span style=\"color:#ff66cc;\">ASHR</span>",
-        "<span style=\"color:#ff66cc;\">ASKR</span>",
-        "<span style=\"color:#ff3300;\">AVBL</span>",
-        "<span style=\"color:#ff66cc;\">AWBR</span>",
-        "<span style=\"color:#9966cc;\">DB4</span>",
-        "<span style=\"color:#9966cc;\">DD4</span>",
-        "<span style=\"color:#ff66cc;\">DVA</span>",
-        "<span style=\"color:#ff3300;\">PVCL</span>",
-        "<span style=\"color:#ff3300;\">RMGR</span>",
-        "<span style=\"color:#9966cc;\">VA3</span>",
-        "<span style=\"color:#9966cc;\">VA6</span>",
-        "<span style=\"color:#9966cc;\">VB2</span>",
-        "<span style=\"color:#9966cc;\">VB6</span>",
-        "<span style=\"color:#9966cc;\">VD3</span>",
-        "<span style=\"color:#9966cc;\">VD6</span>"
+        "<span style=\"color:#FFC0CB;\">SN1</span>",
+        "<span style=\"color:#b31b1b;\">SN2</span>",
+        "<span style=\"color:#b31b1b;\">SN3</span>",
+        "<span style=\"color:#b31b1b;\">SN4</span>",
+        "<span style=\"color:#b31b1b;\">SN5</span>",
+        "<span style=\"color:#b31b1b;\">SN6</span>",
+        "<span style=\"color:#16537E;\">IN1</span>",
+        "<span style=\"color:#16537E;\">IN2</span>",
+        "<span style=\"color:#16537E;\">IN3</span>",
+        "<span style=\"color:#16537E;\">IN4</span>",
+        "<span style=\"color:#FFDF00;\">HMN</span>",
+        "<span style=\"color:#e59636;\">SMN</span>",
+        "<span style=\"color:#B2832b;\">MNVC</span>",
+        "<span style=\"color:#FF00FF;\">VC</span>",
+        "<span style=\"color:#FF00FF;\">HSN</span>",
+        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
+        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
       ],
       "xaxis": "x",
       "y": [
-        "<span style=\"color:#ff66cc;\">ASHR</span>",
-        "<span style=\"color:#ff66cc;\">ASKR</span>",
-        "<span style=\"color:#ff3300;\">AVBL</span>",
-        "<span style=\"color:#ff66cc;\">AWBR</span>",
-        "<span style=\"color:#9966cc;\">DB4</span>",
-        "<span style=\"color:#9966cc;\">DD4</span>",
-        "<span style=\"color:#ff66cc;\">DVA</span>",
-        "<span style=\"color:#ff3300;\">PVCL</span>",
-        "<span style=\"color:#ff3300;\">RMGR</span>",
-        "<span style=\"color:#9966cc;\">VA3</span>",
-        "<span style=\"color:#9966cc;\">VA6</span>",
-        "<span style=\"color:#9966cc;\">VB2</span>",
-        "<span style=\"color:#9966cc;\">VB6</span>",
-        "<span style=\"color:#9966cc;\">VD3</span>",
-        "<span style=\"color:#9966cc;\">VD6</span>"
+        "<span style=\"color:#FFC0CB;\">SN1</span>",
+        "<span style=\"color:#b31b1b;\">SN2</span>",
+        "<span style=\"color:#b31b1b;\">SN3</span>",
+        "<span style=\"color:#b31b1b;\">SN4</span>",
+        "<span style=\"color:#b31b1b;\">SN5</span>",
+        "<span style=\"color:#b31b1b;\">SN6</span>",
+        "<span style=\"color:#16537E;\">IN1</span>",
+        "<span style=\"color:#16537E;\">IN2</span>",
+        "<span style=\"color:#16537E;\">IN3</span>",
+        "<span style=\"color:#16537E;\">IN4</span>",
+        "<span style=\"color:#FFDF00;\">HMN</span>",
+        "<span style=\"color:#e59636;\">SMN</span>",
+        "<span style=\"color:#B2832b;\">MNVC</span>",
+        "<span style=\"color:#FF00FF;\">VC</span>",
+        "<span style=\"color:#FF00FF;\">HSN</span>",
+        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
+        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -51,21 +55,6 @@
           0.0,
           0.0,
           0.0,
-          6.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -91,21 +80,6 @@
           0.0,
           0.0,
           0.0,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0
@@ -113,21 +87,6 @@
         [
           0.0,
           0.0,
-          0.0,
-          0.0,
-          0.0,
-          2.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          14.0
-        ],
-        [
           0.0,
           0.0,
           0.0,
@@ -152,7 +111,9 @@
           0.0,
           0.0,
           0.0,
-          3.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -162,29 +123,166 @@
           0.0
         ],
         [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           7.0,
           0.0,
-          6.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          2.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -210,38 +308,6 @@
           0.0,
           0.0,
           0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          6.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0
@@ -252,7 +318,9 @@
           0.0,
           0.0,
           0.0,
-          32.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -273,9 +341,11 @@
           0.0,
           0.0,
           0.0,
-          2.0,
           0.0,
-          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0
@@ -291,7 +361,9 @@
           0.0,
           0.0,
           0.0,
-          3.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0,
@@ -302,7 +374,7 @@
   ],
   "layout": {
     "coloraxis": {
-      "cmax": 32.0,
+      "cmax": 7.0,
       "cmin": 0.0,
       "colorbar": {
         "title": {
@@ -327,21 +399,19 @@
     "margin": {
       "t": 60
     },
-    "paper_bgcolor": "rgba(0, 0, 0, 0)",
-    "plot_bgcolor": "rgba(0, 0, 0, 0)",
     "template": {
       "data": {
         "bar": [
           {
             "error_x": {
-              "color": "#f2f5fa"
+              "color": "#2a3f5f"
             },
             "error_y": {
-              "color": "#f2f5fa"
+              "color": "#2a3f5f"
             },
             "marker": {
               "line": {
-                "color": "rgb(17,17,17)",
+                "color": "#E5ECF6",
                 "width": 0.5
               },
               "pattern": {
@@ -357,7 +427,7 @@
           {
             "marker": {
               "line": {
-                "color": "rgb(17,17,17)",
+                "color": "#E5ECF6",
                 "width": 0.5
               },
               "pattern": {
@@ -372,18 +442,18 @@
         "carpet": [
           {
             "aaxis": {
-              "endlinecolor": "#A2B1C6",
-              "gridcolor": "#506784",
-              "linecolor": "#506784",
-              "minorgridcolor": "#506784",
-              "startlinecolor": "#A2B1C6"
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
             },
             "baxis": {
-              "endlinecolor": "#A2B1C6",
-              "gridcolor": "#506784",
-              "linecolor": "#506784",
-              "minorgridcolor": "#506784",
-              "startlinecolor": "#A2B1C6"
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
             },
             "type": "carpet"
           }
@@ -701,10 +771,10 @@
         ],
         "scatter": [
           {
-            "marker": {
-              "line": {
-                "color": "#283442"
-              }
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
             },
             "type": "scatter"
           }
@@ -751,8 +821,9 @@
         "scattergl": [
           {
             "marker": {
-              "line": {
-                "color": "#283442"
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
               }
             },
             "type": "scattergl"
@@ -857,18 +928,18 @@
           {
             "cells": {
               "fill": {
-                "color": "#506784"
+                "color": "#EBF0F8"
               },
               "line": {
-                "color": "rgb(17,17,17)"
+                "color": "white"
               }
             },
             "header": {
               "fill": {
-                "color": "#2a3f5f"
+                "color": "#C8D4E3"
               },
               "line": {
-                "color": "rgb(17,17,17)"
+                "color": "white"
               }
             },
             "type": "table"
@@ -877,7 +948,7 @@
       },
       "layout": {
         "annotationdefaults": {
-          "arrowcolor": "#f2f5fa",
+          "arrowcolor": "#2a3f5f",
           "arrowhead": 0,
           "arrowwidth": 1
         },
@@ -1033,123 +1104,113 @@
           "#FECB52"
         ],
         "font": {
-          "color": "#f2f5fa"
+          "color": "#2a3f5f"
         },
         "geo": {
-          "bgcolor": "rgb(17,17,17)",
-          "lakecolor": "rgb(17,17,17)",
-          "landcolor": "rgb(17,17,17)",
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "#E5ECF6",
           "showlakes": true,
           "showland": true,
-          "subunitcolor": "#506784"
+          "subunitcolor": "white"
         },
         "hoverlabel": {
           "align": "left"
         },
         "hovermode": "closest",
         "mapbox": {
-          "style": "dark"
+          "style": "light"
         },
-        "paper_bgcolor": "rgb(17,17,17)",
-        "plot_bgcolor": "rgb(17,17,17)",
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "#E5ECF6",
         "polar": {
           "angularaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "white",
+            "linecolor": "white",
             "ticks": ""
           },
-          "bgcolor": "rgb(17,17,17)",
+          "bgcolor": "#E5ECF6",
           "radialaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "white",
+            "linecolor": "white",
             "ticks": ""
           }
         },
         "scene": {
           "xaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "white",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "white"
           },
           "yaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "white",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "white"
           },
           "zaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "white",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "white"
           }
         },
         "shapedefaults": {
           "line": {
-            "color": "#f2f5fa"
+            "color": "#2a3f5f"
           }
-        },
-        "sliderdefaults": {
-          "bgcolor": "#C8D4E3",
-          "bordercolor": "rgb(17,17,17)",
-          "borderwidth": 1,
-          "tickwidth": 0
         },
         "ternary": {
           "aaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "white",
+            "linecolor": "white",
             "ticks": ""
           },
           "baxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "white",
+            "linecolor": "white",
             "ticks": ""
           },
-          "bgcolor": "rgb(17,17,17)",
+          "bgcolor": "#E5ECF6",
           "caxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "white",
+            "linecolor": "white",
             "ticks": ""
           }
         },
         "title": {
           "x": 0.05
         },
-        "updatemenudefaults": {
-          "bgcolor": "#506784",
-          "borderwidth": 0
-        },
         "xaxis": {
           "automargin": true,
-          "gridcolor": "#283442",
-          "linecolor": "#506784",
+          "gridcolor": "white",
+          "linecolor": "white",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "#283442",
+          "zerolinecolor": "white",
           "zerolinewidth": 2
         },
         "yaxis": {
           "automargin": true,
-          "gridcolor": "#283442",
-          "linecolor": "#506784",
+          "gridcolor": "white",
+          "linecolor": "white",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "#283442",
+          "zerolinecolor": "white",
           "zerolinewidth": 2
         }
       }

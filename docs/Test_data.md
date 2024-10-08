@@ -1,8 +1,8 @@
 ---
-title: TestData
+title: Test
 ---
 
-## Dataset: TestData
+## Dataset: Test
 Dummy dataset used for testing webpage/graph generation - do not use!
 
 [Raw Data](Test_data.md){ .md-button .md-button--primary } [Neurons](Neurons_Test_data.md){ .md-button  } [Pharynx](Pharynx_Test_data.md){ .md-button  } [Social Network](Social_Test_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data.md){ .md-button  } 
@@ -14,13 +14,13 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 === "Chemical"
 
     ```plotly
-    { "file_path": "./assets/TestData_Raw_Chemical.json" }
+    { "file_path": "./assets/Test_Raw_Chemical.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/TestData_Raw_Electrical.json" }
+    { "file_path": "./assets/Test_Raw_Electrical.json" }
     ```
 
 
