@@ -203,6 +203,8 @@ columns 4
     T --> R
     A --> R
     K --> R
+    A --> T
+    K --> T
 
   style 70sA fill:#eeeeee
   style 70sB fill:#eeeeee

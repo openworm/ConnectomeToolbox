@@ -9,3 +9,4 @@ Pages 659-673](https://doi.org/10.1016/j.cell.2013.09.052)*
 
 - The key defining feature of glutamatergic neurons is EAT-4/VGLUT which is present in 38 out of 118 neuron classes.<br>
 - Data is included in WormAtlas which has been compiled into a single [dataset](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/Modified%20celegans%20db%20dump.csv)
+- This data was later used to construct the functional connectome of Randi et al. (2023) and the multi-layer connectome of Bentley et al. (2016).

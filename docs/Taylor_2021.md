@@ -13,4 +13,5 @@ _Published: July 07, 2021:_
 - Gene expression profiles of all 118 neuron classes in the _C.elegans_ hermaphrodite
 - Each neuron type expresses a distinct code of neuropeptide genes and receptors
 - Expression profiles enable discovery of cell-type-specific _cis_-regulatory sequences
-- Cell adhesion molecules correlate with neuron-specific connectivity
+- Cell adhesion molecules correlate with neuron-specific connectivity.
+- This data was used by Ripoll-Sanchez et al. (2023) to generate the neuropeptidergic connectome.
