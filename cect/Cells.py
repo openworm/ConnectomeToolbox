@@ -1844,6 +1844,8 @@ if __name__ == "__main__":
 
     with open(filename, "w") as f:
         for sex in WA_COLORS:
+            f.write("---\ntitle: <C. elegans> cells\n---\n\n")
+
             f.write("\n## %s\n" % sex)
 
             for cell_class in WA_COLORS[sex]:

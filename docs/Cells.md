@@ -1,3 +1,7 @@
+---
+title: <C. elegans> cells
+---
+
 
 ## Hermaphrodite
 
@@ -1137,6 +1141,10 @@
 |:----------------------|:---------------------|:---------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
 |                       | Notes                | Datasets                                                                               | Link                                                                               |
 | <a name="hmc"></a>hmc | Head mesodermal cell | [Cook2019Herm](Cook2019Herm_data_graph.md), [Cook2019Male](Cook2019Male_data_graph.md) | [WormAtlas](https://www.wormatlas.org/neurons/Individual Neurons/hmcframeset.html) |
+
+---
+title: <C. elegans> cells
+---
 
 
 ## Male

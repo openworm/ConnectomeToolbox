@@ -357,3 +357,7 @@ if __name__ == "__main__":
 
     print("------- Neurons ---------")
     print(tdr_instance.get_connectome_view(NEURONS_VIEW).summary())
+
+    from cect.Cells import ALL_PREFERRED_CELL_NAMES
+
+    print("There are %i known cells..." % len(ALL_PREFERRED_CELL_NAMES))

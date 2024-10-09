@@ -84,6 +84,8 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
+    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+
     return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
@@ -108,6 +110,8 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
+
+    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
@@ -136,6 +140,8 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
+
+    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
@@ -443,19 +449,25 @@ def generate_comparison_page(quick: bool, color_table=True):
         STYLE = '"width:80px"'
         table += f"<table>\n  <tr>\n    <th style={STYLE}>Group</th>\n"
 
+        readers_to_include = []
+
         for reader_name, reader_info in readers.items():
+            if "Test" not in reader_name and "SSData" not in reader_name:
+                readers_to_include.append(reader_name)
+
+        for reader_name in readers_to_include:
             table += f"    <th style={STYLE}>{reader_name}</th>\n"
 
         for group in COOK_GROUPING_1:
             table += f"  <tr>\n<td >{group}</th>\n"
 
-            for reader_name, reader_info in readers.items():
+            for reader_name in readers_to_include:
                 connectome = all_connectomes[reader_name]
                 cells_here = ""
                 for cell in sorted(COOK_GROUPING_1[group]):
                     if cell in connectome.nodes:
                         cells_here += "%s&nbsp;" % get_cell_internal_link(
-                            cell, html=True, use_color=True
+                            cell_name=cell, text="\u2b2e", html=True, use_color=True
                         )
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
