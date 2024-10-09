@@ -165,7 +165,7 @@ for cell in (
     + sorted(PHARYNGEAL_INTERNEURONS)
     + sorted(PHARYNGEAL_MOTORNEURONS)
 ):
-    NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell]))
+    NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 PHARYNX_VIEW = View(
     "Pharynx",
@@ -175,7 +175,7 @@ PHARYNX_VIEW = View(
     EXC_INH_GJ_FUNC_SYN_CLASSES,
 )
 for cell in sorted(PHARYNGEAL_NEURONS):
-    PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell]))
+    PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 SOCIAL_VIEW = View(
     "Social",

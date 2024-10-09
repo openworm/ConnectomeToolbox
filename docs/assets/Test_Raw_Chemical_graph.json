@@ -1,417 +1,459 @@
 {
   "data": [
     {
-      "coloraxis": "coloraxis",
-      "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><extra></extra> ",
-      "name": "0",
-      "type": "heatmap",
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.449489742783178
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
       "x": [
-        "<span style=\"color:#FFC0CB;\">SN1</span>",
-        "<span style=\"color:#b31b1b;\">SN2</span>",
-        "<span style=\"color:#b31b1b;\">SN3</span>",
-        "<span style=\"color:#b31b1b;\">SN4</span>",
-        "<span style=\"color:#b31b1b;\">SN5</span>",
-        "<span style=\"color:#b31b1b;\">SN6</span>",
-        "<span style=\"color:#16537E;\">IN1</span>",
-        "<span style=\"color:#16537E;\">IN2</span>",
-        "<span style=\"color:#16537E;\">IN3</span>",
-        "<span style=\"color:#16537E;\">IN4</span>",
-        "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#e59636;\">SMN</span>",
-        "<span style=\"color:#B2832b;\">MNVC</span>",
-        "<span style=\"color:#FF00FF;\">VC</span>",
-        "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
-        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
+        0.761173,
+        0.824355
       ],
-      "xaxis": "x",
       "y": [
-        "<span style=\"color:#FFC0CB;\">SN1</span>",
-        "<span style=\"color:#b31b1b;\">SN2</span>",
-        "<span style=\"color:#b31b1b;\">SN3</span>",
-        "<span style=\"color:#b31b1b;\">SN4</span>",
-        "<span style=\"color:#b31b1b;\">SN5</span>",
-        "<span style=\"color:#b31b1b;\">SN6</span>",
-        "<span style=\"color:#16537E;\">IN1</span>",
-        "<span style=\"color:#16537E;\">IN2</span>",
-        "<span style=\"color:#16537E;\">IN3</span>",
-        "<span style=\"color:#16537E;\">IN4</span>",
-        "<span style=\"color:#FFDF00;\">HMN</span>",
-        "<span style=\"color:#e59636;\">SMN</span>",
-        "<span style=\"color:#B2832b;\">MNVC</span>",
-        "<span style=\"color:#FF00FF;\">VC</span>",
-        "<span style=\"color:#FF00FF;\">HSN</span>",
-        "<span style=\"color:#5a2d0d;\">MUBODY</span>",
-        "<span style=\"color:#5a2d0d;\">MUHEAD</span>"
+        -0.205772,
+        -0.191848
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.72615,
+        0.761173
       ],
-      "yaxis": "y",
-      "z": [
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+      "y": [
+        -0.28974,
+        -0.205772
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff3300",
+        "shape": "linear",
+        "width": 2.6457513110645907
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.051246,
+        -0.08168
+      ],
+      "y": [
+        0.300512,
+        0.235665
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.004372,
+        0.094685
+      ],
+      "y": [
+        0.376398,
+        0.317173
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 3.7416573867739413
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.004372,
+        -0.001741
+      ],
+      "y": [
+        0.376398,
+        0.438635
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff3300",
+        "shape": "linear",
+        "width": 2.449489742783178
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.051246,
+        -0.004372
+      ],
+      "y": [
+        0.300512,
+        0.376398
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.656854249492381
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.073996,
+        0.094685
+      ],
+      "y": [
+        0.289941,
+        0.317173
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.7320508075688772
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.156551,
+        -0.051246
+      ],
+      "y": [
+        0.306001,
+        0.300512
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff3300",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.051246,
+        0.073996
+      ],
+      "y": [
+        0.300512,
+        0.289941
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.405342,
+        -0.410116
+      ],
+      "y": [
+        -0.687956,
+        -0.773072
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 2.449489742783178
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.004893,
+        0.021904400000000004,
+        -0.001741
+      ],
+      "y": [
+        0.540277,
+        0.4881292,
+        0.438635
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 1.7320508075688772
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.001741,
+        -0.018752400000000002,
+        0.004893
+      ],
+      "y": [
+        0.438635,
+        0.4907828,
+        0.540277
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.405342,
+        -0.374203
+      ],
+      "y": [
+        -0.687956,
+        -0.591329
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "hovertext": [
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2<br>Conns out: <b>RMGR</b>: 6",
+        "<b>ASKR</b><br>Sensory neuron (amphid)",
+        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>PVCL</b>: 7",
+        "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ASHR</b>: 2",
+        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 6<br>Conns out: <b>VD6</b>: 14, <b>DD4</b>: 2",
+        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns in: <b>VB6</b>: 32, <b>DB4</b>: 2",
+        "<b>DVA</b><br>Sensory neuron (mechanosensory)<br>Conns out: <b>PVCL</b>: 3",
+        "<b>PVCL</b><br>Layer 1 interneuron<br>Conns in: <b>DVA</b>: 3<br>Conns out: <b>AVBL</b>: 7, <b>DB4</b>: 6, <b>VB6</b>: 2",
+        "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 6",
+        "<b>VA3</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
+        "<b>VA6</b><br>Ventral cord motor neuron<br>Conns in: <b>VD6</b>: 3<br>Conns out: <b>VD6</b>: 6",
+        "<b>VB2</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
+        "<b>VB6</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 2<br>Conns out: <b>DD4</b>: 32",
+        "<b>VD3</b><br>Ventral cord motor neuron<br>Conns out: <b>VA3</b>: 2, <b>VB2</b>: 2",
+        "<b>VD6</b><br>Ventral cord motor neuron<br>Conns in: <b>DB4</b>: 14, <b>VA6</b>: 6<br>Conns out: <b>VA6</b>: 3"
+      ],
+      "marker": {
+        "color": [
+          "#ff66cc",
+          "#ff66cc",
+          "#ff3300",
+          "#ff66cc",
+          "#9966cc",
+          "#9966cc",
+          "#ff66cc",
+          "#ff3300",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc"
         ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "side": "right",
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
         ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          3.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
         ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          7.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          8.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          61.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
         ]
+      },
+      "mode": "markers",
+      "opacity": 1,
+      "text": [
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASHR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASKR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWBR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DVA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PVCL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMGR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD6</b></span>"
+      ],
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.761173,
+        -1.0,
+        -0.08168,
+        0.72615,
+        -0.004372,
+        0.094685,
+        -0.156551,
+        -0.051246,
+        0.824355,
+        -0.410116,
+        0.004893,
+        -0.374203,
+        0.073996,
+        -0.405342,
+        -0.001741
+      ],
+      "y": [
+        -0.205772,
+        -0.064884,
+        0.235665,
+        -0.28974,
+        0.376398,
+        0.317173,
+        0.306001,
+        0.300512,
+        -0.191848,
+        -0.773072,
+        0.540277,
+        -0.591329,
+        0.289941,
+        -0.687956,
+        0.438635
       ]
     }
   ],
   "layout": {
-    "coloraxis": {
-      "cmax": 61.0,
-      "cmin": 0.0,
-      "colorbar": {
-        "title": {
-          "text": "Weight"
-        }
-      },
-      "colorscale": [
-        [
-          0.0,
-          "white"
-        ],
-        [
-          0.5,
-          "green"
-        ],
-        [
-          1.0,
-          "black"
-        ]
-      ]
-    },
+    "height": 800,
+    "hovermode": "closest",
     "margin": {
-      "t": 60
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
     },
+    "showlegend": false,
     "template": {
       "data": {
         "bar": [
           {
             "error_x": {
-              "color": "#2a3f5f"
+              "color": "#f2f5fa"
             },
             "error_y": {
-              "color": "#2a3f5f"
+              "color": "#f2f5fa"
             },
             "marker": {
               "line": {
-                "color": "#E5ECF6",
+                "color": "rgb(17,17,17)",
                 "width": 0.5
               },
               "pattern": {
@@ -427,7 +469,7 @@
           {
             "marker": {
               "line": {
-                "color": "#E5ECF6",
+                "color": "rgb(17,17,17)",
                 "width": 0.5
               },
               "pattern": {
@@ -442,18 +484,18 @@
         "carpet": [
           {
             "aaxis": {
-              "endlinecolor": "#2a3f5f",
-              "gridcolor": "white",
-              "linecolor": "white",
-              "minorgridcolor": "white",
-              "startlinecolor": "#2a3f5f"
+              "endlinecolor": "#A2B1C6",
+              "gridcolor": "#506784",
+              "linecolor": "#506784",
+              "minorgridcolor": "#506784",
+              "startlinecolor": "#A2B1C6"
             },
             "baxis": {
-              "endlinecolor": "#2a3f5f",
-              "gridcolor": "white",
-              "linecolor": "white",
-              "minorgridcolor": "white",
-              "startlinecolor": "#2a3f5f"
+              "endlinecolor": "#A2B1C6",
+              "gridcolor": "#506784",
+              "linecolor": "#506784",
+              "minorgridcolor": "#506784",
+              "startlinecolor": "#A2B1C6"
             },
             "type": "carpet"
           }
@@ -771,10 +813,10 @@
         ],
         "scatter": [
           {
-            "fillpattern": {
-              "fillmode": "overlay",
-              "size": 10,
-              "solidity": 0.2
+            "marker": {
+              "line": {
+                "color": "#283442"
+              }
             },
             "type": "scatter"
           }
@@ -821,9 +863,8 @@
         "scattergl": [
           {
             "marker": {
-              "colorbar": {
-                "outlinewidth": 0,
-                "ticks": ""
+              "line": {
+                "color": "#283442"
               }
             },
             "type": "scattergl"
@@ -928,18 +969,18 @@
           {
             "cells": {
               "fill": {
-                "color": "#EBF0F8"
+                "color": "#506784"
               },
               "line": {
-                "color": "white"
+                "color": "rgb(17,17,17)"
               }
             },
             "header": {
               "fill": {
-                "color": "#C8D4E3"
+                "color": "#2a3f5f"
               },
               "line": {
-                "color": "white"
+                "color": "rgb(17,17,17)"
               }
             },
             "type": "table"
@@ -948,7 +989,7 @@
       },
       "layout": {
         "annotationdefaults": {
-          "arrowcolor": "#2a3f5f",
+          "arrowcolor": "#f2f5fa",
           "arrowhead": 0,
           "arrowwidth": 1
         },
@@ -1104,140 +1145,139 @@
           "#FECB52"
         ],
         "font": {
-          "color": "#2a3f5f"
+          "color": "#f2f5fa"
         },
         "geo": {
-          "bgcolor": "white",
-          "lakecolor": "white",
-          "landcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
+          "lakecolor": "rgb(17,17,17)",
+          "landcolor": "rgb(17,17,17)",
           "showlakes": true,
           "showland": true,
-          "subunitcolor": "white"
+          "subunitcolor": "#506784"
         },
         "hoverlabel": {
           "align": "left"
         },
         "hovermode": "closest",
         "mapbox": {
-          "style": "light"
+          "style": "dark"
         },
-        "paper_bgcolor": "white",
-        "plot_bgcolor": "#E5ECF6",
+        "paper_bgcolor": "rgb(17,17,17)",
+        "plot_bgcolor": "rgb(17,17,17)",
         "polar": {
           "angularaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
-          "bgcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
           "radialaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           }
         },
         "scene": {
           "xaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           },
           "yaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           },
           "zaxis": {
-            "backgroundcolor": "#E5ECF6",
-            "gridcolor": "white",
+            "backgroundcolor": "rgb(17,17,17)",
+            "gridcolor": "#506784",
             "gridwidth": 2,
-            "linecolor": "white",
+            "linecolor": "#506784",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "white"
+            "zerolinecolor": "#C8D4E3"
           }
         },
         "shapedefaults": {
           "line": {
-            "color": "#2a3f5f"
+            "color": "#f2f5fa"
           }
+        },
+        "sliderdefaults": {
+          "bgcolor": "#C8D4E3",
+          "bordercolor": "rgb(17,17,17)",
+          "borderwidth": 1,
+          "tickwidth": 0
         },
         "ternary": {
           "aaxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
           "baxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           },
-          "bgcolor": "#E5ECF6",
+          "bgcolor": "rgb(17,17,17)",
           "caxis": {
-            "gridcolor": "white",
-            "linecolor": "white",
+            "gridcolor": "#506784",
+            "linecolor": "#506784",
             "ticks": ""
           }
         },
         "title": {
           "x": 0.05
         },
+        "updatemenudefaults": {
+          "bgcolor": "#506784",
+          "borderwidth": 0
+        },
         "xaxis": {
           "automargin": true,
-          "gridcolor": "white",
-          "linecolor": "white",
+          "gridcolor": "#283442",
+          "linecolor": "#506784",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "white",
+          "zerolinecolor": "#283442",
           "zerolinewidth": 2
         },
         "yaxis": {
           "automargin": true,
-          "gridcolor": "white",
-          "linecolor": "white",
+          "gridcolor": "#283442",
+          "linecolor": "#506784",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "white",
+          "zerolinecolor": "#283442",
           "zerolinewidth": 2
         }
       }
     },
+    "width": 800,
     "xaxis": {
-      "anchor": "y",
-      "constrain": "domain",
-      "domain": [
-        0.0,
-        1.0
-      ],
-      "scaleanchor": "y",
-      "title": {
-        "text": "Postsynaptic"
-      }
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
     },
     "yaxis": {
-      "anchor": "x",
-      "autorange": "reversed",
-      "constrain": "domain",
-      "domain": [
-        0.0,
-        1.0
-      ],
-      "title": {
-        "text": "Presynaptic"
-      }
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
     }
   }
 }

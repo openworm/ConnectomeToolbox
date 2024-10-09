@@ -12,7 +12,7 @@ all_data = {}
 
 
 reader_pages = {
-    "TestData": "Test_data",
+    "Test": "Test_data",
     "Varshney": "Varshney_data",
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
@@ -158,7 +158,7 @@ def generate_comparison_page(quick: bool, color_table=True):
 
     readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
     readers["White_whole"] = ["cect.White_whole", "White_1986"]
-    readers["TestData"] = ["cect.TestDataReader", None]
+    readers["Test"] = ["cect.TestDataReader", None]
     readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
     readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
 

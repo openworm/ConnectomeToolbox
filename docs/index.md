@@ -2,7 +2,7 @@
 
 Information on published connectomics data related to _C. elegans_. This is being developed as part of the [OpenWorm project](https://www.openworm.org).
 
-**Please note: this is a <u>Work in Progress</u>! Please contact padraig -at- openworm.org if you are interested in contributing to this work!**
+**Please note: this is a <u>Work in Progress</u>! Please [get in contact](About.md) if you are interested in contributing to this work!**
 
 ```mermaid
 block-beta
@@ -345,19 +345,19 @@ flowchart TD
 | [Altun et al. 2009](Altun_2009.md)   | Gene Expression |  *Work in progress: [data](https://docs.google.com/spreadsheets/d/1Jc9pOJAce8DdcgkTgkUXafhsBQdrer2Y47zrHsxlqWg/edit?gid=283505544#gid=283505544)* |
 | [Varshney et al. 2011](Varshney_2011.md)  | Anatomical | **[Varshney_2011](Varshney_data.md)** |
 | [Pereira et al. 2015](Pereira_2015.md)  | Extrasynaptic | *Work in progress: [Cholinergic neurons](https://doi.org/10.7554/eLife.12432.003) - [NT_Map_herm](https://doi.org/10.7554/eLife.12432.009) - [WormWiring](https://doi.org/10.7554/eLife.12432.010) - [male_cholinergic](https://doi.org/10.7554/eLife.12432.016) - [transcriptional_regulators](https://doi.org/10.7554/eLife.12432.019)* |
-| [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | *Work in progress: [csv](https://github.com/openworm/c302/blob/master/c302/data/Bentley_et_al_2016_expression.csv)* |
-| [Cook et al. 2019](Cook_2019.md)          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** |
-| [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
+| [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | **[Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md)** - **[Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)** |
+| [Cook et al. 2019](Cook_2019.md)          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** - **[Cook 2019 Male](Cook2019Male_data.md)** |
 | [Cook et al. 2020](Cook_2020.md)    | Anatomical | **[Cook 2020](Cook2020_data.md)**  |
+| [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
 | [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | *Work in progress: [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) - [parsed](https://github.com/cabrittin/parsetrakem2)*  |
-| [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | **[Witvliet1](Witvliet1_data.md) - [Witvliet2](Witvliet2_data.md)**|
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
 | [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | *Work in progress: [data](https://zenodo.org/records/3906530)* |
+| [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | **[Witvliet1](Witvliet1_data.md)** - **[Witvliet2](Witvliet2_data.md)** - **[Witvliet3](Witvliet3_data.md)** - **[Witvliet4](Witvliet4_data.md)** - **[Witvliet5](Witvliet5_data.md)** - **[Witvliet6](Witvliet6_data.md)** - **[Witvliet7](Witvliet7_data.md)** - **[Witvliet8](Witvliet8_data.md)**|
 | [Beets et al. 2023](Beets_2023.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
+| [Ripoll-Sanchez et al. 2023](Ripoll_2023.md)    | Functional | *Work in progress...*  |
 | [Dag et al. 2023](Dag_2023.md)    | Functional | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    | Functional | *Work in progress: [data](https://www.wormwideweb.org/dataset.html)* |
-| [Randi et al. 2023](Randi_2023.md)    | Functional | **[WormNeuroAtlas](WormNeuroAtlas_data.md)**  |
-| [Ripoll-Sanchez et al. 2023](Ripoll_2023.md)    | Functional | *Work in progress: [data??](??)*  |
+| [Randi et al. 2023](Randi_2023.md)    | Functional | **[WormNeuroAtlas: anatomical](WormNeuroAtlas_data.md)** -  **[WormNeuroAtlas: functional](Randi2023_data_graph.md)**  |
 
 
 

@@ -1,4 +1,4 @@
-site_name: C. elegans Connectome Toolbox
+site_name: <i>C. elegans</i> Connectome Toolbox
 theme:
   name: material
   favicon: images/favicon.ico
@@ -38,37 +38,37 @@ markdown_extensions:
 nav:
   - Overview: 'index.md'
   - Comparison: 'Comparison.md'
-  - 'Connectomes':
+  - 'Related publications':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
-    - 'White et al. 1986': 'White_1986.md'
+    - '<b>White et al. 1986</b>': 'White_1986.md'
     - 'Durbin 1987': 'Durbin_1987.md'
     - 'Hall & Russell 1991': 'Hall_1991.md'
     - 'Altun et al. 2009': 'Altun_2009.md'
-    - 'Varshney et al. 2011': 'Varshney_2011.md'
+    - '<b>Varshney et al. 2011</b>': 'Varshney_2011.md'
     - 'Serrano-Saiz et al. 2013': 'Serrano_2013.md'
     - 'Pereira et al. 2015': 'Pereira_2015.md'
     - 'Gendrel, Hobert & Atlas 2016': 'Gendrel_2016.md'
-    - 'Bentley et al. 2016': 'Bentley_2016.md'
-    - 'Cook et al. 2019': 'Cook_2019.md'
-    - 'Cook et al. 2020': 'Cook_2020.md'
+    - '<b>Bentley et al. 2016</b>': 'Bentley_2016.md'
+    - '<b>Cook et al. 2019</b>': 'Cook_2019.md'
+    - '<b>Cook et al. 2020</b>': 'Cook_2020.md'
     - 'Fenyves et al. 2020': 'Fenyves_2020.md'
     - 'Brittin et al. 2021': 'Brittin_2021.md'
     - 'Taylor et al. 2021': 'Taylor_2021.md'
     - 'Yemini et al. 2021': 'Yemini_2021.md'
-    - 'Witvliet et al. 2021': 'Witvliet_2021.md'
+    - '<b>Witvliet et al. 2021</b>': 'Witvliet_2021.md'
     - 'Beets et al. 2023': 'Beets_2023.md'
     - 'Ripoll-Sanchez et al. 2023': 'Ripoll_2023.md'
     - 'Dag et al. 2023': 'Dag_2023.md'
     - 'Atanas et al. 2023': 'Atanas_2023.md'
-    - 'Randi et al. 2023': 'Randi_2023.md'
+    - '<b>Randi et al. 2023</b>': 'Randi_2023.md'
   
   - 'Data sets':
     - 'White et al. 1986 - A (N2U)': 'White_A_data_graph.md'
     - 'White et al. 1986 - L4 (JSH)': 'White_L4_data_graph.md'
     - 'White et al. 1986 - whole': 'White_whole_data_graph.md'
     - 'Varshney et al. 2011': 'Varshney_data_graph.md'
-    - 'Bentley et al. 2016 Monoam.': 'Bentley2016_MA_data_graph'
-    - 'Bentley et al. 2016 Peptid.': 'Bentley2016_Pep_data_graph'
+    - 'Bentley et al. 2016 Monoam.': 'Bentley2016_MA_data_graph.md'
+    - 'Bentley et al. 2016 Peptid.': 'Bentley2016_PEP_data_graph.md'
     - 'Cook et al. 2019 Herm': 'Cook2019Herm_data_graph.md'
     - 'Cook et al. 2019 Male': 'Cook2019Male_data_graph.md'
     - 'Cook et al. 2020': 'Cook2020_data_graph.md'
@@ -87,3 +87,5 @@ nav:
     - 'C. elegans cells': 'Cells.md'
   - Python package:
     - 'Installation': 'Python.md'
+  - About:
+    - 'About & Contact': 'About.md'

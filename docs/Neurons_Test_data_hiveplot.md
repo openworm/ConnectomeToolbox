@@ -1,8 +1,8 @@
 ---
-title: TestData
+title: Test
 ---
 
-## Dataset: TestData
+## Dataset: Test
 Dummy dataset used for testing webpage/graph generation - do not use!
 
 [Raw Data](Test_data_hiveplot.md){ .md-button  } [Neurons](Neurons_Test_data_hiveplot.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Test_data_hiveplot.md){ .md-button  } [Social Network](Social_Test_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data_hiveplot.md){ .md-button  } 
@@ -14,19 +14,19 @@ Dummy dataset used for testing webpage/graph generation - do not use!
 === "Chemical Exc"
 
     ```plotly
-    { "file_path": "./assets/TestData_Neurons_Chemical_Exc_hiveplot.json" }
+    { "file_path": "./assets/Test_Neurons_Chemical_Exc_hiveplot.json" }
     ```
 
 === "Chemical Inh"
 
     ```plotly
-    { "file_path": "./assets/TestData_Neurons_Chemical_Inh_hiveplot.json" }
+    { "file_path": "./assets/Test_Neurons_Chemical_Inh_hiveplot.json" }
     ```
 
 === "Electrical"
 
     ```plotly
-    { "file_path": "./assets/TestData_Neurons_Electrical_hiveplot.json" }
+    { "file_path": "./assets/Test_Neurons_Electrical_hiveplot.json" }
     ```
 
 
