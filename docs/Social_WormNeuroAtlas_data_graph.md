@@ -2,18 +2,34 @@
 title: WormNeuroAtlas
 ---
 
-## Dataset: WormNeuroAtlas
-Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
-[Source publication of dataset](Randi_2023.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Social_Test_data_graph">Test</a> - <a href="../Social_Varshney_data_graph">Varshney</a> - <a href="../Social_White_A_data_graph">White_A</a> - <a href="../Social_White_L4_data_graph">White_L4</a> - <a href="../Social_White_whole_data_graph">White_whole</a> - <a href="../Social_Witvliet1_data_graph">Witvliet1</a> - <a href="../Social_Witvliet2_data_graph">Witvliet2</a> - <a href="../Social_Witvliet3_data_graph">Witvliet3</a> - <a href="../Social_Witvliet4_data_graph">Witvliet4</a> - <a href="../Social_Witvliet5_data_graph">Witvliet5</a> - <a href="../Social_Witvliet6_data_graph">Witvliet6</a> - <a href="../Social_Witvliet7_data_graph">Witvliet7</a> - <a href="../Social_Witvliet8_data_graph">Witvliet8</a> - <b><a href="../Social_WormNeuroAtlas_data_graph">WormNeuroAtlas</a></b> - <a href="../Social_Cook2019Herm_data_graph">Cook2019Herm</a> - <a href="../Social_Cook2019Male_data_graph">Cook2019Male</a> - <a href="../Social_Cook2020_data_graph">Cook2020</a> - <a href="../Social_Randi2023_data_graph">Randi2023</a> - <a href="../Social_SSData_data_graph">SSData</a> - <a href="../Social_UpdSSData_data_graph">UpdSSData</a> - <a href="../Social_UpdSSData2_data_graph">UpdSSData2</a> - <a href="../Social_Bentley2016_MA_data_graph">Bentley2016_MA</a> - <a href="../Social_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>WormNeuroAtlas</b><br/>Data extracted from the **WormNeuroAtlas package** for neuronal connectivity<br/><a href="../Randi_2023">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../WormNeuroAtlas_data_graph">Raw Data</a> - <a href="../Neurons_WormNeuroAtlas_data_graph">Neurons</a> - <a href="../Pharynx_WormNeuroAtlas_data_graph">Pharynx</a> - <b><a href="../Social_WormNeuroAtlas_data_graph">Social Network</a></b> - <a href="../Full1_WormNeuroAtlas_data_graph">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](WormNeuroAtlas_data_graph.md){ .md-button  } [Neurons](Neurons_WormNeuroAtlas_data_graph.md){ .md-button  } [Pharynx](Pharynx_WormNeuroAtlas_data_graph.md){ .md-button  } [Social Network](Social_WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_WormNeuroAtlas_data_graph.md){ .md-button  } 
+<b><a href="../Social_WormNeuroAtlas_data_graph">Graph</a></b> - <a href="../Social_WormNeuroAtlas_data">Matrix</a> - <a href="../Social_WormNeuroAtlas_data_hiveplot">Hive plot</a> - 
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-[Graph :material-graphql:](Social_WormNeuroAtlas_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Social_WormNeuroAtlas_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_WormNeuroAtlas_data_hiveplot.md){ .md-button  }
-
-=== "Chemical Exc"
+    </tbody>
+</table>=== "Chemical Exc"
 
     ```plotly
     { "file_path": "./assets/WormNeuroAtlas_Social_Chemical_Exc_graph.json" }

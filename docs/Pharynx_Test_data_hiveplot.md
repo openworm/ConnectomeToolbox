@@ -2,16 +2,34 @@
 title: Test
 ---
 
-## Dataset: Test
-Dummy dataset used for testing webpage/graph generation - do not use!
 
-[Raw Data](Test_data_hiveplot.md){ .md-button  } [Neurons](Neurons_Test_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_Test_data_hiveplot.md){ .md-button .md-button--primary } [Social Network](Social_Test_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_Test_data_hiveplot.md){ .md-button  } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <b><a href="../Pharynx_Test_data_hiveplot">Test</a></b> - <a href="../Pharynx_Varshney_data_hiveplot">Varshney</a> - <a href="../Pharynx_White_A_data_hiveplot">White_A</a> - <a href="../Pharynx_White_L4_data_hiveplot">White_L4</a> - <a href="../Pharynx_White_whole_data_hiveplot">White_whole</a> - <a href="../Pharynx_Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Pharynx_Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Pharynx_Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Pharynx_Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Pharynx_Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Pharynx_Witvliet6_data_hiveplot">Witvliet6</a> - <a href="../Pharynx_Witvliet7_data_hiveplot">Witvliet7</a> - <a href="../Pharynx_Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../Pharynx_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Pharynx_Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Pharynx_Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Pharynx_Cook2020_data_hiveplot">Cook2020</a> - <a href="../Pharynx_Randi2023_data_hiveplot">Randi2023</a> - <a href="../Pharynx_SSData_data_hiveplot">SSData</a> - <a href="../Pharynx_UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../Pharynx_UpdSSData2_data_hiveplot">UpdSSData2</a> - <a href="../Pharynx_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Pharynx_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Test</b><br/>Dummy dataset used for testing webpage/graph generation - do not use!<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Test_data_hiveplot">Raw Data</a> - <a href="../Neurons_Test_data_hiveplot">Neurons</a> - <b><a href="../Pharynx_Test_data_hiveplot">Pharynx</a></b> - <a href="../Social_Test_data_hiveplot">Social Network</a> - <a href="../Full1_Test_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
+<a href="../Pharynx_Test_data_graph">Graph</a> - <a href="../Pharynx_Test_data">Matrix</a> - <b><a href="../Pharynx_Test_data_hiveplot">Hive plot</a></b> - 
 
-[Graph :material-graphql:](Pharynx_Test_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_Test_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Pharynx_Test_data_hiveplot.md){ .md-button .md-button--primary }
 
-No connections present in this view
+    </tbody>
+</table>No connections present in this view
 
 ### Neurons (15)
 <details><summary>Full list of Neurons</summary>

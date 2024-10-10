@@ -2,25 +2,43 @@
 title: WormNeuroAtlas
 ---
 
-## Dataset: WormNeuroAtlas
-Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
 
-[Source publication of dataset](Randi_2023.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Full1_Test_data">Test</a> - <a href="../Full1_Varshney_data">Varshney</a> - <a href="../Full1_White_A_data">White_A</a> - <a href="../Full1_White_L4_data">White_L4</a> - <a href="../Full1_White_whole_data">White_whole</a> - <a href="../Full1_Witvliet1_data">Witvliet1</a> - <a href="../Full1_Witvliet2_data">Witvliet2</a> - <a href="../Full1_Witvliet3_data">Witvliet3</a> - <a href="../Full1_Witvliet4_data">Witvliet4</a> - <a href="../Full1_Witvliet5_data">Witvliet5</a> - <a href="../Full1_Witvliet6_data">Witvliet6</a> - <a href="../Full1_Witvliet7_data">Witvliet7</a> - <a href="../Full1_Witvliet8_data">Witvliet8</a> - <b><a href="../Full1_WormNeuroAtlas_data">WormNeuroAtlas</a></b> - <a href="../Full1_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data">Cook2019Male</a> - <a href="../Full1_Cook2020_data">Cook2020</a> - <a href="../Full1_Randi2023_data">Randi2023</a> - <a href="../Full1_SSData_data">SSData</a> - <a href="../Full1_UpdSSData_data">UpdSSData</a> - <a href="../Full1_UpdSSData2_data">UpdSSData2</a> - <a href="../Full1_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>WormNeuroAtlas</b><br/>Data extracted from the **WormNeuroAtlas package** for neuronal connectivity<br/><a href="../Randi_2023">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../WormNeuroAtlas_data">Raw Data</a> - <a href="../Neurons_WormNeuroAtlas_data">Neurons</a> - <a href="../Pharynx_WormNeuroAtlas_data">Pharynx</a> - <a href="../Social_WormNeuroAtlas_data">Social Network</a> - <b><a href="../Full1_WormNeuroAtlas_data">Cook 2019 Fig 3</a></b> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](WormNeuroAtlas_data.md){ .md-button  } [Neurons](Neurons_WormNeuroAtlas_data.md){ .md-button  } [Pharynx](Pharynx_WormNeuroAtlas_data.md){ .md-button  } [Social Network](Social_WormNeuroAtlas_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_WormNeuroAtlas_data.md){ .md-button .md-button--primary } 
+<a href="../Full1_WormNeuroAtlas_data_graph">Graph</a> - <b><a href="../Full1_WormNeuroAtlas_data">Matrix</a></b> - <a href="../Full1_WormNeuroAtlas_data_hiveplot">Hive plot</a> - 
 
-**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-[Graph :material-graphql:](Full1_WormNeuroAtlas_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_WormNeuroAtlas_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_WormNeuroAtlas_data_hiveplot.md){ .md-button  }
+    </tbody>
+</table>=== "Chemical"
 
-=== "Chemical"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/WormNeuroAtlas_Full1_Chemical.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/WormNeuroAtlas_Full1_Electrical.json" }
     ```

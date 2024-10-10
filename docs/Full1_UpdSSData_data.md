@@ -2,23 +2,43 @@
 title: UpdSSData
 ---
 
-## Dataset: UpdSSData
-Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity
 
-[Raw Data](UpdSSData_data.md){ .md-button  } [Neurons](Neurons_UpdSSData_data.md){ .md-button  } [Pharynx](Pharynx_UpdSSData_data.md){ .md-button  } [Social Network](Social_UpdSSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData_data.md){ .md-button .md-button--primary } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Full1_Test_data">Test</a> - <a href="../Full1_Varshney_data">Varshney</a> - <a href="../Full1_White_A_data">White_A</a> - <a href="../Full1_White_L4_data">White_L4</a> - <a href="../Full1_White_whole_data">White_whole</a> - <a href="../Full1_Witvliet1_data">Witvliet1</a> - <a href="../Full1_Witvliet2_data">Witvliet2</a> - <a href="../Full1_Witvliet3_data">Witvliet3</a> - <a href="../Full1_Witvliet4_data">Witvliet4</a> - <a href="../Full1_Witvliet5_data">Witvliet5</a> - <a href="../Full1_Witvliet6_data">Witvliet6</a> - <a href="../Full1_Witvliet7_data">Witvliet7</a> - <a href="../Full1_Witvliet8_data">Witvliet8</a> - <a href="../Full1_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Full1_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data">Cook2019Male</a> - <a href="../Full1_Cook2020_data">Cook2020</a> - <a href="../Full1_Randi2023_data">Randi2023</a> - <a href="../Full1_SSData_data">SSData</a> - <b><a href="../Full1_UpdSSData_data">UpdSSData</a></b> - <a href="../Full1_UpdSSData2_data">UpdSSData2</a> - <a href="../Full1_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>UpdSSData</b><br/>Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../UpdSSData_data">Raw Data</a> - <a href="../Neurons_UpdSSData_data">Neurons</a> - <a href="../Pharynx_UpdSSData_data">Pharynx</a> - <a href="../Social_UpdSSData_data">Social Network</a> - <b><a href="../Full1_UpdSSData_data">Cook 2019 Fig 3</a></b> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
+<a href="../Full1_UpdSSData_data_graph">Graph</a> - <b><a href="../Full1_UpdSSData_data">Matrix</a></b> - <a href="../Full1_UpdSSData_data_hiveplot">Hive plot</a> - 
 
-[Graph :material-graphql:](Full1_UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_UpdSSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_UpdSSData_data_hiveplot.md){ .md-button  }
 
-=== "Chemical"
+    </tbody>
+</table>=== "Chemical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData_Full1_Chemical.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData_Full1_Electrical.json" }
     ```

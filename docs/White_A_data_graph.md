@@ -2,18 +2,34 @@
 title: White_A
 ---
 
-## Dataset: White_A
-Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
-[Source publication of dataset](White_1986.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Test_data_graph">Test</a> - <a href="../Varshney_data_graph">Varshney</a> - <b><a href="../White_A_data_graph">White_A</a></b> - <a href="../White_L4_data_graph">White_L4</a> - <a href="../White_whole_data_graph">White_whole</a> - <a href="../Witvliet1_data_graph">Witvliet1</a> - <a href="../Witvliet2_data_graph">Witvliet2</a> - <a href="../Witvliet3_data_graph">Witvliet3</a> - <a href="../Witvliet4_data_graph">Witvliet4</a> - <a href="../Witvliet5_data_graph">Witvliet5</a> - <a href="../Witvliet6_data_graph">Witvliet6</a> - <a href="../Witvliet7_data_graph">Witvliet7</a> - <a href="../Witvliet8_data_graph">Witvliet8</a> - <a href="../WormNeuroAtlas_data_graph">WormNeuroAtlas</a> - <a href="../Cook2019Herm_data_graph">Cook2019Herm</a> - <a href="../Cook2019Male_data_graph">Cook2019Male</a> - <a href="../Cook2020_data_graph">Cook2020</a> - <a href="../Randi2023_data_graph">Randi2023</a> - <a href="../SSData_data_graph">SSData</a> - <a href="../UpdSSData_data_graph">UpdSSData</a> - <a href="../UpdSSData2_data_graph">UpdSSData2</a> - <a href="../Bentley2016_MA_data_graph">Bentley2016_MA</a> - <a href="../Bentley2016_PEP_data_graph">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>White_A</b><br/>Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity<br/><a href="../White_1986">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <b><a href="../White_A_data_graph">Raw Data</a></b> - <a href="../Neurons_White_A_data_graph">Neurons</a> - <a href="../Pharynx_White_A_data_graph">Pharynx</a> - <a href="../Social_White_A_data_graph">Social Network</a> - <a href="../Full1_White_A_data_graph">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All of the cells present in the original connectome dataset</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](White_A_data_graph.md){ .md-button .md-button--primary } [Neurons](Neurons_White_A_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_A_data_graph.md){ .md-button  } [Social Network](Social_White_A_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_A_data_graph.md){ .md-button  } 
+<b><a href="../White_A_data_graph">Graph</a></b> - <a href="../White_A_data">Matrix</a> - <a href="../White_A_data_hiveplot">Hive plot</a> - 
 
-**All of the cells present in the original connectome dataset**
 
-[Graph :material-graphql:](White_A_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](White_A_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](White_A_data_hiveplot.md){ .md-button  }
-
-=== "Chemical"
+    </tbody>
+</table>=== "Chemical"
 
     ```plotly
     { "file_path": "./assets/White_A_Raw_Chemical_graph.json" }

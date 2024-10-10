@@ -2,19 +2,36 @@
 title: Bentley2016_MA
 ---
 
-## Dataset: Bentley2016_MA
-Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity
 
-[Source publication of dataset](Bentley_2016.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Test_data_hiveplot">Test</a> - <a href="../Varshney_data_hiveplot">Varshney</a> - <a href="../White_A_data_hiveplot">White_A</a> - <a href="../White_L4_data_hiveplot">White_L4</a> - <a href="../White_whole_data_hiveplot">White_whole</a> - <a href="../Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Witvliet6_data_hiveplot">Witvliet6</a> - <a href="../Witvliet7_data_hiveplot">Witvliet7</a> - <a href="../Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Cook2020_data_hiveplot">Cook2020</a> - <a href="../Randi2023_data_hiveplot">Randi2023</a> - <a href="../SSData_data_hiveplot">SSData</a> - <a href="../UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../UpdSSData2_data_hiveplot">UpdSSData2</a> - <b><a href="../Bentley2016_MA_data_hiveplot">Bentley2016_MA</a></b> - <a href="../Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Bentley2016_MA</b><br/>Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity<br/><a href="../Bentley_2016">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <b><a href="../Bentley2016_MA_data_hiveplot">Raw Data</a></b> - <a href="../Neurons_Bentley2016_MA_data_hiveplot">Neurons</a> - <a href="../Pharynx_Bentley2016_MA_data_hiveplot">Pharynx</a> - <a href="../Social_Bentley2016_MA_data_hiveplot">Social Network</a> - <a href="../Full1_Bentley2016_MA_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All of the cells present in the original connectome dataset</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Bentley2016_MA_data_hiveplot.md){ .md-button .md-button--primary } [Neurons](Neurons_Bentley2016_MA_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_MA_data_hiveplot.md){ .md-button  } [Social Network](Social_Bentley2016_MA_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_Bentley2016_MA_data_hiveplot.md){ .md-button  } 
+<a href="../Bentley2016_MA_data_graph">Graph</a> - <a href="../Bentley2016_MA_data">Matrix</a> - <b><a href="../Bentley2016_MA_data_hiveplot">Hive plot</a></b> - 
 
-**All of the cells present in the original connectome dataset**
 
-[Graph :material-graphql:](Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Bentley2016_MA_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Bentley2016_MA_data_hiveplot.md){ .md-button .md-button--primary }
+    </tbody>
+</table>=== "Extrasynaptic"
 
-=== "Extrasynaptic"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/Bentley2016_MA_Raw_Extrasynaptic_hiveplot.json" }
     ```

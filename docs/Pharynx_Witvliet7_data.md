@@ -2,18 +2,34 @@
 title: Witvliet7
 ---
 
-## Dataset: Witvliet7
-Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
-[Source publication of dataset](Witvliet_2021.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Pharynx_Test_data">Test</a> - <a href="../Pharynx_Varshney_data">Varshney</a> - <a href="../Pharynx_White_A_data">White_A</a> - <a href="../Pharynx_White_L4_data">White_L4</a> - <a href="../Pharynx_White_whole_data">White_whole</a> - <a href="../Pharynx_Witvliet1_data">Witvliet1</a> - <a href="../Pharynx_Witvliet2_data">Witvliet2</a> - <a href="../Pharynx_Witvliet3_data">Witvliet3</a> - <a href="../Pharynx_Witvliet4_data">Witvliet4</a> - <a href="../Pharynx_Witvliet5_data">Witvliet5</a> - <a href="../Pharynx_Witvliet6_data">Witvliet6</a> - <b><a href="../Pharynx_Witvliet7_data">Witvliet7</a></b> - <a href="../Pharynx_Witvliet8_data">Witvliet8</a> - <a href="../Pharynx_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Pharynx_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Pharynx_Cook2019Male_data">Cook2019Male</a> - <a href="../Pharynx_Cook2020_data">Cook2020</a> - <a href="../Pharynx_Randi2023_data">Randi2023</a> - <a href="../Pharynx_SSData_data">SSData</a> - <a href="../Pharynx_UpdSSData_data">UpdSSData</a> - <a href="../Pharynx_UpdSSData2_data">UpdSSData2</a> - <a href="../Pharynx_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Pharynx_Bentley2016_PEP_data">Bentley2016_PEP</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Witvliet7</b><br/>Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity<br/><a href="../Witvliet_2021">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Witvliet7_data">Raw Data</a> - <a href="../Neurons_Witvliet7_data">Neurons</a> - <b><a href="../Pharynx_Witvliet7_data">Pharynx</a></b> - <a href="../Social_Witvliet7_data">Social Network</a> - <a href="../Full1_Witvliet7_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Witvliet7_data.md){ .md-button  } [Neurons](Neurons_Witvliet7_data.md){ .md-button  } [Pharynx](Pharynx_Witvliet7_data.md){ .md-button .md-button--primary } [Social Network](Social_Witvliet7_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet7_data.md){ .md-button  } 
+<a href="../Pharynx_Witvliet7_data_graph">Graph</a> - <b><a href="../Pharynx_Witvliet7_data">Matrix</a></b> - <a href="../Pharynx_Witvliet7_data_hiveplot">Hive plot</a> - 
 
-**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Pharynx_Witvliet7_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_Witvliet7_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Pharynx_Witvliet7_data_hiveplot.md){ .md-button  }
-
-No connections present in this view
+    </tbody>
+</table>No connections present in this view
 
 ### Neurons (181)
 <details><summary>Full list of Neurons</summary>

@@ -322,6 +322,9 @@ class ConnectomeDataset:
                 }
             ]
         )
+        fig.update_layout(
+            margin=dict(l=2, r=2, t=2, b=2),
+        )
 
         return fig
 
@@ -733,11 +736,26 @@ class ConnectomeDataset:
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
 
+        fig.update_layout(
+            margin=dict(l=2, r=2, t=2, b=2),
+        )
+
         fig.update(data=[{"hoverinfo": "skip"}])
 
         # print(dir(fig))
         count = 0
         for d in fig.data:
+            if d["mode"] == "text":
+                if d["text"] == "Sensory" and d["textposition"] == "top center":
+                    d["y"] = [-5.4]
+                if d["text"] == "Motorneuron" and d["textposition"] == "bottom center":
+                    d["y"] = [5.4]
+                if d["text"] == "Interneuron":
+                    if d["y"][0] > 0:
+                        d["y"] = [2.6]
+                    if d["y"][0] < 0:
+                        d["y"] = [-2.6]
+                # print("Moving text %s" % d)
             if d["mode"] == "markers":
                 nrn_num = len(d["x"])
                 d["hovertemplate"] = "%{text}<extra></extra>"
@@ -879,17 +897,18 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    # from cect.ConnectomeView import RAW_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
     cds2 = cds.get_connectome_view(view)
 
     print(cds2.summary())
 
-    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
 

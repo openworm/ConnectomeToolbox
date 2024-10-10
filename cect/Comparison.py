@@ -113,12 +113,7 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
-        indent,
-        indent,
-        asset_filename,
-        indent,
-    )
+    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -143,12 +138,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
-        indent,
-        indent,
-        asset_filename,
-        indent,
-    )
+    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
 def generate_comparison_page(quick: bool, color_table=True):
@@ -249,15 +239,49 @@ def generate_comparison_page(quick: bool, color_table=True):
 
                             f.write("---\ntitle: %s\n---\n\n" % reader_name)
 
-                            f.write("## Dataset: %s\n" % reader_name)
-
-                            f.write("%s\n\n" % reader_module.READER_DESCRIPTION)
-
-                            if decription_page is not None:
-                                f.write(
-                                    "[Source publication of dataset](%s.md)\n\n"
-                                    % decription_page
+                            f.write("""
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- """)
+                            for rr in reader_pages:
+                                view_prefix = (
+                                    "" if view.id == "Raw" else "%s_" % view.id
                                 )
+
+                                f.write(
+                                    '%s<a href="../%s%s%s">%s</a>%s - '
+                                    % (
+                                        "<b>" if rr == reader_name else "",
+                                        view_prefix,
+                                        reader_pages[rr],
+                                        "_graph"
+                                        if graph
+                                        else ("_hiveplot" if hiveplot else ""),
+                                        rr,
+                                        "</b>" if rr == reader_name else "",
+                                    )
+                                )
+
+                            dp = (
+                                '<a href="../%s">Source publication of dataset</a>'
+                                % decription_page
+                                if decription_page is not None
+                                else ""
+                            )
+
+                            f.write(
+                                f"""</td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>{reader_name}</b><br/>{reader_module.READER_DESCRIPTION}<br/>{dp}</td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - """
+                            )
 
                             for viewb in ALL_VIEWS:
                                 viewb_prefix = (
@@ -265,50 +289,68 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
 
                                 f.write(
-                                    "[%s](%s%s%s.md){ .md-button %s } "
+                                    '%s<a href="../%s%s%s">%s</a>%s - '
                                     % (
-                                        viewb.name,
+                                        "<b>" if view.id == viewb.id else "",
                                         viewb_prefix,
                                         reader_pages[reader_name],
                                         "_graph"
                                         if graph
                                         else ("_hiveplot" if hiveplot else ""),
-                                        ".md-button--primary"
-                                        if view.id == viewb.id
-                                        else "",
+                                        viewb.name,
+                                        "</b>" if view.id == viewb.id else "",
                                     )
                                 )
-                            f.write("\n\n**%s**" % view.description)
+                            f.write(
+                                """</td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>%s</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>"""
+                                % view.description
+                            )
                             f.write("\n\n")
 
                             f.write(
-                                "[Graph :material-graphql:](%s%s_graph.md){ .md-button %s } "
+                                '%s<a href="../%s%s_graph">Graph</a>%s - '
                                 % (
+                                    "<b>" if graph else "",
                                     view_prefix,
                                     reader_pages[reader_name],
-                                    ".md-button--primary" if graph else "",
+                                    "</b>" if graph else "",
                                 )
                             )
                             f.write(
-                                "[Matrix :material-checkerboard:](%s%s.md){ .md-button %s } "
+                                '%s<a href="../%s%s">Matrix</a>%s - '
                                 % (
+                                    "<b>" if matrix else "",
                                     view_prefix,
                                     reader_pages[reader_name],
-                                    ".md-button--primary" if matrix else "",
+                                    "</b>" if matrix else "",
                                 )
                             )
                             f.write(
-                                "[Hive plot :material-star-three-points-outline:](%s%s_hiveplot.md){ .md-button %s }\n\n"
+                                '%s<a href="../%s%s_hiveplot">Hive plot</a>%s - \n\n'
                                 % (
+                                    "<b>" if hiveplot else "",
                                     view_prefix,
                                     reader_pages[reader_name],
-                                    ".md-button--primary" if hiveplot else "",
+                                    "</b>" if hiveplot else "",
                                 )
                             )
 
                             cv = connectome.get_connectome_view(view)
 
                             # f.write('=== "%s"\n' % view.name)
+                            f.write(
+                                """
+    </tbody>
+</table>"""
+                            )
 
                             no_conns = True
 
