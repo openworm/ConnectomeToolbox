@@ -11,12 +11,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.685236,
-        -0.787163
+        -0.720173,
+        -0.831377
       ],
       "y": [
-        -0.142879,
-        -0.165446
+        0.020012,
+        0.017995
       ]
     },
     {
@@ -30,12 +30,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.291326,
-        0.324533
+        0.205321,
+        0.241053
       ],
       "y": [
-        -0.259873,
-        -0.203408
+        0.074806,
+        0.130866
       ]
     },
     {
@@ -49,12 +49,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.375269,
-        0.324533
+        0.276271,
+        0.241053
       ],
       "y": [
-        -0.150915,
-        -0.203408
+        0.194609,
+        0.130866
       ]
     },
     {
@@ -62,13 +62,13 @@
       "hovertext": [
         "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns out: <b>ASKR</b>: 1",
         "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 1",
-        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>DB4</b>: 4, <b>VB6</b>: 3",
         "<b>AWBR</b><br>Sensory neuron (amphid)",
-        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns out: <b>AVBL</b>: 4",
-        "<b>DD4</b><br>Ventral cord motor neuron",
         "<b>DVA</b><br>Sensory neuron (mechanosensory)",
+        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>DB4</b>: 4, <b>VB6</b>: 3",
         "<b>PVCL</b><br>Layer 1 interneuron",
         "<b>RMGR</b><br>Layer 2 interneuron",
+        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns out: <b>AVBL</b>: 4",
+        "<b>DD4</b><br>Ventral cord motor neuron",
         "<b>VA3</b><br>Ventral cord motor neuron",
         "<b>VA6</b><br>Ventral cord motor neuron",
         "<b>VB2</b><br>Ventral cord motor neuron",
@@ -80,13 +80,13 @@
         "color": [
           "#ff66cc",
           "#ff66cc",
-          "#ff3300",
           "#ff66cc",
-          "#9966cc",
-          "#9966cc",
           "#ff66cc",
           "#ff3300",
           "#ff3300",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
           "#9966cc",
           "#9966cc",
           "#9966cc",
@@ -185,13 +185,13 @@
       "text": [
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASHR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASKR</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>AWBR</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>DVA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>PVCL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>RMGR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
@@ -202,38 +202,38 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.685236,
-        -0.787163,
-        0.324533,
-        -0.576963,
-        0.291326,
-        0.832256,
-        0.23165,
-        -0.825401,
-        0.907236,
-        0.15993,
-        0.861163,
-        -0.518557,
-        0.375269,
-        -0.326403,
-        -0.26364
+        -0.720173,
+        -0.831377,
+        0.062594,
+        0.419333,
+        0.241053,
+        0.928236,
+        0.078418,
+        0.205321,
+        0.764459,
+        -0.715555,
+        0.837403,
+        -0.674708,
+        0.276271,
+        -0.423183,
+        -0.448092
       ],
       "y": [
-        -0.142879,
-        -0.165446,
-        -0.203408,
-        -0.666057,
-        -0.259873,
-        0.398115,
-        0.915504,
-        0.327357,
-        -0.291317,
-        -0.971798,
-        0.706304,
-        0.629639,
-        -0.150915,
-        -1.0,
-        0.874773
+        0.020012,
+        0.017995,
+        -0.975708,
+        -0.77706,
+        0.130866,
+        0.049557,
+        1.0,
+        0.074806,
+        -0.456312,
+        -0.562735,
+        0.776468,
+        0.54578,
+        0.194609,
+        -0.910736,
+        0.872458
       ]
     }
   ],

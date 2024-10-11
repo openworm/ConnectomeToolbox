@@ -278,13 +278,22 @@ class ConnectomeDataset:
 
         zmin = np.min(conn_array)
         zmax = np.max(conn_array)
-        color_continuous_scale = DEFAULT_COLORMAP
 
         if synclass == "Functional":
-            color_continuous_scale = POS_NEG_COLORMAP
+            color_continuous_scale = (
+                POS_NEG_COLORMAP
+                if color_continuous_scale is None
+                else color_continuous_scale
+            )
             largest = max(abs(zmin), abs(zmax))
             zmin = -1 * largest
             zmax = largest
+
+        color_continuous_scale = (
+            DEFAULT_COLORMAP
+            if color_continuous_scale is None
+            else color_continuous_scale
+        )
 
         def get_color_html(color, node):
             return f'<span style="color:{color};">{node}</span>'

@@ -11,7 +11,14 @@ from cect import print_
 from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 
-DEFAULT_COLORMAP = ["white", "green", "black"]
+DEFAULT_COLORMAP = [
+    "white",
+    "blue",
+    "cyan",
+    "green",
+    "yellow",
+    "orange",
+]  # ["white", "green", "black"]
 POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
 
 

@@ -8,13 +8,13 @@
       "x": [
         "<span style=\"color:#ff66cc;\">ASHR</span>",
         "<span style=\"color:#ff66cc;\">ASKR</span>",
-        "<span style=\"color:#ff3300;\">AVBL</span>",
         "<span style=\"color:#ff66cc;\">AWBR</span>",
-        "<span style=\"color:#9966cc;\">DB4</span>",
-        "<span style=\"color:#9966cc;\">DD4</span>",
         "<span style=\"color:#ff66cc;\">DVA</span>",
+        "<span style=\"color:#ff3300;\">AVBL</span>",
         "<span style=\"color:#ff3300;\">PVCL</span>",
         "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">DB4</span>",
+        "<span style=\"color:#9966cc;\">DD4</span>",
         "<span style=\"color:#9966cc;\">VA3</span>",
         "<span style=\"color:#9966cc;\">VA6</span>",
         "<span style=\"color:#9966cc;\">VB2</span>",
@@ -26,13 +26,13 @@
       "y": [
         "<span style=\"color:#ff66cc;\">ASHR</span>",
         "<span style=\"color:#ff66cc;\">ASKR</span>",
-        "<span style=\"color:#ff3300;\">AVBL</span>",
         "<span style=\"color:#ff66cc;\">AWBR</span>",
-        "<span style=\"color:#9966cc;\">DB4</span>",
-        "<span style=\"color:#9966cc;\">DD4</span>",
         "<span style=\"color:#ff66cc;\">DVA</span>",
+        "<span style=\"color:#ff3300;\">AVBL</span>",
         "<span style=\"color:#ff3300;\">PVCL</span>",
         "<span style=\"color:#ff3300;\">RMGR</span>",
+        "<span style=\"color:#9966cc;\">DB4</span>",
+        "<span style=\"color:#9966cc;\">DD4</span>",
         "<span style=\"color:#9966cc;\">VA3</span>",
         "<span style=\"color:#9966cc;\">VA6</span>",
         "<span style=\"color:#9966cc;\">VB2</span>",
@@ -113,6 +113,59 @@
         [
           0.0,
           0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
           4.0,
           0.0,
           0.0,
@@ -123,8 +176,6 @@
           0.0,
           0.0,
           0.0,
-          0.0,
-          0.0,
           0.0
         ],
         [
@@ -198,60 +249,9 @@
         [
           0.0,
           0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
           0.0,
           0.0,
           3.0,
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -315,12 +315,24 @@
           "white"
         ],
         [
-          0.5,
+          0.2,
+          "blue"
+        ],
+        [
+          0.4,
+          "cyan"
+        ],
+        [
+          0.6,
           "green"
         ],
         [
+          0.8,
+          "yellow"
+        ],
+        [
           1.0,
-          "black"
+          "orange"
         ]
       ]
     },

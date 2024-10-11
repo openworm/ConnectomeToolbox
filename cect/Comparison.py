@@ -12,11 +12,15 @@ all_data = {}
 
 
 reader_pages = {
-    "Test": "Test_data",
-    "Varshney": "Varshney_data",
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
     "White_whole": "White_whole_data",
+    "Varshney": "Varshney_data",
+    "Bentley2016_MA": "Bentley2016_MA_data",
+    "Bentley2016_PEP": "Bentley2016_PEP_data",
+    "Cook2019Herm": "Cook2019Herm_data",
+    "Cook2019Male": "Cook2019Male_data",
+    "Cook2020": "Cook2020_data",
     "Witvliet1": "Witvliet1_data",
     "Witvliet2": "Witvliet2_data",
     "Witvliet3": "Witvliet3_data",
@@ -26,15 +30,12 @@ reader_pages = {
     "Witvliet7": "Witvliet7_data",
     "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
-    "Cook2019Herm": "Cook2019Herm_data",
-    "Cook2019Male": "Cook2019Male_data",
-    "Cook2020": "Cook2020_data",
     "Randi2023": "Randi2023_data",
+    "RipollSanchez": "RipollSanchez_data",
+    "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
-    "Bentley2016_MA": "Bentley2016_MA_data",
-    "Bentley2016_PEP": "Bentley2016_PEP_data",
 }
 
 all_data[""] = [
@@ -152,6 +153,7 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
         readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
 
+    readers["RipollSanchez"] = ["cect.RipollSanchezDataReader", "RipollSanchez_2023"]
     readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
     readers["White_whole"] = ["cect.White_whole", "White_1986"]
     readers["Test"] = ["cect.TestDataReader", None]

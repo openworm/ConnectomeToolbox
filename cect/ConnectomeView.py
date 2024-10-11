@@ -1,5 +1,4 @@
 from cect.Cells import PHARYNGEAL_NEURONS
-from cect.Cells import PREFERRED_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import KNOWN_OTHER_CELLS
 from cect.Cells import SENSORY_NEURONS_COOK
@@ -17,6 +16,7 @@ from cect.Cells import VC_HERM_MOTORNEURONS
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import PHARYNGEAL_INTERNEURONS
 from cect.Cells import PHARYNGEAL_MOTORNEURONS
+from cect.Cells import UNKNOWN_FUNCTION_NEURONS
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
@@ -136,12 +136,6 @@ RAW_VIEW = View(
     CHEM_GJ_FUNC_SYN_CLASSES,
     only_show_existing_nodes=True,
 )
-for cell in (
-    sorted(PREFERRED_NEURON_NAMES)
-    + sorted(PREFERRED_MUSCLE_NAMES)
-    + sorted(KNOWN_OTHER_CELLS)
-):
-    RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 
 NEURONS_VIEW = View(
@@ -153,19 +147,25 @@ NEURONS_VIEW = View(
 )
 
 for cell in (
-    sorted(SENSORY_NEURONS_COOK)
+    sorted(PHARYNGEAL_NEURONS)
+    + sorted(PHARYNGEAL_INTERNEURONS)
+    + sorted(PHARYNGEAL_MOTORNEURONS)
+    + sorted(SENSORY_NEURONS_COOK)
     + sorted(INTERNEURONS_NONPHARYNGEAL_COOK)
     + sorted(
         HEAD_MOTORNEURONS_COOK
         + VENTRAL_CORD_MOTORNEURONS
         + SUBLATERAL_MOTORNEURONS_COOK
+        + VC_HERM_MOTORNEURONS
         + HSN_MOTORNEURONS
     )
-    + sorted(PHARYNGEAL_NEURONS)
-    + sorted(PHARYNGEAL_INTERNEURONS)
-    + sorted(PHARYNGEAL_MOTORNEURONS)
+    + sorted(UNKNOWN_FUNCTION_NEURONS)
 ):
     NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
+    RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
+
+for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(KNOWN_OTHER_CELLS):
+    RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 PHARYNX_VIEW = View(
     "Pharynx",

@@ -11,12 +11,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.761173,
-        0.824355
+        -0.403875,
+        -0.407859
       ],
       "y": [
-        -0.205772,
-        -0.191848
+        0.037238,
+        0.105404
       ]
     },
     {
@@ -30,12 +30,31 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.72615,
-        0.761173
+        -0.476019,
+        -0.403875
       ],
       "y": [
-        -0.28974,
-        -0.205772
+        -0.040633,
+        0.037238
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.7320508075688772
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.427503,
+        0.424517
+      ],
+      "y": [
+        0.130739,
+        0.250053
       ]
     },
     {
@@ -49,12 +68,50 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.051246,
-        -0.08168
+        0.424517,
+        0.49233
       ],
       "y": [
-        0.300512,
-        0.235665
+        0.250053,
+        0.206203
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff3300",
+        "shape": "linear",
+        "width": 2.449489742783178
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.424517,
+        0.357923
+      ],
+      "y": [
+        0.250053,
+        0.341066
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff3300",
+        "shape": "linear",
+        "width": 1.4142135623730951
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.424517,
+        0.491034
+      ],
+      "y": [
+        0.250053,
+        0.350581
       ]
     },
     {
@@ -68,12 +125,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.004372,
-        0.094685
+        0.357923,
+        0.47028
       ],
       "y": [
-        0.376398,
-        0.317173
+        0.341066,
+        0.382209
       ]
     },
     {
@@ -87,31 +144,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.004372,
-        -0.001741
+        0.357923,
+        0.304744
       ],
       "y": [
-        0.376398,
-        0.438635
-      ]
-    },
-    {
-      "hoverinfo": "none",
-      "line": {
-        "color": "#ff3300",
-        "shape": "linear",
-        "width": 2.449489742783178
-      },
-      "mode": "lines",
-      "textposition": "middle center",
-      "type": "scatter",
-      "x": [
-        -0.051246,
-        -0.004372
-      ],
-      "y": [
-        0.300512,
-        0.376398
+        0.341066,
+        0.392312
       ]
     },
     {
@@ -125,50 +163,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.073996,
-        0.094685
+        0.491034,
+        0.47028
       ],
       "y": [
-        0.289941,
-        0.317173
-      ]
-    },
-    {
-      "hoverinfo": "none",
-      "line": {
-        "color": "#ff66cc",
-        "shape": "linear",
-        "width": 1.7320508075688772
-      },
-      "mode": "lines",
-      "textposition": "middle center",
-      "type": "scatter",
-      "x": [
-        -0.156551,
-        -0.051246
-      ],
-      "y": [
-        0.306001,
-        0.300512
-      ]
-    },
-    {
-      "hoverinfo": "none",
-      "line": {
-        "color": "#ff3300",
-        "shape": "linear",
-        "width": 1.4142135623730951
-      },
-      "mode": "lines",
-      "textposition": "middle center",
-      "type": "scatter",
-      "x": [
-        -0.051246,
-        0.073996
-      ],
-      "y": [
-        0.300512,
-        0.289941
+        0.350581,
+        0.382209
       ]
     },
     {
@@ -182,12 +182,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.405342,
-        -0.410116
+        -0.309263,
+        -0.332719
       ],
       "y": [
-        -0.687956,
-        -0.773072
+        -0.84987,
+        -0.952633
       ]
     },
     {
@@ -201,14 +201,14 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.004893,
-        0.021904400000000004,
-        -0.001741
+        0.243929,
+        0.2941007,
+        0.304744
       ],
       "y": [
-        0.540277,
-        0.4881292,
-        0.438635
+        0.491133,
+        0.4538855,
+        0.392312
       ]
     },
     {
@@ -222,14 +222,14 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.001741,
-        -0.018752400000000002,
-        0.004893
+        0.304744,
+        0.2545723,
+        0.243929
       ],
       "y": [
-        0.438635,
-        0.4907828,
-        0.540277
+        0.392312,
+        0.42955950000000004,
+        0.491133
       ]
     },
     {
@@ -243,12 +243,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.405342,
-        -0.374203
+        -0.309263,
+        -0.282526
       ],
       "y": [
-        -0.687956,
-        -0.591329
+        -0.84987,
+        -0.728639
       ]
     },
     {
@@ -256,13 +256,13 @@
       "hovertext": [
         "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>AWBR</b>: 2<br>Conns out: <b>RMGR</b>: 6",
         "<b>ASKR</b><br>Sensory neuron (amphid)",
-        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>PVCL</b>: 7",
         "<b>AWBR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ASHR</b>: 2",
-        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 6<br>Conns out: <b>VD6</b>: 14, <b>DD4</b>: 2",
-        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns in: <b>VB6</b>: 32, <b>DB4</b>: 2",
         "<b>DVA</b><br>Sensory neuron (mechanosensory)<br>Conns out: <b>PVCL</b>: 3",
+        "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>PVCL</b>: 7",
         "<b>PVCL</b><br>Layer 1 interneuron<br>Conns in: <b>DVA</b>: 3<br>Conns out: <b>AVBL</b>: 7, <b>DB4</b>: 6, <b>VB6</b>: 2",
         "<b>RMGR</b><br>Layer 2 interneuron<br>Conns in: <b>ASHR</b>: 6",
+        "<b>DB4</b><br>Ventral cord motor neuron<br>Conns in: <b>PVCL</b>: 6<br>Conns out: <b>VD6</b>: 14, <b>DD4</b>: 2",
+        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns in: <b>VB6</b>: 32, <b>DB4</b>: 2",
         "<b>VA3</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
         "<b>VA6</b><br>Ventral cord motor neuron<br>Conns in: <b>VD6</b>: 3<br>Conns out: <b>VD6</b>: 6",
         "<b>VB2</b><br>Ventral cord motor neuron<br>Conns in: <b>VD3</b>: 2",
@@ -274,13 +274,13 @@
         "color": [
           "#ff66cc",
           "#ff66cc",
-          "#ff3300",
           "#ff66cc",
-          "#9966cc",
-          "#9966cc",
           "#ff66cc",
           "#ff3300",
           "#ff3300",
+          "#ff3300",
+          "#9966cc",
+          "#9966cc",
           "#9966cc",
           "#9966cc",
           "#9966cc",
@@ -379,13 +379,13 @@
       "text": [
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASHR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASKR</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>AWBR</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>DVA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>PVCL</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>RMGR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
@@ -396,38 +396,38 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.761173,
+        -0.403875,
         -1.0,
-        -0.08168,
-        0.72615,
-        -0.004372,
-        0.094685,
-        -0.156551,
-        -0.051246,
-        0.824355,
-        -0.410116,
-        0.004893,
-        -0.374203,
-        0.073996,
-        -0.405342,
-        -0.001741
+        -0.476019,
+        0.427503,
+        0.49233,
+        0.424517,
+        -0.407859,
+        0.357923,
+        0.47028,
+        -0.332719,
+        0.243929,
+        -0.282526,
+        0.491034,
+        -0.309263,
+        0.304744
       ],
       "y": [
-        -0.205772,
-        -0.064884,
-        0.235665,
-        -0.28974,
-        0.376398,
-        0.317173,
-        0.306001,
-        0.300512,
-        -0.191848,
-        -0.773072,
-        0.540277,
-        -0.591329,
-        0.289941,
-        -0.687956,
-        0.438635
+        0.037238,
+        -0.115163,
+        -0.040633,
+        0.130739,
+        0.206203,
+        0.250053,
+        0.105404,
+        0.341066,
+        0.382209,
+        -0.952633,
+        0.491133,
+        -0.728639,
+        0.350581,
+        -0.84987,
+        0.392312
       ]
     }
   ],
