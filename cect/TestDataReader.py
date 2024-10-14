@@ -40,6 +40,7 @@ class TestDataReader(ConnectomeDataset):
         self.conns.append(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
 
         self.conns.append(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+
         self.conns.append(ConnectionInfo("VD3", "VA3", 2, "Send", "GABA"))
         self.conns.append(ConnectionInfo("VD3", "VB2", 2, "Send", "GABA"))
 

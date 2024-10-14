@@ -59,7 +59,8 @@ class RipollSanchezDataReader(ConnectomeDataset):
                 post_cell = fix_cell(data[0][j])
                 num = int(data[i][j])
                 if num > 0:
-                    print_("Conn %s->%s: %i" % (pre_cell, post_cell, num))
+                    if self.verbose:
+                        print_("Conn %s->%s: %i" % (pre_cell, post_cell, num))
                     synclass = PEPTIDERGIC_SYN_CLASS
                     syntype = EXTRASYNAPTIC_SYN_TYPE
 

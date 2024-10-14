@@ -9,10 +9,10 @@
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeReader import convert_to_preferred_muscle_name
-from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import remove_leading_index_zero
-from cect.ConnectomeReader import is_muscle
+from cect.Cells import convert_to_preferred_muscle_name
+from cect.Cells import is_neuron
+from cect.Cells import remove_leading_index_zero
+from cect.Cells import is_muscle
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -76,7 +76,7 @@ class Cook2019DataReader(ConnectomeDataset):
 
         for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             sheet = wb.get_sheet_by_name(conn_type)
-            print("Looking at sheet: %s" % conn_type)
+            print_("Looking at sheet: %s" % conn_type)
 
             self.pre_cells[conn_type] = []
             self.post_cells[conn_type] = []
@@ -85,7 +85,7 @@ class Cook2019DataReader(ConnectomeDataset):
                 self.pre_cells[conn_type].append(sheet["C%i" % i].value)
 
             if self.verbose:
-                print(
+                print_(
                     " - Pre cells for %s (%i):\n%s"
                     % (
                         conn_type,
@@ -98,7 +98,7 @@ class Cook2019DataReader(ConnectomeDataset):
                 self.post_cells[conn_type].append(sheet.cell(row=3, column=i).value)
 
             if self.verbose:
-                print(
+                print_(
                     " - Post cells for %s (%i):\n%s"
                     % (
                         conn_type,
@@ -122,7 +122,7 @@ class Cook2019DataReader(ConnectomeDataset):
                         self.conn_nums[conn_type][i, j] = int(val)
 
             if self.verbose:
-                print(
+                print_(
                     " - Conns for %s (%s):\n%s"
                     % (
                         conn_type,
@@ -160,7 +160,7 @@ class Cook2019DataReader(ConnectomeDataset):
                         self.post_cells[conn_type][post_index]
                     )
                     if self.verbose and num > 0:
-                        print("Conn %s -> %s #%i" % (pre, post, num))
+                        print_("Conn %s -> %s #%i" % (pre, post, num))
 
                     if is_muscle(pre):
                         pre = convert_to_preferred_muscle_name(pre)
@@ -174,7 +174,7 @@ class Cook2019DataReader(ConnectomeDataset):
 
                         ci = ConnectionInfo(pre, post, num, syntype, synclass)
                         if self.verbose:
-                            print("Conn: %s" % (ci))
+                            print_("Conn: %s" % (ci))
                         conns.append(ci)
 
                         for p in [pre, post]:

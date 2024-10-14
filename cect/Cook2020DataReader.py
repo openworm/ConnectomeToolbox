@@ -3,12 +3,12 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
-from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
-from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
-from cect.ConnectomeReader import convert_to_preferred_muscle_name
-from cect.ConnectomeReader import is_muscle
-from cect.ConnectomeReader import is_marginal_cell
-from cect.ConnectomeReader import convert_to_preferred_phar_cell_name
+from cect.Cells import PREFERRED_NEURON_NAMES
+from cect.Cells import PREFERRED_MUSCLE_NAMES
+from cect.Cells import convert_to_preferred_muscle_name
+from cect.Cells import is_muscle
+from cect.Cells import is_marginal_cell
+from cect.Cells import convert_to_preferred_phar_cell_name
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 

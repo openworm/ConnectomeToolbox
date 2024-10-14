@@ -26,38 +26,38 @@ READER_DESCRIPTION = (
 )
 
 
-def get_all_muscle_prefixes():
+def _get_all_muscle_prefixes():
     return ["pm", "vm", "um", "dBWM", "vBWM"]
 
 
-def get_body_wall_muscle_prefixes():
+def _get_body_wall_muscle_prefixes():
     return ["dBWM", "vBWM"]
 
 
-def is_muscle(cell):
-    known_muscle_prefixes = get_all_muscle_prefixes()
+def _is_muscle(cell):
+    known_muscle_prefixes = _get_all_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
 
-def is_body_wall_muscle(cell):
-    known_muscle_prefixes = get_body_wall_muscle_prefixes()
+def _is_body_wall_muscle(cell):
+    known_muscle_prefixes = _get_body_wall_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
 
-def is_neuron(cell):
+def _is_neuron(cell):
     return cell[0].isupper()
 
 
-def remove_leading_index_zero(cell):
+def _remove_leading_index_zero(cell):
     """
     Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
     """
-    if is_neuron(cell) and cell[-2:].startswith("0"):
+    if _is_neuron(cell) and cell[-2:].startswith("0"):
         return "%s%s" % (cell[:-2], cell[-1:])
     return cell
 
 
-def get_old_muscle_name(muscle):
+def _get_old_muscle_name(muscle):
     index = int(muscle[5:])
     if index < 10:
         index = "0%s" % index
@@ -71,7 +71,7 @@ def get_old_muscle_name(muscle):
         return "MDR%s" % index
 
 
-def get_syntype(syntype):
+def _get_syntype(syntype):
     if syntype == "electrical":
         return "GapJunction"
     elif syntype == "chemical":
@@ -80,7 +80,7 @@ def get_syntype(syntype):
         raise NotImplementedError("Cannot parse syntype '%s'" % syntype)
 
 
-def get_synclass(cell, syntype):
+def _get_synclass(cell, syntype):
     # dirty hack
     if syntype == "GapJunction":
         return "Generic_GJ"
@@ -94,8 +94,8 @@ def parse_row(row):
     pre = str.strip(row["Source"])
     post = str.strip(row["Target"])
     num = int(row["Weight"])
-    syntype = get_syntype(str.strip(row["Type"]))
-    synclass = get_synclass(pre, syntype)
+    syntype = _get_syntype(str.strip(row["Type"]))
+    synclass = _get_synclass(pre, syntype)
     return pre, post, num, syntype, synclass
 
 
@@ -129,11 +129,11 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
             for row in reader:
                 pre, post, num, syntype, synclass = parse_row(row)
 
-                if not is_neuron(pre) or not is_neuron(post):
+                if not _is_neuron(pre) or not _is_neuron(post):
                     continue  # pre or post is not a neuron
 
-                pre = remove_leading_index_zero(pre)
-                post = remove_leading_index_zero(post)
+                pre = _remove_leading_index_zero(pre)
+                post = _remove_leading_index_zero(post)
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # print ConnectionInfo(pre, post, num, syntype, synclass)
@@ -171,22 +171,22 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
                 pre, post, num, syntype, synclass = parse_row(row)
 
                 if (
-                    not is_neuron(pre) and not is_body_wall_muscle(pre)
-                ) or not is_body_wall_muscle(post):
+                    not _is_neuron(pre) and not _is_body_wall_muscle(pre)
+                ) or not _is_body_wall_muscle(post):
                     # Don't add connections unless pre=neuron and post=body_wall_muscle
                     continue
 
-                if is_neuron(pre):
-                    pre = remove_leading_index_zero(pre)
+                if _is_neuron(pre):
+                    pre = _remove_leading_index_zero(pre)
                 else:
-                    pre = get_old_muscle_name(pre)
-                post = get_old_muscle_name(post)
+                    pre = _get_old_muscle_name(pre)
+                post = _get_old_muscle_name(post)
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # print ConnectionInfo(pre, post, num, syntype, synclass)
-                if is_neuron(pre) and pre not in neurons:
+                if _is_neuron(pre) and pre not in neurons:
                     neurons.append(pre)
-                elif is_body_wall_muscle(pre) and pre not in muscles:
+                elif _is_body_wall_muscle(pre) and pre not in muscles:
                     muscles.append(pre)
                 if post not in muscles:
                     muscles.append(post)

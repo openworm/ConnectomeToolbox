@@ -1,9 +1,9 @@
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeReader import convert_to_preferred_muscle_name
-from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import is_muscle
-from cect.ConnectomeReader import remove_leading_index_zero
+from cect.Cells import convert_to_preferred_muscle_name
+from cect.Cells import is_neuron
+from cect.Cells import is_muscle
+from cect.Cells import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
 

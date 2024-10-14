@@ -153,7 +153,6 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
         readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
 
-    readers["RipollSanchez"] = ["cect.RipollSanchezDataReader", "RipollSanchez_2023"]
     readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
     readers["White_whole"] = ["cect.White_whole", "White_1986"]
     readers["Test"] = ["cect.TestDataReader", None]
@@ -161,6 +160,10 @@ def generate_comparison_page(quick: bool, color_table=True):
     readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
 
     if not quick:
+        readers["RipollSanchez"] = [
+            "cect.RipollSanchezDataReader",
+            "RipollSanchez_2023",
+        ]
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]

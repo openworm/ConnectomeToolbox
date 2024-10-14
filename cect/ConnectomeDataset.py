@@ -8,16 +8,26 @@ from cect.Cells import get_standard_color
 from cect.Cells import is_bilateral_left
 from cect.Cells import is_bilateral_right
 from cect.Cells import are_bilateral_pair
-from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import is_muscle
+from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import is_neuron
+from cect.Cells import is_known_body_wall_muscle
+from cect.Cells import is_muscle
+from cect.Cells import is_pharyngeal_cell
 
 import numpy as np
 import math
 import sys
 import networkx as nx
 import pprint
+import random
 
 from cect.Cells import get_SIM_class
+
+
+def _get_epsilon(scale):
+    return scale * 0.05 * (1 - 2 * random.random())
 
 
 class ConnectomeDataset:
@@ -340,7 +350,7 @@ class ConnectomeDataset:
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
-        verbose = False
+        verbose = True
 
         print_("==============")
         print_(
@@ -360,7 +370,47 @@ class ConnectomeDataset:
         gap_junction = synclass == "Electrical" or "All" in synclass
 
         G = nx.Graph(conn_array)
-        pos = nx.spring_layout(G, seed=1)
+
+        init_pos = {}
+
+        for i, node_value in enumerate(self.nodes):
+            scale = 20
+            if is_pharyngeal_cell(node_value):
+                init_pos[i] = [
+                    -2 * scale + _get_epsilon(scale),
+                    0 * scale + _get_epsilon(scale),
+                ]
+            elif node_value in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
+                init_pos[i] = [
+                    -1 * scale + _get_epsilon(scale),
+                    0 + _get_epsilon(scale),
+                ]
+            elif node_value in INTERNEURONS_NONPHARYNGEAL_COOK:
+                init_pos[i] = [
+                    0 + _get_epsilon(scale),
+                    0.1 * scale + _get_epsilon(scale),
+                ]
+            elif node_value in MOTORNEURONS_NONPHARYNGEAL_COOK:
+                init_pos[i] = [1 * scale + _get_epsilon(scale), 0 + _get_epsilon(scale)]
+            elif is_known_body_wall_muscle(node_value):
+                init_pos[i] = [
+                    1 * scale + _get_epsilon(scale),
+                    (-1 * scale if node_value.startswith("MD") else 1 * scale)
+                    + _get_epsilon(scale),
+                ]
+            else:
+                init_pos[i] = [
+                    2 + _get_epsilon(scale),
+                    -0.1 * scale + _get_epsilon(scale),
+                ]
+
+        pos = nx.spring_layout(G, seed=1, iterations=20, k=8, pos=init_pos)
+        """
+        print("..................")
+        print(G.nodes)
+        print(init_pos)
+        print(pos)
+        print("..................")"""
 
         for i, node_value in enumerate(self.nodes):
             node_set = view.get_node_set(node_value)
@@ -396,10 +446,10 @@ class ConnectomeDataset:
 
                     if x0 != x1 or y0 != y1:
                         if verbose:
-                            print_(f" - Different points ({x0},{y0}) -> ({x1},{y1})")
+                            print_(f"\n - Different points ({x0},{y0}) -> ({x1},{y1})")
                         if not straight:
                             if verbose:
-                                print_(" - 2 way connections")
+                                print_("\n - 2 way connections")
                             # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
                             offset = 0.2
                             edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
@@ -407,7 +457,7 @@ class ConnectomeDataset:
                     else:
                         if verbose:
                             print_(
-                                f" - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
+                                f"\n - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
                             )
                         circle_offset_a = get_node_size(from_node_set) / 100
 
@@ -423,7 +473,7 @@ class ConnectomeDataset:
 
                     if verbose:
                         print_(
-                            f"Node {dir_[0]} ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
+                            f"{self.nodes[dir_[0]]}->{self.nodes[dir_[1]]}:{conn_weight} - Node {dir_[0]}  ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
                         )
                     line_color = "grey"
                     if gap_junction:
@@ -875,7 +925,7 @@ if __name__ == "__main__":
 
     cds.add_connection_info(ConnectionInfo("AVFL", "AVHL", 2, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("AVFR", "AVHL", 3, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", -3, "Send", "Acetylcholine"))
+    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", 3, "Send", "Acetylcholine"))
     cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
 
     cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
@@ -906,17 +956,24 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
+    # from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+
+    # from cect.White_whole import get_instance
+    # from cect.Cook2019HermReader import get_instance
+    from cect.TestDataReader import get_instance
+
+    cds = get_instance()
 
     cds2 = cds.get_connectome_view(view)
 
     print(cds2.summary())
 
-    fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
