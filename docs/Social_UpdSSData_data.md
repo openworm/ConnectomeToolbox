@@ -2,23 +2,43 @@
 title: UpdSSData
 ---
 
-## Dataset: UpdSSData
-Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity
 
-[Raw Data](UpdSSData_data.md){ .md-button  } [Neurons](Neurons_UpdSSData_data.md){ .md-button  } [Pharynx](Pharynx_UpdSSData_data.md){ .md-button  } [Social Network](Social_UpdSSData_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_UpdSSData_data.md){ .md-button  } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Social_White_A_data">White_A</a> - <a href="../Social_White_L4_data">White_L4</a> - <a href="../Social_White_whole_data">White_whole</a> - <a href="../Social_Varshney_data">Varshney</a> - <a href="../Social_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Social_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Social_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Social_Cook2019Male_data">Cook2019Male</a> - <a href="../Social_Cook2020_data">Cook2020</a> - <a href="../Social_Witvliet1_data">Witvliet1</a> - <a href="../Social_Witvliet2_data">Witvliet2</a> - <a href="../Social_Witvliet3_data">Witvliet3</a> - <a href="../Social_Witvliet4_data">Witvliet4</a> - <a href="../Social_Witvliet5_data">Witvliet5</a> - <a href="../Social_Witvliet6_data">Witvliet6</a> - <a href="../Social_Witvliet7_data">Witvliet7</a> - <a href="../Social_Witvliet8_data">Witvliet8</a> - <a href="../Social_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Social_Randi2023_data">Randi2023</a> - <a href="../Social_RipollSanchez_data">RipollSanchez</a> - <a href="../Social_Test_data">Test</a> - <a href="../Social_SSData_data">SSData</a> - <b><a href="../Social_UpdSSData_data">UpdSSData</a></b> - <a href="../Social_UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>UpdSSData</b><br/>Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist.csv** for neuronal connectivity<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../UpdSSData_data">Raw Data</a> - <a href="../Neurons_UpdSSData_data">Neurons</a> - <a href="../Pharynx_UpdSSData_data">Pharynx</a> - <b><a href="../Social_UpdSSData_data">Social Network</a></b> - <a href="../Full1_UpdSSData_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
+<a href="../Social_UpdSSData_data_graph">Graph</a> - <b><a href="../Social_UpdSSData_data">Matrix</a></b> - <a href="../Social_UpdSSData_data_hiveplot">Hive plot</a> - 
 
-[Graph :material-graphql:](Social_UpdSSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_UpdSSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_UpdSSData_data_hiveplot.md){ .md-button  }
 
-=== "Chemical Exc"
+    </tbody>
+</table>=== "Chemical Exc"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData_Social_Chemical_Exc.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData_Social_Electrical.json" }
     ```

@@ -2,25 +2,43 @@
 title: Cook2019Male
 ---
 
-## Dataset: Cook2019Male
-Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
-[Source publication of dataset](Cook_2019.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../White_A_data_hiveplot">White_A</a> - <a href="../White_L4_data_hiveplot">White_L4</a> - <a href="../White_whole_data_hiveplot">White_whole</a> - <a href="../Varshney_data_hiveplot">Varshney</a> - <a href="../Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - <a href="../Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <b><a href="../Cook2019Male_data_hiveplot">Cook2019Male</a></b> - <a href="../Cook2020_data_hiveplot">Cook2020</a> - <a href="../Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Witvliet6_data_hiveplot">Witvliet6</a> - <a href="../Witvliet7_data_hiveplot">Witvliet7</a> - <a href="../Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Randi2023_data_hiveplot">Randi2023</a> - <a href="../RipollSanchez_data_hiveplot">RipollSanchez</a> - <a href="../Test_data_hiveplot">Test</a> - <a href="../SSData_data_hiveplot">SSData</a> - <a href="../UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../UpdSSData2_data_hiveplot">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Cook2019Male</b><br/>Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity<br/><a href="../Cook_2019">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <b><a href="../Cook2019Male_data_hiveplot">Raw Data</a></b> - <a href="../Neurons_Cook2019Male_data_hiveplot">Neurons</a> - <a href="../Pharynx_Cook2019Male_data_hiveplot">Pharynx</a> - <a href="../Social_Cook2019Male_data_hiveplot">Social Network</a> - <a href="../Full1_Cook2019Male_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All of the cells present in the original connectome dataset</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Cook2019Male_data_hiveplot.md){ .md-button .md-button--primary } [Neurons](Neurons_Cook2019Male_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_Cook2019Male_data_hiveplot.md){ .md-button  } [Social Network](Social_Cook2019Male_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2019Male_data_hiveplot.md){ .md-button  } 
+<a href="../Cook2019Male_data_graph">Graph</a> - <a href="../Cook2019Male_data">Matrix</a> - <b><a href="../Cook2019Male_data_hiveplot">Hive plot</a></b> - 
 
-**All of the cells present in the original connectome dataset**
 
-[Graph :material-graphql:](Cook2019Male_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Cook2019Male_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Cook2019Male_data_hiveplot.md){ .md-button .md-button--primary }
+    </tbody>
+</table>=== "Chemical"
 
-=== "Chemical"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/Cook2019Male_Raw_Chemical_hiveplot.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/Cook2019Male_Raw_Electrical_hiveplot.json" }
     ```

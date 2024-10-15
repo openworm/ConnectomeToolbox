@@ -40,6 +40,7 @@ class TestDataReader(ConnectomeDataset):
         self.conns.append(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
 
         self.conns.append(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+
         self.conns.append(ConnectionInfo("VD3", "VA3", 2, "Send", "GABA"))
         self.conns.append(ConnectionInfo("VD3", "VB2", 2, "Send", "GABA"))
 
@@ -50,6 +51,9 @@ class TestDataReader(ConnectomeDataset):
 
         self.conns.append(ConnectionInfo("ASHR", "RMGR", 6, "Send", "Acetylcholine"))
         self.conns.append(ConnectionInfo("AWBR", "ASHR", 2, "Send", "Acetylcholine"))
+
+        self.conns.append(ConnectionInfo("I5", "M4", 9, "Send", "Acetylcholine"))
+        self.conns.append(ConnectionInfo("M4", "M1", 9, "Send", "Acetylcholine"))
 
         self.conns.append(
             ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")

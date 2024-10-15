@@ -2,23 +2,43 @@
 title: SSData
 ---
 
-## Dataset: SSData
-Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSData_data.md){ .md-button .md-button--primary } [Neurons](Neurons_SSData_data.md){ .md-button  } [Pharynx](Pharynx_SSData_data.md){ .md-button  } [Social Network](Social_SSData_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_SSData_data.md){ .md-button  } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../White_A_data">White_A</a> - <a href="../White_L4_data">White_L4</a> - <a href="../White_whole_data">White_whole</a> - <a href="../Varshney_data">Varshney</a> - <a href="../Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Cook2019Herm_data">Cook2019Herm</a> - <a href="../Cook2019Male_data">Cook2019Male</a> - <a href="../Cook2020_data">Cook2020</a> - <a href="../Witvliet1_data">Witvliet1</a> - <a href="../Witvliet2_data">Witvliet2</a> - <a href="../Witvliet3_data">Witvliet3</a> - <a href="../Witvliet4_data">Witvliet4</a> - <a href="../Witvliet5_data">Witvliet5</a> - <a href="../Witvliet6_data">Witvliet6</a> - <a href="../Witvliet7_data">Witvliet7</a> - <a href="../Witvliet8_data">Witvliet8</a> - <a href="../WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Randi2023_data">Randi2023</a> - <a href="../RipollSanchez_data">RipollSanchez</a> - <a href="../Test_data">Test</a> - <b><a href="../SSData_data">SSData</a></b> - <a href="../UpdSSData_data">UpdSSData</a> - <a href="../UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>SSData</b><br/>Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <b><a href="../SSData_data">Raw Data</a></b> - <a href="../Neurons_SSData_data">Neurons</a> - <a href="../Pharynx_SSData_data">Pharynx</a> - <a href="../Social_SSData_data">Social Network</a> - <a href="../Full1_SSData_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All of the cells present in the original connectome dataset</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**All of the cells present in the original connectome dataset**
+<a href="../SSData_data_graph">Graph</a> - <b><a href="../SSData_data">Matrix</a></b> - <a href="../SSData_data_hiveplot">Hive plot</a> - 
 
-[Graph :material-graphql:](SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](SSData_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](SSData_data_hiveplot.md){ .md-button  }
 
-=== "Chemical"
+    </tbody>
+</table>=== "Chemical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/SSData_Raw_Chemical.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/SSData_Raw_Electrical.json" }
     ```

@@ -2,16 +2,34 @@
 title: SSData
 ---
 
-## Dataset: SSData
-Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity
 
-[Raw Data](SSData_data_hiveplot.md){ .md-button  } [Neurons](Neurons_SSData_data_hiveplot.md){ .md-button  } [Pharynx](Pharynx_SSData_data_hiveplot.md){ .md-button  } [Social Network](Social_SSData_data_hiveplot.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_SSData_data_hiveplot.md){ .md-button  } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Social_White_A_data_hiveplot">White_A</a> - <a href="../Social_White_L4_data_hiveplot">White_L4</a> - <a href="../Social_White_whole_data_hiveplot">White_whole</a> - <a href="../Social_Varshney_data_hiveplot">Varshney</a> - <a href="../Social_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Social_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - <a href="../Social_Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Social_Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Social_Cook2020_data_hiveplot">Cook2020</a> - <a href="../Social_Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Social_Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Social_Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Social_Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Social_Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Social_Witvliet6_data_hiveplot">Witvliet6</a> - <a href="../Social_Witvliet7_data_hiveplot">Witvliet7</a> - <a href="../Social_Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../Social_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Social_Randi2023_data_hiveplot">Randi2023</a> - <a href="../Social_RipollSanchez_data_hiveplot">RipollSanchez</a> - <a href="../Social_Test_data_hiveplot">Test</a> - <b><a href="../Social_SSData_data_hiveplot">SSData</a></b> - <a href="../Social_UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../Social_UpdSSData2_data_hiveplot">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>SSData</b><br/>Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../SSData_data_hiveplot">Raw Data</a> - <a href="../Neurons_SSData_data_hiveplot">Neurons</a> - <a href="../Pharynx_SSData_data_hiveplot">Pharynx</a> - <b><a href="../Social_SSData_data_hiveplot">Social Network</a></b> - <a href="../Full1_SSData_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
+<a href="../Social_SSData_data_graph">Graph</a> - <a href="../Social_SSData_data">Matrix</a> - <b><a href="../Social_SSData_data_hiveplot">Hive plot</a></b> - 
 
-[Graph :material-graphql:](Social_SSData_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_SSData_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Social_SSData_data_hiveplot.md){ .md-button .md-button--primary }
 
-=== "Chemical Exc"
+    </tbody>
+</table>=== "Chemical Exc"
 No plottable connections of this type...
 === "Electrical"
 No plottable connections of this type...

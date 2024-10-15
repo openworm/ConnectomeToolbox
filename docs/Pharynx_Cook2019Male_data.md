@@ -2,25 +2,43 @@
 title: Cook2019Male
 ---
 
-## Dataset: Cook2019Male
-Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity
 
-[Source publication of dataset](Cook_2019.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Pharynx_White_A_data">White_A</a> - <a href="../Pharynx_White_L4_data">White_L4</a> - <a href="../Pharynx_White_whole_data">White_whole</a> - <a href="../Pharynx_Varshney_data">Varshney</a> - <a href="../Pharynx_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Pharynx_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Pharynx_Cook2019Herm_data">Cook2019Herm</a> - <b><a href="../Pharynx_Cook2019Male_data">Cook2019Male</a></b> - <a href="../Pharynx_Cook2020_data">Cook2020</a> - <a href="../Pharynx_Witvliet1_data">Witvliet1</a> - <a href="../Pharynx_Witvliet2_data">Witvliet2</a> - <a href="../Pharynx_Witvliet3_data">Witvliet3</a> - <a href="../Pharynx_Witvliet4_data">Witvliet4</a> - <a href="../Pharynx_Witvliet5_data">Witvliet5</a> - <a href="../Pharynx_Witvliet6_data">Witvliet6</a> - <a href="../Pharynx_Witvliet7_data">Witvliet7</a> - <a href="../Pharynx_Witvliet8_data">Witvliet8</a> - <a href="../Pharynx_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Pharynx_Randi2023_data">Randi2023</a> - <a href="../Pharynx_RipollSanchez_data">RipollSanchez</a> - <a href="../Pharynx_Test_data">Test</a> - <a href="../Pharynx_SSData_data">SSData</a> - <a href="../Pharynx_UpdSSData_data">UpdSSData</a> - <a href="../Pharynx_UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Cook2019Male</b><br/>Data extracted from **SI 5 Connectome adjacency matrices.xlsx** for neuronal connectivity<br/><a href="../Cook_2019">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Cook2019Male_data">Raw Data</a> - <a href="../Neurons_Cook2019Male_data">Neurons</a> - <b><a href="../Pharynx_Cook2019Male_data">Pharynx</a></b> - <a href="../Social_Cook2019Male_data">Social Network</a> - <a href="../Full1_Cook2019Male_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Cook2019Male_data.md){ .md-button  } [Neurons](Neurons_Cook2019Male_data.md){ .md-button  } [Pharynx](Pharynx_Cook2019Male_data.md){ .md-button .md-button--primary } [Social Network](Social_Cook2019Male_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Cook2019Male_data.md){ .md-button  } 
+<a href="../Pharynx_Cook2019Male_data_graph">Graph</a> - <b><a href="../Pharynx_Cook2019Male_data">Matrix</a></b> - <a href="../Pharynx_Cook2019Male_data_hiveplot">Hive plot</a> - 
 
-**Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Pharynx_Cook2019Male_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Pharynx_Cook2019Male_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Pharynx_Cook2019Male_data_hiveplot.md){ .md-button  }
+    </tbody>
+</table>=== "Chemical Exc"
 
-=== "Chemical Exc"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/Cook2019Male_Pharynx_Chemical_Exc.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/Cook2019Male_Pharynx_Electrical.json" }
     ```

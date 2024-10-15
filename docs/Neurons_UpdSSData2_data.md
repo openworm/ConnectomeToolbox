@@ -2,29 +2,50 @@
 title: UpdSSData2
 ---
 
-## Dataset: UpdSSData2
-Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist_MODIFIED.csv** for neuronal connectivity
 
-[Raw Data](UpdSSData2_data.md){ .md-button  } [Neurons](Neurons_UpdSSData2_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_UpdSSData2_data.md){ .md-button  } [Social Network](Social_UpdSSData2_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_UpdSSData2_data.md){ .md-button  } 
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Neurons_White_A_data">White_A</a> - <a href="../Neurons_White_L4_data">White_L4</a> - <a href="../Neurons_White_whole_data">White_whole</a> - <a href="../Neurons_Varshney_data">Varshney</a> - <a href="../Neurons_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Neurons_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Neurons_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Neurons_Cook2019Male_data">Cook2019Male</a> - <a href="../Neurons_Cook2020_data">Cook2020</a> - <a href="../Neurons_Witvliet1_data">Witvliet1</a> - <a href="../Neurons_Witvliet2_data">Witvliet2</a> - <a href="../Neurons_Witvliet3_data">Witvliet3</a> - <a href="../Neurons_Witvliet4_data">Witvliet4</a> - <a href="../Neurons_Witvliet5_data">Witvliet5</a> - <a href="../Neurons_Witvliet6_data">Witvliet6</a> - <a href="../Neurons_Witvliet7_data">Witvliet7</a> - <a href="../Neurons_Witvliet8_data">Witvliet8</a> - <a href="../Neurons_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Neurons_Randi2023_data">Randi2023</a> - <a href="../Neurons_RipollSanchez_data">RipollSanchez</a> - <a href="../Neurons_Test_data">Test</a> - <a href="../Neurons_SSData_data">SSData</a> - <a href="../Neurons_UpdSSData_data">UpdSSData</a> - <b><a href="../Neurons_UpdSSData2_data">UpdSSData2</a></b> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>UpdSSData2</b><br/>Data extracted from **/Users/padraig/git/ConnectomeToolbox/cect/data/herm_full_edgelist_MODIFIED.csv** for neuronal connectivity<br/></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../UpdSSData2_data">Raw Data</a> - <b><a href="../Neurons_UpdSSData2_data">Neurons</a></b> - <a href="../Pharynx_UpdSSData2_data">Pharynx</a> - <a href="../Social_UpdSSData2_data">Social Network</a> - <a href="../Full1_UpdSSData2_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All 302 hermaphrodite neurons (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
+<a href="../Neurons_UpdSSData2_data_graph">Graph</a> - <b><a href="../Neurons_UpdSSData2_data">Matrix</a></b> - <a href="../Neurons_UpdSSData2_data_hiveplot">Hive plot</a> - 
 
-[Graph :material-graphql:](Neurons_UpdSSData2_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_UpdSSData2_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_UpdSSData2_data_hiveplot.md){ .md-button  }
 
-=== "Chemical Exc"
+    </tbody>
+</table>=== "Chemical Exc"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData2_Neurons_Chemical_Exc.json" }
     ```
 
 === "Chemical Inh"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData2_Neurons_Chemical_Inh.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/UpdSSData2_Neurons_Electrical.json" }
     ```

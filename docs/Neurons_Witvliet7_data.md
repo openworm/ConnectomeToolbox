@@ -2,25 +2,43 @@
 title: Witvliet7
 ---
 
-## Dataset: Witvliet7
-Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity
 
-[Source publication of dataset](Witvliet_2021.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Neurons_White_A_data">White_A</a> - <a href="../Neurons_White_L4_data">White_L4</a> - <a href="../Neurons_White_whole_data">White_whole</a> - <a href="../Neurons_Varshney_data">Varshney</a> - <a href="../Neurons_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Neurons_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Neurons_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Neurons_Cook2019Male_data">Cook2019Male</a> - <a href="../Neurons_Cook2020_data">Cook2020</a> - <a href="../Neurons_Witvliet1_data">Witvliet1</a> - <a href="../Neurons_Witvliet2_data">Witvliet2</a> - <a href="../Neurons_Witvliet3_data">Witvliet3</a> - <a href="../Neurons_Witvliet4_data">Witvliet4</a> - <a href="../Neurons_Witvliet5_data">Witvliet5</a> - <a href="../Neurons_Witvliet6_data">Witvliet6</a> - <b><a href="../Neurons_Witvliet7_data">Witvliet7</a></b> - <a href="../Neurons_Witvliet8_data">Witvliet8</a> - <a href="../Neurons_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Neurons_Randi2023_data">Randi2023</a> - <a href="../Neurons_RipollSanchez_data">RipollSanchez</a> - <a href="../Neurons_Test_data">Test</a> - <a href="../Neurons_SSData_data">SSData</a> - <a href="../Neurons_UpdSSData_data">UpdSSData</a> - <a href="../Neurons_UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Witvliet7</b><br/>Data extracted from **witvliet_2020_7.xlsx** for neuronal connectivity<br/><a href="../Witvliet_2021">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Witvliet7_data">Raw Data</a> - <b><a href="../Neurons_Witvliet7_data">Neurons</a></b> - <a href="../Pharynx_Witvliet7_data">Pharynx</a> - <a href="../Social_Witvliet7_data">Social Network</a> - <a href="../Full1_Witvliet7_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All 302 hermaphrodite neurons (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Witvliet7_data.md){ .md-button  } [Neurons](Neurons_Witvliet7_data.md){ .md-button .md-button--primary } [Pharynx](Pharynx_Witvliet7_data.md){ .md-button  } [Social Network](Social_Witvliet7_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Witvliet7_data.md){ .md-button  } 
+<a href="../Neurons_Witvliet7_data_graph">Graph</a> - <b><a href="../Neurons_Witvliet7_data">Matrix</a></b> - <a href="../Neurons_Witvliet7_data_hiveplot">Hive plot</a> - 
 
-**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Neurons_Witvliet7_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_Witvliet7_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Neurons_Witvliet7_data_hiveplot.md){ .md-button  }
+    </tbody>
+</table>=== "Chemical Exc"
 
-=== "Chemical Exc"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/Witvliet7_Neurons_Chemical_Exc.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/Witvliet7_Neurons_Electrical.json" }
     ```

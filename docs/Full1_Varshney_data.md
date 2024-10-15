@@ -2,25 +2,43 @@
 title: Varshney
 ---
 
-## Dataset: Varshney
-Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity
 
-[Source publication of dataset](Varshney_2011.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Full1_White_A_data">White_A</a> - <a href="../Full1_White_L4_data">White_L4</a> - <a href="../Full1_White_whole_data">White_whole</a> - <b><a href="../Full1_Varshney_data">Varshney</a></b> - <a href="../Full1_Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Full1_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data">Cook2019Male</a> - <a href="../Full1_Cook2020_data">Cook2020</a> - <a href="../Full1_Witvliet1_data">Witvliet1</a> - <a href="../Full1_Witvliet2_data">Witvliet2</a> - <a href="../Full1_Witvliet3_data">Witvliet3</a> - <a href="../Full1_Witvliet4_data">Witvliet4</a> - <a href="../Full1_Witvliet5_data">Witvliet5</a> - <a href="../Full1_Witvliet6_data">Witvliet6</a> - <a href="../Full1_Witvliet7_data">Witvliet7</a> - <a href="../Full1_Witvliet8_data">Witvliet8</a> - <a href="../Full1_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Full1_Randi2023_data">Randi2023</a> - <a href="../Full1_RipollSanchez_data">RipollSanchez</a> - <a href="../Full1_Test_data">Test</a> - <a href="../Full1_SSData_data">SSData</a> - <a href="../Full1_UpdSSData_data">UpdSSData</a> - <a href="../Full1_UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Varshney</b><br/>Data extracted from **NeuronConnectFormatted.xlsx** for neuronal connectivity<br/><a href="../Varshney_2011">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Varshney_data">Raw Data</a> - <a href="../Neurons_Varshney_data">Neurons</a> - <a href="../Pharynx_Varshney_data">Pharynx</a> - <a href="../Social_Varshney_data">Social Network</a> - <b><a href="../Full1_Varshney_data">Cook 2019 Fig 3</a></b> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Varshney_data.md){ .md-button  } [Neurons](Neurons_Varshney_data.md){ .md-button  } [Pharynx](Pharynx_Varshney_data.md){ .md-button  } [Social Network](Social_Varshney_data.md){ .md-button  } [Cook 2019 Fig 3](Full1_Varshney_data.md){ .md-button .md-button--primary } 
+<a href="../Full1_Varshney_data_graph">Graph</a> - <b><a href="../Full1_Varshney_data">Matrix</a></b> - <a href="../Full1_Varshney_data_hiveplot">Hive plot</a> - 
 
-**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-[Graph :material-graphql:](Full1_Varshney_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Full1_Varshney_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Full1_Varshney_data_hiveplot.md){ .md-button  }
+    </tbody>
+</table>=== "Chemical"
 
-=== "Chemical"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/Varshney_Full1_Chemical.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/Varshney_Full1_Electrical.json" }
     ```

@@ -2,18 +2,34 @@
 title: Bentley2016_MA
 ---
 
-## Dataset: Bentley2016_MA
-Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity
 
-[Source publication of dataset](Bentley_2016.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Social_White_A_data">White_A</a> - <a href="../Social_White_L4_data">White_L4</a> - <a href="../Social_White_whole_data">White_whole</a> - <a href="../Social_Varshney_data">Varshney</a> - <b><a href="../Social_Bentley2016_MA_data">Bentley2016_MA</a></b> - <a href="../Social_Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Social_Cook2019Herm_data">Cook2019Herm</a> - <a href="../Social_Cook2019Male_data">Cook2019Male</a> - <a href="../Social_Cook2020_data">Cook2020</a> - <a href="../Social_Witvliet1_data">Witvliet1</a> - <a href="../Social_Witvliet2_data">Witvliet2</a> - <a href="../Social_Witvliet3_data">Witvliet3</a> - <a href="../Social_Witvliet4_data">Witvliet4</a> - <a href="../Social_Witvliet5_data">Witvliet5</a> - <a href="../Social_Witvliet6_data">Witvliet6</a> - <a href="../Social_Witvliet7_data">Witvliet7</a> - <a href="../Social_Witvliet8_data">Witvliet8</a> - <a href="../Social_WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Social_Randi2023_data">Randi2023</a> - <a href="../Social_RipollSanchez_data">RipollSanchez</a> - <a href="../Social_Test_data">Test</a> - <a href="../Social_SSData_data">SSData</a> - <a href="../Social_UpdSSData_data">UpdSSData</a> - <a href="../Social_UpdSSData2_data">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>Bentley2016_MA</b><br/>Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity<br/><a href="../Bentley_2016">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../Bentley2016_MA_data">Raw Data</a> - <a href="../Neurons_Bentley2016_MA_data">Neurons</a> - <a href="../Pharynx_Bentley2016_MA_data">Pharynx</a> - <b><a href="../Social_Bentley2016_MA_data">Social Network</a></b> - <a href="../Full1_Bentley2016_MA_data">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](Bentley2016_MA_data.md){ .md-button  } [Neurons](Neurons_Bentley2016_MA_data.md){ .md-button  } [Pharynx](Pharynx_Bentley2016_MA_data.md){ .md-button  } [Social Network](Social_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Cook 2019 Fig 3](Full1_Bentley2016_MA_data.md){ .md-button  } 
+<a href="../Social_Bentley2016_MA_data_graph">Graph</a> - <b><a href="../Social_Bentley2016_MA_data">Matrix</a></b> - <a href="../Social_Bentley2016_MA_data_hiveplot">Hive plot</a> - 
 
-**Hub and spoke circuit for social behavior as in Macosko et al. 2009**
 
-[Graph :material-graphql:](Social_Bentley2016_MA_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Social_Bentley2016_MA_data.md){ .md-button .md-button--primary } [Hive plot :material-star-three-points-outline:](Social_Bentley2016_MA_data_hiveplot.md){ .md-button  }
-
-No connections present in this view
+    </tbody>
+</table>No connections present in this view
 
 ### Neurons (233)
 <details><summary>Full list of Neurons</summary>

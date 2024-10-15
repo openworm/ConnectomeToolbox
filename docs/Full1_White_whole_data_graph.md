@@ -2,18 +2,34 @@
 title: White_whole
 ---
 
-## Dataset: White_whole
-Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity
 
-[Source publication of dataset](White_1986.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <a href="../Full1_White_A_data_graph">White_A</a> - <a href="../Full1_White_L4_data_graph">White_L4</a> - <b><a href="../Full1_White_whole_data_graph">White_whole</a></b> - <a href="../Full1_Varshney_data_graph">Varshney</a> - <a href="../Full1_Bentley2016_MA_data_graph">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> - <a href="../Full1_Cook2019Herm_data_graph">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data_graph">Cook2019Male</a> - <a href="../Full1_Cook2020_data_graph">Cook2020</a> - <a href="../Full1_Witvliet1_data_graph">Witvliet1</a> - <a href="../Full1_Witvliet2_data_graph">Witvliet2</a> - <a href="../Full1_Witvliet3_data_graph">Witvliet3</a> - <a href="../Full1_Witvliet4_data_graph">Witvliet4</a> - <a href="../Full1_Witvliet5_data_graph">Witvliet5</a> - <a href="../Full1_Witvliet6_data_graph">Witvliet6</a> - <a href="../Full1_Witvliet7_data_graph">Witvliet7</a> - <a href="../Full1_Witvliet8_data_graph">Witvliet8</a> - <a href="../Full1_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> - <a href="../Full1_Randi2023_data_graph">Randi2023</a> - <a href="../Full1_RipollSanchez_data_graph">RipollSanchez</a> - <a href="../Full1_Test_data_graph">Test</a> - <a href="../Full1_SSData_data_graph">SSData</a> - <a href="../Full1_UpdSSData_data_graph">UpdSSData</a> - <a href="../Full1_UpdSSData2_data_graph">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>White_whole</b><br/>Data extracted from **aconnectome_white_1986_whole.csv** for neuronal connectivity<br/><a href="../White_1986">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../White_whole_data_graph">Raw Data</a> - <a href="../Neurons_White_whole_data_graph">Neurons</a> - <a href="../Pharynx_White_whole_data_graph">Pharynx</a> - <a href="../Social_White_whole_data_graph">Social Network</a> - <b><a href="../Full1_White_whole_data_graph">Cook 2019 Fig 3</a></b> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](White_whole_data_graph.md){ .md-button  } [Neurons](Neurons_White_whole_data_graph.md){ .md-button  } [Pharynx](Pharynx_White_whole_data_graph.md){ .md-button  } [Social Network](Social_White_whole_data_graph.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_whole_data_graph.md){ .md-button .md-button--primary } 
+<b><a href="../Full1_White_whole_data_graph">Graph</a></b> - <a href="../Full1_White_whole_data">Matrix</a> - <a href="../Full1_White_whole_data_hiveplot">Hive plot</a> - 
 
-**A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019**
 
-[Graph :material-graphql:](Full1_White_whole_data_graph.md){ .md-button .md-button--primary } [Matrix :material-checkerboard:](Full1_White_whole_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Full1_White_whole_data_hiveplot.md){ .md-button  }
-
-=== "Chemical"
+    </tbody>
+</table>=== "Chemical"
 
     ```plotly
     { "file_path": "./assets/White_whole_Full1_Chemical_graph.json" }

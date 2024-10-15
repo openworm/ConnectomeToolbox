@@ -2,25 +2,43 @@
 title: White_A
 ---
 
-## Dataset: White_A
-Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity
 
-[Source publication of dataset](White_1986.md)
+<table>
+    <tbody>
+        <tr>
+            <td><b>Choose Dataset: </b></td>
+            <td>- <b><a href="../Neurons_White_A_data_hiveplot">White_A</a></b> - <a href="../Neurons_White_L4_data_hiveplot">White_L4</a> - <a href="../Neurons_White_whole_data_hiveplot">White_whole</a> - <a href="../Neurons_Varshney_data_hiveplot">Varshney</a> - <a href="../Neurons_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Neurons_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - <a href="../Neurons_Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Neurons_Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Neurons_Cook2020_data_hiveplot">Cook2020</a> - <a href="../Neurons_Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Neurons_Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Neurons_Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Neurons_Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Neurons_Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Neurons_Witvliet6_data_hiveplot">Witvliet6</a> - <a href="../Neurons_Witvliet7_data_hiveplot">Witvliet7</a> - <a href="../Neurons_Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../Neurons_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Neurons_Randi2023_data_hiveplot">Randi2023</a> - <a href="../Neurons_RipollSanchez_data_hiveplot">RipollSanchez</a> - <a href="../Neurons_Test_data_hiveplot">Test</a> - <a href="../Neurons_SSData_data_hiveplot">SSData</a> - <a href="../Neurons_UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../Neurons_UpdSSData2_data_hiveplot">UpdSSData2</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><b>White_A</b><br/>Data extracted from **aconnectome_white_1986_A.csv** for neuronal connectivity<br/><a href="../White_1986">Source publication of dataset</a></td>
+        </tr>
+        <tr>
+            <td><b>Choose View: </b></td>
+            <td> - <a href="../White_A_data_hiveplot">Raw Data</a> - <b><a href="../Neurons_White_A_data_hiveplot">Neurons</a></b> - <a href="../Pharynx_White_A_data_hiveplot">Pharynx</a> - <a href="../Social_White_A_data_hiveplot">Social Network</a> - <a href="../Full1_White_A_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td ><i>All 302 hermaphrodite neurons (whether present or not in the connectome dataset)</i></td>
+        </tr>
+        <tr>
+            <td><b>Choose Graph:</b></td>
+            <td>
 
-[Raw Data](White_A_data_hiveplot.md){ .md-button  } [Neurons](Neurons_White_A_data_hiveplot.md){ .md-button .md-button--primary } [Pharynx](Pharynx_White_A_data_hiveplot.md){ .md-button  } [Social Network](Social_White_A_data_hiveplot.md){ .md-button  } [Cook 2019 Fig 3](Full1_White_A_data_hiveplot.md){ .md-button  } 
+<a href="../Neurons_White_A_data_graph">Graph</a> - <a href="../Neurons_White_A_data">Matrix</a> - <b><a href="../Neurons_White_A_data_hiveplot">Hive plot</a></b> - 
 
-**All 302 hermaphrodite neurons (whether present or not in the connectome dataset)**
 
-[Graph :material-graphql:](Neurons_White_A_data_graph.md){ .md-button  } [Matrix :material-checkerboard:](Neurons_White_A_data.md){ .md-button  } [Hive plot :material-star-three-points-outline:](Neurons_White_A_data_hiveplot.md){ .md-button .md-button--primary }
+    </tbody>
+</table>=== "Chemical Exc"
 
-=== "Chemical Exc"
-
+    <br/>
     ```plotly
     { "file_path": "./assets/White_A_Neurons_Chemical_Exc_hiveplot.json" }
     ```
 
 === "Electrical"
 
+    <br/>
     ```plotly
     { "file_path": "./assets/White_A_Neurons_Electrical_hiveplot.json" }
     ```

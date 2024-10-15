@@ -203,7 +203,7 @@
         5.873078879911928
       ],
       "y": [
-        -2.137625895785429
+        -2.6
       ]
     },
     {
@@ -221,7 +221,7 @@
         5.873078879911928
       ],
       "y": [
-        2.1376258957854293
+        2.6
       ]
     },
     {
@@ -239,7 +239,7 @@
         -1.0853011104183143
       ],
       "y": [
-        6.1550484563263
+        5.4
       ]
     },
     {
@@ -293,7 +293,7 @@
         -1.0853011104183146
       ],
       "y": [
-        -6.1550484563263
+        -5.4
       ]
     },
     {
@@ -410,6 +410,7 @@
         "color": [
           "#ff3300",
           "#ff3300",
+          "#ff3300",
           "#ff3300"
         ],
         "opacity": 0.8,
@@ -418,17 +419,20 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
         "AVBL (in: 2, out: 0)",
-        "PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
-        "PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
+        0.9396926207859084,
         4.698463103929543,
         0.9396926207859084,
         0.9396926207859084
       ],
       "y": [
+        -0.3420201433256686,
         -1.710100716628343,
         -0.3420201433256686,
         -0.3420201433256686
@@ -440,6 +444,7 @@
         "color": [
           "#ff3300",
           "#ff3300",
+          "#ff3300",
           "#ff3300"
         ],
         "opacity": 0.8,
@@ -448,17 +453,20 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
         "AVBL (in: 2, out: 0)",
-        "PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
-        "PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
+        0.9396926207859084,
         4.698463103929543,
         0.9396926207859084,
         0.9396926207859084
       ],
       "y": [
+        0.3420201433256687,
         1.7101007166283435,
         0.3420201433256687,
         0.3420201433256687
@@ -475,6 +483,8 @@
           "#9966cc",
           "#9966cc",
           "#9966cc",
+          "#9966cc",
+          "#9966cc",
           "#9966cc"
         ],
         "opacity": 0.8,
@@ -483,17 +493,21 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
         "DB4 (in: 0, out: 1)<br>VB6 (in: 0, out: 1)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
         "DB4 (in: 0, out: 1)<br>VB6 (in: 0, out: 1)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)"
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
+        -0.1736481776669303,
+        -0.1736481776669303,
         -0.5209445330007909,
         -0.1736481776669303,
         -0.1736481776669303,
@@ -504,6 +518,8 @@
         -0.1736481776669303
       ],
       "y": [
+        0.984807753012208,
+        0.984807753012208,
         2.954423259036624,
         0.984807753012208,
         0.984807753012208,
@@ -525,6 +541,8 @@
           "#9966cc",
           "#9966cc",
           "#9966cc",
+          "#9966cc",
+          "#9966cc",
           "#9966cc"
         ],
         "opacity": 0.8,
@@ -533,17 +551,21 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
         "DB4 (in: 0, out: 1)<br>VB6 (in: 0, out: 1)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
         "DB4 (in: 0, out: 1)<br>VB6 (in: 0, out: 1)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
-        "DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)"
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)",
+        "M1 (in: 0, out: 0)<br>M4 (in: 0, out: 0)<br>DD4 (in: 0, out: 0)<br>VA3 (in: 0, out: 0)<br>VA6 (in: 0, out: 0)<br>VB2 (in: 0, out: 0)<br>VD3 (in: 0, out: 0)<br>VD6 (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
+        -0.7660444431189779,
+        -0.7660444431189779,
         -2.2981333293569337,
         -0.7660444431189779,
         -0.7660444431189779,
@@ -554,6 +576,8 @@
         -0.7660444431189779
       ],
       "y": [
+        0.6427876096865395,
+        0.6427876096865395,
         1.9283628290596184,
         0.6427876096865395,
         0.6427876096865395,
@@ -638,6 +662,12 @@
     "dragmode": "pan",
     "height": 800,
     "hovermode": "closest",
+    "margin": {
+      "b": 2,
+      "l": 2,
+      "r": 2,
+      "t": 2
+    },
     "paper_bgcolor": "rgba(0, 0, 0, 0)",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",
     "showlegend": false,
@@ -646,14 +676,14 @@
         "bar": [
           {
             "error_x": {
-              "color": "#f2f5fa"
+              "color": "#2a3f5f"
             },
             "error_y": {
-              "color": "#f2f5fa"
+              "color": "#2a3f5f"
             },
             "marker": {
               "line": {
-                "color": "rgb(17,17,17)",
+                "color": "white",
                 "width": 0.5
               },
               "pattern": {
@@ -669,7 +699,7 @@
           {
             "marker": {
               "line": {
-                "color": "rgb(17,17,17)",
+                "color": "white",
                 "width": 0.5
               },
               "pattern": {
@@ -684,18 +714,18 @@
         "carpet": [
           {
             "aaxis": {
-              "endlinecolor": "#A2B1C6",
-              "gridcolor": "#506784",
-              "linecolor": "#506784",
-              "minorgridcolor": "#506784",
-              "startlinecolor": "#A2B1C6"
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
             },
             "baxis": {
-              "endlinecolor": "#A2B1C6",
-              "gridcolor": "#506784",
-              "linecolor": "#506784",
-              "minorgridcolor": "#506784",
-              "startlinecolor": "#A2B1C6"
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
             },
             "type": "carpet"
           }
@@ -1013,10 +1043,10 @@
         ],
         "scatter": [
           {
-            "marker": {
-              "line": {
-                "color": "#283442"
-              }
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
             },
             "type": "scatter"
           }
@@ -1063,8 +1093,9 @@
         "scattergl": [
           {
             "marker": {
-              "line": {
-                "color": "#283442"
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
               }
             },
             "type": "scattergl"
@@ -1169,18 +1200,18 @@
           {
             "cells": {
               "fill": {
-                "color": "#506784"
+                "color": "#EBF0F8"
               },
               "line": {
-                "color": "rgb(17,17,17)"
+                "color": "white"
               }
             },
             "header": {
               "fill": {
-                "color": "#2a3f5f"
+                "color": "#C8D4E3"
               },
               "line": {
-                "color": "rgb(17,17,17)"
+                "color": "white"
               }
             },
             "type": "table"
@@ -1189,7 +1220,7 @@
       },
       "layout": {
         "annotationdefaults": {
-          "arrowcolor": "#f2f5fa",
+          "arrowcolor": "#2a3f5f",
           "arrowhead": 0,
           "arrowwidth": 1
         },
@@ -1345,123 +1376,113 @@
           "#FECB52"
         ],
         "font": {
-          "color": "#f2f5fa"
+          "color": "#2a3f5f"
         },
         "geo": {
-          "bgcolor": "rgb(17,17,17)",
-          "lakecolor": "rgb(17,17,17)",
-          "landcolor": "rgb(17,17,17)",
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "white",
           "showlakes": true,
           "showland": true,
-          "subunitcolor": "#506784"
+          "subunitcolor": "#C8D4E3"
         },
         "hoverlabel": {
           "align": "left"
         },
         "hovermode": "closest",
         "mapbox": {
-          "style": "dark"
+          "style": "light"
         },
-        "paper_bgcolor": "rgb(17,17,17)",
-        "plot_bgcolor": "rgb(17,17,17)",
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "white",
         "polar": {
           "angularaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
             "ticks": ""
           },
-          "bgcolor": "rgb(17,17,17)",
+          "bgcolor": "white",
           "radialaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
             "ticks": ""
           }
         },
         "scene": {
           "xaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "#EBF0F8",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "#EBF0F8"
           },
           "yaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "#EBF0F8",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "#EBF0F8"
           },
           "zaxis": {
-            "backgroundcolor": "rgb(17,17,17)",
-            "gridcolor": "#506784",
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
             "gridwidth": 2,
-            "linecolor": "#506784",
+            "linecolor": "#EBF0F8",
             "showbackground": true,
             "ticks": "",
-            "zerolinecolor": "#C8D4E3"
+            "zerolinecolor": "#EBF0F8"
           }
         },
         "shapedefaults": {
           "line": {
-            "color": "#f2f5fa"
+            "color": "#2a3f5f"
           }
-        },
-        "sliderdefaults": {
-          "bgcolor": "#C8D4E3",
-          "bordercolor": "rgb(17,17,17)",
-          "borderwidth": 1,
-          "tickwidth": 0
         },
         "ternary": {
           "aaxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
             "ticks": ""
           },
           "baxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
             "ticks": ""
           },
-          "bgcolor": "rgb(17,17,17)",
+          "bgcolor": "white",
           "caxis": {
-            "gridcolor": "#506784",
-            "linecolor": "#506784",
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
             "ticks": ""
           }
         },
         "title": {
           "x": 0.05
         },
-        "updatemenudefaults": {
-          "bgcolor": "#506784",
-          "borderwidth": 0
-        },
         "xaxis": {
           "automargin": true,
-          "gridcolor": "#283442",
-          "linecolor": "#506784",
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "#283442",
+          "zerolinecolor": "#EBF0F8",
           "zerolinewidth": 2
         },
         "yaxis": {
           "automargin": true,
-          "gridcolor": "#283442",
-          "linecolor": "#506784",
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
           "ticks": "",
           "title": {
             "standoff": 15
           },
-          "zerolinecolor": "#283442",
+          "zerolinecolor": "#EBF0F8",
           "zerolinewidth": 2
         }
       }

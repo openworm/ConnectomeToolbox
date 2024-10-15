@@ -126,17 +126,32 @@
           "white"
         ],
         [
-          0.5,
+          0.2,
+          "blue"
+        ],
+        [
+          0.4,
+          "cyan"
+        ],
+        [
+          0.6,
           "green"
         ],
         [
+          0.8,
+          "yellow"
+        ],
+        [
           1.0,
-          "black"
+          "orange"
         ]
       ]
     },
     "margin": {
-      "t": 60
+      "b": 2,
+      "l": 2,
+      "r": 2,
+      "t": 2
     },
     "template": {
       "data": {

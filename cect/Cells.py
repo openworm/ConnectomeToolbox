@@ -174,6 +174,7 @@ SENSORY_NEURONS_COOK = (
     + SENSORY_NEURONS_6_COOK
 )
 
+
 SENSORY_NEURONS_COOK_CATEGORIES = {
     "SN1": SENSORY_NEURONS_1_COOK,
     "SN2": SENSORY_NEURONS_2_COOK,
@@ -639,13 +640,19 @@ PHARYNGEAL_NEURONS = (
     PHARYNGEAL_INTERNEURONS + PHARYNGEAL_MOTORNEURONS + PHARYNGEAL_POLYMODAL_NEURONS
 )
 
-MOTORNEURONS_COOK = (
+SENSORY_NEURONS_NONPHARYNGEAL_COOK = []
+for cell in SENSORY_NEURONS_COOK:
+    if cell not in PHARYNGEAL_NEURONS:
+        SENSORY_NEURONS_NONPHARYNGEAL_COOK.append(cell)
+
+MOTORNEURONS_NONPHARYNGEAL_COOK = (
     HEAD_MOTORNEURONS_COOK
     + SUBLATERAL_MOTORNEURONS_COOK
     + VENTRAL_CORD_MOTORNEURONS
-    + PHARYNGEAL_MOTORNEURONS
     + HERM_SPECIFIC_MOTORNEURONS
 )
+
+MOTORNEURONS_COOK = MOTORNEURONS_NONPHARYNGEAL_COOK + PHARYNGEAL_MOTORNEURONS
 
 PREFERRED_NEURON_NAMES_COOK = (
     INTERNEURONS_COOK
@@ -664,7 +671,7 @@ COOK_GROUPING_1 = {
     "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
 }
 
-PREFERRED_NEURON_NAMES = [
+PREFERRED_HERM_NEURON_NAMES = [
     "ADAL",
     "ADAR",
     "ADEL",
@@ -969,12 +976,14 @@ PREFERRED_NEURON_NAMES = [
     "VD9",
 ]
 
-for n in PREFERRED_NEURON_NAMES:
+for n in PREFERRED_HERM_NEURON_NAMES:
     assert n in PREFERRED_NEURON_NAMES_COOK
-for n in PREFERRED_NEURON_NAMES_COOK:
-    assert n in PREFERRED_NEURON_NAMES
 
-assert len(PREFERRED_NEURON_NAMES_COOK) == len(PREFERRED_NEURON_NAMES)
+for n in PREFERRED_NEURON_NAMES_COOK:
+    assert n in PREFERRED_HERM_NEURON_NAMES
+
+assert len(PREFERRED_NEURON_NAMES_COOK) == len(PREFERRED_HERM_NEURON_NAMES)
+assert len(PREFERRED_NEURON_NAMES_COOK) == 302
 
 BODY_WALL_MUSCLE_NAMES = [
     "MDL01",
@@ -1291,6 +1300,7 @@ PREFERRED_MUSCLE_NAMES = (
 )
 
 COOK_GROUPING_1["Body wall muscles"] = BODY_WALL_MUSCLE_NAMES
+
 COOK_GROUPING_1["Other muscles"] = (
     PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
@@ -1369,6 +1379,16 @@ for cell in PHARYNGEAL_GLIAL_CELL:
 PHARYNGEAL_BASEMENT_MEMBRANE = ["bm"]
 cell_notes["bm"] = "pharyngeal basement membrane"
 
+
+ALL_PHARYNGEAL_CELLS = (
+    PHARYNGEAL_NEURONS
+    + PHARYNGEAL_MUSCLE_NAMES
+    + PHARYNGEAL_MARGINAL_CELLS
+    + PHARYNGEAL_EPITHELIUM
+    + PHARYNGEAL_GLIAL_CELL
+    + PHARYNGEAL_BASEMENT_MEMBRANE
+)
+
 EXCRETORY_CELL = [
     "exc_cell",
 ]
@@ -1421,7 +1441,6 @@ KNOWN_OTHER_CELLS_COOK_19 = (
 
 COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
 
-
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
 KNOWN_OTHER_CELLS += (
@@ -1434,7 +1453,7 @@ COOK_GROUPING_1["Male other cells"] = (
 )
 
 ALL_PREFERRED_CELL_NAMES = (
-    PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + KNOWN_OTHER_CELLS
+    PREFERRED_HERM_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + KNOWN_OTHER_CELLS
 )
 
 
@@ -1491,6 +1510,154 @@ def is_bilateral_right(cell):
         return True
     else:
         return False
+
+
+def convert_to_preferred_muscle_name(muscle):
+    if muscle.startswith("BWM-VL"):
+        return "MVL%s" % muscle[6:]
+    elif muscle.startswith("BWM-VR"):
+        return "MVR%s" % muscle[6:]
+    elif muscle.startswith("BWM-DL"):
+        return "MDL%s" % muscle[6:]
+    elif muscle.startswith("BWM-DR"):
+        return "MDR%s" % muscle[6:]
+    elif muscle.startswith("dBWM"):
+        return (
+            "MD%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MD%s0%s" % (muscle[4], muscle[5])
+        )
+    elif muscle.startswith("vBWM"):
+        return (
+            "MV%s" % muscle[4:]
+            if len(muscle) == 7
+            else "MV%s0%s" % (muscle[4], muscle[5])
+        )
+    elif muscle == "LegacyBodyWallMuscles":
+        return "BWM"
+    elif muscle.startswith("pm1"):
+        return "pm1"
+    elif muscle == "pm2vl":
+        return "pm2VL"
+    elif muscle == "pm2vr":
+        return "pm2VR"
+    elif muscle == "pm2d":
+        return "pm2D"
+    elif muscle == "pm3vl":
+        return "pm3VL"
+    elif muscle == "pm3vr":
+        return "pm3VR"
+    elif muscle == "pm3d":
+        return "pm3D"
+    elif muscle == "pm4vl":
+        return "pm4VL"
+    elif muscle == "pm4vr":
+        return "pm4VR"
+    elif muscle == "pm4d":
+        return "pm4D"
+    elif muscle == "pm4":
+        return "pm4_UNSPECIFIED"
+    elif muscle == "pm5vl":
+        return "pm5VL"
+    elif muscle == "pm5vr":
+        return "pm5VR"
+    elif muscle == "pm5d":
+        return "pm5D"
+    elif muscle == "pm6vl":
+        return "pm6VL"
+    elif muscle == "pm6vr":
+        return "pm6VR"
+    elif muscle == "pm6d":
+        return "pm6D"
+    elif muscle == "pm7vl":
+        return "pm7VL"
+    elif muscle == "pm7vr":
+        return "pm7VR"
+    elif muscle == "pm7d":
+        return "pm7D"
+    else:
+        if is_muscle(muscle):
+            return muscle
+        else:
+            return muscle + "???"
+
+
+def convert_to_preferred_phar_cell_name(cell):
+    if cell == "mc1v":
+        return "mc1V"
+    elif cell == "mc1dr":
+        return "mc1DR"
+    elif cell == "mc1dl":
+        return "mc1DL"
+    elif cell == "mc2v":
+        return "mc2V"
+    elif cell == "mc2dr":
+        return "mc2DR"
+    elif cell == "mc2dl":
+        return "mc2DL"
+    elif cell == "mc3v":
+        return "mc3V"
+    elif cell == "mc3dr":
+        return "mc3DR"
+    elif cell == "mc3dl":
+        return "mc3DL"
+    elif cell.lower() == "g1p":  # Different between cook 19 & 20
+        return "g1P"
+    else:
+        if is_marginal_cell(cell):
+            return cell
+
+
+def get_marginal_cell_prefixes():
+    return ["mc"]
+
+
+def is_marginal_cell(cell):
+    known_mc_prefix = get_marginal_cell_prefixes()
+    return cell.startswith(tuple(known_mc_prefix))
+
+
+def get_all_muscle_prefixes():
+    return ["pm", "vm", "um", "mu_"] + get_body_wall_muscle_prefixes()
+
+
+def get_body_wall_muscle_prefixes():
+    return ["BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
+
+
+def is_muscle(cell):
+    if cell in PREFERRED_MUSCLE_NAMES:
+        return True
+    known_muscle_prefixes = get_all_muscle_prefixes()
+    return cell.startswith(tuple(known_muscle_prefixes))
+
+
+def is_potential_body_wall_muscle(cell):
+    known_muscle_prefixes = get_body_wall_muscle_prefixes()
+    return cell.startswith(tuple(known_muscle_prefixes))
+
+
+def is_known_body_wall_muscle(cell):
+    return cell in BODY_WALL_MUSCLE_NAMES
+
+
+def is_pharyngeal_cell(cell):
+    return cell in ALL_PHARYNGEAL_CELLS
+
+
+def is_neuron(cell):
+    return cell in PREFERRED_HERM_NEURON_NAMES
+
+
+def remove_leading_index_zero(cell):
+    """
+    Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
+    """
+    if cell[:2] in ["DA", "AS", "DD", "DB", "VA", "VB", "VC", "VD"] and cell[
+        -2:
+    ].startswith("0"):
+        return "%s%s" % (cell[:-2], cell[-1:])
+    return cell
 
 
 def are_bilateral_pair(cell_a, cell_b):
@@ -1844,6 +2011,8 @@ if __name__ == "__main__":
 
     with open(filename, "w") as f:
         for sex in WA_COLORS:
+            f.write("---\ntitle: <C. elegans> cells\n---\n\n")
+
             f.write("\n## %s\n" % sex)
 
             for cell_class in WA_COLORS[sex]:

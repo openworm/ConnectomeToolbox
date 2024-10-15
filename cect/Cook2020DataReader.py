@@ -3,12 +3,12 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
-from cect.ConnectomeReader import PREFERRED_NEURON_NAMES
-from cect.ConnectomeReader import PREFERRED_MUSCLE_NAMES
-from cect.ConnectomeReader import convert_to_preferred_muscle_name
-from cect.ConnectomeReader import is_muscle
-from cect.ConnectomeReader import is_marginal_cell
-from cect.ConnectomeReader import convert_to_preferred_phar_cell_name
+from cect.Cells import PREFERRED_HERM_NEURON_NAMES
+from cect.Cells import PREFERRED_MUSCLE_NAMES
+from cect.Cells import convert_to_preferred_muscle_name
+from cect.Cells import is_muscle
+from cect.Cells import is_marginal_cell
+from cect.Cells import convert_to_preferred_phar_cell_name
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
@@ -149,7 +149,7 @@ class Cook2020DataReader(ConnectomeDataset):
                 if is_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
-                    if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                    if pre in PREFERRED_HERM_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
 
         with open(filename2, "r") as f:
@@ -181,7 +181,7 @@ class Cook2020DataReader(ConnectomeDataset):
                 if is_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
-                    if pre in PREFERRED_NEURON_NAMES and pre not in neurons:
+                    if pre in PREFERRED_HERM_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
 
         return neurons, muscles, conns

@@ -5,5 +5,7 @@ _Bánk G. Fenyves, Gábor S. Szilágyi, Zsolt Vassy, Csaba Sőti, Peter Csermely
 Published: December 21, 202_
 
 **Summary**
+
 - Present a gene expression-based sign prediction of the ionotropic chemical synapse connectome of _C.elegans_
-- They have an open source tool (http://elegansign.linkgroup.hu) that uses three differene connectomes: WormWiring; Cook et al.; Varshney et al.
+- They have an open source tool (http://elegansign.linkgroup.hu) that uses three different connectomes: WormWiring; Cook et al. (2019); Varshney et al. (2011)
+- Used as part of the the WormNeuroAtlas package to generate the functional connectome (Randi et al. 2023)
