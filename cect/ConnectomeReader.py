@@ -8,7 +8,7 @@
 
 from cect import print_
 
-from cect.Cells import PREFERRED_NEURON_NAMES
+from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 
 from cect.Cells import is_muscle
@@ -71,13 +71,13 @@ class ConnectionInfo:
 def check_cells(cells):
     in_preferred = []
     not_in_preferred = []
-    missing_preferred = [n for n in PREFERRED_NEURON_NAMES]
+    missing_preferred = [n for n in PREFERRED_HERM_NEURON_NAMES]
     muscles = []
 
     for c in cells:
         if is_muscle(c):
             muscles.append(c)
-        elif c not in PREFERRED_NEURON_NAMES:
+        elif c not in PREFERRED_HERM_NEURON_NAMES:
             if not is_muscle(c):
                 not_in_preferred.append(c)
         else:

@@ -350,7 +350,7 @@ class ConnectomeDataset:
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
-        verbose = True
+        verbose = False
 
         print_("==============")
         print_(
@@ -962,8 +962,8 @@ if __name__ == "__main__":
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
     # from cect.White_whole import get_instance
-    # from cect.Cook2019HermReader import get_instance
-    from cect.TestDataReader import get_instance
+    from cect.Cook2019HermReader import get_instance
+    # from cect.TestDataReader import get_instance
 
     cds = get_instance()
 
@@ -973,8 +973,8 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
-    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
 

@@ -145,9 +145,9 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
                     cells.append(post)
 
             if include_nonconnected_cells:
-                from cect.Cells import PREFERRED_NEURON_NAMES
+                from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 
-                for c in PREFERRED_NEURON_NAMES:
+                for c in PREFERRED_HERM_NEURON_NAMES:
                     if c not in cells:
                         cells.append(c)
 
