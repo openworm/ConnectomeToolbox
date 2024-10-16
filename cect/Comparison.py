@@ -31,7 +31,9 @@ reader_pages = {
     "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Randi2023": "Randi2023_data",
-    "RipollSanchez": "RipollSanchez_data",
+    "RipollSanchezShortRange": "RipollSanchezShortRange_data",
+    "RipollSanchezMidRange": "RipollSanchezMidRange_data",
+    "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
@@ -159,11 +161,20 @@ def generate_comparison_page(quick: bool, color_table=True):
     readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
     readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
 
+    readers["RipollSanchezShortRange"] = [
+        "cect.RipollSanchezShortRangeReader",
+        "RipollSanchez_2023",
+    ]
+    readers["RipollSanchezMidRange"] = [
+        "cect.RipollSanchezMidRangeReader",
+        "RipollSanchez_2023",
+    ]
+    readers["RipollSanchezLongRange"] = [
+        "cect.RipollSanchezLongRangeReader",
+        "RipollSanchez_2023",
+    ]
+
     if not quick:
-        readers["RipollSanchez"] = [
-            "cect.RipollSanchezDataReader",
-            "RipollSanchez_2023",
-        ]
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]

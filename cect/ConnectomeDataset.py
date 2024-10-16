@@ -13,7 +13,7 @@ from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import is_neuron
 from cect.Cells import is_known_body_wall_muscle
-from cect.Cells import is_muscle
+from cect.Cells import is_known_muscle
 from cect.Cells import is_pharyngeal_cell
 
 import numpy as np
@@ -24,6 +24,8 @@ import pprint
 import random
 
 from cect.Cells import get_SIM_class
+
+random.seed(10)
 
 
 def _get_epsilon(scale):
@@ -131,7 +133,7 @@ class ConnectomeDataset:
         conns = []
 
         for conn_info in self.connection_infos:
-            if is_neuron(conn_info.pre_cell) and is_muscle(conn_info.post_cell):
+            if is_neuron(conn_info.pre_cell) and is_known_muscle(conn_info.post_cell):
                 neurons.add(conn_info.pre_cell)
                 muscles.add(conn_info.post_cell)
                 conns.append(conn_info)
@@ -392,15 +394,22 @@ class ConnectomeDataset:
                 ]
             elif node_value in MOTORNEURONS_NONPHARYNGEAL_COOK:
                 init_pos[i] = [1 * scale + _get_epsilon(scale), 0 + _get_epsilon(scale)]
-            elif is_known_body_wall_muscle(node_value):
-                init_pos[i] = [
-                    1 * scale + _get_epsilon(scale),
-                    (-1 * scale if node_value.startswith("MD") else 1 * scale)
-                    + _get_epsilon(scale),
-                ]
+
+            elif is_known_muscle(node_value):
+                if is_known_body_wall_muscle(node_value):
+                    init_pos[i] = [
+                        1 * scale + _get_epsilon(scale),
+                        (-1 * scale if node_value.startswith("MD") else 1 * scale)
+                        + _get_epsilon(scale),
+                    ]
+                else:
+                    init_pos[i] = [
+                        2 * scale + _get_epsilon(scale),
+                        0 * scale + _get_epsilon(scale),
+                    ]
             else:
                 init_pos[i] = [
-                    2 + _get_epsilon(scale),
+                    0 * scale + _get_epsilon(scale),
                     -0.1 * scale + _get_epsilon(scale),
                 ]
 
@@ -963,6 +972,8 @@ if __name__ == "__main__":
 
     # from cect.White_whole import get_instance
     from cect.Cook2019HermReader import get_instance
+
+    synclass = "Electrical"
     # from cect.TestDataReader import get_instance
 
     cds = get_instance()
@@ -973,8 +984,8 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
-    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
 

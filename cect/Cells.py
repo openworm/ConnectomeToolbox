@@ -1290,12 +1290,21 @@ for cell in MALE_RAY_STRUCTURAL_CELLS:
     cell_notes[cell] = "male ray structural cell"
 
 
+INTESTINAL_MUSCLES = [
+    "mu_intL",
+    "mu_intR",
+]
+
+for cell in INTESTINAL_MUSCLES:
+    cell_notes[cell] = "intestinal muscles"
+
 PREFERRED_MUSCLE_NAMES = (
     BODY_WALL_MUSCLE_NAMES
     + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
     + MALE_SPECIFIC_MUSCLES
+    + INTESTINAL_MUSCLES
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
@@ -1414,15 +1423,6 @@ INTESTINE = [
 ]
 cell_notes["int"] = "intestine"
 
-INTESTINAL_MUSCLES = [
-    "mu_intL",
-    "mu_intR",
-]
-
-
-for cell in INTESTINAL_MUSCLES:
-    cell_notes[cell] = "intestinal muscles"
-
 
 KNOWN_OTHER_CELLS_COOK_19 = (
     []
@@ -1436,7 +1436,6 @@ KNOWN_OTHER_CELLS_COOK_19 = (
     + HEAD_MESODERMAL_CELL
     + HYPODERMIS
     + INTESTINE
-    + INTESTINAL_MUSCLES
 )
 
 COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
@@ -1576,7 +1575,7 @@ def convert_to_preferred_muscle_name(muscle):
     elif muscle == "pm7d":
         return "pm7D"
     else:
-        if is_muscle(muscle):
+        if is_known_muscle(muscle):
             return muscle
         else:
             return muscle + "???"
@@ -1625,11 +1624,17 @@ def get_body_wall_muscle_prefixes():
     return ["BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
 
 
-def is_muscle(cell):
+def is_potential_muscle(cell):
     if cell in PREFERRED_MUSCLE_NAMES:
         return True
     known_muscle_prefixes = get_all_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
+
+
+def is_known_muscle(cell):
+    if cell in PREFERRED_MUSCLE_NAMES:
+        return True
+    return False
 
 
 def is_potential_body_wall_muscle(cell):

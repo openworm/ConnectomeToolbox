@@ -11,7 +11,7 @@ from cect import print_
 from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 
-from cect.Cells import is_muscle
+from cect.Cells import is_known_muscle
 
 
 DEFAULT_COLORMAP = [
@@ -75,10 +75,10 @@ def check_cells(cells):
     muscles = []
 
     for c in cells:
-        if is_muscle(c):
+        if is_known_muscle(c):
             muscles.append(c)
         elif c not in PREFERRED_HERM_NEURON_NAMES:
-            if not is_muscle(c):
+            if not is_known_muscle(c):
                 not_in_preferred.append(c)
         else:
             in_preferred.append(c)
