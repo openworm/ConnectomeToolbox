@@ -447,12 +447,87 @@
         ]
       ]
     },
+    "height": 600,
     "margin": {
       "b": 2,
       "l": 2,
       "r": 2,
       "t": 2
     },
+    "shapes": [
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 2.5,
+        "y1": 2.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 2.5,
+        "x1": 2.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 6.5,
+        "y1": 6.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 6.5,
+        "x1": 6.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 9.5,
+        "y1": 9.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 9.5,
+        "x1": 9.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      }
+    ],
     "template": {
       "data": {
         "bar": [

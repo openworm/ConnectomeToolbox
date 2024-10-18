@@ -10,7 +10,7 @@ Some of the generated views of the connectomics datasets covered here. Click on 
 
 <a href="Cook2019Male_data_graph/#electrical"><img src="assets/Cook2019Male_Raw_Electrical_graph.png" width="45%"></img></a>
 <a href="RipollSanchezShortRange_data"><img src="assets/RipollSanchezShortRange_Raw_Extrasynaptic.png" width="45%"></img></a>
-<a href="Social_White_whole_data_graph/#chemical-exc"><img src="assets/White_whole_Social_Chemical_Exc_graph.png" width="45%"></img></a>
+<a href="Escape_Cook2019Herm_data_graph/#chemical-exc"><img src="assets/Cook2019Herm_Escape_Chemical_Exc_graph.png" width="45%"></img></a>
 <a href="Cook2020_data_hiveplot/#chemical"><img src="assets/Cook2020_Pharynx_Chemical_Exc_hiveplot.png" width="45%"></img></a>
 
 ### Historical publications on _C. elegans_ connectomics

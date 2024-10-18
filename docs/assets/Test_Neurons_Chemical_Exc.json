@@ -92463,12 +92463,87 @@
         ]
       ]
     },
+    "height": 600,
     "margin": {
       "b": 2,
       "l": 2,
       "r": 2,
       "t": 2
     },
+    "shapes": [
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 19.5,
+        "y1": 19.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 19.5,
+        "x1": 19.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 102.5,
+        "y1": 102.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 102.5,
+        "x1": 102.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 183.5,
+        "y1": 183.5,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "width": 0.5
+        },
+        "type": "line",
+        "x0": 183.5,
+        "x1": 183.5,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      }
+    ],
     "template": {
       "data": {
         "bar": [
