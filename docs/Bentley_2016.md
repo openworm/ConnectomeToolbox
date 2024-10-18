@@ -2,6 +2,7 @@
 
 *Barry Bentley, Robyn Branicky, Christopher L. Barnes, Yee Lian Chew, Eviatar Yemini, Edward T. Bullmore, Petra E. Vértes , William R. Schafer* <br>*[PLoS Comput Biol 12(12): e1005283](https://doi.org/10.1371/journal.pcbi.1005283)*<br> *Published: December 16, 2016* 
 
+_**Datasets: [Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md) [Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)**_
 
 **Abstract:**
 
@@ -16,7 +17,7 @@
 
 **Materials & Methods**
 
-- Full hermaphrodite C.elegans connectome, containing all 302 neurons
+- Full hermaphrodite C. elegans connectome, containing all 302 neurons
 - Network was composed from somatic connectome of White et al, updates and released by [Chklovskii lab](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1001066)
 - Pharyngeal network of Albertson and Thomson made available by the Cybernetic C.elegans Program [CCeP](http://ims.dse.ibaraki.ac.jp/ccep/)
 - Functional classifications referred (i.e. sensory neuron, interneuron, motor neuron) are based on the classification scheme used in WormAtlas

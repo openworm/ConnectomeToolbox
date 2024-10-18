@@ -15,7 +15,7 @@ title: White_whole
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../White_whole_data_hiveplot">Raw Data</a> - <a href="../Neurons_White_whole_data_hiveplot">Neurons</a> - <b><a href="../Pharynx_White_whole_data_hiveplot">Pharynx</a></b> - <a href="../Social_White_whole_data_hiveplot">Social Network</a> - <a href="../Full1_White_whole_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../White_whole_data_hiveplot">Raw Data</a> - <a href="../Neurons_White_whole_data_hiveplot">Neurons</a> - <b><a href="../Pharynx_White_whole_data_hiveplot">Pharynx</a></b> - <a href="../Social_White_whole_data_hiveplot">Social Network</a> - <a href="../Escape_White_whole_data_hiveplot">Escape Response Circuit</a> - <a href="../Full1_White_whole_data_hiveplot">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

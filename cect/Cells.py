@@ -664,10 +664,10 @@ PREFERRED_NEURON_NAMES_COOK = (
 
 
 COOK_GROUPING_1 = {
-    "Interneurons": INTERNEURONS_COOK,
-    "Sensory neurons": SENSORY_NEURONS_COOK,
-    "Motorneurons": MOTORNEURONS_COOK,
-    "Pharyngeal polymodal neurons": PHARYNGEAL_POLYMODAL_NEURONS,
+    "Pharyngeal neurons": PHARYNGEAL_NEURONS,
+    "Sensory neurons": SENSORY_NEURONS_NONPHARYNGEAL_COOK,
+    "Interneurons": INTERNEURONS_NONPHARYNGEAL_COOK,
+    "Motorneurons": MOTORNEURONS_NONPHARYNGEAL_COOK,
     "Unknown function neurons": UNKNOWN_FUNCTION_NEURONS,
 }
 
@@ -1314,7 +1314,6 @@ COOK_GROUPING_1["Other muscles"] = (
     PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
-    + MALE_SPECIFIC_MUSCLES
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
 
@@ -1438,7 +1437,7 @@ KNOWN_OTHER_CELLS_COOK_19 = (
     + INTESTINE
 )
 
-COOK_GROUPING_1["Other cells"] = KNOWN_OTHER_CELLS_COOK_19
+COOK_GROUPING_1["Other cells"] = list(KNOWN_OTHER_CELLS_COOK_19)
 
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
@@ -1447,6 +1446,9 @@ KNOWN_OTHER_CELLS += (
 )
 
 COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
+
+COOK_GROUPING_1["Male specific muscles "] = MALE_SPECIFIC_MUSCLES
+
 COOK_GROUPING_1["Male other cells"] = (
     MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
 )
@@ -1486,6 +1488,9 @@ def get_SIM_class(cell):
     elif cell in INTERNEURONS_COOK:
         return "Interneuron"
     else:
+        if len(cell) == 3:
+            if get_SIM_class("%sL" % cell) == get_SIM_class("%sR" % cell):
+                return get_SIM_class("%sL" % cell)
         return "Other"
 
 
@@ -1826,7 +1831,7 @@ def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
 
         return '<a href="%s" title="%s">%s</a>' % (
             url,
-            get_short_description(cell_name),
+            (cell_name + " (%s)" if text else "%s") % get_short_description(cell_name),
             link_text,
         )
     else:
@@ -1917,6 +1922,7 @@ def _generate_cell_table(cell_type, cells):
     fig_md = ""
 
     verbose = False
+    some_cells = False
 
     for syn_summary in syn_summaries:
         fig = go.Figure()
@@ -1960,6 +1966,7 @@ def _generate_cell_table(cell_type, cells):
                     line=dict(dash=dash),
                 )
                 nonempty_fig_present = True
+                some_cells = True
 
         if nonempty_fig_present:
             asset_filename = "assets/%s_%s_hist.json" % (
@@ -2002,7 +2009,14 @@ def _generate_cell_table(cell_type, cells):
 
     table_md = df_all.to_markdown()
 
-    return "%s\n%s\n\n" % (fig_md, table_md)
+    title = cell_type[0].upper() + cell_type[1:]
+    title = ("%s" if some_cells else "<i>%s</i>") % title
+
+    title_md = "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
+        color, title
+    )
+
+    return "%s\n%s\n%s\n\n" % (title_md, fig_md, table_md)
 
 
 if __name__ == "__main__":
@@ -2015,9 +2029,8 @@ if __name__ == "__main__":
     filename = "docs/Cells.md"
 
     with open(filename, "w") as f:
+        f.write("---\ntitle: <i>C. elegans</i> cells\n---\n\n")
         for sex in WA_COLORS:
-            f.write("---\ntitle: <C. elegans> cells\n---\n\n")
-
             f.write("\n## %s\n" % sex)
 
             for cell_class in WA_COLORS[sex]:
@@ -2026,11 +2039,7 @@ if __name__ == "__main__":
                 for cell_type in WA_COLORS[sex][cell_class]:
                     if "General code" not in cell_type:
                         color = WA_COLORS[sex][cell_class][cell_type][1:]
-                        f.write(
-                            "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
-                                color, cell_type[0].upper() + cell_type[1:]
-                            )
-                        )
+
                         if cell_type == "body wall muscle":
                             f.write(
                                 _generate_cell_table(cell_type, BODY_WALL_MUSCLE_NAMES)

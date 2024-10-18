@@ -15,7 +15,7 @@ title: Bentley2016_PEP
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Bentley2016_PEP_data">Raw Data</a> - <a href="../Neurons_Bentley2016_PEP_data">Neurons</a> - <a href="../Pharynx_Bentley2016_PEP_data">Pharynx</a> - <b><a href="../Social_Bentley2016_PEP_data">Social Network</a></b> - <a href="../Full1_Bentley2016_PEP_data">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../Bentley2016_PEP_data">Raw Data</a> - <a href="../Neurons_Bentley2016_PEP_data">Neurons</a> - <a href="../Pharynx_Bentley2016_PEP_data">Pharynx</a> - <b><a href="../Social_Bentley2016_PEP_data">Social Network</a></b> - <a href="../Escape_Bentley2016_PEP_data">Escape Response Circuit</a> - <a href="../Full1_Bentley2016_PEP_data">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

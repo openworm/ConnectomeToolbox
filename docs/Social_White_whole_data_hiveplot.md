@@ -15,7 +15,7 @@ title: White_whole
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../White_whole_data_hiveplot">Raw Data</a> - <a href="../Neurons_White_whole_data_hiveplot">Neurons</a> - <a href="../Pharynx_White_whole_data_hiveplot">Pharynx</a> - <b><a href="../Social_White_whole_data_hiveplot">Social Network</a></b> - <a href="../Full1_White_whole_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../White_whole_data_hiveplot">Raw Data</a> - <a href="../Neurons_White_whole_data_hiveplot">Neurons</a> - <a href="../Pharynx_White_whole_data_hiveplot">Pharynx</a> - <b><a href="../Social_White_whole_data_hiveplot">Social Network</a></b> - <a href="../Escape_White_whole_data_hiveplot">Escape Response Circuit</a> - <a href="../Full1_White_whole_data_hiveplot">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -30,9 +30,19 @@ title: White_whole
 
     </tbody>
 </table>=== "Chemical Exc"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/White_whole_Social_Chemical_Exc_hiveplot.json" }
+    ```
+
 === "Electrical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/White_whole_Social_Electrical_hiveplot.json" }
+    ```
+
 
 ### Neurons (300)
 <details><summary>Full list of Neurons</summary>

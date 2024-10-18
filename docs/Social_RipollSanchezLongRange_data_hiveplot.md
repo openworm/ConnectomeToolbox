@@ -15,7 +15,7 @@ title: RipollSanchezLongRange
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../RipollSanchezLongRange_data_hiveplot">Raw Data</a> - <a href="../Neurons_RipollSanchezLongRange_data_hiveplot">Neurons</a> - <a href="../Pharynx_RipollSanchezLongRange_data_hiveplot">Pharynx</a> - <b><a href="../Social_RipollSanchezLongRange_data_hiveplot">Social Network</a></b> - <a href="../Full1_RipollSanchezLongRange_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../RipollSanchezLongRange_data_hiveplot">Raw Data</a> - <a href="../Neurons_RipollSanchezLongRange_data_hiveplot">Neurons</a> - <a href="../Pharynx_RipollSanchezLongRange_data_hiveplot">Pharynx</a> - <b><a href="../Social_RipollSanchezLongRange_data_hiveplot">Social Network</a></b> - <a href="../Escape_RipollSanchezLongRange_data_hiveplot">Escape Response Circuit</a> - <a href="../Full1_RipollSanchezLongRange_data_hiveplot">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -30,7 +30,12 @@ title: RipollSanchezLongRange
 
     </tbody>
 </table>=== "Extrasynaptic"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/RipollSanchezLongRange_Social_Extrasynaptic_hiveplot.json" }
+    ```
+
 
 ### Neurons (302)
 <details><summary>Full list of Neurons</summary>

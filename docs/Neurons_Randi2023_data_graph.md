@@ -15,7 +15,7 @@ title: Randi2023
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Randi2023_data_graph">Raw Data</a> - <b><a href="../Neurons_Randi2023_data_graph">Neurons</a></b> - <a href="../Pharynx_Randi2023_data_graph">Pharynx</a> - <a href="../Social_Randi2023_data_graph">Social Network</a> - <a href="../Full1_Randi2023_data_graph">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../Randi2023_data_graph">Raw Data</a> - <b><a href="../Neurons_Randi2023_data_graph">Neurons</a></b> - <a href="../Pharynx_Randi2023_data_graph">Pharynx</a> - <a href="../Social_Randi2023_data_graph">Social Network</a> - <a href="../Escape_Randi2023_data_graph">Escape Response Circuit</a> - <a href="../Full1_Randi2023_data_graph">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

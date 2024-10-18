@@ -15,7 +15,7 @@ title: Varshney
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Varshney_data">Raw Data</a> - <a href="../Neurons_Varshney_data">Neurons</a> - <a href="../Pharynx_Varshney_data">Pharynx</a> - <a href="../Social_Varshney_data">Social Network</a> - <b><a href="../Full1_Varshney_data">Cook 2019 Fig 3</a></b> - </td>
+            <td> - <a href="../Varshney_data">Raw Data</a> - <a href="../Neurons_Varshney_data">Neurons</a> - <a href="../Pharynx_Varshney_data">Pharynx</a> - <a href="../Social_Varshney_data">Social Network</a> - <a href="../Escape_Varshney_data">Escape Response Circuit</a> - <b><a href="../Full1_Varshney_data">Cook 2019 Fig 3</a></b> - </td>
         </tr>
         <tr>
             <td ></td>

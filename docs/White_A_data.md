@@ -15,7 +15,7 @@ title: White_A
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <b><a href="../White_A_data">Raw Data</a></b> - <a href="../Neurons_White_A_data">Neurons</a> - <a href="../Pharynx_White_A_data">Pharynx</a> - <a href="../Social_White_A_data">Social Network</a> - <a href="../Full1_White_A_data">Cook 2019 Fig 3</a> - </td>
+            <td> - <b><a href="../White_A_data">Raw Data</a></b> - <a href="../Neurons_White_A_data">Neurons</a> - <a href="../Pharynx_White_A_data">Pharynx</a> - <a href="../Social_White_A_data">Social Network</a> - <a href="../Escape_White_A_data">Escape Response Circuit</a> - <a href="../Full1_White_A_data">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

@@ -15,7 +15,7 @@ title: WormNeuroAtlas
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../WormNeuroAtlas_data">Raw Data</a> - <a href="../Neurons_WormNeuroAtlas_data">Neurons</a> - <a href="../Pharynx_WormNeuroAtlas_data">Pharynx</a> - <a href="../Social_WormNeuroAtlas_data">Social Network</a> - <b><a href="../Full1_WormNeuroAtlas_data">Cook 2019 Fig 3</a></b> - </td>
+            <td> - <a href="../WormNeuroAtlas_data">Raw Data</a> - <a href="../Neurons_WormNeuroAtlas_data">Neurons</a> - <a href="../Pharynx_WormNeuroAtlas_data">Pharynx</a> - <a href="../Social_WormNeuroAtlas_data">Social Network</a> - <a href="../Escape_WormNeuroAtlas_data">Escape Response Circuit</a> - <b><a href="../Full1_WormNeuroAtlas_data">Cook 2019 Fig 3</a></b> - </td>
         </tr>
         <tr>
             <td ></td>

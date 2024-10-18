@@ -15,7 +15,7 @@ title: Witvliet8
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Witvliet8_data_hiveplot">Raw Data</a> - <a href="../Neurons_Witvliet8_data_hiveplot">Neurons</a> - <a href="../Pharynx_Witvliet8_data_hiveplot">Pharynx</a> - <a href="../Social_Witvliet8_data_hiveplot">Social Network</a> - <b><a href="../Full1_Witvliet8_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
+            <td> - <a href="../Witvliet8_data_hiveplot">Raw Data</a> - <a href="../Neurons_Witvliet8_data_hiveplot">Neurons</a> - <a href="../Pharynx_Witvliet8_data_hiveplot">Pharynx</a> - <a href="../Social_Witvliet8_data_hiveplot">Social Network</a> - <a href="../Escape_Witvliet8_data_hiveplot">Escape Response Circuit</a> - <b><a href="../Full1_Witvliet8_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -30,9 +30,19 @@ title: Witvliet8
 
     </tbody>
 </table>=== "Chemical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Witvliet8_Full1_Chemical_hiveplot.json" }
+    ```
+
 === "Electrical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Witvliet8_Full1_Electrical_hiveplot.json" }
+    ```
+
 
 ### Neurons (180)
 <details><summary>Full list of Neurons</summary>

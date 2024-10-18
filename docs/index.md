@@ -13,7 +13,7 @@ Some of the generated views of the connectomics datasets covered here. Click on 
 <a href="Social_White_whole_data_graph/#chemical-exc"><img src="assets/White_whole_Social_Chemical_Exc_graph.png" width="45%"></img></a>
 <a href="Cook2020_data_hiveplot/#chemical"><img src="assets/Cook2020_Pharynx_Chemical_Exc_hiveplot.png" width="45%"></img></a>
 
-### Historical publicaitons on _C. elegans_ connectomics
+### Historical publications on _C. elegans_ connectomics
 
 ```mermaid
 block-beta

@@ -15,7 +15,7 @@ title: Witvliet8
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Witvliet8_data_graph">Raw Data</a> - <a href="../Neurons_Witvliet8_data_graph">Neurons</a> - <a href="../Pharynx_Witvliet8_data_graph">Pharynx</a> - <b><a href="../Social_Witvliet8_data_graph">Social Network</a></b> - <a href="../Full1_Witvliet8_data_graph">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../Witvliet8_data_graph">Raw Data</a> - <a href="../Neurons_Witvliet8_data_graph">Neurons</a> - <a href="../Pharynx_Witvliet8_data_graph">Pharynx</a> - <b><a href="../Social_Witvliet8_data_graph">Social Network</a></b> - <a href="../Escape_Witvliet8_data_graph">Escape Response Circuit</a> - <a href="../Full1_Witvliet8_data_graph">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

@@ -15,7 +15,7 @@ title: Cook2020
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Cook2020_data">Raw Data</a> - <a href="../Neurons_Cook2020_data">Neurons</a> - <b><a href="../Pharynx_Cook2020_data">Pharynx</a></b> - <a href="../Social_Cook2020_data">Social Network</a> - <a href="../Full1_Cook2020_data">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../Cook2020_data">Raw Data</a> - <a href="../Neurons_Cook2020_data">Neurons</a> - <b><a href="../Pharynx_Cook2020_data">Pharynx</a></b> - <a href="../Social_Cook2020_data">Social Network</a> - <a href="../Escape_Cook2020_data">Escape Response Circuit</a> - <a href="../Full1_Cook2020_data">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

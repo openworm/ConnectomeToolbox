@@ -15,11 +15,14 @@ from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 
 from cect.Cells import BODY_MUSCLES_COOK
 from cect.Cells import HEAD_MUSCLES_COOK
+
 from cect.Cells import HEAD_MOTORNEURONS_COOK
 from cect.Cells import SUBLATERAL_MOTORNEURONS_COOK
 from cect.Cells import VENTRAL_CORD_MOTORNEURONS
 from cect.Cells import HSN_MOTORNEURONS
 from cect.Cells import VC_HERM_MOTORNEURONS
+from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
+
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
@@ -181,6 +184,94 @@ PHARYNX_VIEW = View(
 for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
+
+ESCAPE_VIEW = View(
+    "Escape",
+    "Escape Response Circuit",
+    "Circuit...",
+    [],
+    EXC_INH_GJ_FUNC_SYN_CLASSES,
+)
+
+len_scale = 1
+step = len_scale * 0.3
+
+esc_positions = {
+    "ALM": (0, 0),
+    "AVM": (step, 0),
+    "PVM": (step * 3, 0),
+    "PLM": (step * 4, 0),
+    "PVC": (step, step * -1.3),
+    "AVD": (step * 3, step * -1.3),
+    "AVB": (0, step * -2.6),
+    "AVA": (step * 4, step * -2.6),
+    "RIM": (step * 2, step * -3.2),
+    "RMD": (step * 1.5, step * -4.2),
+    "SMD": (step * 2.5, step * -4.2),
+    "VB/VD": (0, step * -3.9),
+    "VA/DA": (step * 4, step * -3.9),
+    "Body Musc": (step * 0.8, step * -5.2),
+    "Head Musc": (step * 3.2, step * -5.2),
+}
+
+for cell_set in sorted(esc_positions.keys()):
+    color = "purple"
+    shape = "triangle-up"
+
+    if cell_set in ["PVM", "PLM"]:
+        color = "red"
+    if cell_set in ["PVC", "AVB"]:
+        color = "green"
+        shape = "octagon"
+    if cell_set in ["AVD", "AVA"]:
+        color = "blue"
+        shape = "octagon"
+    if cell_set in ["RIM"]:
+        color = "blue"
+        shape = "circle"
+    if cell_set in ["VB/VD"]:
+        color = "lightgreen"
+        shape = "circle"
+    if cell_set in ["RMD", "SMD"]:
+        color = "thistle"
+        shape = "circle"
+    if cell_set in ["VA/DA"]:
+        color = "lightblue"
+        shape = "circle"
+    if "Musc" in cell_set:
+        color = "dimgrey"
+        shape = "diamond-wide"
+
+    all_cells = []
+
+    if cell_set == "VB/VD":
+        for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            if "VB" in m or "VD" in m:
+                all_cells.append(m)
+    elif cell_set == "VA/DA":
+        for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            if "VA" in m or "DA" in m:
+                all_cells.append(m)
+    elif cell_set == "Body Musc":
+        for m in BODY_MUSCLES_COOK:
+            all_cells.append(m)
+    elif cell_set == "Head Musc":
+        for m in HEAD_MUSCLES_COOK:
+            all_cells.append(m)
+    else:
+        all_cells = ["%sL" % cell_set, "%sR" % cell_set]
+
+    ns = NodeSet(
+        cell_set,
+        all_cells,
+        color=color,
+        shape=shape,
+        position=esc_positions[cell_set],
+        size=len_scale * 80,
+    )
+
+    ESCAPE_VIEW.node_sets.append(ns)
+
 SOCIAL_VIEW = View(
     "Social",
     "Social Network",
@@ -320,7 +411,14 @@ COOK_FIG3_VIEW.node_sets.append(
 )
 
 
-ALL_VIEWS = [RAW_VIEW, NEURONS_VIEW, PHARYNX_VIEW, SOCIAL_VIEW, COOK_FIG3_VIEW]
+ALL_VIEWS = [
+    RAW_VIEW,
+    NEURONS_VIEW,
+    PHARYNX_VIEW,
+    SOCIAL_VIEW,
+    ESCAPE_VIEW,
+    COOK_FIG3_VIEW,
+]
 
 
 if __name__ == "__main__":
@@ -350,9 +448,6 @@ if __name__ == "__main__":
     print("------- v1 ---------")
     print(tdr_instance.get_connectome_view(v1).summary())
 
-    print("-------- Social --------")
-    print(tdr_instance.get_connectome_view(SOCIAL_VIEW).summary())
-
     print("------- v2 ---------")
     print(tdr_instance.get_connectome_view(v2).summary())
 
@@ -362,6 +457,18 @@ if __name__ == "__main__":
     print("------- Neurons ---------")
     print(tdr_instance.get_connectome_view(NEURONS_VIEW).summary())
 
+    print("-------- Social --------")
+    view = SOCIAL_VIEW
+    cv = tdr_instance.get_connectome_view(view)
+    print(cv.summary())
+
     from cect.Cells import ALL_PREFERRED_CELL_NAMES
 
     print("There are %i known cells..." % len(ALL_PREFERRED_CELL_NAMES))
+
+    synclass = "Chemical Exc"
+    G = cv.to_networkx_graph(synclass, view)
+    import pprint
+    import networkx as nx
+
+    print(pprint.pprint(nx.node_link_data(G)))

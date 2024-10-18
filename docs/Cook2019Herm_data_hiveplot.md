@@ -15,7 +15,7 @@ title: Cook2019Herm
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <b><a href="../Cook2019Herm_data_hiveplot">Raw Data</a></b> - <a href="../Neurons_Cook2019Herm_data_hiveplot">Neurons</a> - <a href="../Pharynx_Cook2019Herm_data_hiveplot">Pharynx</a> - <a href="../Social_Cook2019Herm_data_hiveplot">Social Network</a> - <a href="../Full1_Cook2019Herm_data_hiveplot">Cook 2019 Fig 3</a> - </td>
+            <td> - <b><a href="../Cook2019Herm_data_hiveplot">Raw Data</a></b> - <a href="../Neurons_Cook2019Herm_data_hiveplot">Neurons</a> - <a href="../Pharynx_Cook2019Herm_data_hiveplot">Pharynx</a> - <a href="../Social_Cook2019Herm_data_hiveplot">Social Network</a> - <a href="../Escape_Cook2019Herm_data_hiveplot">Escape Response Circuit</a> - <a href="../Full1_Cook2019Herm_data_hiveplot">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

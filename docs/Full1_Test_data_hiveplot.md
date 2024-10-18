@@ -15,7 +15,7 @@ title: Test
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Test_data_hiveplot">Raw Data</a> - <a href="../Neurons_Test_data_hiveplot">Neurons</a> - <a href="../Pharynx_Test_data_hiveplot">Pharynx</a> - <a href="../Social_Test_data_hiveplot">Social Network</a> - <b><a href="../Full1_Test_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
+            <td> - <a href="../Test_data_hiveplot">Raw Data</a> - <a href="../Neurons_Test_data_hiveplot">Neurons</a> - <a href="../Pharynx_Test_data_hiveplot">Pharynx</a> - <a href="../Social_Test_data_hiveplot">Social Network</a> - <a href="../Escape_Test_data_hiveplot">Escape Response Circuit</a> - <b><a href="../Full1_Test_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -30,9 +30,19 @@ title: Test
 
     </tbody>
 </table>=== "Chemical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Test_Full1_Chemical_hiveplot.json" }
+    ```
+
 === "Electrical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Test_Full1_Electrical_hiveplot.json" }
+    ```
+
 
 ### Neurons (18)
 <details><summary>Full list of Neurons</summary>

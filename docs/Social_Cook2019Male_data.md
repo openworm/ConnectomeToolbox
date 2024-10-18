@@ -15,7 +15,7 @@ title: Cook2019Male
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Cook2019Male_data">Raw Data</a> - <a href="../Neurons_Cook2019Male_data">Neurons</a> - <a href="../Pharynx_Cook2019Male_data">Pharynx</a> - <b><a href="../Social_Cook2019Male_data">Social Network</a></b> - <a href="../Full1_Cook2019Male_data">Cook 2019 Fig 3</a> - </td>
+            <td> - <a href="../Cook2019Male_data">Raw Data</a> - <a href="../Neurons_Cook2019Male_data">Neurons</a> - <a href="../Pharynx_Cook2019Male_data">Pharynx</a> - <b><a href="../Social_Cook2019Male_data">Social Network</a></b> - <a href="../Escape_Cook2019Male_data">Escape Response Circuit</a> - <a href="../Full1_Cook2019Male_data">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

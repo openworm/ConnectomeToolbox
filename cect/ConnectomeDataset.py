@@ -54,7 +54,7 @@ class ConnectomeDataset:
 
             self.connections[c] = new_conn_array
 
-    def to_networkx_graph(self, synclass):
+    def to_networkx_graph(self, synclass, view=None):
         import networkx as nx
 
         conn_array = self.connections[synclass]
@@ -70,6 +70,19 @@ class ConnectomeDataset:
         for nn_id in Gn.nodes:
             nn = Gn.nodes[nn_id]
             nn["SIM_class"] = get_SIM_class(nn_id)
+            print_("Determined the SIM class of %s: %s" % (nn_id, nn["SIM_class"]))
+
+            if nn["SIM_class"] == "Other" and view is not None:
+                print(33)
+                ns = view.get_node_set(nn_id)
+                classes = [get_SIM_class(c) for c in ns.cells]
+                print(classes)
+                all_same = all(a == classes[0] for a in classes)
+                if all_same:
+                    nn["SIM_class"] = classes[0]
+                    print_(
+                        "  RE Determined SIM class of %s: %s" % (nn_id, nn["SIM_class"])
+                    )
 
         return Gn
 
@@ -352,7 +365,7 @@ class ConnectomeDataset:
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
-        verbose = False
+        verbose = True
 
         print_("==============")
         print_(
@@ -429,6 +442,8 @@ class ConnectomeDataset:
         node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
         node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
 
+        max_dim = max(abs(max(node_x) - min(node_x)), abs(max(node_y) - min(node_y)))
+
         edge_traces = []
 
         for edge in G.edges():
@@ -460,7 +475,7 @@ class ConnectomeDataset:
                             if verbose:
                                 print_("\n - 2 way connections")
                             # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
-                            offset = 0.2
+                            offset = max_dim / 15
                             edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
                             edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
                     else:
@@ -468,7 +483,10 @@ class ConnectomeDataset:
                             print_(
                                 f"\n - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
                             )
-                        circle_offset_a = get_node_size(from_node_set) / 100
+
+                        circle_offset_a = (
+                            max_dim / 20 if from_node_set.is_one_cell() else max_dim / 6
+                        )
 
                         edge_x.append(x0 - circle_offset_a)
                         edge_y.append(y0 + circle_offset_a / 3)
@@ -482,7 +500,7 @@ class ConnectomeDataset:
 
                     if verbose:
                         print_(
-                            f"{self.nodes[dir_[0]]}->{self.nodes[dir_[1]]}:{conn_weight} - Node {dir_[0]}  ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
+                            f"{self.nodes[dir_[0]]}->{self.nodes[dir_[1]]}:{conn_weight} - Node {dir_[0]}  ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}, max_dim: {max_dim}"
                         )
                     line_color = "grey"
                     if gap_junction:
@@ -519,7 +537,7 @@ class ConnectomeDataset:
 
         add_text = False
 
-        for i, node_value in enumerate(self.nodes):
+        for node_i, node_value in enumerate(self.nodes):
             # num_connections = node_adjacencies[i]
 
             node_set = view.get_node_set(node_value)
@@ -529,11 +547,11 @@ class ConnectomeDataset:
 
                 if "#" in node_set.color:
                     h = node_set.color[1:]
-                    rgb = tuple((int(h[i : i + 2], 16) / 256) for i in (0, 2, 4))
+                    rgb = tuple((int(h[c : c + 2], 16) / 256) for c in (0, 2, 4))
                 else:
                     import webcolors
 
-                    rgb = webcolors.name_to_rgb(node_set.color)
+                    rgb = tuple(c / 256 for c in webcolors.name_to_rgb(node_set.color))
 
                 # https://stackoverflow.com/questions/3942878
                 if (
@@ -545,7 +563,7 @@ class ConnectomeDataset:
                 node_font_colors[node_value] = fcolor
                 if verbose:
                     print_(
-                        f"For node {node_value}, with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
+                        f"For node {node_value} ({node_x[node_i]},{node_y[node_i]}), with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
                     )
 
             node_sizes.append(get_node_size(node_set))
@@ -653,11 +671,11 @@ class ConnectomeDataset:
         print_("==============")
         print_(f"Generating: {synclass} for {view}")
 
-        verbose = False
+        verbose = True
         # print(self.summary())
         cv = self
 
-        G = cv.to_networkx_graph(synclass)
+        G = cv.to_networkx_graph(synclass, view)
 
         nids = [n for n in G.nodes]
 
@@ -671,13 +689,16 @@ class ConnectomeDataset:
 
         nodes, edges = networkx_to_nodes_edges(G)
 
+        if verbose:
+            print_("%s" % nodes)
+
         blocks_dict_unordered = split_nodes_on_variable(
             nodes, variable_name="SIM_class"
         )
 
         if verbose:
-            print_(nodes)
-            print_(edges)
+            print_("--------------\nNodes: %s" % nodes)
+            print_("Edges: %s" % edges)
             print_(pprint.pprint(nx.node_link_data(G)))
 
             print_(
@@ -967,12 +988,20 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import ESCAPE_VIEW as view
+
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
-    # from cect.White_whole import get_instance
-    from cect.Cook2019HermReader import get_instance
+    from cect.White_whole import get_instance
+    # from cect.WitvlietDataReader8 import get_instance
+    # from cect.Cook2019HermReader import get_instance
 
+    synclass = "Chemical Inh"
+    synclass = "Chemical Exc"
+
+    # synclass = "Acetylcholine"
+    synclass = "Chemical"
     synclass = "Electrical"
     # from cect.TestDataReader import get_instance
 
@@ -982,6 +1011,7 @@ if __name__ == "__main__":
 
     print(cds2.summary())
 
+    print("Keys: %s" % view.synclass_sets.keys())
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
     fig = cds2.to_plotly_graph_fig(synclass, view)
