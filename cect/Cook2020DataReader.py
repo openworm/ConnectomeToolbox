@@ -6,7 +6,8 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import convert_to_preferred_muscle_name
-from cect.Cells import is_muscle
+from cect.Cells import is_potential_muscle
+from cect.Cells import is_known_muscle
 from cect.Cells import is_marginal_cell
 from cect.Cells import convert_to_preferred_phar_cell_name
 from cect.Cells import GENERIC_CHEM_SYN
@@ -49,10 +50,10 @@ class Cook2020DataReader(ConnectomeDataset):
 
             for row in reader:
                 pre = str.strip(row["Source"])
-                if is_muscle(pre):
+                if is_potential_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 post = str.strip(row["Target"])
-                if is_muscle(post):
+                if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
@@ -79,13 +80,13 @@ class Cook2020DataReader(ConnectomeDataset):
 
             for row in reader:
                 pre = str.strip(row["Source"])
-                if is_muscle(pre):
+                if is_potential_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 if is_marginal_cell(pre):
                     pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
 
-                if is_muscle(post):
+                if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
@@ -126,12 +127,12 @@ class Cook2020DataReader(ConnectomeDataset):
 
             for row in reader:
                 pre = str.strip(row["Source"])
-                if is_muscle(pre):
+                if is_potential_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 if is_marginal_cell(pre):
                     pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
-                if is_muscle(post):
+                if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
@@ -146,7 +147,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
-                if is_muscle(post):
+                if is_known_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
                     if pre in PREFERRED_HERM_NEURON_NAMES and pre not in neurons:
@@ -158,12 +159,12 @@ class Cook2020DataReader(ConnectomeDataset):
 
             for row in reader:
                 pre = str.strip(row["Source"])
-                if is_muscle(pre):
+                if is_potential_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
                 if is_marginal_cell(pre):
                     pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
-                if is_muscle(post):
+                if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
                 if is_marginal_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
@@ -178,7 +179,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
-                if is_muscle(post):
+                if is_known_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
                         muscles.append(post)
                     if pre in PREFERRED_HERM_NEURON_NAMES and pre not in neurons:

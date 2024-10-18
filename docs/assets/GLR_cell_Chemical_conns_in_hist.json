@@ -7,6 +7,32 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "White_L4 Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "Witvliet1 Chemical conns in",
       "type": "scatter",
       "x": [
@@ -206,32 +232,6 @@
         3,
         1,
         0
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "White_L4 Chemical conns in",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVL",
-        "GLRVR"
-      ],
-      "y": [
-        0,
-        0,
-        0,
-        0,
-        1,
-        1
       ]
     },
     {

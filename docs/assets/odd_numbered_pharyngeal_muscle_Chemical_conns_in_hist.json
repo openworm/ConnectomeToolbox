@@ -41,40 +41,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Cook2020 Chemical conns in",
-      "type": "scatter",
-      "x": [
-        "pm1",
-        "pm3D",
-        "pm3VL",
-        "pm3VR",
-        "pm5D",
-        "pm5VL",
-        "pm5VR",
-        "pm7D",
-        "pm7VL",
-        "pm7VR"
-      ],
-      "y": [
-        4,
-        1,
-        4,
-        3,
-        14,
-        9,
-        10,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Chemical conns in",
       "type": "scatter",
       "x": [
@@ -133,6 +99,40 @@
         10,
         1,
         0,
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2020 Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "pm1",
+        "pm3D",
+        "pm3VL",
+        "pm3VR",
+        "pm5D",
+        "pm5VL",
+        "pm5VR",
+        "pm7D",
+        "pm7VL",
+        "pm7VR"
+      ],
+      "y": [
+        4,
+        1,
+        4,
+        3,
+        14,
+        9,
+        10,
+        1,
+        1,
         1
       ]
     }

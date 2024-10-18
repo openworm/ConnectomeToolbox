@@ -2,7 +2,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.Cells import convert_to_preferred_muscle_name
 from cect.Cells import is_neuron
-from cect.Cells import is_muscle
+from cect.Cells import is_potential_muscle
+from cect.Cells import is_known_muscle
 from cect.Cells import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
@@ -55,10 +56,10 @@ class WitvlietDataReader(ConnectomeDataset):
             pre = fix_witvliet_cell_naming(remove_leading_index_zero(pre))
             post = fix_witvliet_cell_naming(remove_leading_index_zero(post))
 
-            if is_muscle(pre):
+            if is_potential_muscle(pre):
                 pre = convert_to_preferred_muscle_name(pre)
 
-            if is_muscle(post):
+            if is_potential_muscle(post):
                 post = convert_to_preferred_muscle_name(post)
 
             syntype = str(row[2])
@@ -76,7 +77,7 @@ class WitvlietDataReader(ConnectomeDataset):
             for p in [pre, post]:
                 if is_neuron(p):
                     neurons.add(pre)
-                elif is_muscle(p):
+                elif is_known_muscle(p):
                     muscles.add(pre)
                 else:
                     other_cells.add(p)

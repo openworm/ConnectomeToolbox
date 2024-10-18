@@ -13,7 +13,7 @@ from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import is_neuron
 from cect.Cells import is_known_body_wall_muscle
-from cect.Cells import is_muscle
+from cect.Cells import is_known_muscle
 from cect.Cells import is_pharyngeal_cell
 
 import numpy as np
@@ -24,6 +24,8 @@ import pprint
 import random
 
 from cect.Cells import get_SIM_class
+
+random.seed(10)
 
 
 def _get_epsilon(scale):
@@ -52,7 +54,7 @@ class ConnectomeDataset:
 
             self.connections[c] = new_conn_array
 
-    def to_networkx_graph(self, synclass):
+    def to_networkx_graph(self, synclass, view=None):
         import networkx as nx
 
         conn_array = self.connections[synclass]
@@ -68,6 +70,16 @@ class ConnectomeDataset:
         for nn_id in Gn.nodes:
             nn = Gn.nodes[nn_id]
             nn["SIM_class"] = get_SIM_class(nn_id)
+            # print_("Determined the SIM class of %s: %s" % (nn_id, nn["SIM_class"]))
+
+            if nn["SIM_class"] == "Other" and view is not None:
+                ns = view.get_node_set(nn_id)
+                classes = [get_SIM_class(c) for c in ns.cells]
+
+                all_same = all(a == classes[0] for a in classes)
+                if all_same:
+                    nn["SIM_class"] = classes[0]
+                    # print_("  RE Determined SIM class of %s: %s" % (nn_id, nn["SIM_class"])                    )
 
         return Gn
 
@@ -131,7 +143,7 @@ class ConnectomeDataset:
         conns = []
 
         for conn_info in self.connection_infos:
-            if is_neuron(conn_info.pre_cell) and is_muscle(conn_info.post_cell):
+            if is_neuron(conn_info.pre_cell) and is_known_muscle(conn_info.post_cell):
                 neurons.add(conn_info.pre_cell)
                 muscles.add(conn_info.post_cell)
                 conns.append(conn_info)
@@ -332,6 +344,7 @@ class ConnectomeDataset:
             color_continuous_scale=color_continuous_scale,
             zmin=zmin,
             zmax=zmax,
+            height=600,
         )
 
         fig.update(
@@ -344,6 +357,39 @@ class ConnectomeDataset:
         fig.update_layout(
             margin=dict(l=2, r=2, t=2, b=2),
         )
+
+        sens_line = False
+        inter_line = False
+        motor_line = False
+        muscle_line = False
+        other_line = False
+
+        for i, node_value in enumerate(self.nodes):
+            if not view.get_node_set(node_value).is_one_cell():
+                break
+
+            if not sens_line and node_value in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
+                sens_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not inter_line and node_value in INTERNEURONS_NONPHARYNGEAL_COOK:
+                inter_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not motor_line and node_value in MOTORNEURONS_NONPHARYNGEAL_COOK:
+                motor_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not muscle_line and is_known_muscle(node_value):
+                muscle_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not other_line and (
+                not is_known_muscle(node_value) and not is_neuron(node_value)
+            ):
+                other_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
 
         return fig
 
@@ -392,15 +438,22 @@ class ConnectomeDataset:
                 ]
             elif node_value in MOTORNEURONS_NONPHARYNGEAL_COOK:
                 init_pos[i] = [1 * scale + _get_epsilon(scale), 0 + _get_epsilon(scale)]
-            elif is_known_body_wall_muscle(node_value):
-                init_pos[i] = [
-                    1 * scale + _get_epsilon(scale),
-                    (-1 * scale if node_value.startswith("MD") else 1 * scale)
-                    + _get_epsilon(scale),
-                ]
+
+            elif is_known_muscle(node_value):
+                if is_known_body_wall_muscle(node_value):
+                    init_pos[i] = [
+                        1 * scale + _get_epsilon(scale),
+                        (-1 * scale if node_value.startswith("MD") else 1 * scale)
+                        + _get_epsilon(scale),
+                    ]
+                else:
+                    init_pos[i] = [
+                        2 * scale + _get_epsilon(scale),
+                        0 * scale + _get_epsilon(scale),
+                    ]
             else:
                 init_pos[i] = [
-                    2 + _get_epsilon(scale),
+                    0 * scale + _get_epsilon(scale),
                     -0.1 * scale + _get_epsilon(scale),
                 ]
 
@@ -419,6 +472,8 @@ class ConnectomeDataset:
 
         node_x = [float("{:.6f}".format(pos[i][0])) for i in G.nodes()]
         node_y = [float("{:.6f}".format(pos[i][1])) for i in G.nodes()]
+
+        max_dim = max(abs(max(node_x) - min(node_x)), abs(max(node_y) - min(node_y)))
 
         edge_traces = []
 
@@ -451,7 +506,7 @@ class ConnectomeDataset:
                             if verbose:
                                 print_("\n - 2 way connections")
                             # L = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)  # length
-                            offset = 0.2
+                            offset = max_dim / 15
                             edge_x.append(((x0 + x1) / 2) + offset * (y0 - y1))
                             edge_y.append(((y0 + y1) / 2) + offset * (x1 - x0))
                     else:
@@ -459,7 +514,10 @@ class ConnectomeDataset:
                             print_(
                                 f"\n - Same point ({x0},{y0}) -> ({x1},{y1})   {x0 != x1} and {y0 != y1}"
                             )
-                        circle_offset_a = get_node_size(from_node_set) / 100
+
+                        circle_offset_a = (
+                            max_dim / 20 if from_node_set.is_one_cell() else max_dim / 6
+                        )
 
                         edge_x.append(x0 - circle_offset_a)
                         edge_y.append(y0 + circle_offset_a / 3)
@@ -473,7 +531,7 @@ class ConnectomeDataset:
 
                     if verbose:
                         print_(
-                            f"{self.nodes[dir_[0]]}->{self.nodes[dir_[1]]}:{conn_weight} - Node {dir_[0]}  ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}"
+                            f"{self.nodes[dir_[0]]}->{self.nodes[dir_[1]]}:{conn_weight} - Node {dir_[0]}  ({x0},{y0}) -> node {dir_[1]} ({x1},{y1}), weight: {weight} (from {conn_weight}), opp weight: {opposite_dir_weight}, gj: {gap_junction}, xs: {edge_x}, ys: {edge_y}, max_dim: {max_dim}"
                         )
                     line_color = "grey"
                     if gap_junction:
@@ -510,7 +568,7 @@ class ConnectomeDataset:
 
         add_text = False
 
-        for i, node_value in enumerate(self.nodes):
+        for node_i, node_value in enumerate(self.nodes):
             # num_connections = node_adjacencies[i]
 
             node_set = view.get_node_set(node_value)
@@ -520,11 +578,11 @@ class ConnectomeDataset:
 
                 if "#" in node_set.color:
                     h = node_set.color[1:]
-                    rgb = tuple((int(h[i : i + 2], 16) / 256) for i in (0, 2, 4))
+                    rgb = tuple((int(h[c : c + 2], 16) / 256) for c in (0, 2, 4))
                 else:
                     import webcolors
 
-                    rgb = webcolors.name_to_rgb(node_set.color)
+                    rgb = tuple(c / 256 for c in webcolors.name_to_rgb(node_set.color))
 
                 # https://stackoverflow.com/questions/3942878
                 if (
@@ -536,7 +594,7 @@ class ConnectomeDataset:
                 node_font_colors[node_value] = fcolor
                 if verbose:
                     print_(
-                        f"For node {node_value}, with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
+                        f"For node {node_value} ({node_x[node_i]},{node_y[node_i]}), with color {node_set.color} ({rgb}), using color {fcolor} for optional text"
                     )
 
             node_sizes.append(get_node_size(node_set))
@@ -648,7 +706,7 @@ class ConnectomeDataset:
         # print(self.summary())
         cv = self
 
-        G = cv.to_networkx_graph(synclass)
+        G = cv.to_networkx_graph(synclass, view)
 
         nids = [n for n in G.nodes]
 
@@ -662,13 +720,16 @@ class ConnectomeDataset:
 
         nodes, edges = networkx_to_nodes_edges(G)
 
+        if verbose:
+            print_("%s" % nodes)
+
         blocks_dict_unordered = split_nodes_on_variable(
             nodes, variable_name="SIM_class"
         )
 
         if verbose:
-            print_(nodes)
-            print_(edges)
+            print_("--------------\nNodes: %s" % nodes)
+            print_("Edges: %s" % edges)
             print_(pprint.pprint(nx.node_link_data(G)))
 
             print_(
@@ -958,11 +1019,21 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import ESCAPE_VIEW as view
+
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
-    # from cect.White_whole import get_instance
-    from cect.Cook2019HermReader import get_instance
+    from cect.White_whole import get_instance
+    # from cect.WitvlietDataReader8 import get_instance
+    # from cect.Cook2019HermReader import get_instance
+
+    synclass = "Chemical Inh"
+    synclass = "Chemical Exc"
+
+    # synclass = "Acetylcholine"
+    synclass = "Chemical"
+    synclass = "Electrical"
     # from cect.TestDataReader import get_instance
 
     cds = get_instance()
@@ -971,9 +1042,10 @@ if __name__ == "__main__":
 
     print(cds2.summary())
 
+    print("Keys: %s" % view.synclass_sets.keys())
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
     fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio

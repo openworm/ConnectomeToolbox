@@ -7,7 +7,7 @@ title: Witvliet7
     <tbody>
         <tr>
             <td><b>Choose Dataset: </b></td>
-            <td>- <a href="../Full1_White_A_data_hiveplot">White_A</a> - <a href="../Full1_White_L4_data_hiveplot">White_L4</a> - <a href="../Full1_White_whole_data_hiveplot">White_whole</a> - <a href="../Full1_Varshney_data_hiveplot">Varshney</a> - <a href="../Full1_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - <a href="../Full1_Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Full1_Cook2020_data_hiveplot">Cook2020</a> - <a href="../Full1_Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Full1_Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Full1_Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Full1_Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Full1_Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Full1_Witvliet6_data_hiveplot">Witvliet6</a> - <b><a href="../Full1_Witvliet7_data_hiveplot">Witvliet7</a></b> - <a href="../Full1_Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../Full1_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Full1_Randi2023_data_hiveplot">Randi2023</a> - <a href="../Full1_RipollSanchez_data_hiveplot">RipollSanchez</a> - <a href="../Full1_Test_data_hiveplot">Test</a> - <a href="../Full1_SSData_data_hiveplot">SSData</a> - <a href="../Full1_UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../Full1_UpdSSData2_data_hiveplot">UpdSSData2</a> - </td>
+            <td>- <a href="../Full1_White_A_data_hiveplot">White_A</a> - <a href="../Full1_White_L4_data_hiveplot">White_L4</a> - <a href="../Full1_White_whole_data_hiveplot">White_whole</a> - <a href="../Full1_Varshney_data_hiveplot">Varshney</a> - <a href="../Full1_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> - <a href="../Full1_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> - <a href="../Full1_Cook2019Herm_data_hiveplot">Cook2019Herm</a> - <a href="../Full1_Cook2019Male_data_hiveplot">Cook2019Male</a> - <a href="../Full1_Cook2020_data_hiveplot">Cook2020</a> - <a href="../Full1_Witvliet1_data_hiveplot">Witvliet1</a> - <a href="../Full1_Witvliet2_data_hiveplot">Witvliet2</a> - <a href="../Full1_Witvliet3_data_hiveplot">Witvliet3</a> - <a href="../Full1_Witvliet4_data_hiveplot">Witvliet4</a> - <a href="../Full1_Witvliet5_data_hiveplot">Witvliet5</a> - <a href="../Full1_Witvliet6_data_hiveplot">Witvliet6</a> - <b><a href="../Full1_Witvliet7_data_hiveplot">Witvliet7</a></b> - <a href="../Full1_Witvliet8_data_hiveplot">Witvliet8</a> - <a href="../Full1_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> - <a href="../Full1_Randi2023_data_hiveplot">Randi2023</a> - <a href="../Full1_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> - <a href="../Full1_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> - <a href="../Full1_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> - <a href="../Full1_Test_data_hiveplot">Test</a> - <a href="../Full1_SSData_data_hiveplot">SSData</a> - <a href="../Full1_UpdSSData_data_hiveplot">UpdSSData</a> - <a href="../Full1_UpdSSData2_data_hiveplot">UpdSSData2</a> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -15,7 +15,7 @@ title: Witvliet7
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <a href="../Witvliet7_data_hiveplot">Raw Data</a> - <a href="../Neurons_Witvliet7_data_hiveplot">Neurons</a> - <a href="../Pharynx_Witvliet7_data_hiveplot">Pharynx</a> - <a href="../Social_Witvliet7_data_hiveplot">Social Network</a> - <b><a href="../Full1_Witvliet7_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
+            <td> - <a href="../Witvliet7_data_hiveplot">Raw Data</a> - <a href="../Neurons_Witvliet7_data_hiveplot">Neurons</a> - <a href="../Pharynx_Witvliet7_data_hiveplot">Pharynx</a> - <a href="../Social_Witvliet7_data_hiveplot">Social Network</a> - <a href="../Escape_Witvliet7_data_hiveplot">Escape Response Circuit</a> - <b><a href="../Full1_Witvliet7_data_hiveplot">Cook 2019 Fig 3</a></b> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -30,9 +30,19 @@ title: Witvliet7
 
     </tbody>
 </table>=== "Chemical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Witvliet7_Full1_Chemical_hiveplot.json" }
+    ```
+
 === "Electrical"
-No plottable connections of this type...
+
+    <br/>
+    ```plotly
+    { "file_path": "./assets/Witvliet7_Full1_Electrical_hiveplot.json" }
+    ```
+
 
 ### Neurons (181)
 <details><summary>Full list of Neurons</summary>

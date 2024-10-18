@@ -7,7 +7,7 @@ title: Witvliet1
     <tbody>
         <tr>
             <td><b>Choose Dataset: </b></td>
-            <td>- <a href="../White_A_data">White_A</a> - <a href="../White_L4_data">White_L4</a> - <a href="../White_whole_data">White_whole</a> - <a href="../Varshney_data">Varshney</a> - <a href="../Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Cook2019Herm_data">Cook2019Herm</a> - <a href="../Cook2019Male_data">Cook2019Male</a> - <a href="../Cook2020_data">Cook2020</a> - <b><a href="../Witvliet1_data">Witvliet1</a></b> - <a href="../Witvliet2_data">Witvliet2</a> - <a href="../Witvliet3_data">Witvliet3</a> - <a href="../Witvliet4_data">Witvliet4</a> - <a href="../Witvliet5_data">Witvliet5</a> - <a href="../Witvliet6_data">Witvliet6</a> - <a href="../Witvliet7_data">Witvliet7</a> - <a href="../Witvliet8_data">Witvliet8</a> - <a href="../WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Randi2023_data">Randi2023</a> - <a href="../RipollSanchez_data">RipollSanchez</a> - <a href="../Test_data">Test</a> - <a href="../SSData_data">SSData</a> - <a href="../UpdSSData_data">UpdSSData</a> - <a href="../UpdSSData2_data">UpdSSData2</a> - </td>
+            <td>- <a href="../White_A_data">White_A</a> - <a href="../White_L4_data">White_L4</a> - <a href="../White_whole_data">White_whole</a> - <a href="../Varshney_data">Varshney</a> - <a href="../Bentley2016_MA_data">Bentley2016_MA</a> - <a href="../Bentley2016_PEP_data">Bentley2016_PEP</a> - <a href="../Cook2019Herm_data">Cook2019Herm</a> - <a href="../Cook2019Male_data">Cook2019Male</a> - <a href="../Cook2020_data">Cook2020</a> - <b><a href="../Witvliet1_data">Witvliet1</a></b> - <a href="../Witvliet2_data">Witvliet2</a> - <a href="../Witvliet3_data">Witvliet3</a> - <a href="../Witvliet4_data">Witvliet4</a> - <a href="../Witvliet5_data">Witvliet5</a> - <a href="../Witvliet6_data">Witvliet6</a> - <a href="../Witvliet7_data">Witvliet7</a> - <a href="../Witvliet8_data">Witvliet8</a> - <a href="../WormNeuroAtlas_data">WormNeuroAtlas</a> - <a href="../Randi2023_data">Randi2023</a> - <a href="../RipollSanchezShortRange_data">RipollSanchezShortRange</a> - <a href="../RipollSanchezMidRange_data">RipollSanchezMidRange</a> - <a href="../RipollSanchezLongRange_data">RipollSanchezLongRange</a> - <a href="../Test_data">Test</a> - <a href="../SSData_data">SSData</a> - <a href="../UpdSSData_data">UpdSSData</a> - <a href="../UpdSSData2_data">UpdSSData2</a> - </td>
         </tr>
         <tr>
             <td ></td>
@@ -15,7 +15,7 @@ title: Witvliet1
         </tr>
         <tr>
             <td><b>Choose View: </b></td>
-            <td> - <b><a href="../Witvliet1_data">Raw Data</a></b> - <a href="../Neurons_Witvliet1_data">Neurons</a> - <a href="../Pharynx_Witvliet1_data">Pharynx</a> - <a href="../Social_Witvliet1_data">Social Network</a> - <a href="../Full1_Witvliet1_data">Cook 2019 Fig 3</a> - </td>
+            <td> - <b><a href="../Witvliet1_data">Raw Data</a></b> - <a href="../Neurons_Witvliet1_data">Neurons</a> - <a href="../Pharynx_Witvliet1_data">Pharynx</a> - <a href="../Social_Witvliet1_data">Social Network</a> - <a href="../Escape_Witvliet1_data">Escape Response Circuit</a> - <a href="../Full1_Witvliet1_data">Cook 2019 Fig 3</a> - </td>
         </tr>
         <tr>
             <td ></td>

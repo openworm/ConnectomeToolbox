@@ -31,7 +31,9 @@ reader_pages = {
     "Witvliet8": "Witvliet8_data",
     "WormNeuroAtlas": "WormNeuroAtlas_data",
     "Randi2023": "Randi2023_data",
-    "RipollSanchez": "RipollSanchez_data",
+    "RipollSanchezShortRange": "RipollSanchezShortRange_data",
+    "RipollSanchezMidRange": "RipollSanchezMidRange_data",
+    "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
@@ -149,23 +151,16 @@ def generate_comparison_page(quick: bool, color_table=True):
     readers = {}
 
     if not quick:
-        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
-        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
-        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+        readers["White_A"] = ["cect.White_A", "White_1986"]
+        readers["White_L4"] = ["cect.White_L4", "White_1986"]
 
-    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
     readers["White_whole"] = ["cect.White_whole", "White_1986"]
-    readers["Test"] = ["cect.TestDataReader", None]
-    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
-    readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
+    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
 
     if not quick:
-        readers["RipollSanchez"] = [
-            "cect.RipollSanchezDataReader",
-            "RipollSanchez_2023",
-        ]
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
+        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
         readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
@@ -173,15 +168,38 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
         readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
-        readers["White_A"] = ["cect.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.White_L4", "White_1986"]
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+
+    readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+
+    if not quick:
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
+        readers["RipollSanchezShortRange"] = [
+            "cect.RipollSanchezShortRangeReader",
+            "RipollSanchez_2023",
+        ]
+        readers["RipollSanchezMidRange"] = [
+            "cect.RipollSanchezMidRangeReader",
+            "RipollSanchez_2023",
+        ]
+        readers["RipollSanchezLongRange"] = [
+            "cect.RipollSanchezLongRangeReader",
+            "RipollSanchez_2023",
+        ]
+
+    if not quick:
+        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
+        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
+        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+
+    readers["Test"] = ["cect.TestDataReader", None]
+
     main_mk = "# Comparison between data readers\n"
-    table = ""
+    table_html = ""
 
     for reader_name, reader_info in readers.items():
         reader = reader_info[0]
@@ -494,7 +512,7 @@ def generate_comparison_page(quick: bool, color_table=True):
 
     if color_table:
         STYLE = '"width:80px"'
-        table += f"<table>\n  <tr>\n    <th style={STYLE}>Group</th>\n"
+        table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:150%"> </span></th>\n'
 
         readers_to_include = []
 
@@ -503,10 +521,19 @@ def generate_comparison_page(quick: bool, color_table=True):
                 readers_to_include.append(reader_name)
 
         for reader_name in readers_to_include:
-            table += f"    <th style={STYLE}>{reader_name}</th>\n"
+            better_name = (
+                reader_name.replace("_", " ")
+                .replace("201", " 201")
+                .replace("chez", "chez ")
+                .replace("19", "19 ")
+                .replace("liet", "liet ")
+                .replace("MA", "Monoamin.")
+                .replace("PEP", "Peptid.")
+            )
+            table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
 
         for group in COOK_GROUPING_1:
-            table += f"  <tr>\n<td >{group}</th>\n"
+            table_html += f'  <tr>\n<td ><b><span style="font-size:150%">{group}</span></b></th>\n'
 
             for reader_name in readers_to_include:
                 connectome = all_connectomes[reader_name]
@@ -519,22 +546,43 @@ def generate_comparison_page(quick: bool, color_table=True):
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
 
-                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 5:
+                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 9:
                         cells_here += "<br/>\n"
 
-                table += f"    <td >{cells_here}</th>\n"
+                table_html += f"    <td >{cells_here}</th>\n"
 
-            table += "  </tr>\n"
+            table_html += "  </tr>\n"
 
-        table += "  </tr>\n</table>\n"
+        table_html += "  </tr>\n</table>\n"
 
-        main_mk += table
+        main_mk += table_html.replace("150%", "100%")
 
     main_mk += df_all.to_markdown()
 
     filename = "docs/Comparison.md"
     with open(filename, "w") as f:
         f.write(main_mk)
+
+    print_("Written page: %s" % filename)
+
+    filename = "docs/Comparison_table.html"
+    with open(filename, "w") as f:
+        f.write(
+            """<html>
+  <head>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+    </head>
+    <body>
+    %s
+    </body>
+</html>"""
+            % table_html
+        )
 
     print_("Written page: %s" % filename)
 
