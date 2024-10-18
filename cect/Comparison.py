@@ -171,11 +171,10 @@ def generate_comparison_page(quick: bool, color_table=True):
 
     readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
-    readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
-
-    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
-
     if not quick:
+        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 

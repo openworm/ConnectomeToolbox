@@ -2030,6 +2030,7 @@ if __name__ == "__main__":
 
     with open(filename, "w") as f:
         f.write("---\ntitle: <i>C. elegans</i> cells\n---\n\n")
+
         for sex in WA_COLORS:
             f.write("\n## %s\n" % sex)
 
@@ -2043,6 +2044,10 @@ if __name__ == "__main__":
                         if cell_type == "body wall muscle":
                             f.write(
                                 _generate_cell_table(cell_type, BODY_WALL_MUSCLE_NAMES)
+                            )
+                        elif cell_type == "vulval muscle":
+                            f.write(
+                                _generate_cell_table(cell_type, VULVAL_MUSCLE_NAMES)
                             )
                         elif cell_type == "interneuron":
                             f.write(

@@ -7,6 +7,58 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "White_A Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "White_L4 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "White_whole Electrical conns",
       "type": "scatter",
       "x": [
@@ -128,58 +180,6 @@
         1,
         0,
         0
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "White_A Electrical conns",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVL",
-        "GLRVR"
-      ],
-      "y": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "White_L4 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVL",
-        "GLRVR"
-      ],
-      "y": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
       ]
     },
     {
