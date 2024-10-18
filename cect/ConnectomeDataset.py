@@ -70,19 +70,16 @@ class ConnectomeDataset:
         for nn_id in Gn.nodes:
             nn = Gn.nodes[nn_id]
             nn["SIM_class"] = get_SIM_class(nn_id)
-            print_("Determined the SIM class of %s: %s" % (nn_id, nn["SIM_class"]))
+            # print_("Determined the SIM class of %s: %s" % (nn_id, nn["SIM_class"]))
 
             if nn["SIM_class"] == "Other" and view is not None:
-                print(33)
                 ns = view.get_node_set(nn_id)
                 classes = [get_SIM_class(c) for c in ns.cells]
-                print(classes)
+
                 all_same = all(a == classes[0] for a in classes)
                 if all_same:
                     nn["SIM_class"] = classes[0]
-                    print_(
-                        "  RE Determined SIM class of %s: %s" % (nn_id, nn["SIM_class"])
-                    )
+                    # print_("  RE Determined SIM class of %s: %s" % (nn_id, nn["SIM_class"])                    )
 
         return Gn
 
@@ -347,6 +344,7 @@ class ConnectomeDataset:
             color_continuous_scale=color_continuous_scale,
             zmin=zmin,
             zmax=zmax,
+            height=600,
         )
 
         fig.update(
@@ -360,12 +358,45 @@ class ConnectomeDataset:
             margin=dict(l=2, r=2, t=2, b=2),
         )
 
+        sens_line = False
+        inter_line = False
+        motor_line = False
+        muscle_line = False
+        other_line = False
+
+        for i, node_value in enumerate(self.nodes):
+            if not view.get_node_set(node_value).is_one_cell():
+                break
+
+            if not sens_line and node_value in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
+                sens_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not inter_line and node_value in INTERNEURONS_NONPHARYNGEAL_COOK:
+                inter_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not motor_line and node_value in MOTORNEURONS_NONPHARYNGEAL_COOK:
+                motor_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not muscle_line and is_known_muscle(node_value):
+                muscle_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+            if not other_line and (
+                not is_known_muscle(node_value) and not is_neuron(node_value)
+            ):
+                other_line = True
+                fig.add_hline(y=i - 0.5, line_width=0.5)
+                fig.add_vline(x=i - 0.5, line_width=0.5)
+
         return fig
 
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
-        verbose = True
+        verbose = False
 
         print_("==============")
         print_(
@@ -671,7 +702,7 @@ class ConnectomeDataset:
         print_("==============")
         print_(f"Generating: {synclass} for {view}")
 
-        verbose = True
+        verbose = False
         # print(self.summary())
         cv = self
 
@@ -1014,8 +1045,8 @@ if __name__ == "__main__":
     print("Keys: %s" % view.synclass_sets.keys())
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(synclass, view)
-    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
 
     import plotly.io as pio
 
