@@ -1,11 +1,16 @@
-# The Structure of the Nervous System of the Nematode *Caenorhabditis elegans* #
+## The Structure of the Nervous System of the Nematode *Caenorhabditis elegans* #
 
-*By J.G.White, E.Southgate, J.N. Thomson and S.Brenner, F.R.S.*
+*J.G.White, E.Southgate, J.N. Thomson and S.Brenner, F.R.S.*
 
 *[Phil. Trans. R. Soc. Lond. B3141–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056)*<br>
 *Published 12 November 1986*
 
-_**Datasets: [White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)**_
+!!! example "Datasets"     
+
+    - **[White_A](White_A_data.md)**
+    - **[White_L4](White_L4_data.md)**
+    - **[White_whole](White_whole_data.md)**
+    
 
 **Type of Connectomics Data**
 

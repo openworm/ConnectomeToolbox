@@ -38,7 +38,7 @@ columns 4
   block:70sA
     columns 1
     space    
-    A1("<b><a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/'>Albertson and Thomson 1976</a></b>")
+    A1("<b><a href='Albertson_1976'>Albertson and Thomson 1976</a></b>")
     space space space
   end
 
@@ -59,9 +59,9 @@ columns 4
 
   block:80sA
     columns 1
-    A("<b><a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a></b>")
+    A("<b><a href='White_1986' >White et al. 1986</a></b>")
     space
-    B("<b><a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a></b>")
+    B("<b><a href='Durbin_1987/' >Durbin 1987</a></b>")
     space
     space
   end
@@ -84,7 +84,7 @@ columns 4
   block:90sA
     columns 1
     space
-    A2("<b><a href='http://openworm.org/ConnectomeToolbox/Hall_1991/'>Hall & Russell 1991</a></b>") space space space
+    A2("<b><a href='Hall_1991/'>Hall & Russell 1991</a></b>") space space space
   end
   
   block:90sB
@@ -114,7 +114,7 @@ columns 4
 
   block:00sC
     columns 1
-    C("<b><a href='http://openworm.org/ConnectomeToolbox/Altun_2009/'>Altun et al. 2009</a></b>")
+    C("<b><a href='Altun_2009/'>Altun et al. 2009</a></b>")
     space space space
   end
   
@@ -125,18 +125,18 @@ columns 4
 
   block:10sA
     columns 1
-    D("<b><a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/'>Varshney et al.2011</a></b>") 
-    G("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2019/'>Cook et al. 2019</a></b>") 
+    D("<b><a href='Varshney_2011/'>Varshney et al.2011</a></b>") 
+    G("<b><a href='Cook_2019/'>Cook et al. 2019</a></b>") 
     space
     space
   end
 
   block:10sB
     columns 1
-    E1("<b><a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/'>Serrano-Saiz et al. 2013</a></b>") 
-    E("<b><a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/'>Pereira et al. 2015</a></b>")
-    E2("<b><a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/'>Gendrel, Hobert & Atlas 2016</a></b>")
-    F("<b><a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/'>Bentley et al. 2016</a></b>")
+    E1("<b><a href='Serrano_2013/'>Serrano-Saiz et al. 2013</a></b>") 
+    E("<b><a href='Pereira_2015/'>Pereira et al. 2015</a></b>")
+    E2("<b><a href='Gendrel_2016/'>Gendrel, Atlas & Hobert 2016</a></b>")
+    F("<b><a href='Bentley_2016/'>Bentley et al. 2016</a></b>")
   end
   block:10sC
     columns 1
@@ -150,15 +150,15 @@ columns 4
 
   block:20sA
     columns 1
-    I("<b><a href='http://openworm.org/ConnectomeToolbox/Cook_2020/'>Cook et al. 2020</a></b>")
-    J("<b><a href='http://openworm.org/ConnectomeToolbox/Brittin_2021'>Brittin et al. 2021</a></b>")
-    K("<b><a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021'>Witvliet et al. 2021</a></b>")
+    I("<b><a href='Cook_2020/'>Cook et al. 2020</a></b>")
+    J("<b><a href='Brittin_2021'>Brittin et al. 2021</a></b>")
+    K("<b><a href='Witvliet_2021'>Witvliet et al. 2021</a></b>")
     space
   end    
 
   block:20sB
     columns 1
-    NP("<b><a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023'>Ripoll-Sanchez et al. 2023</a></b>")
+    NP("<b><a href='Ripoll_2023'>Ripoll-Sanchez et al. 2023</a></b>")
     space
     space
     space
@@ -166,17 +166,17 @@ columns 4
 
   block:20sC
     columns 1
-    L("<b><a href='http://openworm.org/ConnectomeToolbox/Taylor_2021'>Taylor et al. 2021</a></b>")
-    M("<b><a href='http://openworm.org/ConnectomeToolbox/Yemini_2021'>Yemini et al. 2021</a></b>")
-    N("<b><a href='http://openworm.org/ConnectomeToolbox/Beets_2023'>Beets et al. 2023</a></b>")
+    L("<b><a href='Taylor_2021'>Taylor et al. 2021</a></b>")
+    M("<b><a href='Yemini_2021'>Yemini et al. 2021</a></b>")
+    N("<b><a href='Beets_2023'>Beets et al. 2023</a></b>")
     space
   end    
   block:20sD
     columns 1
-    H("<b><a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/'>Fenyves et al.2020</a></b>") 
-    P("<b><a href='http://openworm.org/ConnectomeToolbox/Randi_2023'>Randi et al. 2023</a></b>")
-    R("<b><a href='http://openworm.org/ConnectomeToolbox/Dag_2023'>Dag et al. 2023</a></b>")
-    T("<b><a href='http://openworm.org/ConnectomeToolbox/Atanas_2023'>Atanas et al. 2023</a></b>")
+    H("<b><a href='Fenyves_2020/'>Fenyves et al.2020</a></b>") 
+    P("<b><a href='Randi_2023'>Randi et al. 2023</a></b>")
+    R("<b><a href='Dag_2023'>Dag et al. 2023</a></b>")
+    T("<b><a href='Atanas_2023'>Atanas et al. 2023</a></b>")
   end     
 
     E --> H
@@ -287,26 +287,26 @@ flowchart TD
 
 
     subgraph 1970-1980
-    A1["<a href='http://openworm.org/ConnectomeToolbox/Albertson_1976/' >Albertson & Thomson 1976</a>"]:::anat
+    A1["<a href='Albertson_1976/' >Albertson & Thomson 1976</a>"]:::anat
     end
     subgraph 1980-1990
-    A["<a href='http://openworm.org/ConnectomeToolbox/White_1986/' >White et al. 1986</a>"]:::anat & B["<a href='http://openworm.org/ConnectomeToolbox/Durbin_1987/' >Durbin 1987</a>"]:::anat
+    A["<a href='White_1986/' >White et al. 1986</a>"]:::anat & B["<a href='Durbin_1987/' >Durbin 1987</a>"]:::anat
     end
 
     subgraph 1990-2000
-    A2["<a href='http://openworm.org/ConnectomeToolbox/Hall_1991/' >Hall & Russell 1991</a>"]:::anat
+    A2["<a href='Hall_1991/' >Hall & Russell 1991</a>"]:::anat
     end
 
     subgraph 2000-2010
-    C["<a href='http://openworm.org/ConnectomeToolbox/Altun_2009/' >Altun et al. 2009</a>"]:::gene 
+    C["<a href='Altun_2009/' >Altun et al. 2009</a>"]:::gene 
     end
 
     subgraph 2010-2020
-    D["<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/' >Varshney et al.2011</a>"]:::anat & E["<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/' >Pereira et al. 2015</a>"]:::es & E1["<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/' >Serrano-Saiz et al. 2013</a>"]:::es  & E2["<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/' >Gendrel, Hobert & Atlas 2016</a>"]:::es & F["<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/' >Bentley et al. 2016 </a>"]:::es & G["<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/' >Cook et al. 2019</a>"]:::anat & H["<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/' >Fenyves et al.2020</a>"]:::func & I["<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/' >Cook et al. 2020</a>"]:::anat
+    D["<a href='Varshney_2011/' >Varshney et al.2011</a>"]:::anat & E["<a href='Pereira_2015/' >Pereira et al. 2015</a>"]:::es & E1["<a href='Serrano_2013/' >Serrano-Saiz et al. 2013</a>"]:::es  & E2["<a href='Gendrel_2016/' >Gendrel, Atlas & Hobert 2016</a>"]:::es & F["<a href='Bentley_2016/' >Bentley et al. 2016 </a>"]:::es & G["<a href='Cook_2019/' >Cook et al. 2019</a>"]:::anat & H["<a href='Fenyves_2020/' >Fenyves et al.2020</a>"]:::func & I["<a href='Cook_2020/' >Cook et al. 2020</a>"]:::anat
     end
 
     subgraph 2020-2030
-    J["<a href='http://openworm.org/ConnectomeToolbox/Brittin_2021' >Brittin et al. 2021</a>"]:::anat & K["<a href='http://openworm.org/ConnectomeToolbox/Witvliet_2021' >Witvliet et al. 2021</a>"]:::anat & L["<a href='http://openworm.org/ConnectomeToolbox/Taylor_2021' >Taylor et al. 2021</a>"]:::gene & M["<a href='http://openworm.org/ConnectomeToolbox/Yemini_2021' >Yemini et al. 2021</a>"]:::gene & N["<a href='http://openworm.org/ConnectomeToolbox/Beets_2023' >Beets et al. 2023</a>"]:::gene & P["<a href='http://openworm.org/ConnectomeToolbox/Randi_2023' >Randi et al. 2023</a>"]:::func & NP["<a href='http://openworm.org/ConnectomeToolbox/Ripoll_2023' >Ripoll-Sanchez et al. 2023</a>"]:::es & R["<a href='http://openworm.org/ConnectomeToolbox/Dag_2023' >Dag et al. 2023</a>"]:::func & T["<a href='http://openworm.org/ConnectomeToolbox/Atanas_2023' >Atanas et al. 2023</a>"]:::func
+    J["<a href='Brittin_2021' >Brittin et al. 2021</a>"]:::anat & K["<a href='Witvliet_2021' >Witvliet et al. 2021</a>"]:::anat & L["<a href='Taylor_2021' >Taylor et al. 2021</a>"]:::gene & M["<a href='Yemini_2021' >Yemini et al. 2021</a>"]:::gene & N["<a href='Beets_2023' >Beets et al. 2023</a>"]:::gene & P["<a href='Randi_2023' >Randi et al. 2023</a>"]:::func & NP["<a href='Ripoll_2023' >Ripoll-Sanchez et al. 2023</a>"]:::es & R["<a href='Dag_2023' >Dag et al. 2023</a>"]:::func & T["<a href='Atanas_2023' >Atanas et al. 2023</a>"]:::func
     end     
 
 
@@ -352,25 +352,25 @@ flowchart TD
 | Papers                                                     | Features      | Datasets |
 | -------------                                              | -----         | ---- |
 | [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |
-| [White et al. 1986](White_1986.md)     | Anatomical | **[White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)** |
+| **[White et al. 1986](White_1986.md)**     | Anatomical | **[White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)** |
 | [Durbin 1987](Durbin_1987.md)    | Anatomical | *Work in progress: [Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)* |
 | [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |
 | [Altun et al. 2009](Altun_2009.md)   | Gene Expression |  *Work in progress: [data](https://docs.google.com/spreadsheets/d/1Jc9pOJAce8DdcgkTgkUXafhsBQdrer2Y47zrHsxlqWg/edit?gid=283505544#gid=283505544)* |
-| [Varshney et al. 2011](Varshney_2011.md)  | Anatomical | **[Varshney 2011](Varshney_data.md)** |
+| **[Varshney et al. 2011](Varshney_2011.md)**  | Anatomical | **[Varshney 2011](Varshney_data.md)** |
 | [Pereira et al. 2015](Pereira_2015.md)  | Extrasynaptic | *Work in progress: [Cholinergic neurons](https://doi.org/10.7554/eLife.12432.003) - [NT_Map_herm](https://doi.org/10.7554/eLife.12432.009) - [WormWiring](https://doi.org/10.7554/eLife.12432.010) - [male_cholinergic](https://doi.org/10.7554/eLife.12432.016) - [transcriptional_regulators](https://doi.org/10.7554/eLife.12432.019)* |
-| [Bentley et al. 2016](Bentley_2016.md)  | Extrasynaptic | **[Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md)** - **[Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)** |
-| [Cook et al. 2019](Cook_2019.md)          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** - **[Cook 2019 Male](Cook2019Male_data.md)** |
-| [Cook et al. 2020](Cook_2020.md)    | Anatomical | **[Cook 2020](Cook2020_data.md)**  |
+| **[Bentley et al. 2016](Bentley_2016.md)**  | Extrasynaptic | **[Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md)** - **[Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)** |
+| **[Cook et al. 2019](Cook_2019.md)**          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** - **[Cook 2019 Male](Cook2019Male_data.md)** |
+| **[Cook et al. 2020](Cook_2020.md)**   | Anatomical | **[Cook 2020](Cook2020_data.md)**  |
 | [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
 | [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | *Work in progress: [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) - [parsed](https://github.com/cabrittin/parsetrakem2)*  |
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
 | [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | *Work in progress: [data](https://zenodo.org/records/3906530)* |
-| [Witvliet et al. 2021](Witvliet_2021.md)  | Developmental | **[Witvliet1](Witvliet1_data.md)** - **[Witvliet2](Witvliet2_data.md)** - **[Witvliet3](Witvliet3_data.md)** - **[Witvliet4](Witvliet4_data.md)** - **[Witvliet5](Witvliet5_data.md)** - **[Witvliet6](Witvliet6_data.md)** - **[Witvliet7](Witvliet7_data.md)** - **[Witvliet8](Witvliet8_data.md)**|
+| **[Witvliet et al. 2021](Witvliet_2021.md)**  | Developmental | **[Witvliet1](Witvliet1_data.md)** - **[Witvliet2](Witvliet2_data.md)** - **[Witvliet3](Witvliet3_data.md)** - **[Witvliet4](Witvliet4_data.md)** - **[Witvliet5](Witvliet5_data.md)** - **[Witvliet6](Witvliet6_data.md)** - **[Witvliet7](Witvliet7_data.md)** - **[Witvliet8](Witvliet8_data.md)**|
 | [Beets et al. 2023](Beets_2023.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
 | [Dag et al. 2023](Dag_2023.md)    | Functional | N/A  |
 | [Atanas et al. 2023](Atanas_2023.md)    | Functional | *Work in progress: [data](https://www.wormwideweb.org/dataset.html)* |
-| [Randi et al. 2023](Randi_2023.md)    | Functional | **[WormNeuroAtlas: anatomical](WormNeuroAtlas_data.md)** -  **[WormNeuroAtlas: functional](Randi2023_data_graph.md)**  |
-| [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md)    | Extrasynaptic | **[Ripoll-Sánchez 2023 (short)](RipollSanchezShortRange_data.md) - [Ripoll-Sánchez 2023 (mid)](RipollSanchezMidRange_data.md) - [Ripoll-Sánchez 2023 (long)](RipollSanchezLongRange_data.md)**   |
+| **[Randi et al. 2023](Randi_2023.md)**    | Functional | **[WormNeuroAtlas: anatomical](WormNeuroAtlas_data.md)** -  **[WormNeuroAtlas: functional](Randi2023_data_graph.md)**  |
+| **[Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md)**    | Extrasynaptic | **[Ripoll-Sánchez 2023 (short)](RipollSanchezShortRange_data.md) - [Ripoll-Sánchez 2023 (mid)](RipollSanchezMidRange_data.md) - [Ripoll-Sánchez 2023 (long)](RipollSanchezLongRange_data.md)**   |
 
 
 

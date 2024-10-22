@@ -169,7 +169,7 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
-    readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
     if not quick:
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
