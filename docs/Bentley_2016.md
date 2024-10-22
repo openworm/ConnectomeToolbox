@@ -2,7 +2,11 @@
 
 *Barry Bentley, Robyn Branicky, Christopher L. Barnes, Yee Lian Chew, Eviatar Yemini, Edward T. Bullmore, Petra E. Vértes , William R. Schafer* <br>*[PLoS Comput Biol 12(12): e1005283](https://doi.org/10.1371/journal.pcbi.1005283)*<br> *Published: December 16, 2016* 
 
-_**Datasets: [Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md) [Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)**_
+
+!!! example "Datasets"     
+
+    - **[Bentley et al. 2016 Monoaminergic](Bentley2016_MA_data_graph.md)**
+    - **[Bentley et al. 2016 Peptidergic](Bentley2016_PEP_data_graph.md)**
 
 **Abstract:**
 

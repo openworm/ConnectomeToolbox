@@ -16,6 +16,7 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - admonition
   - pymdownx.snippets:
         base_path: ['docs']
   - pymdownx.superfences:
@@ -47,7 +48,7 @@ nav:
     - '<b>Varshney et al. 2011</b>': 'Varshney_2011.md'
     - 'Serrano-Saiz et al. 2013': 'Serrano_2013.md'
     - 'Pereira et al. 2015': 'Pereira_2015.md'
-    - 'Gendrel, Hobert & Atlas 2016': 'Gendrel_2016.md'
+    - 'Gendrel, Atlas & Hobert 2016': 'Gendrel_2016.md'
     - '<b>Bentley et al. 2016</b>': 'Bentley_2016.md'
     - '<b>Cook et al. 2019</b>': 'Cook_2019.md'
     - '<b>Cook et al. 2020</b>': 'Cook_2020.md'

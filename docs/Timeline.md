@@ -22,7 +22,7 @@ flowchart TD
     end
 
     subgraph 2010-2020
-    D[<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/' >Varshney et al.2011</a>]:::anat & E[<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/' >Pereira et al. 2015</a>]:::es & E1[<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/' >Serrano-Saiz et al. 2013</a>]:::es  & E2[<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/' >Gendrel, Hobert & Atlas 2016</a>]:::es & F[<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/' >Bentley et al. 2016 </a>]:::es & G[<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/' >Cook et al. 2019</a>]:::anat & H[<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/' >Fenyves et al.2020</a>]:::func & I[<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/' >Cook et al. 2020</a>]:::anat
+    D[<a href='http://openworm.org/ConnectomeToolbox/Varshney_2011/' >Varshney et al.2011</a>]:::anat & E[<a href='http://openworm.org/ConnectomeToolbox/Pereira_2015/' >Pereira et al. 2015</a>]:::es & E1[<a href='http://openworm.org/ConnectomeToolbox/Serrano_2013/' >Serrano-Saiz et al. 2013</a>]:::es  & E2[<a href='http://openworm.org/ConnectomeToolbox/Gendrel_2016/' >Gendrel, Atlas & Hobert 2016</a>]:::es & F[<a href='http://openworm.org/ConnectomeToolbox/Bentley_2016/' >Bentley et al. 2016 </a>]:::es & G[<a href='http://openworm.org/ConnectomeToolbox/Cook_2019/' >Cook et al. 2019</a>]:::anat & H[<a href='http://openworm.org/ConnectomeToolbox/Fenyves_2020/' >Fenyves et al.2020</a>]:::func & I[<a href='http://openworm.org/ConnectomeToolbox/Cook_2020/' >Cook et al. 2020</a>]:::anat
     end
 
     subgraph 2020-2030
