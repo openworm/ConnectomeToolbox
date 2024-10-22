@@ -1,0 +1,1584 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Bentley2016_MA - <i>C. elegans</i> Connectome Toolbox</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#neurons-233" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="&lt;i&gt;C. elegans&lt;/i&gt; Connectome Toolbox" class="md-header__button md-logo" aria-label="<i>C. elegans</i> Connectome Toolbox" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            <i>C. elegans</i> Connectome Toolbox
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bentley2016_MA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="&lt;i&gt;C. elegans&lt;/i&gt; Connectome Toolbox" class="md-nav__button md-logo" aria-label="<i>C. elegans</i> Connectome Toolbox" data-md-component="logo">
+      
+  <img src="../images/favicon.ico" alt="logo">
+
+    </a>
+    <i>C. elegans</i> Connectome Toolbox
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comparison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Related publications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Related publications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Albertson_1976/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Albertson & Thomson 1976
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../White_1986/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>White et al. 1986</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Durbin_1987/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Durbin 1987
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hall_1991/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hall & Russell 1991
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Altun_2009/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Altun et al. 2009
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Varshney_2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Varshney et al. 2011</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Serrano_2013/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serrano-Saiz et al. 2013
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pereira_2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pereira et al. 2015
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gendrel_2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gendrel, Atlas & Hobert 2016
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bentley_2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Bentley et al. 2016</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook_2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Cook et al. 2019</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook_2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Cook et al. 2020</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fenyves_2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenyves et al. 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Brittin_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Brittin et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Taylor_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taylor et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Yemini_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Yemini et al. 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet_2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Witvliet et al. 2021</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Beets_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beets et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dag_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dag et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Atanas_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atanas et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Randi_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Randi et al. 2023</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RipollSanchez_2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <b>Ripoll-Sánchez et al. 2023</b>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data sets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data sets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../White_A_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    White et al. 1986 - A (N2U)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../White_L4_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    White et al. 1986 - L4 (JSH)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../White_whole_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    White et al. 1986 - whole
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Varshney_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Varshney et al. 2011
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bentley2016_MA_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bentley et al. 2016 Monoam.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bentley2016_PEP_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bentley et al. 2016 Peptid.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook2019Herm_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cook et al. 2019 Herm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook2019Male_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cook et al. 2019 Male
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cook2020_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cook et al. 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet1_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet2_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet3_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet4_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet5_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet6_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet7_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Witvliet8_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Witvliet et al. 2021 - 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WormNeuroAtlas_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WormNeuroAtlas Anatomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Randi2023_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Randi et al. 2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RipollSanchezShortRange_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ripoll-Sánchez 2023 (short)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RipollSanchezMidRange_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ripoll-Sánchez 2023 (mid)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RipollSanchezLongRange_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ripoll-Sánchez 2023 (long)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Test_data_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cells
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cells
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cells/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <i>C. elegans</i> cells
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python package
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Python package
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About & Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neurons-233" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neurons (233)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-neurons-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missing neurons (69)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#muscles-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muscles (0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-cells-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other cells (0)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Bentley2016_MA</h1>
+
+<table>
+<tbody>
+<tr>
+<td><b>Choose Dataset: </b></td>
+<td>- <a href="../Social_White_A_data_graph">White_A</a> - <a href="../Social_White_L4_data_graph">White_L4</a> - <a href="../Social_White_whole_data_graph">White_whole</a> - <a href="../Social_Varshney_data_graph">Varshney</a> - <b><a href="../Social_Bentley2016_MA_data_graph">Bentley2016_MA</a></b> - <a href="../Social_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> - <a href="../Social_Cook2019Herm_data_graph">Cook2019Herm</a> - <a href="../Social_Cook2019Male_data_graph">Cook2019Male</a> - <a href="../Social_Cook2020_data_graph">Cook2020</a> - <a href="../Social_Witvliet1_data_graph">Witvliet1</a> - <a href="../Social_Witvliet2_data_graph">Witvliet2</a> - <a href="../Social_Witvliet3_data_graph">Witvliet3</a> - <a href="../Social_Witvliet4_data_graph">Witvliet4</a> - <a href="../Social_Witvliet5_data_graph">Witvliet5</a> - <a href="../Social_Witvliet6_data_graph">Witvliet6</a> - <a href="../Social_Witvliet7_data_graph">Witvliet7</a> - <a href="../Social_Witvliet8_data_graph">Witvliet8</a> - <a href="../Social_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> - <a href="../Social_Randi2023_data_graph">Randi2023</a> - <a href="../Social_RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> - <a href="../Social_RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> - <a href="../Social_RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> - <a href="../Social_Test_data_graph">Test</a> - <a href="../Social_SSData_data_graph">SSData</a> - <a href="../Social_UpdSSData_data_graph">UpdSSData</a> - <a href="../Social_UpdSSData2_data_graph">UpdSSData2</a> - </td>
+</tr>
+<tr>
+<td></td>
+<td><b>Bentley2016_MA</b><br/>Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity<br/><a href="../Bentley_2016">Source publication of dataset</a></td>
+</tr>
+<tr>
+<td><b>Choose View: </b></td>
+<td> - <a href="../Bentley2016_MA_data_graph">Raw Data</a> - <a href="../Neurons_Bentley2016_MA_data_graph">Neurons</a> - <a href="../Pharynx_Bentley2016_MA_data_graph">Pharynx</a> - <b><a href="../Social_Bentley2016_MA_data_graph">Social Network</a></b> - <a href="../Escape_Bentley2016_MA_data_graph">Escape Response Circuit</a> - <a href="../Full1_Bentley2016_MA_data_graph">Cook 2019 Fig 3</a> - </td>
+</tr>
+<tr>
+<td></td>
+<td><i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i></td>
+</tr>
+<tr>
+<td><b>Choose Graph:</b></td>
+<td>
+<b><a href="../Social_Bentley2016_MA_data_graph">Graph</a></b> - <a href="../Social_Bentley2016_MA_data">Matrix</a> - <a href="../Social_Bentley2016_MA_data_hiveplot">Hive plot</a> - 
+
+
+    </td></tr></tbody>
+</table>
+<p>No connections present in this view</p>
+<h3 id="neurons-233">Neurons (233)</h3>
+<details><summary>Full list of Neurons</summary>
+<a href="../Cells/index.html#ADEL" title="Sensory neuron (mechanosensory)">ADEL</a> | <a href="../Cells/index.html#ADER" title="Sensory neuron (mechanosensory)">ADER</a> | <a href="../Cells/index.html#ADFL" title="Sensory neuron (amphid)">ADFL</a> | <a href="../Cells/index.html#ADFR" title="Sensory neuron (amphid)">ADFR</a> | <a href="../Cells/index.html#ADLL" title="Sensory neuron (amphid, nociceptive)">ADLL</a> | <a href="../Cells/index.html#ADLR" title="Sensory neuron (amphid, nociceptive)">ADLR</a> | <a href="../Cells/index.html#AFDL" title="Sensory neuron (amphid)">AFDL</a> | <a href="../Cells/index.html#AFDR" title="Sensory neuron (amphid)">AFDR</a> | <a href="../Cells/index.html#AIAL" title="Layer 3 interneuron">AIAL</a> | <a href="../Cells/index.html#AIAR" title="Layer 3 interneuron">AIAR</a> | <a href="../Cells/index.html#AIBL" title="Layer 2 interneuron">AIBL</a> | <a href="../Cells/index.html#AIBR" title="Layer 2 interneuron">AIBR</a> | <a href="../Cells/index.html#AIML" title="Category 4 interneuron">AIML</a> | <a href="../Cells/index.html#AIMR" title="Category 4 interneuron">AIMR</a> | <a href="../Cells/index.html#AIYL" title="Layer 3 interneuron">AIYL</a> | <a href="../Cells/index.html#AIYR" title="Layer 3 interneuron">AIYR</a> | <a href="../Cells/index.html#AIZL" title="Layer 3 interneuron">AIZL</a> | <a href="../Cells/index.html#AIZR" title="Layer 3 interneuron">AIZR</a> | <a href="../Cells/index.html#ALML" title="Sensory neuron (mechanosensory)">ALML</a> | <a href="../Cells/index.html#ALMR" title="Sensory neuron (mechanosensory)">ALMR</a> | <a href="../Cells/index.html#ALNL" title="Sensory neuron (touch)">ALNL</a> | <a href="../Cells/index.html#ALNR" title="Sensory neuron (touch)">ALNR</a> | <a href="../Cells/index.html#AS1" title="Ventral cord motor neuron">AS1</a> | <a href="../Cells/index.html#AS10" title="Ventral cord motor neuron">AS10</a> | <a href="../Cells/index.html#AS11" title="Ventral cord motor neuron">AS11</a> | <a href="../Cells/index.html#AS2" title="Ventral cord motor neuron">AS2</a> | <a href="../Cells/index.html#AS3" title="Ventral cord motor neuron">AS3</a> | <a href="../Cells/index.html#AS4" title="Ventral cord motor neuron">AS4</a> | <a href="../Cells/index.html#AS5" title="Ventral cord motor neuron">AS5</a> | <a href="../Cells/index.html#AS6" title="Ventral cord motor neuron">AS6</a> | <a href="../Cells/index.html#AS7" title="Ventral cord motor neuron">AS7</a> | <a href="../Cells/index.html#AS8" title="Ventral cord motor neuron">AS8</a> | <a href="../Cells/index.html#AS9" title="Ventral cord motor neuron">AS9</a> | <a href="../Cells/index.html#ASEL" title="Sensory neuron (amphid)">ASEL</a> | <a href="../Cells/index.html#ASER" title="Sensory neuron (amphid)">ASER</a> | <a href="../Cells/index.html#ASGL" title="Sensory neuron (amphid)">ASGL</a> | <a href="../Cells/index.html#ASGR" title="Sensory neuron (amphid)">ASGR</a> | <a href="../Cells/index.html#ASHL" title="Sensory neuron (amphid, nociceptive)">ASHL</a> | <a href="../Cells/index.html#ASHR" title="Sensory neuron (amphid, nociceptive)">ASHR</a> | <a href="../Cells/index.html#ASIL" title="Sensory neuron (amphid)">ASIL</a> | <a href="../Cells/index.html#ASIR" title="Sensory neuron (amphid)">ASIR</a> | <a href="../Cells/index.html#ASKL" title="Sensory neuron (amphid)">ASKL</a> | <a href="../Cells/index.html#ASKR" title="Sensory neuron (amphid)">ASKR</a> | <a href="../Cells/index.html#AUAL" title="Layer 3 interneuron">AUAL</a> | <a href="../Cells/index.html#AUAR" title="Layer 3 interneuron">AUAR</a> | <a href="../Cells/index.html#AVBL" title="Layer 1 interneuron">AVBL</a> | <a href="../Cells/index.html#AVBR" title="Layer 1 interneuron">AVBR</a> | <a href="../Cells/index.html#AVFL" title="Layer 3 interneuron">AVFL</a> | <a href="../Cells/index.html#AVFR" title="Layer 3 interneuron">AVFR</a> | <a href="../Cells/index.html#AVHL" title="Layer 3 interneuron">AVHL</a> | <a href="../Cells/index.html#AVHR" title="Layer 3 interneuron">AVHR</a> | <a href="../Cells/index.html#AVJL" title="Layer 2 interneuron">AVJL</a> | <a href="../Cells/index.html#AVJR" title="Layer 2 interneuron">AVJR</a> | <a href="../Cells/index.html#AVL" title="Layer 2 interneuron">AVL</a> | <a href="../Cells/index.html#AVM" title="Sensory neuron (mechanosensory)">AVM</a> | <a href="../Cells/index.html#AWBL" title="Sensory neuron (amphid)">AWBL</a> | <a href="../Cells/index.html#AWBR" title="Sensory neuron (amphid)">AWBR</a> | <a href="../Cells/index.html#BAGL" title="Sensory neuron (O2, CO2, social signals, touch)">BAGL</a> | <a href="../Cells/index.html#BAGR" title="Sensory neuron (O2, CO2, social signals, touch)">BAGR</a> | <a href="../Cells/index.html#BDUL" title="Layer 3 interneuron">BDUL</a> | <a href="../Cells/index.html#BDUR" title="Layer 3 interneuron">BDUR</a> | <a href="../Cells/index.html#CEPDL" title="Sensory neuron (cephalic)">CEPDL</a> | <a href="../Cells/index.html#CEPDR" title="Sensory neuron (cephalic)">CEPDR</a> | <a href="../Cells/index.html#CEPVL" title="Sensory neuron (cephalic)">CEPVL</a> | <a href="../Cells/index.html#CEPVR" title="Sensory neuron (cephalic)">CEPVR</a> | <a href="../Cells/index.html#DA1" title="Ventral cord motor neuron">DA1</a> | <a href="../Cells/index.html#DA2" title="Ventral cord motor neuron">DA2</a> | <a href="../Cells/index.html#DA3" title="Ventral cord motor neuron">DA3</a> | <a href="../Cells/index.html#DA4" title="Ventral cord motor neuron">DA4</a> | <a href="../Cells/index.html#DA5" title="Ventral cord motor neuron">DA5</a> | <a href="../Cells/index.html#DA6" title="Ventral cord motor neuron">DA6</a> | <a href="../Cells/index.html#DA7" title="Ventral cord motor neuron">DA7</a> | <a href="../Cells/index.html#DA8" title="Ventral cord motor neuron">DA8</a> | <a href="../Cells/index.html#DA9" title="Ventral cord motor neuron">DA9</a> | <a href="../Cells/index.html#DB1" title="Ventral cord motor neuron">DB1</a> | <a href="../Cells/index.html#DB2" title="Ventral cord motor neuron">DB2</a> | <a href="../Cells/index.html#DB3" title="Ventral cord motor neuron">DB3</a> | <a href="../Cells/index.html#DB4" title="Ventral cord motor neuron">DB4</a> | <a href="../Cells/index.html#DB5" title="Ventral cord motor neuron">DB5</a> | <a href="../Cells/index.html#DB6" title="Ventral cord motor neuron">DB6</a> | <a href="../Cells/index.html#DB7" title="Ventral cord motor neuron">DB7</a> | <a href="../Cells/index.html#DD1" title="Ventral cord motor neuron">DD1</a> | <a href="../Cells/index.html#DD2" title="Ventral cord motor neuron">DD2</a> | <a href="../Cells/index.html#DD3" title="Ventral cord motor neuron">DD3</a> | <a href="../Cells/index.html#DD4" title="Ventral cord motor neuron">DD4</a> | <a href="../Cells/index.html#DD5" title="Ventral cord motor neuron">DD5</a> | <a href="../Cells/index.html#DD6" title="Ventral cord motor neuron">DD6</a> | <a href="../Cells/index.html#DVA" title="Sensory neuron (mechanosensory)">DVA</a> | <a href="../Cells/index.html#DVC" title="Layer 2 interneuron">DVC</a> | <a href="../Cells/index.html#FLPL" title="Sensory neuron (mechanosensory)">FLPL</a> | <a href="../Cells/index.html#FLPR" title="Sensory neuron (mechanosensory)">FLPR</a> | <a href="../Cells/index.html#HSNL" title="Hermaphrodite specific motor neuron">HSNL</a> | <a href="../Cells/index.html#HSNR" title="Hermaphrodite specific motor neuron">HSNR</a> | <a href="../Cells/index.html#I1L" title="Pharyngeal interneuron">I1L</a> | <a href="../Cells/index.html#I1R" title="Pharyngeal interneuron">I1R</a> | <a href="../Cells/index.html#I2L" title="Pharyngeal interneuron">I2L</a> | <a href="../Cells/index.html#I2R" title="Pharyngeal interneuron">I2R</a> | <a href="../Cells/index.html#I3" title="Pharyngeal interneuron">I3</a> | <a href="../Cells/index.html#I4" title="Pharyngeal interneuron">I4</a> | <a href="../Cells/index.html#I6" title="Pharyngeal interneuron">I6</a> | <a href="../Cells/index.html#IL1DL" title="Sensory neuron (cephalic)">IL1DL</a> | <a href="../Cells/index.html#IL1DR" title="Sensory neuron (cephalic)">IL1DR</a> | <a href="../Cells/index.html#IL1L" title="Sensory neuron (cephalic)">IL1L</a> | <a href="../Cells/index.html#IL1R" title="Sensory neuron (cephalic)">IL1R</a> | <a href="../Cells/index.html#IL1VL" title="Sensory neuron (cephalic)">IL1VL</a> | <a href="../Cells/index.html#IL1VR" title="Sensory neuron (cephalic)">IL1VR</a> | <a href="../Cells/index.html#IL2DL" title="Sensory neuron (cephalic)">IL2DL</a> | <a href="../Cells/index.html#IL2DR" title="Sensory neuron (cephalic)">IL2DR</a> | <a href="../Cells/index.html#IL2L" title="Sensory neuron (cephalic)">IL2L</a> | <a href="../Cells/index.html#IL2R" title="Sensory neuron (cephalic)">IL2R</a> | <a href="../Cells/index.html#IL2VL" title="Sensory neuron (cephalic)">IL2VL</a> | <a href="../Cells/index.html#IL2VR" title="Sensory neuron (cephalic)">IL2VR</a> | <a href="../Cells/index.html#LUAL" title="Layer 3 interneuron">LUAL</a> | <a href="../Cells/index.html#LUAR" title="Layer 3 interneuron">LUAR</a> | <a href="../Cells/index.html#M1" title="Pharyngeal motor neuron">M1</a> | <a href="../Cells/index.html#M2L" title="Pharyngeal motor neuron">M2L</a> | <a href="../Cells/index.html#M2R" title="Pharyngeal motor neuron">M2R</a> | <a href="../Cells/index.html#M3L" title="Pharyngeal motor neuron">M3L</a> | <a href="../Cells/index.html#M3R" title="Pharyngeal motor neuron">M3R</a> | <a href="../Cells/index.html#M4" title="Pharyngeal motor neuron">M4</a> | <a href="../Cells/index.html#M5" title="Pharyngeal motor neuron">M5</a> | <a href="../Cells/index.html#MCL" title="Pharyngeal polymodal neuron">MCL</a> | <a href="../Cells/index.html#MCR" title="Pharyngeal polymodal neuron">MCR</a> | <a href="../Cells/index.html#NSML" title="Pharyngeal polymodal neuron">NSML</a> | <a href="../Cells/index.html#NSMR" title="Pharyngeal polymodal neuron">NSMR</a> | <a href="../Cells/index.html#OLLL" title="Sensory neuron (cephalic)">OLLL</a> | <a href="../Cells/index.html#OLLR" title="Sensory neuron (cephalic)">OLLR</a> | <a href="../Cells/index.html#OLQDL" title="Sensory neuron (cephalic)">OLQDL</a> | <a href="../Cells/index.html#OLQDR" title="Sensory neuron (cephalic)">OLQDR</a> | <a href="../Cells/index.html#OLQVL" title="Sensory neuron (cephalic)">OLQVL</a> | <a href="../Cells/index.html#OLQVR" title="Sensory neuron (cephalic)">OLQVR</a> | <a href="../Cells/index.html#PDA" title="Ventral cord motor neuron">PDA</a> | <a href="../Cells/index.html#PDEL" title="Sensory neuron (mechanosensory)">PDEL</a> | <a href="../Cells/index.html#PDER" title="Sensory neuron (mechanosensory)">PDER</a> | <a href="../Cells/index.html#PHAL" title="Sensory neuron (phasmid)">PHAL</a> | <a href="../Cells/index.html#PHAR" title="Sensory neuron (phasmid)">PHAR</a> | <a href="../Cells/index.html#PHBL" title="Sensory neuron (phasmid)">PHBL</a> | <a href="../Cells/index.html#PHBR" title="Sensory neuron (phasmid)">PHBR</a> | <a href="../Cells/index.html#PHCL" title="Sensory neuron (phasmid)">PHCL</a> | <a href="../Cells/index.html#PHCR" title="Sensory neuron (phasmid)">PHCR</a> | <a href="../Cells/index.html#PLML" title="Sensory neuron (mechanosensory)">PLML</a> | <a href="../Cells/index.html#PLMR" title="Sensory neuron (mechanosensory)">PLMR</a> | <a href="../Cells/index.html#PLNL" title="Sensory neuron (touch)">PLNL</a> | <a href="../Cells/index.html#PLNR" title="Sensory neuron (touch)">PLNR</a> | <a href="../Cells/index.html#PQR" title="Sensory neuron (touch)">PQR</a> | <a href="../Cells/index.html#PVCL" title="Layer 1 interneuron">PVCL</a> | <a href="../Cells/index.html#PVCR" title="Layer 1 interneuron">PVCR</a> | <a href="../Cells/index.html#PVDL" title="Sensory neuron (mechanosensory)">PVDL</a> | <a href="../Cells/index.html#PVDR" title="Sensory neuron (mechanosensory)">PVDR</a> | <a href="../Cells/index.html#PVQL" title="Layer 3 interneuron">PVQL</a> | <a href="../Cells/index.html#PVQR" title="Layer 3 interneuron">PVQR</a> | <a href="../Cells/index.html#PVT" title="Layer 2 interneuron">PVT</a> | <a href="../Cells/index.html#RIAL" title="Layer 1 interneuron">RIAL</a> | <a href="../Cells/index.html#RIAR" title="Layer 1 interneuron">RIAR</a> | <a href="../Cells/index.html#RIBL" title="Layer 2 interneuron">RIBL</a> | <a href="../Cells/index.html#RIBR" title="Layer 2 interneuron">RIBR</a> | <a href="../Cells/index.html#RICL" title="Layer 2 interneuron">RICL</a> | <a href="../Cells/index.html#RICR" title="Layer 2 interneuron">RICR</a> | <a href="../Cells/index.html#RID" title="Layer 1 interneuron">RID</a> | <a href="../Cells/index.html#RIML" title="Layer 1 interneuron; motorneuron in White et al., 1986">RIML</a> | <a href="../Cells/index.html#RIMR" title="Layer 1 interneuron; motorneuron in White et al., 1986">RIMR</a> | <a href="../Cells/index.html#RIS" title="Layer 3 interneuron">RIS</a> | <a href="../Cells/index.html#RMDDL" title="Head motor neuron">RMDDL</a> | <a href="../Cells/index.html#RMDDR" title="Head motor neuron">RMDDR</a> | <a href="../Cells/index.html#RMDL" title="Head motor neuron">RMDL</a> | <a href="../Cells/index.html#RMDR" title="Head motor neuron">RMDR</a> | <a href="../Cells/index.html#RMDVL" title="Head motor neuron">RMDVL</a> | <a href="../Cells/index.html#RMDVR" title="Head motor neuron">RMDVR</a> | <a href="../Cells/index.html#RMED" title="Head motor neuron">RMED</a> | <a href="../Cells/index.html#RMEL" title="Head motor neuron">RMEL</a> | <a href="../Cells/index.html#RMER" title="Head motor neuron">RMER</a> | <a href="../Cells/index.html#RMEV" title="Head motor neuron">RMEV</a> | <a href="../Cells/index.html#RMFL" title="Layer 2 interneuron">RMFL</a> | <a href="../Cells/index.html#RMFR" title="Layer 2 interneuron">RMFR</a> | <a href="../Cells/index.html#RMHL" title="Head motor neuron">RMHL</a> | <a href="../Cells/index.html#RMHR" title="Head motor neuron">RMHR</a> | <a href="../Cells/index.html#SABD" title="Sublateral motor neuron; interneuron in White et al., 1986">SABD</a> | <a href="../Cells/index.html#SABVL" title="Sublateral motor neuron; interneuron in White et al., 1986">SABVL</a> | <a href="../Cells/index.html#SABVR" title="Sublateral motor neuron; interneuron in White et al., 1986">SABVR</a> | <a href="../Cells/index.html#SDQL" title="Sensory neuron (touch)">SDQL</a> | <a href="../Cells/index.html#SDQR" title="Sensory neuron (touch)">SDQR</a> | <a href="../Cells/index.html#SIADL" title="Sublateral motor neuron; interneuron in White et al., 1986">SIADL</a> | <a href="../Cells/index.html#SIADR" title="Sublateral motor neuron; interneuron in White et al., 1986">SIADR</a> | <a href="../Cells/index.html#SIAVL" title="Sublateral motor neuron; interneuron in White et al., 1986">SIAVL</a> | <a href="../Cells/index.html#SIAVR" title="Sublateral motor neuron; interneuron in White et al., 1986">SIAVR</a> | <a href="../Cells/index.html#SIBDL" title="Sublateral motor neuron; interneuron in White et al., 1986">SIBDL</a> | <a href="../Cells/index.html#SIBDR" title="Sublateral motor neuron; interneuron in White et al., 1986">SIBDR</a> | <a href="../Cells/index.html#SIBVL" title="Sublateral motor neuron; interneuron in White et al., 1986">SIBVL</a> | <a href="../Cells/index.html#SIBVR" title="Sublateral motor neuron; interneuron in White et al., 1986">SIBVR</a> | <a href="../Cells/index.html#SMDDL" title="Sublateral motor neuron">SMDDL</a> | <a href="../Cells/index.html#SMDDR" title="Sublateral motor neuron">SMDDR</a> | <a href="../Cells/index.html#SMDVL" title="Sublateral motor neuron">SMDVL</a> | <a href="../Cells/index.html#SMDVR" title="Sublateral motor neuron">SMDVR</a> | <a href="../Cells/index.html#URYDL" title="Sensory neuron (cephalic)">URYDL</a> | <a href="../Cells/index.html#URYDR" title="Sensory neuron (cephalic)">URYDR</a> | <a href="../Cells/index.html#URYVL" title="Sensory neuron (cephalic)">URYVL</a> | <a href="../Cells/index.html#URYVR" title="Sensory neuron (cephalic)">URYVR</a> | <a href="../Cells/index.html#VA1" title="Ventral cord motor neuron">VA1</a> | <a href="../Cells/index.html#VA10" title="Ventral cord motor neuron">VA10</a> | <a href="../Cells/index.html#VA11" title="Ventral cord motor neuron">VA11</a> | <a href="../Cells/index.html#VA12" title="Ventral cord motor neuron">VA12</a> | <a href="../Cells/index.html#VA2" title="Ventral cord motor neuron">VA2</a> | <a href="../Cells/index.html#VA3" title="Ventral cord motor neuron">VA3</a> | <a href="../Cells/index.html#VA4" title="Ventral cord motor neuron">VA4</a> | <a href="../Cells/index.html#VA5" title="Ventral cord motor neuron">VA5</a> | <a href="../Cells/index.html#VA6" title="Ventral cord motor neuron">VA6</a> | <a href="../Cells/index.html#VA7" title="Ventral cord motor neuron">VA7</a> | <a href="../Cells/index.html#VA8" title="Ventral cord motor neuron">VA8</a> | <a href="../Cells/index.html#VA9" title="Ventral cord motor neuron">VA9</a> | <a href="../Cells/index.html#VB1" title="Ventral cord motor neuron">VB1</a> | <a href="../Cells/index.html#VB10" title="Ventral cord motor neuron">VB10</a> | <a href="../Cells/index.html#VB11" title="Ventral cord motor neuron">VB11</a> | <a href="../Cells/index.html#VB2" title="Ventral cord motor neuron">VB2</a> | <a href="../Cells/index.html#VB3" title="Ventral cord motor neuron">VB3</a> | <a href="../Cells/index.html#VB4" title="Ventral cord motor neuron">VB4</a> | <a href="../Cells/index.html#VB5" title="Ventral cord motor neuron">VB5</a> | <a href="../Cells/index.html#VB6" title="Ventral cord motor neuron">VB6</a> | <a href="../Cells/index.html#VB7" title="Ventral cord motor neuron">VB7</a> | <a href="../Cells/index.html#VB8" title="Ventral cord motor neuron">VB8</a> | <a href="../Cells/index.html#VB9" title="Ventral cord motor neuron">VB9</a> | <a href="../Cells/index.html#VD1" title="Ventral cord motor neuron">VD1</a> | <a href="../Cells/index.html#VD10" title="Ventral cord motor neuron">VD10</a> | <a href="../Cells/index.html#VD11" title="Ventral cord motor neuron">VD11</a> | <a href="../Cells/index.html#VD12" title="Ventral cord motor neuron">VD12</a> | <a href="../Cells/index.html#VD13" title="Ventral cord motor neuron">VD13</a> | <a href="../Cells/index.html#VD2" title="Ventral cord motor neuron">VD2</a> | <a href="../Cells/index.html#VD3" title="Ventral cord motor neuron">VD3</a> | <a href="../Cells/index.html#VD4" title="Ventral cord motor neuron">VD4</a> | <a href="../Cells/index.html#VD5" title="Ventral cord motor neuron">VD5</a> | <a href="../Cells/index.html#VD6" title="Ventral cord motor neuron">VD6</a> | <a href="../Cells/index.html#VD7" title="Ventral cord motor neuron">VD7</a> | <a href="../Cells/index.html#VD8" title="Ventral cord motor neuron">VD8</a> | <a href="../Cells/index.html#VD9" title="Ventral cord motor neuron">VD9</a>
+</details>
+<h3 id="missing-neurons-69">Missing neurons (69)</h3>
+<details><summary>Full list of Missing neurons</summary>
+<a href="../Cells/index.html#ADAL" title="Layer 3 interneuron">ADAL</a> | <a href="../Cells/index.html#ADAR" title="Layer 3 interneuron">ADAR</a> | <a href="../Cells/index.html#AINL" title="Category 4 interneuron">AINL</a> | <a href="../Cells/index.html#AINR" title="Category 4 interneuron">AINR</a> | <a href="../Cells/index.html#ALA" title="Layer 3 interneuron">ALA</a> | <a href="../Cells/index.html#AQR" title="Sensory neuron (touch)">AQR</a> | <a href="../Cells/index.html#ASJL" title="Sensory neuron (amphid)">ASJL</a> | <a href="../Cells/index.html#ASJR" title="Sensory neuron (amphid)">ASJR</a> | <a href="../Cells/index.html#AVAL" title="Layer 1 interneuron">AVAL</a> | <a href="../Cells/index.html#AVAR" title="Layer 1 interneuron">AVAR</a> | <a href="../Cells/index.html#AVDL" title="Layer 2 interneuron">AVDL</a> | <a href="../Cells/index.html#AVDR" title="Layer 2 interneuron">AVDR</a> | <a href="../Cells/index.html#AVEL" title="Layer 1 interneuron">AVEL</a> | <a href="../Cells/index.html#AVER" title="Layer 1 interneuron">AVER</a> | <a href="../Cells/index.html#AVG" title="Layer 3 interneuron">AVG</a> | <a href="../Cells/index.html#AVKL" title="Layer 2 interneuron">AVKL</a> | <a href="../Cells/index.html#AVKR" title="Layer 2 interneuron">AVKR</a> | <a href="../Cells/index.html#AWAL" title="Sensory neuron (amphid)">AWAL</a> | <a href="../Cells/index.html#AWAR" title="Sensory neuron (amphid)">AWAR</a> | <a href="../Cells/index.html#AWCL" title="Sensory neuron (amphid)">AWCL</a> | <a href="../Cells/index.html#AWCR" title="Sensory neuron (amphid)">AWCR</a> | <a href="../Cells/index.html#CANL" title="Canal neuron">CANL</a> | <a href="../Cells/index.html#CANR" title="Canal neuron">CANR</a> | <a href="../Cells/index.html#DVB" title="Layer 3 interneuron">DVB</a> | <a href="../Cells/index.html#I5" title="Pharyngeal interneuron">I5</a> | <a href="../Cells/index.html#MI" title="Pharyngeal polymodal neuron">MI</a> | <a href="../Cells/index.html#PDB" title="Ventral cord motor neuron">PDB</a> | <a href="../Cells/index.html#PVM" title="Sensory neuron (mechanosensory)">PVM</a> | <a href="../Cells/index.html#PVNL" title="Layer 3 interneuron">PVNL</a> | <a href="../Cells/index.html#PVNR" title="Layer 3 interneuron">PVNR</a> | <a href="../Cells/index.html#PVPL" title="Layer 3 interneuron">PVPL</a> | <a href="../Cells/index.html#PVPR" title="Layer 3 interneuron">PVPR</a> | <a href="../Cells/index.html#PVR" title="Layer 3 interneuron">PVR</a> | <a href="../Cells/index.html#PVWL" title="Layer 2 interneuron">PVWL</a> | <a href="../Cells/index.html#PVWR" title="Layer 2 interneuron">PVWR</a> | <a href="../Cells/index.html#RIFL" title="Layer 3 interneuron">RIFL</a> | <a href="../Cells/index.html#RIFR" title="Layer 3 interneuron">RIFR</a> | <a href="../Cells/index.html#RIGL" title="Layer 2 interneuron">RIGL</a> | <a href="../Cells/index.html#RIGR" title="Layer 2 interneuron">RIGR</a> | <a href="../Cells/index.html#RIH" title="Category 4 interneuron">RIH</a> | <a href="../Cells/index.html#RIPL" title="Linker to pharynx">RIPL</a> | <a href="../Cells/index.html#RIPR" title="Linker to pharynx">RIPR</a> | <a href="../Cells/index.html#RIR" title="Category 4 interneuron">RIR</a> | <a href="../Cells/index.html#RIVL" title="Head motor neuron">RIVL</a> | <a href="../Cells/index.html#RIVR" title="Head motor neuron">RIVR</a> | <a href="../Cells/index.html#RMGL" title="Layer 2 interneuron">RMGL</a> | <a href="../Cells/index.html#RMGR" title="Layer 2 interneuron">RMGR</a> | <a href="../Cells/index.html#SAADL" title="Layer 2 interneuron">SAADL</a> | <a href="../Cells/index.html#SAADR" title="Layer 2 interneuron">SAADR</a> | <a href="../Cells/index.html#SAAVL" title="Layer 2 interneuron">SAAVL</a> | <a href="../Cells/index.html#SAAVR" title="Layer 2 interneuron">SAAVR</a> | <a href="../Cells/index.html#SMBDL" title="Sublateral motor neuron">SMBDL</a> | <a href="../Cells/index.html#SMBDR" title="Sublateral motor neuron">SMBDR</a> | <a href="../Cells/index.html#SMBVL" title="Sublateral motor neuron">SMBVL</a> | <a href="../Cells/index.html#SMBVR" title="Sublateral motor neuron">SMBVR</a> | <a href="../Cells/index.html#URADL" title="Head motor neuron">URADL</a> | <a href="../Cells/index.html#URADR" title="Head motor neuron">URADR</a> | <a href="../Cells/index.html#URAVL" title="Head motor neuron">URAVL</a> | <a href="../Cells/index.html#URAVR" title="Head motor neuron">URAVR</a> | <a href="../Cells/index.html#URBL" title="Category 4 interneuron">URBL</a> | <a href="../Cells/index.html#URBR" title="Category 4 interneuron">URBR</a> | <a href="../Cells/index.html#URXL" title="Sensory neuron (O2, CO2, social signals, touch)">URXL</a> | <a href="../Cells/index.html#URXR" title="Sensory neuron (O2, CO2, social signals, touch)">URXR</a> | <a href="../Cells/index.html#VC1" title="Hermaphrodite specific motor neuron">VC1</a> | <a href="../Cells/index.html#VC2" title="Hermaphrodite specific motor neuron">VC2</a> | <a href="../Cells/index.html#VC3" title="Hermaphrodite specific motor neuron">VC3</a> | <a href="../Cells/index.html#VC4" title="Hermaphrodite specific motor neuron">VC4</a> | <a href="../Cells/index.html#VC5" title="Hermaphrodite specific motor neuron">VC5</a> | <a href="../Cells/index.html#VC6" title="Hermaphrodite specific motor neuron">VC6</a>
+</details>
+<h3 id="muscles-0">Muscles (0)</h3>
+<h3 id="other-cells-0">Other cells (0)</h3>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
