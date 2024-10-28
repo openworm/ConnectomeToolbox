@@ -11,10 +11,11 @@ from cect.Cells import are_bilateral_pair
 from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
-from cect.Cells import is_neuron
+from cect.Cells import is_any_neuron
 from cect.Cells import is_known_body_wall_muscle
 from cect.Cells import is_known_muscle
 from cect.Cells import is_pharyngeal_cell
+from cect.Cells import is_known_cell
 
 import numpy as np
 import math
@@ -128,7 +129,7 @@ class ConnectomeDataset:
         neurons = set([])
         neuron_conns = []
         for conn_info in self.connection_infos:
-            if is_neuron(conn_info.pre_cell) and is_neuron(conn_info.post_cell):
+            if is_any_neuron(conn_info.pre_cell) and is_any_neuron(conn_info.post_cell):
                 neurons.add(conn_info.pre_cell)
                 neurons.add(conn_info.post_cell)
                 neuron_conns.append(conn_info)
@@ -143,7 +144,9 @@ class ConnectomeDataset:
         conns = []
 
         for conn_info in self.connection_infos:
-            if is_neuron(conn_info.pre_cell) and is_known_muscle(conn_info.post_cell):
+            if is_any_neuron(conn_info.pre_cell) and is_known_muscle(
+                conn_info.post_cell
+            ):
                 neurons.add(conn_info.pre_cell)
                 muscles.add(conn_info.post_cell)
                 conns.append(conn_info)
@@ -211,6 +214,11 @@ class ConnectomeDataset:
 
     def get_connectome_view(self, view):
         self.view = view
+
+        for ns in view.node_sets:
+            for cell in ns.cells:
+                if not is_known_cell(cell):
+                    raise Exception(f"Cell {cell} in view {view.name} is not known!")
 
         cv = ConnectomeDataset()
 
@@ -385,7 +393,7 @@ class ConnectomeDataset:
                 fig.add_hline(y=i - 0.5, line_width=0.5)
                 fig.add_vline(x=i - 0.5, line_width=0.5)
             if not other_line and (
-                not is_known_muscle(node_value) and not is_neuron(node_value)
+                not is_known_muscle(node_value) and not is_any_neuron(node_value)
             ):
                 other_line = True
                 fig.add_hline(y=i - 0.5, line_width=0.5)

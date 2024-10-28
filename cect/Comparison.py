@@ -1,5 +1,6 @@
 from cect.ConnectomeReader import check_cells
 from cect.Cells import get_cell_internal_link
+from cect.WormAtlasInfo import VERTICAL_ELLIPSE
 from cect import print_
 import json
 
@@ -160,6 +161,10 @@ def generate_comparison_page(quick: bool, color_table=True):
     if not quick:
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+
         readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
@@ -169,12 +174,7 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-
     if not quick:
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
-
-        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
         readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
@@ -204,7 +204,7 @@ def generate_comparison_page(quick: bool, color_table=True):
     for reader_name, reader_info in readers.items():
         reader = reader_info[0]
 
-        decription_page = reader_info[1] if len(reader_info) > 1 else None
+        description_page = reader_info[1] if len(reader_info) > 1 else None
 
         print_(
             "\n****** Importing dataset %s using %s ******\n" % (reader_name, reader)
@@ -260,21 +260,21 @@ def generate_comparison_page(quick: bool, color_table=True):
                             hiveplot = "hiveplot" in filename
                             matrix = not graph and not hiveplot
 
-                            f.write("---\ntitle: %s\n---\n\n" % reader_name)
+                            f.write('---\ntitle: "Dataset: %s"\n---\n\n' % reader_name)
+
+                            desc_full = ""
 
                             f.write("""
-<table>
-    <tbody>
-        <tr>
-            <td><b>Choose Dataset: </b></td>
-            <td>- """)
+!!! example inline "Choose Dataset"
+
+    """)
                             for rr in reader_pages:
                                 view_prefix = (
                                     "" if view.id == "Raw" else "%s_" % view.id
                                 )
 
                                 f.write(
-                                    '%s<a href="../%s%s%s">%s</a>%s - '
+                                    '%s<a href="../%s%s%s">%s</a>%s '
                                     % (
                                         "<b>" if rr == reader_name else "",
                                         view_prefix,
@@ -288,22 +288,25 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
 
                             dp = (
-                                '<a href="../%s">Source publication of dataset</a>'
-                                % decription_page
-                                if decription_page is not None
+                                '<a href="../%s">Source publication of this dataset (%s)</a>'
+                                % (
+                                    description_page,
+                                    description_page.replace(
+                                        "_20", " et al. 20"
+                                    ).replace("_19", " et al. 19"),
+                                )
+                                if description_page is not None
                                 else ""
                             )
 
+                            desc_full = f"{reader_module.READER_DESCRIPTION}<br/>\n{dp}"
+
                             f.write(
-                                f"""</td>
-        </tr>
-        <tr>
-            <td ></td>
-            <td ><b>{reader_name}</b><br/>{reader_module.READER_DESCRIPTION}<br/>{dp}</td>
-        </tr>
-        <tr>
-            <td><b>Choose View: </b></td>
-            <td> - """
+                                """
+                            
+!!! tip "Choose View"
+
+    """
                             )
 
                             for viewb in ALL_VIEWS:
@@ -312,7 +315,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
 
                                 f.write(
-                                    '%s<a href="../%s%s%s">%s</a>%s - '
+                                    '%s<a href="../%s%s%s"> %s</a>%s%s'
                                     % (
                                         "<b>" if view.id == viewb.id else "",
                                         viewb_prefix,
@@ -322,24 +325,22 @@ def generate_comparison_page(quick: bool, color_table=True):
                                         else ("_hiveplot" if hiveplot else ""),
                                         viewb.name,
                                         "</b>" if view.id == viewb.id else "",
+                                        "" if "Fig 3" in view.name else " - ",
                                     )
                                 )
                             f.write(
-                                """</td>
-        </tr>
-        <tr>
-            <td ></td>
-            <td ><i>%s</i></td>
-        </tr>
-        <tr>
-            <td><b>Choose Graph:</b></td>
-            <td>"""
+                                """
+
+    <i>%s</i>
+
+!!! abstract "Choose Graph type"
+
+    """
                                 % view.description
                             )
-                            f.write("\n\n")
 
                             f.write(
-                                '%s<a href="../%s%s_graph">Graph</a>%s - '
+                                '%s<a href="../%s%s_graph"> Graph</a>%s - '
                                 % (
                                     "<b>" if graph else "",
                                     view_prefix,
@@ -348,7 +349,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
                             )
                             f.write(
-                                '%s<a href="../%s%s">Matrix</a>%s - '
+                                '%s<a href="../%s%s"> Matrix</a>%s - '
                                 % (
                                     "<b>" if matrix else "",
                                     view_prefix,
@@ -357,7 +358,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
                             )
                             f.write(
-                                '%s<a href="../%s%s_hiveplot">Hive plot</a>%s - \n\n'
+                                '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
                                 % (
                                     "<b>" if hiveplot else "",
                                     view_prefix,
@@ -371,8 +372,10 @@ def generate_comparison_page(quick: bool, color_table=True):
                             # f.write('=== "%s"\n' % view.name)
                             f.write(
                                 """
-    </tbody>
-</table>"""
+<br/><br/>
+%s
+"""
+                                % desc_full
                             )
 
                             no_conns = True
@@ -413,7 +416,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 f.write("No connections present in this view\n")
 
                             cell_types = {
-                                "Neurons": preferred,
+                                "Neurons (herm)": preferred,
                                 "Missing neurons": missing_preferred,
                                 "Muscles": muscles,
                                 "Other cells": not_in_preferred,
@@ -423,13 +426,25 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
                                 if len(cell_types[t]) > 0:
                                     f.write(
-                                        "<details><summary>Full list of %s</summary>\n"
-                                        % t
+                                        "<details><summary>Full list of %s%s</summary>\n"
+                                        % (
+                                            t.replace("herm", "hermaphrodite only"),
+                                            (
+                                                " (known hermaphrodite neurons not present)"
+                                                if "Missing" in t
+                                                else " in this dataset"
+                                            ),
+                                        )
                                     )
                                     ss = sorted(cell_types[t])
                                     for n in ss:
                                         f.write(
-                                            "%s" % (get_cell_internal_link(n, True))
+                                            "%s"
+                                            % (
+                                                get_cell_internal_link(
+                                                    n, html=True, use_color=True
+                                                )
+                                            )
                                         )
                                         if n is not ss[-1]:
                                             f.write(" | ")
@@ -541,7 +556,10 @@ def generate_comparison_page(quick: bool, color_table=True):
                 for cell in sorted(COOK_GROUPING_1[group]):
                     if cell in connectome.nodes:
                         cells_here += "%s&nbsp;" % get_cell_internal_link(
-                            cell_name=cell, text="\u2b2e", html=True, use_color=True
+                            cell_name=cell,
+                            text=VERTICAL_ELLIPSE,
+                            html=True,
+                            use_color=True,
                         )
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
