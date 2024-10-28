@@ -7,24 +7,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Witvliet7 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "CANL",
-        "CANR"
-      ],
-      "y": [
-        0,
-        1
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Electrical conns",
       "type": "scatter",
       "x": [
@@ -52,6 +34,24 @@
       "y": [
         4,
         4
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet7 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "CANL",
+        "CANR"
+      ],
+      "y": [
+        0,
+        1
       ]
     }
   ],

@@ -7,22 +7,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Witvliet2 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "exc_gl"
-      ],
-      "y": [
-        1
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Electrical conns",
       "type": "scatter",
       "x": [
@@ -40,6 +24,22 @@
         "symbol": "square"
       },
       "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "exc_gl"
+      ],
+      "y": [
+        1
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet2 Electrical conns",
       "type": "scatter",
       "x": [
         "exc_gl"

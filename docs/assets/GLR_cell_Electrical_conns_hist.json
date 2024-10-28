@@ -85,6 +85,58 @@
       "marker": {
         "symbol": "square"
       },
+      "name": "Cook2019Herm Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        8,
+        7,
+        6,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Cook2019Male Electrical conns",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
       "name": "Witvliet2 Electrical conns",
       "type": "scatter",
       "x": [
@@ -179,58 +231,6 @@
         1,
         1,
         0,
-        0
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Cook2019Herm Electrical conns",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVL",
-        "GLRVR"
-      ],
-      "y": [
-        8,
-        7,
-        6,
-        5,
-        1,
-        2
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Cook2019Male Electrical conns",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVL",
-        "GLRVR"
-      ],
-      "y": [
-        0,
-        1,
-        0,
-        0,
-        1,
         0
       ]
     }

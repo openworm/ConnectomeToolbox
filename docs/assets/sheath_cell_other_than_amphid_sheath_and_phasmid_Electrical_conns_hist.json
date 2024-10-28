@@ -7,50 +7,6 @@
       "marker": {
         "symbol": "square"
       },
-      "name": "Witvliet5 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "CEPshDL",
-        "CEPshDR",
-        "CEPshVL",
-        "CEPshVR"
-      ],
-      "y": [
-        0,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Witvliet7 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "CEPshDL",
-        "CEPshDR",
-        "CEPshVL",
-        "CEPshVR"
-      ],
-      "y": [
-        0,
-        1,
-        0,
-        1
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
       "name": "Cook2019Herm Electrical conns",
       "type": "scatter",
       "x": [
@@ -86,6 +42,50 @@
         1,
         0,
         2
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet5 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Witvliet7 Electrical conns",
+      "type": "scatter",
+      "x": [
+        "CEPshDL",
+        "CEPshDR",
+        "CEPshVL",
+        "CEPshVR"
+      ],
+      "y": [
+        0,
+        1,
+        0,
+        1
       ]
     }
   ],
