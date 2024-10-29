@@ -1458,6 +1458,10 @@ ALL_PREFERRED_CELL_NAMES = (
 )
 
 
+def is_known_cell(cell):
+    return cell in ALL_PREFERRED_CELL_NAMES
+
+
 def get_SIM_class(cell):
     """
     PROVISIONAL method to return whether a cell is Sensory/Interneuron/Motorneuron (or Other)
@@ -1492,6 +1496,10 @@ def get_SIM_class(cell):
             if get_SIM_class("%sL" % cell) == get_SIM_class("%sR" % cell):
                 return get_SIM_class("%sL" % cell)
         return "Other"
+
+
+def is_one_of_bilateral_pair(cell):
+    return is_bilateral_left(cell) or is_bilateral_right(cell)
 
 
 def is_bilateral_left(cell):
@@ -1655,8 +1663,12 @@ def is_pharyngeal_cell(cell):
     return cell in ALL_PHARYNGEAL_CELLS
 
 
-def is_neuron(cell):
+def is_herm_neuron(cell):
     return cell in PREFERRED_HERM_NEURON_NAMES
+
+
+def is_any_neuron(cell):
+    return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
 def remove_leading_index_zero(cell):
@@ -1845,7 +1857,13 @@ def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
 def get_cell_link(cell_name, html=False, text=None):
     url = None
 
-    known_indiv = ["SABD", "MI"]
+    known_other = {
+        "SABD": "SAB",
+        "CEMDL": "CEM",
+        "CEMDR": "CEM",
+        "CEMVL": "CEM",
+        "CEMVR": "CEM",
+    }
 
     if (
         cell_name
@@ -1856,27 +1874,72 @@ def get_cell_link(cell_name, html=False, text=None):
         + PHARYNGEAL_MUSCLE_NAMES
     ):
         url = "https://www.wormatlas.org/hermaphrodite/pharynx/jump.html?newLink=mainframe.htm&newAnchor=Listofcellsinthepharynx11"
-    elif cell_name in known_indiv:
+
+    elif cell_name in known_other:
         url = (
             "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
-            % cell_name
+            % known_other[cell_name]
+        )
+
+    elif cell_name in INTESTINE + INTESTINAL_MUSCLES:
+        url = "https://www.wormatlas.org/hermaphrodite/intestine/Intframeset.html"
+
+    elif cell_name in VULVAL_MUSCLE_NAMES:
+        url = "https://www.wormatlas.org/hermaphrodite/egglaying%20apparatus/Eggframeset.html"
+
+    elif cell_name in ANAL_SPHINCTER_MUSCLES:
+        url = "https://www.wormatlas.org/hermaphrodite/excretory/Excframeset.html"
+
+    elif cell_name in BODY_WALL_MUSCLE_NAMES:
+        url = "https://www.wormatlas.org/hermaphrodite/musclesomatic/MusSomaticframeset.html"
+
+    elif cell_name in MALE_SPECIFIC_MUSCLES:
+        url = "https://www.wormatlas.org/male/musclemale/Musmaleframeset.html"
+
+    elif cell_name in HYPODERMIS:
+        url = "https://www.wormatlas.org/hermaphrodite/hypodermis/Hypframeset.html"
+
+    elif cell_name in CEPSH_CELLS:
+        url = "https://www.wormatlas.org/hermaphrodite/neuronalsupport/Neurosupportframeset.html"
+
+    elif cell_name in GLR_CELLS:
+        url = "https://www.wormatlas.org/hermaphrodite/muscleGLR/MusGLRframeset.html"
+
+    elif cell_name in HEAD_MESODERMAL_CELL:
+        url = "https://www.wormatlas.org/hermaphrodite/muscleheadcell/mainframe.htm"
+
+    elif cell_name in MALE_RAY_STRUCTURAL_CELLS:
+        url = "https://www.wormatlas.org/male/rays/Rayframeset.html"
+
+    elif is_any_neuron(cell_name) and len(cell_name) == 5:  # e.g. SAADL
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name[:-2]
+        )
+    elif is_one_of_bilateral_pair(cell_name):
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name[:-1]
         )
     elif cell_name[-2:].isnumeric():
         url = (
             "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
             % cell_name[:-2]
         )
+
+    elif cell_name in PHARYNGEAL_NEURONS:  # if not caught already e.g. M1, I5...
+        url = (
+            "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
+            % cell_name
+        )
+
     elif cell_name[-1].isdigit():
         url = (
             "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
             % cell_name[:-1]
         )
     elif (
-        cell_name.endswith("L")
-        or cell_name.endswith("R")
-        or cell_name.endswith("EV")
-        or cell_name.endswith("ED")
-        or cell_name.endswith("BD")
+        cell_name.endswith("EV") or cell_name.endswith("ED") or cell_name.endswith("BD")
     ):
         url = (
             "https://www.wormatlas.org/neurons/Individual Neurons/%sframeset.html"
@@ -1889,6 +1952,26 @@ def get_cell_link(cell_name, html=False, text=None):
         )
 
     if url is not None:
+        check_url = False
+        if check_url:
+            try:
+                error = None
+
+                import requests
+
+                page = requests.get(url)
+                if not page.status_code == 200:
+                    error = "Status code: %s" % page.status_code
+            except Exception as err:
+                error = err
+
+            print(
+                "URL for %s (%s): %s"
+                % (cell_name, url, "SUCCESS" if error is None else "ERROR (%s)" % error)
+            )
+            if error is not None:
+                exit(-1)
+
         if html:
             return '<a href="%s">%s</a>' % (url, cell_name if text is None else text)
         else:
@@ -1999,10 +2082,16 @@ def _generate_cell_table(cell_type, cells):
             if cell in conn.nodes:
                 datasets += "%s, " % _get_dataset_link(reader_name)
 
+        osbv1_link = f"https://v1.opensourcebrain.org/projects/c302/repository/revisions/development/show/examples/cells?explorer=https%253A%252F%252Fraw.githubusercontent.com%252Fopenworm%252Fc302%252Fdevelopment%252Fexamples%252Fcells%252F{cell}.cell.nml"
         all_data[f'<a name="{cell}"></a>{cell}'] = [
             desc,
             datasets[:-2],
-            get_cell_link(cell, text="WormAtlas"),
+            get_cell_link(cell, text="WormAtlas")
+            + (
+                f'<br/><a href="{osbv1_link}">OSB 3D</a>'
+                if is_herm_neuron(cell)
+                else ""
+            ),
         ]
 
     df_all = pd.DataFrame(all_data).transpose()
@@ -2012,9 +2101,10 @@ def _generate_cell_table(cell_type, cells):
     title = cell_type[0].upper() + cell_type[1:]
     title = ("%s" if some_cells else "<i>%s</i>") % title
 
-    title_md = "#### ![#{0}](https://via.placeholder.com/15/{0}/{0}.png) {1}\n".format(
-        color, title
-    )
+    title_md = "#### ![#{0}](images/{0}.png) {1}\n".format(color, title)
+    # title_md = '#### <span style="color:#{0};">\u2588</span> -- ![<span style="color:#{0};">\u2588</span>](https://via.placeholder.com/15/{0}/{0}.png) - {1}\n'.format(
+    #    color, title
+    # )
 
     return "%s\n%s\n%s\n\n" % (title_md, fig_md, table_md)
 

@@ -1,4 +1,8 @@
+from cect import print_
+
 # Data taken from https://www.wormatlas.org/colorcode.htm
+
+VERTICAL_ELLIPSE = "\u2b2e"
 
 WA_COLORS = {}
 
@@ -49,7 +53,7 @@ WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["neuron with unknown function"] = "
 # EXCRETORY SYSTEM
 WA_COLORS["Hermaphrodite"]["Excretory System"] = {}
 WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory pore cell"] = "#ecf781"
-WA_COLORS["Hermaphrodite"]["Excretory System"]["duct cell"] = "#сс9966"
+WA_COLORS["Hermaphrodite"]["Excretory System"]["duct cell"] = "#cc9966"
 WA_COLORS["Hermaphrodite"]["Excretory System"]["gland cell"] = "#9999cc"
 WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory cell"] = "#cc3366"
 WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory duct"] = "#cccc99"
@@ -58,7 +62,7 @@ WA_COLORS["Hermaphrodite"]["Excretory System"]["excretory duct"] = "#cccc99"
 # EPITHELIAL TISSUE
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"] = {}
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["hypodermis"] = "#dcc3ac"
-WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["seam cell"] = "#сс6633"
+WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["seam cell"] = "#cc6633"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["socket cell, XXX cells"] = "#ff9999"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
     "sheath cell other than amphid sheath and phasmid"
@@ -121,3 +125,66 @@ WA_COLORS["Male"]["Epithelial Tissue"][
     "socket cell (spicules, hook or post-cloacal sensilla)"
 ] = "#ff9999"
 WA_COLORS["Male"]["Epithelial Tissue"]["ray structural cell"] = "#006666"
+
+
+if __name__ == "__main__":
+    from PIL import ImageColor
+    import png
+
+    filename = "docs/Colors.html"
+
+    with open(filename, "w") as f:
+        f.write(
+            """<html>
+  <head>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+    </head>
+    <body>
+"""
+        )
+        f.write("    <h2><i>C. elegans</i> cells</h2>\n---\n\n")
+
+        for sex in WA_COLORS:
+            f.write("\n<h3>%s</h3>\n" % sex)
+
+            for cell_class in WA_COLORS[sex]:
+                f.write("\n<h4>%s</h4>\n\n" % cell_class)
+
+                for cell_type in WA_COLORS[sex][cell_class]:
+                    if "General code" not in cell_type:
+                        color = WA_COLORS[sex][cell_class][cell_type][1:]
+                        rgb_color = ImageColor.getcolor("#%s" % color.upper(), "RGB")
+
+                        print(f"Generating {sex}/{cell_class}/{color}/{rgb_color}...")
+
+                        # From: https://stackoverflow.com/questions/8554282/creating-a-png-file-in-python
+
+                        width = 20
+                        height = 20
+                        img = []
+
+                        for y in range(height):
+                            row = ()
+                            for x in range(width):
+                                row = row + rgb_color
+                            img.append(row)
+                        with open("docs/images/%s.png" % color, "wb") as img_file:
+                            w = png.Writer(width, height, greyscale=False)
+                            w.write(img_file, img)
+
+                        link_text = cell_type
+                        link_text = f'<span style="color:{color};font-size:200%">{VERTICAL_ELLIPSE}</span>{link_text} - '
+                        print(link_text)
+                        f.write("\n%s\n\n" % link_text)
+
+        f.write(
+            """</body>
+</html>"""
+        )
+
+    print_("Written to: %s" % filename)

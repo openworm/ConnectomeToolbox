@@ -6,7 +6,12 @@ theme:
   palette:
     primary: green
   features:
-    - content.tabs.link      
+    - content.tabs.link   
+  icon:
+    admonition:
+      example: material/database
+      tip: material/set-left
+      abstract: material/graph
 
 plugins:
   - plotly

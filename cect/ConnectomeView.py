@@ -14,6 +14,7 @@ from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 
 from cect.Cells import BODY_MUSCLES_COOK
+from cect.Cells import UNSPECIFIED_BODY_WALL_MUSCLES
 from cect.Cells import HEAD_MUSCLES_COOK
 
 from cect.Cells import HEAD_MOTORNEURONS_COOK
@@ -253,11 +254,18 @@ for cell_set in sorted(esc_positions.keys()):
             if "VA" in m or "DA" in m:
                 all_cells.append(m)
     elif cell_set == "Body Musc":
-        for m in BODY_MUSCLES_COOK:
+        for m in BODY_MUSCLES_COOK + UNSPECIFIED_BODY_WALL_MUSCLES:
             all_cells.append(m)
     elif cell_set == "Head Musc":
         for m in HEAD_MUSCLES_COOK:
             all_cells.append(m)
+
+    elif cell_set in ["SMD"]:
+        for s in ["DL", "DR", "VL", "VR"]:
+            all_cells.append("%s%s" % (cell_set, s))
+
+    elif cell_set in ["AVM", "PVM"]:
+        all_cells.append(cell_set)
     else:
         all_cells = ["%sL" % cell_set, "%sR" % cell_set]
 
@@ -462,6 +470,10 @@ if __name__ == "__main__":
     cv = tdr_instance.get_connectome_view(view)
     print(cv.summary())
 
+    print("------- Escape ---------")
+    print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
+
+    """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES
 
     print("There are %i known cells..." % len(ALL_PREFERRED_CELL_NAMES))
@@ -471,4 +483,4 @@ if __name__ == "__main__":
     import pprint
     import networkx as nx
 
-    print(pprint.pprint(nx.node_link_data(G)))
+    print(pprint.pprint(nx.node_link_data(G)))"""

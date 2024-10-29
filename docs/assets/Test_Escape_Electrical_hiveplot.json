@@ -434,6 +434,7 @@
         "color": [
           "#9966cc",
           "#9966cc",
+          "#9966cc",
           "#9966cc"
         ],
         "opacity": 0.8,
@@ -442,17 +443,20 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
-        "RMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
-        "RMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
         "VB/VD (in: 1, out: 2)"
       ],
       "type": "scatter",
       "x": [
         -0.1736481776669303,
         -0.1736481776669303,
+        -0.1736481776669303,
         -0.8682408883346515
       ],
       "y": [
+        0.984807753012208,
         0.984807753012208,
         0.984807753012208,
         4.92403876506104
@@ -464,6 +468,7 @@
         "color": [
           "#9966cc",
           "#9966cc",
+          "#9966cc",
           "#9966cc"
         ],
         "opacity": 0.8,
@@ -472,17 +477,20 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
-        "RMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
-        "RMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
+        "RMD (in: 0, out: 0)<br>SMD (in: 0, out: 0)<br>VA/DA (in: 0, out: 0)",
         "VB/VD (in: 1, out: 2)"
       ],
       "type": "scatter",
       "x": [
         -0.7660444431189779,
         -0.7660444431189779,
+        -0.7660444431189779,
         -3.8302222155948895
       ],
       "y": [
+        0.6427876096865395,
         0.6427876096865395,
         0.6427876096865395,
         3.2139380484326976

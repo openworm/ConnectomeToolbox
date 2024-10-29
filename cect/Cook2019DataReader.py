@@ -10,7 +10,7 @@
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.Cells import convert_to_preferred_muscle_name
-from cect.Cells import is_neuron
+from cect.Cells import is_any_neuron
 from cect.Cells import remove_leading_index_zero
 from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
@@ -179,7 +179,7 @@ class Cook2019DataReader(ConnectomeDataset):
                         conns.append(ci)
 
                         for p in [pre, post]:
-                            if is_neuron(p):
+                            if is_any_neuron(p):
                                 neurons.add(pre)
                             elif is_known_muscle(p):
                                 muscles.add(pre)
