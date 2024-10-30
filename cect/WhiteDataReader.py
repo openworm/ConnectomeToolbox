@@ -24,6 +24,9 @@ import os
 
 from cect import print_
 
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
+
 
 def get_syntype(syntype):
     if syntype == "electrical":
@@ -35,13 +38,13 @@ def get_syntype(syntype):
 
 
 def get_synclass(cell, syntype):
-    # dirty hack
     if syntype == "GapJunction":
-        return "Generic_GJ"
+        return GENERIC_ELEC_SYN
     else:
+        '''# dirty hack
         if cell.startswith("DD") or cell.startswith("VD"):
-            return "GABA"
-        return "Acetylcholine"
+            return "GABA"'''
+        return GENERIC_CHEM_SYN
 
 
 def parse_line(line):
