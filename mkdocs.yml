@@ -93,7 +93,10 @@ nav:
     - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
     - 'Test': 'Test_data_graph.md'
   - Cells:
-    - '<i>C. elegans</i> cells': 'Cells.md'
+    - 'All <i>C. elegans</i> cells': 'Cells.md'
+    - 'Individual cells': 
+      - 'ADAL': 'cells/ADAL.md'
+      - 'I1L': 'cells/I1L.md'
   - Python package:
     - 'Installation': 'Python.md'
   - About:

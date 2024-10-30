@@ -163,8 +163,10 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
-        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
+    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+
+    if not quick:
         readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
         readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
         readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
@@ -539,6 +541,7 @@ def generate_comparison_page(quick: bool, color_table=True):
             better_name = (
                 reader_name.replace("_", " ")
                 .replace("201", " 201")
+                .replace("202", " 202")
                 .replace("chez", "chez ")
                 .replace("19", "19 ")
                 .replace("liet", "liet ")
@@ -548,7 +551,7 @@ def generate_comparison_page(quick: bool, color_table=True):
             table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
 
         for group in COOK_GROUPING_1:
-            table_html += f'  <tr>\n<td ><b><span style="font-size:150%">{group}</span></b></th>\n'
+            table_html += f'  <tr>\n<td><b><span style="font-size:150%;text-align:center;padding:3px;">{group}</span></b></th>\n'
 
             for reader_name in readers_to_include:
                 connectome = all_connectomes[reader_name]

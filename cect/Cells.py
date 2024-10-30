@@ -41,6 +41,12 @@ cell_notes = {}
 connectomes = None
 
 
+def get_cell_notes(cell):
+    desc = cell_notes[cell] if cell in cell_notes else "???"
+    desc = desc[0].upper() + desc[1:]
+    return desc
+
+
 SENSORY_NEURONS_1_COOK = [
     "IL2DL",
     "IL2DR",
@@ -1832,8 +1838,13 @@ def get_short_description(cell):
 """
 
 
-def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
+def get_cell_internal_link(
+    cell_name, html=False, text=None, use_color=False, individual_cell_page=False
+):
     url = "../Cells/index.html#%s" % cell_name
+
+    if individual_cell_page:
+        url = "/cells/%s" % cell_name
 
     if html:
         link_text = cell_name if text is None else text
@@ -1854,7 +1865,12 @@ def get_cell_internal_link(cell_name, html=False, text=None, use_color=False):
         )
 
 
-def get_cell_link(cell_name, html=False, text=None):
+def get_cell_osbv1_link(cell, text="OSB 3D"):
+    osbv1_link = f"https://v1.opensourcebrain.org/projects/c302/repository/revisions/development/show/examples/cells?explorer=https%253A%252F%252Fraw.githubusercontent.com%252Fopenworm%252Fc302%252Fdevelopment%252Fexamples%252Fcells%252F{cell}.cell.nml"
+    return f'<a href="{osbv1_link}">{text}</a>' if is_herm_neuron(cell) else ""
+
+
+def get_cell_wormatlas_link(cell_name, html=False, text=None):
     url = None
 
     known_other = {
@@ -2082,16 +2098,14 @@ def _generate_cell_table(cell_type, cells):
             if cell in conn.nodes:
                 datasets += "%s, " % _get_dataset_link(reader_name)
 
-        osbv1_link = f"https://v1.opensourcebrain.org/projects/c302/repository/revisions/development/show/examples/cells?explorer=https%253A%252F%252Fraw.githubusercontent.com%252Fopenworm%252Fc302%252Fdevelopment%252Fexamples%252Fcells%252F{cell}.cell.nml"
-        all_data[f'<a name="{cell}"></a>{cell}'] = [
+        cell_link = get_cell_internal_link(
+            cell, html=True, use_color=True, individual_cell_page=True
+        )
+        all_data[f'<a name="{cell}"></a>{cell_link}'] = [
             desc,
             datasets[:-2],
-            get_cell_link(cell, text="WormAtlas")
-            + (
-                f'<br/><a href="{osbv1_link}">OSB 3D</a>'
-                if is_herm_neuron(cell)
-                else ""
-            ),
+            get_cell_wormatlas_link(cell, text="WormAtlas")
+            + ("<br/>%s" % get_cell_osbv1_link(cell)),
         ]
 
     df_all = pd.DataFrame(all_data).transpose()
@@ -2115,6 +2129,10 @@ if __name__ == "__main__":
     from cect.Comparison import generate_comparison_page
 
     connectomes = generate_comparison_page(quick)
+
+    from cect.CellInfo import generate_cell_info_pages
+
+    generate_cell_info_pages(connectomes)
 
     filename = "docs/Cells.md"
 
