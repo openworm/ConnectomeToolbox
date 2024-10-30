@@ -15,6 +15,12 @@ theme:
 
 plugins:
   - plotly
+  - mkdocs-autoapi:
+      autoapi_dir: "cect"
+      autoapi_root: "api/"
+      autoapi_keep_files: true
+      autoapi_add_nav_entry: false
+  - mkdocstrings:
 
 extra_css:
   - stylesheets/extra.css
@@ -96,5 +102,6 @@ nav:
     - '<i>C. elegans</i> cells': 'Cells.md'
   - Python package:
     - 'Installation': 'Python.md'
+    - 'API Reference': "api/summary/"
   - About:
     - 'About & Contact': 'About.md'
