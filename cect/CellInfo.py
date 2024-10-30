@@ -10,25 +10,36 @@ from cect import print_
 
 import pandas as pd
 
+pd.options.plotting.backend = "plotly"
+
 
 def get_weight_table_markdown(w):
+    sort_by = "Cook2019Herm"
     sort_by = "White_whole"
     ww = {}
     tot_conns = 0
+
     for reader in w:
         # print(reader)
         # print(w[reader].values())
         if reader == sort_by or (len(w[reader]) > 0 and sum(w[reader].values()) > 0):
             ww[reader] = w[reader]
             tot_conns += sum(w[reader].values())
-    print(ww)
+    # print(ww)
 
     if tot_conns == 0:
-        return "No connections found!"
+        return "No connections found!", None
 
     df_all = pd.DataFrame(ww).fillna(0).sort_values(sort_by, ascending=False)
 
-    return df_all.to_markdown()
+    if df_all is not None:
+        fig = df_all.plot()
+        indent = ""
+        fig_md = f"\n{indent}<br/>\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
+    else:
+        fig_md = ""
+
+    return "%s\n\n%s" % (df_all.to_markdown(), fig_md)
 
 
 def generate_cell_info_pages(connectomes):
@@ -50,7 +61,7 @@ def generate_cell_info_pages(connectomes):
                     all_synclasses.append(synclass)
 
         for synclass in all_synclasses:
-            cell_info += "### Connections %s %s of type **%s**\n\n" % (
+            header = "### Connections %s %s of type **%s**\n\n" % (
                 "FROM" if not synclass == GENERIC_ELEC_SYN else "FROM/TO",
                 get_cell_internal_link(
                     cell, html=True, use_color=True, individual_cell_page=True
@@ -70,10 +81,13 @@ def generate_cell_info_pages(connectomes):
                         )
                         w[cds_name][cc] = conns[c]
 
-            cell_info += "%s\n\n" % get_weight_table_markdown(w)
+            w_md = get_weight_table_markdown(w)
+
+            if "No connections" not in w_md:
+                cell_info += "%s\n%s\n\n" % (header, w_md)
 
             if not synclass == GENERIC_ELEC_SYN:
-                cell_info += "### Connections %s %s of type **%s**\n\n" % (
+                header = "### Connections %s %s of type **%s**\n\n" % (
                     "TO",
                     get_cell_internal_link(
                         cell, html=True, use_color=True, individual_cell_page=True
@@ -93,7 +107,10 @@ def generate_cell_info_pages(connectomes):
                             )
                             w[cds_name][cc] = conns[c]
 
-                cell_info += "%s\n\n" % get_weight_table_markdown(w)
+                w_md = get_weight_table_markdown(w)
+
+                if "No connections" not in w_md:
+                    cell_info += "%s\n%s\n\n" % (header, w_md)
 
         """
         for cds_name in connectomes:
