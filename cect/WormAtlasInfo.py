@@ -141,20 +141,34 @@ if __name__ == "__main__":
     table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
+      font-family: Arial, sans-serif; 
     }
+    td {
+    text-align: center;
+    }
+
     </style>
     </head>
     <body>
 """
         )
         f.write("    <h2><i>C. elegans</i> cells</h2>\n---\n\n")
+        f.write("    <table>\n\n")
 
+        max_col = 4
         for sex in WA_COLORS:
-            f.write("\n<h3>%s</h3>\n" % sex)
+            f.write(
+                '\n        <tr><td colspan=%i style="height:30px"><b>%s</b></td></tr>\n'
+                % (max_col, sex.upper())
+            )
 
             for cell_class in WA_COLORS[sex]:
-                f.write("\n<h4>%s</h4>\n\n" % cell_class)
+                f.write(
+                    '\n        <tr><td colspan=%i style="height:30px"><b>%s</b></td></tr>\n\n            <tr>'
+                    % (max_col, cell_class)
+                )
 
+                count = 0
                 for cell_type in WA_COLORS[sex][cell_class]:
                     if "General code" not in cell_type:
                         color = WA_COLORS[sex][cell_class][cell_type][1:]
@@ -177,13 +191,29 @@ if __name__ == "__main__":
                             w = png.Writer(width, height, greyscale=False)
                             w.write(img_file, img)
 
-                        link_text = cell_type
-                        link_text = f'<span style="color:{color};font-size:200%">{VERTICAL_ELLIPSE}</span>{link_text} - '
+                        # https://stackoverflow.com/questions/3942878
+                        if (
+                            float(rgb_color[0]) / 256 * 0.299
+                            + float(rgb_color[1]) / 256 * 0.587
+                            + float(rgb_color[2]) / 256 * 0.2
+                        ) > 0.35:
+                            fcolor = "#000000"
+                        else:
+                            fcolor = "#ffffff"
+
+                        count += 1
+                        link_text = cell_type[0].upper() + cell_type[1:]
+                        # link_text = f'<img src="images/{color}.png"/>{link_text}'
                         print(link_text)
-                        f.write("\n%s\n\n" % link_text)
+                        f.write(
+                            f'\n                <td style="background-color:#{color};color:{fcolor};">{link_text}</td>\n'
+                        )
+                        if count >= max_col:
+                            f.write("\n                </tr><tr>\n")
+                            count = 0
 
         f.write(
-            """</body>
+            """</tr></table></body>
 </html>"""
         )
 
