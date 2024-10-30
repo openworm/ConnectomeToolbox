@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
 
-def print_(msg, print_it=True): # print_it=False when not verbose
+def print_(msg, print_it=True):  # print_it=False when not verbose
     if print_it:
         pre = "cect      >>> "
-        print('%s %s'%(pre,msg.replace('\n','\n'+pre)))
-
+        txt = msg.replace("\n", "\n" + pre) if msg is not None else msg
+        print("%s %s" % (pre, txt))

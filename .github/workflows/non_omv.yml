@@ -35,14 +35,13 @@ jobs:
         
     - name: Install package
       run: |
-        pip install .
-        pip install wormneuroatlas
+        pip install .[all]
         pip list
         
         
-    - name: Run test script
+    - name: Run quick test script
       run: |
-        ./test.sh
+        ./test.sh -q
         
     - name: Final version info
       run: |

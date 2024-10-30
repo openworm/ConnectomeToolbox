@@ -2,21 +2,20 @@
 
 ############################################################
 
-#    A simple script to read the values in herm_full_edgelist.csv.
-
-#    This is on of a number of interchangeable "Readers" which can 
-#    be used to get connection data for c302
+#    A script to read the values of Cook et al 2019
 
 ############################################################
 
-import csv
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeReader import convert_to_preferred_muscle_name
-from cect.ConnectomeReader import is_neuron
-from cect.ConnectomeReader import is_body_wall_muscle
-from cect.ConnectomeReader import remove_leading_index_zero
+from cect.Cells import convert_to_preferred_muscle_name
+from cect.Cells import is_any_neuron
+from cect.Cells import remove_leading_index_zero
+from cect.Cells import is_potential_muscle
+from cect.Cells import is_known_muscle
+
+from cect.ConnectomeDataset import ConnectomeDataset
 
 from openpyxl import load_workbook
 
@@ -25,21 +24,32 @@ import numpy as np
 
 from cect import print_
 
-spreadsheet_location = os.path.dirname(os.path.abspath(__file__))+"/data/"
-filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
+HERM_CHEM = "hermaphrodite chemical"
+HERM_GAP_SYMM = "herm gap jn symmetric"
+MALE_CHEM = "male chemical"
+MALE_GAP_SYMM = "male gap jn symmetric"
 
-HERM_CHEM = 'hermaphrodite chemical'
-HERM_GAP_SYMM = 'herm gap jn symmetric'
+SEX_SPECIFIC_SHEETS = {
+    "Hermaphodite": [HERM_CHEM, HERM_GAP_SYMM],
+    "Male": [MALE_CHEM, MALE_GAP_SYMM],
+}
 
-pre_range = {HERM_CHEM:range(4,304),
-             HERM_GAP_SYMM:range(4,472)}
-             
-post_range = {HERM_CHEM:range(4,457),
-             HERM_GAP_SYMM:range(4,472)}
+pre_range = {
+    HERM_CHEM: range(4, 304),
+    HERM_GAP_SYMM: range(4, 472),
+    MALE_CHEM: range(4, 386),
+    MALE_GAP_SYMM: range(4, 472),
+}
+post_range = {
+    HERM_CHEM: range(4, 457),
+    HERM_GAP_SYMM: range(4, 472),
+    MALE_CHEM: range(4, 579),
+    MALE_GAP_SYMM: range(4, 589),
+}
 
 
 def get_synclass(cell, syntype):
-    #TODO: fix this dirty hack
+    # TODO: fix this dirty hack
     if syntype == "GapJunction":
         return "Generic_GJ"
     else:
@@ -47,142 +57,151 @@ def get_synclass(cell, syntype):
             return "GABA"
         return "Acetylcholine"
 
-class Cook2019DataReader():
+
+class Cook2019DataReader(ConnectomeDataset):
+    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+    filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
     verbose = False
 
-    def __init__(self):
+    def __init__(self, sex):
+        ConnectomeDataset.__init__(self)
+        self.sex = sex
 
-        wb = load_workbook(filename)
-        print_("Opened the Excel file: " + filename)   
+        wb = load_workbook(self.filename)
+        print_("Opened the Excel file: " + self.filename)
 
         self.pre_cells = {}
         self.post_cells = {}
         self.conn_nums = {}
 
-        for conn_type in [HERM_CHEM, HERM_GAP_SYMM]:
-
+        for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             sheet = wb.get_sheet_by_name(conn_type)
-            print('Looking at sheet: %s'%conn_type)
+            print_("Looking at sheet: %s" % conn_type)
 
             self.pre_cells[conn_type] = []
             self.post_cells[conn_type] = []
 
             for i in pre_range[conn_type]:
-                self.pre_cells[conn_type].append(sheet['C%i'%i].value)
+                self.pre_cells[conn_type].append(sheet["C%i" % i].value)
 
-            if self.verbose: print(' - Pre cells for %s (%i):\n%s'%(conn_type, len(self.pre_cells[conn_type]), self.pre_cells[conn_type]))
+            if self.verbose:
+                print_(
+                    " - Pre cells for %s (%i):\n%s"
+                    % (
+                        conn_type,
+                        len(self.pre_cells[conn_type]),
+                        self.pre_cells[conn_type],
+                    )
+                )
 
             for i in post_range[conn_type]:
                 self.post_cells[conn_type].append(sheet.cell(row=3, column=i).value)
 
-            if self.verbose: print(' - Post cells for %s (%i):\n%s'%(conn_type, len(self.post_cells[conn_type]), self.post_cells[conn_type]))
+            if self.verbose:
+                print_(
+                    " - Post cells for %s (%i):\n%s"
+                    % (
+                        conn_type,
+                        len(self.post_cells[conn_type]),
+                        self.post_cells[conn_type],
+                    )
+                )
 
-            self.conn_nums[conn_type] = np.zeros([len(self.pre_cells[conn_type]),len(self.post_cells[conn_type])], dtype=int)
+            self.conn_nums[conn_type] = np.zeros(
+                [len(self.pre_cells[conn_type]), len(self.post_cells[conn_type])],
+                dtype=int,
+            )
 
             for i in range(len(self.pre_cells[conn_type])):
                 for j in range(len(self.post_cells[conn_type])):
-                    row =4+i
-                    col = 4+j
+                    row = 4 + i
+                    col = 4 + j
                     val = sheet.cell(row=row, column=col).value
-                    #print('Cell (%i,%i) [row %i, col %i] = %s'%(i,j,row, col, val))
+                    # print("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
                     if val is not None:
-                        self.conn_nums[conn_type][i,j] = int(val)
+                        self.conn_nums[conn_type][i, j] = int(val)
 
-            if self.verbose: print(' - Conns for %s (%s):\n%s'%(conn_type, self.conn_nums[conn_type].shape, self.conn_nums[conn_type]))
+            if self.verbose:
+                print_(
+                    " - Conns for %s (%s):\n%s"
+                    % (
+                        conn_type,
+                        self.conn_nums[conn_type].shape,
+                        self.conn_nums[conn_type],
+                    )
+                )
 
+        neurons, muscles, other_cells, conns = self.read_all_data()
 
+        for conn in conns:
+            self.add_connection_info(conn)
 
-    def read_data(self, include_nonconnected_cells=False):
+    def read_all_data(self):
         """
-        Args:
-            include_nonconnected_cells (bool): Also append neurons without known connections to other neurons to the 'cells' list. True if they should get appended, False otherwise.
         Returns:
             cells (:obj:`list` of :obj:`str`): List of neurons
             conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
         """
 
-        if not include_nonconnected_cells:
-            raise Exception('Option include_nonconnected_cells=False not supported')
-
+        neurons = set([])
+        muscles = set([])
+        other_cells = set([])
         conns = []
-        cells = []
-        for conn_type in [HERM_CHEM, HERM_GAP_SYMM]:
 
+        for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             for pre_index in range(len(self.pre_cells[conn_type])):
                 for post_index in range(len(self.post_cells[conn_type])):
+                    num = self.conn_nums[conn_type][pre_index, post_index]
 
-                    pre = remove_leading_index_zero(self.pre_cells[conn_type][pre_index])
-                    post = remove_leading_index_zero(self.post_cells[conn_type][post_index])
+                    pre = remove_leading_index_zero(
+                        self.pre_cells[conn_type][pre_index]
+                    )
+                    post = remove_leading_index_zero(
+                        self.post_cells[conn_type][post_index]
+                    )
+                    if self.verbose and num > 0:
+                        print_("Conn %s -> %s #%i" % (pre, post, num))
 
-                    if is_body_wall_muscle(post):
-                        continue  # post is a BWM so ignore
+                    if is_potential_muscle(pre):
+                        pre = convert_to_preferred_muscle_name(pre)
 
-                    num = self.conn_nums[conn_type][pre_index,post_index]
-                    if num>0:
-                        syntype = 'Send' if conn_type == HERM_CHEM else "GapJunction"
+                    if is_potential_muscle(post):
+                        post = convert_to_preferred_muscle_name(post)
+
+                    if num > 0:
+                        syntype = "Send" if "chemical" in conn_type else "GapJunction"
                         synclass = get_synclass(pre, syntype)
 
-                        conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                        #print ConnectionInfo(pre, post, num, syntype, synclass)
-                        if pre not in cells:
-                            cells.append(pre)
-                        if post not in cells:
-                            cells.append(post)
+                        ci = ConnectionInfo(pre, post, num, syntype, synclass)
+                        if self.verbose:
+                            print_("Conn: %s" % (ci))
+                        conns.append(ci)
 
-        return cells, conns
+                        for p in [pre, post]:
+                            if is_any_neuron(p):
+                                neurons.add(pre)
+                            elif is_known_muscle(p):
+                                muscles.add(pre)
+                            else:
+                                other_cells.add(p)
 
-
-    def read_muscle_data(self):
-        """
-        Returns:
-            neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
-            muscles (:obj:`list` of :obj:`str`): List of muscle cells.
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of neuron-muscle connections.
-        """
-
-        neurons = []
-        muscles = []
-        conns = []
-
-        '''
-        with open(filename, 'r') as f:
-            reader = csv.DictReader(f)
-            print_("Opened file: " + filename)
-
-            for row in reader:
-                pre, post, num, syntype, synclass = parse_row(row)
-
-                if not (is_neuron(pre) or is_body_wall_muscle(pre)) or not is_body_wall_muscle(post):
-                    continue
-
-                if is_neuron(pre):
-                    pre = remove_leading_index_zero(pre)
-                else:
-                    pre = get_old_muscle_name(pre)
-                post = get_old_muscle_name(post)
-
-                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
-                if is_neuron(pre) and pre not in neurons:
-                    neurons.append(pre)
-                elif is_body_wall_muscle(pre) and pre not in muscles:
-                    muscles.append(pre)
-                if post not in muscles:
-                    muscles.append(post)''' 
-
-        return neurons, muscles, conns
+        return list(neurons), list(muscles), list(other_cells), conns
 
 
 def main():
+    tdr_instance = Cook2019DataReader("Hermaphodite")
 
-    cdr = Cook2019DataReader()
-    read_data = cdr.read_data
-    read_muscle_data = cdr.read_muscle_data
-    
-    cells, neuron_conns = read_data(include_nonconnected_cells=True)
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = tdr_instance.read_data()
+
+    neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-if __name__ == '__main__':
+    print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
+
+    print(tdr_instance.summary())
+
+
+if __name__ == "__main__":
     main()

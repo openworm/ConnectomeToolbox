@@ -1,18 +1,33 @@
-site_name: C. elegans Connectome Toolbox
+site_name: <i>C. elegans</i> Connectome Toolbox
 theme:
-  name: material    
+  name: material
   favicon: images/favicon.ico
   logo: images/favicon.ico
   palette:
-    primary: green  
+    primary: green
+  features:
+    - content.tabs.link   
+  icon:
+    admonition:
+      example: material/database
+      tip: material/set-left
+      abstract: material/graph
 
 plugins:
   - plotly
+  - mkdocs-autoapi:
+      autoapi_dir: "cect"
+      autoapi_root: "api/"
+      autoapi_keep_files: true
+      autoapi_add_nav_entry: false
+  - mkdocstrings:
 
 extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
+  - attr_list
+  - admonition
   - pymdownx.snippets:
         base_path: ['docs']
   - pymdownx.superfences:
@@ -23,42 +38,70 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Overview: 'index.md'
   - Comparison: 'Comparison.md'
-  - 'Connectomes':
+  - 'Related publications':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
-    - 'White et al. 1986': 'White_1986.md'
+    - '<b>White et al. 1986</b>': 'White_1986.md'
     - 'Durbin 1987': 'Durbin_1987.md'
     - 'Hall & Russell 1991': 'Hall_1991.md'
     - 'Altun et al. 2009': 'Altun_2009.md'
-    - 'Varshney et al. 2011': 'Varshney_2011.md'
+    - '<b>Varshney et al. 2011</b>': 'Varshney_2011.md'
     - 'Serrano-Saiz et al. 2013': 'Serrano_2013.md'
     - 'Pereira et al. 2015': 'Pereira_2015.md'
-    - 'Gendrel, Hobert & Atlas 2016': 'Gendrel_2016.md'
-    - 'Bentley et al. 2016': 'Bentley_2016.md'
-    - 'Cook et al. 2019': 'Cook_2019.md'
-    - 'Cook et al. 2020': 'Cook_2020.md'
+    - 'Gendrel, Atlas & Hobert 2016': 'Gendrel_2016.md'
+    - '<b>Bentley et al. 2016</b>': 'Bentley_2016.md'
+    - '<b>Cook et al. 2019</b>': 'Cook_2019.md'
+    - '<b>Cook et al. 2020</b>': 'Cook_2020.md'
     - 'Fenyves et al. 2020': 'Fenyves_2020.md'
     - 'Brittin et al. 2021': 'Brittin_2021.md'
     - 'Taylor et al. 2021': 'Taylor_2021.md'
     - 'Yemini et al. 2021': 'Yemini_2021.md'
-    - 'Witvliet et al. 2021': 'Witvliet_2021.md'
+    - '<b>Witvliet et al. 2021</b>': 'Witvliet_2021.md'
     - 'Beets et al. 2023': 'Beets_2023.md'
-    - 'Ripoll-Sanchez et al. 2023': 'Ripoll_2023.md'
     - 'Dag et al. 2023': 'Dag_2023.md'
     - 'Atanas et al. 2023': 'Atanas_2023.md'
-    - 'Randi et al. 2023': 'Randi_2023.md'
+    - '<b>Randi et al. 2023</b>': 'Randi_2023.md'
+    - '<b>Ripoll-Sánchez et al. 2023</b>': 'RipollSanchez_2023.md'
   
-  - 'Data readers':
-    - 'White et al. 1986 - A': 'White_A_data.md'
-    - 'White et al. 1986 - L4': 'White_L4_data.md'
-    - 'White et al. 1986 - whole': 'White_whole_data.md'
-    - 'Varshney et al. 2011': 'Varshney_data.md'
-    - 'Cook et al. 2019': 'Cook2019Herm_data.md'
-    - 'Witvliet et al. 2021 - 1': 'Witvliet1_data.md'
-    - 'Witvliet et al. 2021 - 2': 'Witvliet2_data.md'
-    - 'WormNeuroAtlas': 'WormNeuroAtlas_data.md'
+  - 'Data sets':
+    - 'White et al. 1986 - A (N2U)': 'White_A_data_graph.md'
+    - 'White et al. 1986 - L4 (JSH)': 'White_L4_data_graph.md'
+    - 'White et al. 1986 - whole': 'White_whole_data_graph.md'
+    - 'Varshney et al. 2011': 'Varshney_data_graph.md'
+    - 'Bentley et al. 2016 Monoam.': 'Bentley2016_MA_data_graph.md'
+    - 'Bentley et al. 2016 Peptid.': 'Bentley2016_PEP_data_graph.md'
+    - 'Cook et al. 2019 Herm': 'Cook2019Herm_data_graph.md'
+    - 'Cook et al. 2019 Male': 'Cook2019Male_data_graph.md'
+    - 'Cook et al. 2020': 'Cook2020_data_graph.md'
+    - 'Witvliet et al. 2021 - 1': 'Witvliet1_data_graph.md'
+    - 'Witvliet et al. 2021 - 2': 'Witvliet2_data_graph.md'
+    - 'Witvliet et al. 2021 - 3': 'Witvliet3_data_graph.md'
+    - 'Witvliet et al. 2021 - 4': 'Witvliet4_data_graph.md'
+    - 'Witvliet et al. 2021 - 5': 'Witvliet5_data_graph.md'
+    - 'Witvliet et al. 2021 - 6': 'Witvliet6_data_graph.md'
+    - 'Witvliet et al. 2021 - 7': 'Witvliet7_data_graph.md'
+    - 'Witvliet et al. 2021 - 8': 'Witvliet8_data_graph.md'
+    - 'WormNeuroAtlas Anatomy': 'WormNeuroAtlas_data_graph.md'
+    - 'Randi et al. 2023': 'Randi2023_data_graph.md'
+    - 'Ripoll-Sánchez 2023 (short)': 'RipollSanchezShortRange_data.md'
+    - 'Ripoll-Sánchez 2023 (mid)': 'RipollSanchezMidRange_data.md'
+    - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
+    - 'Test': 'Test_data_graph.md'
+  - Cells:
+    - '<i>C. elegans</i> cells': 'Cells.md'
   - Python package:
     - 'Installation': 'Python.md'
+    - 'API Reference': "api/summary/"
+  - About:
+    - 'About & Contact': 'About.md'
