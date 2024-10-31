@@ -1,3 +1,7 @@
+"""
+Data extracted from the **WormNeuroAtlas package** for neuronal connectivity
+"""
+
 import logging
 
 from cect.ConnectomeReader import ConnectionInfo
@@ -37,6 +41,8 @@ def get_all_cells(watlas):
 
 
 class WormNeuroAtlasReader(ConnectomeDataset):
+    """Reader for data extracted from the **WormNeuroAtlasReader** for neuronal connectivity"""
+
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
