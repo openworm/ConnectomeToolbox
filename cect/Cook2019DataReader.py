@@ -17,6 +17,9 @@ from cect.Cells import is_known_muscle
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
+from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import GENERIC_ELEC_SYN
+
 from openpyxl import load_workbook
 
 import os
@@ -49,13 +52,13 @@ post_range = {
 
 
 def get_synclass(cell, syntype):
-    # TODO: fix this dirty hack
     if syntype == "GapJunction":
-        return "Generic_GJ"
+        return GENERIC_ELEC_SYN
     else:
+        '''# dirty hack
         if cell.startswith("DD") or cell.startswith("VD"):
-            return "GABA"
-        return "Acetylcholine"
+            return "GABA"'''
+        return GENERIC_CHEM_SYN
 
 
 class Cook2019DataReader(ConnectomeDataset):

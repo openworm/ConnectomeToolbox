@@ -22,7 +22,8 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%sherm_full_edgelist_MODIFIED.csv" % spreadsheet_location
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity""" % filename
+    """Data extracted from **%s** for neuronal connectivity. Note: legacy dataset (based on Cook et al. 2019) used in the past in OpenWorm. Only included here for reference! Do not use!"""
+    % filename
 )
 
 

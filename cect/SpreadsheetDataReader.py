@@ -22,9 +22,7 @@ import sys
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
 
-READER_DESCRIPTION = (
-    """Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity"""
-)
+READER_DESCRIPTION = """Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity. Note: legacy dataset (based on White_whole) used in the past in OpenWorm. Only included here for reference! Do not use!"""
 
 
 class SpreadsheetDataReader(ConnectomeDataset):

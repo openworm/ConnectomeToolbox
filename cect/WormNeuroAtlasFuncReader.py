@@ -78,7 +78,7 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
 
                 if abs(num) > -10 and q_ij < self.max_q:
                     if num < 0:
-                        print(
+                        print_(
                             "Functional conn junc (%s (%i) -> %s (%i):\t%s (orig = %s, q = %s)"
                             % (pre, apre, post, apost, dff_ij, dff_ij_orig, q_ij)
                         )
