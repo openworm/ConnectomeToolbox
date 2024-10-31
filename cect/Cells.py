@@ -1981,7 +1981,7 @@ def get_cell_wormatlas_link(cell_name, html=False, text=None):
             except Exception as err:
                 error = err
 
-            print(
+            print_(
                 "URL for %s (%s): %s"
                 % (cell_name, url, "SUCCESS" if error is None else "ERROR (%s)" % error)
             )

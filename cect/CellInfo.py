@@ -27,7 +27,11 @@ def get_weight_table_markdown(w):
     for dataset in w:
         # print(dataset)
         # print(w[dataset].values())
-        if len(w[dataset]) > 0 and sum(w[dataset].values()) > 0:
+        if (
+            len(w[dataset]) > 0
+            and sum(w[dataset].values()) > 0
+            and "SSData" not in dataset
+        ):
             ww[dataset] = w[dataset]
             tot_conns += sum(w[dataset].values())
 
@@ -56,7 +60,7 @@ def get_weight_table_markdown(w):
             labels=dict(index="Connection", value="Weight", variable="Dataset")
         )
         fig.update_traces(
-            marker=dict(size=5), marker_symbol="square", mode="lines+markers"
+            marker=dict(size=4), marker_symbol="circle", mode="lines+markers"
         )
         indent = ""
         fig_md = f"\n{indent}<br/>\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
@@ -88,13 +92,19 @@ def generate_cell_info_pages(connectomes):
                     all_synclasses.append(synclass)
 
         for synclass in all_synclasses:
+            synclass_info = synclass
+            if synclass == GENERIC_CHEM_SYN:
+                synclass_info = "Chemical synapse"
+            if synclass == GENERIC_ELEC_SYN:
+                synclass_info = "Electrical synapse"
+
             cell_link = get_cell_internal_link(
                 cell, html=True, use_color=True, individual_cell_page=True
             )
             header = "### Connections %s %s of type **%s**\n\n" % (
-                "FROM" if not synclass == GENERIC_ELEC_SYN else "FROM/TO",
+                "from" if not synclass == GENERIC_ELEC_SYN else "from/to",
                 cell_link,
-                synclass,
+                synclass_info,
             )
 
             w = {}
@@ -124,9 +134,9 @@ def generate_cell_info_pages(connectomes):
                     cell, html=True, use_color=True, individual_cell_page=True
                 )
                 header = "### Connections %s %s of type **%s**\n\n" % (
-                    "TO",
+                    "to",
                     cell_link,
-                    synclass,
+                    synclass_info,
                 )
 
                 w = {}
