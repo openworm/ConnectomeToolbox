@@ -101,10 +101,13 @@ def generate_cell_info_pages(connectomes):
             cell_link = get_cell_internal_link(
                 cell, html=True, use_color=True, individual_cell_page=True
             )
-            header = "### Connections %s %s of type **%s**\n\n" % (
-                "from" if not synclass == GENERIC_ELEC_SYN else "from/to",
-                cell_link,
-                synclass_info,
+            header = (
+                "### Connections %s %s of type **%s**  { data-search-exclude }\n\n"
+                % (
+                    "from" if not synclass == GENERIC_ELEC_SYN else "from/to",
+                    cell_link,
+                    synclass_info,
+                )
             )
 
             w = {}
@@ -133,10 +136,13 @@ def generate_cell_info_pages(connectomes):
                 cell_link = get_cell_internal_link(
                     cell, html=True, use_color=True, individual_cell_page=True
                 )
-                header = "### Connections %s %s of type **%s**\n\n" % (
-                    "to",
-                    cell_link,
-                    synclass_info,
+                header = (
+                    "### Connections %s %s of type **%s**  { data-search-exclude }\n\n"
+                    % (
+                        "to",
+                        cell_link,
+                        synclass_info,
+                    )
                 )
 
                 w = {}

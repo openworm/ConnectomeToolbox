@@ -1473,10 +1473,10 @@ def get_SIM_class(cell):
     PROVISIONAL method to return whether a cell is Sensory/Interneuron/Motorneuron (or Other)
 
     Parameters:
-    cell: which cell to assess
+        cell: which cell to assess
 
     Returns:
-    str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+        str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
     """
 
     pharyngeal_polymodal_to_class_motor = [

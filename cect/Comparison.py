@@ -267,7 +267,10 @@ def generate_comparison_page(quick: bool, color_table=True):
                             hiveplot = "hiveplot" in filename
                             matrix = not graph and not hiveplot
 
-                            f.write('---\ntitle: "Dataset: %s"\n---\n\n' % reader_name)
+                            f.write(
+                                '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
+                                % reader_name
+                            )
 
                             desc_full = ""
 
