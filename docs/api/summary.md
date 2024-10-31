@@ -1,4 +1,5 @@
 * [cect](cect/index.md)
+    * [CellInfo](cect/CellInfo.md)
     * [Cells](cect/Cells.md)
     * [Comparison](cect/Comparison.md)
     * [ConnectomeDataset](cect/ConnectomeDataset.md)
@@ -8,7 +9,6 @@
     * [Cook2019HermReader](cect/Cook2019HermReader.md)
     * [Cook2019MaleReader](cect/Cook2019MaleReader.md)
     * [Cook2020DataReader](cect/Cook2020DataReader.md)
-    * [HivePlot](cect/HivePlot.md)
     * [RipollSanchezDataReader](cect/RipollSanchezDataReader.md)
     * [RipollSanchezLongRangeReader](cect/RipollSanchezLongRangeReader.md)
     * [RipollSanchezMidRangeReader](cect/RipollSanchezMidRangeReader.md)
