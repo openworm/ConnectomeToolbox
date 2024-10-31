@@ -52,7 +52,12 @@ def get_weight_table_markdown(w):
     df_all = pd.DataFrame(ww).fillna(0).sort_values(sort_by, ascending=False)
 
     if df_all is not None:
-        fig = df_all.plot(index="Connection", value="Weight", variable="Dataset")
+        fig = df_all.plot(
+            labels=dict(index="Connection", value="Weight", variable="Dataset")
+        )
+        fig.update_traces(
+            marker=dict(size=5), marker_symbol="square", mode="lines+markers"
+        )
         indent = ""
         fig_md = f"\n{indent}<br/>\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
