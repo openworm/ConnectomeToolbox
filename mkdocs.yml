@@ -15,6 +15,7 @@ theme:
 
 plugins:
   - plotly
+  - search
 
 extra_css:
   - stylesheets/extra.css
@@ -95,11 +96,11 @@ nav:
   - Cells:
     - 'All <i>C. elegans</i> cells': 'Cells.md'
     - 'Individual cells': 
-      - 'ADAL': 'cells/ADAL.md'
-      - 'AVAL': 'cells/AVAL.md'
-      - 'AVBR': 'cells/AVBR.md'
-      - 'I1L': 'cells/I1L.md'
-      - 'RIML': 'cells/RIML.md'
+      - 'ADAL': 'ADAL.md'
+      - 'AVAL': 'AVAL.md'
+      - 'AVBR': 'AVBR.md'
+      - 'I1L': 'I1L.md'
+      - 'RIML': 'RIML.md'
   - Python package:
     - 'Installation': 'Python.md'
   - About:
