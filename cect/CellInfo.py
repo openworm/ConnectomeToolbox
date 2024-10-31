@@ -1,4 +1,5 @@
 from cect.Cells import ALL_PREFERRED_CELL_NAMES
+from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
 from cect.Cells import get_cell_notes
@@ -7,33 +8,51 @@ from cect.Cells import get_cell_wormatlas_link
 from cect.Cells import get_cell_osbv1_link
 
 from cect import print_
+# from pprint import pprint
 
 import pandas as pd
 
 pd.options.plotting.backend = "plotly"
 
 
+def get_dataset_link(dataset):
+    # return dataset+'--'
+    return f'<a href="/{dataset}_data">{dataset}</a>'
+
+
 def get_weight_table_markdown(w):
-    sort_by = "Cook2019Herm"
-    sort_by = "White_whole"
     ww = {}
     tot_conns = 0
 
-    for reader in w:
-        # print(reader)
-        # print(w[reader].values())
-        if reader == sort_by or (len(w[reader]) > 0 and sum(w[reader].values()) > 0):
-            ww[reader] = w[reader]
-            tot_conns += sum(w[reader].values())
-    # print(ww)
+    for dataset in w:
+        # print(dataset)
+        # print(w[dataset].values())
+        if len(w[dataset]) > 0 and sum(w[dataset].values()) > 0:
+            ww[dataset] = w[dataset]
+            tot_conns += sum(w[dataset].values())
 
     if tot_conns == 0:
-        return "No connections found!", None
+        return "No connections found!"
+
+    sort_by = (
+        get_dataset_link("Cook2019Herm")
+        if get_dataset_link("Cook2019Herm") in ww
+        else get_dataset_link("White_whole")
+        if get_dataset_link("White_whole") in ww
+        else get_dataset_link("Randi2023")
+        if get_dataset_link("Randi2023") in ww
+        else get_dataset_link("RipollSanchezShortRange")
+        if get_dataset_link("RipollSanchezShortRange") in ww
+        else list(ww.keys())[0]
+    )
+
+    # print_("Sorting the following data by %s" % sort_by)
+    # pprint(ww)
 
     df_all = pd.DataFrame(ww).fillna(0).sort_values(sort_by, ascending=False)
 
     if df_all is not None:
-        fig = df_all.plot()
+        fig = df_all.plot(index="Connection", value="Weight", variable="Dataset")
         indent = ""
         fig_md = f"\n{indent}<br/>\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
@@ -52,7 +71,10 @@ def generate_cell_info_pages(connectomes):
         cell_info += "%s\n\n" % get_cell_osbv1_link(
             cell, text="View in 3D on Open Source Brain"
         )
-        all_synclasses = []
+        all_synclasses = [
+            GENERIC_CHEM_SYN,
+            GENERIC_ELEC_SYN,
+        ]  # ensure these 2 are at the start...
 
         for cds_name in connectomes:
             cds = connectomes[cds_name]
@@ -61,25 +83,31 @@ def generate_cell_info_pages(connectomes):
                     all_synclasses.append(synclass)
 
         for synclass in all_synclasses:
+            cell_link = get_cell_internal_link(
+                cell, html=True, use_color=True, individual_cell_page=True
+            )
             header = "### Connections %s %s of type **%s**\n\n" % (
                 "FROM" if not synclass == GENERIC_ELEC_SYN else "FROM/TO",
-                get_cell_internal_link(
-                    cell, html=True, use_color=True, individual_cell_page=True
-                ),
+                cell_link,
                 synclass,
             )
 
             w = {}
             for cds_name in connectomes:
-                w[cds_name] = {}
+                r_name = get_dataset_link(cds_name)
+                w[r_name] = {}
                 cds = connectomes[cds_name]
+
+                connection_symbol = "↔" if synclass == GENERIC_ELEC_SYN else "→"
                 if synclass in cds.connections:
                     conns = cds.get_connections_from(cell, synclass)
                     for c in conns:
                         cc = get_cell_internal_link(
                             c, html=True, use_color=True, individual_cell_page=True
                         )
-                        w[cds_name][cc] = conns[c]
+                        w[r_name]["%s%s%s" % (cell_link, connection_symbol, cc)] = (
+                            conns[c]
+                        )
 
             w_md = get_weight_table_markdown(w)
 
@@ -87,17 +115,20 @@ def generate_cell_info_pages(connectomes):
                 cell_info += "%s\n%s\n\n" % (header, w_md)
 
             if not synclass == GENERIC_ELEC_SYN:
+                cell_link = get_cell_internal_link(
+                    cell, html=True, use_color=True, individual_cell_page=True
+                )
                 header = "### Connections %s %s of type **%s**\n\n" % (
                     "TO",
-                    get_cell_internal_link(
-                        cell, html=True, use_color=True, individual_cell_page=True
-                    ),
+                    cell_link,
                     synclass,
                 )
 
                 w = {}
                 for cds_name in connectomes:
-                    w[cds_name] = {}
+                    r_name = get_dataset_link(cds_name)
+                    w[r_name] = {}
+
                     cds = connectomes[cds_name]
                     if synclass in cds.connections:
                         conns = cds.get_connections_to(cell, synclass)
@@ -105,7 +136,7 @@ def generate_cell_info_pages(connectomes):
                             cc = get_cell_internal_link(
                                 c, html=True, use_color=True, individual_cell_page=True
                             )
-                            w[cds_name][cc] = conns[c]
+                            w[r_name]["%s→%s" % (cc, cell_link)] = conns[c]
 
                 w_md = get_weight_table_markdown(w)
 
@@ -155,7 +186,7 @@ def generate_cell_info_pages(connectomes):
                             conns[c],
                         )"""
 
-        cell_filename = "docs/cells/%s.md" % cell
+        cell_filename = "docs/%s.md" % cell
         with open(cell_filename, "w") as cell_file:
             print_(f"Writing info on cell {cell} to {cell_filename}")
             cell_file.write(cell_info)

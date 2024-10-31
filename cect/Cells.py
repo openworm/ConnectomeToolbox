@@ -1844,7 +1844,7 @@ def get_cell_internal_link(
     url = "../Cells/index.html#%s" % cell_name
 
     if individual_cell_page:
-        url = "/cells/%s" % cell_name
+        url = "../%s" % cell_name
 
     if html:
         link_text = cell_name if text is None else text

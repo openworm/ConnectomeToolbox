@@ -180,8 +180,10 @@ def generate_comparison_page(quick: bool, color_table=True):
 
     if not quick:
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+
         readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
+    if not quick:
         readers["RipollSanchezShortRange"] = [
             "cect.RipollSanchezShortRangeReader",
             "RipollSanchez_2023",
@@ -446,7 +448,10 @@ def generate_comparison_page(quick: bool, color_table=True):
                                             "%s"
                                             % (
                                                 get_cell_internal_link(
-                                                    n, html=True, use_color=True
+                                                    n,
+                                                    html=True,
+                                                    use_color=True,
+                                                    individual_cell_page=True,
                                                 )
                                             )
                                         )
@@ -565,6 +570,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                             text=VERTICAL_ELLIPSE,
                             html=True,
                             use_color=True,
+                            individual_cell_page=True,
                         )
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
