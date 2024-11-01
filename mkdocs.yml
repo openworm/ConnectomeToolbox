@@ -15,6 +15,13 @@ theme:
 
 plugins:
   - plotly
+  - search
+  - mkdocs-autoapi:
+      autoapi_dir: "cect"
+      autoapi_root: "api/"
+      autoapi_keep_files: true
+      autoapi_add_nav_entry: false
+  - mkdocstrings:
 
 extra_css:
   - stylesheets/extra.css
@@ -44,7 +51,7 @@ markdown_extensions:
 nav:
   - Overview: 'index.md'
   - Comparison: 'Comparison.md'
-  - 'Related publications':
+  - 'Key publications':
     - 'Albertson & Thomson 1976': 'Albertson_1976.md'
     - '<b>White et al. 1986</b>': 'White_1986.md'
     - 'Durbin 1987': 'Durbin_1987.md'
@@ -93,8 +100,15 @@ nav:
     - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
     - 'Test': 'Test_data_graph.md'
   - Cells:
-    - '<i>C. elegans</i> cells': 'Cells.md'
+    - 'All <i>C. elegans</i> cells': 'Cells.md'
+    - 'Individual cells': 
+      - 'ADAL': 'ADAL.md'
+      - 'AVAL': 'AVAL.md'
+      - 'AVBR': 'AVBR.md'
+      - 'I1L': 'I1L.md'
+      - 'RIML': 'RIML.md'
   - Python package:
     - 'Installation': 'Python.md'
+    - 'API Reference': "api/summary/"
   - About:
     - 'About & Contact': 'About.md'
