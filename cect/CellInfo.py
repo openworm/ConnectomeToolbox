@@ -17,7 +17,7 @@ pd.options.plotting.backend = "plotly"
 
 def get_dataset_link(dataset):
     # return dataset+'--'
-    return f'<a href="{dataset}_data">{dataset}</a>'
+    return f'<a href="../{dataset}_data">{dataset}</a>'
 
 
 def get_weight_table_markdown(w):
