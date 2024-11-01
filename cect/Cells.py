@@ -1865,12 +1865,15 @@ def get_cell_internal_link(
         )
 
 
-def get_cell_osbv1_link(cell, text="OSB 3D"):
+def get_cell_osbv1_link(cell, text="OSB 3D", button=False):
     osbv1_link = f"https://v1.opensourcebrain.org/projects/c302/repository/revisions/development/show/examples/cells?explorer=https%253A%252F%252Fraw.githubusercontent.com%252Fopenworm%252Fc302%252Fdevelopment%252Fexamples%252Fcells%252F{cell}.cell.nml"
+
+    if button:
+        return f"[{text}]({osbv1_link}){{ .md-button }}" if is_herm_neuron(cell) else ""
     return f'<a href="{osbv1_link}">{text}</a>' if is_herm_neuron(cell) else ""
 
 
-def get_cell_wormatlas_link(cell_name, html=False, text=None):
+def get_cell_wormatlas_link(cell_name, html=False, text=None, button=False):
     url = None
 
     known_other = {
@@ -1990,6 +1993,11 @@ def get_cell_wormatlas_link(cell_name, html=False, text=None):
 
         if html:
             return '<a href="%s">%s</a>' % (url, cell_name if text is None else text)
+        elif button:
+            return "[%s](%s){ .md-button }" % (
+                cell_name if text is None else text,
+                url,
+            )
         else:
             return "[%s](%s)" % (cell_name if text is None else text, url)
     else:

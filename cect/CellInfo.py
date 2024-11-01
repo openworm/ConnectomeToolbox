@@ -6,6 +6,8 @@ from cect.Cells import get_cell_notes
 from cect.Cells import get_cell_internal_link
 from cect.Cells import get_cell_wormatlas_link
 from cect.Cells import get_cell_osbv1_link
+from cect.Cells import are_bilateral_pair
+
 
 from cect import print_
 # from pprint import pprint
@@ -17,7 +19,8 @@ pd.options.plotting.backend = "plotly"
 
 def get_dataset_link(dataset):
     # return dataset+'--'
-    return f'<a href="../{dataset}_data">{dataset}</a>'
+    dataset_text = dataset.replace("Herm", " Herm").replace("Male", " Male")
+    return f'<a href="../{dataset}_data">{dataset_text}</a>'
 
 
 def get_weight_table_markdown(w):
@@ -75,10 +78,12 @@ def generate_cell_info_pages(connectomes):
         cell_info = '---\ntitle: "Cell: %s"\n---\n\n' % cell
 
         cell_info += "**%s**\n\n" % (get_cell_notes(cell))
-        cell_info += "%s - " % (get_cell_wormatlas_link(cell, text="Info on WormAtlas"))
+        cell_info += "%s " % (
+            get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
+        )
 
         cell_info += "%s\n\n" % get_cell_osbv1_link(
-            cell, text="View in 3D on Open Source Brain"
+            cell, text="View in 3D on Open Source Brain", button=True
         )
         all_synclasses = [
             GENERIC_CHEM_SYN,
@@ -94,20 +99,17 @@ def generate_cell_info_pages(connectomes):
         for synclass in all_synclasses:
             synclass_info = synclass
             if synclass == GENERIC_CHEM_SYN:
-                synclass_info = "Chemical synapse"
+                synclass_info = "Chemical synaptic"
             if synclass == GENERIC_ELEC_SYN:
-                synclass_info = "Electrical synapse"
+                synclass_info = "Electrical synaptic"
 
             cell_link = get_cell_internal_link(
                 cell, html=True, use_color=True, individual_cell_page=True
             )
-            header = (
-                "### Connections %s %s of type **%s**  { data-search-exclude }\n\n"
-                % (
-                    "from" if not synclass == GENERIC_ELEC_SYN else "from/to",
-                    cell_link,
-                    synclass_info,
-                )
+            header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
+                synclass_info,
+                "from" if not synclass == GENERIC_ELEC_SYN else "from/to",
+                cell_link,
             )
 
             w = {}
@@ -123,7 +125,16 @@ def generate_cell_info_pages(connectomes):
                         cc = get_cell_internal_link(
                             c, html=True, use_color=True, individual_cell_page=True
                         )
-                        w[r_name]["%s%s%s" % (cell_link, connection_symbol, cc)] = (
+                        template = (
+                            "<b><i>%s%s%s</i></b>"
+                            if cell == c
+                            else (
+                                "<b>%s%s%s</b>"
+                                if are_bilateral_pair(cell, c)
+                                else "%s%s%s"
+                            )
+                        )
+                        w[r_name][template % (cell_link, connection_symbol, cc)] = (
                             conns[c]
                         )
 
@@ -136,13 +147,10 @@ def generate_cell_info_pages(connectomes):
                 cell_link = get_cell_internal_link(
                     cell, html=True, use_color=True, individual_cell_page=True
                 )
-                header = (
-                    "### Connections %s %s of type **%s**  { data-search-exclude }\n\n"
-                    % (
-                        "to",
-                        cell_link,
-                        synclass_info,
-                    )
+                header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
+                    synclass_info,
+                    "to",
+                    cell_link,
                 )
 
                 w = {}
@@ -157,55 +165,21 @@ def generate_cell_info_pages(connectomes):
                             cc = get_cell_internal_link(
                                 c, html=True, use_color=True, individual_cell_page=True
                             )
-                            w[r_name]["%s→%s" % (cc, cell_link)] = conns[c]
+                            template = (
+                                "<b><i>%s→%s</i></b>"
+                                if cell == c
+                                else (
+                                    "<b>%s→%s</b>"
+                                    if are_bilateral_pair(cell, c)
+                                    else "%s→%s"
+                                )
+                            )
+                            w[r_name][template % (cc, cell_link)] = conns[c]
 
                 w_md = get_weight_table_markdown(w)
 
                 if "No connections" not in w_md:
                     cell_info += "%s\n%s\n\n" % (header, w_md)
-
-        """
-        for cds_name in connectomes:
-            cds = connectomes[cds_name]
-
-            for synclass in cds.connections:
-                cell_info += "\n\n## %s (%s)\n" % (synclass, cds_name)
-
-                cell_info += "### Connections %s %s of type %s\n\n" % (
-                    "FROM" if not synclass == GENERIC_ELEC_SYN else "FROM/TO",
-                    get_cell_internal_link(
-                        cell, html=True, use_color=True, individual_cell_page=True
-                    ),
-                    synclass,
-                )
-
-                conns = cds.get_connections_from(cell, synclass, ordered_by_weight=True)
-                for c in conns:
-                    cell_info += "%s: **%s** - " % (
-                        get_cell_internal_link(
-                            c, html=True, use_color=True, individual_cell_page=True
-                        ),
-                        conns[c],
-                    )
-
-                if not synclass == GENERIC_ELEC_SYN:
-                    cell_info += "\n### Connections TO %s of type %s\n\n" % (
-                        get_cell_internal_link(
-                            cell, html=True, use_color=True, individual_cell_page=True
-                        ),
-                        synclass,
-                    )
-
-                    conns = cds.get_connections_to(
-                        cell, synclass, ordered_by_weight=True
-                    )
-                    for c in conns:
-                        cell_info += "%s: **%s** - " % (
-                            get_cell_internal_link(
-                                c, html=True, use_color=True, individual_cell_page=True
-                            ),
-                            conns[c],
-                        )"""
 
         cell_filename = "docs/%s.md" % cell
         with open(cell_filename, "w") as cell_file:
