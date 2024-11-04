@@ -71,7 +71,7 @@ WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["amphid sheath and phasmid sheat
     "#01fecc"
 )
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-    "pharyngeal-intestinal valve, intestinal rectal valve "
+    "pharyngeal-intestinal valve, intestinal rectal valve"
 ] = "#996633"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["arcade cell"] = "#cccc00"
 WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"] = "#996699"

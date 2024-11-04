@@ -189,7 +189,7 @@ for cell in sorted(PHARYNGEAL_NEURONS):
 ESCAPE_VIEW = View(
     "Escape",
     "Escape Response Circuit",
-    "Circuit...",
+    "Escape Response Circuit from [Pirri & Alkema, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3437330/)",
     [],
     EXC_INH_GJ_FUNC_SYN_CLASSES,
 )
