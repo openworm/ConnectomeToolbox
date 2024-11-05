@@ -162,7 +162,7 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
 
-    readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
 
     if not quick:
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
@@ -436,7 +436,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
                                 if len(cell_types[t]) > 0:
                                     f.write(
-                                        "<details><summary>Full list of %s%s</summary>\n"
+                                        "<details open><summary>Full list of %s%s</summary>\n"
                                         % (
                                             t.replace("herm", "hermaphrodite only"),
                                             (

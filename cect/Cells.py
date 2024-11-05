@@ -1109,14 +1109,6 @@ for cell in ANAL_SPHINCTER_MUSCLES:
 
 VULVAL_MUSCLE_NAMES = [
     "MVULVA",
-    "um2AL",
-    "um2AR",
-    "um1AL",
-    "um1AR",
-    "um1PL",
-    "um1PR",
-    "um2PL",
-    "um2PR",
     "vm1AL",
     "vm1PL",
     "vm1PR",
@@ -1128,6 +1120,19 @@ VULVAL_MUSCLE_NAMES = [
 ]
 for cell in VULVAL_MUSCLE_NAMES:
     cell_notes[cell] = "vulval muscle"
+
+UTERINE_MUSCLE_NAMES = [
+    "um2AL",
+    "um2AR",
+    "um1AL",
+    "um1AR",
+    "um1PL",
+    "um1PR",
+    "um2PL",
+    "um2PR",
+]
+for cell in UTERINE_MUSCLE_NAMES:
+    cell_notes[cell] = "uterine muscle"
 
 ODD_PHARYNGEAL_MUSCLE_NAMES = [
     "pm1",
@@ -1308,6 +1313,7 @@ PREFERRED_MUSCLE_NAMES = (
     BODY_WALL_MUSCLE_NAMES
     + PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
+    + UTERINE_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
     + MALE_SPECIFIC_MUSCLES
     + INTESTINAL_MUSCLES
@@ -1319,6 +1325,7 @@ COOK_GROUPING_1["Body wall muscles"] = BODY_WALL_MUSCLE_NAMES
 COOK_GROUPING_1["Other muscles"] = (
     PHARYNGEAL_MUSCLE_NAMES
     + VULVAL_MUSCLE_NAMES
+    + UTERINE_MUSCLE_NAMES
     + ANAL_SPHINCTER_MUSCLES
     + UNSPECIFIED_BODY_WALL_MUSCLES
 )
@@ -1343,7 +1350,7 @@ CEPSH_CELLS = [
 ]
 
 for cell in CEPSH_CELLS:
-    cell_notes[cell] = "glial"
+    cell_notes[cell] = "sheath cell other than amphid sheath and phasmid"
 
 GLIAL_CELLS = GLR_CELLS + CEPSH_CELLS
 
@@ -1462,6 +1469,172 @@ COOK_GROUPING_1["Male other cells"] = (
 ALL_PREFERRED_CELL_NAMES = (
     PREFERRED_HERM_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + KNOWN_OTHER_CELLS
 )
+
+
+def get_primary_classification():
+    classification = {}
+
+    for sex in WA_COLORS:
+        for cell_class in WA_COLORS[sex]:
+            for cell_type in WA_COLORS[sex][cell_class]:
+                print_(" - %s/%s/%s" % (sex, cell_class, cell_type))
+
+                if cell_type == "body wall muscle":
+                    for cell in BODY_WALL_MUSCLE_NAMES + UNSPECIFIED_BODY_WALL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "vulval muscle":
+                    for cell in VULVAL_MUSCLE_NAMES:
+                        classification[cell] = cell_type
+                elif cell_type == "uterine muscle":
+                    for cell in UTERINE_MUSCLE_NAMES:
+                        classification[cell] = cell_type
+                elif cell_type == "interneuron":
+                    for cell in (
+                        INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS
+                    ):
+                        classification[cell] = cell_type
+                elif cell_type == "motor neuron":
+                    for cell in MOTORNEURONS_COOK:
+                        classification[cell] = cell_type
+                elif cell_type == "sensory neuron":
+                    for cell in (
+                        SENSORY_NEURONS_COOK
+                        + MALE_HEAD_SENSORY_NEURONS
+                        + MALE_SENSORY_NEURONS
+                    ):
+                        classification[cell] = cell_type
+                elif cell_type == "odd numbered pharyngeal muscle":
+                    for cell in ODD_PHARYNGEAL_MUSCLE_NAMES:
+                        classification[cell] = cell_type
+                elif cell_type == "even numbered pharyngeal muscle":
+                    for cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
+                        classification[cell] = cell_type
+                elif cell_type == "polymodal neuron":
+                    for cell in PHARYNGEAL_POLYMODAL_NEURONS:
+                        classification[cell] = cell_type
+                elif cell_type == "marginal cells (mc) of the pharynx":
+                    for cell in PHARYNGEAL_MARGINAL_CELLS:
+                        classification[cell] = cell_type
+                elif cell_type == "pharyngeal epithelium":
+                    for cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL:
+                        classification[cell] = cell_type  # TODO: check!
+                elif cell_type == "basement membrane":
+                    for cell in PHARYNGEAL_BASEMENT_MEMBRANE:
+                        classification[cell] = cell_type  # TODO: check!
+                elif cell_type == "neuron with unknown function":
+                    for cell in UNKNOWN_FUNCTION_NEURONS:
+                        classification[cell] = cell_type
+                elif cell_type == "sheath cell other than amphid sheath and phasmid":
+                    for cell in CEPSH_CELLS:
+                        classification[cell] = cell_type
+                elif cell_type == "excretory cell":
+                    for cell in EXCRETORY_CELL:
+                        classification[cell] = cell_type
+                elif cell_type == "sphincter and anal depressor muscle":
+                    for cell in ANAL_SPHINCTER_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "gland cell":
+                    for cell in EXCRETORY_GLAND:
+                        classification[cell] = cell_type
+                elif cell_type == "head mesodermal cell":
+                    for cell in HEAD_MESODERMAL_CELL:
+                        classification[cell] = cell_type
+                elif cell_type == "hypodermis":
+                    for cell in HYPODERMIS:
+                        classification[cell] = cell_type
+                elif cell_type == "intestinal cells":
+                    for cell in INTESTINE:
+                        classification[cell] = cell_type
+                elif cell_type == "intestinal muscle":
+                    for cell in INTESTINAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "GLR cell":
+                    for cell in GLR_CELLS:
+                        classification[cell] = cell_type
+                elif cell_type == "diagonal muscles":
+                    for cell in MALE_DIAGONAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "posterior outer longitudinal muscles":
+                    for cell in MALE_POSTERIOR_OUTER_LONGITUDINAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "anterior inner longitudinal muscles":
+                    for cell in MALE_ANTERIOR_INNER_LONGITUDINAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "posterior inner longitudinal muscles":
+                    for cell in MALE_POSTERIOR_INNER_LONGITUDINAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "caudal inner longitudinal muscles":
+                    for cell in MALE_CAUDAL_LONGITUDINAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "spicule retractor muscles":
+                    for cell in (
+                        MALE_VENTRAL_SPICULE_RETRACTOR + MALE_DORSAL_SPICULE_RETRACTOR
+                    ):
+                        classification[cell] = cell_type
+                elif cell_type == "spicule protractor muscles":
+                    for cell in (
+                        MALE_VENTRAL_SPICULE_PROTRACTOR + MALE_DORSAL_SPICULE_PROTRACTOR
+                    ):
+                        classification[cell] = cell_type
+                elif cell_type == "gubernacular retractor muscles":
+                    for cell in MALE_GUBERNACULAR_RETRACTOR_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "gubernacular erector muscles":
+                    for cell in MALE_GUBERNACULAR_ERECTOR_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "anterior oblique muscles":
+                    for cell in MALE_ANTERIOR_OBLIQUE_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "posterior oblique muscles":
+                    for cell in MALE_POSTERIOR_OBLIQUE_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "vas deferens":
+                    for cell in GONAD_CELL:
+                        classification[cell] = cell_type
+                elif cell_type == "proctodeum":
+                    for cell in PROCTODEUM_CELL:
+                        classification[cell] = cell_type
+                elif cell_type == "diagonal muscles":
+                    for cell in MALE_DIAGONAL_MUSCLES:
+                        classification[cell] = cell_type
+                elif cell_type == "ray structural cell":
+                    for cell in MALE_RAY_STRUCTURAL_CELLS:
+                        classification[cell] = cell_type
+                elif cell_type in [
+                    "General code for neuronal tissue if subtype is unspecified",
+                    "vulval epithelium",
+                    "germline",
+                    "DTC and somatic gonad",
+                    "embryo",
+                    "uterus",
+                    "spermatheca",
+                    "spermatheca-uterine valve",
+                    "excretory pore cell",
+                    "duct cell",
+                    "excretory duct",
+                    "seam cell",
+                    "socket cell, XXX cells",
+                    "amphid sheath and phasmid sheath",
+                    "pharyngeal-intestinal valve, intestinal rectal valve",
+                    "arcade cell",
+                    "rectal epithelium (U, F, K, K', Y, B)",
+                    "rectal gland, pharyngeal glands",
+                    "pseudocoelomic space",
+                    "coeloemocyte",
+                    "anterior outer longitudinal muscles",
+                    "seminal vesicle",
+                    "sheath cell (spicules, hook or post-cloacal sensilla)",
+                    "socket cell (spicules, hook or post-cloacal sensilla)",
+                ]:
+                    print_(
+                        "No synaptic connnections to cells of type %s..?" % cell_type
+                    )
+                else:
+                    raise Exception("Cell type %s not handled" % cell_type)
+    for cell in ALL_PREFERRED_CELL_NAMES:
+        assert cell in classification
+
+    return classification
 
 
 def is_known_cell(cell):
@@ -1705,6 +1878,8 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["body wall muscle"]
     elif cell in VULVAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["vulval muscle"]
+    elif cell in UTERINE_MUSCLE_NAMES:
+        return WA_COLORS["Hermaphrodite"]["Muscle"]["uterine muscle"]
     elif cell in ODD_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["odd numbered pharyngeal muscle"]
     elif cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
@@ -1905,6 +2080,9 @@ def get_cell_wormatlas_link(cell_name, html=False, text=None, button=False):
 
     elif cell_name in VULVAL_MUSCLE_NAMES:
         url = "https://www.wormatlas.org/hermaphrodite/egglaying%20apparatus/Eggframeset.html"
+
+    elif cell_name in UTERINE_MUSCLE_NAMES:
+        url = "https://www.wormatlas.org/hermaphrodite/egglaying%20apparatus/jump.html?newLink=mainframe.htm&newAnchor=Theuterus2"
 
     elif cell_name in ANAL_SPHINCTER_MUSCLES:
         url = "https://www.wormatlas.org/hermaphrodite/excretory/Excframeset.html"
@@ -2165,6 +2343,10 @@ if __name__ == "__main__":
                             f.write(
                                 _generate_cell_table(cell_type, VULVAL_MUSCLE_NAMES)
                             )
+                        elif cell_type == "uterine muscle":
+                            f.write(
+                                _generate_cell_table(cell_type, UTERINE_MUSCLE_NAMES)
+                            )
                         elif cell_type == "interneuron":
                             f.write(
                                 _generate_cell_table(
@@ -2338,3 +2520,34 @@ if __name__ == "__main__":
                                     cell_type, MALE_RAY_STRUCTURAL_CELLS
                                 )
                             )
+                        elif cell_type in [
+                            "vulval epithelium",
+                            "germline",
+                            "DTC and somatic gonad",
+                            "embryo",
+                            "uterus",
+                            "spermatheca",
+                            "spermatheca-uterine valve",
+                            "excretory pore cell",
+                            "duct cell",
+                            "excretory duct",
+                            "seam cell",
+                            "socket cell, XXX cells",
+                            "amphid sheath and phasmid sheath",
+                            "pharyngeal-intestinal valve, intestinal rectal valve",
+                            "arcade cell",
+                            "rectal epithelium (U, F, K, K', Y, B)",
+                            "rectal gland, pharyngeal glands",
+                            "pseudocoelomic space",
+                            "coeloemocyte",
+                            "anterior outer longitudinal muscles",
+                            "seminal vesicle",
+                            "sheath cell (spicules, hook or post-cloacal sensilla)",
+                            "socket cell (spicules, hook or post-cloacal sensilla)",
+                        ]:
+                            print_(
+                                "No synaptic connnections to cells of type %s..?"
+                                % cell_type
+                            )
+                        else:
+                            raise Exception("Cell type %s not handled" % cell_type)
