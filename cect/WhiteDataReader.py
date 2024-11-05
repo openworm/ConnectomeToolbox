@@ -58,7 +58,7 @@ def parse_line(line):
 
 
 class WhiteDataReader(ConnectomeDataset):
-    """Reader for datasets from [White et al. 1986](../../../White_1986)"""
+    """Reader for datasets from [White et al. 1986](../../White_1986.md)"""
 
     verbose = False
 

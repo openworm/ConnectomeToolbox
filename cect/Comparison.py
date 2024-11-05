@@ -456,7 +456,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                     ss = sorted(cell_types[t])
                                     for n in ss:
                                         f.write(
-                                            "%s"
+                                            "%s\n"
                                             % (
                                                 get_cell_internal_link(
                                                     n,
