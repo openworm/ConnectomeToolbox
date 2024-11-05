@@ -42,6 +42,14 @@ connectomes = None
 
 
 def get_cell_notes(cell):
+    """Get a short description of the cell, mainly cell type
+
+    Args:
+        cell (str): Name of the cell
+
+    Returns:
+        str: Description of the cell type
+    """
     desc = cell_notes[cell] if cell in cell_notes else "???"
     desc = desc[0].upper() + desc[1:]
     return desc
@@ -1472,6 +1480,12 @@ ALL_PREFERRED_CELL_NAMES = (
 
 
 def get_primary_classification():
+    """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
+
+    Returns:
+        dict: Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
+    """
+
     classification = {}
 
     for sex in WA_COLORS:
@@ -1638,6 +1652,14 @@ def get_primary_classification():
 
 
 def is_known_cell(cell):
+    """Is this string the name of one of the known cells?
+
+    Args:
+        cell (str): Cell name
+
+    Returns:
+        bool: Whether this is a known cell name
+    """
     return cell in ALL_PREFERRED_CELL_NAMES
 
 

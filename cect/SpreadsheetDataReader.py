@@ -14,6 +14,7 @@ from cect import print_
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeDataset import get_dataset_source_on_github
 
 from xlrd import open_workbook
 import os
@@ -21,8 +22,13 @@ import sys
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
+filename = "%sCElegansNeuronTables.xls" % spreadsheet_location
 
-READER_DESCRIPTION = """Data extracted from **CElegansNeuronTables.xls** for neuronal connectivity. Note: legacy dataset (based on White_whole) used in the past in OpenWorm. Only included here for reference! Do not use!"""
+
+READER_DESCRIPTION = (
+    """Data extracted from %s for neuronal connectivity. Note: legacy dataset (based on White_whole) used in the past in OpenWorm. <b>Only included here for reference! Do not use!</b>"""
+    % get_dataset_source_on_github(filename.split("/")[-1])
+)
 
 
 class SpreadsheetDataReader(ConnectomeDataset):
@@ -66,7 +72,6 @@ class SpreadsheetDataReader(ConnectomeDataset):
             return self.cells, self.conns"""
 
         else:
-            filename = "%sCElegansNeuronTables.xls" % spreadsheet_location
             rb = open_workbook(filename)
 
             sheet = 0

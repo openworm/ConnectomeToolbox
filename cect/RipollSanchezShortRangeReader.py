@@ -8,10 +8,16 @@
 
 
 from cect.RipollSanchezDataReader import RipollSanchezDataReader
+from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
 
 
 def get_instance():
+    """Uses ``RipollSanchezDataReader`` to load data on the short range model of neuropedtidergic connectome
+
+    Returns:
+        RipollSanchezDataReader: The initialised connectome reader
+    """
     return RipollSanchezDataReader("short_range_model")
 
 
@@ -22,8 +28,8 @@ read_muscle_data = my_instance.read_muscle_data
 
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity"""
-    % my_instance.filename.split("/")[-1]
+    """Data extracted from %s for short range model of neuropedtidergic connectome"""
+    % get_dataset_source_on_github(my_instance.filename.split("/")[-1])
 )
 
 

@@ -177,7 +177,8 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
         readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
         readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
-        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+
+    readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
     if not quick:
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
@@ -298,7 +299,7 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 )
 
                             dp = (
-                                '<a href="../%s">Source publication of this dataset (%s)</a>'
+                                '<b>Dataset taken from <a href="../%s">%s</a></b>'
                                 % (
                                     description_page,
                                     description_page.replace(
@@ -308,8 +309,14 @@ def generate_comparison_page(quick: bool, color_table=True):
                                 if description_page is not None
                                 else ""
                             )
-
-                            desc_full = f"{reader_module.READER_DESCRIPTION}<br/>\n{dp}"
+                            reader_page = "../api/%s" % reader_module.__name__.replace(
+                                ".", "/"
+                            )
+                            reader_class = reader_module.__name__.split(".")[1]
+                            reader_info = (
+                                f'Reader: <a href="{reader_page}">{reader_class}</a>'
+                            )
+                            desc_full = f'{dp}\n<p class="subtext">{reader_module.READER_DESCRIPTION}.&nbsp;&nbsp;&nbsp;{reader_info}</p>\n'
 
                             f.write(
                                 """

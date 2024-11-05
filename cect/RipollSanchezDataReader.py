@@ -11,6 +11,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 
 from cect.ConnectomeDataset import ConnectomeDataset
+
 from cect.Cells import EXTRASYNAPTIC_SYN_TYPE
 from cect.Cells import PEPTIDERGIC_SYN_CLASS
 
@@ -18,8 +19,6 @@ from cect import print_
 
 import os
 import csv
-
-READER_DESCRIPTION = """Data extracted from ..."""
 
 
 class RipollSanchezDataReader(ConnectomeDataset):

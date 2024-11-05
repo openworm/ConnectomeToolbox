@@ -33,7 +33,24 @@ def _get_epsilon(scale):
     return scale * 0.05 * (1 - 2 * random.random())
 
 
+def get_dataset_source_on_github(dataset_file):
+    """Generate a URL to the file on the source GitHub repository
+
+    Args:
+        dataset_file (str): filename of the dataset
+
+    Returns:
+        str: URL to GitHub file
+    """
+    return (
+        '<b><a href="https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/%s">%s</a></b>'
+        % (dataset_file, dataset_file)
+    )
+
+
 class ConnectomeDataset:
+    """Holds information on a single dataset - a list of `nodes` and a dict of `connections` which has synaptic classes as keys (e.g. Generic_CS/Generic_GJ for chemical synapses/gap junctions) and connectivity arrays as values"""
+
     DEFAULT_DTYPE = np.float64
 
     verbose = False

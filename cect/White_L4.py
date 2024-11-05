@@ -3,14 +3,21 @@
 
 from cect.WhiteDataReader import WhiteDataReader
 from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeDataset import get_dataset_source_on_github
 
 import os
 
 
-def get_instance():
-    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
-    filename = "%saconnectome_white_1986_L4.csv" % spreadsheet_location
+spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+filename = "%saconnectome_white_1986_L4.csv" % spreadsheet_location
 
+
+def get_instance():
+    """Uses ``WhiteDataReader`` to load data on the JSH series - a fourth stage (L4) larva
+
+    Returns:
+        WhiteDataReader: The initialised connectome reader
+    """
     return WhiteDataReader(filename)
 
 
@@ -20,8 +27,8 @@ read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity"""
-    % my_instance.filename.split("/")[-1]
+    """Data extracted from %s - JSH series ("The JSH animal was a fourth stage (L4) larva" - White et al. 1986)"""
+    % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
 

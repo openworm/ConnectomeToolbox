@@ -21,6 +21,14 @@ pd.options.plotting.backend = "plotly"
 
 
 def get_dataset_link(dataset):
+    """Helper method to generate an internal link to the page for a dataset
+
+    Args:
+        dataset (str): The dataset to link to
+
+    Returns:
+        str: A hyperlink to the dataset
+    """
     # return dataset+'--'
     dataset_text = dataset.replace("Herm", " Herm").replace("Male", " Male")
     return f'<a href="../{dataset}_data">{dataset_text}</a>'
@@ -77,7 +85,7 @@ def get_weight_table_markdown(w):
 
 
 def load_individual_neuron_info():
-    # From https://wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html
+    # Taken from https://wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html
     filename = "cect/data/IndividualNeurons.csv"
     cell_info = {}
     with open(filename) as csvfile:
@@ -93,6 +101,11 @@ def load_individual_neuron_info():
 
 
 def generate_cell_info_pages(connectomes):
+    """Generates the individual cell pages
+
+    Args:
+        connectomes (list): The
+    """
     cell_data = load_individual_neuron_info()
     cell_classification = get_primary_classification()
 
@@ -135,7 +148,7 @@ def generate_cell_info_pages(connectomes):
         cell_info += (
             'All cells of type: <a href="../Cells/#%s"><b>%s</b></a></p>\n\n'
             % (
-                cc.replace(" ", "-").replace("(", "").replace(")", ""),
+                cc.lower().replace(" ", "-").replace("(", "").replace(")", ""),
                 cc[0].upper() + cc[1:],
             )
         )

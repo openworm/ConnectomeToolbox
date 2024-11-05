@@ -14,6 +14,7 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeDataset import get_dataset_source_on_github
 import os
 
 from cect import print_
@@ -21,9 +22,10 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%sherm_full_edgelist.csv" % spreadsheet_location
 
+
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity. Note: legacy dataset (based on Cook et al. 2019) used in the past in OpenWorm. Only included here for reference! Do not use!"""
-    % filename
+    """Data extracted from %s for neuronal connectivity. Note: legacy dataset (based on Cook et al. 2019) used in the past in OpenWorm. <b>Only included here for reference! Do not use!</b>"""
+    % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
 
@@ -114,10 +116,8 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
 
     def read_data(self, include_nonconnected_cells=False):
         """
-        Args:
         Returns:
-            cells (:obj:`list` of :obj:`str`): List of neurons
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
+            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         conns = []

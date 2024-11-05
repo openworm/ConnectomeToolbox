@@ -3,21 +3,29 @@
 
 from cect.WhiteDataReader import WhiteDataReader
 from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeDataset import get_dataset_source_on_github
 
 import os
 
+spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
+
 
 def get_instance():
-    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
-    filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
+    """Uses ``WhiteDataReader`` to load data on the whole worm connectome, including pharynx and ventral cord
+
+    Returns:
+        WhiteDataReader: The initialised connectome reader
+    """
     return WhiteDataReader(filename)
 
 
 my_instance = get_instance()
 
+
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity"""
-    % my_instance.filename.split("/")[-1]
+    """Data extracted from %s - all connectivity from White et al. 1986)"""
+    % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
 read_data = my_instance.read_data
