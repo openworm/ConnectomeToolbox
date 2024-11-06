@@ -26,7 +26,7 @@ def fix_witvliet_cell_naming(cell):
 
 
 class WitvlietDataReader(ConnectomeDataset):
-    """Reader for datasets from [Witvliet et al. 2021](../../../Witvliet_2021)"""
+    """Reader for datasets from [Witvliet et al. 2021](../../Witvliet_2021.md)"""
 
     verbose = False
 
