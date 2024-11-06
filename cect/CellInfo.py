@@ -9,6 +9,7 @@ from cect.Cells import get_cell_osbv1_link
 from cect.Cells import are_bilateral_pair
 from cect.Cells import is_any_neuron
 from cect.Cells import get_primary_classification
+from cect.Cells import get_standard_color
 
 
 from cect import print_
@@ -87,7 +88,7 @@ def get_weight_table_markdown(w):
     %s
 === "Table"
 
-%s""" % (fig_md, df_all.to_markdown().replace("\n", "\n" + indent))
+    %s""" % (fig_md, df_all.to_markdown().replace("\n", "\n" + indent))
 
 
 def load_individual_neuron_info():
@@ -138,6 +139,8 @@ def generate_cell_info_pages(connectomes):
     cell_data = load_individual_neuron_info()
     cell_classification = get_primary_classification()
 
+    all_cell_info = []
+
     for cell in ALL_PREFERRED_CELL_NAMES:
         print_("Generating individual cell page for: %s" % cell)
 
@@ -169,17 +172,26 @@ def generate_cell_info_pages(connectomes):
                 '    <p class="subtext">%s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' % (ackr)
             )
             cell_info += "Lineage: <b>%s</b></p>\n\n" % (cell_data[cell_ref][1])
+
+            all_cell_info.append([cell, get_cell_notes(cell), cell_data[cell_ref][0], cell_data[cell_ref][1], cell_data[cell_ref][2]])
+
         else:
-            cell_info += "!!! question **%s: %s**\n\n" % (cell, get_cell_notes(cell))
+            cell_info += '!!! question "**%s: %s**"\n\n' % (cell, get_cell_notes(cell))
+            all_cell_info.append([cell, get_cell_notes(cell), cell_data[cell_ref][0], '','',''])
 
         cell_info += (
             '    <p class="subtext"><a href="../Cook_2019">Cook 2019</a> classification: <b>%s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             % (get_cell_notes(cell))
         )
         cc = cell_classification[cell]
+        color = get_standard_color(cell)[1:]
+
+
         cell_info += (
-            'All cells of type: <a href="../Cells/#%s"><b>%s</b></a></p>\n\n'
+            'All cells of type: ![#%s](images/%s.png) <a href="../Cells/#%s"><b>%s</b></a></p>\n\n'
             % (
+                color,
+                color,
                 cc.lower().replace(" ", "-").replace("(", "").replace(")", ""),
                 cc[0].upper() + cc[1:],
             )
@@ -332,7 +344,7 @@ def generate_cell_info_pages(connectomes):
 
 ### Summary of connections
 
-Top {max_conn_cells} connections to/from cell of specified types (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)} & {get_dataset_link(reference_func)})
+<p class="subtext">Top {max_conn_cells} connections of specified types to/from this cell (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)} & {get_dataset_link(reference_func)})</p>
 
 <table style="width:700px">
 <tr>
@@ -362,6 +374,13 @@ Top {max_conn_cells} connections to/from cell of specified types (based on {get_
         with open(cell_filename, "w") as cell_file:
             print_(f"Writing info on cell {cell} to {cell_filename}")
             cell_file.write(cell_info)
+
+    cell_info_filename = "cect/data/all_cell_info.csv"
+    with open(cell_info_filename, "w") as csv_file:
+        print_(f"Writing info on all cells to {cell_info_filename}")
+        csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"')
+        for line in all_cell_info:
+            csv_writer.writerow(line)
 
 
 if __name__ == "__main__":
