@@ -67,6 +67,8 @@ def get_weight_table_markdown(w):
     # print_("Sorting the following data by %s" % sort_by)
     # pprint(ww)
 
+    indent = "    "
+
     df_all = pd.DataFrame(ww).fillna(0).sort_values(sort_by, ascending=False)
 
     if df_all is not None:
@@ -76,12 +78,16 @@ def get_weight_table_markdown(w):
         fig.update_traces(
             marker=dict(size=4), marker_symbol="circle", mode="lines+markers"
         )
-        indent = ""
         fig_md = f"\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
         fig_md = ""
 
-    return "%s\n\n%s" % (df_all.to_markdown(), fig_md)
+    return """
+=== "Plot"
+    %s
+=== "Table"
+
+%s""" % (fig_md, df_all.to_markdown().replace("\n", "\n" + indent))
 
 
 def load_individual_neuron_info():
@@ -155,16 +161,19 @@ def generate_cell_info_pages(connectomes):
                     ackr = "%s<b>%s</b>%s" % (ackr[:ii], ackr[ii], ackr[ii + 1 :])
                     from_ = ii + 1
 
-            cell_info += "**%s**\n\n" % (cell_data[cell_ref][2])
-            cell_info += '<p class="subtext">%s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' % (
-                ackr
+            cell_info += '!!! question "**%s: %s**"\n\n' % (
+                cell,
+                cell_data[cell_ref][2],
+            )
+            cell_info += (
+                '    <p class="subtext">%s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' % (ackr)
             )
             cell_info += "Lineage: <b>%s</b></p>\n\n" % (cell_data[cell_ref][1])
         else:
-            cell_info += "**%s**\n\n" % (get_cell_notes(cell))
+            cell_info += "!!! question **%s: %s**\n\n" % (cell, get_cell_notes(cell))
 
         cell_info += (
-            '<p class="subtext"><a href="../Cook_2019">Cook 2019</a> classification: <b>%s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            '    <p class="subtext"><a href="../Cook_2019">Cook 2019</a> classification: <b>%s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             % (get_cell_notes(cell))
         )
         cc = cell_classification[cell]
@@ -176,7 +185,7 @@ def generate_cell_info_pages(connectomes):
             )
         )
 
-        cell_info += "%s " % (
+        cell_info += "    %s " % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
         )
 
@@ -199,7 +208,7 @@ def generate_cell_info_pages(connectomes):
             cell, html=True, use_color=True, individual_cell_page=True
         )
 
-        reference_cs = "White_whole"
+        reference_cs = "Cook2019Herm"
         reference_gj = reference_cs
         reference_mono = "Bentley2016_MA"
         reference_pep = "RipollSanchezShortRange"
