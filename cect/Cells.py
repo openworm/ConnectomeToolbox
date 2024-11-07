@@ -42,6 +42,14 @@ connectomes = None
 
 
 def get_cell_notes(cell):
+    """Get a short description of the cell, mainly cell type
+
+    Args:
+        cell (str): Name of the cell
+
+    Returns:
+        str: Description of the cell type
+    """
     desc = cell_notes[cell] if cell in cell_notes else "???"
     desc = desc[0].upper() + desc[1:]
     return desc
@@ -1251,10 +1259,10 @@ MALE_SPECIFIC_MUSCLES = (
 )
 
 
-GONAD_CELL = ["gonad"]
+GONAD_CELL_MALE = ["gonad"]
 cell_notes["gonad"] = "gonad (male specific)"
 
-PROCTODEUM_CELL = ["proctodeum"]
+PROCTODEUM_CELL_MALE = ["proctodeum"]
 cell_notes["proctodeum"] = "proctodeum (male specific)"
 
 # TODO: remove sh versions, R1shL, etc from here!!!
@@ -1300,6 +1308,9 @@ MALE_RAY_STRUCTURAL_CELLS = [
 for cell in MALE_RAY_STRUCTURAL_CELLS:
     cell_notes[cell] = "male ray structural cell"
 
+MALE_SPECIFIC_OTHER_CELLS = (
+    MALE_RAY_STRUCTURAL_CELLS + GONAD_CELL_MALE + PROCTODEUM_CELL_MALE
+)
 
 INTESTINAL_MUSCLES = [
     "mu_intL",
@@ -1455,7 +1466,10 @@ COOK_GROUPING_1["Other cells"] = list(KNOWN_OTHER_CELLS_COOK_19)
 KNOWN_OTHER_CELLS = KNOWN_OTHER_CELLS_COOK_19
 
 KNOWN_OTHER_CELLS += (
-    MALE_SPECIFIC_NEURONS + MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+    MALE_SPECIFIC_NEURONS
+    + MALE_RAY_STRUCTURAL_CELLS
+    + PROCTODEUM_CELL_MALE
+    + GONAD_CELL_MALE
 )
 
 COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
@@ -1463,7 +1477,7 @@ COOK_GROUPING_1["Male specific neurons"] = MALE_SPECIFIC_NEURONS
 COOK_GROUPING_1["Male specific muscles "] = MALE_SPECIFIC_MUSCLES
 
 COOK_GROUPING_1["Male other cells"] = (
-    MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL + GONAD_CELL
+    MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL_MALE + GONAD_CELL_MALE
 )
 
 ALL_PREFERRED_CELL_NAMES = (
@@ -1472,6 +1486,12 @@ ALL_PREFERRED_CELL_NAMES = (
 
 
 def get_primary_classification():
+    """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
+
+    Returns:
+        dict: Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
+    """
+
     classification = {}
 
     for sex in WA_COLORS:
@@ -1589,10 +1609,10 @@ def get_primary_classification():
                     for cell in MALE_POSTERIOR_OBLIQUE_MUSCLES:
                         classification[cell] = cell_type
                 elif cell_type == "vas deferens":
-                    for cell in GONAD_CELL:
+                    for cell in GONAD_CELL_MALE:
                         classification[cell] = cell_type
                 elif cell_type == "proctodeum":
-                    for cell in PROCTODEUM_CELL:
+                    for cell in PROCTODEUM_CELL_MALE:
                         classification[cell] = cell_type
                 elif cell_type == "diagonal muscles":
                     for cell in MALE_DIAGONAL_MUSCLES:
@@ -1638,6 +1658,14 @@ def get_primary_classification():
 
 
 def is_known_cell(cell):
+    """Is this string the name of one of the known cells?
+
+    Args:
+        cell (str): Cell name
+
+    Returns:
+        bool: Whether this is a known cell name
+    """
     return cell in ALL_PREFERRED_CELL_NAMES
 
 
@@ -1846,6 +1874,13 @@ def is_herm_neuron(cell):
     return cell in PREFERRED_HERM_NEURON_NAMES
 
 
+def is_male_specific_cell(cell):
+    return (
+        cell
+        in MALE_SPECIFIC_NEURONS + MALE_SPECIFIC_MUSCLES + MALE_SPECIFIC_OTHER_CELLS
+    )
+
+
 def is_any_neuron(cell):
     return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
@@ -1965,9 +2000,9 @@ def get_standard_color(cell):
     elif cell in MALE_RAY_STRUCTURAL_CELLS:
         return WA_COLORS["Male"]["Epithelial Tissue"]["ray structural cell"]
 
-    elif cell in PROCTODEUM_CELL:
+    elif cell in PROCTODEUM_CELL_MALE:
         return WA_COLORS["Male"]["Reproductive System"]["proctodeum"]
-    elif cell in GONAD_CELL:
+    elif cell in GONAD_CELL_MALE:
         return WA_COLORS["Male"]["Reproductive System"]["vas deferens"]
 
     else:
@@ -2506,9 +2541,11 @@ if __name__ == "__main__":
                             )
 
                         elif cell_type == "vas deferens":
-                            f.write(_generate_cell_table(cell_type, GONAD_CELL))
+                            f.write(_generate_cell_table(cell_type, GONAD_CELL_MALE))
                         elif cell_type == "proctodeum":
-                            f.write(_generate_cell_table(cell_type, PROCTODEUM_CELL))
+                            f.write(
+                                _generate_cell_table(cell_type, PROCTODEUM_CELL_MALE)
+                            )
 
                         elif cell_type == "diagonal muscles":
                             f.write(

@@ -8,9 +8,7 @@ import sys
 from cect import print_
 
 
-READER_DESCRIPTION = (
-    """Dummy dataset used for testing webpage/graph generation - do not use!"""
-)
+READER_DESCRIPTION = """Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>"""
 
 NMJ_ENDPOINT = "NMJ"
 
@@ -20,6 +18,8 @@ def get_instance():
 
 
 class TestDataReader(ConnectomeDataset):
+    """Dummy dataset used for testing webpage/graph generation. Do not assume any of these connections are correct!"""
+
     cells = []
     conns = []
 

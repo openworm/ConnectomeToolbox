@@ -24,9 +24,7 @@ import wormneuroatlas as wa
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = (
-    """Data extracted from the **WormNeuroAtlas package** for neuronal connectivity"""
-)
+READER_DESCRIPTION = """Data from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)** for neuronal connectivity"""
 
 
 def get_all_cells(watlas):
@@ -41,7 +39,7 @@ def get_all_cells(watlas):
 
 
 class WormNeuroAtlasReader(ConnectomeDataset):
-    """Reader for data extracted from the **WormNeuroAtlasReader** for neuronal connectivity"""
+    """Data from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)** for neuronal connectivity"""
 
     def __init__(self):
         ConnectomeDataset.__init__(self)

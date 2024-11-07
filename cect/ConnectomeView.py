@@ -38,11 +38,12 @@ import copy
 
 
 class NodeSet:
+    """Set of nodes (can be single cells or lists of cells) to use in a ``View``. Can specify the `color`, `shape`, `position` or `size` to use in graphical depictions."""
+
     def __init__(self, name, cells, color=None, shape=None, position=None, size=None):
         self.name = name
         self.color = color
         self.cells = cells
-        self.color = color
         self.shape = shape
         self.position = position
         self.size = size
@@ -64,6 +65,8 @@ class NodeSet:
 
 
 class View:
+    """A view of a ``ConnectomeDataset`` specifying subsets of cells (or lists of cells) as ``NodeSet``s, e.g. can be used to just show the connections between the pharyngeal neurons in a whole connectome dataset, or to group the sensory neurons, interneuron, etc. together."""
+
     def __init__(
         self,
         id,
