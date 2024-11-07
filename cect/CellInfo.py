@@ -10,6 +10,7 @@ from cect.Cells import are_bilateral_pair
 from cect.Cells import is_any_neuron
 from cect.Cells import get_primary_classification
 from cect.Cells import get_standard_color
+from cect.Cells import is_male_specific_cell
 
 
 from cect import print_
@@ -134,12 +135,12 @@ def generate_cell_info_pages(connectomes):
     """Generates the individual cell pages
 
     Args:
-        connectomes (list): The
+        connectomes (list): The list of connectome readers to use
     """
     cell_data = load_individual_neuron_info()
     cell_classification = get_primary_classification()
 
-    all_cell_info = []
+    all_cell_info = [["Cell name", "Type", "Name details", "Lineage", "Classification"]]
 
     for cell in ALL_PREFERRED_CELL_NAMES:
         print_("Generating individual cell page for: %s" % cell)
@@ -155,44 +156,59 @@ def generate_cell_info_pages(connectomes):
                 )
                 else "%s%s" % (cell[:2], cell[-1])
             )  # CA04 -> CA4 etc.
-            ackr = cell_data[cell_ref][0]
+            acronym = cell_data[cell_ref][0]
+            lineage = cell_data[cell_ref][1]
+            desc = cell_data[cell_ref][2]
             from_ = 0
             for c in cell:
-                # print('Replacing %s (from %s) in %s'%(c,from_,ackr))
-                if c in ackr:
-                    ii = ackr.index(c, from_)
-                    ackr = "%s<b>%s</b>%s" % (ackr[:ii], ackr[ii], ackr[ii + 1 :])
+                # print('Replacing %s (from %s) in %s'%(c,from_,acronym))
+                if c in acronym:
+                    ii = acronym.index(c, from_)
+                    acronym = "%s<u>%s</u>%s" % (
+                        acronym[:ii],
+                        acronym[ii],
+                        acronym[ii + 1 :],
+                    )
                     from_ = ii + 1
 
             cell_info += '!!! question "**%s: %s**"\n\n' % (
                 cell,
-                cell_data[cell_ref][2],
+                acronym,
             )
             cell_info += (
-                '    <p class="subtext">%s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' % (ackr)
+                '    <p class="subtext"><b>%s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                % (desc)
             )
-            cell_info += "Lineage: <b>%s</b></p>\n\n" % (cell_data[cell_ref][1])
+            cell_info += "Lineage: <b>%s</b></p>\n\n" % (lineage)
 
-            all_cell_info.append([cell, get_cell_notes(cell), cell_data[cell_ref][0], cell_data[cell_ref][1], cell_data[cell_ref][2]])
+            all_cell_info.append(
+                [
+                    cell,
+                    get_cell_notes(cell),
+                    cell_data[cell_ref][0],
+                    cell_data[cell_ref][1],
+                    cell_data[cell_ref][2],
+                ]
+            )
 
         else:
             cell_info += '!!! question "**%s: %s**"\n\n' % (cell, get_cell_notes(cell))
-            all_cell_info.append([cell, get_cell_notes(cell), cell_data[cell_ref][0], '','',''])
+            all_cell_info.append(
+                [cell, get_cell_notes(cell), cell_data[cell_ref][0], '""', '""', '""']
+            )
 
         cell_info += (
             '    <p class="subtext"><a href="../Cook_2019">Cook 2019</a> classification: <b>%s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             % (get_cell_notes(cell))
         )
         cc = cell_classification[cell]
-        color = get_standard_color(cell)[1:]
-
+        color = get_standard_color(cell)
 
         cell_info += (
-            'All cells of type: ![#%s](images/%s.png) <a href="../Cells/#%s"><b>%s</b></a></p>\n\n'
+            'All cells of type: <a href="../Cells/#%s"><b><span style="color:%s">%s</span></b></a></p>\n\n'
             % (
-                color,
-                color,
                 cc.lower().replace(" ", "-").replace("(", "").replace(")", ""),
+                color,
                 cc[0].upper() + cc[1:],
             )
         )
@@ -220,7 +236,8 @@ def generate_cell_info_pages(connectomes):
             cell, html=True, use_color=True, individual_cell_page=True
         )
 
-        reference_cs = "Cook2019Herm"
+        reference_cs = "Cook2019Male" if is_male_specific_cell(cell) else "Cook2019Herm"
+
         reference_gj = reference_cs
         reference_mono = "Bentley2016_MA"
         reference_pep = "RipollSanchezShortRange"
@@ -350,18 +367,18 @@ def generate_cell_info_pages(connectomes):
 <tr>
     <td><b><a href="#chemical-synaptic-connections-to-{cell.lower()}">Chemical</a></b></td>
     <td style="width:40%">{conns_to_cs}</td>
-    <td style="width:5%" align="middle">→</td>
+    <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2198</td>
     <td rowspan="4" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
-    <td style="width:5%" align="middle">→</td>
+    <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2197</td>
     <td style="width:40%">{conns_from_cs}</td>
 </tr><tr>
     <td><b><a href="#monoaminergic-connections-to-{cell.lower()}">Monoaminergic</a></b></td><td>{conns_to_mono}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_mono}</td>
 </tr><tr>
     <td><b><a href="#peptidergic-connections-to-{cell.lower()}">Peptidergic</a></b></td>  <td>{conns_to_pep}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_pep}</td>
 </tr><tr>
-    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_func}</td>
+    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_func}</td>
 </tr><tr>
-    <td>&nbsp;</td> <td colspan="5" align="middle">↕</td> 
+    <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>
     <td><b><a href="#electrical-synaptic-connections-fromto-{cell.lower()}">Electrical</a></b></td> <td colspan="5" align="middle">{conns_gj}</td> 
 </tr>
@@ -378,7 +395,7 @@ def generate_cell_info_pages(connectomes):
     cell_info_filename = "cect/data/all_cell_info.csv"
     with open(cell_info_filename, "w") as csv_file:
         print_(f"Writing info on all cells to {cell_info_filename}")
-        csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"')
+        csv_writer = csv.writer(csv_file, delimiter=",", quotechar='"')
         for line in all_cell_info:
             csv_writer.writerow(line)
 
@@ -393,6 +410,14 @@ if __name__ == "__main__":
     cds_w8 = get_instance()
 
     connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
+
+    from cect.Cook2019HermReader import get_instance
+
+    connectomes["Cook2019Herm"] = get_instance()
+
+    from cect.Cook2019MaleReader import get_instance
+
+    connectomes["Cook2019Male"] = get_instance()
 
     """
     from cect.WormNeuroAtlasMAReader import get_instance
