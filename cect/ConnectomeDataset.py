@@ -418,6 +418,9 @@ class ConnectomeDataset:
 
         return fig
 
+    def _get_line_weight(self, weight, max_weight):
+        return 1 + (9 * weight / max_weight)
+
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
@@ -427,6 +430,10 @@ class ConnectomeDataset:
         print_(
             f"Generating: {synclass} for {view.name}, {view.synclass_sets[synclass]}"
         )
+        min_weight = conn_array.min()
+        max_weight = conn_array.max()
+        if verbose:
+            print_(f"Array \n{str(conn_array)} (weights {min_weight}->{max_weight})")
 
         DEFAULT_NODE_SIZE = 15
 
@@ -510,8 +517,14 @@ class ConnectomeDataset:
                 from_node_set = view.get_node_set(self.nodes[dir_[0]])
 
                 conn_weight = conn_array[dir_[0], dir_[1]]
-                weight = min(10, math.sqrt(abs(conn_weight)))
-                opposite_dir_weight = math.sqrt(abs(conn_array[dir_[1], dir_[0]]))
+
+                weight = self._get_line_weight(
+                    abs(conn_weight), max_weight
+                )  # min(10, math.sqrt(abs(conn_weight)))
+
+                opposite_dir_weight = self._get_line_weight(
+                    abs(conn_array[dir_[1], dir_[0]]), max_weight
+                )
 
                 straight = edge[0] != edge[1] and (
                     gap_junction or opposite_dir_weight == 0
@@ -1047,9 +1060,11 @@ if __name__ == "__main__":
     # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
+    # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
 
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
+    from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
 
@@ -1058,7 +1073,8 @@ if __name__ == "__main__":
 
     # synclass = "Acetylcholine"
     synclass = "Chemical"
-    synclass = "Electrical"
+    # synclass = "Electrical"
+    synclass = "Contact"
     # from cect.TestDataReader import get_instance
 
     cds = get_instance()
@@ -1067,11 +1083,13 @@ if __name__ == "__main__":
 
     print(cds2.summary())
 
-    print("Keys: %s" % view.synclass_sets.keys())
+    print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
+
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
-    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio
 
