@@ -22,6 +22,7 @@ reader_pages = {
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
+    "Brittin2021": "Brittin2021_data",
     "Witvliet1": "Witvliet1_data",
     "Witvliet2": "Witvliet2_data",
     "Witvliet3": "Witvliet3_data",
@@ -168,6 +169,8 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
     readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+
+    readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
 
     if not quick:
         readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]

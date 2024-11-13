@@ -115,8 +115,9 @@ EXC_INH_GJ_SYN_CLASSES = {
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
 
-EXC_INH_GJ_FUNC_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
-EXC_INH_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
+EXC_INH_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
+EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
+EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Contact"] = ["Contact"]
 
 ALL_SYN_CLASSES = {
     "All synapses": [GENERIC_CHEM_SYN]
@@ -125,6 +126,7 @@ ALL_SYN_CLASSES = {
     + [GENERIC_ELEC_SYN]
     + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
     + ["Functional"]
+    + ["Contact"]
 }
 
 CHEM_GJ_SYN_CLASSES = {
@@ -134,8 +136,9 @@ CHEM_GJ_SYN_CLASSES = {
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
 
-CHEM_GJ_FUNC_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
-CHEM_GJ_FUNC_SYN_CLASSES["Functional"] = ["Functional"]
+CHEM_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
+CHEM_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
+CHEM_GJ_FUNC_CONT_SYN_CLASSES["Contact"] = ["Contact"]
 
 
 RAW_VIEW = View(
@@ -143,7 +146,7 @@ RAW_VIEW = View(
     "Raw Data",
     "All of the cells present in the original connectome dataset",
     [],
-    CHEM_GJ_FUNC_SYN_CLASSES,
+    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
     only_show_existing_nodes=True,
 )
 
@@ -153,7 +156,7 @@ NEURONS_VIEW = View(
     "Neurons",
     "All 302 hermaphrodite neurons (whether present or not in the connectome dataset)",
     [],
-    EXC_INH_GJ_FUNC_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 for cell in (
@@ -183,7 +186,7 @@ PHARYNX_VIEW = View(
     "Pharynx",
     "Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)",
     [],
-    EXC_INH_GJ_FUNC_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 for cell in sorted(PHARYNGEAL_NEURONS):
     PHARYNX_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
@@ -194,7 +197,7 @@ ESCAPE_VIEW = View(
     "Escape Response Circuit",
     "Escape Response Circuit from [Pirri & Alkema, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3437330/)",
     [],
-    EXC_INH_GJ_FUNC_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 len_scale = 1
@@ -288,7 +291,7 @@ SOCIAL_VIEW = View(
     "Social Network",
     "Hub and spoke circuit for social behavior as in Macosko et al. 2009",
     [],
-    EXC_INH_GJ_FUNC_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 len_scale = 1.5
@@ -328,7 +331,7 @@ COOK_FIG3_VIEW = View(
     "Cook 2019 Fig 3",
     "A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019",
     [],
-    CHEM_GJ_FUNC_SYN_CLASSES,
+    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 sn_pos = {
