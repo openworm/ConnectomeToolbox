@@ -13,7 +13,7 @@ import sys
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data on peptidergic connectivity from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**"""
+READER_DESCRIPTION = """Data on peptidergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 
 def get_instance():

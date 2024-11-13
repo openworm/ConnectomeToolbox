@@ -2,10 +2,7 @@
 
 ############################################################
 
-#    A simple script to read the values in herm_full_edgelist.csv.
-
-#    This is on of a number of interchangeable "Readers" which can
-#    be used to get connection data for c302
+#    A script to read the values from White et al. 1986
 
 ############################################################
 
