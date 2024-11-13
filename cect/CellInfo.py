@@ -147,15 +147,14 @@ def generate_cell_info_pages(connectomes):
 
         cell_info = '---\ntitle: "Cell: %s"\n---\n\n' % cell
 
+        cell_ref = (
+            cell
+            if not ((cell.startswith("CA") or cell.startswith("CP")) and cell[2] == "0")
+            else "%s%s" % (cell[:2], cell[-1])
+        )  # CA04 -> CA4 etc.
+
         # TODO: investigate  DX1, DX2, DX3, EF1, EF2, EF3
         if is_any_neuron(cell) and "DX" not in cell and "EF" not in cell:
-            cell_ref = (
-                cell
-                if not (
-                    (cell.startswith("CA") or cell.startswith("CP")) and cell[2] == "0"
-                )
-                else "%s%s" % (cell[:2], cell[-1])
-            )  # CA04 -> CA4 etc.
             acronym = cell_data[cell_ref][0]
             lineage = cell_data[cell_ref][1]
             desc = cell_data[cell_ref][2]
@@ -186,15 +185,25 @@ def generate_cell_info_pages(connectomes):
                     cell,
                     get_cell_notes(cell),
                     cell_data[cell_ref][0],
-                    cell_data[cell_ref][1],
-                    cell_data[cell_ref][2],
+                    lineage,
+                    desc,
                 ]
             )
 
         else:
             cell_info += '!!! question "**%s: %s**"\n\n' % (cell, get_cell_notes(cell))
+            cc = cell_classification[cell]
             all_cell_info.append(
-                [cell, get_cell_notes(cell), cell_data[cell_ref][0], '""', '""', '""']
+                [
+                    cell,
+                    get_cell_notes(cell),
+                    cell_data[cell_ref][0]
+                    if cell_ref in cell_data
+                    else "- To be added... - ",
+                    get_cell_notes(cell),
+                    "- To be added... - ",
+                    cc[0].upper() + cc[1:],
+                ]
             )
 
         cell_info += (
