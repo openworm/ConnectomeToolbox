@@ -410,33 +410,51 @@ def generate_cell_info_pages(connectomes):
 
 
 if __name__ == "__main__":
-    from cect.White_whole import get_instance
+    import sys
 
-    cds_white = get_instance()
+    if "-i" in sys.argv:
+        from cect.Cells import PREFERRED_NEURON_NAMES_COOK
+        from cect.Cells import PREFERRED_MUSCLE_NAMES
+        from cect.Cells import KNOWN_OTHER_CELLS
 
-    from cect.WitvlietDataReader8 import get_instance
+        print("    - 'Individual neurons': ")
+        for cell in sorted(PREFERRED_NEURON_NAMES_COOK):
+            print(f"      - '{cell}': '{cell}.md'")
+        print("    - 'Individual muscles': ")
+        for cell in sorted(PREFERRED_MUSCLE_NAMES):
+            print(f"      - '{cell}': '{cell}.md'")
+        print("    - 'Other cells': ")
+        for cell in sorted(KNOWN_OTHER_CELLS):
+            print(f"      - '{cell}': '{cell}.md'")
 
-    cds_w8 = get_instance()
+    else:
+        from cect.White_whole import get_instance
 
-    connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
+        cds_white = get_instance()
 
-    from cect.Cook2019HermReader import get_instance
+        from cect.WitvlietDataReader8 import get_instance
 
-    connectomes["Cook2019Herm"] = get_instance()
+        cds_w8 = get_instance()
 
-    from cect.Cook2019MaleReader import get_instance
+        connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
 
-    connectomes["Cook2019Male"] = get_instance()
+        from cect.Cook2019HermReader import get_instance
 
-    """
-    from cect.WormNeuroAtlasMAReader import get_instance
-    connectomes['Bentley2016_MA'] = get_instance()
+        connectomes["Cook2019Herm"] = get_instance()
 
-    from cect.WormNeuroAtlasFuncReader import get_instance
-    connectomes['Randi2023'] = get_instance()
+        from cect.Cook2019MaleReader import get_instance
 
-    from cect.RipollSanchezShortRangeReader import get_instance
-    connectomes['RipollSanchezShortRange'] = get_instance() """
+        connectomes["Cook2019Male"] = get_instance()
 
-    # load_individual_neuron_info()
-    generate_cell_info_pages(connectomes)
+        """
+        from cect.WormNeuroAtlasMAReader import get_instance
+        connectomes['Bentley2016_MA'] = get_instance()
+
+        from cect.WormNeuroAtlasFuncReader import get_instance
+        connectomes['Randi2023'] = get_instance()
+
+        from cect.RipollSanchezShortRangeReader import get_instance
+        connectomes['RipollSanchezShortRange'] = get_instance() """
+
+        # load_individual_neuron_info()
+        generate_cell_info_pages(connectomes)

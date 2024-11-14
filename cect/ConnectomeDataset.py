@@ -418,9 +418,11 @@ class ConnectomeDataset:
 
         return fig
 
-    def _get_line_weight(self, weight, max_weight):
+    def _get_line_weight(self, weight, min_nonzero_weight, max_weight):
         if weight == 0:
             return 0
+        if min_nonzero_weight == max_weight:
+            return 1
         return 1 + (9 * weight / max_weight)
 
     def to_plotly_graph_fig(self, synclass, view):
@@ -432,10 +434,12 @@ class ConnectomeDataset:
         print_(
             f"Generating: {synclass} for {view.name}, {view.synclass_sets[synclass]}"
         )
-        min_weight = conn_array.min()
+        min_nonzero_weight = np.min(conn_array[np.nonzero(conn_array)])
         max_weight = conn_array.max()
         if verbose:
-            print_(f"Array \n{str(conn_array)} (weights {min_weight}->{max_weight})")
+            print_(
+                f"Array \n{str(conn_array)} (weights 0 or {min_nonzero_weight}->{max_weight})"
+            )
 
         DEFAULT_NODE_SIZE = 15
 
@@ -521,11 +525,11 @@ class ConnectomeDataset:
                 conn_weight = conn_array[dir_[0], dir_[1]]
 
                 weight = self._get_line_weight(
-                    abs(conn_weight), max_weight
+                    abs(conn_weight), min_nonzero_weight, max_weight
                 )  # min(10, math.sqrt(abs(conn_weight)))
 
                 opposite_dir_weight = self._get_line_weight(
-                    abs(conn_array[dir_[1], dir_[0]]), max_weight
+                    abs(conn_array[dir_[1], dir_[0]]), min_nonzero_weight, max_weight
                 )
 
                 straight = edge[0] != edge[1] and (
