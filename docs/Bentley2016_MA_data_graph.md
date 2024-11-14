@@ -7,7 +7,7 @@ search:
 
 !!! example inline "Choose Dataset"
 
-    <a href="../White_A_data_graph">White_A</a> <a href="../White_L4_data_graph">White_L4</a> <a href="../White_whole_data_graph">White_whole</a> <a href="../Varshney_data_graph">Varshney</a> <b><a href="../Bentley2016_MA_data_graph">Bentley2016_MA</a></b> <a href="../Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../Cook2019Male_data_graph">Cook2019Male</a> <a href="../Cook2020_data_graph">Cook2020</a> <a href="../Witvliet1_data_graph">Witvliet1</a> <a href="../Witvliet2_data_graph">Witvliet2</a> <a href="../Witvliet3_data_graph">Witvliet3</a> <a href="../Witvliet4_data_graph">Witvliet4</a> <a href="../Witvliet5_data_graph">Witvliet5</a> <a href="../Witvliet6_data_graph">Witvliet6</a> <a href="../Witvliet7_data_graph">Witvliet7</a> <a href="../Witvliet8_data_graph">Witvliet8</a> <a href="../WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../Randi2023_data_graph">Randi2023</a> <a href="../RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <a href="../Test_data_graph">Test</a> <a href="../SSData_data_graph">SSData</a> <a href="../UpdSSData_data_graph">UpdSSData</a> <a href="../UpdSSData2_data_graph">UpdSSData2</a> 
+    <a href="../White_A_data_graph">White_A</a> <a href="../White_L4_data_graph">White_L4</a> <a href="../White_whole_data_graph">White_whole</a> <a href="../Varshney_data_graph">Varshney</a> <b><a href="../Bentley2016_MA_data_graph">Bentley2016_MA</a></b> <a href="../Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../Cook2019Male_data_graph">Cook2019Male</a> <a href="../Cook2020_data_graph">Cook2020</a> <a href="../Brittin2021_data_graph">Brittin2021</a> <a href="../Witvliet1_data_graph">Witvliet1</a> <a href="../Witvliet2_data_graph">Witvliet2</a> <a href="../Witvliet3_data_graph">Witvliet3</a> <a href="../Witvliet4_data_graph">Witvliet4</a> <a href="../Witvliet5_data_graph">Witvliet5</a> <a href="../Witvliet6_data_graph">Witvliet6</a> <a href="../Witvliet7_data_graph">Witvliet7</a> <a href="../Witvliet8_data_graph">Witvliet8</a> <a href="../WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../Randi2023_data_graph">Randi2023</a> <a href="../RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <a href="../Test_data_graph">Test</a> <a href="../SSData_data_graph">SSData</a> <a href="../UpdSSData_data_graph">UpdSSData</a> <a href="../UpdSSData2_data_graph">UpdSSData2</a> 
                             
 !!! tip "Choose View"
 
@@ -22,7 +22,7 @@ search:
 
 <br/><br/>
 <b>Dataset taken from <a href="../Bentley_2016">Bentley et al. 2016</a></b>
-<p class="subtext">Data on monoaminergic connectivity from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/WormNeuroAtlasMAReader">WormNeuroAtlasMAReader</a></p>
+<p class="subtext">Data on monoaminergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/WormNeuroAtlasMAReader">WormNeuroAtlasMAReader</a></p>
 
 === "Extrasynaptic"
 

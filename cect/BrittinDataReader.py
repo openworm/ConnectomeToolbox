@@ -24,7 +24,7 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%s41586_2021_3284_MOESM5_ESM.xlsx" % spreadsheet_location
 
 READER_DESCRIPTION = (
-    """Data extracted from %s for ... connectivity."""
+    """Data extracted from %s for membrane contact information."""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 

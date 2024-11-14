@@ -419,6 +419,8 @@ class ConnectomeDataset:
         return fig
 
     def _get_line_weight(self, weight, max_weight):
+        if weight == 0:
+            return 0
         return 1 + (9 * weight / max_weight)
 
     def to_plotly_graph_fig(self, synclass, view):
@@ -1072,7 +1074,7 @@ if __name__ == "__main__":
     synclass = "Chemical Exc"
 
     # synclass = "Acetylcholine"
-    synclass = "Chemical"
+    # synclass = "Chemical"
     # synclass = "Electrical"
     synclass = "Contact"
     # from cect.TestDataReader import get_instance
