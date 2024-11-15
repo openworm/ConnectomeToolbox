@@ -413,18 +413,18 @@ if __name__ == "__main__":
     import sys
 
     if "-i" in sys.argv:
-        from cect.Cells import PREFERRED_NEURON_NAMES_COOK
+        from cect.Cells import ALL_PREFERRED_NEURON_NAMES
         from cect.Cells import PREFERRED_MUSCLE_NAMES
-        from cect.Cells import KNOWN_OTHER_CELLS
+        from cect.Cells import ALL_NON_NEURON_MUSCLE_CELLS
 
         print("    - 'Individual neurons': ")
-        for cell in sorted(PREFERRED_NEURON_NAMES_COOK):
+        for cell in sorted(ALL_PREFERRED_NEURON_NAMES):
             print(f"      - '{cell}': '{cell}.md'")
         print("    - 'Individual muscles': ")
-        for cell in sorted(PREFERRED_MUSCLE_NAMES):
+        for cell in sorted(PREFERRED_MUSCLE_NAMES, key=lambda v: v.upper()):
             print(f"      - '{cell}': '{cell}.md'")
         print("    - 'Other cells': ")
-        for cell in sorted(KNOWN_OTHER_CELLS):
+        for cell in sorted(ALL_NON_NEURON_MUSCLE_CELLS, key=lambda v: v.upper()):
             print(f"      - '{cell}': '{cell}.md'")
 
     else:

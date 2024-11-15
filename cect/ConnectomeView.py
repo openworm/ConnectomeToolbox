@@ -6,8 +6,9 @@ from cect.Cells import ALL_PREFERRED_CELL_NAMES
 from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import UNKNOWN_FUNCTION_NEURONS
+from cect.Cells import MALE_SPECIFIC_NEURONS
 from cect.Cells import PREFERRED_MUSCLE_NAMES
-from cect.Cells import KNOWN_OTHER_CELLS
+from cect.Cells import ALL_NON_NEURON_MUSCLE_CELLS
 
 
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
@@ -175,7 +176,11 @@ for cell in (
     NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
-for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(KNOWN_OTHER_CELLS):
+for cell in (
+    sorted(MALE_SPECIFIC_NEURONS)
+    + sorted(PREFERRED_MUSCLE_NAMES)
+    + sorted(ALL_NON_NEURON_MUSCLE_CELLS)
+):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 assert len(NEURONS_VIEW.node_sets) == 302

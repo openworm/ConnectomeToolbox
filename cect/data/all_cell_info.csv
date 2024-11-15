@@ -301,6 +301,96 @@ VD6,Ventral cord motor neuron,Ventral D-type Motor Neuron 6,P5.app,"Ventral cord
 VD7,Ventral cord motor neuron,Ventral D-type Motor Neuron 7,P6.app,"Ventral cord motor neuron, innervates vent body muscles, reciprocal inhibitor"
 VD8,Ventral cord motor neuron,Ventral D-type Motor Neuron 8,P7.app,"Ventralcord motor neuron, innervates vent body muscles, reciprocal inhibitor"
 VD9,Ventral cord motor neuron,Ventral D-type Motor Neuron 9,P8.app,"Ventral cord motor neuron, innervates vent body muscles, reciprocal inhibitor"
+MCML,Male head interneuron,Mystery Cell of the Male Left,AmsoL,Male specific interneuron
+MCMR,Male head interneuron,Mystery Cell of the Male Right,AmsoR,Male specific interneuron
+CEMDL,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Left,AB plaaaaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMDR,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Right,AB arpapaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMVL,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Left,AB plpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMVR,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Right,AB prpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+PVV,Male interneuron,Posterior Ventral Process V,P11.paaa,"Male specific motor neuron, pre-anal ganglion"
+PVX,Male interneuron,Posterior Ventral Process X,P12.aap,"Male specific interneuron, cell body in pre-anal ganglion, postsynaptic in ring and ventral cord"
+PVY,Male interneuron,Posterior Ventral Process Y,P11.paap,"Male specific interneuron, cell body in pre-anal ganglion"
+PVZ,Male interneuron,Posterior Ventral Process Z,P10.ppppa,"Male specific motor neuron, cell body in pre-anal ganglion"
+DVE,Male interneuron,Dorsorectal Ventral Process E,B.ppap,"Male specific interneuron, cell body in dorsorectal ganglion"
+DVF,Male interneuron,Dorsorectal Ventral Process F,B.ppppa,"Male specific interneuron, cell body in dorsorectal ganglion"
+DX1,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+DX2,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+DX3,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+EF1,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+EF2,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+EF3,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
+PDC,Male interneuron,Preanal Cell with Dorsal Process C,P11.papa,"Male specific interneuron, pre-anal ganglion"
+PGA,Male interneuron,Preanal Ganglion Cell A,P11.papp,"Male specific interneuron, pre-anal ganglion"
+CA01,Male interneuron,"C-type Neuron, Anterior Daughter after Division 1",P3.aapa,"Male specific cells, ventral cord, not constructed"
+CA02,Male interneuron,"C-type Neuron, Anterior Daughter after Division 2",P4.aapa,"Male specific cells, ventral cord, not constructed"
+CA03,Male interneuron,"C-type Neuron, Anterior Daughter after Division 3",P5.aapa,"Male specific cells, ventral cord, not constructed"
+CA04,Male interneuron,"C-type Neuron, Anterior Daughter after Division 4",P6.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
+CA05,Male interneuron,"C-type Neuron, Anterior Daughter after Division 5",P7.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
+CA06,Male interneuron,"C-type Neuron, Anterior Daughter after Division 6",P8.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
+CA07,Male interneuron,"C-type Neuron, Anterior Daughter after Division 7",P9.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
+CA08,Male interneuron,"C-type Neuron, Anterior Daughter after Division 8",P10.aapa,"Male specific cell, ventral cord, neuron-like but lacks synapses"
+CA09,Male interneuron,"C-type Neuron, Anterior Daughter after Division 9",P11.aapa,"Male specific cell, ventral cord, neuron-like but lacks synapses"
+CP01,Male interneuron,"C-type Neuron, Posterior Daughter after Division 1",P3.aapp,Male specific neuron in ventral cord
+CP02,Male interneuron,"C-type Neuron, Posterior Daughter after Division 2",P4.aapp,Male specific neuron in ventral cord
+CP03,Male interneuron,"C-type Neuron, Posterior Daughter after Division 3",P5.aapp,Male specific neuron in ventral cord
+CP04,Male interneuron,"C-type Neuron, Posterior Daughter after Division 4",P6.aapp,Male specific motor neuron in ventral cord
+CP05,Male interneuron,"C-type Neuron, Posterior Daughter after Division 5",P7.aapp,Male specific motor neuron in ventral cord
+CP06,Male interneuron,"C-type Neuron, Posterior Daughter after Division 6",P8.aapp,Male specific motor neuron in ventral cord
+CP07,Male interneuron,"C-type Neuron, Posterior Daughter after Division 7",P9.aapp,Male specific motor neuron in ventral cord
+CP08,Male interneuron,"C-type Neuron, Posterior Daughter after Division 8",P10.aapp,"Male specific interneuron, projects into preanal ganglion"
+CP09,Male interneuron,"C-type Neuron, Posterior Daughter after Division 9",P11.aapp,"Male specific interneuron, projects into preanal ganglion"
+R1AL,Male sensory neuron,Ray 1 Neuron A Left,"V5L.pppppaaa, (R1.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R1AR,Male sensory neuron,Ray 1 Neuron A Right,"V5R.pppppaaa, (R1.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R1BL,Male sensory neuron,Ray 1 Neuron B Left,"V5L.pppppapa, (R1.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R1BR,Male sensory neuron,Ray 1 Neuron B Right,"V5R.pppppapa, (R1.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R2AL,Male sensory neuron,Ray 2 Neuron A Left,"V6L.papapaaa, (R2.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R2AR,Male sensory neuron,Ray 2 Neuron A Right,"V6R.papapaaa, (R2.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R2BL,Male sensory neuron,Ray 2 Neuron B Left,"V6L.papapapa, (R2.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside,cell body in left lumbar ganglion"
+R2BR,Male sensory neuron,Ray 2 Neuron B Right,"V6R.papapapa, (R2.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R3AL,Male sensory neuron,Ray 3 Neuron A Left,"V6L.papppaaa, (R3.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R3AR,Male sensory neuron,Ray 3 Neuron A Right,"V6R.papppaaa, (R3.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R3BL,Male sensory neuron,Ray 3 Neuron B Left,"V6L.papppapa, (R3.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R3BR,Male sensory neuron,Ray 3 Neuron B Right,"V6R.papppapa, (R3.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R4AL,Male sensory neuron,Ray 4 Neuron A Left,"V6L.pppapaaa, (R4.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R4AR,Male sensory neuron,Ray 4 Neuron A Right,"V6R.pppapaaa, (R4.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R4BL,Male sensory neuron,Ray 4 Neuron B Left,"V6L.pppapapa, (R4.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R4BR,Male sensory neuron,Ray 4 Neuron B Right,"V6R.pppapapa, (R4.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R5AL,Male sensory neuron,Ray 5 Neuron A Left,"V6L.pppppaaa, (R5.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R5AR,Male sensory neuron,Ray 5 Neuron A Right,"V6R.pppppaaa, (R5.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R5BL,Male sensory neuron,Ray 5 Neuron B Left,"V6L.pppppapa, (R5.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R5BR,Male sensory neuron,Ray 5 Neuron B Right,"V6R.pppppapa, (R5.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R6AL,Male sensory neuron,Ray 6 Neuron A Left,"V6L.ppppaaaa, (R6.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R6AR,Male sensory neuron,Ray 6 Neuron A Right,"V6R.ppppaaaa, (R6.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R6BL,Male sensory neuron,Ray 6 Neuron B Left,"V6L.ppppaapa, (R6.apaL)","Male sensory rays, neuron, not darkly staining nor open to outside, cell body in left lumbar ganglion"
+R6BR,Male sensory neuron,Ray 6 Neuron B Right,"V6R.ppppaapa, (R6.apaR)","Male sensory rays, neuron, not darkly staining nor open to outside, cell body in right lumbar ganglion"
+R7AL,Male sensory neuron,Ray 7 Neuron A Left,"TL.apappaaa, (R7.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R7AR,Male sensory neuron,Ray 7 Neuron A Right,"TR.apappaaa, (R7.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R7BL,Male sensory neuron,Ray 7 Neuron B Left,"TL.apappapa, (R7.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R7BR,Male sensory neuron,Ray 7 Neuron B Right,"TR.apappapa, (R7.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R8AL,Male sensory neuron,Ray 8 Neuron A Left,"TL.appaaaaa, (R8.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R8AR,Male sensory neuron,Ray 8 Neuron A Right,"TR.appaaaaa, (R8.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R8BL,Male sensory neuron,Ray 8 Neuron B Left,"TL.appaaapa, (R8.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R8BR,Male sensory neuron,Ray 8 Neuron B Right,"TR.appaaapa, (R8.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+R9AL,Male sensory neuron,Ray 9 Neuron A Left,"TL.appapaaa, (R9.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
+R9AR,Male sensory neuron,Ray 9 Neuron A Right,"TR.appapaaa, (R9.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
+R9BL,Male sensory neuron,Ray 9 Neuron B Left,"TL.appapapa, (R9.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
+R9BR,Male sensory neuron,Ray 9 Neuron B Right,"TR.appapapa, (R9.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
+PHDL,Male sensory neuron,PHasmid Neuron D Left,TL.paa (PHsoL),Male specific sensory neuron
+PHDR,Male sensory neuron,PHasmid Neuron D Right,TR.paa (PHsoR),Male specific sensory neuron
+HOA,Male sensory neuron,HOok Neuron A,P10.pppa,"Male specific neuron, sensory ending in male hook sensillum, cell body in pre-anal ganglion"
+HOB,Male sensory neuron,HOok Neuron B,P10.ppap,"Male specific neuron, sensory ending in male hook sensillum, cell body in pre-anal ganglion"
+PCAL,Male sensory neuron,PostCloacal Sensilla Neuron A Left,Y.plppd,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
+PCAR,Male sensory neuron,PostCloacal Sensilla Neuron A Right,Y.prppd,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
+PCBL,Male sensory neuron,PostCloacal Sensilla Neuron B Left,Y.plpa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
+PCBR,Male sensory neuron,PostCloacal Sensilla Neuron B Right,Y.prpa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
+PCCL,Male sensory neuron,PostCloacal Sensilla Neuron C Left,B.arpaaa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
+PCCR,Male sensory neuron,PostCloacal Sensilla Neuron C Right,B.alpaaa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
+SPCL,Male sensory neuron,SPicule Neuron C Left,B.alpaap,"Male specific sensory/motor neuron, innervates spicule protractor muscle, cell body in left cloacal ganglion"
+SPCR,Male sensory neuron,SPicule Neuron C Right,B.arpaap,"Male specific sensory/motor neuron, innervates spicule protractor muscle, cell body in right cloacal ganglion"
+SPDL,Male sensory neuron,SPicule Neuron D Left,B.alpapaa,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in left cloacal ganglion"
+SPDR,Male sensory neuron,SPicule Neuron D Right,B.arpapaa,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in right cloacal ganglion"
+SPVL,Male sensory neuron,SPicule Neuron V Left,B.al/raalda,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in left cloacal ganglion"
+SPVR,Male sensory neuron,SPicule Neuron V Right,B.al/raarda,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in right cloacal ganglion"
 MDL01,Head muscle,- To be added... - ,Head muscle,- To be added... - ,Body wall muscle
 MDL02,Head muscle,- To be added... - ,Head muscle,- To be added... - ,Body wall muscle
 MDL03,Head muscle,- To be added... - ,Head muscle,- To be added... - ,Body wall muscle
@@ -519,96 +609,6 @@ exc_gl,Excretory gland,- To be added... - ,Excretory gland,- To be added... - ,G
 hmc,Head mesodermal cell,- To be added... - ,Head mesodermal cell,- To be added... - ,Head mesodermal cell
 hyp,Hypodermis,- To be added... - ,Hypodermis,- To be added... - ,Hypodermis
 int,Intestine,- To be added... - ,Intestine,- To be added... - ,Intestinal cells
-MCML,Male head interneuron,Mystery Cell of the Male Left,AmsoL,Male specific interneuron
-MCMR,Male head interneuron,Mystery Cell of the Male Right,AmsoR,Male specific interneuron
-CEMDL,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Left,AB plaaaaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMDR,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Right,AB arpapaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMVL,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Left,AB plpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMVR,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Right,AB prpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-PVV,Male interneuron,Posterior Ventral Process V,P11.paaa,"Male specific motor neuron, pre-anal ganglion"
-PVX,Male interneuron,Posterior Ventral Process X,P12.aap,"Male specific interneuron, cell body in pre-anal ganglion, postsynaptic in ring and ventral cord"
-PVY,Male interneuron,Posterior Ventral Process Y,P11.paap,"Male specific interneuron, cell body in pre-anal ganglion"
-PVZ,Male interneuron,Posterior Ventral Process Z,P10.ppppa,"Male specific motor neuron, cell body in pre-anal ganglion"
-DVE,Male interneuron,Dorsorectal Ventral Process E,B.ppap,"Male specific interneuron, cell body in dorsorectal ganglion"
-DVF,Male interneuron,Dorsorectal Ventral Process F,B.ppppa,"Male specific interneuron, cell body in dorsorectal ganglion"
-DX1,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-DX2,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-DX3,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-EF1,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-EF2,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-EF3,Male interneuron,- To be added... - ,Male interneuron,- To be added... - ,Interneuron
-PDC,Male interneuron,Preanal Cell with Dorsal Process C,P11.papa,"Male specific interneuron, pre-anal ganglion"
-PGA,Male interneuron,Preanal Ganglion Cell A,P11.papp,"Male specific interneuron, pre-anal ganglion"
-CA01,Male interneuron,"C-type Neuron, Anterior Daughter after Division 1",P3.aapa,"Male specific cells, ventral cord, not constructed"
-CA02,Male interneuron,"C-type Neuron, Anterior Daughter after Division 2",P4.aapa,"Male specific cells, ventral cord, not constructed"
-CA03,Male interneuron,"C-type Neuron, Anterior Daughter after Division 3",P5.aapa,"Male specific cells, ventral cord, not constructed"
-CA04,Male interneuron,"C-type Neuron, Anterior Daughter after Division 4",P6.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
-CA05,Male interneuron,"C-type Neuron, Anterior Daughter after Division 5",P7.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
-CA06,Male interneuron,"C-type Neuron, Anterior Daughter after Division 6",P8.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
-CA07,Male interneuron,"C-type Neuron, Anterior Daughter after Division 7",P9.aapa,"Male specific neuron, ventral cord, innervates dorsal muscles"
-CA08,Male interneuron,"C-type Neuron, Anterior Daughter after Division 8",P10.aapa,"Male specific cell, ventral cord, neuron-like but lacks synapses"
-CA09,Male interneuron,"C-type Neuron, Anterior Daughter after Division 9",P11.aapa,"Male specific cell, ventral cord, neuron-like but lacks synapses"
-CP01,Male interneuron,"C-type Neuron, Posterior Daughter after Division 1",P3.aapp,Male specific neuron in ventral cord
-CP02,Male interneuron,"C-type Neuron, Posterior Daughter after Division 2",P4.aapp,Male specific neuron in ventral cord
-CP03,Male interneuron,"C-type Neuron, Posterior Daughter after Division 3",P5.aapp,Male specific neuron in ventral cord
-CP04,Male interneuron,"C-type Neuron, Posterior Daughter after Division 4",P6.aapp,Male specific motor neuron in ventral cord
-CP05,Male interneuron,"C-type Neuron, Posterior Daughter after Division 5",P7.aapp,Male specific motor neuron in ventral cord
-CP06,Male interneuron,"C-type Neuron, Posterior Daughter after Division 6",P8.aapp,Male specific motor neuron in ventral cord
-CP07,Male interneuron,"C-type Neuron, Posterior Daughter after Division 7",P9.aapp,Male specific motor neuron in ventral cord
-CP08,Male interneuron,"C-type Neuron, Posterior Daughter after Division 8",P10.aapp,"Male specific interneuron, projects into preanal ganglion"
-CP09,Male interneuron,"C-type Neuron, Posterior Daughter after Division 9",P11.aapp,"Male specific interneuron, projects into preanal ganglion"
-R1AL,Male sensory neuron,Ray 1 Neuron A Left,"V5L.pppppaaa, (R1.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R1AR,Male sensory neuron,Ray 1 Neuron A Right,"V5R.pppppaaa, (R1.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R1BL,Male sensory neuron,Ray 1 Neuron B Left,"V5L.pppppapa, (R1.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R1BR,Male sensory neuron,Ray 1 Neuron B Right,"V5R.pppppapa, (R1.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R2AL,Male sensory neuron,Ray 2 Neuron A Left,"V6L.papapaaa, (R2.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R2AR,Male sensory neuron,Ray 2 Neuron A Right,"V6R.papapaaa, (R2.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R2BL,Male sensory neuron,Ray 2 Neuron B Left,"V6L.papapapa, (R2.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside,cell body in left lumbar ganglion"
-R2BR,Male sensory neuron,Ray 2 Neuron B Right,"V6R.papapapa, (R2.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R3AL,Male sensory neuron,Ray 3 Neuron A Left,"V6L.papppaaa, (R3.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R3AR,Male sensory neuron,Ray 3 Neuron A Right,"V6R.papppaaa, (R3.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R3BL,Male sensory neuron,Ray 3 Neuron B Left,"V6L.papppapa, (R3.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R3BR,Male sensory neuron,Ray 3 Neuron B Right,"V6R.papppapa, (R3.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R4AL,Male sensory neuron,Ray 4 Neuron A Left,"V6L.pppapaaa, (R4.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R4AR,Male sensory neuron,Ray 4 Neuron A Right,"V6R.pppapaaa, (R4.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R4BL,Male sensory neuron,Ray 4 Neuron B Left,"V6L.pppapapa, (R4.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R4BR,Male sensory neuron,Ray 4 Neuron B Right,"V6R.pppapapa, (R4.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R5AL,Male sensory neuron,Ray 5 Neuron A Left,"V6L.pppppaaa, (R5.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R5AR,Male sensory neuron,Ray 5 Neuron A Right,"V6R.pppppaaa, (R5.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R5BL,Male sensory neuron,Ray 5 Neuron B Left,"V6L.pppppapa, (R5.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R5BR,Male sensory neuron,Ray 5 Neuron B Right,"V6R.pppppapa, (R5.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R6AL,Male sensory neuron,Ray 6 Neuron A Left,"V6L.ppppaaaa, (R6.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R6AR,Male sensory neuron,Ray 6 Neuron A Right,"V6R.ppppaaaa, (R6.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R6BL,Male sensory neuron,Ray 6 Neuron B Left,"V6L.ppppaapa, (R6.apaL)","Male sensory rays, neuron, not darkly staining nor open to outside, cell body in left lumbar ganglion"
-R6BR,Male sensory neuron,Ray 6 Neuron B Right,"V6R.ppppaapa, (R6.apaR)","Male sensory rays, neuron, not darkly staining nor open to outside, cell body in right lumbar ganglion"
-R7AL,Male sensory neuron,Ray 7 Neuron A Left,"TL.apappaaa, (R7.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R7AR,Male sensory neuron,Ray 7 Neuron A Right,"TR.apappaaa, (R7.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R7BL,Male sensory neuron,Ray 7 Neuron B Left,"TL.apappapa, (R7.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R7BR,Male sensory neuron,Ray 7 Neuron B Right,"TR.apappapa, (R7.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R8AL,Male sensory neuron,Ray 8 Neuron A Left,"TL.appaaaaa, (R8.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R8AR,Male sensory neuron,Ray 8 Neuron A Right,"TR.appaaaaa, (R8.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R8BL,Male sensory neuron,Ray 8 Neuron B Left,"TL.appaaapa, (R8.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R8BR,Male sensory neuron,Ray 8 Neuron B Right,"TR.appaaapa, (R8.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-R9AL,Male sensory neuron,Ray 9 Neuron A Left,"TL.appapaaa, (R9.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
-R9AR,Male sensory neuron,Ray 9 Neuron A Right,"TR.appapaaa, (R9.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
-R9BL,Male sensory neuron,Ray 9 Neuron B Left,"TL.appapapa, (R9.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"
-R9BR,Male sensory neuron,Ray 9 Neuron B Right,"TR.appapapa, (R9.apaR)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in right lumbar ganglion"
-PHDL,Male sensory neuron,PHasmid Neuron D Left,TL.paa (PHsoL),Male specific sensory neuron
-PHDR,Male sensory neuron,PHasmid Neuron D Right,TR.paa (PHsoR),Male specific sensory neuron
-HOA,Male sensory neuron,HOok Neuron A,P10.pppa,"Male specific neuron, sensory ending in male hook sensillum, cell body in pre-anal ganglion"
-HOB,Male sensory neuron,HOok Neuron B,P10.ppap,"Male specific neuron, sensory ending in male hook sensillum, cell body in pre-anal ganglion"
-PCAL,Male sensory neuron,PostCloacal Sensilla Neuron A Left,Y.plppd,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
-PCAR,Male sensory neuron,PostCloacal Sensilla Neuron A Right,Y.prppd,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
-PCBL,Male sensory neuron,PostCloacal Sensilla Neuron B Left,Y.plpa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
-PCBR,Male sensory neuron,PostCloacal Sensilla Neuron B Right,Y.prpa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
-PCCL,Male sensory neuron,PostCloacal Sensilla Neuron C Left,B.arpaaa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in left cloacal ganglion"
-PCCR,Male sensory neuron,PostCloacal Sensilla Neuron C Right,B.alpaaa,"Male specific sensory-motor neuron, sensory ending in male postcloacal sensilla, cell body in right cloacal ganglion"
-SPCL,Male sensory neuron,SPicule Neuron C Left,B.alpaap,"Male specific sensory/motor neuron, innervates spicule protractor muscle, cell body in left cloacal ganglion"
-SPCR,Male sensory neuron,SPicule Neuron C Right,B.arpaap,"Male specific sensory/motor neuron, innervates spicule protractor muscle, cell body in right cloacal ganglion"
-SPDL,Male sensory neuron,SPicule Neuron D Left,B.alpapaa,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in left cloacal ganglion"
-SPDR,Male sensory neuron,SPicule Neuron D Right,B.arpapaa,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in right cloacal ganglion"
-SPVL,Male sensory neuron,SPicule Neuron V Left,B.al/raalda,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in left cloacal ganglion"
-SPVR,Male sensory neuron,SPicule Neuron V Right,B.al/raarda,"Male specific sensory neuron of male copulatory spicules, ciliated, open to outside at tip of spicule, cell body in right cloacal ganglion"
 R1stL,Male ray structural cell,- To be added... - ,Male ray structural cell,- To be added... - ,Ray structural cell
 R1stR,Male ray structural cell,- To be added... - ,Male ray structural cell,- To be added... - ,Ray structural cell
 R2stL,Male ray structural cell,- To be added... - ,Male ray structural cell,- To be added... - ,Ray structural cell
