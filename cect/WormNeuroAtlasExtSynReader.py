@@ -22,7 +22,7 @@ from cect.WormNeuroAtlasReader import get_all_cells
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data on extrasynaptic connectivity from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**"""
+READER_DESCRIPTION = """Data on extrasynaptic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 
 class WormNeuroAtlasExtSynReader(ConnectomeDataset):

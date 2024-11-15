@@ -147,15 +147,14 @@ def generate_cell_info_pages(connectomes):
 
         cell_info = '---\ntitle: "Cell: %s"\n---\n\n' % cell
 
+        cell_ref = (
+            cell
+            if not ((cell.startswith("CA") or cell.startswith("CP")) and cell[2] == "0")
+            else "%s%s" % (cell[:2], cell[-1])
+        )  # CA04 -> CA4 etc.
+
         # TODO: investigate  DX1, DX2, DX3, EF1, EF2, EF3
         if is_any_neuron(cell) and "DX" not in cell and "EF" not in cell:
-            cell_ref = (
-                cell
-                if not (
-                    (cell.startswith("CA") or cell.startswith("CP")) and cell[2] == "0"
-                )
-                else "%s%s" % (cell[:2], cell[-1])
-            )  # CA04 -> CA4 etc.
             acronym = cell_data[cell_ref][0]
             lineage = cell_data[cell_ref][1]
             desc = cell_data[cell_ref][2]
@@ -186,15 +185,25 @@ def generate_cell_info_pages(connectomes):
                     cell,
                     get_cell_notes(cell),
                     cell_data[cell_ref][0],
-                    cell_data[cell_ref][1],
-                    cell_data[cell_ref][2],
+                    lineage,
+                    desc,
                 ]
             )
 
         else:
             cell_info += '!!! question "**%s: %s**"\n\n' % (cell, get_cell_notes(cell))
+            cc = cell_classification[cell]
             all_cell_info.append(
-                [cell, get_cell_notes(cell), cell_data[cell_ref][0], '""', '""', '""']
+                [
+                    cell,
+                    get_cell_notes(cell),
+                    cell_data[cell_ref][0]
+                    if cell_ref in cell_data
+                    else "- To be added... - ",
+                    get_cell_notes(cell),
+                    "- To be added... - ",
+                    cc[0].upper() + cc[1:],
+                ]
             )
 
         cell_info += (
@@ -401,33 +410,51 @@ def generate_cell_info_pages(connectomes):
 
 
 if __name__ == "__main__":
-    from cect.White_whole import get_instance
+    import sys
 
-    cds_white = get_instance()
+    if "-i" in sys.argv:
+        from cect.Cells import ALL_PREFERRED_NEURON_NAMES
+        from cect.Cells import PREFERRED_MUSCLE_NAMES
+        from cect.Cells import ALL_NON_NEURON_MUSCLE_CELLS
 
-    from cect.WitvlietDataReader8 import get_instance
+        print("    - 'Individual neurons': ")
+        for cell in sorted(ALL_PREFERRED_NEURON_NAMES):
+            print(f"      - '{cell}': '{cell}.md'")
+        print("    - 'Individual muscles': ")
+        for cell in sorted(PREFERRED_MUSCLE_NAMES, key=lambda v: v.upper()):
+            print(f"      - '{cell}': '{cell}.md'")
+        print("    - 'Other cells': ")
+        for cell in sorted(ALL_NON_NEURON_MUSCLE_CELLS, key=lambda v: v.upper()):
+            print(f"      - '{cell}': '{cell}.md'")
 
-    cds_w8 = get_instance()
+    else:
+        from cect.White_whole import get_instance
 
-    connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
+        cds_white = get_instance()
 
-    from cect.Cook2019HermReader import get_instance
+        from cect.WitvlietDataReader8 import get_instance
 
-    connectomes["Cook2019Herm"] = get_instance()
+        cds_w8 = get_instance()
 
-    from cect.Cook2019MaleReader import get_instance
+        connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
 
-    connectomes["Cook2019Male"] = get_instance()
+        from cect.Cook2019HermReader import get_instance
 
-    """
-    from cect.WormNeuroAtlasMAReader import get_instance
-    connectomes['Bentley2016_MA'] = get_instance()
+        connectomes["Cook2019Herm"] = get_instance()
 
-    from cect.WormNeuroAtlasFuncReader import get_instance
-    connectomes['Randi2023'] = get_instance()
+        from cect.Cook2019MaleReader import get_instance
 
-    from cect.RipollSanchezShortRangeReader import get_instance
-    connectomes['RipollSanchezShortRange'] = get_instance() """
+        connectomes["Cook2019Male"] = get_instance()
 
-    # load_individual_neuron_info()
-    generate_cell_info_pages(connectomes)
+        """
+        from cect.WormNeuroAtlasMAReader import get_instance
+        connectomes['Bentley2016_MA'] = get_instance()
+
+        from cect.WormNeuroAtlasFuncReader import get_instance
+        connectomes['Randi2023'] = get_instance()
+
+        from cect.RipollSanchezShortRangeReader import get_instance
+        connectomes['RipollSanchezShortRange'] = get_instance() """
+
+        # load_individual_neuron_info()
+        generate_cell_info_pages(connectomes)

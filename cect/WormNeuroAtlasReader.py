@@ -24,7 +24,7 @@ import wormneuroatlas as wa
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)** for neuronal connectivity"""
+READER_DESCRIPTION = """Data from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b> for neuronal connectivity"""
 
 
 def get_all_cells(watlas):
