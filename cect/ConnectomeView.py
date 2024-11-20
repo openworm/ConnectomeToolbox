@@ -34,6 +34,7 @@ from cect.Cells import GENERIC_ELEC_SYN
 from cect.Cells import get_standard_color
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
+from cect.RipollSanchezDataReader import load_hub_info
 
 import copy
 
@@ -291,6 +292,44 @@ for cell_set in sorted(esc_positions.keys()):
 
     ESCAPE_VIEW.node_sets.append(ns)
 
+PEP_HUBS_VIEW = View(
+    "PeptidergicHubs",
+    "Peptidergic Hubs",
+    "Peptidergic hubs as outlined in in Ripoll-Sánchez et al. 2023, Fig 7E",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+)
+
+len_scale = 1.5
+
+pep_positions = {
+    "Periphery": [(0, 0), "Gainsboro"],
+    "Motor core": [(-1 * len_scale, len_scale), "DarkSeaGreen"],
+    "Sensory core": [(1 * len_scale, len_scale), "plum"],
+    "Hubs": [(0, 2 * len_scale), "blanchedalmond"],
+}
+
+
+clusters = load_hub_info()
+
+for cluster, info in pep_positions.items():
+    pos = info[0]
+    color = info[1]
+
+    shape = "circle"
+
+    ns = NodeSet(
+        cluster,
+        clusters[cluster],
+        color=color,
+        shape=shape,
+        position=pos,
+        size=len_scale * 80,
+    )
+
+    PEP_HUBS_VIEW.node_sets.append(ns)
+
+
 SOCIAL_VIEW = View(
     "Social",
     "Social Network",
@@ -437,6 +476,7 @@ ALL_VIEWS = [
     SOCIAL_VIEW,
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
+    PEP_HUBS_VIEW,
 ]
 
 

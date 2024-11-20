@@ -251,6 +251,7 @@ def generate_cell_info_pages(connectomes):
         reference_mono = "Bentley2016_MA"
         reference_pep = "RipollSanchezShortRange"
         reference_func = "Randi2023"
+        reference_cont = "Brittin2021"
         max_conn_cells = 5
         conns_from_cs = "???"
         conns_to_cs = "???"
@@ -260,6 +261,8 @@ def generate_cell_info_pages(connectomes):
         conns_to_pep = "???"
         conns_from_func = "???"
         conns_to_func = "???"
+        conns_from_cont = "???"
+        conns_to_cont = "???"
         conns_gj = "???"
 
         tables_md = ""
@@ -298,6 +301,8 @@ def generate_cell_info_pages(connectomes):
                         conns_to_pep = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_func:
                         conns_to_func = _get_top_list(conns, max_conn_cells)
+                    if cds_name == reference_cont:
+                        conns_to_cont = _get_top_list(conns, max_conn_cells)
 
                     for c in conns:
                         cc = get_cell_internal_link(
@@ -345,6 +350,8 @@ def generate_cell_info_pages(connectomes):
                             conns_from_pep = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_func:
                             conns_from_func = _get_top_list(conns, max_conn_cells)
+                        if cds_name == reference_cont:
+                            conns_from_cont = _get_top_list(conns, max_conn_cells)
 
                         for c in conns:
                             cc = get_cell_internal_link(
@@ -370,14 +377,14 @@ def generate_cell_info_pages(connectomes):
 
 ### Summary of connections
 
-<p class="subtext">Top {max_conn_cells} connections of specified types to/from this cell (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)} & {get_dataset_link(reference_func)})</p>
+<p class="subtext">Top {max_conn_cells} connections of specified types to/from this cell (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)}, {get_dataset_link(reference_func)} & {get_dataset_link(reference_cont)})</p>
 
 <table style="width:700px">
 <tr>
     <td><b><a href="#chemical-synaptic-connections-to-{cell.lower()}">Chemical</a></b></td>
     <td style="width:40%">{conns_to_cs}</td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2198</td>
-    <td rowspan="4" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
+    <td rowspan="5" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2197</td>
     <td style="width:40%">{conns_from_cs}</td>
 </tr><tr>
@@ -385,7 +392,9 @@ def generate_cell_info_pages(connectomes):
 </tr><tr>
     <td><b><a href="#peptidergic-connections-to-{cell.lower()}">Peptidergic</a></b></td>  <td>{conns_to_pep}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_pep}</td>
 </tr><tr>
-    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_func}</td>
+    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_func}</td>
+</tr><tr>
+    <td><b><a href="#membrane-contacts-to-{cell.lower()}">Contactome</a></b></td>   <td>{conns_to_cont}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_cont}</td>
 </tr><tr>
     <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>

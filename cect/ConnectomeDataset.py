@@ -1062,12 +1062,13 @@ if __name__ == "__main__":
     print(pprint.pprint(nx.node_link_data(G)))
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
     # from cect.White_whole import get_instance
     from cect.BrittinDataReader import get_instance
