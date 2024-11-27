@@ -110,10 +110,10 @@ def load_hub_info():
         min_row=3, values_only=True
     ):  # Assuming data starts from the second row
         cell = standardise_cell_name(str(row[0]))
-        type_ = str(row[2])
+        # type_ = str(row[2])
         cluster = str(row[12])
 
-        print(f"Cell {cell} is of type {type_} and in cluster {cluster}")
+        # print(f"Cell {cell} is of type {type_} and in cluster {cluster}")
 
         if cluster not in clusters:
             clusters[cluster] = []

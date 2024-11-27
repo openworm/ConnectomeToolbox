@@ -295,7 +295,7 @@ for cell_set in sorted(esc_positions.keys()):
 PEP_HUBS_VIEW = View(
     "PeptidergicHubs",
     "Peptidergic Hubs",
-    "Peptidergic hubs as outlined in in Ripoll-Sánchez et al. 2023, Fig 7E",
+    "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -306,7 +306,7 @@ pep_positions = {
     "Periphery": [(0, 0), "Gainsboro"],
     "Motor core": [(-1 * len_scale, len_scale), "DarkSeaGreen"],
     "Sensory core": [(1 * len_scale, len_scale), "plum"],
-    "Hubs": [(0, 2 * len_scale), "blanchedalmond"],
+    "Hubs": [(0, 2 * len_scale), "burlywood"],
 }
 
 
