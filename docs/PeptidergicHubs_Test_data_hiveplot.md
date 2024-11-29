@@ -13,7 +13,7 @@ search:
 
     <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <b><a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a></b> - 
 
-    <i>Peptidergic hubs as outlined in in Ripoll-Sánchez et al. 2023, Fig 7E</i>
+    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 
 !!! abstract "Choose Graph type"
 
