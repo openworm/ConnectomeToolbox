@@ -14,4 +14,4 @@ _Published: July 07, 2021:_
 - Each neuron type expresses a distinct code of neuropeptide genes and receptors
 - Expression profiles enable discovery of cell-type-specific _cis_-regulatory sequences
 - Cell adhesion molecules correlate with neuron-specific connectivity.
-- This data was used by Ripoll-Sanchez et al. (2023) to generate the neuropeptidergic connectome.
+- This data was used by [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md) to generate the neuropeptidergic connectome.

@@ -5,8 +5,8 @@ _Randi, F., Sharma, A.K., Dvali, S., Leifer, M.<br> [Nature 623, 406–414 (2023
 
 !!! example "Datasets incorporated"   
 
-    - **[WormNeuroAtlas - Anatomical](WormNeuroAtlas_data.md)**
-    - **[WormNeuroAtlas - Functional](Randi2023_data.md)**
+    - **[Functional connectome from WormNeuroAtlas](Randi2023_data.md)**
+    - **[Anatomical connectome from WormNeuroAtlas](WormNeuroAtlas_data.md)**
 
 !!! warning "Resources from publication"   
 
