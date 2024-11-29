@@ -13,6 +13,7 @@ theme:
       tip: material/set-left
       abstract: material/graph
       question: material/information-slab-circle-outline
+      warning: material/web
 
 plugins:
   - plotly
@@ -755,7 +756,7 @@ nav:
       - 'R9shR': 'R9shR.md'
       - 'R9stL': 'R9stL.md'
       - 'R9stR': 'R9stR.md'
-  - Other resources:
+  - Resources:
     - 'Resources': 'Resources.md'
   - Python package:
     - 'Installation': 'Python.md'
