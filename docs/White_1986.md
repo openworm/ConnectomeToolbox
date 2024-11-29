@@ -7,8 +7,8 @@
 
 !!! example "Datasets incorporated"   
 
-    - **[White_A](White_A_data.md)**
-    - **[White_L4](White_L4_data.md)**
+    - **[White_A](White_A_data.md) (N2U)**
+    - **[White_L4](White_L4_data.md) (JSH)**
     - **[White_whole](White_whole_data.md)**
     
 
