@@ -49,6 +49,10 @@ Introductory chapters on a number of aspects of worm biology, including [neurobi
 
 [WormWideWeb](http://wormwideweb.org/) contains many whole-brain calcium imaging datasets from freely moving worms. See [Atanas et al. 2023](Atanas_2023.md).  
 
+## NemaMod
+
+[NemaMod](http://nemamod.org/) is an application for intuitive and rapid visualisation of neuropeptide connections in _C. elegans_. The data shown in the app was generated for the paper [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md). 
+
 
 
 

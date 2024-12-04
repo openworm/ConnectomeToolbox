@@ -3,12 +3,15 @@
 *[Neuron, Volume 111, Issue 22, 2023, Pages 3570-3589.e5](https://doi.org/10.1016/j.neuron.2023.09.043)*
 
 
-!!! example "Datasets"   
+!!! example "Datasets incorporated"   
 
     - **[Ripoll-Sánchez 2023 (short)](RipollSanchezShortRange_data.md)** 
     - **[Ripoll-Sánchez 2023 (mid)](RipollSanchezMidRange_data.md)**
     - **[Ripoll-Sánchez 2023 (long)](RipollSanchezLongRange_data.md)**
 
+!!! warning "Resources from publication"   
+
+    - **[NemaMod](Resources.md#nemamod)**
 
 **Summary**
 
