@@ -7,35 +7,39 @@ search:
 
 !!! example inline "Choose Dataset"
 
-    <a href="../White_A_data">White_A</a> <a href="../White_L4_data">White_L4</a> <a href="../White_whole_data">White_whole</a> <a href="../Varshney_data">Varshney</a> <a href="../Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Cook2019Herm_data">Cook2019Herm</a> <a href="../Cook2019Male_data">Cook2019Male</a> <a href="../Cook2020_data">Cook2020</a> <a href="../Brittin2021_data">Brittin2021</a> <a href="../Witvliet1_data">Witvliet1</a> <a href="../Witvliet2_data">Witvliet2</a> <a href="../Witvliet3_data">Witvliet3</a> <a href="../Witvliet4_data">Witvliet4</a> <a href="../Witvliet5_data">Witvliet5</a> <a href="../Witvliet6_data">Witvliet6</a> <a href="../Witvliet7_data">Witvliet7</a> <a href="../Witvliet8_data">Witvliet8</a> <a href="../WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Randi2023_data">Randi2023</a> <a href="../RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../RipollSanchezLongRange_data">RipollSanchezLongRange</a> <b><a href="../Test_data">Test</a></b> <a href="../SSData_data">SSData</a> <a href="../UpdSSData_data">UpdSSData</a> <a href="../UpdSSData2_data">UpdSSData2</a> 
+    <a href="../PeptidergicHubs_White_A_data_graph">White_A</a> <a href="../PeptidergicHubs_White_L4_data_graph">White_L4</a> <a href="../PeptidergicHubs_White_whole_data_graph">White_whole</a> <a href="../PeptidergicHubs_Varshney_data_graph">Varshney</a> <a href="../PeptidergicHubs_Bentley2016_MA_data_graph">Bentley2016_MA</a> <a href="../PeptidergicHubs_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../PeptidergicHubs_Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../PeptidergicHubs_Cook2019Male_data_graph">Cook2019Male</a> <a href="../PeptidergicHubs_Cook2020_data_graph">Cook2020</a> <a href="../PeptidergicHubs_Brittin2021_data_graph">Brittin2021</a> <a href="../PeptidergicHubs_Witvliet1_data_graph">Witvliet1</a> <a href="../PeptidergicHubs_Witvliet2_data_graph">Witvliet2</a> <a href="../PeptidergicHubs_Witvliet3_data_graph">Witvliet3</a> <a href="../PeptidergicHubs_Witvliet4_data_graph">Witvliet4</a> <a href="../PeptidergicHubs_Witvliet5_data_graph">Witvliet5</a> <a href="../PeptidergicHubs_Witvliet6_data_graph">Witvliet6</a> <a href="../PeptidergicHubs_Witvliet7_data_graph">Witvliet7</a> <a href="../PeptidergicHubs_Witvliet8_data_graph">Witvliet8</a> <a href="../PeptidergicHubs_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../PeptidergicHubs_Randi2023_data_graph">Randi2023</a> <a href="../PeptidergicHubs_RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../PeptidergicHubs_RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../PeptidergicHubs_RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <b><a href="../PeptidergicHubs_Test_data_graph">Test</a></b> <a href="../PeptidergicHubs_SSData_data_graph">SSData</a> <a href="../PeptidergicHubs_UpdSSData_data_graph">UpdSSData</a> <a href="../PeptidergicHubs_UpdSSData2_data_graph">UpdSSData2</a> 
                             
 !!! tip "Choose View"
 
-    <b><a href="../Test_data"> Raw Data</a></b> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - 
+    <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <a href="../Pharynx_Test_data_graph"> Pharynx</a> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <b><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a></b> - 
 
-    <i>All of the cells present in the original connectome dataset</i>
+    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 
 !!! abstract "Choose Graph type"
 
-    <a href="../Test_data_graph"> Graph</a> - <b><a href="../Test_data"> Matrix</a></b> - <a href="../Test_data_hiveplot"> Hive plot</a> 
+    <b><a href="../PeptidergicHubs_Test_data_graph"> Graph</a></b> - <a href="../PeptidergicHubs_Test_data"> Matrix</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Hive plot</a> 
 
 
 <br/><br/>
 
 <p class="subtext">Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></p>
 
-=== "Chemical"
+=== "Chemical Exc"
 
-    <br/>
     ```plotly
-    { "file_path": "./assets/Test_Raw_Chemical.json" }
+    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Exc_graph.json" }
+    ```
+
+=== "Chemical Inh"
+
+    ```plotly
+    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Inh_graph.json" }
     ```
 
 === "Electrical"
 
-    <br/>
     ```plotly
-    { "file_path": "./assets/Test_Raw_Electrical.json" }
+    { "file_path": "./assets/Test_PeptidergicHubs_Electrical_graph.json" }
     ```
 
 

@@ -11,6 +11,7 @@ from cect.Cells import is_any_neuron
 from cect.Cells import get_primary_classification
 from cect.Cells import get_standard_color
 from cect.Cells import is_male_specific_cell
+from cect.Cells import is_bilateral_left
 
 
 from cect import print_
@@ -251,6 +252,7 @@ def generate_cell_info_pages(connectomes):
         reference_mono = "Bentley2016_MA"
         reference_pep = "RipollSanchezShortRange"
         reference_func = "Randi2023"
+        reference_cont = "Brittin2021"
         max_conn_cells = 5
         conns_from_cs = "???"
         conns_to_cs = "???"
@@ -260,6 +262,8 @@ def generate_cell_info_pages(connectomes):
         conns_to_pep = "???"
         conns_from_func = "???"
         conns_to_func = "???"
+        conns_from_cont = "???"
+        conns_to_cont = "???"
         conns_gj = "???"
 
         tables_md = ""
@@ -298,6 +302,8 @@ def generate_cell_info_pages(connectomes):
                         conns_to_pep = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_func:
                         conns_to_func = _get_top_list(conns, max_conn_cells)
+                    if cds_name == reference_cont:
+                        conns_to_cont = _get_top_list(conns, max_conn_cells)
 
                     for c in conns:
                         cc = get_cell_internal_link(
@@ -345,6 +351,8 @@ def generate_cell_info_pages(connectomes):
                             conns_from_pep = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_func:
                             conns_from_func = _get_top_list(conns, max_conn_cells)
+                        if cds_name == reference_cont:
+                            conns_from_cont = _get_top_list(conns, max_conn_cells)
 
                         for c in conns:
                             cc = get_cell_internal_link(
@@ -370,14 +378,14 @@ def generate_cell_info_pages(connectomes):
 
 ### Summary of connections
 
-<p class="subtext">Top {max_conn_cells} connections of specified types to/from this cell (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)} & {get_dataset_link(reference_func)})</p>
+<p class="subtext">Top {max_conn_cells} connections of specified types to/from this cell (based on {get_dataset_link(reference_cs)}, {get_dataset_link(reference_mono)}, {get_dataset_link(reference_pep)}, {get_dataset_link(reference_func)} & {get_dataset_link(reference_cont)})</p>
 
 <table style="width:700px">
 <tr>
     <td><b><a href="#chemical-synaptic-connections-to-{cell.lower()}">Chemical</a></b></td>
     <td style="width:40%">{conns_to_cs}</td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2198</td>
-    <td rowspan="4" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
+    <td rowspan="5" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2197</td>
     <td style="width:40%">{conns_from_cs}</td>
 </tr><tr>
@@ -385,7 +393,9 @@ def generate_cell_info_pages(connectomes):
 </tr><tr>
     <td><b><a href="#peptidergic-connections-to-{cell.lower()}">Peptidergic</a></b></td>  <td>{conns_to_pep}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_pep}</td>
 </tr><tr>
-    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_func}</td>
+    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_func}</td>
+</tr><tr>
+    <td><b><a href="#membrane-contacts-to-{cell.lower()}">Contactome</a></b></td>   <td>{conns_to_cont}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_cont}</td>
 </tr><tr>
     <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>
@@ -412,7 +422,142 @@ def generate_cell_info_pages(connectomes):
 if __name__ == "__main__":
     import sys
 
-    if "-i" in sys.argv:
+    if "-pca" in sys.argv:
+        # from cect.Cells import PREFERRED_HERM_NEURON_NAMES
+
+        from cect.White_whole import get_instance
+
+        cds_src = get_instance()
+        """
+        from cect.RipollSanchezMidRangeReader import get_instance
+        cds_src = get_instance()"""
+        """ 
+        from cect.Cook2019HermReader import get_instance
+        from cect.WormNeuroAtlasFuncReader import get_instance
+        from cect.TestDataReader import get_instance
+
+        from cect.ConnectomeView import PHARYNX_VIEW as view
+        from cect.ConnectomeView import RAW_VIEW as view
+        """
+        from cect.ConnectomeView import NEURONS_VIEW as view
+
+        cds_src = get_instance()
+        cds = cds_src.get_connectome_view(view)
+        """
+        for cell in ['I3']:
+            print(cds.nodes)
+            print(cds.connections.keys())
+            index = cds.nodes.index(cell)
+            print('Conns from %s (index: %i): %s'%(cell,index,cds.get_connections_from(cell, syntype)))
+            matrix = cds.connections[syntype]
+            print(matrix[index])
+            print('Conns to %s (index: %i): %s'%(cell,index,cds.get_connections_to(cell, syntype)))
+            print(matrix.T[index])"""
+
+        data = {}
+
+        for syntype in cds.connections.keys():
+            matrix = cds.connections[syntype]
+            if matrix.max() != matrix.min():
+                print("Adding data matrix of type: %s" % syntype)
+
+                for cell in cds.nodes:
+                    if cell not in data:
+                        data[cell] = []
+                    index = cds.nodes.index(cell)
+                    for v in matrix[index] + matrix.T[index]:
+                        scale = False
+                        data[cell].append((1 if v != 0 else 0) if scale else v)
+
+        df = pd.DataFrame(data)
+
+        print("Data being used: %s\n%s" % (df.shape, df))
+
+        from sklearn.decomposition import PCA
+
+        pca = PCA(n_components=3)
+        pcs = pca.fit_transform(df.T)
+
+        # print(pca.components_)
+        print(pcs)
+
+        xs = []
+        ys = []
+        zs = []
+        texts = []
+        colors = []
+        from cect.Cells import get_standard_color
+
+        positions = {}
+        for i in range(len(cds.nodes)):
+            a = pcs[i]
+            cell = cds.nodes[i]
+            print("%i) Plotting %s at %s" % (i, cell, a))
+            xs.append(a[0])
+            ys.append(a[1])
+            zs.append(a[2])
+            texts.append(cell)
+            colors.append(get_standard_color(cell))
+            positions[cell] = (a[0], a[1], a[2])
+
+        add_text = False
+
+        import plotly.graph_objects as go
+
+        scat = go.Scatter3d(
+            x=xs,
+            y=ys,
+            z=zs,
+            text=texts,
+            mode="markers+text" if add_text else "markers",
+            marker=dict(
+                size=10,
+                color=colors,
+                line_width=1,
+            ),
+        )
+
+        scat.marker.color = colors
+
+        edge_traces = []
+
+        for cell in cds.nodes:
+            if is_bilateral_left(cell):
+                right = cell[:-1] + "R"
+                a = positions[cell]
+                if right in positions:
+                    b = positions[right]
+                    print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
+                    # Add edges to the figure
+                    edge_trace = go.Scatter3d(
+                        x=[a[0], b[0]],
+                        y=[a[1], b[1]],
+                        z=[a[2], b[2]],
+                        mode="lines",
+                        # marker=dict(symbol="arrow",size=weight * 3,angleref="previous",     ),
+                        line=dict(
+                            color=get_standard_color(cell),
+                            width=5,
+                        ),
+                        hoverinfo="none",
+                    )
+                    edge_traces.append(edge_trace)
+
+        fig = go.Figure(
+            data=[scat] + edge_traces,
+            layout=go.Layout(
+                showlegend=False,
+                hovermode="closest",
+                margin=dict(b=20, l=5, r=5, t=40),
+                xaxis=dict(showgrid=False, zeroline=False),
+                yaxis=dict(showgrid=False, zeroline=False),
+                width=1600,
+                height=800,
+            ),
+        )
+        fig.show()
+
+    elif "-i" in sys.argv:
         from cect.Cells import ALL_PREFERRED_NEURON_NAMES
         from cect.Cells import PREFERRED_MUSCLE_NAMES
         from cect.Cells import ALL_NON_NEURON_MUSCLE_CELLS
