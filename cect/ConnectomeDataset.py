@@ -303,19 +303,21 @@ class ConnectomeDataset:
         return cv
 
     def summary(self):
-        info = "Nodes present: %s\n" % self.nodes
+        info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
         for c in self.connections:
             conn_array = self.connections[c]
-            info += (
-                "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
-                % (
-                    c,
-                    conn_array.shape,
-                    np.count_nonzero(conn_array),
-                    np.sum(conn_array),
-                    conn_array,
+            nonzero = np.count_nonzero(conn_array)
+            if nonzero > 0:
+                info += (
+                    "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
+                    % (
+                        c,
+                        conn_array.shape,
+                        nonzero,
+                        np.sum(conn_array),
+                        conn_array,
+                    )
                 )
-            )
         return info
 
     def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=None):
