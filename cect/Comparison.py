@@ -146,7 +146,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
-def generate_comparison_page(quick: bool, color_table=True):
+def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
     connectomes = {}
     all_connectomes = {}
 
@@ -179,7 +179,8 @@ def generate_comparison_page(quick: bool, color_table=True):
         readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
         readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
         readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
-        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+
+    readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
 
     readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
@@ -238,243 +239,247 @@ def generate_comparison_page(quick: bool, color_table=True):
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
 
-            if connectome is not None:
-                from cect.ConnectomeView import ALL_VIEWS
+            if dataset_pages:
+                if connectome is not None:
+                    from cect.ConnectomeView import ALL_VIEWS
 
-                indent = "    "
+                    indent = "    "
 
-                for view in ALL_VIEWS:
-                    print_("Generating view: %s (%s)" % (view.name, view.id))
+                    for view in ALL_VIEWS:
+                        print_("Generating view: %s (%s)" % (view.name, view.id))
 
-                    view_prefix = "" if view.id == "Raw" else "%s_" % view.id
+                        view_prefix = "" if view.id == "Raw" else "%s_" % view.id
 
-                    matrix_filename = "docs/%s%s.md" % (
-                        view_prefix,
-                        reader_pages[reader_name],
-                    )
-                    graph_filename = "docs/%s%s_graph.md" % (
-                        view_prefix,
-                        reader_pages[reader_name],
-                    )
-                    hiveplot_filename = "docs/%s%s_hiveplot.md" % (
-                        view_prefix,
-                        reader_pages[reader_name],
-                    )
+                        matrix_filename = "docs/%s%s.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
+                        graph_filename = "docs/%s%s_graph.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
+                        hiveplot_filename = "docs/%s%s_hiveplot.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
 
-                    for filename in [
-                        graph_filename,
-                        matrix_filename,
-                        hiveplot_filename,
-                    ]:
-                        with open(filename, "w") as f:
-                            graph = "graph" in filename
-                            hiveplot = "hiveplot" in filename
-                            matrix = not graph and not hiveplot
-
-                            f.write(
-                                '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
-                                % reader_name
-                            )
-
-                            desc_full = ""
-
-                            f.write("""
-!!! example inline "Choose Dataset"
-
-    """)
-                            for rr in reader_pages:
-                                view_prefix = (
-                                    "" if view.id == "Raw" else "%s_" % view.id
-                                )
+                        for filename in [
+                            graph_filename,
+                            matrix_filename,
+                            hiveplot_filename,
+                        ]:
+                            with open(filename, "w") as f:
+                                graph = "graph" in filename
+                                hiveplot = "hiveplot" in filename
+                                matrix = not graph and not hiveplot
 
                                 f.write(
-                                    '%s<a href="../%s%s%s">%s</a>%s '
-                                    % (
-                                        "<b>" if rr == reader_name else "",
-                                        view_prefix,
-                                        reader_pages[rr],
-                                        "_graph"
-                                        if graph
-                                        else ("_hiveplot" if hiveplot else ""),
-                                        rr,
-                                        "</b>" if rr == reader_name else "",
-                                    )
+                                    '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
+                                    % reader_name
                                 )
 
-                            dp = (
-                                '<b>Dataset taken from <a href="../%s">%s</a></b>'
-                                % (
-                                    description_page,
-                                    description_page.replace(
-                                        "_20", " et al. 20"
-                                    ).replace("_19", " et al. 19"),
-                                )
-                                if description_page is not None
-                                else ""
-                            )
-                            reader_page = "../api/%s" % reader_module.__name__.replace(
-                                ".", "/"
-                            )
-                            reader_class = reader_module.__name__.split(".")[1]
-                            reader_info = (
-                                f'Reader: <a href="{reader_page}">{reader_class}</a>'
-                            )
-                            desc_full = f'{dp}\n<p class="subtext">{reader_module.READER_DESCRIPTION}.&nbsp;&nbsp;&nbsp;{reader_info}</p>\n'
+                                desc_full = ""
 
-                            f.write(
-                                """
-                            
-!!! tip "Choose View"
+                                f.write("""
+    !!! example "Choose Dataset"
 
-    """
-                            )
-
-                            for viewb in ALL_VIEWS:
-                                viewb_prefix = (
-                                    "" if viewb.id == "Raw" else "%s_" % viewb.id
-                                )
-
-                                f.write(
-                                    '%s<a href="../%s%s%s"> %s</a>%s%s'
-                                    % (
-                                        "<b>" if view.id == viewb.id else "",
-                                        viewb_prefix,
-                                        reader_pages[reader_name],
-                                        "_graph"
-                                        if graph
-                                        else ("_hiveplot" if hiveplot else ""),
-                                        viewb.name,
-                                        "</b>" if view.id == viewb.id else "",
-                                        "" if "Fig 3" in view.name else " - ",
-                                    )
-                                )
-                            f.write(
-                                """
-
-    <i>%s</i>
-
-!!! abstract "Choose Graph type"
-
-    """
-                                % view.description
-                            )
-
-                            f.write(
-                                '%s<a href="../%s%s_graph"> Graph</a>%s - '
-                                % (
-                                    "<b>" if graph else "",
-                                    view_prefix,
-                                    reader_pages[reader_name],
-                                    "</b>" if graph else "",
-                                )
-                            )
-                            f.write(
-                                '%s<a href="../%s%s"> Matrix</a>%s - '
-                                % (
-                                    "<b>" if matrix else "",
-                                    view_prefix,
-                                    reader_pages[reader_name],
-                                    "</b>" if matrix else "",
-                                )
-                            )
-                            f.write(
-                                '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
-                                % (
-                                    "<b>" if hiveplot else "",
-                                    view_prefix,
-                                    reader_pages[reader_name],
-                                    "</b>" if hiveplot else "",
-                                )
-                            )
-
-                            cv = connectome.get_connectome_view(view)
-
-                            # f.write('=== "%s"\n' % view.name)
-                            f.write(
-                                """
-<br/><br/>
-%s
-"""
-                                % desc_full
-                            )
-
-                            no_conns = True
-
-                            for sc in view.synclass_sets:
-                                if matrix:
-                                    mkdown_fig = get_matrix_markdown(
-                                        reader_name,
-                                        view,
-                                        cv,
-                                        sc,
-                                        indent=indent,
+        """)
+                                for rr in reader_pages:
+                                    view_prefix = (
+                                        "" if view.id == "Raw" else "%s_" % view.id
                                     )
 
-                                elif graph:
-                                    mkdown_fig = get_2d_graph_markdown(
-                                        reader_name,
-                                        view,
-                                        cv,
-                                        sc,
-                                        indent=indent,
-                                    )
-
-                                elif hiveplot:
-                                    mkdown_fig = get_hive_plot_markdown(
-                                        reader_name,
-                                        view,
-                                        cv,
-                                        sc,
-                                        indent=indent,
-                                    )
-
-                                if mkdown_fig is not None:
-                                    no_conns = False
-                                    f.write('=== "%s"\n%s\n' % (sc, mkdown_fig))
-
-                            if no_conns:
-                                f.write("No connections present in this view\n")
-
-                            cell_types = {
-                                "Neurons (herm)": preferred,
-                                "Missing neurons": missing_preferred,
-                                "Muscles": muscles,
-                                "Other cells": not_in_preferred,
-                            }
-
-                            for t in cell_types:
-                                f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
-                                if len(cell_types[t]) > 0:
                                     f.write(
-                                        "<details open><summary>Full list of %s%s</summary>\n"
+                                        '%s<a href="../%s%s%s">%s</a>%s '
                                         % (
-                                            t.replace("herm", "hermaphrodite only"),
-                                            (
-                                                " (known hermaphrodite neurons not present)"
-                                                if "Missing" in t
-                                                else " in this dataset"
-                                            ),
+                                            "<b>" if rr == reader_name else "",
+                                            view_prefix,
+                                            reader_pages[rr],
+                                            "_graph"
+                                            if graph
+                                            else ("_hiveplot" if hiveplot else ""),
+                                            rr,
+                                            "</b>" if rr == reader_name else "",
                                         )
                                     )
-                                    ss = sorted(cell_types[t])
-                                    for n in ss:
+
+                                dp = (
+                                    '<b>Dataset taken from <a href="../%s">%s</a>. </b>'
+                                    % (
+                                        description_page,
+                                        description_page.replace(
+                                            "_20", " et al. 20"
+                                        ).replace("_19", " et al. 19"),
+                                    )
+                                    if description_page is not None
+                                    else ""
+                                )
+                                reader_page = (
+                                    "../api/%s"
+                                    % reader_module.__name__.replace(".", "/")
+                                )
+                                reader_class = reader_module.__name__.split(".")[1]
+                                reader_info = f'Python Reader: <a href="{reader_page}">{reader_class}</a>'
+                                desc_full = f"<i>{dp}{reader_module.READER_DESCRIPTION}.&nbsp;&nbsp;&nbsp;{reader_info}</i>\n"
+
+                                f.write(
+                                    """
+
+        %s
+
+        """
+                                    % desc_full
+                                )
+
+                                f.write(
+                                    """
+
+    !!! abstract inline "Choose Graph type"
+
+        """
+                                )
+
+                                f.write(
+                                    '%s<a href="../%s%s_graph"> Graph</a>%s - '
+                                    % (
+                                        "<b>" if graph else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if graph else "",
+                                    )
+                                )
+                                f.write(
+                                    '%s<a href="../%s%s"> Matrix</a>%s - '
+                                    % (
+                                        "<b>" if matrix else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if matrix else "",
+                                    )
+                                )
+                                f.write(
+                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
+                                    % (
+                                        "<b>" if hiveplot else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if hiveplot else "",
+                                    )
+                                )
+
+                                cv = connectome.get_connectome_view(view)
+
+                                f.write(
+                                    """
+    !!! tip  "Choose View"
+
+        """
+                                )
+
+                                for viewb in ALL_VIEWS:
+                                    viewb_prefix = (
+                                        "" if viewb.id == "Raw" else "%s_" % viewb.id
+                                    )
+
+                                    f.write(
+                                        '%s<a href="../%s%s%s"> %s</a>%s%s'
+                                        % (
+                                            "<b>" if view.id == viewb.id else "",
+                                            viewb_prefix,
+                                            reader_pages[reader_name],
+                                            "_graph"
+                                            if graph
+                                            else ("_hiveplot" if hiveplot else ""),
+                                            viewb.name,
+                                            "</b>" if view.id == viewb.id else "",
+                                            "" if "Fig 3" in view.name else " - ",
+                                        )
+                                    )
+                                f.write(
+                                    """
+
+        <i>%s</i>
+    """
+                                    % view.description
+                                )
+
+                                no_conns = True
+
+                                for sc in view.synclass_sets:
+                                    if matrix:
+                                        mkdown_fig = get_matrix_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                        )
+
+                                    elif graph:
+                                        mkdown_fig = get_2d_graph_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                        )
+
+                                    elif hiveplot:
+                                        mkdown_fig = get_hive_plot_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                        )
+
+                                    if mkdown_fig is not None:
+                                        no_conns = False
+                                        f.write('=== "%s"\n%s\n' % (sc, mkdown_fig))
+
+                                if no_conns:
+                                    f.write("No connections present in this view\n")
+
+                                cell_types = {
+                                    "Neurons (herm)": preferred,
+                                    "Missing neurons": missing_preferred,
+                                    "Muscles": muscles,
+                                    "Other cells": not_in_preferred,
+                                }
+
+                                for t in cell_types:
+                                    f.write("\n### %s (%i)\n" % (t, len(cell_types[t])))
+                                    if len(cell_types[t]) > 0:
                                         f.write(
-                                            "%s\n"
+                                            "<details open><summary>Full list of %s%s</summary>\n"
                                             % (
-                                                get_cell_internal_link(
-                                                    n,
-                                                    html=True,
-                                                    use_color=True,
-                                                    individual_cell_page=True,
-                                                )
+                                                t.replace("herm", "hermaphrodite only"),
+                                                (
+                                                    " (known hermaphrodite neurons not present)"
+                                                    if "Missing" in t
+                                                    else " in this dataset"
+                                                ),
                                             )
                                         )
-                                        if n is not ss[-1]:
-                                            f.write(" | ")
+                                        ss = sorted(cell_types[t])
+                                        for n in ss:
+                                            f.write(
+                                                "%s\n"
+                                                % (
+                                                    get_cell_internal_link(
+                                                        n,
+                                                        html=True,
+                                                        use_color=True,
+                                                        individual_cell_page=True,
+                                                    )
+                                                )
+                                            )
+                                            if n is not ss[-1]:
+                                                f.write(" | ")
 
-                                    f.write("\n</details>\n")
+                                        f.write("\n</details>\n")
 
-                        print_("Written page: %s" % filename)
+                            print_("Written page: %s" % filename)
 
         neurons, neuron_conns = connectome.get_neuron_to_neuron_conns()
         neurons2muscles, muscles, muscle_conns = connectome.get_neuron_to_muscle_conns()
@@ -549,32 +554,63 @@ def generate_comparison_page(quick: bool, color_table=True):
     from cect.Cells import COOK_GROUPING_1
 
     if color_table:
-        STYLE = '"width:80px"'
-        table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:150%"> </span></th>\n'
+        STYLE = '"width:80px;font-family:Arial"'
+        font_size = "190%"
+        table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:{font_size}"> </span></th>\n'
 
         readers_to_include = []
 
         for reader_name, reader_info in readers.items():
-            if "Test" not in reader_name and "SSData" not in reader_name:
+            if (
+                "Test" not in reader_name
+                and "SSData" not in reader_name
+                and "Witvliet2" not in reader_name
+                and "Witvliet3" not in reader_name
+                and "Witvliet4" not in reader_name
+                and "Witvliet7" not in reader_name
+                and "WormNeuroAtlas" not in reader_name
+                and "RipollSanchezMidRange" not in reader_name
+                and "RipollSanchezLongRange" not in reader_name
+            ):
                 readers_to_include.append(reader_name)
 
+        better_names = {}
         for reader_name in readers_to_include:
             better_name = (
                 reader_name.replace("_", " ")
                 .replace("201", " 201")
                 .replace("202", " 202")
-                .replace("chez", "chez ")
+                .replace("Sanchez", " Sanchez et al. 2023 ")
+                .replace("tley", "tley et al.")
+                .replace("Cook", "Cook et al.")
+                .replace("ttin", "ttin et al.")
                 .replace("19", "19 ")
                 .replace("liet", "liet ")
                 .replace("MA", "Monoamin.")
                 .replace("PEP", "Peptid.")
+                .replace("ite A", "ite et al. 1986 N2U/Adult")
+                .replace("ite L4", "ite et al. 1986 JSU/L4")
+                .replace("ite whole", "ite et al. 1986 Whole worm")
+                .replace("Randi", "Randi et al,")
+                .replace("Varshney", "Varshney et al. 2011")
+                .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
+                .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
+                .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
+                .replace("Witvliet 8", "Witvliet et al. 2021 8 (Adult)")
             )
-            table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
+            better_names[reader_name] = better_name
+
+            # table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
 
         for group in COOK_GROUPING_1:
-            table_html += f'  <tr>\n<td><b><span style="font-size:150%;text-align:center;padding:3px;">{group}</span></b></th>\n'
+            table_html += f'    <th style={STYLE}><span style="font-size:{font_size}">{group}</span></th>\n'
 
-            for reader_name in readers_to_include:
+        for reader_name in readers_to_include:
+            table_html += f'  <tr>\n<td align="middle"><b><span style="font-size:{font_size};text-align:center;padding:3px;font-family:Arial">{better_names[reader_name]}</span></b></th>\n'
+
+            for group in COOK_GROUPING_1:
+                # table_html += f'  <tr>\n<td><b><span style="font-size:150%;text-align:center;padding:3px;">{group}</span></b></th>\n'
+
                 connectome = all_connectomes[reader_name]
                 cells_here = ""
                 for cell in sorted(COOK_GROUPING_1[group]):
@@ -589,16 +625,16 @@ def generate_comparison_page(quick: bool, color_table=True):
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
 
-                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 9:
+                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 14:
                         cells_here += "<br/>\n"
 
-                table_html += f"    <td >{cells_here}</th>\n"
+                table_html += f'    <td align="middle">{cells_here}</th>\n'
 
             table_html += "  </tr>\n"
 
         table_html += "  </tr>\n</table>\n"
 
-        main_mk += table_html.replace("150%", "100%")
+        main_mk += table_html.replace(font_size, "100%")
 
     main_mk += df_all.to_markdown()
 
@@ -635,6 +671,6 @@ def generate_comparison_page(quick: bool, color_table=True):
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    connectomes = generate_comparison_page(quick, color_table=True)
+    connectomes = generate_comparison_page(quick, color_table=True, dataset_pages=False)
 
     print("Finished. All loaded connectomes:\n%s" % connectomes)

@@ -51,10 +51,10 @@ class BrittinDataReader(ConnectomeDataset):
         sheet = wb.get_sheet_by_name(self.reference_graph)
 
         print_("Opened sheet %s in Excel file: %s" % (sheet, filename))
-        print(dir(sheet))
+        # print(dir(sheet))
 
         for row in sheet.rows:
-            print(row[0].value)
+            # print(row[0].value)
             if "cell_1" not in row[0].value:
                 delta = int(row[3].value)
                 if delta == 4:
@@ -65,7 +65,7 @@ class BrittinDataReader(ConnectomeDataset):
                     synclass = "%s%s" % (self.reference_graph, row[3].value)
                     synclass = "Contact"
                     ci = ConnectionInfo(pre, post, num, syntype, synclass)
-                    print("Adding  %s" % ci)
+                    # print("Adding  %s" % ci)
                     conns.append(ci)
 
                     if pre not in cells:
