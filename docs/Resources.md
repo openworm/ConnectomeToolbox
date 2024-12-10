@@ -1,4 +1,4 @@
-# Connectome resources 
+# Connectome Resources 
 
 The following are other resources which have been developed by the community for sharing information related to _C. elegans_ connectomics.
 
@@ -30,7 +30,7 @@ Introductory chapters on a number of aspects of worm biology, including [neurobi
 
 ## NemaNode
 
-[NemaNode](https://nemanode.org) is ...
+[NemaNode](https://nemanode.org) is an open source software package developed by the Zhen Lab and is used to visualise the datasets presented in [Witvliet et al. 2021](Witvliet_2021.md).
 
 ## parsetrakem2
 
@@ -52,6 +52,9 @@ Introductory chapters on a number of aspects of worm biology, including [neurobi
 ## NemaMod
 
 [NemaMod](http://nemamod.org/) is an application for intuitive and rapid visualisation of neuropeptide connections in _C. elegans_. The data shown in the app was generated for the paper [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md). 
+
+## FunCoNN (Beta)
+[FunCoNN](https://funconn.princeton.edu/) is an interactive browser of functional connectivity measurements of _C.elegans_ that is overlaid on top of connectomics data present within [NemaNode](https://nemanode.org). The functional data shown in the app was generated for the paper [Randi et al. 2023](Randi_2023.md).
 
 
 
