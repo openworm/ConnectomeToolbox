@@ -281,9 +281,9 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                 desc_full = ""
 
                                 f.write("""
-    !!! example "Choose Dataset"
+!!! example "Choose Dataset"
 
-        """)
+    """)
                                 for rr in reader_pages:
                                     view_prefix = (
                                         "" if view.id == "Raw" else "%s_" % view.id
@@ -325,18 +325,18 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                 f.write(
                                     """
 
-        %s
+    %s
 
-        """
+    """
                                     % desc_full
                                 )
 
                                 f.write(
                                     """
 
-    !!! abstract inline "Choose Graph type"
+!!! abstract inline "Choose Graph type"
 
-        """
+    """
                                 )
 
                                 f.write(
@@ -371,9 +371,9 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
                                 f.write(
                                     """
-    !!! tip  "Choose View"
+!!! tip  "Choose View"
 
-        """
+    """
                                 )
 
                                 for viewb in ALL_VIEWS:
@@ -398,8 +398,8 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                 f.write(
                                     """
 
-        <i>%s</i>
-    """
+    <i>%s</i>
+"""
                                     % view.description
                                 )
 
@@ -591,7 +591,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                 .replace("ite A", "ite et al. 1986 N2U/Adult")
                 .replace("ite L4", "ite et al. 1986 JSU/L4")
                 .replace("ite whole", "ite et al. 1986 Whole worm")
-                .replace("Randi", "Randi et al,")
+                .replace("Randi", "Randi et al.")
                 .replace("Varshney", "Varshney et al. 2011")
                 .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
                 .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")

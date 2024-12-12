@@ -5,25 +5,25 @@ search:
 ---
 
 
-!!! example inline "Choose Dataset"
+!!! example "Choose Dataset"
 
     <a href="../Pharynx_White_A_data_graph">White_A</a> <a href="../Pharynx_White_L4_data_graph">White_L4</a> <a href="../Pharynx_White_whole_data_graph">White_whole</a> <a href="../Pharynx_Varshney_data_graph">Varshney</a> <a href="../Pharynx_Bentley2016_MA_data_graph">Bentley2016_MA</a> <a href="../Pharynx_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../Pharynx_Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../Pharynx_Cook2019Male_data_graph">Cook2019Male</a> <a href="../Pharynx_Cook2020_data_graph">Cook2020</a> <a href="../Pharynx_Brittin2021_data_graph">Brittin2021</a> <a href="../Pharynx_Witvliet1_data_graph">Witvliet1</a> <a href="../Pharynx_Witvliet2_data_graph">Witvliet2</a> <a href="../Pharynx_Witvliet3_data_graph">Witvliet3</a> <a href="../Pharynx_Witvliet4_data_graph">Witvliet4</a> <a href="../Pharynx_Witvliet5_data_graph">Witvliet5</a> <a href="../Pharynx_Witvliet6_data_graph">Witvliet6</a> <a href="../Pharynx_Witvliet7_data_graph">Witvliet7</a> <a href="../Pharynx_Witvliet8_data_graph">Witvliet8</a> <a href="../Pharynx_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../Pharynx_Randi2023_data_graph">Randi2023</a> <a href="../Pharynx_RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../Pharynx_RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../Pharynx_RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <b><a href="../Pharynx_Test_data_graph">Test</a></b> <a href="../Pharynx_SSData_data_graph">SSData</a> <a href="../Pharynx_UpdSSData_data_graph">UpdSSData</a> <a href="../Pharynx_UpdSSData2_data_graph">UpdSSData2</a> 
-                            
-!!! tip "Choose View"
 
-    <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <b><a href="../Pharynx_Test_data_graph"> Pharynx</a></b> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a> - 
+    <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
-    <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 
-!!! abstract "Choose Graph type"
+    
+
+!!! abstract inline "Choose Graph type"
 
     <b><a href="../Pharynx_Test_data_graph"> Graph</a></b> - <a href="../Pharynx_Test_data"> Matrix</a> - <a href="../Pharynx_Test_data_hiveplot"> Hive plot</a> 
 
 
-<br/><br/>
+!!! tip  "Choose View"
 
-<p class="subtext">Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></p>
+    <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <b><a href="../Pharynx_Test_data_graph"> Pharynx</a></b> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a> - 
 
+    <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 === "Chemical Exc"
 
     ```plotly

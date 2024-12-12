@@ -5,25 +5,25 @@ search:
 ---
 
 
-!!! example inline "Choose Dataset"
+!!! example "Choose Dataset"
 
     <a href="../Full1_White_A_data">White_A</a> <a href="../Full1_White_L4_data">White_L4</a> <a href="../Full1_White_whole_data">White_whole</a> <a href="../Full1_Varshney_data">Varshney</a> <a href="../Full1_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Full1_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Full1_Cook2019Herm_data">Cook2019Herm</a> <a href="../Full1_Cook2019Male_data">Cook2019Male</a> <a href="../Full1_Cook2020_data">Cook2020</a> <a href="../Full1_Brittin2021_data">Brittin2021</a> <a href="../Full1_Witvliet1_data">Witvliet1</a> <a href="../Full1_Witvliet2_data">Witvliet2</a> <a href="../Full1_Witvliet3_data">Witvliet3</a> <a href="../Full1_Witvliet4_data">Witvliet4</a> <a href="../Full1_Witvliet5_data">Witvliet5</a> <a href="../Full1_Witvliet6_data">Witvliet6</a> <a href="../Full1_Witvliet7_data">Witvliet7</a> <a href="../Full1_Witvliet8_data">Witvliet8</a> <a href="../Full1_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Full1_Randi2023_data">Randi2023</a> <a href="../Full1_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../Full1_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../Full1_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <b><a href="../Full1_Test_data">Test</a></b> <a href="../Full1_SSData_data">SSData</a> <a href="../Full1_UpdSSData_data">UpdSSData</a> <a href="../Full1_UpdSSData2_data">UpdSSData2</a> 
-                            
-!!! tip "Choose View"
 
-    <a href="../Test_data"> Raw Data</a><a href="../Neurons_Test_data"> Neurons</a><a href="../Pharynx_Test_data"> Pharynx</a><a href="../Social_Test_data"> Social Network</a><a href="../Escape_Test_data"> Escape Response Circuit</a><b><a href="../Full1_Test_data"> Cook 2019 Fig 3</a></b><a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a>
+    <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
-    <i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i>
 
-!!! abstract "Choose Graph type"
+    
+
+!!! abstract inline "Choose Graph type"
 
     <a href="../Full1_Test_data_graph"> Graph</a> - <b><a href="../Full1_Test_data"> Matrix</a></b> - <a href="../Full1_Test_data_hiveplot"> Hive plot</a> 
 
 
-<br/><br/>
+!!! tip  "Choose View"
 
-<p class="subtext">Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></p>
+    <a href="../Test_data"> Raw Data</a><a href="../Neurons_Test_data"> Neurons</a><a href="../Pharynx_Test_data"> Pharynx</a><a href="../Social_Test_data"> Social Network</a><a href="../Escape_Test_data"> Escape Response Circuit</a><b><a href="../Full1_Test_data"> Cook 2019 Fig 3</a></b><a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a>
 
+    <i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i>
 === "Chemical"
 
     <br/>

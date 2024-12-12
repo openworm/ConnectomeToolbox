@@ -402,7 +402,7 @@ def generate_cell_info_pages(connectomes):
 </tr><tr>
     <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>
-    <td><b><a href="#membrane-contacts-to-{cell.lower()}">Contactomic</a></b></td>  <td colspan="5" align="middle"><b>IN:</b> {conns_to_cont}<br/><b>OUT:</b> {conns_from_cont}</td>
+    <td><b><a href="#membrane-contacts-to-{cell.lower()}" title="Contactome from {reference_cont}">Contactomic</a></b></td>  <td colspan="5" align="middle"><b>IN:</b> {conns_to_cont}<br/><b>OUT:</b> {conns_from_cont}</td>
 </tr>
 </table>
 
