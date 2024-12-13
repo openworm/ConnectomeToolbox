@@ -263,8 +263,7 @@ def generate_cell_info_pages(connectomes):
         conns_to_pep = "???"
         conns_from_func = "???"
         conns_to_func = "???"
-        conns_from_cont = "???"
-        conns_to_cont = "???"
+        conns_cont = "???"
         conns_gj = "???"
 
         tables_md = ""
@@ -304,7 +303,7 @@ def generate_cell_info_pages(connectomes):
                     if cds_name == reference_func:
                         conns_to_func = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_cont:
-                        conns_to_cont = _get_top_list(conns, max_conn_cells)
+                        conns_cont = _get_top_list(conns, max_conn_cells)
 
                     for c in conns:
                         cc = get_cell_internal_link(
@@ -353,7 +352,7 @@ def generate_cell_info_pages(connectomes):
                         if cds_name == reference_func:
                             conns_from_func = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_cont:
-                            conns_from_cont = _get_top_list(conns, max_conn_cells)
+                            pass  # same as to...
 
                         for c in conns:
                             cc = get_cell_internal_link(
@@ -402,7 +401,7 @@ def generate_cell_info_pages(connectomes):
 </tr><tr>
     <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>
-    <td><b><a href="#membrane-contacts-to-{cell.lower()}" title="Contactome from {reference_cont}">Contactomic</a></b></td>  <td colspan="5" align="middle"><b>IN:</b> {conns_to_cont}<br/><b>OUT:</b> {conns_from_cont}</td>
+    <td><b><a href="#membrane-contacts-to-{cell.lower()}" title="Contactome from {reference_cont}">Contactomic</a></b></td>  <td colspan="5" align="middle">{conns_cont}</td>
 </tr>
 </table>
 

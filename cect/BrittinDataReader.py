@@ -12,6 +12,8 @@ from cect.ConnectomeReader import analyse_connections
 
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.Cells import is_one_of_bilateral_pair
+from cect.Cells import get_contralateral_neuron
 
 import os
 from openpyxl import load_workbook
@@ -40,7 +42,7 @@ class BrittinDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(conn, check_overwritten_connections=True)
 
     def read_data(self):
         cells = []
@@ -49,6 +51,9 @@ class BrittinDataReader(ConnectomeDataset):
         wb = load_workbook(filename)
 
         sheet = wb.get_sheet_by_name(self.reference_graph)
+
+        bilaterals = []
+        single_cells = []
 
         print_("Opened sheet %s in Excel file: %s" % (sheet, filename))
         # print(dir(sheet))
@@ -64,14 +69,39 @@ class BrittinDataReader(ConnectomeDataset):
                     syntype = "Contact"
                     synclass = "%s%s" % (self.reference_graph, row[3].value)
                     synclass = "Contact"
+
                     ci = ConnectionInfo(pre, post, num, syntype, synclass)
-                    # print("Adding  %s" % ci)
+                    conns.append(ci)
+                    ci = ConnectionInfo(post, pre, num, syntype, synclass)
                     conns.append(ci)
 
                     if pre not in cells:
                         cells.append(pre)
                     if post not in cells:
                         cells.append(post)
+
+                    pre_ = get_contralateral_neuron(pre)
+                    post_ = get_contralateral_neuron(post)
+                    ci_ = ConnectionInfo(pre_, post_, num, syntype, synclass)
+                    conns.append(ci_)
+                    ci_ = ConnectionInfo(post_, pre_, num, syntype, synclass)
+                    conns.append(ci_)
+
+                    if pre_ not in cells:
+                        cells.append(pre_)
+                    if post_ not in cells:
+                        cells.append(post_)
+
+        for cell in cells:
+            if is_one_of_bilateral_pair(cell):
+                bilaterals.append(cell)
+            else:
+                single_cells.append(cell)
+
+        print_(
+            "Finished processing %i cells, %i bilateral and %i single cells: %s"
+            % (len(cells), len(bilaterals), len(single_cells), sorted(single_cells))
+        )
 
         return cells, conns
 
