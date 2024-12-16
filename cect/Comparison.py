@@ -179,8 +179,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
         readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
         readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
         readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
-
-    readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
 
     readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 

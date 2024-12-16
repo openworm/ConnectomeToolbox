@@ -501,7 +501,7 @@ MALE_HEAD_SENSORY_NEURONS = ["CEMDL", "CEMDR", "CEMVL", "CEMVR"]
 for cell in MALE_HEAD_SENSORY_NEURONS:
     cell_notes[cell] = "male head sensory neuron"
 
-MALE_SENSORY_NEURONS = [
+MALE_NON_HEAD_SENSORY_NEURONS = [
     "R1AL",
     "R1AR",
     "R1BL",
@@ -556,10 +556,10 @@ MALE_SENSORY_NEURONS = [
     "SPVR",
 ]
 
-for cell in MALE_SENSORY_NEURONS:
+for cell in MALE_NON_HEAD_SENSORY_NEURONS:
     cell_notes[cell] = "male sensory neuron"
 
-MALE_INTERNEURONS = [
+MALE_NON_HEAD_INTERNEURONS = [
     "PVV",
     "PVX",
     "PVY",
@@ -595,15 +595,15 @@ MALE_INTERNEURONS = [
 ]
 
 
-for cell in MALE_INTERNEURONS:
+for cell in MALE_NON_HEAD_INTERNEURONS:
     cell_notes[cell] = "male interneuron"
 
 
 MALE_SPECIFIC_NEURONS = (
     MALE_HEAD_INTERNEURONS
+    + MALE_NON_HEAD_INTERNEURONS
     + MALE_HEAD_SENSORY_NEURONS
-    + MALE_INTERNEURONS
-    + MALE_SENSORY_NEURONS
+    + MALE_NON_HEAD_SENSORY_NEURONS
 )
 
 UNKNOWN_FUNCTION_NEURONS = ["CANL", "CANR"]
@@ -1524,7 +1524,9 @@ def get_primary_classification():
                         classification[cell] = cell_type
                 elif cell_type == "interneuron":
                     for cell in (
-                        INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS
+                        INTERNEURONS_COOK
+                        + MALE_HEAD_INTERNEURONS
+                        + MALE_NON_HEAD_INTERNEURONS
                     ):
                         classification[cell] = cell_type
                 elif cell_type == "motor neuron":
@@ -1534,7 +1536,7 @@ def get_primary_classification():
                     for cell in (
                         SENSORY_NEURONS_COOK
                         + MALE_HEAD_SENSORY_NEURONS
-                        + MALE_SENSORY_NEURONS
+                        + MALE_NON_HEAD_SENSORY_NEURONS
                     ):
                         classification[cell] = cell_type
                 elif cell_type == "odd numbered pharyngeal muscle":
@@ -1955,10 +1957,15 @@ def get_standard_color(cell: str):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["odd numbered pharyngeal muscle"]
     elif cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["even numbered pharyngeal muscle"]
-    elif cell in INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS:
+    elif (
+        cell in INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_NON_HEAD_INTERNEURONS
+    ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
     elif (
-        cell in SENSORY_NEURONS_COOK + MALE_HEAD_SENSORY_NEURONS + MALE_SENSORY_NEURONS
+        cell
+        in SENSORY_NEURONS_COOK
+        + MALE_HEAD_SENSORY_NEURONS
+        + MALE_NON_HEAD_SENSORY_NEURONS
     ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
     elif cell in MOTORNEURONS_COOK:
@@ -2430,7 +2437,7 @@ if __name__ == "__main__":
                                     cell_type,
                                     INTERNEURONS_COOK
                                     + MALE_HEAD_INTERNEURONS
-                                    + MALE_INTERNEURONS,
+                                    + MALE_NON_HEAD_INTERNEURONS,
                                 )
                             )
                         elif cell_type == "motor neuron":
@@ -2441,7 +2448,7 @@ if __name__ == "__main__":
                                     cell_type,
                                     SENSORY_NEURONS_COOK
                                     + MALE_HEAD_SENSORY_NEURONS
-                                    + MALE_SENSORY_NEURONS,
+                                    + MALE_NON_HEAD_SENSORY_NEURONS,
                                 )
                             )
                         elif cell_type == "odd numbered pharyngeal muscle":

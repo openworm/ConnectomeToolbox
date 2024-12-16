@@ -5,22 +5,25 @@ from cect.Cells import get_contralateral_neuron
 
 
 def test_bilaterals():
-    from cect.BrittinDataReader import get_instance
+    from cect.White_whole import get_instance
 
     """
-    from cect.White_whole import get_instance
-    from cect.WormNeuroAtlasMAReader import get_instance
-    from cect.WormNeuroAtlasFuncReader import get_instance
-    from cect.Cook2019HermReader import get_instance
     from cect.Cook2019MaleReader import get_instance
+    from cect.Cook2019HermReader import get_instance
     from cect.WitvlietDataReader1 import get_instance
     from cect.WitvlietDataReader8 import get_instance
-    from cect.RipollSanchezDataReader import get_instance
     from cect.TestDataReader import get_instance
+    from cect.SpreadsheetDataReader import get_instance
     from cect.Cook2020DataReader import get_instance
+    from cect.BrittinDataReader import get_instance
+    from cect.WormNeuroAtlasMAReader import get_instance
+    from cect.WormNeuroAtlasFuncReader import get_instance
+    from cect.RipollSanchezDataReader import get_instance
     from cect.ConnectomeView import PHARYNX_VIEW as view
-    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_VIEW as view"""
+    from cect.ConnectomeView import SOCIAL_VIEW as view
     from cect.ConnectomeView import NEURONS_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view"""
+    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_VIEW as view
 
     print(
         "NOTE: For the sake of this paper, we excluded the pharyngeal neurons from the connectome data for both genders due to their distinction from the somatic nervous system."
@@ -31,7 +34,7 @@ def test_bilaterals():
     cds2 = cds.get_connectome_view(view)
 
     synclass = "Chemical Inh"
-    synclass = "Chemical Exc"
+    synclass = "Chemical Exc" if "Raw" not in view.name else "Chemical"
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
@@ -59,22 +62,27 @@ def test_bilaterals():
     array_info(new_conn_array)
 
     for synclass in [
+        "Chemical",
         "Chemical Exc",
+        "Chemical Inh",
         "Electrical",
         "Contact",
         "Functional",
         "Extrasynaptic",
     ]:
         print("   Adding conns of type: %s" % synclass)
-        conns_cs = cds2.connections[synclass]
+        if synclass in cds2.connections:
+            conns_cs = cds2.connections[synclass]
 
-        array_info(conns_cs)
-        for i in range(len(conns_cs)):
-            for j in range(len(conns_cs[i])):
-                if (
-                    i != j
-                ):  #  Kim et al 2024: Self-connections are treated as nonexistent (∀𝐴𝑖𝑖 = 0).
-                    new_conn_array[i, j] = new_conn_array[i, j] or conns_cs[i, j] > 0
+            array_info(conns_cs)
+            for i in range(len(conns_cs)):
+                for j in range(len(conns_cs[i])):
+                    if (
+                        i != j
+                    ):  #  Kim et al 2024: Self-connections are treated as nonexistent (∀𝐴𝑖𝑖 = 0).
+                        new_conn_array[i, j] = (
+                            new_conn_array[i, j] or conns_cs[i, j] > 0
+                        )
 
     amal = "CS+GJ"
     print("Amalgamated array:")
