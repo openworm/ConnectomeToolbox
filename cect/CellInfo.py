@@ -247,6 +247,7 @@ def generate_cell_info_pages(connectomes):
         )
 
         reference_cs = "Cook2019Male" if is_male_specific_cell(cell) else "Cook2019Herm"
+        # reference_cs = "White_whole"
 
         reference_gj = reference_cs
         reference_mono = "Bentley2016_MA"
@@ -262,8 +263,7 @@ def generate_cell_info_pages(connectomes):
         conns_to_pep = "???"
         conns_from_func = "???"
         conns_to_func = "???"
-        conns_from_cont = "???"
-        conns_to_cont = "???"
+        conns_cont = "???"
         conns_gj = "???"
 
         tables_md = ""
@@ -303,7 +303,7 @@ def generate_cell_info_pages(connectomes):
                     if cds_name == reference_func:
                         conns_to_func = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_cont:
-                        conns_to_cont = _get_top_list(conns, max_conn_cells)
+                        conns_cont = _get_top_list(conns, max_conn_cells)
 
                     for c in conns:
                         cc = get_cell_internal_link(
@@ -352,7 +352,7 @@ def generate_cell_info_pages(connectomes):
                         if cds_name == reference_func:
                             conns_from_func = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_cont:
-                            conns_from_cont = _get_top_list(conns, max_conn_cells)
+                            pass  # same as to...
 
                         for c in conns:
                             cc = get_cell_internal_link(
@@ -382,24 +382,26 @@ def generate_cell_info_pages(connectomes):
 
 <table style="width:700px">
 <tr>
-    <td><b><a href="#chemical-synaptic-connections-to-{cell.lower()}">Chemical</a></b></td>
+    <td><b><a href="#electrical-synaptic-connections-fromto-{cell.lower()}" title="Electrical connectivity from {reference_cs}">Electrical</a></b></td> <td colspan="5" align="middle">{conns_gj}</td> 
+</tr><tr>
+    <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
+</tr><tr>
+    <td><b><a href="#chemical-synaptic-connections-to-{cell.lower()}" title="Chemical synaptic connectivity from {reference_cs}">Chemical</a></b></td>
     <td style="width:40%">{conns_to_cs}</td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2198</td>
     <td rowspan="5" style="vertical-align:middle;text-align:center;"><b>{cell_link}</b></td>
     <td style="width:5%" style="vertical-align:bottom;text-align:center;">\u2197</td>
     <td style="width:40%">{conns_from_cs}</td>
 </tr><tr>
-    <td><b><a href="#monoaminergic-connections-to-{cell.lower()}">Monoaminergic</a></b></td><td>{conns_to_mono}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_mono}</td>
+    <td><b><a href="#monoaminergic-connections-to-{cell.lower()}" title="Monoaminergic connectivity from {reference_mono}">Monoaminergic</a></b></td><td>{conns_to_mono}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_mono}</td>
 </tr><tr>
-    <td><b><a href="#peptidergic-connections-to-{cell.lower()}">Peptidergic</a></b></td>  <td>{conns_to_pep}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_pep}</td>
+    <td><b><a href="#peptidergic-connections-to-{cell.lower()}" title="Peptidergic connectivity from {reference_pep}">Peptidergic</a></b></td>  <td>{conns_to_pep}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_pep}</td>
 </tr><tr>
-    <td><b><a href="#functional-connections-to-{cell.lower()}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_func}</td>
-</tr><tr>
-    <td><b><a href="#membrane-contacts-to-{cell.lower()}">Contactome</a></b></td>   <td>{conns_to_cont}</td><td align="middle">\u2197</td><td align="middle">\u2198</td><td>{conns_from_cont}</td>
+    <td><b><a href="#functional-connections-to-{cell.lower()}" title="Functional connectivity from {reference_func}">Functional</a></b></td>   <td>{conns_to_func}</td><td align="middle">→</td><td align="middle">→</td><td>{conns_from_func}</td>
 </tr><tr>
     <td>&nbsp;</td> <td colspan="5" align="middle">\u2195</td> 
 </tr><tr>
-    <td><b><a href="#electrical-synaptic-connections-fromto-{cell.lower()}">Electrical</a></b></td> <td colspan="5" align="middle">{conns_gj}</td> 
+    <td><b><a href="#membrane-contacts-to-{cell.lower()}" title="Contactome from {reference_cont}">Contactomic</a></b></td>  <td colspan="5" align="middle">{conns_cont}</td>
 </tr>
 </table>
 

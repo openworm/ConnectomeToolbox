@@ -7,6 +7,7 @@ from cect.Cells import get_short_description
 from cect.Cells import get_standard_color
 from cect.Cells import is_bilateral_left
 from cect.Cells import is_bilateral_right
+from cect.Cells import is_one_of_bilateral_pair
 from cect.Cells import are_bilateral_pair
 from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
@@ -16,6 +17,7 @@ from cect.Cells import is_known_body_wall_muscle
 from cect.Cells import is_known_muscle
 from cect.Cells import is_pharyngeal_cell
 from cect.Cells import is_known_cell
+from cect.Cells import get_SIM_class
 
 import numpy as np
 import math
@@ -23,8 +25,6 @@ import sys
 import networkx as nx
 import pprint
 import random
-
-from cect.Cells import get_SIM_class
 
 random.seed(10)
 
@@ -101,7 +101,9 @@ class ConnectomeDataset:
 
         return Gn
 
-    def add_connection_info(self, conn: ConnectionInfo):
+    def add_connection_info(
+        self, conn: ConnectionInfo, check_overwritten_connections: bool = False
+    ):
         if self.verbose:
             print_("----   Adding: %s" % conn)
 
@@ -130,6 +132,26 @@ class ConnectomeDataset:
 
         pre_index = self.nodes.index(conn.pre_cell)
         post_index = self.nodes.index(conn.post_cell)
+
+        if conn_array[pre_index, post_index] != 0:
+            print_(
+                "Preexisting connection (%i conns already) at (%i,%i) - %s..."
+                % (len(self.connection_infos), pre_index, post_index, conn)
+            )
+            if conn_array[pre_index, post_index] != conn.number:
+                info = (
+                    " *** Existing connection at (%i,%i), was: %s, setting to: %s"
+                    % (
+                        pre_index,
+                        post_index,
+                        conn_array[pre_index, post_index],
+                        conn.number,
+                    )
+                )
+                if check_overwritten_connections:
+                    raise Exception(info)
+                else:
+                    print_(info)
 
         conn_array[pre_index, post_index] = conn.number
 
@@ -303,24 +325,30 @@ class ConnectomeDataset:
         return cv
 
     def summary(self):
-        info = "Nodes present: %s\n" % self.nodes
+        info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
         for c in self.connections:
             conn_array = self.connections[c]
-            info += (
-                "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
-                % (
-                    c,
-                    conn_array.shape,
-                    np.count_nonzero(conn_array),
-                    np.sum(conn_array),
-                    conn_array,
+            nonzero = np.count_nonzero(conn_array)
+            if nonzero > 0:
+                info += (
+                    "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
+                    % (
+                        c,
+                        conn_array.shape,
+                        nonzero,
+                        np.sum(conn_array),
+                        conn_array,
+                    )
                 )
-            )
         return info
 
-    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=None):
-        import plotly.express as px
-
+    def to_plotly_matrix_fig(
+        self,
+        synclass: str,
+        view: str,
+        color_continuous_scale: bool = None,
+        bold_bilaterals: bool = False,
+    ):
         conn_array = self.connections[synclass]
 
         zmin = np.min(conn_array)
@@ -343,12 +371,15 @@ class ConnectomeDataset:
         )
 
         def get_color_html(color, node):
-            return f'<span style="color:{color};">{node}</span>'
+            font_weight = ""
+            if bold_bilaterals and is_one_of_bilateral_pair(node):
+                font_weight = "font-weight:bold;"
+            return f'<span style="color:{color};{font_weight}">{node}</span>'
 
         node_colors = [
             (
                 view.get_node_set(node).color
-                if view.has_color()
+                if view is not None and view.has_color()
                 else get_standard_color(node)
             )
             for node in self.nodes
@@ -360,6 +391,8 @@ class ConnectomeDataset:
         y_ticktext = [
             get_color_html(color, node) for node, color in zip(self.nodes, node_colors)
         ]
+
+        import plotly.express as px
 
         fig = px.imshow(
             conn_array,
@@ -390,7 +423,7 @@ class ConnectomeDataset:
         other_line = False
 
         for i, node_value in enumerate(self.nodes):
-            if not view.get_node_set(node_value).is_one_cell():
+            if view is not None and not view.get_node_set(node_value).is_one_cell():
                 break
 
             if not sens_line and node_value in SENSORY_NEURONS_NONPHARYNGEAL_COOK:

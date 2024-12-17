@@ -13,6 +13,8 @@ import sys
 from cect.WormAtlasInfo import WA_COLORS
 from cect import print_
 
+from typing import List
+
 
 ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "Acetylcholine",
@@ -41,7 +43,7 @@ cell_notes = {}
 connectomes = None
 
 
-def get_cell_notes(cell):
+def get_cell_notes(cell: str):
     """Get a short description of the cell, mainly cell type
 
     Args:
@@ -499,7 +501,7 @@ MALE_HEAD_SENSORY_NEURONS = ["CEMDL", "CEMDR", "CEMVL", "CEMVR"]
 for cell in MALE_HEAD_SENSORY_NEURONS:
     cell_notes[cell] = "male head sensory neuron"
 
-MALE_SENSORY_NEURONS = [
+MALE_NON_HEAD_SENSORY_NEURONS = [
     "R1AL",
     "R1AR",
     "R1BL",
@@ -554,10 +556,10 @@ MALE_SENSORY_NEURONS = [
     "SPVR",
 ]
 
-for cell in MALE_SENSORY_NEURONS:
+for cell in MALE_NON_HEAD_SENSORY_NEURONS:
     cell_notes[cell] = "male sensory neuron"
 
-MALE_INTERNEURONS = [
+MALE_NON_HEAD_INTERNEURONS = [
     "PVV",
     "PVX",
     "PVY",
@@ -593,15 +595,15 @@ MALE_INTERNEURONS = [
 ]
 
 
-for cell in MALE_INTERNEURONS:
+for cell in MALE_NON_HEAD_INTERNEURONS:
     cell_notes[cell] = "male interneuron"
 
 
 MALE_SPECIFIC_NEURONS = (
     MALE_HEAD_INTERNEURONS
+    + MALE_NON_HEAD_INTERNEURONS
     + MALE_HEAD_SENSORY_NEURONS
-    + MALE_INTERNEURONS
-    + MALE_SENSORY_NEURONS
+    + MALE_NON_HEAD_SENSORY_NEURONS
 )
 
 UNKNOWN_FUNCTION_NEURONS = ["CANL", "CANR"]
@@ -1522,7 +1524,9 @@ def get_primary_classification():
                         classification[cell] = cell_type
                 elif cell_type == "interneuron":
                     for cell in (
-                        INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS
+                        INTERNEURONS_COOK
+                        + MALE_HEAD_INTERNEURONS
+                        + MALE_NON_HEAD_INTERNEURONS
                     ):
                         classification[cell] = cell_type
                 elif cell_type == "motor neuron":
@@ -1532,7 +1536,7 @@ def get_primary_classification():
                     for cell in (
                         SENSORY_NEURONS_COOK
                         + MALE_HEAD_SENSORY_NEURONS
-                        + MALE_SENSORY_NEURONS
+                        + MALE_NON_HEAD_SENSORY_NEURONS
                     ):
                         classification[cell] = cell_type
                 elif cell_type == "odd numbered pharyngeal muscle":
@@ -1669,7 +1673,7 @@ def get_primary_classification():
     return classification
 
 
-def is_known_cell(cell):
+def is_known_cell(cell: str):
     """Is this string the name of one of the known cells?
 
     Args:
@@ -1681,7 +1685,7 @@ def is_known_cell(cell):
     return cell in ALL_PREFERRED_CELL_NAMES
 
 
-def get_SIM_class(cell):
+def get_SIM_class(cell: str):
     """
     PROVISIONAL method to return whether a cell is Sensory/Interneuron/Motorneuron (or Other)
 
@@ -1717,11 +1721,33 @@ def get_SIM_class(cell):
         return "Other"
 
 
-def is_one_of_bilateral_pair(cell):
+def is_one_of_bilateral_pair(cell: str):
     return is_bilateral_left(cell) or is_bilateral_right(cell)
 
 
-def is_bilateral_left(cell):
+def get_contralateral_neuron(cell: str):
+    """Gets the contralateral neuron for a given neuron, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
+
+    Args:
+        cell (_type_): _description_
+
+    Raises:
+        Exception: _description_
+
+    Returns:
+        _type_: _description_
+    """
+    if not is_any_neuron(cell):
+        raise Exception("Not yet implemented/tested for non neuronal cells")
+    if is_bilateral_left(cell):
+        return cell[:-1] + "R"
+    if is_bilateral_right(cell):
+        return cell[:-1] + "L"
+    else:
+        return cell
+
+
+def is_bilateral_left(cell: str):
     if (
         cell in ALL_PREFERRED_CELL_NAMES
         and cell.endswith("L")
@@ -1732,7 +1758,7 @@ def is_bilateral_left(cell):
         return False
 
 
-def is_bilateral_right(cell):
+def is_bilateral_right(cell: str):
     if (
         cell in ALL_PREFERRED_CELL_NAMES
         and cell.endswith("R")
@@ -1743,7 +1769,7 @@ def is_bilateral_right(cell):
         return False
 
 
-def convert_to_preferred_muscle_name(muscle):
+def convert_to_preferred_muscle_name(muscle: str):
     if muscle.startswith("BWM-VL"):
         return "MVL%s" % muscle[6:]
     elif muscle.startswith("BWM-VR"):
@@ -1813,7 +1839,7 @@ def convert_to_preferred_muscle_name(muscle):
             return muscle + "???"
 
 
-def convert_to_preferred_phar_cell_name(cell):
+def convert_to_preferred_phar_cell_name(cell: str):
     if cell == "mc1v":
         return "mc1V"
     elif cell == "mc1dr":
@@ -1843,7 +1869,7 @@ def get_marginal_cell_prefixes():
     return ["mc"]
 
 
-def is_marginal_cell(cell):
+def is_marginal_cell(cell: str):
     known_mc_prefix = get_marginal_cell_prefixes()
     return cell.startswith(tuple(known_mc_prefix))
 
@@ -1856,48 +1882,48 @@ def get_body_wall_muscle_prefixes():
     return ["BWM-D", "BWM-V", "LegacyBodyWallMuscles", "vBWM", "dBWM"]
 
 
-def is_potential_muscle(cell):
+def is_potential_muscle(cell: str):
     if cell in PREFERRED_MUSCLE_NAMES:
         return True
     known_muscle_prefixes = get_all_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
 
-def is_known_muscle(cell):
+def is_known_muscle(cell: str):
     if cell in PREFERRED_MUSCLE_NAMES:
         return True
     return False
 
 
-def is_potential_body_wall_muscle(cell):
+def is_potential_body_wall_muscle(cell: str):
     known_muscle_prefixes = get_body_wall_muscle_prefixes()
     return cell.startswith(tuple(known_muscle_prefixes))
 
 
-def is_known_body_wall_muscle(cell):
+def is_known_body_wall_muscle(cell: str):
     return cell in BODY_WALL_MUSCLE_NAMES
 
 
-def is_pharyngeal_cell(cell):
+def is_pharyngeal_cell(cell: str):
     return cell in ALL_PHARYNGEAL_CELLS
 
 
-def is_herm_neuron(cell):
+def is_herm_neuron(cell: str):
     return cell in PREFERRED_HERM_NEURON_NAMES
 
 
-def is_male_specific_cell(cell):
+def is_male_specific_cell(cell: str):
     return (
         cell
         in MALE_SPECIFIC_NEURONS + MALE_SPECIFIC_MUSCLES + MALE_SPECIFIC_OTHER_CELLS
     )
 
 
-def is_any_neuron(cell):
+def is_any_neuron(cell: str):
     return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
-def remove_leading_index_zero(cell):
+def remove_leading_index_zero(cell: str):
     """
     Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
     """
@@ -1908,7 +1934,7 @@ def remove_leading_index_zero(cell):
     return cell
 
 
-def are_bilateral_pair(cell_a, cell_b):
+def are_bilateral_pair(cell_a: str, cell_b: str):
     if cell_a[:-1] == cell_b[:-1] and (
         (cell_a[-1] == "L" and cell_b[-1] == "R")
         or (cell_b[-1] == "L" and cell_a[-1] == "R")
@@ -1918,7 +1944,7 @@ def are_bilateral_pair(cell_a, cell_b):
         return False
 
 
-def get_standard_color(cell):
+def get_standard_color(cell: str):
     from cect.WormAtlasInfo import WA_COLORS
 
     if cell in BODY_WALL_MUSCLE_NAMES + UNSPECIFIED_BODY_WALL_MUSCLES:
@@ -1931,10 +1957,15 @@ def get_standard_color(cell):
         return WA_COLORS["Hermaphrodite"]["Muscle"]["odd numbered pharyngeal muscle"]
     elif cell in EVEN_PHARYNGEAL_MUSCLE_NAMES:
         return WA_COLORS["Hermaphrodite"]["Muscle"]["even numbered pharyngeal muscle"]
-    elif cell in INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_INTERNEURONS:
+    elif (
+        cell in INTERNEURONS_COOK + MALE_HEAD_INTERNEURONS + MALE_NON_HEAD_INTERNEURONS
+    ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["interneuron"]
     elif (
-        cell in SENSORY_NEURONS_COOK + MALE_HEAD_SENSORY_NEURONS + MALE_SENSORY_NEURONS
+        cell
+        in SENSORY_NEURONS_COOK
+        + MALE_HEAD_SENSORY_NEURONS
+        + MALE_NON_HEAD_SENSORY_NEURONS
     ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
     elif cell in MOTORNEURONS_COOK:
@@ -2021,7 +2052,7 @@ def get_standard_color(cell):
         raise Exception("Unknown cell: %s!" % cell)
 
 
-def get_short_description(cell):
+def get_short_description(cell: str):
     if cell in cell_notes:
         desc = cell_notes[cell]
         if cell in SENSORY_NEURONS_COOK:
@@ -2061,7 +2092,11 @@ def get_short_description(cell):
 
 
 def get_cell_internal_link(
-    cell_name, html=False, text=None, use_color=False, individual_cell_page=False
+    cell_name: str,
+    html: bool = False,
+    text: str = None,
+    use_color: bool = False,
+    individual_cell_page: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
 
@@ -2087,7 +2122,7 @@ def get_cell_internal_link(
         )
 
 
-def get_cell_osbv1_link(cell, text="OSB 3D", button=False):
+def get_cell_osbv1_link(cell: str, text: str = "OSB 3D", button: bool = False):
     osbv1_link = f"https://v1.opensourcebrain.org/projects/c302/repository/revisions/development/show/examples/cells?explorer=https%253A%252F%252Fraw.githubusercontent.com%252Fopenworm%252Fc302%252Fdevelopment%252Fexamples%252Fcells%252F{cell}.cell.nml"
 
     if button:
@@ -2095,7 +2130,9 @@ def get_cell_osbv1_link(cell, text="OSB 3D", button=False):
     return f'<a href="{osbv1_link}">{text}</a>' if is_herm_neuron(cell) else ""
 
 
-def get_cell_wormatlas_link(cell_name, html=False, text=None, button=False):
+def get_cell_wormatlas_link(
+    cell_name: str, html: bool = False, text: str = None, button: bool = False
+):
     url = None
 
     known_other = {
@@ -2229,7 +2266,7 @@ def get_cell_wormatlas_link(cell_name, html=False, text=None, button=False):
         return cell_name
 
 
-def _get_dataset_link(reader_name, html=False, text=None):
+def _get_dataset_link(reader_name: str, html: bool = False, text: str = None):
     url = "%s_data_graph.md" % reader_name
 
     if html:
@@ -2238,7 +2275,7 @@ def _get_dataset_link(reader_name, html=False, text=None):
         return "[%s](%s)" % (reader_name if text is None else text, url)
 
 
-def _generate_cell_table(cell_type, cells):
+def _generate_cell_table(cell_type: str, cells: List[str]):
     import plotly.graph_objects as go
 
     from cect.Comparison import _format_json
@@ -2400,7 +2437,7 @@ if __name__ == "__main__":
                                     cell_type,
                                     INTERNEURONS_COOK
                                     + MALE_HEAD_INTERNEURONS
-                                    + MALE_INTERNEURONS,
+                                    + MALE_NON_HEAD_INTERNEURONS,
                                 )
                             )
                         elif cell_type == "motor neuron":
@@ -2411,7 +2448,7 @@ if __name__ == "__main__":
                                     cell_type,
                                     SENSORY_NEURONS_COOK
                                     + MALE_HEAD_SENSORY_NEURONS
-                                    + MALE_SENSORY_NEURONS,
+                                    + MALE_NON_HEAD_SENSORY_NEURONS,
                                 )
                             )
                         elif cell_type == "odd numbered pharyngeal muscle":

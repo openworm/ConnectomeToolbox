@@ -303,10 +303,6 @@ VD8,Ventral cord motor neuron,Ventral D-type Motor Neuron 8,P7.app,"Ventralcord 
 VD9,Ventral cord motor neuron,Ventral D-type Motor Neuron 9,P8.app,"Ventral cord motor neuron, innervates vent body muscles, reciprocal inhibitor"
 MCML,Male head interneuron,Mystery Cell of the Male Left,AmsoL,Male specific interneuron
 MCMR,Male head interneuron,Mystery Cell of the Male Right,AmsoR,Male specific interneuron
-CEMDL,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Left,AB plaaaaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMDR,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Right,AB arpapaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMVL,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Left,AB plpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
-CEMVR,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Right,AB prpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
 PVV,Male interneuron,Posterior Ventral Process V,P11.paaa,"Male specific motor neuron, pre-anal ganglion"
 PVX,Male interneuron,Posterior Ventral Process X,P12.aap,"Male specific interneuron, cell body in pre-anal ganglion, postsynaptic in ring and ventral cord"
 PVY,Male interneuron,Posterior Ventral Process Y,P11.paap,"Male specific interneuron, cell body in pre-anal ganglion"
@@ -339,6 +335,10 @@ CP06,Male interneuron,"C-type Neuron, Posterior Daughter after Division 6",P8.aa
 CP07,Male interneuron,"C-type Neuron, Posterior Daughter after Division 7",P9.aapp,Male specific motor neuron in ventral cord
 CP08,Male interneuron,"C-type Neuron, Posterior Daughter after Division 8",P10.aapp,"Male specific interneuron, projects into preanal ganglion"
 CP09,Male interneuron,"C-type Neuron, Posterior Daughter after Division 9",P11.aapp,"Male specific interneuron, projects into preanal ganglion"
+CEMDL,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Left,AB plaaaaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMDR,Male head sensory neuron,CEphalic Male Sensory Neuron Dorsal Right,AB arpapaaap,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMVL,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Left,AB plpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
+CEMVR,Male head sensory neuron,CEphalic Male Sensory Neuron Ventral Right,AB prpaapapp,"Male specific cephalic neurons (programmed cell death in hermaphrodite embryo) open to outside, possible function in male chemotaxis toward hermaphrodite"
 R1AL,Male sensory neuron,Ray 1 Neuron A Left,"V5L.pppppaaa, (R1.aaaL)","Male sensory rays, neuron, striated rootlet, cell body in left lumbar ganglion"
 R1AR,Male sensory neuron,Ray 1 Neuron A Right,"V5R.pppppaaa, (R1.aaaR)","Male sensory rays, neuron, striated rootlet, cell body in right lumbar ganglion"
 R1BL,Male sensory neuron,Ray 1 Neuron B Left,"V5L.pppppapa, (R1.apaL)","Male sensory rays, neuron, darkly staining tip, open to outside, cell body in left lumbar ganglion"

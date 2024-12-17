@@ -7,6 +7,10 @@ from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import UNKNOWN_FUNCTION_NEURONS
 from cect.Cells import MALE_SPECIFIC_NEURONS
+from cect.Cells import MALE_HEAD_INTERNEURONS
+from cect.Cells import MALE_NON_HEAD_INTERNEURONS
+from cect.Cells import MALE_HEAD_SENSORY_NEURONS
+from cect.Cells import MALE_NON_HEAD_SENSORY_NEURONS
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import ALL_NON_NEURON_MUSCLE_CELLS
 
@@ -156,15 +160,41 @@ RAW_VIEW = View(
 NEURONS_VIEW = View(
     "Neurons",
     "Neurons",
-    "All 302 hermaphrodite neurons (whether present or not in the connectome dataset)",
+    "All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
+NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
+    "Nonpharyngeal",
+    "Nonpharyngeal Neurons",
+    "All **hermaphrodite** neurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
+NONPHARYNGEAL_NEURONS_HM_VIEW = View(
+    "Nonpharyngeal",
+    "Nonpharyngeal Neurons",
+    "All neurons (herm. & male) except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 for cell in (
     sorted(PHARYNGEAL_NEURONS)
-    + sorted(SENSORY_NEURONS_NONPHARYNGEAL_COOK)
-    + sorted(INTERNEURONS_NONPHARYNGEAL_COOK)
+    + sorted(
+        SENSORY_NEURONS_NONPHARYNGEAL_COOK
+        + MALE_HEAD_SENSORY_NEURONS
+        + MALE_NON_HEAD_SENSORY_NEURONS
+    )
+    + sorted(
+        INTERNEURONS_NONPHARYNGEAL_COOK
+        + MALE_HEAD_INTERNEURONS
+        + MALE_NON_HEAD_INTERNEURONS
+    )
     + sorted(
         HEAD_MOTORNEURONS_COOK
         + VENTRAL_CORD_MOTORNEURONS
@@ -174,14 +204,21 @@ for cell in (
     )
     + sorted(UNKNOWN_FUNCTION_NEURONS)
 ):
-    NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
-for cell in (
-    sorted(MALE_SPECIFIC_NEURONS)
-    + sorted(PREFERRED_MUSCLE_NAMES)
-    + sorted(ALL_NON_NEURON_MUSCLE_CELLS)
-):
+    if cell not in MALE_SPECIFIC_NEURONS:
+        NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
+
+    if cell not in PHARYNGEAL_NEURONS:
+        if cell not in MALE_SPECIFIC_NEURONS:
+            NONPHARYNGEAL_NEURONS_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        NONPHARYNGEAL_NEURONS_HM_VIEW.node_sets.append(
+            NodeSet(cell, [cell], get_standard_color(cell))
+        )
+
+for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 assert len(NEURONS_VIEW.node_sets) == 302
@@ -473,6 +510,7 @@ ALL_VIEWS = [
     RAW_VIEW,
     NEURONS_VIEW,
     PHARYNX_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
     SOCIAL_VIEW,
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
@@ -498,7 +536,11 @@ if __name__ == "__main__":
         EXC_INH_GJ_SYN_CLASSES,
     )
 
-    from cect.TestDataReader import tdr_instance
+    # from cect.TestDataReader import get_instance
+    # from cect.Cook2019HermReader import get_instance
+    from cect.White_whole import get_instance
+
+    tdr_instance = get_instance()
 
     print(NodeSet(COOK_FIG3_VIEW, COOK_FIG3_VIEW))
 
@@ -523,6 +565,9 @@ if __name__ == "__main__":
 
     print("------- Escape ---------")
     print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
+
+    print("------- Nonpharyngeal ---------")
+    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES

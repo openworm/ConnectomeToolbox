@@ -5,25 +5,25 @@ search:
 ---
 
 
-!!! example inline "Choose Dataset"
+!!! example "Choose Dataset"
 
     <a href="../PeptidergicHubs_White_A_data_hiveplot">White_A</a> <a href="../PeptidergicHubs_White_L4_data_hiveplot">White_L4</a> <a href="../PeptidergicHubs_White_whole_data_hiveplot">White_whole</a> <a href="../PeptidergicHubs_Varshney_data_hiveplot">Varshney</a> <a href="../PeptidergicHubs_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../PeptidergicHubs_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../PeptidergicHubs_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../PeptidergicHubs_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../PeptidergicHubs_Cook2020_data_hiveplot">Cook2020</a> <a href="../PeptidergicHubs_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../PeptidergicHubs_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../PeptidergicHubs_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../PeptidergicHubs_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../PeptidergicHubs_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../PeptidergicHubs_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../PeptidergicHubs_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../PeptidergicHubs_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../PeptidergicHubs_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../PeptidergicHubs_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../PeptidergicHubs_Randi2023_data_hiveplot">Randi2023</a> <a href="../PeptidergicHubs_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../PeptidergicHubs_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../PeptidergicHubs_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <b><a href="../PeptidergicHubs_Test_data_hiveplot">Test</a></b> <a href="../PeptidergicHubs_SSData_data_hiveplot">SSData</a> <a href="../PeptidergicHubs_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../PeptidergicHubs_UpdSSData2_data_hiveplot">UpdSSData2</a> 
-                            
-!!! tip "Choose View"
 
-    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <b><a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a></b> - 
+    <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
-    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 
-!!! abstract "Choose Graph type"
+    
+
+!!! abstract inline "Choose Graph type"
 
     <a href="../PeptidergicHubs_Test_data_graph"> Graph</a> - <a href="../PeptidergicHubs_Test_data"> Matrix</a> - <b><a href="../PeptidergicHubs_Test_data_hiveplot"> Hive plot</a></b> 
 
 
-<br/><br/>
+!!! tip  "Choose View"
 
-<p class="subtext">Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></p>
+    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <b><a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a></b> - 
 
+    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 === "Chemical Exc"
 No plottable connections of this type...
 === "Chemical Inh"
