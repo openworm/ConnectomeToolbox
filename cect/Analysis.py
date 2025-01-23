@@ -6,24 +6,34 @@ from cect.Cells import get_contralateral_neuron
 
 def test_bilaterals():
     from cect.White_whole import get_instance
+    # from cect.VarshneyDataReader import get_instance
 
     """
+    from cect.Cook2020DataReader import get_instance
+    from cect.WormNeuroAtlasFuncReader import get_instance
+    from cect.RipollSanchezDataReader import get_instance
+    from cect.WitvlietDataReader1 import get_instance # 65
+    from cect.WitvlietDataReader2 import get_instance # 70.85
+    from cect.WitvlietDataReader3 import get_instance # 67.5
+    from cect.WitvlietDataReader4 import get_instance # 78.27
+    from cect.WitvlietDataReader5 import get_instance # 71.65
+    from cect.WitvlietDataReader6 import get_instance # 71.31
+    from cect.WitvlietDataReader7 import get_instance # 66.57
+    from cect.WitvlietDataReader8 import get_instance # 69.70
+
     from cect.Cook2019MaleReader import get_instance
     from cect.Cook2019HermReader import get_instance
-    from cect.WitvlietDataReader1 import get_instance
     from cect.WitvlietDataReader8 import get_instance
     from cect.TestDataReader import get_instance
     from cect.SpreadsheetDataReader import get_instance
-    from cect.Cook2020DataReader import get_instance
     from cect.BrittinDataReader import get_instance
     from cect.WormNeuroAtlasMAReader import get_instance
-    from cect.WormNeuroAtlasFuncReader import get_instance
     from cect.RipollSanchezDataReader import get_instance
     from cect.ConnectomeView import PHARYNX_VIEW as view
     from cect.ConnectomeView import SOCIAL_VIEW as view
     from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import RAW_VIEW as view"""
-    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_VIEW as view
+    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_HM_VIEW as view
 
     print(
         "NOTE: For the sake of this paper, we excluded the pharyngeal neurons from the connectome data for both genders due to their distinction from the somatic nervous system."
