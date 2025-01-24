@@ -39,6 +39,10 @@ jobs:
         pip list
         
         
+    - name: Run pytest
+      run: |
+        pytest -vs
+        
     - name: Run quick test script
       run: |
         ./test.sh -q
