@@ -23,6 +23,8 @@ plugins:
       autoapi_root: "api/"
       autoapi_keep_files: true
       autoapi_add_nav_entry: false
+      autoapi_ignore:
+        - tests/*.py
   - mkdocstrings:
 
 extra_css:
