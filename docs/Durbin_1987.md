@@ -4,7 +4,9 @@ _Richard Michael Durbin, PhD thesis_
 
 _Published: April 1987_
 
-[Link to thesis](https://www.wormatlas.org/Durbin/durbinthesis.pdf)
+!!! warning "Resources from publication"   
+
+    **[Link to thesis](https://www.wormatlas.org/Durbin/durbinthesis.pdf)**
 
 
 **Summary**

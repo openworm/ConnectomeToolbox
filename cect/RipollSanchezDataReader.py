@@ -11,6 +11,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 
 from cect.ConnectomeDataset import ConnectomeDataset
+
 from cect.Cells import EXTRASYNAPTIC_SYN_TYPE
 from cect.Cells import PEPTIDERGIC_SYN_CLASS
 
@@ -19,7 +20,11 @@ from cect import print_
 import os
 import csv
 
-READER_DESCRIPTION = """Data extracted from ..."""
+
+def standardise_cell_name(cell):
+    for pf in ["DA", "DB", "AS", "VA", "VB", "VC", "VD", "DD"]:
+        cell = cell.replace("%s0" % pf, pf)
+    return cell
 
 
 class RipollSanchezDataReader(ConnectomeDataset):
@@ -48,15 +53,10 @@ class RipollSanchezDataReader(ConnectomeDataset):
 
         print_("Opened the CSV file: " + self.filename)
 
-        def fix_cell(cell):
-            for pf in ["DA", "DB", "AS", "VA", "VB", "VC", "VD", "DD"]:
-                cell = cell.replace("%s0" % pf, pf)
-            return cell
-
         for i in range(1, len(data)):
-            pre_cell = fix_cell(data[0][i])
+            pre_cell = standardise_cell_name(data[0][i])
             for j in range(1, len(data)):
-                post_cell = fix_cell(data[0][j])
+                post_cell = standardise_cell_name(data[0][j])
                 num = int(data[i][j])
                 if num > 0:
                     if self.verbose:
@@ -90,6 +90,36 @@ my_instance = get_instance()
 
 read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data
+
+
+def load_hub_info():
+    from openpyxl import load_workbook
+
+    neuron_info_file = (
+        os.path.dirname(os.path.abspath(__file__))
+        + "/data/1-s2.0-S0896627323007560-mmc7.xlsx"
+    )
+
+    wb = load_workbook(neuron_info_file)
+    sheet = wb.worksheets[0]
+    print_("Opened the Excel file: " + neuron_info_file)
+
+    clusters = {}
+
+    for row in sheet.iter_rows(
+        min_row=3, values_only=True
+    ):  # Assuming data starts from the second row
+        cell = standardise_cell_name(str(row[0]))
+        # type_ = str(row[2])
+        cluster = str(row[12])
+
+        # print(f"Cell {cell} is of type {type_} and in cluster {cluster}")
+
+        if cluster not in clusters:
+            clusters[cluster] = []
+        clusters[cluster].append(cell)
+
+    return clusters
 
 
 def main():
@@ -132,4 +162,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    load_hub_info()

@@ -10,6 +10,6 @@ ISSN 2211-1247](https://www.sciencedirect.com/science/article/pii/S2211124723010
 
 **Summary**
 
-- They report a genome-wide peptide-GPCR interaction map in _C.elegans_
-- Used as part of the Python package WormNeuroAtlas to generate the functional atlas.
-- The data was also used by Ripoll-Sanchez et al. (2023) to generate the neuropeptidergic connectome.
+- They report a genome-wide peptide-GPCR interaction map in _C.elegans_.
+- Used as part of the [WormNeuroAtlas package](Resources.md#wormneuroatlas) to generate the functional atlas of [Randi et al. 2023](Randi_2023.md).
+- The data was also used by [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md) to generate the neuropeptidergic connectome.

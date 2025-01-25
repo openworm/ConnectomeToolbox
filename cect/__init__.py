@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+__version__ = "0.2.3"
+
 
 def print_(msg, print_it=True):  # print_it=False when not verbose
     if print_it:

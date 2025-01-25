@@ -7,6 +7,7 @@ from cect.Cells import get_short_description
 from cect.Cells import get_standard_color
 from cect.Cells import is_bilateral_left
 from cect.Cells import is_bilateral_right
+from cect.Cells import is_one_of_bilateral_pair
 from cect.Cells import are_bilateral_pair
 from cect.Cells import SENSORY_NEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK
@@ -16,6 +17,7 @@ from cect.Cells import is_known_body_wall_muscle
 from cect.Cells import is_known_muscle
 from cect.Cells import is_pharyngeal_cell
 from cect.Cells import is_known_cell
+from cect.Cells import get_SIM_class
 
 import numpy as np
 import math
@@ -24,8 +26,6 @@ import networkx as nx
 import pprint
 import random
 
-from cect.Cells import get_SIM_class
-
 random.seed(10)
 
 
@@ -33,7 +33,24 @@ def _get_epsilon(scale):
     return scale * 0.05 * (1 - 2 * random.random())
 
 
+def get_dataset_source_on_github(dataset_file):
+    """Generate a URL to the file on the source GitHub repository
+
+    Args:
+        dataset_file (str): filename of the dataset
+
+    Returns:
+        str: URL to GitHub file
+    """
+    return (
+        '<b><a href="https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/%s">%s</a></b>'
+        % (dataset_file, dataset_file)
+    )
+
+
 class ConnectomeDataset:
+    """Holds information on a single dataset - a list of `nodes` and a dict of `connections` which has synaptic classes as keys (e.g. Generic_CS/Generic_GJ for chemical synapses/gap junctions) and connectivity arrays as values"""
+
     DEFAULT_DTYPE = np.float64
 
     verbose = False
@@ -84,7 +101,9 @@ class ConnectomeDataset:
 
         return Gn
 
-    def add_connection_info(self, conn: ConnectionInfo):
+    def add_connection_info(
+        self, conn: ConnectionInfo, check_overwritten_connections: bool = False
+    ):
         if self.verbose:
             print_("----   Adding: %s" % conn)
 
@@ -113,6 +132,26 @@ class ConnectomeDataset:
 
         pre_index = self.nodes.index(conn.pre_cell)
         post_index = self.nodes.index(conn.post_cell)
+
+        if conn_array[pre_index, post_index] != 0:
+            print_(
+                "Preexisting connection (%i conns already) at (%i,%i) - %s..."
+                % (len(self.connection_infos), pre_index, post_index, conn)
+            )
+            if conn_array[pre_index, post_index] != conn.number:
+                info = (
+                    " *** Existing connection at (%i,%i), was: %s, setting to: %s"
+                    % (
+                        pre_index,
+                        post_index,
+                        conn_array[pre_index, post_index],
+                        conn.number,
+                    )
+                )
+                if check_overwritten_connections:
+                    raise Exception(info)
+                else:
+                    print_(info)
 
         conn_array[pre_index, post_index] = conn.number
 
@@ -286,24 +325,30 @@ class ConnectomeDataset:
         return cv
 
     def summary(self):
-        info = "Nodes present: %s\n" % self.nodes
+        info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
         for c in self.connections:
             conn_array = self.connections[c]
-            info += (
-                "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
-                % (
-                    c,
-                    conn_array.shape,
-                    np.count_nonzero(conn_array),
-                    np.sum(conn_array),
-                    conn_array,
+            nonzero = np.count_nonzero(conn_array)
+            if nonzero > 0:
+                info += (
+                    "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
+                    % (
+                        c,
+                        conn_array.shape,
+                        nonzero,
+                        np.sum(conn_array),
+                        conn_array,
+                    )
                 )
-            )
         return info
 
-    def to_plotly_matrix_fig(self, synclass, view, color_continuous_scale=None):
-        import plotly.express as px
-
+    def to_plotly_matrix_fig(
+        self,
+        synclass: str,
+        view: str,
+        color_continuous_scale: bool = None,
+        bold_bilaterals: bool = False,
+    ):
         conn_array = self.connections[synclass]
 
         zmin = np.min(conn_array)
@@ -326,12 +371,15 @@ class ConnectomeDataset:
         )
 
         def get_color_html(color, node):
-            return f'<span style="color:{color};">{node}</span>'
+            font_weight = ""
+            if bold_bilaterals and is_one_of_bilateral_pair(node):
+                font_weight = "font-weight:bold;"
+            return f'<span style="color:{color};{font_weight}">{node}</span>'
 
         node_colors = [
             (
                 view.get_node_set(node).color
-                if view.has_color()
+                if view is not None and view.has_color()
                 else get_standard_color(node)
             )
             for node in self.nodes
@@ -343,6 +391,8 @@ class ConnectomeDataset:
         y_ticktext = [
             get_color_html(color, node) for node, color in zip(self.nodes, node_colors)
         ]
+
+        import plotly.express as px
 
         fig = px.imshow(
             conn_array,
@@ -373,7 +423,7 @@ class ConnectomeDataset:
         other_line = False
 
         for i, node_value in enumerate(self.nodes):
-            if not view.get_node_set(node_value).is_one_cell():
+            if view is not None and not view.get_node_set(node_value).is_one_cell():
                 break
 
             if not sens_line and node_value in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
@@ -401,6 +451,13 @@ class ConnectomeDataset:
 
         return fig
 
+    def _get_line_weight(self, weight, min_nonzero_weight, max_weight):
+        if weight == 0:
+            return 0
+        if min_nonzero_weight == max_weight:
+            return 1
+        return 1 + (9 * weight / max_weight)
+
     def to_plotly_graph_fig(self, synclass, view):
         conn_array = self.connections[synclass]
 
@@ -410,6 +467,12 @@ class ConnectomeDataset:
         print_(
             f"Generating: {synclass} for {view.name}, {view.synclass_sets[synclass]}"
         )
+        min_nonzero_weight = np.min(conn_array[np.nonzero(conn_array)])
+        max_weight = conn_array.max()
+        if verbose:
+            print_(
+                f"Array \n{str(conn_array)} (weights 0 or {min_nonzero_weight}->{max_weight})"
+            )
 
         DEFAULT_NODE_SIZE = 15
 
@@ -493,8 +556,14 @@ class ConnectomeDataset:
                 from_node_set = view.get_node_set(self.nodes[dir_[0]])
 
                 conn_weight = conn_array[dir_[0], dir_[1]]
-                weight = min(10, math.sqrt(abs(conn_weight)))
-                opposite_dir_weight = math.sqrt(abs(conn_array[dir_[1], dir_[0]]))
+
+                weight = self._get_line_weight(
+                    abs(conn_weight), min_nonzero_weight, max_weight
+                )  # min(10, math.sqrt(abs(conn_weight)))
+
+                opposite_dir_weight = self._get_line_weight(
+                    abs(conn_array[dir_[1], dir_[0]]), min_nonzero_weight, max_weight
+                )
 
                 straight = edge[0] != edge[1] and (
                     gap_junction or opposite_dir_weight == 0
@@ -1026,13 +1095,16 @@ if __name__ == "__main__":
     print(pprint.pprint(nx.node_link_data(G)))
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
+    # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
+    from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
 
@@ -1040,8 +1112,9 @@ if __name__ == "__main__":
     synclass = "Chemical Exc"
 
     # synclass = "Acetylcholine"
-    synclass = "Chemical"
-    synclass = "Electrical"
+    # synclass = "Chemical"
+    # synclass = "Electrical"
+    synclass = "Contact"
     # from cect.TestDataReader import get_instance
 
     cds = get_instance()
@@ -1050,11 +1123,13 @@ if __name__ == "__main__":
 
     print(cds2.summary())
 
-    print("Keys: %s" % view.synclass_sets.keys())
+    print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
+
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
-    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio
 

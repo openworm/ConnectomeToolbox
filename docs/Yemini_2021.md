@@ -6,7 +6,7 @@
 
 **Summary**
 
-- Identified brainwide expression patterns of all metabotropic receptors for ACh, GABA, and Glu completing a map of this communication network
-- Uncover changes in cell fate caused by TF mutations
-- Record brainwide activity in response to attractive and repulsive chemosensory cues, characterizing multimodal coding for these stimuli
-- This data was used by Ripoll-Sanchez et al. (2023) to generate the neuropeptidergic connectome.
+- Identified brainwide expression patterns of all metabotropic receptors for ACh, GABA, and Glu completing a map of this communication network.
+- Uncovered changes in cell fate caused by TF mutations.
+- Recorded brainwide activity in response to attractive and repulsive chemosensory cues, characterizing multimodal coding for these stimuli.
+- This data was used by [Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md) to generate the neuropeptidergic connectome.

@@ -2,12 +2,18 @@
 
 
 from cect.Cook2019DataReader import Cook2019DataReader
+from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
 
 import sys
 
 
 def get_instance():
+    """Uses ``Cook2019DataReader`` to load data on hermaphrodite connectome
+
+    Returns:
+        Cook2019DataReader: The initialised hermaphrodite connectome reader
+    """
     return Cook2019DataReader("Hermaphodite")
 
 
@@ -17,8 +23,8 @@ read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity"""
-    % my_instance.filename.split("/")[-1]
+    """Data extracted from %s for neuronal connectivity of hermaphrodite"""
+    % get_dataset_source_on_github(my_instance.filename.split("/")[-1])
 )
 
 

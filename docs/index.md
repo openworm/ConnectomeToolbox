@@ -362,7 +362,7 @@ flowchart TD
 | **[Cook et al. 2019](Cook_2019.md)**          | Anatomical | **[Cook 2019 Hermaphrodite](Cook2019Herm_data.md)** - **[Cook 2019 Male](Cook2019Male_data.md)** |
 | **[Cook et al. 2020](Cook_2020.md)**   | Anatomical | **[Cook 2020](Cook2020_data.md)**  |
 | [Fenyves et al. 2020](Fenyves_2020.md)    | Functional | *Work in progress: [data](https://github.com/francescorandi/wormneuroatlas/blob/main/wormneuroatlas/data/journal.pcbi.1007974.s003.xlsx)*   |
-| [Brittin et al. 2021](Brittin_2021.md)    | Anatomical | *Work in progress: [data](https://github.com/cabrittin/elegansbrainmap/tree/049a26a094e085bacc70f5b05ea04a007d00eb2c/data) - [parsed](https://github.com/cabrittin/parsetrakem2)*  |
+| **[Brittin et al. 2021](Brittin_2021.md)**    | Anatomical | **[Brittin et al. 2021](Brittin2021_data.md)**  |
 | [Taylor et al. 2021](Taylor_2021.md)    | Gene Expression | *Work in progress: [data](https://github.com/cengenproject/CeNGEN_integrated_analysis_biorxiv_code)* |
 | [Yemini et al. 2021](Yemini_2021.md)    | Gene Expression | *Work in progress: [data](https://zenodo.org/records/3906530)* |
 | **[Witvliet et al. 2021](Witvliet_2021.md)**  | Developmental | **[Witvliet1](Witvliet1_data.md)** - **[Witvliet2](Witvliet2_data.md)** - **[Witvliet3](Witvliet3_data.md)** - **[Witvliet4](Witvliet4_data.md)** - **[Witvliet5](Witvliet5_data.md)** - **[Witvliet6](Witvliet6_data.md)** - **[Witvliet7](Witvliet7_data.md)** - **[Witvliet8](Witvliet8_data.md)**|

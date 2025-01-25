@@ -26,6 +26,8 @@ POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
 
 
 class ConnectionInfo:
+    """Holds information on a single connection between a `pre_cell` and `post_cell` - the `number` of connections, the `syntype` and `synclass`"""
+
     def __init__(self, pre_cell, post_cell, number, syntype, synclass):
         self.pre_cell = pre_cell
         self.post_cell = post_cell

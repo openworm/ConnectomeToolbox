@@ -3,6 +3,7 @@ import csv
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import convert_to_preferred_muscle_name
@@ -21,12 +22,21 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%scne24932-sup-0004-supinfo4.csv" % spreadsheet_location
 filename2 = "%scne24932-sup-0005-supinfo5.csv" % spreadsheet_location
 
+
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity""" % filename.split("/")[-1]
+    """Data extracted from %s and %s for connectivity of pharyngeal neurons, muscles and other cells"""
+    % (
+        get_dataset_source_on_github(filename.split("/")[-1]),
+        get_dataset_source_on_github(filename2.split("/")[-1]),
+    )
 )
 
 
 class Cook2020DataReader(ConnectomeDataset):
+    """
+    Reader of data from Cook et al. 2020 - The connectome of the Caenorhabditis elegans pharynx
+    """
+
     cells = []
     conns = []
 
@@ -39,10 +49,8 @@ class Cook2020DataReader(ConnectomeDataset):
 
     def read_data(self):
         """
-        Args:
         Returns:
-            cells (:obj:`list` of :obj:`str`): List of neurons
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
+            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
         with open(filename, "r") as f:
             reader = csv.DictReader(f)

@@ -13,10 +13,15 @@ import sys
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data extracted from the **WormNeuroAtlas package** for monoaminergic connectivity"""
+READER_DESCRIPTION = """Data on monoaminergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 
 def get_instance():
+    """Uses ``WormNeuroAtlasExtSynReader`` to load data on monoaminergic connectivity using the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**
+
+    Returns:
+        WormNeuroAtlasExtSynReader: The initialised connectome reader
+    """
     return WormNeuroAtlasExtSynReader(MONOAMINERGIC_SYN_CLASS)
 
 

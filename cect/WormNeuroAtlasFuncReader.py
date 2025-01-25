@@ -20,15 +20,15 @@ from cect.WormNeuroAtlasReader import get_all_cells
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = (
-    """Data extracted from the **WormNeuroAtlas package** for functional connectivity"""
-)
+READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 FUNCTIONAL_SYN_TYPE = "Functional"
 FUNCTIONAL_SYN_CLASS = "Functional"
 
 
 class WormNeuroAtlasFuncReader(ConnectomeDataset):
+    """Data on functional connectivity from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**"""
+
     def __init__(self, max_q):
         ConnectomeDataset.__init__(self)
 

@@ -2,9 +2,9 @@ name: Non-OMV-tests
 
 on:
   push:
-    branches: [ main, development, experimental, ow* ]
+    branches: [ main, development, experimental, ow*, feature/* ]
   pull_request:
-    branches: [ main, development, experimental, ow* ]
+    branches: [ main, development, experimental, ow*, feature/* ]
 
 jobs:
   build:
@@ -38,6 +38,10 @@ jobs:
         pip install .[all]
         pip list
         
+        
+    - name: Run pytest
+      run: |
+        pytest -vs
         
     - name: Run quick test script
       run: |

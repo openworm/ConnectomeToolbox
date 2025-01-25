@@ -62,6 +62,10 @@ def get_synclass(cell, syntype):
 
 
 class Cook2019DataReader(ConnectomeDataset):
+    """
+    Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caeonrhabditis elegans sexes
+    """
+
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
     filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
@@ -143,8 +147,7 @@ class Cook2019DataReader(ConnectomeDataset):
     def read_all_data(self):
         """
         Returns:
-            cells (:obj:`list` of :obj:`str`): List of neurons
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of connections from neuron to neuron
+            Tuple[list, list, list, list]: List of neurons, muscles), other cells and connections which have been read in
         """
 
         neurons = set([])

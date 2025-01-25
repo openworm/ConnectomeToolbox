@@ -1,6 +1,7 @@
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
+from cect.ConnectomeDataset import get_dataset_source_on_github
 
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
@@ -15,15 +16,19 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 spreadsheet_name = "NeuronConnect.xlsx"  # has old name...
 spreadsheet_name = "NeuronConnectFormatted.xlsx"
+filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
 
 READER_DESCRIPTION = (
-    """Data extracted from **%s** for neuronal connectivity""" % spreadsheet_name
+    """Data extracted from %s for neuronal connectivity"""
+    % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
 NMJ_ENDPOINT = "NMJ"
 
 
 class VarshneyDataReader(ConnectomeDataset):
+    """Reader for Varshney et al. 2011 connectivity dataset"""
+
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
@@ -35,7 +40,6 @@ class VarshneyDataReader(ConnectomeDataset):
         cells = []
         conns = []
 
-        filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
         wb = load_workbook(filename)
         sheet = wb.worksheets[0]
         print_("Opened the Excel file: " + filename)
