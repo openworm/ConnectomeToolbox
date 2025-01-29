@@ -285,6 +285,32 @@
         1,
         0
       ]
+    },
+    {
+      "line": {
+        "dash": "solid"
+      },
+      "marker": {
+        "symbol": "square"
+      },
+      "name": "Yin2024 Chemical conns in",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVL",
+        "GLRVR"
+      ],
+      "y": [
+        4,
+        2,
+        4,
+        4,
+        4,
+        3
+      ]
     }
   ],
   "layout": {
