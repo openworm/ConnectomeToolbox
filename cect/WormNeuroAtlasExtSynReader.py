@@ -8,7 +8,6 @@ from cect.Cells import PEPTIDERGIC_SYN_CLASS
 
 from cect import print_
 
-import wormneuroatlas as wa
 import sys
 
 from cect.WormNeuroAtlasReader import get_all_cells
@@ -34,6 +33,8 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
         print_(
             "Initialising WormNeuroAtlasExtSynReader for syn class %s" % self.synclass
         )
+
+        import wormneuroatlas as wa
 
         self.atlas = wa.NeuroAtlas()
 

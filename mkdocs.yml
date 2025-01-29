@@ -23,6 +23,8 @@ plugins:
       autoapi_root: "api/"
       autoapi_keep_files: true
       autoapi_add_nav_entry: false
+      autoapi_ignore:
+        - tests/*.py
   - mkdocstrings:
 
 extra_css:
@@ -77,6 +79,7 @@ nav:
     - 'Atanas et al. 2023': 'Atanas_2023.md'
     - '<b>Randi et al. 2023</b>': 'Randi_2023.md'
     - '<b>Ripoll-Sánchez et al. 2023</b>': 'RipollSanchez_2023.md'
+    - '<b>Yin et al. 2024</b>': 'Yin_2024.md'
   
   - 'Data sets':
     - 'White et al. 1986 - A (N2U)': 'White_A_data_graph.md'
@@ -102,6 +105,7 @@ nav:
     - 'Ripoll-Sánchez 2023 (short)': 'RipollSanchezShortRange_data.md'
     - 'Ripoll-Sánchez 2023 (mid)': 'RipollSanchezMidRange_data.md'
     - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
+    - 'Yin et al. 2024': 'Yin2024_data.md'
     - 'Test': 'Test_data_graph.md'
   - Cells:
     - 'All <i>C. elegans</i> cells': 'Cells.md'    

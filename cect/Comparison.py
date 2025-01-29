@@ -36,6 +36,7 @@ reader_pages = {
     "RipollSanchezShortRange": "RipollSanchezShortRange_data",
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
+    "Yin2024": "Yin2024_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
@@ -201,6 +202,8 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
             "cect.RipollSanchezLongRangeReader",
             "RipollSanchez_2023",
         ]
+
+    readers["Yin2024"] = ["cect.Yin2024DataReader", "Yin_2024"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]
@@ -582,7 +585,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                 .replace("Sanchez", " Sanchez et al. 2023 ")
                 .replace("tley", "tley et al.")
                 .replace("Cook", "Cook et al.")
-                .replace("ttin", "ttin et al.")
+                .replace("in", "in et al.")
                 .replace("19", "19 ")
                 .replace("liet", "liet ")
                 .replace("MA", "Monoamin.")

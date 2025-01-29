@@ -27,16 +27,20 @@ def standardise_cell_name(cell):
     return cell
 
 
+def get_filename(model):
+    spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+    filename = "%s01022024_neuropeptide_connectome_%s.csv" % (
+        spreadsheet_location,
+        model,
+    )
+    return filename
+
+
 class RipollSanchezDataReader(ConnectomeDataset):
     verbose = False
 
     def __init__(self, model):
-        spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
-
-        self.filename = "%s01022024_neuropeptide_connectome_%s.csv" % (
-            spreadsheet_location,
-            model,
-        )
+        self.filename = get_filename(model)
 
         ConnectomeDataset.__init__(self)
 
@@ -51,7 +55,7 @@ class RipollSanchezDataReader(ConnectomeDataset):
         with open(self.filename) as csvfile:
             data = list(csv.reader(csvfile))
 
-        print_("Opened the CSV file: " + self.filename)
+        print_("Opened up the CSV file: " + self.filename)
 
         for i in range(1, len(data)):
             pre_cell = standardise_cell_name(data[0][i])
@@ -86,10 +90,9 @@ def get_instance():
     return RipollSanchezDataReader("short_range_model")
 
 
-my_instance = get_instance()
-
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 def load_hub_info():
@@ -123,6 +126,8 @@ def load_hub_info():
 
 
 def main():
+    print("Testing...")
+
     tdr_instance = RipollSanchezDataReader("short_range_model")
 
     cells, neuron_conns = tdr_instance.read_data()
@@ -162,5 +167,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
+    main()
     load_hub_info()

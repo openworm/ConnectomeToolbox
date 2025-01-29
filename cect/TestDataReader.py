@@ -76,13 +76,13 @@ class TestDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-tdr_instance = get_instance()
-
+"""
 read_data = tdr_instance.read_data
-read_muscle_data = tdr_instance.read_muscle_data
+read_muscle_data = tdr_instance.read_muscle_data"""
 
 
 def main():
+    tdr_instance = get_instance()
     cells, neuron_conns = tdr_instance.read_data()
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
 
