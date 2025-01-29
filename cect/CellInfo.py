@@ -99,10 +99,10 @@ def load_individual_neuron_info():
     cell_info = {}
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=";")
-        print(reader)
+        # print(reader)
 
         for row in reader:
-            print(", ".join(row))
+            print_(", ".join(row))
             if not row[0].startswith("#"):
                 cell_info[row[0]] = (row[1].strip(), row[2].strip(), row[3].strip())
 

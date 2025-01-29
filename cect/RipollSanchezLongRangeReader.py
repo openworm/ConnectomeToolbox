@@ -7,9 +7,11 @@
 ############################################################
 
 
-from cect.RipollSanchezDataReader import RipollSanchezDataReader
+from cect.RipollSanchezDataReader import RipollSanchezDataReader, get_filename
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
+
+MODEL = "long_range_model"
 
 
 def get_instance():
@@ -18,24 +20,24 @@ def get_instance():
     Returns:
         RipollSanchezDataReader: The initialised connectome reader
     """
-    return RipollSanchezDataReader("long_range_model")
+    return RipollSanchezDataReader(MODEL)
 
 
-my_instance = get_instance()
-
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 READER_DESCRIPTION = (
     """Data extracted from %s for long range model of neuropedtidergic connectome"""
-    % get_dataset_source_on_github(my_instance.filename.split("/")[-1])
+    % get_dataset_source_on_github(get_filename(MODEL).split("/")[-1])
 )
 
 
 def main1():
-    cells, neuron_conns = read_data()
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    my_instance = get_instance()
+    cells, neuron_conns = my_instance.read_data()
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 

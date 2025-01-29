@@ -23,7 +23,7 @@ search:
 
     <a href="../Test_data"> Raw Data</a> - <b><a href="../Neurons_Test_data"> Neurons</a></b> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - 
 
-    <i>All 302 hermaphrodite neurons (whether present or not in the connectome dataset)</i>
+    <i>All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset)</i>
 === "Chemical Exc"
 
     <br/>

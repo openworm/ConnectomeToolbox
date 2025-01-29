@@ -102,7 +102,10 @@ class ConnectomeDataset:
         return Gn
 
     def add_connection_info(
-        self, conn: ConnectionInfo, check_overwritten_connections: bool = False
+        self,
+        conn: ConnectionInfo,
+        check_overwritten_connections: bool = True,
+        append_existing_connections=False,
     ):
         if self.verbose:
             print_("----   Adding: %s" % conn)
@@ -138,17 +141,23 @@ class ConnectomeDataset:
                 "Preexisting connection (%i conns already) at (%i,%i) - %s..."
                 % (len(self.connection_infos), pre_index, post_index, conn)
             )
+
             if conn_array[pre_index, post_index] != conn.number:
                 info = (
-                    " *** Existing connection at (%i,%i), was: %s, setting to: %s"
+                    "     *** Existing connection at (%i,%i), was: %s, changing to: %s (appending: %s)"
                     % (
                         pre_index,
                         post_index,
                         conn_array[pre_index, post_index],
                         conn.number,
+                        append_existing_connections,
                     )
                 )
-                if check_overwritten_connections:
+
+                if append_existing_connections:
+                    conn_array[pre_index, post_index] += conn.number
+
+                elif check_overwritten_connections:
                     raise Exception(info)
                 else:
                     print_(info)
@@ -161,7 +170,7 @@ class ConnectomeDataset:
                 % (pre_index, post_index, self.nodes, conn_array)
             )
 
-    def read_data(self):
+    def _read_data(self):
         return self.get_neuron_to_neuron_conns()
 
     def get_neuron_to_neuron_conns(self):
@@ -174,7 +183,7 @@ class ConnectomeDataset:
                 neuron_conns.append(conn_info)
         return list(neurons), neuron_conns
 
-    def read_muscle_data(self):
+    def _read_muscle_data(self):
         return self.get_neuron_to_muscle_conns()
 
     def get_neuron_to_muscle_conns(self):
@@ -1095,26 +1104,27 @@ if __name__ == "__main__":
     print(pprint.pprint(nx.node_link_data(G)))
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    # from cect.ConnectomeView import RAW_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
-    from cect.ConnectomeView import PEP_HUBS_VIEW as view
+    # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
     # from cect.White_whole import get_instance
-    from cect.BrittinDataReader import get_instance
+    # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
+    from cect.Yin2024DataReader import get_instance
 
     synclass = "Chemical Inh"
     synclass = "Chemical Exc"
 
     # synclass = "Acetylcholine"
-    # synclass = "Chemical"
+    synclass = "Chemical"
     # synclass = "Electrical"
-    synclass = "Contact"
+    # synclass = "Contact"
     # from cect.TestDataReader import get_instance
 
     cds = get_instance()
@@ -1127,8 +1137,8 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(synclass, view)
-    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio

@@ -199,16 +199,16 @@ def get_instance():
     return UpdatedSpreadsheetDataReader()
 
 
-my_instance = get_instance()
-
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 def main():
-    cells, neuron_conns = read_data()
+    my_instance = get_instance()
+    cells, neuron_conns = my_instance.read_data()
 
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 

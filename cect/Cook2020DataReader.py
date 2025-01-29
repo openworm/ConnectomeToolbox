@@ -45,7 +45,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(conn, check_overwritten_connections=False)
 
     def read_data(self):
         """
