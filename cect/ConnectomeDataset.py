@@ -739,7 +739,6 @@ class ConnectomeDataset:
                     thickness=15,
                     title="Node Connections",
                     xanchor="left",
-                    titleside="right",
                 ),
                 line_width=1,
             ),
@@ -1137,8 +1136,8 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
-    fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio
