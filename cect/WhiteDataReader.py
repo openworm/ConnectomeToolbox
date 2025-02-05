@@ -69,6 +69,12 @@ class WhiteDataReader(ConnectomeDataset):
         for conn in conns:
             self.add_connection_info(conn)
 
+    def read_data(self):
+        return self._read_data()
+
+    def read_muscle_data(self):
+        return self._read_muscle_data()
+
     def read_all_data(self):
         neurons = set([])
         muscles = set([])

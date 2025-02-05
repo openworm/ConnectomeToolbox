@@ -34,7 +34,7 @@ class VarshneyDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(conn, append_existing_connections=True)
 
     def read_data(self):
         cells = []
@@ -82,13 +82,14 @@ def get_instance():
     return VarshneyDataReader()
 
 
-my_instance = get_instance()
-
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 def main():
+    my_instance = get_instance()
+
     cells, neuron_conns = my_instance.read_data()
     neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 

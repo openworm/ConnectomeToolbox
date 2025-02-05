@@ -39,6 +39,12 @@ class WitvlietDataReader(ConnectomeDataset):
         for conn in conns:
             self.add_connection_info(conn)
 
+    def read_data(self):
+        return self._read_data()
+
+    def read_muscle_data(self):
+        return self._read_muscle_data()
+
     def read_all_data(self):
         neurons = set([])
         muscles = set([])
@@ -68,7 +74,7 @@ class WitvlietDataReader(ConnectomeDataset):
             num = int(row[3])
 
             if self.verbose and num > 0:
-                print("Conn %s -> %s #%i" % (pre, post, num))
+                print_("Conn %s -> %s #%i" % (pre, post, num))
 
             synclass = GENERIC_ELEC_SYN if "electrical" in syntype else GENERIC_CHEM_SYN
             if synclass == GENERIC_ELEC_SYN:

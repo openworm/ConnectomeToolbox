@@ -35,7 +35,7 @@ class SpreadsheetDataReader(ConnectomeDataset):
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
-        print("Initialising SpreadsheetDataReader...")
+        print_("Initialising SpreadsheetDataReader...")
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
@@ -132,17 +132,17 @@ def get_instance():
     return SpreadsheetDataReader()
 
 
-my_instance = get_instance()
-
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 def main():
+    my_instance = get_instance()
     print("Analysing...")
 
-    cells, neuron_conns = read_data()
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    cells, neuron_conns = my_instance.read_data()
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 

@@ -5,7 +5,6 @@ from cect import print_
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
-import wormneuroatlas as wa
 import math
 import sys
 
@@ -37,6 +36,7 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
         print_(
             "Initialising WormNeuroAtlasFuncReader with max q value: %s" % self.max_q
         )
+        import wormneuroatlas as wa
 
         self.atlas = wa.NeuroAtlas()
 

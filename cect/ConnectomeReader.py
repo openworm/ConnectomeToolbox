@@ -89,7 +89,7 @@ def check_cells(cells):
             missing_preferred.remove(c)
 
     if False:
-        print(
+        print_(
             "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
             % (
                 len(cells),
