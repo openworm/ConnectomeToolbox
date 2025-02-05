@@ -5,6 +5,8 @@ ruff check cect/*.py
 
 pip install .[docs]
 
+pytest -vs
+
 quick_test=0
 
 if [[ ($# -eq 1) && ($1 == '-q') ]]; then

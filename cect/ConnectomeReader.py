@@ -28,12 +28,23 @@ POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
 class ConnectionInfo:
     """Holds information on a single connection between a `pre_cell` and `post_cell` - the `number` of connections, the `syntype` and `synclass`"""
 
-    def __init__(self, pre_cell, post_cell, number, syntype, synclass):
+    def __init__(
+        self, pre_cell: str, post_cell: str, number: int, syntype: str, synclass: str
+    ):
         self.pre_cell = pre_cell
         self.post_cell = post_cell
         self.number = number
         self.syntype = syntype
         self.synclass = synclass
+
+    def to_dict(self):
+        return {
+            "pre_cell": self.pre_cell,
+            "post_cell": self.post_cell,
+            "number": self.number,
+            "syntype": self.syntype,
+            "synclass": self.synclass,
+        }
 
     def __str__(self):
         return "Connection from %s to %s (%i times, type: %s, neurotransmitter: %s)" % (
@@ -68,6 +79,18 @@ class ConnectionInfo:
 
     def __repr__(self):
         return self.__str__()
+
+
+def load_connection_info(d: dict):
+    ci = ConnectionInfo(
+        pre_cell=d["pre_cell"],
+        post_cell=d["post_cell"],
+        number=d["number"],
+        syntype=d["syntype"],
+        synclass=d["synclass"],
+    )
+
+    return ci
 
 
 def check_cells(cells):

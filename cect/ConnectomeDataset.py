@@ -72,6 +72,14 @@ class ConnectomeDataset:
 
             self.connections[c] = new_conn_array
 
+    def to_dict(self):
+        info = {}
+        info["Connections"] = []
+        for ci in self.connection_infos:
+            info["Connections"].append(ci.to_dict())
+
+        return info
+
     def to_networkx_graph(self, synclass, view=None):
         import networkx as nx
 
@@ -1057,6 +1065,17 @@ class ConnectomeDataset:
                 # ax.set_xticks(ticks=range(len(pre_cells)), labels=pre_cells)
 
         plt.show()
+
+
+def load_connectome_dataset(d: dict):
+    from cect.ConnectomeReader import load_connection_info
+
+    cds = ConnectomeDataset()
+    for cid in d["Connections"]:
+        ci = load_connection_info(cid)
+        cds.add_connection_info(ci)
+
+    return cds
 
 
 if __name__ == "__main__":
