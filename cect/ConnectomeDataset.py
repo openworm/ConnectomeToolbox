@@ -25,8 +25,11 @@ import sys
 import networkx as nx
 import pprint
 import random
+import json
 
 random.seed(10)
+
+LOAD_READERS_FROM_CACHE_BY_DEFAULT = False
 
 
 def _get_epsilon(scale):
@@ -48,6 +51,10 @@ def get_dataset_source_on_github(dataset_file):
     )
 
 
+def get_cache_filename(reader):
+    return "cect/cache/%s.json" % reader
+
+
 class ConnectomeDataset:
     """Holds information on a single dataset - a list of `nodes` and a dict of `connections` which has synaptic classes as keys (e.g. Generic_CS/Generic_GJ for chemical synapses/gap junctions) and connectivity arrays as values"""
 
@@ -58,7 +65,7 @@ class ConnectomeDataset:
     def __init__(self):
         self.nodes = []
         self.connections = {}
-        self.connection_infos = []
+        self.original_connection_infos = []
 
         self.view = None
 
@@ -73,12 +80,19 @@ class ConnectomeDataset:
             self.connections[c] = new_conn_array
 
     def to_dict(self):
-        info = {}
-        info["Connections"] = []
-        for ci in self.connection_infos:
-            info["Connections"].append(ci.to_dict())
+        info = {"nodes": self.nodes}
+        info["connections"] = {}
+        for conn in self.connections:
+            info["connections"][conn] = self.connections[conn].tolist()
 
         return info
+
+    def save_to_cache(self, reference: str):
+        d = self.to_dict()
+        filename = get_cache_filename(reference)
+        with open(filename, "w") as f:
+            json.dump(d, f, indent=2)
+        return filename
 
     def to_networkx_graph(self, synclass, view=None):
         import networkx as nx
@@ -118,7 +132,7 @@ class ConnectomeDataset:
         if self.verbose:
             print_("----   Adding: %s" % conn)
 
-        self.connection_infos.append(conn)
+        self.original_connection_infos.append(conn)
 
         if conn.synclass not in self.connections:
             if len(self.connections) == 0:
@@ -146,8 +160,14 @@ class ConnectomeDataset:
 
         if conn_array[pre_index, post_index] != 0:
             print_(
-                "Preexisting connection (%i conns already) at (%i,%i) - %s..."
-                % (len(self.connection_infos), pre_index, post_index, conn)
+                "Preexisting connection (%i conns already) w: %f at (%i,%i) - new one: %s..."
+                % (
+                    len(self.original_connection_infos),
+                    conn_array[pre_index, post_index],
+                    pre_index,
+                    post_index,
+                    conn,
+                )
             )
 
             if conn_array[pre_index, post_index] != conn.number:
@@ -169,6 +189,8 @@ class ConnectomeDataset:
                     raise Exception(info)
                 else:
                     print_(info)
+            else:
+                print_("Same weight...")
 
         conn_array[pre_index, post_index] = conn.number
 
@@ -178,13 +200,33 @@ class ConnectomeDataset:
                 % (pre_index, post_index, self.nodes, conn_array)
             )
 
+    def get_current_connection_info_list(self):
+        cis = []
+        for conn in self.connections:
+            conn_array = self.connections[conn]
+            pre, post = np.nonzero(conn_array)
+            """print_(
+                f"{conn} has {len(pre)} nonzero entries: {pre}->{pre}, e.g. {conn_array[pre[0],post[0]]}"
+            )"""
+            for pp in zip(pre, post):
+                cis.append(
+                    ConnectionInfo(
+                        self.nodes[pp[0]],
+                        self.nodes[pp[1]],
+                        conn_array[pp[0], pp[1]],
+                        syntype="???",
+                        synclass=conn,
+                    )
+                )
+        return cis
+
     def _read_data(self):
         return self.get_neuron_to_neuron_conns()
 
     def get_neuron_to_neuron_conns(self):
         neurons = set([])
         neuron_conns = []
-        for conn_info in self.connection_infos:
+        for conn_info in self.get_current_connection_info_list():
             if is_any_neuron(conn_info.pre_cell) and is_any_neuron(conn_info.post_cell):
                 neurons.add(conn_info.pre_cell)
                 neurons.add(conn_info.post_cell)
@@ -199,7 +241,7 @@ class ConnectomeDataset:
         muscles = set([])
         conns = []
 
-        for conn_info in self.connection_infos:
+        for conn_info in self.get_current_connection_info_list():
             if is_any_neuron(conn_info.pre_cell) and is_known_muscle(
                 conn_info.post_cell
             ):
@@ -1067,13 +1109,18 @@ class ConnectomeDataset:
         plt.show()
 
 
-def load_connectome_dataset(d: dict):
-    from cect.ConnectomeReader import load_connection_info
+def load_connectome_dataset_file(filename: str):
+    print_("Loading ConnectomeDataset file: " + filename)
+    with open(filename) as json_data:
+        d = json.load(json_data)
+    return load_connectome_dataset(d)
 
+
+def load_connectome_dataset(d: dict):
     cds = ConnectomeDataset()
-    for cid in d["Connections"]:
-        ci = load_connection_info(cid)
-        cds.add_connection_info(ci)
+    cds.nodes = d["nodes"]
+    for cid in d["connections"]:
+        cds.connections[cid] = np.array(d["connections"][cid])
 
     return cds
 
@@ -1134,7 +1181,7 @@ if __name__ == "__main__":
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
-    from cect.Yin2024DataReader import get_instance
+    from cect.Yim2024DataReader import get_instance
 
     synclass = "Chemical Inh"
     synclass = "Chemical Exc"

@@ -13,6 +13,7 @@ from cect.Cells import is_marginal_cell
 from cect.Cells import convert_to_preferred_phar_cell_name
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
 
@@ -196,8 +197,16 @@ class Cook2020DataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-def get_instance():
-    return Cook2020DataReader()
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+    else:
+        return Cook2020DataReader()
 
 
 my_instance = get_instance()

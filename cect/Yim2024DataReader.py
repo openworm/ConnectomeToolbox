@@ -2,7 +2,7 @@
 
 ############################################################
 
-#    A script to read the values of Yin et al. 2024
+#    A script to read the values of Yim et al. 2024
 
 ############################################################
 
@@ -15,6 +15,7 @@ from cect.Cells import remove_leading_index_zero
 from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -56,14 +57,14 @@ filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yin et al. 2024 on Dauer connectome"""
+    """Data extracted from %s Yim et al. 2024 on Dauer connectome"""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
 
-class Yin2024DataReader(ConnectomeDataset):
+class Yim2024DataReader(ConnectomeDataset):
     """
-    Reader of data from Yin et al. 2024 - Dauer connectome
+    Reader of data from Yim et al. 2024 - Dauer connectome
     """
 
     verbose = False
@@ -194,17 +195,27 @@ class Yin2024DataReader(ConnectomeDataset):
         return list(neurons), list(muscles), list(other_cells), conns
 
 
-def get_instance():
-    """Uses ``Yin2024DataReader`` to load data on dauer connectome
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    """Uses ``Yim2024DataReader`` to load data on dauer connectome
 
     Returns:
-        Yin2024DataReader: The initialised connectome reader
+        Yim2024DataReader: The initialised connectome reader
     """
-    return Yin2024DataReader()
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(
+            get_cache_filename(__file__.split("/")[-1].split(".")[0])
+        )
+    else:
+        return Yim2024DataReader()
 
 
 def main():
-    tdr_instance = Yin2024DataReader()
+    tdr_instance = Yim2024DataReader()
 
     cells, neuron_conns = tdr_instance.read_data()
 

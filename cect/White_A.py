@@ -4,6 +4,7 @@
 from cect.WhiteDataReader import WhiteDataReader
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
 
@@ -11,13 +12,21 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_A.csv" % spreadsheet_location
 
 
-def get_instance():
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WhiteDataReader`` to load data on the adult (A) N2U series
 
     Returns:
         WhiteDataReader: The initialised connectome reader
     """
-    return WhiteDataReader(filename)
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+    else:
+        return WhiteDataReader(filename)
 
 
 my_instance = get_instance()

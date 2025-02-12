@@ -1,11 +1,10 @@
 set -ex
 
-ruff format cect/*.py
-ruff check cect/*.py
+ruff format cect/*.py cect/*/*.py
+ruff check cect/*.py cect/*/*.py
 
 pip install .[docs]
 
-pytest -vs
 
 quick_test=0
 
@@ -22,6 +21,7 @@ python -m cect.Cells $quick_test
 
 if [ "$quick_test" == 0 ]; then
 
+    pytest -vs
 
     python -m cect.TestDataReader -nogui                                                                                                                                         
     python -m cect.ConnectomeView                                                                                                                             
@@ -40,9 +40,9 @@ if [ "$quick_test" == 0 ]; then
 
     #python -m cect.Comparison 0
     
+    mkdocs build
 fi
 
-mkdocs build
 
 echo
 echo "  Successfully completed all cect tests (quick run: $quick_test)!"

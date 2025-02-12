@@ -6,6 +6,7 @@ from cect.Cells import get_contralateral_neuron
 
 def test_bilaterals():
     from cect.White_whole import get_instance
+    # from cect.Yim2024DataReader import get_instance
 
     # from cect.VarshneyDataReader import get_instance
 

@@ -10,17 +10,28 @@
 from cect.RipollSanchezDataReader import RipollSanchezDataReader, get_filename
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 MODEL = "short_range_model"
 
 
-def get_instance():
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``RipollSanchezDataReader`` to load data on the short range model of neuropedtidergic connectome
 
     Returns:
         RipollSanchezDataReader: The initialised connectome reader
     """
-    return RipollSanchezDataReader(MODEL)
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(
+            get_cache_filename(__file__.split("/")[-1].split(".")[0])
+        )
+    else:
+        return RipollSanchezDataReader(MODEL)
 
 
 """

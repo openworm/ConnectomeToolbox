@@ -29,7 +29,7 @@ class ConnectionInfo:
     """Holds information on a single connection between a `pre_cell` and `post_cell` - the `number` of connections, the `syntype` and `synclass`"""
 
     def __init__(
-        self, pre_cell: str, post_cell: str, number: int, syntype: str, synclass: str
+        self, pre_cell: str, post_cell: str, number: float, syntype: str, synclass: str
     ):
         self.pre_cell = pre_cell
         self.post_cell = post_cell
@@ -41,16 +41,16 @@ class ConnectionInfo:
         return {
             "pre_cell": self.pre_cell,
             "post_cell": self.post_cell,
-            "number": self.number,
+            "number": float(self.number),
             "syntype": self.syntype,
             "synclass": self.synclass,
         }
 
     def __str__(self):
-        return "Connection from %s to %s (%i times, type: %s, neurotransmitter: %s)" % (
+        return "Connection from %s to %s (%s times, type: %s, neurotransmitter: %s)" % (
             self.pre_cell,
             self.post_cell,
-            self.number,
+            int(self.number) if int(self.number) == self.number else self.number,
             self.syntype,
             self.synclass,
         )

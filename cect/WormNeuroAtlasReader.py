@@ -13,6 +13,8 @@ from cect.Cells import GENERIC_ELEC_SYN
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
+
 ############################################################
 
 #   A script to read the values in WormNeuroAtlas
@@ -130,8 +132,18 @@ class WormNeuroAtlasReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-def get_instance():
-    return WormNeuroAtlasReader()
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(
+            get_cache_filename(__file__.split("/")[-1].split(".")[0])
+        )
+    else:
+        return WormNeuroAtlasReader()
 
 
 """
@@ -139,8 +151,8 @@ read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data"""
 
 if __name__ == "__main__":
-    my_instance = get_instance()
-    cells, neuron_conns = my_instance.read_data()
-    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
+    my_instance = get_instance(True)
+    cells, neuron_conns = my_instance._read_data()
+    neurons2muscles, muscles, muscle_conns = my_instance._read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
