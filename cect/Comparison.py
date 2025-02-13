@@ -687,7 +687,7 @@ def generate_comparison_page(
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    save_to_cache = False
+    save_to_cache = True
 
     connectomes = generate_comparison_page(
         quick,
