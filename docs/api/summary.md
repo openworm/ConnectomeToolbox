@@ -39,4 +39,4 @@
     * [WormNeuroAtlasMAReader](cect/WormNeuroAtlasMAReader.md)
     * [WormNeuroAtlasPepReader](cect/WormNeuroAtlasPepReader.md)
     * [WormNeuroAtlasReader](cect/WormNeuroAtlasReader.md)
-    * [Yin2024DataReader](cect/Yin2024DataReader.md)
+    * [Yim2024DataReader](cect/Yim2024DataReader.md)

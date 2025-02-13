@@ -3,6 +3,8 @@ from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
+
 import os
 import sys
 from cect import print_
@@ -13,8 +15,18 @@ READER_DESCRIPTION = """Dummy dataset used for testing webpage/graph generation.
 NMJ_ENDPOINT = "NMJ"
 
 
-def get_instance():
-    return TestDataReader()
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(
+            get_cache_filename(__file__.split("/")[-1].split(".")[0])
+        )
+    else:
+        return TestDataReader()
 
 
 class TestDataReader(ConnectomeDataset):
@@ -76,11 +88,6 @@ class TestDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-"""
-read_data = tdr_instance.read_data
-read_muscle_data = tdr_instance.read_muscle_data"""
-
-
 def main():
     tdr_instance = get_instance()
     cells, neuron_conns = tdr_instance.read_data()
@@ -99,6 +106,18 @@ def main():
     )
     if "-nogui" not in sys.argv:
         fig.show()
+
+    for ci in tdr_instance.original_connection_infos:
+        print(ci)
+
+    print("-------------------")
+    cis = tdr_instance.get_current_connection_info_list()
+
+    for ci in cis:
+        print(ci)
+
+    print(len(tdr_instance.original_connection_infos))
+    print(len(tdr_instance.get_current_connection_info_list()))
 
 
 if __name__ == "__main__":

@@ -36,7 +36,7 @@ reader_pages = {
     "RipollSanchezShortRange": "RipollSanchezShortRange_data",
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
-    "Yin2024": "Yin2024_data",
+    "Yim2024": "Yim2024_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
@@ -147,7 +147,13 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
-def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
+def generate_comparison_page(
+    quick: bool,
+    color_table=True,
+    dataset_pages=True,
+    save_to_cache=False,
+    load_from_cache=True,
+):
     connectomes = {}
     all_connectomes = {}
 
@@ -203,7 +209,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
             "RipollSanchez_2023",
         ]
 
-    readers["Yin2024"] = ["cect.Yin2024DataReader", "Yin_2024"]
+    readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]
@@ -227,7 +233,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
         reader_module = importlib.import_module(reader)
 
         try:
-            connectome = reader_module.get_instance()
+            if load_from_cache:
+                connectome = reader_module.get_instance(from_cache=True)
+
+            else:
+                connectome = reader_module.get_instance()
+
+                if save_to_cache:
+                    connectome.save_to_cache(reader.split(".")[1])
+
             all_connectomes[reader_name] = connectome
             preferred, not_in_preferred, missing_preferred, muscles = check_cells(
                 connectome.nodes
@@ -673,6 +687,14 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    connectomes = generate_comparison_page(quick, color_table=True, dataset_pages=False)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick,
+        color_table=True,
+        dataset_pages=False,
+        save_to_cache=save_to_cache,
+        load_from_cache=(not save_to_cache),
+    )
 
     print("Finished. All loaded connectomes:\n%s" % connectomes)

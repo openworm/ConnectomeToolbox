@@ -15,6 +15,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 from xlrd import open_workbook
 import os
@@ -128,8 +129,16 @@ class SpreadsheetDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-def get_instance():
-    return SpreadsheetDataReader()
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename("SpreadsheetDataReader"))
+    else:
+        return SpreadsheetDataReader()
 
 
 """

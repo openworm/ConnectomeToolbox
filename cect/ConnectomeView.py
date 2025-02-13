@@ -258,11 +258,22 @@ esc_positions = {
     "RIM": (step * 2, step * -3.2),
     "RMD": (step * 1.5, step * -4.2),
     "SMD": (step * 2.5, step * -4.2),
-    "VB/VD": (0, step * -3.9),
+    "VB/DB": (0, step * -3.9),
     "VA/DA": (step * 4, step * -3.9),
     "Body Musc": (step * 0.8, step * -5.2),
     "Head Musc": (step * 3.2, step * -5.2),
 }
+
+"""
+loco1_set = ["AVB"]
+
+LOCOMOTION_1_VIEW = View(
+    "Loco1",
+    "Locomotion circuit 1",
+    "Subset of cells involved in locomotion",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+)"""
 
 for cell_set in sorted(esc_positions.keys()):
     color = "purple"
@@ -279,7 +290,7 @@ for cell_set in sorted(esc_positions.keys()):
     if cell_set in ["RIM"]:
         color = "blue"
         shape = "circle"
-    if cell_set in ["VB/VD"]:
+    if cell_set in ["VB/DB"]:
         color = "lightgreen"
         shape = "circle"
     if cell_set in ["RMD", "SMD"]:
@@ -294,9 +305,9 @@ for cell_set in sorted(esc_positions.keys()):
 
     all_cells = []
 
-    if cell_set == "VB/VD":
+    if cell_set == "VB/DB":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
-            if "VB" in m or "VD" in m:
+            if "VB" in m or "DB" in m:
                 all_cells.append(m)
     elif cell_set == "VA/DA":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
@@ -562,11 +573,11 @@ if __name__ == "__main__":
     cv = tdr_instance.get_connectome_view(view)
     print(cv.summary())
 
-    print("------- Escape ---------")
-    print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
-
     print("------- Nonpharyngeal ---------")
     print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
+
+    print("------- Escape ---------")
+    print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES

@@ -4,10 +4,19 @@ from cect.Cook2019DataReader import Cook2019DataReader
 from cect.ConnectomeDataset import get_dataset_source_on_github
 
 from cect.ConnectomeReader import analyse_connections
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 
-def get_instance():
-    return Cook2019DataReader("Male")
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+    else:
+        return Cook2019DataReader("Male")
 
 
 """
