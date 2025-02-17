@@ -1173,8 +1173,8 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
-    from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
-    # from cect.ConnectomeView import ESCAPE_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
+    from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
