@@ -37,6 +37,7 @@ class TestConnectomeDataset(unittest.TestCase):
             "WormNeuroAtlasPepReader",
             "WormNeuroAtlasReader",
             "Yim2024DataReader",
+            "TestDataReader",
         ]:  # "VarshneyDataReader",
             m = importlib.import_module("cect." + r)
 

@@ -85,14 +85,18 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
                         )
                     synclass = FUNCTIONAL_SYN_CLASS
                     syntype = FUNCTIONAL_SYN_TYPE
-                    conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    conns.append(
+                        ConnectionInfo(
+                            str(pre), str(post), float(num), syntype, synclass
+                        )
+                    )
                     connection = True
 
                 if connection:
                     if pre not in connected_cells:
-                        connected_cells.append(pre)
+                        connected_cells.append(str(pre))
                     if post not in connected_cells:
-                        connected_cells.append(post)
+                        connected_cells.append(str(post))
 
         return connected_cells, conns
 
@@ -118,14 +122,14 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
 
 if __name__ == "__main__":
-    my_instance = get_instance(from_cache=True)
+    my_instance = get_instance(from_cache=False)
     cells, neuron_conns = my_instance._read_data()
     print("Loaded %s connections" % len(neuron_conns))
 
     # from cect.ConnectomeReader import analyse_connections
     # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    to_test = ["ADAL", "MCL", "M5"]
+    to_test = ["ADAL", "MCL", "M5", "AWCL"]
 
     for cell in to_test:
         # my_instance.atlas.all_about(cell)

@@ -872,6 +872,9 @@ class ConnectomeDataset:
                 % (blocks_dict_unordered, type(blocks_dict_unordered))
             )
 
+        if len(blocks_dict_unordered) < 3:
+            return None
+
         INTERNEURON = "Interneuron"
         MOTORNEURON = "Motorneuron"
         SENSORY = "Sensory"
@@ -1118,7 +1121,7 @@ def load_connectome_dataset_file(filename: str):
 
 def load_connectome_dataset(d: dict):
     cds = ConnectomeDataset()
-    cds.nodes = d["nodes"]
+    cds.nodes = [str(n) for n in d["nodes"]]
     for cid in d["connections"]:
         cds.connections[cid] = np.array(d["connections"][cid])
 
@@ -1169,7 +1172,8 @@ if __name__ == "__main__":
     print(pprint.pprint(nx.node_link_data(G)))
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
+    from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
@@ -1177,17 +1181,17 @@ if __name__ == "__main__":
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    # from cect.White_whole import get_instance
+    from cect.White_whole import get_instance
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
-    from cect.Yim2024DataReader import get_instance
+    # from cect.Yim2024DataReader import get_instance
 
     synclass = "Chemical Inh"
     synclass = "Chemical Exc"
 
     # synclass = "Acetylcholine"
-    synclass = "Chemical"
+    # synclass = "Chemical"
     # synclass = "Electrical"
     # synclass = "Contact"
     # from cect.TestDataReader import get_instance
@@ -1200,9 +1204,9 @@ if __name__ == "__main__":
 
     print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
 
-    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 

@@ -71,15 +71,17 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
                     # print_( "%s conn (%s (%i) -> %s (%i):\t%s " % (self.synclass, pre, apre, post, apost, weight)       )
 
                     conns.append(
-                        ConnectionInfo(pre, post, weight, syntype, self.synclass)
+                        ConnectionInfo(
+                            str(pre), str(post), float(weight), syntype, self.synclass
+                        )
                     )
                     connection = True
 
                 if connection:
                     if pre not in connected_cells:
-                        connected_cells.append(pre)
+                        connected_cells.append(str(pre))
                     if post not in connected_cells:
-                        connected_cells.append(post)
+                        connected_cells.append(str(post))
 
         return connected_cells, conns
 
