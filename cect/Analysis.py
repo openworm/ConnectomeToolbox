@@ -135,7 +135,7 @@ def test_bilaterals():
                 conn_count += 1
 
     print(
-        f"Of {(len(new_conn_array)**2)} possible edges, {conn_count} are connected, {symm_conn_count} are mirrored {'%.2f'%(100*symm_conn_count/conn_count)}% "
+        f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {symm_conn_count} are mirrored {'%.2f' % (100 * symm_conn_count / conn_count)}% "
     )
 
     cds2.connections[amal] = scaled_conn_array
