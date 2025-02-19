@@ -365,7 +365,7 @@ mn_colors = {
 LOCOMOTION_1_VIEW = View(
     "Loco1",
     "Locomotion 1",
-    "Subset of cells involved in locomotion",
+    "Subset of cells involved in locomotion (work in progress!)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -435,7 +435,7 @@ for cell_set in sorted(loco1_positions.keys()):
 LOCOMOTION_3_VIEW = View(
     "Loco3",
     "Locomotion 3",
-    "Subset of cells involved in locomotion",
+    "Subset of cells involved in locomotion (work in progress!)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )

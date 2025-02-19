@@ -23,7 +23,7 @@ search:
 
     <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <a href="../Pharynx_Test_data_graph"> Pharynx</a> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <b><a href="../Loco1_Test_data_graph"> Locomotion 1</a></b> - <a href="../Loco3_Test_data_graph"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a> - 
 
-    <i>Subset of cells involved in locomotion</i>
+    <i>Subset of cells involved in locomotion (work in progress!)</i>
 === "Chemical Exc"
 
     ```plotly
