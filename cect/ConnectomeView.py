@@ -440,13 +440,16 @@ LOCOMOTION_3_VIEW = View(
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
-width = 10
+hspacing = 7
 vspacing = 10
+max_mn = {"DB": 7, "DD": 6, "DA": 9, "VA": 12, "VD": 13, "VB": 11}
 step = len_scale * 0.05
+node_size = 40
+total_width = 16
 
 loco3_positions = {
     "AVB": (step * -1, step * 0),
-    "AVA": (step * width * 14, step * 0),
+    "AVA": (step * hspacing * total_width, step * 0),
     "DB": (0, step * vspacing * 3),
     "DD": (step * 1, step * vspacing * 2),
     "DA": (step * 2, step * vspacing * 1),
@@ -454,6 +457,7 @@ loco3_positions = {
     "VD": (step * 1, step * vspacing * -2),
     "VA": (step * 2, step * vspacing * -1),
 }
+
 
 mn_range = range(1, 4)
 for cell_set in sorted(loco3_positions.keys()):
@@ -472,7 +476,16 @@ for cell_set in sorted(loco3_positions.keys()):
 
                     pos = loco3_positions[cell_set]
 
-                    pos = (pos[0] + (int(m[2:]) * step * width), pos[1])
+                    pos = (
+                        pos[0]
+                        + (
+                            int(m[2:])
+                            * step
+                            * hspacing
+                            * ((total_width - 2) / max_mn[cell_set])
+                        ),
+                        pos[1],
+                    )
 
                     ns = NodeSet(
                         m,
@@ -480,7 +493,7 @@ for cell_set in sorted(loco3_positions.keys()):
                         color=color,
                         shape=shape,
                         position=pos,
-                        size=len_scale * 40,
+                        size=len_scale * node_size,
                     )
 
                     LOCOMOTION_3_VIEW.node_sets.append(ns)
@@ -494,7 +507,7 @@ for cell_set in sorted(loco3_positions.keys()):
             color=color,
             shape=shape,
             position=loco3_positions[cell_set],
-            size=len_scale * 40,
+            size=len_scale * node_size,
         )
 
         LOCOMOTION_3_VIEW.node_sets.append(ns)
