@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <b><a href="../Social_Test_data"> Social Network</a></b> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - 
+    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <b><a href="../Social_Test_data"> Social Network</a></b> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - 
 
     <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
 === "Chemical Exc"

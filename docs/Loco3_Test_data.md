@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../PeptidergicHubs_White_A_data">White_A</a> <a href="../PeptidergicHubs_White_L4_data">White_L4</a> <a href="../PeptidergicHubs_White_whole_data">White_whole</a> <a href="../PeptidergicHubs_Varshney_data">Varshney</a> <a href="../PeptidergicHubs_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../PeptidergicHubs_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../PeptidergicHubs_Cook2019Herm_data">Cook2019Herm</a> <a href="../PeptidergicHubs_Cook2019Male_data">Cook2019Male</a> <a href="../PeptidergicHubs_Cook2020_data">Cook2020</a> <a href="../PeptidergicHubs_Brittin2021_data">Brittin2021</a> <a href="../PeptidergicHubs_Witvliet1_data">Witvliet1</a> <a href="../PeptidergicHubs_Witvliet2_data">Witvliet2</a> <a href="../PeptidergicHubs_Witvliet3_data">Witvliet3</a> <a href="../PeptidergicHubs_Witvliet4_data">Witvliet4</a> <a href="../PeptidergicHubs_Witvliet5_data">Witvliet5</a> <a href="../PeptidergicHubs_Witvliet6_data">Witvliet6</a> <a href="../PeptidergicHubs_Witvliet7_data">Witvliet7</a> <a href="../PeptidergicHubs_Witvliet8_data">Witvliet8</a> <a href="../PeptidergicHubs_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../PeptidergicHubs_Randi2023_data">Randi2023</a> <a href="../PeptidergicHubs_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../PeptidergicHubs_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../PeptidergicHubs_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <a href="../PeptidergicHubs_Yim2024_data">Yim2024</a> <b><a href="../PeptidergicHubs_Test_data">Test</a></b> <a href="../PeptidergicHubs_SSData_data">SSData</a> <a href="../PeptidergicHubs_UpdSSData_data">UpdSSData</a> <a href="../PeptidergicHubs_UpdSSData2_data">UpdSSData2</a> 
+    <a href="../Loco3_White_A_data">White_A</a> <a href="../Loco3_White_L4_data">White_L4</a> <a href="../Loco3_White_whole_data">White_whole</a> <a href="../Loco3_Varshney_data">Varshney</a> <a href="../Loco3_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Loco3_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Loco3_Cook2019Herm_data">Cook2019Herm</a> <a href="../Loco3_Cook2019Male_data">Cook2019Male</a> <a href="../Loco3_Cook2020_data">Cook2020</a> <a href="../Loco3_Brittin2021_data">Brittin2021</a> <a href="../Loco3_Witvliet1_data">Witvliet1</a> <a href="../Loco3_Witvliet2_data">Witvliet2</a> <a href="../Loco3_Witvliet3_data">Witvliet3</a> <a href="../Loco3_Witvliet4_data">Witvliet4</a> <a href="../Loco3_Witvliet5_data">Witvliet5</a> <a href="../Loco3_Witvliet6_data">Witvliet6</a> <a href="../Loco3_Witvliet7_data">Witvliet7</a> <a href="../Loco3_Witvliet8_data">Witvliet8</a> <a href="../Loco3_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Loco3_Randi2023_data">Randi2023</a> <a href="../Loco3_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../Loco3_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../Loco3_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <a href="../Loco3_Yim2024_data">Yim2024</a> <b><a href="../Loco3_Test_data">Test</a></b> <a href="../Loco3_SSData_data">SSData</a> <a href="../Loco3_UpdSSData_data">UpdSSData</a> <a href="../Loco3_UpdSSData2_data">UpdSSData2</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -16,33 +16,33 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <a href="../PeptidergicHubs_Test_data_graph"> Graph</a> - <b><a href="../PeptidergicHubs_Test_data"> Matrix</a></b> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Hive plot</a> 
+    <a href="../Loco3_Test_data_graph"> Graph</a> - <b><a href="../Loco3_Test_data"> Matrix</a></b> - <a href="../Loco3_Test_data_hiveplot"> Hive plot</a> 
 
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <b><a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a></b> - 
+    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <b><a href="../Loco3_Test_data"> Locomotion 3</a></b> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - 
 
-    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
+    <i>Subset of cells involved in locomotion</i>
 === "Chemical Exc"
 
     <br/>
     ```plotly
-    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Exc.json" }
+    { "file_path": "./assets/Test_Loco3_Chemical_Exc.json" }
     ```
 
 === "Chemical Inh"
 
     <br/>
     ```plotly
-    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Inh.json" }
+    { "file_path": "./assets/Test_Loco3_Chemical_Inh.json" }
     ```
 
 === "Electrical"
 
     <br/>
     ```plotly
-    { "file_path": "./assets/Test_PeptidergicHubs_Electrical.json" }
+    { "file_path": "./assets/Test_Loco3_Electrical.json" }
     ```
 
 

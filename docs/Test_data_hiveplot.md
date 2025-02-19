@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <b><a href="../Test_data_hiveplot"> Raw Data</a></b> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
+    <b><a href="../Test_data_hiveplot"> Raw Data</a></b> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
 
     <i>All of the cells present in the original connectome dataset</i>
 === "Chemical"

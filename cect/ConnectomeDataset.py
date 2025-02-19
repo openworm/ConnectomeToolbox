@@ -835,7 +835,7 @@ class ConnectomeDataset:
         from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
 
         print_("==============")
-        print_(f"Generating: {synclass} for {view}")
+        print_(f"Generating: {synclass} for view {view.name}")
 
         verbose = False
         # print(self.summary())
@@ -1173,8 +1173,8 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
-    # from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
-    from cect.ConnectomeView import ESCAPE_VIEW as view
+    from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+    # from cect.ConnectomeView import ESCAPE_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
@@ -1204,9 +1204,9 @@ if __name__ == "__main__":
 
     print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
 
-    fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
