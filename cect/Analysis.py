@@ -104,7 +104,7 @@ def test_bilaterals():
 
     #
     from cect.White_whole import get_instance
-    from cect.WormNeuroAtlasFuncReader import get_instance
+    # from cect.WormNeuroAtlasFuncReader import get_instance
 
     # from cect.Cook2020DataReader import get_instance
     # from cect.TestDataReader import get_instance
@@ -149,7 +149,6 @@ def test_bilaterals():
         if "Raw" not in view.name
         else ("Functional" if "Func" not in view.name else "Chemical")
     )
-
 
     # print(cds2.connect)
 
