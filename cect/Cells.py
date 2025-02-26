@@ -1725,8 +1725,8 @@ def is_one_of_bilateral_pair(cell: str):
     return is_bilateral_left(cell) or is_bilateral_right(cell)
 
 
-def get_contralateral_neuron(cell: str):
-    """Gets the contralateral neuron for a given neuron, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
+def get_contralateral_cell(cell: str):
+    """Gets the contralateral cell for a given cell, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
 
     Args:
         cell (_type_): _description_
@@ -1737,8 +1737,17 @@ def get_contralateral_neuron(cell: str):
     Returns:
         _type_: _description_
     """
-    if not is_any_neuron(cell):
-        raise Exception("Not yet implemented/tested for non neuronal cells")
+    if is_known_muscle(cell):
+        if "L" in cell:
+            return cell.replace("L", "R")
+        if "R" in cell:
+            return cell.replace("R", "L")
+        return cell
+    """elif not is_any_neuron(cell):
+        raise Exception(
+            "Determining contralateral cell is not yet implemented/tested for non neuronal cells, e.g. %s"
+            % cell
+        )"""
     if is_bilateral_left(cell):
         return cell[:-1] + "R"
     if is_bilateral_right(cell):

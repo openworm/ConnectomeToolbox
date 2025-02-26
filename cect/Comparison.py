@@ -100,18 +100,29 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     )
 
 
-def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
+def get_matrix_markdown(
+    reader_name, view, connectome, synclass, indent="    ", symmetry=False
+):
     view_id = view.id
+
+    if view.has_multicell_nodes():
+        return f"\nSymmetry graph of that view, {view_id}, is not possible, as it has nodes with multiple cells\n"
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
 
-    fig = connectome.to_plotly_matrix_fig(synclass, view)
+    try:
+        fig, extra_info = connectome.to_plotly_matrix_fig(
+            synclass, view, symmetry=symmetry
+        )
+    except Exception as e:
+        return f"\nCan't generate that matrix view: {e}\n"
 
-    asset_filename = "assets/%s_%s_%s.json" % (
+    asset_filename = "assets/%s_%s_%s%s.json" % (
         reader_name,
         view_id.replace(" ", "_"),
         synclass.replace(" ", "_"),
+        "_symm" if symmetry else "",
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
@@ -119,7 +130,7 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n{indent}{extra_info}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -278,16 +289,32 @@ def generate_comparison_page(
                             view_prefix,
                             reader_pages[reader_name],
                         )
+                        symmetry_filename = "docs/%s%s_symmetry.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
 
                         for filename in [
                             graph_filename,
                             matrix_filename,
                             hiveplot_filename,
+                            symmetry_filename,
                         ]:
                             with open(filename, "w") as f:
                                 graph = "graph" in filename
                                 hiveplot = "hiveplot" in filename
-                                matrix = not graph and not hiveplot
+                                symmetry = "symmetry" in filename
+                                matrix = not graph and not hiveplot and not symmetry
+
+                                suffix = (
+                                    "_graph"
+                                    if graph
+                                    else (
+                                        "_hiveplot"
+                                        if hiveplot
+                                        else ("_symmetry" if symmetry else "")
+                                    )
+                                )
 
                                 f.write(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
@@ -311,9 +338,7 @@ def generate_comparison_page(
                                             "<b>" if rr == reader_name else "",
                                             view_prefix,
                                             reader_pages[rr],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             rr,
                                             "</b>" if rr == reader_name else "",
                                         )
@@ -374,12 +399,21 @@ def generate_comparison_page(
                                     )
                                 )
                                 f.write(
-                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
+                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s -'
                                     % (
                                         "<b>" if hiveplot else "",
                                         view_prefix,
                                         reader_pages[reader_name],
                                         "</b>" if hiveplot else "",
+                                    )
+                                )
+                                f.write(
+                                    '%s<a href="../%s%s_symmetry"> Symmetry</a>%s \n\n'
+                                    % (
+                                        "<b>" if symmetry else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if symmetry else "",
                                     )
                                 )
 
@@ -403,9 +437,7 @@ def generate_comparison_page(
                                             "<b>" if view.id == viewb.id else "",
                                             viewb_prefix,
                                             reader_pages[reader_name],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             viewb.name,
                                             "</b>" if view.id == viewb.id else "",
                                             "" if "Fig 3" in view.name else " - ",
@@ -447,6 +479,15 @@ def generate_comparison_page(
                                             cv,
                                             sc,
                                             indent=indent,
+                                        )
+                                    elif symmetry:
+                                        mkdown_fig = get_matrix_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                            symmetry=True,
                                         )
 
                                     if mkdown_fig is not None:

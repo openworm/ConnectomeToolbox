@@ -13,7 +13,7 @@ from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.Cells import is_one_of_bilateral_pair
-from cect.Cells import get_contralateral_neuron
+from cect.Cells import get_contralateral_cell
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
@@ -81,8 +81,8 @@ class BrittinDataReader(ConnectomeDataset):
                     if post not in cells:
                         cells.append(post)
 
-                    pre_ = get_contralateral_neuron(pre)
-                    post_ = get_contralateral_neuron(post)
+                    pre_ = get_contralateral_cell(pre)
+                    post_ = get_contralateral_cell(post)
                     ci_ = ConnectionInfo(pre_, post_, num, syntype, synclass)
                     conns.append(ci_)
                     ci_ = ConnectionInfo(post_, pre_, num, syntype, synclass)
