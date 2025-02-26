@@ -22,7 +22,10 @@ DEFAULT_COLORMAP = [
     "yellow",
     "orange",
 ]  # ["white", "green", "black"]
+
 POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
+
+SYMMETRY_COLORMAP = ["red", "pink", "white", "lightblue", "blue"]
 
 
 class ConnectionInfo:

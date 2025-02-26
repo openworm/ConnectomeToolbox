@@ -108,6 +108,12 @@ class View:
                 return True
         return False
 
+    def has_multicell_nodes(self):
+        for ns in self.node_sets:
+            if not ns.is_one_cell:
+                return True
+        return False
+
     def get_node_set(self, node_set_name):
         for ns in self.node_sets:
             if ns.name == node_set_name:
@@ -399,7 +405,7 @@ def get_color_shape(cell_set):
         cell_set_ref = cell_set[:2]
         rgb = [int(float(c) * 256) for c in mn_colors[cell_set_ref].split()]
         color = "#{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
-        print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
+        # print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
         shape = "circle"
 
     return color, shape

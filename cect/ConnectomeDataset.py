@@ -3,6 +3,7 @@ from cect import print_
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 from cect.ConnectomeReader import POS_NEG_COLORMAP
+from cect.ConnectomeReader import SYMMETRY_COLORMAP
 from cect.Cells import get_short_description
 from cect.Cells import get_standard_color
 from cect.Cells import is_bilateral_left
@@ -407,6 +408,7 @@ class ConnectomeDataset:
         view: str,
         color_continuous_scale: bool = None,
         bold_bilaterals: bool = False,
+        symmetry=False,
     ):
         conn_array = self.connections[synclass]
 
@@ -422,6 +424,15 @@ class ConnectomeDataset:
             largest = max(abs(zmin), abs(zmax))
             zmin = -1 * largest
             zmax = largest
+
+        if symmetry:
+            color_continuous_scale = (
+                SYMMETRY_COLORMAP
+                if color_continuous_scale is None
+                else color_continuous_scale
+            )
+            zmin = -1
+            zmax = 1
 
         color_continuous_scale = (
             DEFAULT_COLORMAP
@@ -451,11 +462,22 @@ class ConnectomeDataset:
             get_color_html(color, node) for node, color in zip(self.nodes, node_colors)
         ]
 
+        if symmetry:
+            from cect.Analysis import convert_to_symmetry_array
+
+            conn_array, extra_info = convert_to_symmetry_array(self, [synclass])
+        else:
+            extra_info = None
+
         import plotly.express as px
 
         fig = px.imshow(
             conn_array,
-            labels=dict(x="Postsynaptic", y="Presynaptic", color="Weight"),
+            labels=dict(
+                x="Postsynaptic",
+                y="Presynaptic",
+                color="Weight" if not symmetry else "Symmetry",
+            ),
             x=x_ticktext,
             y=y_ticktext,
             color_continuous_scale=color_continuous_scale,
@@ -471,6 +493,19 @@ class ConnectomeDataset:
                 }
             ]
         )
+        if symmetry:
+            fig.update(
+                data=[
+                    {
+                        "hovertemplate": "<b>%{y}</b> -> <b>%{x}</b>: <b>%{z}</b><br>Key:"
+                        + "<br>  1   - this connection present, mirror equivalent (may be same connection) also present"
+                        + "<br>  0.5 - this connection present, mirror equivalent missing"
+                        + "<br>  0   - neither connection present"
+                        + "<br>  -1  - this connection missing, mirror equivalent present"
+                        + "<extra></extra> "
+                    }
+                ]
+            )
         fig.update_layout(
             margin=dict(l=2, r=2, t=2, b=2),
         )
@@ -508,7 +543,7 @@ class ConnectomeDataset:
                 fig.add_hline(y=i - 0.5, line_width=0.5)
                 fig.add_vline(x=i - 0.5, line_width=0.5)
 
-        return fig
+        return fig, extra_info
 
     def _get_line_weight(self, weight, min_nonzero_weight, max_weight):
         if weight == 0:
@@ -1173,8 +1208,9 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
-    from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
+    from cect.ConnectomeView import PHARYNX_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
@@ -1206,8 +1242,11 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_matrix_fig(
+        list(view.synclass_sets.keys())[0], view, symmetry=True
+    )
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio
