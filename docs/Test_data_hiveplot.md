@@ -16,7 +16,7 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <a href="../Test_data_graph"> Graph</a> - <a href="../Test_data"> Matrix</a> - <b><a href="../Test_data_hiveplot"> Hive plot</a></b> 
+    <a href="../Test_data_graph"> Graph</a> - <a href="../Test_data"> Matrix</a> - <b><a href="../Test_data_hiveplot"> Hive plot</a></b> -<a href="../Test_data_symmetry"> Symmetry</a> 
 
 
 !!! tip  "Choose View"
