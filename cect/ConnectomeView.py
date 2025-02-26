@@ -411,7 +411,7 @@ for cell_set in sorted(loco1_positions.keys()):
     all_cells = []
 
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
-        print("Adding " + cc)
+        # print("Adding " + cc)
         if cell_set == cc:
             for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
                 if m.startswith(cc):
@@ -466,11 +466,11 @@ for cell_set in sorted(loco3_positions.keys()):
     all_cells = []
 
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
-        print("Adding " + cc)
+        # print("Adding " + cc)
         if cell_set == cc:
             for m in sorted(MOTORNEURONS_NONPHARYNGEAL_COOK):
                 if m.startswith(cc):
-                    print("Adding %s" % m)
+                    # print("Adding %s" % m)
 
                     all_cells = [m]
 
