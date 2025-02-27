@@ -1,4 +1,24 @@
 {
+    "White_A": {
+        "Raw": {
+            "Chemical": "67.53",
+            "Electrical": "82.46"
+        },
+        "Neurons": {
+            "Chemical Exc": "65.56",
+            "Electrical": "82.06"
+        }
+    },
+    "White_L4": {
+        "Raw": {
+            "Chemical": "70.34",
+            "Electrical": "88.15"
+        },
+        "Neurons": {
+            "Chemical Exc": "68.24",
+            "Electrical": "88.73"
+        }
+    },
     "White_whole": {
         "Raw": {
             "Chemical": "70.12",
@@ -23,6 +43,56 @@
             "Electrical": "78.99"
         }
     },
+    "Bentley2016_MA": {
+        "Raw": {
+            "Extrasynaptic": "100.00"
+        },
+        "Neurons": {
+            "Extrasynaptic": "100.00"
+        },
+        "Pharynx": {
+            "Extrasynaptic": "100.00"
+        }
+    },
+    "Bentley2016_PEP": {
+        "Raw": {
+            "Extrasynaptic": "99.32"
+        },
+        "Neurons": {
+            "Extrasynaptic": "99.32"
+        },
+        "Pharynx": {
+            "Extrasynaptic": "100.00"
+        }
+    },
+    "Cook2019Herm": {
+        "Raw": {
+            "Chemical": "67.57",
+            "Electrical": "66.90"
+        },
+        "Neurons": {
+            "Chemical Exc": "64.26",
+            "Electrical": "62.01"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.14",
+            "Electrical": "53.12"
+        }
+    },
+    "Cook2019Male": {
+        "Raw": {
+            "Chemical": "63.61",
+            "Electrical": "67.71"
+        },
+        "Neurons": {
+            "Chemical Exc": "64.66",
+            "Electrical": "66.78"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.14",
+            "Electrical": "53.12"
+        }
+    },
     "Cook2020": {
         "Raw": {
             "Chemical": "77.04",
@@ -45,6 +115,76 @@
             "Contact": "100.00"
         }
     },
+    "Witvliet1": {
+        "Raw": {
+            "Chemical": "65.29",
+            "Electrical": "51.85"
+        },
+        "Neurons": {
+            "Chemical Exc": "65.33",
+            "Electrical": "51.85"
+        }
+    },
+    "Witvliet2": {
+        "Raw": {
+            "Chemical": "71.50",
+            "Electrical": "55.74"
+        },
+        "Neurons": {
+            "Chemical Exc": "71.45",
+            "Electrical": "55.46"
+        }
+    },
+    "Witvliet3": {
+        "Raw": {
+            "Chemical": "69.17",
+            "Electrical": "54.35"
+        },
+        "Neurons": {
+            "Chemical Exc": "68.32",
+            "Electrical": "54.35"
+        }
+    },
+    "Witvliet4": {
+        "Raw": {
+            "Chemical": "73.68",
+            "Electrical": "87.38"
+        },
+        "Neurons": {
+            "Chemical Exc": "73.79",
+            "Electrical": "88.12"
+        }
+    },
+    "Witvliet5": {
+        "Raw": {
+            "Chemical": "65.68",
+            "Electrical": "75.87"
+        },
+        "Neurons": {
+            "Chemical Exc": "66.24",
+            "Electrical": "76.68"
+        }
+    },
+    "Witvliet6": {
+        "Raw": {
+            "Chemical": "72.26",
+            "Electrical": "58.02"
+        },
+        "Neurons": {
+            "Chemical Exc": "71.63",
+            "Electrical": "58.57"
+        }
+    },
+    "Witvliet7": {
+        "Raw": {
+            "Chemical": "66.68",
+            "Electrical": "60.70"
+        },
+        "Neurons": {
+            "Chemical Exc": "65.03",
+            "Electrical": "62.45"
+        }
+    },
     "Witvliet8": {
         "Raw": {
             "Chemical": "67.75",
@@ -53,6 +193,21 @@
         "Neurons": {
             "Chemical Exc": "66.89",
             "Electrical": "68.58"
+        }
+    },
+    "WormNeuroAtlas": {
+        "Raw": {
+            "Chemical": "73.12",
+            "Electrical": "77.82"
+        },
+        "Neurons": {
+            "Chemical Exc": "73.25",
+            "Chemical Inh": "71.70",
+            "Electrical": "77.82"
+        },
+        "Pharynx": {
+            "Chemical Exc": "97.22",
+            "Electrical": "95.56"
         }
     },
     "Randi2023": {
@@ -66,12 +221,90 @@
             "Functional": "67.42"
         }
     },
+    "RipollSanchezShortRange": {
+        "Raw": {
+            "Extrasynaptic": "99.85"
+        },
+        "Neurons": {
+            "Extrasynaptic": "99.85"
+        },
+        "Pharynx": {
+            "Extrasynaptic": "100.00"
+        }
+    },
+    "RipollSanchezMidRange": {
+        "Raw": {
+            "Extrasynaptic": "99.87"
+        },
+        "Neurons": {
+            "Extrasynaptic": "99.87"
+        },
+        "Pharynx": {
+            "Extrasynaptic": "100.00"
+        }
+    },
+    "RipollSanchezLongRange": {
+        "Raw": {
+            "Extrasynaptic": "99.88"
+        },
+        "Neurons": {
+            "Extrasynaptic": "99.88"
+        },
+        "Pharynx": {
+            "Extrasynaptic": "100.00"
+        }
+    },
     "Yim2024": {
         "Raw": {
             "Chemical": "60.56"
         },
         "Neurons": {
             "Chemical Exc": "61.43"
+        }
+    },
+    "SSData": {
+        "Raw": {
+            "Chemical": "72.54",
+            "Electrical": "79.61"
+        },
+        "Neurons": {
+            "Chemical Exc": "67.72",
+            "Chemical Inh": "80.00",
+            "Electrical": "79.61"
+        },
+        "Pharynx": {
+            "Chemical Exc": "96.47",
+            "Electrical": "91.49"
+        }
+    },
+    "UpdSSData": {
+        "Raw": {
+            "Chemical": "66.83",
+            "Electrical": "63.73"
+        },
+        "Neurons": {
+            "Chemical Exc": "62.90",
+            "Chemical Inh": "82.46",
+            "Electrical": "60.74"
+        },
+        "Pharynx": {
+            "Chemical Exc": "73.23",
+            "Electrical": "54.84"
+        }
+    },
+    "UpdSSData2": {
+        "Raw": {
+            "Chemical": "66.94",
+            "Electrical": "63.73"
+        },
+        "Neurons": {
+            "Chemical Exc": "63.05",
+            "Chemical Inh": "82.46",
+            "Electrical": "60.74"
+        },
+        "Pharynx": {
+            "Chemical Exc": "73.23",
+            "Electrical": "54.84"
         }
     },
     "Test": {

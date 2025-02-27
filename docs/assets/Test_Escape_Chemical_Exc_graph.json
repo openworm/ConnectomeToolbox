@@ -5,7 +5,7 @@
       "line": {
         "color": "green",
         "shape": "linear",
-        "width": 8.875
+        "width": 1
       },
       "mode": "lines",
       "textposition": "middle center",
@@ -24,7 +24,7 @@
       "line": {
         "color": "green",
         "shape": "linear",
-        "width": 10.0
+        "width": 1
       },
       "mode": "lines",
       "textposition": "middle center",
@@ -43,13 +43,13 @@
       "hovertext": [
         "<b>ALM</b><br>Cells: ALML, ALMR",
         "<b>AVA</b><br>Cells: AVAL, AVAR",
-        "<b>AVB</b><br>Cells: AVBL, AVBR<br>Conns in: <b>PVC</b>: 7",
+        "<b>AVB</b><br>Cells: AVBL, AVBR<br>Conns in: <b>PVC</b>: 8",
         "<b>AVD</b><br>Cells: AVDL, AVDR",
         "<b>AVM</b><br>Sensory neuron (mechanosensory)",
         "<b>Body Musc</b><br>Cells: MDL08, MDL09, MDL10, MDL11, MDL12, MDL13, MDL14, MDL15, MDL16, MDL17<br>MDL17, MDL18, MDL19, MDL20, MDL21, MDL22, MDL23, MDL24, MDR08, MDR09, MDR10<br>MDR10, MDR11, MDR12, MDR13, MDR14, MDR15, MDR16, MDR17, MDR18, MDR19, MDR20<br>MDR20, MDR21, MDR22, MDR23, MDR24, MVL08, MVL09, MVL10, MVL11, MVL12, MVL13<br>MVL13, MVL14, MVL15, MVL16, MVL17, MVL18, MVL19, MVL20, MVL21, MVL22, MVL23<br>MVL23, MVR08, MVR09, MVR10, MVR11, MVR12, MVR13, MVR14, MVR15, MVR16, MVR17<br>MVR17, MVR18, MVR19, MVR20, MVR21, MVR22, MVR23, MVR24, BWM",
         "<b>Head Musc</b><br>Cells: MDL01, MDL02, MDL03, MDL04, MDL05, MDL06, MDL07, MDR01, MDR02, MDR03<br>MDR03, MDR04, MDR05, MDR06, MDR07, MVL01, MVL02, MVL03, MVL04, MVL05, MVL06<br>MVL06, MVL07, MVR01, MVR02, MVR03, MVR04, MVR05, MVR06, MVR07",
         "<b>PLM</b><br>Cells: PLML, PLMR",
-        "<b>PVC</b><br>Cells: PVCL, PVCR<br>Conns out: <b>VB/DB</b>: 8, <b>AVB</b>: 7",
+        "<b>PVC</b><br>Cells: PVCL, PVCR<br>Conns out: <b>AVB</b>: 8, <b>VB/DB</b>: 8",
         "<b>PVM</b><br>Sensory neuron (mechanosensory)",
         "<b>RIM</b><br>Cells: RIML, RIMR",
         "<b>RMD</b><br>Cells: RMDL, RMDR",

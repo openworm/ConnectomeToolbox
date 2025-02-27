@@ -479,6 +479,8 @@
           "#ff3300",
           "#ff3300",
           "#ff3300",
+          "#ff3300",
+          "#ff3300",
           "#ff3300"
         ],
         "opacity": 0.8,
@@ -487,21 +489,27 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
         "AVBL (in: 2, out: 0)",
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
         0.9396926207859084,
         3.4455396095483306,
         0.9396926207859084,
+        0.9396926207859084,
+        0.9396926207859084,
         0.9396926207859084
       ],
       "y": [
         -0.3420201433256686,
         -1.254073858860785,
+        -0.3420201433256686,
+        -0.3420201433256686,
         -0.3420201433256686,
         -0.3420201433256686
       ]
@@ -513,6 +521,8 @@
           "#ff3300",
           "#ff3300",
           "#ff3300",
+          "#ff3300",
+          "#ff3300",
           "#ff3300"
         ],
         "opacity": 0.8,
@@ -521,21 +531,27 @@
       "mode": "markers",
       "showlegend": false,
       "text": [
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
         "AVBL (in: 2, out: 0)",
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
-        "I5 (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)",
+        "I5 (in: 0, out: 0)<br>AVBR (in: 0, out: 0)<br>PVCL (in: 0, out: 0)<br>PVCR (in: 0, out: 0)<br>RMGR (in: 0, out: 0)"
       ],
       "type": "scatter",
       "x": [
         0.9396926207859084,
         3.4455396095483306,
         0.9396926207859084,
+        0.9396926207859084,
+        0.9396926207859084,
         0.9396926207859084
       ],
       "y": [
         0.3420201433256687,
         1.2540738588607852,
+        0.3420201433256687,
+        0.3420201433256687,
         0.3420201433256687,
         0.3420201433256687
       ]
