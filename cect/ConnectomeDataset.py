@@ -415,6 +415,13 @@ class ConnectomeDataset:
         zmin = np.min(conn_array)
         zmax = np.max(conn_array)
 
+        if symmetry:
+            color_continuous_scale = (
+                SYMMETRY_COLORMAP
+                if color_continuous_scale is None
+                else color_continuous_scale
+            )
+
         if synclass == "Functional":
             color_continuous_scale = (
                 POS_NEG_COLORMAP
@@ -426,11 +433,6 @@ class ConnectomeDataset:
             zmax = largest
 
         if symmetry:
-            color_continuous_scale = (
-                SYMMETRY_COLORMAP
-                if color_continuous_scale is None
-                else color_continuous_scale
-            )
             zmin = -1
             zmax = 1
 
@@ -466,6 +468,7 @@ class ConnectomeDataset:
             from cect.Analysis import convert_to_symmetry_array
 
             conn_array, extra_info = convert_to_symmetry_array(self, [synclass])
+
         else:
             extra_info = None
 

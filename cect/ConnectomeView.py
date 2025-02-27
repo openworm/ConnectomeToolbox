@@ -110,7 +110,7 @@ class View:
 
     def has_multicell_nodes(self):
         for ns in self.node_sets:
-            if not ns.is_one_cell:
+            if not ns.is_one_cell():
                 return True
         return False
 

@@ -1737,6 +1737,10 @@ def get_contralateral_cell(cell: str):
     Returns:
         _type_: _description_
     """
+    if not is_known_cell(cell):
+        raise Exception(
+            "Cannot determine contralateral cell for: %s (unknown cell)" % cell
+        )
     if is_known_muscle(cell):
         if cell in ["MVR24", "MANAL"]:
             return cell

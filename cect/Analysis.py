@@ -4,6 +4,22 @@ import numpy as np
 from cect.Cells import get_contralateral_cell
 from cect.ConnectomeReader import SYMMETRY_COLORMAP
 from cect import print_
+import json
+
+all_sym_info = {}
+
+
+def register_symmetry_info(reader, view, synclass, percentage):
+    if reader not in all_sym_info:
+        all_sym_info[reader] = {}
+    if view not in all_sym_info[reader]:
+        all_sym_info[reader][view] = {}
+    all_sym_info[reader][view][synclass] = percentage
+
+
+def save_symmetry_info():
+    with open("cect/cache/symmetry_measures.json", "w") as fp:
+        json.dump(all_sym_info, fp, indent=4)
 
 
 def array_info(conn_array):
@@ -90,7 +106,8 @@ def convert_to_symmetry_array(cds, synclasses):
                         ] = -1
                 conn_count += 1
 
-    info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % (100 * symm_conn_count / conn_count)}% "
+    percentage = 100 * symm_conn_count / conn_count
+    info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% "
     print(info)
 
     return scaled_conn_array, info
@@ -144,10 +161,11 @@ def test_bilaterals():
     cds2 = cds.get_connectome_view(view)
 
     synclass = "Chemical Inh"
+
     synclass = (
         "Chemical Exc"
         if "Raw" not in view.name
-        else ("Functional" if "Func" not in view.name else "Chemical")
+        else ("Functional" if "Func" in view.name else "Chemical")
     )
 
     # print(cds2.connect)
@@ -157,9 +175,11 @@ def test_bilaterals():
 
     # import plotly.io as pio
     # pio.renderers.default = "browser"
+
     if "-nogui" not in sys.argv:
         # cds2.connection_number_plot
 
+        print(f"Plotting synclass {synclass} for {view.name}")
         fig, info = cds2.to_plotly_matrix_fig(
             synclass, view, SYMMETRY_COLORMAP, bold_bilaterals=True, symmetry=True
         )

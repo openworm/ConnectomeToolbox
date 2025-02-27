@@ -1,0 +1,91 @@
+{
+    "White_whole": {
+        "Raw": {
+            "Chemical": "70.12",
+            "Electrical": "80.67"
+        },
+        "Neurons": {
+            "Chemical Exc": "68.67",
+            "Electrical": "80.46"
+        },
+        "Pharynx": {
+            "Chemical Exc": "97.22",
+            "Electrical": "95.56"
+        }
+    },
+    "Varshney": {
+        "Raw": {
+            "Chemical": "67.73",
+            "Electrical": "78.99"
+        },
+        "Neurons": {
+            "Chemical Exc": "67.73",
+            "Electrical": "78.99"
+        }
+    },
+    "Cook2020": {
+        "Raw": {
+            "Chemical": "77.04",
+            "Electrical": "80.33"
+        },
+        "Neurons": {
+            "Chemical Exc": "73.47",
+            "Electrical": "53.57"
+        },
+        "Pharynx": {
+            "Chemical Exc": "73.97",
+            "Electrical": "50.00"
+        }
+    },
+    "Brittin2021": {
+        "Raw": {
+            "Contact": "100.00"
+        },
+        "Neurons": {
+            "Contact": "100.00"
+        }
+    },
+    "Witvliet8": {
+        "Raw": {
+            "Chemical": "67.75",
+            "Electrical": "67.88"
+        },
+        "Neurons": {
+            "Chemical Exc": "66.89",
+            "Electrical": "68.58"
+        }
+    },
+    "Randi2023": {
+        "Raw": {
+            "Functional": "28.10"
+        },
+        "Neurons": {
+            "Functional": "28.30"
+        },
+        "Pharynx": {
+            "Functional": "67.42"
+        }
+    },
+    "Yim2024": {
+        "Raw": {
+            "Chemical": "60.56"
+        },
+        "Neurons": {
+            "Chemical Exc": "61.43"
+        }
+    },
+    "Test": {
+        "Raw": {
+            "Chemical": "56.25",
+            "Electrical": "-33.33"
+        },
+        "Neurons": {
+            "Chemical Exc": "61.54",
+            "Chemical Inh": "100.00",
+            "Electrical": "0.00"
+        },
+        "Pharynx": {
+            "Chemical Exc": "100.00"
+        }
+    }
+}

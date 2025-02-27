@@ -105,18 +105,24 @@ def get_matrix_markdown(
 ):
     view_id = view.id
 
-    if view.has_multicell_nodes():
-        return f"\nSymmetry graph of that view, {view_id}, is not possible, as it has nodes with multiple cells\n"
-
     if np.sum(connectome.connections[synclass]) == 0:
         return None
+
+    if symmetry and view.has_multicell_nodes():
+        return f"\n{indent}Symmetry graph of that view, {view_id}, is not possible, as it contains nodes with multiple cells\n"
 
     try:
         fig, extra_info = connectome.to_plotly_matrix_fig(
             synclass, view, symmetry=symmetry
         )
+        from cect.Analysis import register_symmetry_info
+
+        if symmetry:
+            percentage = extra_info.split()[-1][:-1]
+            register_symmetry_info(reader_name, view_id, synclass, percentage)
+
     except Exception as e:
-        return f"\nCan't generate that matrix view: {e}\n"
+        return f"\n{indent}Can't generate that matrix for view {view}.\n{indent}Error: {e}\n"
 
     asset_filename = "assets/%s_%s_%s%s.json" % (
         reader_name,
@@ -206,7 +212,7 @@ def generate_comparison_page(
     if not quick:
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
     if not quick:
         readers["RipollSanchezShortRange"] = [
@@ -723,6 +729,10 @@ def generate_comparison_page(
         )
 
     print_("Written page: %s" % filename)
+
+    from cect.Analysis import save_symmetry_info
+
+    save_symmetry_info()
 
     return connectomes
 
