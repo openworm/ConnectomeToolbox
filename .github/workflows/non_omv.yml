@@ -41,7 +41,7 @@ jobs:
         
     - name: Run quick test script
       run: |
-        ./test.sh -q  # also runs pytest
+        ./test.sh  # also runs pytest
         
     - name: Final version info
       run: |

@@ -16,14 +16,14 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <a href="../Loco1_Test_data_graph"> Graph</a> - <a href="../Loco1_Test_data"> Matrix</a> - <b><a href="../Loco1_Test_data_hiveplot"> Hive plot</a></b> 
+    <a href="../Loco1_Test_data_graph"> Graph</a> - <a href="../Loco1_Test_data"> Matrix</a> - <b><a href="../Loco1_Test_data_hiveplot"> Hive plot</a></b> -<a href="../Loco1_Test_data_symmetry"> Symmetry</a> 
 
 
 !!! tip  "Choose View"
 
     <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <b><a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a></b> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
 
-    <i>Subset of cells involved in locomotion</i>
+    <i>Subset of cells involved in locomotion (work in progress!)</i>
 === "Chemical Exc"
 No plottable connections of this type...
 === "Chemical Inh"
@@ -31,11 +31,12 @@ No plottable connections of this type...
 === "Electrical"
 No plottable connections of this type...
 
-### Neurons (herm) (18)
+### Neurons (herm) (20)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
  | <a href="../AVBL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBL</span></a>
+ | <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
@@ -44,6 +45,7 @@ No plottable connections of this type...
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
  | <a href="../M4" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M4</span></a>
  | <a href="../PVCL" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCL</span></a>
+ | <a href="../PVCR" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCR</span></a>
  | <a href="../RMGR" title="Layer 2 interneuron"><span style="color:#ff3300;">RMGR</span></a>
  | <a href="../VA3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA3</span></a>
  | <a href="../VA6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA6</span></a>
@@ -54,7 +56,7 @@ No plottable connections of this type...
 
 </details>
 
-### Missing neurons (284)
+### Missing neurons (282)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -109,7 +111,6 @@ No plottable connections of this type...
  | <a href="../AUAR" title="Layer 3 interneuron"><span style="color:#ff3300;">AUAR</span></a>
  | <a href="../AVAL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVAL</span></a>
  | <a href="../AVAR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVAR</span></a>
- | <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>
  | <a href="../AVDL" title="Layer 2 interneuron"><span style="color:#ff3300;">AVDL</span></a>
  | <a href="../AVDR" title="Layer 2 interneuron"><span style="color:#ff3300;">AVDR</span></a>
  | <a href="../AVEL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVEL</span></a>
@@ -218,7 +219,6 @@ No plottable connections of this type...
  | <a href="../PLNL" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PLNL</span></a>
  | <a href="../PLNR" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PLNR</span></a>
  | <a href="../PQR" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PQR</span></a>
- | <a href="../PVCR" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCR</span></a>
  | <a href="../PVDL" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVDL</span></a>
  | <a href="../PVDR" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVDR</span></a>
  | <a href="../PVM" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVM</span></a>

@@ -108,6 +108,12 @@ class View:
                 return True
         return False
 
+    def has_multicell_nodes(self):
+        for ns in self.node_sets:
+            if not ns.is_one_cell():
+                return True
+        return False
+
     def get_node_set(self, node_set_name):
         for ns in self.node_sets:
             if ns.name == node_set_name:
@@ -365,7 +371,7 @@ mn_colors = {
 LOCOMOTION_1_VIEW = View(
     "Loco1",
     "Locomotion 1",
-    "Subset of cells involved in locomotion",
+    "Subset of cells involved in locomotion (work in progress!)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -399,7 +405,7 @@ def get_color_shape(cell_set):
         cell_set_ref = cell_set[:2]
         rgb = [int(float(c) * 256) for c in mn_colors[cell_set_ref].split()]
         color = "#{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
-        print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
+        # print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
         shape = "circle"
 
     return color, shape
@@ -411,7 +417,7 @@ for cell_set in sorted(loco1_positions.keys()):
     all_cells = []
 
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
-        print("Adding " + cc)
+        # print("Adding " + cc)
         if cell_set == cc:
             for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
                 if m.startswith(cc):
@@ -435,7 +441,7 @@ for cell_set in sorted(loco1_positions.keys()):
 LOCOMOTION_3_VIEW = View(
     "Loco3",
     "Locomotion 3",
-    "Subset of cells involved in locomotion",
+    "Subset of cells involved in locomotion (work in progress!)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -466,11 +472,11 @@ for cell_set in sorted(loco3_positions.keys()):
     all_cells = []
 
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
-        print("Adding " + cc)
+        # print("Adding " + cc)
         if cell_set == cc:
             for m in sorted(MOTORNEURONS_NONPHARYNGEAL_COOK):
                 if m.startswith(cc):
-                    print("Adding %s" % m)
+                    # print("Adding %s" % m)
 
                     all_cells = [m]
 

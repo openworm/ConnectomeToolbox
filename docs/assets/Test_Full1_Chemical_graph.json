@@ -62,7 +62,7 @@
       "line": {
         "color": "#16537E",
         "shape": "spline",
-        "width": 2.0327868852459017
+        "width": 2.180327868852459
       },
       "mode": "lines",
       "textposition": "middle center",
@@ -85,7 +85,7 @@
       "line": {
         "color": "#16537E",
         "shape": "spline",
-        "width": 2.0327868852459017
+        "width": 2.180327868852459
       },
       "mode": "lines",
       "textposition": "middle center",
@@ -177,7 +177,7 @@
         "<b>SN4</b><br>Cells: BAGL, BAGR, URXL, URXR, ALNL, ALNR, PLNL, PLNR, SDQL, SDQR<br>SDQR, AQR, PQR",
         "<b>SN5</b><br>Cells: ASHL, ASHR, ADLL, ADLR<br>Conns in: <b>SN6</b>: 2<br>Conns out: <b>IN2</b>: 6",
         "<b>SN6</b><br>Cells: ASJL, ASJR, ASKL, ASKR, ASGL, ASGR, ASIL, ASIR, AFDL, AFDR<br>AFDR, AWAL, AWAR, AWBL, AWBR, AWCL, AWCR, ASEL, ASER, ADFL, ADFR<br>ADFR<br>Conns out: <b>SN5</b>: 2",
-        "<b>IN1</b><br>Cells: RIAL, RIAR, RIML, RIMR, AVEL, AVER, RID, AVBL, AVBR, AVAL<br>AVAL, AVAR, PVCL, PVCR<br>Conns in: <b>IN1</b>: 7, <b>SN3</b>: 3<br>Conns out: <b>MNVC</b>: 8, <b>IN1</b>: 7",
+        "<b>IN1</b><br>Cells: RIAL, RIAR, RIML, RIMR, AVEL, AVER, RID, AVBL, AVBR, AVAL<br>AVAL, AVAR, PVCL, PVCR<br>Conns in: <b>IN1</b>: 8, <b>SN3</b>: 3<br>Conns out: <b>IN1</b>: 8, <b>MNVC</b>: 8",
         "<b>IN2</b><br>Cells: RIBL, RIBR, AIBL, AIBR, RIGL, RIGR, RMGL, RMGR, RICL, RICR<br>RICR, SAADR, SAAVL, SAADL, SAAVR, RMFL, RMFR, AVKL, AVKR, DVC, AVJR<br>AVJR, AVJL, PVT, AVDL, AVDR, AVL, PVWL, PVWR<br>Conns in: <b>SN5</b>: 6",
         "<b>IN3</b><br>Cells: PVQL, PVQR, ALA, BDUL, BDUR, AIYL, AIYR, AIAL, AIAR, AUAL<br>AUAL, AUAR, AIZL, AIZR, RIS, ADAL, ADAR, RIFL, RIFR, PVR, AVFL<br>AVFL, AVFR, AVHL, AVHR, PVPL, PVPR, PVNL, PVNR, AVG, LUAL, LUAR<br>LUAR, DVB",
         "<b>IN4</b><br>Cells: AIML, AIMR, AINL, AINR, RIH, URBL, URBR, RIR",
