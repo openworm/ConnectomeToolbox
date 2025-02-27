@@ -130,7 +130,9 @@ def get_matrix_markdown(
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n{indent}{extra_info}\n'
+    extra = "\n" + indent + extra_info if extra_info is not None else ""
+
+    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):

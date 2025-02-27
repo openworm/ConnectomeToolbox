@@ -1738,6 +1738,8 @@ def get_contralateral_cell(cell: str):
         _type_: _description_
     """
     if is_known_muscle(cell):
+        if cell in ["MVR24", "MANAL"]:
+            return cell
         if "L" in cell:
             return cell.replace("L", "R")
         if "R" in cell:

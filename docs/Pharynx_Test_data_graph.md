@@ -16,7 +16,7 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <b><a href="../Pharynx_Test_data_graph"> Graph</a></b> - <a href="../Pharynx_Test_data"> Matrix</a> - <a href="../Pharynx_Test_data_hiveplot"> Hive plot</a> 
+    <b><a href="../Pharynx_Test_data_graph"> Graph</a></b> - <a href="../Pharynx_Test_data"> Matrix</a> - <a href="../Pharynx_Test_data_hiveplot"> Hive plot</a> -<a href="../Pharynx_Test_data_symmetry"> Symmetry</a> 
 
 
 !!! tip  "Choose View"

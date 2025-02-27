@@ -44,6 +44,8 @@ class TestDataReader(ConnectomeDataset):
 
     def read_data(self):
         self.conns.append(ConnectionInfo("PVCL", "AVBL", 7, "Send", "Acetylcholine"))
+        self.conns.append(ConnectionInfo("PVCR", "AVBR", 1, "Send", "Acetylcholine"))
+
         self.conns.append(ConnectionInfo("PVCL", "DB4", 6, "Send", "Acetylcholine"))
         self.conns.append(ConnectionInfo("PVCL", "VB6", 2, "Send", "Acetylcholine"))
         self.conns.append(ConnectionInfo("DB4", "DD4", 2, "Send", "Acetylcholine"))
