@@ -20,7 +20,7 @@
         "<span style=\"color:thistle;\">RMD</span>",
         "<span style=\"color:thistle;\">SMD</span>",
         "<span style=\"color:lightblue;\">VA/DA</span>",
-        "<span style=\"color:lightgreen;\">VB/VD</span>"
+        "<span style=\"color:lightgreen;\">VB/DB</span>"
       ],
       "xaxis": "x",
       "y": [
@@ -38,7 +38,7 @@
         "<span style=\"color:thistle;\">RMD</span>",
         "<span style=\"color:thistle;\">SMD</span>",
         "<span style=\"color:lightblue;\">VA/DA</span>",
-        "<span style=\"color:lightgreen;\">VB/VD</span>"
+        "<span style=\"color:lightgreen;\">VB/DB</span>"
       ],
       "yaxis": "y",
       "z": [
@@ -283,7 +283,7 @@
         [
           0.0,
           0.0,
-          3.0,
+          7.0,
           0.0,
           0.0,
           0.0,
@@ -302,7 +302,7 @@
   ],
   "layout": {
     "coloraxis": {
-      "cmax": 3.0,
+      "cmax": 7.0,
       "cmin": 0.0,
       "colorbar": {
         "title": {

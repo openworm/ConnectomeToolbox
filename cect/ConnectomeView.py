@@ -58,16 +58,16 @@ class NodeSet:
         return len(self.cells) == 1 and self.name == self.cells[0]
 
     def __repr__(self):
-        return "NodeSet %s%s: %s" % (
-            self.name,
-            " (%s)"
-            % (
-                "%s%s" % (self.color, self.shape if self.shape is not None else "")
-                if self.color is not None
-                else ""
-            ),
-            self.cells,
-        )
+        info = "NodeSet: %s\t(" % self.name
+        if self.color is not None:
+            info += "%s " % self.color
+        if self.shape is not None:
+            info += "%s " % self.shape
+        if self.position is not None:
+            info += "%s " % (str(self.position))
+        info += "\t%s" % self.cells
+
+        return info
 
 
 class View:
@@ -91,9 +91,26 @@ class View:
         self.colormap = colormap
         self.only_show_existing_nodes = only_show_existing_nodes
 
+    def __repr__(self):
+        info = "ConnectomeView: %s (%s)" % (
+            self.name,
+            self.id,
+        )
+        if self.description is not None:
+            info += "\n  %s" % self.description
+        for n in self.node_sets:
+            info += "\n    %s" % n
+        return info
+
     def has_color(self):
         for ns in self.node_sets:
             if ns.color is not None:
+                return True
+        return False
+
+    def has_multicell_nodes(self):
+        for ns in self.node_sets:
+            if not ns.is_one_cell():
                 return True
         return False
 
@@ -258,11 +275,12 @@ esc_positions = {
     "RIM": (step * 2, step * -3.2),
     "RMD": (step * 1.5, step * -4.2),
     "SMD": (step * 2.5, step * -4.2),
-    "VB/VD": (0, step * -3.9),
+    "VB/DB": (0, step * -3.9),
     "VA/DA": (step * 4, step * -3.9),
     "Body Musc": (step * 0.8, step * -5.2),
     "Head Musc": (step * 3.2, step * -5.2),
 }
+
 
 for cell_set in sorted(esc_positions.keys()):
     color = "purple"
@@ -279,7 +297,7 @@ for cell_set in sorted(esc_positions.keys()):
     if cell_set in ["RIM"]:
         color = "blue"
         shape = "circle"
-    if cell_set in ["VB/VD"]:
+    if cell_set in ["VB/DB"]:
         color = "lightgreen"
         shape = "circle"
     if cell_set in ["RMD", "SMD"]:
@@ -294,9 +312,9 @@ for cell_set in sorted(esc_positions.keys()):
 
     all_cells = []
 
-    if cell_set == "VB/VD":
+    if cell_set == "VB/DB":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
-            if "VB" in m or "VD" in m:
+            if "VB" in m or "DB" in m:
                 all_cells.append(m)
     elif cell_set == "VA/DA":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
@@ -328,6 +346,178 @@ for cell_set in sorted(esc_positions.keys()):
     )
 
     ESCAPE_VIEW.node_sets.append(ns)
+
+
+loco1_positions = {
+    "AVB": (step * -1, step * 0),
+    "AVA": (step * 3, step * 0),
+    "DB": (0, step * 1),
+    "DD": (step * 1, step * 1),
+    "DA": (step * 2, step * 1),
+    "VB": (0, step * -1),
+    "VD": (step * 1, step * -1),
+    "VA": (step * 2, step * -1),
+}
+
+mn_colors = {
+    "DA": ".82 .7 .43",
+    "DB": ".43 .69 .67",
+    "DD": ".24 .32 .62",
+    "VA": ".52 .33 .17",
+    "VB": ".17 .4 .37",
+    "VD": ".65 .78 .9",
+}
+
+LOCOMOTION_1_VIEW = View(
+    "Loco1",
+    "Locomotion 1",
+    "Subset of cells involved in locomotion (work in progress!)",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+)
+
+
+def get_color_shape(cell_set):
+    color = "purple"
+    shape = "triangle-up"
+
+    if cell_set in ["PVM", "PLM"]:
+        color = "red"
+    if cell_set in ["PVC", "AVB"]:
+        color = "green"
+        shape = "octagon"
+    if cell_set in ["AVD", "AVA"]:
+        color = "blue"
+        shape = "octagon"
+    if cell_set in ["RIM"]:
+        color = "blue"
+        shape = "circle"
+
+    if cell_set in ["RMD", "SMD"]:
+        color = "thistle"
+        shape = "circle"
+        shape = "circle"
+    if "Musc" in cell_set:
+        color = "dimgrey"
+        shape = "diamond-wide"
+
+    if cell_set in mn_colors or (len(cell_set) == 3 and cell_set[:2] in mn_colors):
+        cell_set_ref = cell_set[:2]
+        rgb = [int(float(c) * 256) for c in mn_colors[cell_set_ref].split()]
+        color = "#{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
+        # print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
+        shape = "circle"
+
+    return color, shape
+
+
+for cell_set in sorted(loco1_positions.keys()):
+    color, shape = get_color_shape(cell_set)
+
+    all_cells = []
+
+    for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
+        # print("Adding " + cc)
+        if cell_set == cc:
+            for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
+                if m.startswith(cc):
+                    all_cells.append(m)
+
+    if cell_set in ["AVA", "AVB"]:
+        all_cells = ["%sL" % cell_set, "%sR" % cell_set]
+
+    ns = NodeSet(
+        cell_set,
+        all_cells,
+        color=color,
+        shape=shape,
+        position=loco1_positions[cell_set],
+        size=len_scale * 80,
+    )
+
+    LOCOMOTION_1_VIEW.node_sets.append(ns)
+
+
+LOCOMOTION_3_VIEW = View(
+    "Loco3",
+    "Locomotion 3",
+    "Subset of cells involved in locomotion (work in progress!)",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+)
+
+hspacing = 7
+vspacing = 10
+max_mn = {"DB": 7, "DD": 6, "DA": 9, "VA": 12, "VD": 13, "VB": 11}
+step = len_scale * 0.05
+node_size = 40
+total_width = 16
+
+loco3_positions = {
+    "AVB": (step * -1, step * 0),
+    "AVA": (step * hspacing * total_width, step * 0),
+    "DB": (0, step * vspacing * 3),
+    "DD": (step * 1, step * vspacing * 2),
+    "DA": (step * 2, step * vspacing * 1),
+    "VB": (0, step * vspacing * -3),
+    "VD": (step * 1, step * vspacing * -2),
+    "VA": (step * 2, step * vspacing * -1),
+}
+
+
+mn_range = range(1, 4)
+for cell_set in sorted(loco3_positions.keys()):
+    color, shape = get_color_shape(cell_set)
+
+    all_cells = []
+
+    for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
+        # print("Adding " + cc)
+        if cell_set == cc:
+            for m in sorted(MOTORNEURONS_NONPHARYNGEAL_COOK):
+                if m.startswith(cc):
+                    # print("Adding %s" % m)
+
+                    all_cells = [m]
+
+                    pos = loco3_positions[cell_set]
+
+                    pos = (
+                        pos[0]
+                        + (
+                            int(m[2:])
+                            * step
+                            * hspacing
+                            * ((total_width - 2) / max_mn[cell_set])
+                        ),
+                        pos[1],
+                    )
+
+                    ns = NodeSet(
+                        m,
+                        all_cells,
+                        color=color,
+                        shape=shape,
+                        position=pos,
+                        size=len_scale * node_size,
+                    )
+
+                    LOCOMOTION_3_VIEW.node_sets.append(ns)
+
+    if cell_set in ["AVA", "AVB"]:
+        all_cells = ["%sL" % cell_set, "%sR" % cell_set]
+
+        ns = NodeSet(
+            cell_set,
+            all_cells,
+            color=color,
+            shape=shape,
+            position=loco3_positions[cell_set],
+            size=len_scale * node_size,
+        )
+
+        LOCOMOTION_3_VIEW.node_sets.append(ns)
+
 
 PEP_HUBS_VIEW = View(
     "PeptidergicHubs",
@@ -513,6 +703,8 @@ ALL_VIEWS = [
     SOCIAL_VIEW,
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
+    LOCOMOTION_1_VIEW,
+    LOCOMOTION_3_VIEW,
     PEP_HUBS_VIEW,
 ]
 
@@ -562,11 +754,19 @@ if __name__ == "__main__":
     cv = tdr_instance.get_connectome_view(view)
     print(cv.summary())
 
+    print("------- Nonpharyngeal ---------")
+    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
+
     print("------- Escape ---------")
     print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
 
-    print("------- Nonpharyngeal ---------")
-    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
+    print("------- Locomotion 1 ---------")
+    print(tdr_instance.get_connectome_view(LOCOMOTION_1_VIEW).summary())
+    print(LOCOMOTION_1_VIEW)
+
+    print("------- Locomotion 3 ---------")
+    print(tdr_instance.get_connectome_view(LOCOMOTION_3_VIEW).summary())
+    print(LOCOMOTION_3_VIEW)
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES

@@ -8,13 +8,24 @@ from cect.ConnectomeReader import analyse_connections
 import sys
 
 
-def get_instance():
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
+
+
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``Cook2019DataReader`` to load data on hermaphrodite connectome
 
     Returns:
         Cook2019DataReader: The initialised hermaphrodite connectome reader
     """
-    return Cook2019DataReader("Hermaphodite")
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename("Cook2019HermReader"))
+    else:
+        return Cook2019DataReader("Hermaphodite")
 
 
 """

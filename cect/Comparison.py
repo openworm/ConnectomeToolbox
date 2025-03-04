@@ -36,7 +36,7 @@ reader_pages = {
     "RipollSanchezShortRange": "RipollSanchezShortRange_data",
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
-    "Yin2024": "Yin2024_data",
+    "Yim2024": "Yim2024_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
@@ -100,18 +100,35 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     )
 
 
-def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
+def get_matrix_markdown(
+    reader_name, view, connectome, synclass, indent="    ", symmetry=False
+):
     view_id = view.id
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
 
-    fig = connectome.to_plotly_matrix_fig(synclass, view)
+    if symmetry and view.has_multicell_nodes():
+        return f"\n{indent}Symmetry graph of that view, {view_id}, is not possible, as it contains nodes with multiple cells\n"
 
-    asset_filename = "assets/%s_%s_%s.json" % (
+    try:
+        fig, extra_info = connectome.to_plotly_matrix_fig(
+            synclass, view, symmetry=symmetry
+        )
+        from cect.Analysis import register_symmetry_info
+
+        if symmetry:
+            percentage = extra_info.split()[-1][:-1]
+            register_symmetry_info(reader_name, view_id, synclass, percentage)
+
+    except Exception as e:
+        return f"\n{indent}Can't generate that matrix for view {view}.\n{indent}Error: {e}\n"
+
+    asset_filename = "assets/%s_%s_%s%s.json" % (
         reader_name,
         view_id.replace(" ", "_"),
         synclass.replace(" ", "_"),
+        "_symm" if symmetry else "",
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
@@ -119,7 +136,9 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    extra = "\n" + indent + extra_info if extra_info is not None else ""
+
+    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -147,7 +166,13 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
-def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
+def generate_comparison_page(
+    quick: bool,
+    color_table=True,
+    dataset_pages=True,
+    save_to_cache=False,
+    load_from_cache=True,
+):
     connectomes = {}
     all_connectomes = {}
 
@@ -187,7 +212,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
     if not quick:
         readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
     if not quick:
         readers["RipollSanchezShortRange"] = [
@@ -203,7 +228,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
             "RipollSanchez_2023",
         ]
 
-    readers["Yin2024"] = ["cect.Yin2024DataReader", "Yin_2024"]
+    readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]
@@ -227,7 +252,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
         reader_module = importlib.import_module(reader)
 
         try:
-            connectome = reader_module.get_instance()
+            if load_from_cache:
+                connectome = reader_module.get_instance(from_cache=True)
+
+            else:
+                connectome = reader_module.get_instance()
+
+                if save_to_cache:
+                    connectome.save_to_cache(reader.split(".")[1])
+
             all_connectomes[reader_name] = connectome
             preferred, not_in_preferred, missing_preferred, muscles = check_cells(
                 connectome.nodes
@@ -264,16 +297,32 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                             view_prefix,
                             reader_pages[reader_name],
                         )
+                        symmetry_filename = "docs/%s%s_symmetry.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
 
                         for filename in [
                             graph_filename,
                             matrix_filename,
                             hiveplot_filename,
+                            symmetry_filename,
                         ]:
                             with open(filename, "w") as f:
                                 graph = "graph" in filename
                                 hiveplot = "hiveplot" in filename
-                                matrix = not graph and not hiveplot
+                                symmetry = "symmetry" in filename
+                                matrix = not graph and not hiveplot and not symmetry
+
+                                suffix = (
+                                    "_graph"
+                                    if graph
+                                    else (
+                                        "_hiveplot"
+                                        if hiveplot
+                                        else ("_symmetry" if symmetry else "")
+                                    )
+                                )
 
                                 f.write(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
@@ -297,9 +346,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             "<b>" if rr == reader_name else "",
                                             view_prefix,
                                             reader_pages[rr],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             rr,
                                             "</b>" if rr == reader_name else "",
                                         )
@@ -360,12 +407,21 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                     )
                                 )
                                 f.write(
-                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
+                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s -'
                                     % (
                                         "<b>" if hiveplot else "",
                                         view_prefix,
                                         reader_pages[reader_name],
                                         "</b>" if hiveplot else "",
+                                    )
+                                )
+                                f.write(
+                                    '%s<a href="../%s%s_symmetry"> Symmetry</a>%s \n\n'
+                                    % (
+                                        "<b>" if symmetry else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if symmetry else "",
                                     )
                                 )
 
@@ -389,9 +445,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             "<b>" if view.id == viewb.id else "",
                                             viewb_prefix,
                                             reader_pages[reader_name],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             viewb.name,
                                             "</b>" if view.id == viewb.id else "",
                                             "" if "Fig 3" in view.name else " - ",
@@ -433,6 +487,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             cv,
                                             sc,
                                             indent=indent,
+                                        )
+                                    elif symmetry:
+                                        mkdown_fig = get_matrix_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                            symmetry=True,
                                         )
 
                                     if mkdown_fig is not None:
@@ -667,12 +730,24 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
     print_("Written page: %s" % filename)
 
+    from cect.Analysis import save_symmetry_info
+
+    save_symmetry_info()
+
     return connectomes
 
 
 if __name__ == "__main__":
     quick = len(sys.argv) > 1 and eval(sys.argv[1])
 
-    connectomes = generate_comparison_page(quick, color_table=True, dataset_pages=False)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick,
+        color_table=True,
+        dataset_pages=False,
+        save_to_cache=save_to_cache,
+        load_from_cache=(not save_to_cache),
+    )
 
     print("Finished. All loaded connectomes:\n%s" % connectomes)

@@ -2,6 +2,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
@@ -78,8 +79,16 @@ class VarshneyDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-def get_instance():
-    return VarshneyDataReader()
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+    else:
+        return VarshneyDataReader()
 
 
 """

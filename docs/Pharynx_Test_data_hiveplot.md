@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Pharynx_White_A_data_hiveplot">White_A</a> <a href="../Pharynx_White_L4_data_hiveplot">White_L4</a> <a href="../Pharynx_White_whole_data_hiveplot">White_whole</a> <a href="../Pharynx_Varshney_data_hiveplot">Varshney</a> <a href="../Pharynx_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../Pharynx_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../Pharynx_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../Pharynx_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../Pharynx_Cook2020_data_hiveplot">Cook2020</a> <a href="../Pharynx_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../Pharynx_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../Pharynx_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../Pharynx_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../Pharynx_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../Pharynx_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../Pharynx_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../Pharynx_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../Pharynx_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../Pharynx_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../Pharynx_Randi2023_data_hiveplot">Randi2023</a> <a href="../Pharynx_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../Pharynx_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../Pharynx_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <a href="../Pharynx_Yin2024_data_hiveplot">Yin2024</a> <b><a href="../Pharynx_Test_data_hiveplot">Test</a></b> <a href="../Pharynx_SSData_data_hiveplot">SSData</a> <a href="../Pharynx_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../Pharynx_UpdSSData2_data_hiveplot">UpdSSData2</a> 
+    <a href="../Pharynx_White_A_data_hiveplot">White_A</a> <a href="../Pharynx_White_L4_data_hiveplot">White_L4</a> <a href="../Pharynx_White_whole_data_hiveplot">White_whole</a> <a href="../Pharynx_Varshney_data_hiveplot">Varshney</a> <a href="../Pharynx_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../Pharynx_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../Pharynx_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../Pharynx_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../Pharynx_Cook2020_data_hiveplot">Cook2020</a> <a href="../Pharynx_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../Pharynx_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../Pharynx_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../Pharynx_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../Pharynx_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../Pharynx_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../Pharynx_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../Pharynx_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../Pharynx_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../Pharynx_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../Pharynx_Randi2023_data_hiveplot">Randi2023</a> <a href="../Pharynx_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../Pharynx_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../Pharynx_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <a href="../Pharynx_Yim2024_data_hiveplot">Yim2024</a> <b><a href="../Pharynx_Test_data_hiveplot">Test</a></b> <a href="../Pharynx_SSData_data_hiveplot">SSData</a> <a href="../Pharynx_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../Pharynx_UpdSSData2_data_hiveplot">UpdSSData2</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -16,12 +16,12 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <a href="../Pharynx_Test_data_graph"> Graph</a> - <a href="../Pharynx_Test_data"> Matrix</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Hive plot</a></b> 
+    <a href="../Pharynx_Test_data_graph"> Graph</a> - <a href="../Pharynx_Test_data"> Matrix</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Hive plot</a></b> -<a href="../Pharynx_Test_data_symmetry"> Symmetry</a> 
 
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Pharynx</a></b> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
+    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Pharynx</a></b> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
 
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 === "Chemical Exc"
@@ -32,11 +32,12 @@ search:
     ```
 
 
-### Neurons (herm) (18)
+### Neurons (herm) (20)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
  | <a href="../AVBL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBL</span></a>
+ | <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
@@ -45,6 +46,7 @@ search:
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
  | <a href="../M4" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M4</span></a>
  | <a href="../PVCL" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCL</span></a>
+ | <a href="../PVCR" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCR</span></a>
  | <a href="../RMGR" title="Layer 2 interneuron"><span style="color:#ff3300;">RMGR</span></a>
  | <a href="../VA3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA3</span></a>
  | <a href="../VA6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA6</span></a>
@@ -55,7 +57,7 @@ search:
 
 </details>
 
-### Missing neurons (284)
+### Missing neurons (282)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -110,7 +112,6 @@ search:
  | <a href="../AUAR" title="Layer 3 interneuron"><span style="color:#ff3300;">AUAR</span></a>
  | <a href="../AVAL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVAL</span></a>
  | <a href="../AVAR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVAR</span></a>
- | <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>
  | <a href="../AVDL" title="Layer 2 interneuron"><span style="color:#ff3300;">AVDL</span></a>
  | <a href="../AVDR" title="Layer 2 interneuron"><span style="color:#ff3300;">AVDR</span></a>
  | <a href="../AVEL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVEL</span></a>
@@ -219,7 +220,6 @@ search:
  | <a href="../PLNL" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PLNL</span></a>
  | <a href="../PLNR" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PLNR</span></a>
  | <a href="../PQR" title="Sensory neuron (touch)"><span style="color:#ff66cc;">PQR</span></a>
- | <a href="../PVCR" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCR</span></a>
  | <a href="../PVDL" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVDL</span></a>
  | <a href="../PVDR" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVDR</span></a>
  | <a href="../PVM" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">PVM</span></a>

@@ -6,15 +6,15 @@ The following are other resources which have been developed by the community for
 
 A [comprehensive resource](https://www.wormatlas.org) containing a huge amount of information on _C. elegans_ anatomy and behaviour, including a number of [introductory handbooks](https://www.wormatlas.org/handbookhome.htm).
 
-A primary source of information ofr this resource on [individual neurons](https://www.wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html).
+A primary source of information for this resource on [individual neurons](https://www.wormatlas.org/neurons/Individual%20Neurons/Neuronframeset.html).
 
 ## Worm Wiring
 
-[WormWiring](https://www.wormwiring.org/) is...
+[WormWiring](https://www.wormwiring.org/) is...   
 
 ## WormBase
 
-[WormBase](https://www.wormbase.org/) is...
+[WormBase](https://www.wormbase.org/)  is...
 
 ## WormNeuroAtlas
 

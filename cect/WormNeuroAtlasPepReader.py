@@ -6,6 +6,7 @@
 
 from cect.WormNeuroAtlasExtSynReader import WormNeuroAtlasExtSynReader
 from cect.Cells import PEPTIDERGIC_SYN_CLASS
+from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import logging
 import sys
@@ -16,24 +17,30 @@ LOGGER = logging.getLogger(__name__)
 READER_DESCRIPTION = """Data on peptidergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 
-def get_instance():
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WormNeuroAtlasExtSynReader`` to load data on peptidergic connectivity using the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**
 
     Returns:
         WormNeuroAtlasExtSynReader: The initialised connectome reader
     """
-    return WormNeuroAtlasExtSynReader(PEPTIDERGIC_SYN_CLASS)
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
 
+        return load_connectome_dataset_file(
+            get_cache_filename(__file__.split("/")[-1].split(".")[0])
+        )
+    else:
+        return WormNeuroAtlasExtSynReader(PEPTIDERGIC_SYN_CLASS)
 
-my_instance = get_instance()
-
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
 
 if __name__ == "__main__":
+    my_instance = get_instance(from_cache=True)
     syn_class_to_test = PEPTIDERGIC_SYN_CLASS
 
-    cells, neuron_conns = my_instance.read_data()
+    cells, neuron_conns = my_instance._read_data()
     print("Loaded %s connections" % len(neuron_conns))
 
     # from cect.ConnectomeReader import analyse_connections
@@ -42,7 +49,7 @@ if __name__ == "__main__":
     to_test = ["ADAL", "MCL", "M5"]
 
     for cell in to_test:
-        my_instance.atlas.all_about(cell)
+        # my_instance.atlas.all_about(cell)
 
         print(
             "MA conns from %s: %s"
