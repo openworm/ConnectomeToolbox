@@ -44,10 +44,6 @@ jobs:
       - name: Run test script to regenerate
         run: |
           ./test.sh
-          cd site
-          sed -i -e 's#<i>C. elegans</i> Connectome Toolbox</title>#C. elegans Connectome Toolbox</title>#g' *.html
-          sed -i -e 's#<i>C. elegans</i> Connectome Toolbox</title>#C. elegans Connectome Toolbox</title>#g' */*.html
-          cd ..
           ls -alt docs/
           ls -alt docs/assets/
           du -h

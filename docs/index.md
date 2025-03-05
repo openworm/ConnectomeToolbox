@@ -1,3 +1,7 @@
+---
+title: C. elegans Connectome Toolbox
+---
+
 # Overview
 
 Information on published connectomics data related to _C. elegans_. This is being developed as part of the [OpenWorm project](https://www.openworm.org).
