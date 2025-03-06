@@ -46,5 +46,6 @@ jobs:
           ./test.sh
           ls -alt docs/
           ls -alt docs/assets/
+          du -h
   
       - run: mkdocs gh-deploy --force
