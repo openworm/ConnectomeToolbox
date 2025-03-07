@@ -182,9 +182,34 @@ NEURONS_VIEW = View(
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
+SENSORY_NEURONS_SOMATIC_HERM_VIEW = View(
+    "SensorySomaticH",
+    "Sensory Neurons (somatic)",
+    "All **hermaphrodite** sensory neurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+INTERNEURONS_SOMATIC_HERM_VIEW = View(
+    "InterneuronsSomaticH",
+    "Interneurons (somatic)",
+    "All **hermaphrodite** interneurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+MOTORNEURONS_SOMATIC_HERM_VIEW = View(
+    "MotorSomaticH",
+    "Motor Neurons (somatic)",
+    "All **hermaphrodite** motor neurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
-    "Nonpharyngeal",
-    "Nonpharyngeal Neurons",
+    "NonpharyngealH",
+    "Nonpharyngeal Neurons (herm)",
     "All **hermaphrodite** neurons except those in the pharynx",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
@@ -192,7 +217,7 @@ NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
 )
 
 NONPHARYNGEAL_NEURONS_HM_VIEW = View(
-    "Nonpharyngeal",
+    "NonpharyngealHM",
     "Nonpharyngeal Neurons",
     "All neurons (herm. & male) except those in the pharynx",
     [],
@@ -234,6 +259,19 @@ for cell in (
         NONPHARYNGEAL_NEURONS_HM_VIEW.node_sets.append(
             NodeSet(cell, [cell], get_standard_color(cell))
         )
+        if cell in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
+            SENSORY_NEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        if cell in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            MOTORNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        if cell in INTERNEURONS_NONPHARYNGEAL_COOK:
+            INTERNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+
 
 for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
@@ -706,6 +744,10 @@ ALL_VIEWS = [
     LOCOMOTION_1_VIEW,
     LOCOMOTION_3_VIEW,
     PEP_HUBS_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
+    SENSORY_NEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_SOMATIC_HERM_VIEW,
+    INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
 

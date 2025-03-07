@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <a href="../Pharynx_Test_data_graph"> Pharynx</a> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_graph"> Locomotion 1</a> - <a href="../Loco3_Test_data_graph"> Locomotion 3</a> - <b><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a></b> - 
+    <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <a href="../Pharynx_Test_data_graph"> Pharynx</a> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_graph"> Locomotion 1</a> - <a href="../Loco3_Test_data_graph"> Locomotion 3</a> - <b><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a></b> - <a href="../NonpharyngealH_Test_data_graph"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_graph"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_graph"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_graph"> Interneurons (somatic)</a> - 
 
     <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 === "Chemical Exc"

@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <a href="../Pharynx_Test_data_symmetry"> Pharynx</a> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <b><a href="../Loco3_Test_data_symmetry"> Locomotion 3</a></b> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - 
+    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <a href="../Pharynx_Test_data_symmetry"> Pharynx</a> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <b><a href="../Loco3_Test_data_symmetry"> Locomotion 3</a></b> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>Subset of cells involved in locomotion (work in progress!)</i>
 === "Chemical Exc"
