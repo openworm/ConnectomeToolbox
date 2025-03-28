@@ -85,18 +85,21 @@ def convert_to_symmetry_array(cds, synclasses):
                 print(f"Connection {conn_count}:\t{pre}->{post} ({w})")
                 assert pre is not post
                 if pre_ not in cds.nodes:
-                    if verbose: print(
-                        f"   - Mirror conn:\t{pre_}->{post_} not possible as {pre_} missing!\n"
-                    )
+                    if verbose:
+                        print(
+                            f"   - Mirror conn:\t{pre_}->{post_} not possible as {pre_} missing!\n"
+                        )
                     w_ = -1
                 elif post_ not in cds.nodes:
-                    if verbose: print(
-                        f"   - Mirror conn:\t{pre_}->{post_} not possible as {post_} missing!\n"
-                    )
+                    if verbose:
+                        print(
+                            f"   - Mirror conn:\t{pre_}->{post_} not possible as {post_} missing!\n"
+                        )
                     w_ = -1
                 else:
                     w_ = new_conn_array[cds.nodes.index(pre_), cds.nodes.index(post_)]
-                    if verbose: print(f"   - Mirror:\t{pre_}->{post_} ({w_})\n")
+                    if verbose:
+                        print(f"   - Mirror:\t{pre_}->{post_} ({w_})\n")
 
                 symm_conn_count += w_
                 if w_ <= 0:
