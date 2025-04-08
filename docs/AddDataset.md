@@ -1,6 +1,6 @@
 # Add a dataset
 
-We are very keen to incorporate other published datasets on worm neuronal connectivity into this package and add them to this website. You can either A) add it yourself to the code, or B) tell us about it and we can add it for you. 
+We are very keen to incorporate other published datasets on worm neuronal connectivity into this package and add them to this website. You can either A) add it yourself to the code, or B) tell us about it and we can add it for you.  
 
 ## A) Add it yourself
 
@@ -8,7 +8,7 @@ We are very keen to incorporate other published datasets on worm neuronal connec
 
 2) Add the source file of your dataset (usually the adjacency matrices of connection weights in, for example csv, Excel or Matlab format) into the [data folder](https://github.com/openworm/ConnectomeToolbox/tree/main/cect/data).
 
-3) Create a Reader for the dataset, which converts it to our internal format. See examples for loading structured datasets in [CSV format](https://github.com/pgleeson/ConnectomeToolbox/blob/main/cect/Cook2020DataReader.py), [XLSX format](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/Cook2019DataReader.py) or [XLS format](https://github.com/openworm/ConnectomeToolbox/blob/6847151db6a5dc9bc3fea1c5a40d01d1a6b024fa/cect/SpreadsheetDataReader.py). 
+3) Create a Reader in Python for the dataset, which converts it to our internal format. See examples for loading structured datasets in [CSV format](https://github.com/pgleeson/ConnectomeToolbox/blob/main/cect/Cook2020DataReader.py), [XLSX format](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/Cook2019DataReader.py) or [XLS format](https://github.com/openworm/ConnectomeToolbox/blob/6847151db6a5dc9bc3fea1c5a40d01d1a6b024fa/cect/SpreadsheetDataReader.py). 
 
 4) Add the new data reader to the list of readers in [Comparison.py](https://github.com/openworm/ConnectomeToolbox/blob/6847151db6a5dc9bc3fea1c5a40d01d1a6b024fa/cect/Comparison.py) (at 2 locations - see how Cook2020 is handled there).
 
