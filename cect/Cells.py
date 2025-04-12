@@ -2294,6 +2294,7 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     import plotly.graph_objects as go
 
     from cect.Comparison import _format_json
+    from cect.Comparison import reader_colors
 
     print_(" - Adding table for %s" % cell_type)
 
@@ -2308,22 +2309,31 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     verbose = False
     some_cells = False
 
+    sorted_cells_alphabetical = sorted(cells)
+
     for syn_summary in syn_summaries:
-        fig = go.Figure()
+        layout = go.Layout(
+            plot_bgcolor="#FFF",  # Sets background color to white
+        )
+        fig = go.Figure(layout=layout)
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+
         fig.layout.showlegend = True
 
         fig_md += '\n=== "%s"\n\n' % syn_summary
         # fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
 
         nonempty_fig_present = False
-        for reader_name, connectome in connectomes.items():
-            sorted_cells = sorted(cells)
 
+        sorted_cells_conns = None
+
+        for reader_name, connectome in connectomes.items():
             indent = "    "
-            y = []
-            for cell in sorted_cells:
+            conn_nums = []
+            for cell in sorted_cells_alphabetical:
                 syn_types = syn_summaries[syn_summary]
-                total_y = 0
+                total_conn_nums = 0
                 for syn_type in syn_types:
                     if "out" in syn_summary:
                         conns_here = connectome.get_connections_from(cell, syn_type)
@@ -2334,20 +2344,37 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
                             "Conns: %i for %s of type %s (%s)"
                             % (len(conns_here), cell, syn_type, syn_summary)
                         )
-                    total_y += len(conns_here)
+                    total_conn_nums += len(conns_here)
 
-                y.append(total_y)
+                conn_nums.append(total_conn_nums)
 
-            if sum(y) > 0:
-                marker_symbol = "square"
-                dash = "solid"
+            if sum(conn_nums) > 0:
+                if sorted_cells_conns is None:
+                    sorted_cells_conns = [
+                        x
+                        for _, x in sorted(
+                            zip(conn_nums, sorted_cells_alphabetical), reverse=True
+                        )
+                    ]
+
+                conn_nums_sorted = []
+                for c in sorted_cells_conns:
+                    ind = sorted_cells_alphabetical.index(c)
+                    conn_nums_sorted.append(conn_nums[ind])
+
+                marker_symbol = "circle"
+                # dash = "solid"
 
                 fig.add_scatter(
-                    name="%s %s" % (reader_name, syn_summary),
-                    x=sorted_cells,
-                    y=y,
+                    name="%s" % (reader_name),
+                    x=sorted_cells_conns,
+                    y=conn_nums_sorted,
                     marker_symbol=marker_symbol,
-                    line=dict(dash=dash),
+                    marker=dict(
+                        color=reader_colors[reader_name],
+                        size=5 if "Cook2019Herm" in reader_name else 3,
+                    ),
+                    mode="markers",
                 )
                 nonempty_fig_present = True
                 some_cells = True
@@ -2361,7 +2388,7 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
-            fig_md += '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n\n' % (
+            fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,
                 indent,
                 asset_filename,

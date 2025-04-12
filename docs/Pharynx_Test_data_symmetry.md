@@ -27,7 +27,7 @@ search:
 === "Chemical Exc"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Pharynx_Chemical_Exc_symm.json" }
     ```
     Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% 

@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Social_White_A_data">White_A</a> <a href="../Social_White_L4_data">White_L4</a> <a href="../Social_White_whole_data">White_whole</a> <a href="../Social_Varshney_data">Varshney</a> <a href="../Social_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Social_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Social_Cook2019Herm_data">Cook2019Herm</a> <a href="../Social_Cook2019Male_data">Cook2019Male</a> <a href="../Social_Cook2020_data">Cook2020</a> <a href="../Social_Brittin2021_data">Brittin2021</a> <a href="../Social_Witvliet1_data">Witvliet1</a> <a href="../Social_Witvliet2_data">Witvliet2</a> <a href="../Social_Witvliet3_data">Witvliet3</a> <a href="../Social_Witvliet4_data">Witvliet4</a> <a href="../Social_Witvliet5_data">Witvliet5</a> <a href="../Social_Witvliet6_data">Witvliet6</a> <a href="../Social_Witvliet7_data">Witvliet7</a> <a href="../Social_Witvliet8_data">Witvliet8</a> <a href="../Social_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Social_Randi2023_data">Randi2023</a> <a href="../Social_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../Social_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../Social_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <a href="../Social_Yim2024_data">Yim2024</a> <b><a href="../Social_Test_data">Test</a></b> <a href="../Social_SSData_data">SSData</a> <a href="../Social_UpdSSData_data">UpdSSData</a> <a href="../Social_UpdSSData2_data">UpdSSData2</a> 
+    <a href="../NonpharyngealH_White_A_data_hiveplot">White_A</a> <a href="../NonpharyngealH_White_L4_data_hiveplot">White_L4</a> <a href="../NonpharyngealH_White_whole_data_hiveplot">White_whole</a> <a href="../NonpharyngealH_Varshney_data_hiveplot">Varshney</a> <a href="../NonpharyngealH_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../NonpharyngealH_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../NonpharyngealH_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../NonpharyngealH_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../NonpharyngealH_Cook2020_data_hiveplot">Cook2020</a> <a href="../NonpharyngealH_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../NonpharyngealH_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../NonpharyngealH_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../NonpharyngealH_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../NonpharyngealH_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../NonpharyngealH_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../NonpharyngealH_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../NonpharyngealH_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../NonpharyngealH_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../NonpharyngealH_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../NonpharyngealH_Randi2023_data_hiveplot">Randi2023</a> <a href="../NonpharyngealH_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../NonpharyngealH_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../NonpharyngealH_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <a href="../NonpharyngealH_Yim2024_data_hiveplot">Yim2024</a> <b><a href="../NonpharyngealH_Test_data_hiveplot">Test</a></b> <a href="../NonpharyngealH_SSData_data_hiveplot">SSData</a> <a href="../NonpharyngealH_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../NonpharyngealH_UpdSSData2_data_hiveplot">UpdSSData2</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -16,26 +16,33 @@ search:
 
 !!! abstract inline "Choose Graph type"
 
-    <a href="../Social_Test_data_graph"> Graph</a> - <b><a href="../Social_Test_data"> Matrix</a></b> - <a href="../Social_Test_data_hiveplot"> Hive plot</a> -<a href="../Social_Test_data_symmetry"> Symmetry</a> 
+    <a href="../NonpharyngealH_Test_data_graph"> Graph</a> - <a href="../NonpharyngealH_Test_data"> Matrix</a> - <b><a href="../NonpharyngealH_Test_data_hiveplot"> Hive plot</a></b> -<a href="../NonpharyngealH_Test_data_symmetry"> Symmetry</a> 
 
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <b><a href="../Social_Test_data"> Social Network</a></b> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
+    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - <b><a href="../NonpharyngealH_Test_data_hiveplot"> Nonpharyngeal Neurons (herm)</a></b> - <a href="../SensorySomaticH_Test_data_hiveplot"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_hiveplot"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_hiveplot"> Interneurons (somatic)</a> - 
 
-    <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
+    <i>All **hermaphrodite** neurons except those in the pharynx</i>
 === "Chemical Exc"
 
     <br/>
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Social_Chemical_Exc.json" }
+    { "file_path": "./assets/Test_NonpharyngealH_Chemical_Exc_hiveplot.json" }
+    ```
+
+=== "Chemical Inh"
+
+    <br/>
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_NonpharyngealH_Chemical_Inh_hiveplot.json" }
     ```
 
 === "Electrical"
 
     <br/>
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Social_Electrical.json" }
+    { "file_path": "./assets/Test_NonpharyngealH_Electrical_hiveplot.json" }
     ```
 
 

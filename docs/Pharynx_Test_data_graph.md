@@ -26,7 +26,7 @@ search:
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 === "Chemical Exc"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Pharynx_Chemical_Exc_graph.json" }
     ```
 

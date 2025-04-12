@@ -27,21 +27,21 @@ search:
 === "Chemical Exc"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Exc.json" }
     ```
 
 === "Chemical Inh"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Inh.json" }
     ```
 
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Electrical.json" }
     ```
 

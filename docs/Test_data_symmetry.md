@@ -27,7 +27,7 @@ search:
 === "Chemical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Chemical_symm.json" }
     ```
     Of 400 possible edges, 16 are connected, 9 are mirrored - 56.25% 
@@ -35,7 +35,7 @@ search:
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Electrical_symm.json" }
     ```
     Of 400 possible edges, 3 are connected, -1 are mirrored - -33.33% 

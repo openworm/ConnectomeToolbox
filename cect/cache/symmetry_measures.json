@@ -1,4 +1,64 @@
 {
+    "Cook2019Herm": {
+        "Raw": {
+            "Chemical": "67.57",
+            "Electrical": "66.90"
+        },
+        "Neurons": {
+            "Chemical Exc": "64.26",
+            "Electrical": "62.01"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.14",
+            "Electrical": "53.12"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "63.77",
+            "Electrical": "62.21"
+        },
+        "SensorySomaticH": {
+            "Chemical Exc": "55.52",
+            "Electrical": "62.79"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "89.46",
+            "Electrical": "84.49"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "64.17",
+            "Electrical": "57.52"
+        }
+    },
+    "Cook2019Male": {
+        "Raw": {
+            "Chemical": "63.61",
+            "Electrical": "67.71"
+        },
+        "Neurons": {
+            "Chemical Exc": "64.66",
+            "Electrical": "66.78"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.14",
+            "Electrical": "53.12"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "63.81",
+            "Electrical": "67.40"
+        },
+        "SensorySomaticH": {
+            "Chemical Exc": "59.38",
+            "Electrical": "58.82"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "92.03",
+            "Electrical": "92.51"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "55.00",
+            "Electrical": "64.71"
+        }
+    },
     "White_A": {
         "Raw": {
             "Chemical": "67.53",
@@ -151,66 +211,6 @@
         },
         "InterneuronsSomaticH": {
             "Extrasynaptic": "100.00"
-        }
-    },
-    "Cook2019Herm": {
-        "Raw": {
-            "Chemical": "67.57",
-            "Electrical": "66.90"
-        },
-        "Neurons": {
-            "Chemical Exc": "64.26",
-            "Electrical": "62.01"
-        },
-        "Pharynx": {
-            "Chemical Exc": "77.14",
-            "Electrical": "53.12"
-        },
-        "NonpharyngealH": {
-            "Chemical Exc": "63.77",
-            "Electrical": "62.21"
-        },
-        "SensorySomaticH": {
-            "Chemical Exc": "55.52",
-            "Electrical": "62.79"
-        },
-        "MotorSomaticH": {
-            "Chemical Exc": "89.46",
-            "Electrical": "84.49"
-        },
-        "InterneuronsSomaticH": {
-            "Chemical Exc": "64.17",
-            "Electrical": "57.52"
-        }
-    },
-    "Cook2019Male": {
-        "Raw": {
-            "Chemical": "63.61",
-            "Electrical": "67.71"
-        },
-        "Neurons": {
-            "Chemical Exc": "64.66",
-            "Electrical": "66.78"
-        },
-        "Pharynx": {
-            "Chemical Exc": "77.14",
-            "Electrical": "53.12"
-        },
-        "NonpharyngealH": {
-            "Chemical Exc": "63.81",
-            "Electrical": "67.40"
-        },
-        "SensorySomaticH": {
-            "Chemical Exc": "59.38",
-            "Electrical": "58.82"
-        },
-        "MotorSomaticH": {
-            "Chemical Exc": "92.03",
-            "Electrical": "92.51"
-        },
-        "InterneuronsSomaticH": {
-            "Chemical Exc": "55.00",
-            "Electrical": "64.71"
         }
     },
     "Cook2020": {

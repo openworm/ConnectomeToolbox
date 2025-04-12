@@ -1,6 +1,7 @@
 * [cect](cect/index.md)
     * [Analysis](cect/Analysis.md)
     * [BrittinDataReader](cect/BrittinDataReader.md)
+    * [CellAnalysis](cect/CellAnalysis.md)
     * [CellInfo](cect/CellInfo.md)
     * [Cells](cect/Cells.md)
     * [Comparison](cect/Comparison.md)

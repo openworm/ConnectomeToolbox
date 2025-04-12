@@ -27,14 +27,14 @@ search:
 === "Chemical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Chemical_hiveplot.json" }
     ```
 
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Electrical_hiveplot.json" }
     ```
 

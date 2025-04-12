@@ -26,13 +26,13 @@ search:
     <i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i>
 === "Chemical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Full1_Chemical_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Full1_Electrical_graph.json" }
     ```
 

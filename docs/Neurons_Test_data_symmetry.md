@@ -27,7 +27,7 @@ search:
 === "Chemical Exc"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Chemical_Exc_symm.json" }
     ```
     Of 91204 possible edges, 13 are connected, 8 are mirrored - 61.54% 
@@ -35,7 +35,7 @@ search:
 === "Chemical Inh"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Chemical_Inh_symm.json" }
     ```
     Of 91204 possible edges, 3 are connected, 3 are mirrored - 100.00% 
@@ -43,7 +43,7 @@ search:
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Electrical_symm.json" }
     ```
     Of 91204 possible edges, 3 are connected, 0 are mirrored - 0.00% 

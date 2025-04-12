@@ -1,71 +1,72 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "MVULVA",
-        "vm1AL",
-        "vm1AR",
-        "vm1PL",
-        "vm1PR",
-        "vm2AL",
-        "vm2AR",
+        "vm2PR",
         "vm2PL",
-        "vm2PR"
+        "vm2AR",
+        "vm2AL",
+        "vm1AR",
+        "vm1PR",
+        "vm1PL",
+        "vm1AL",
+        "MVULVA"
       ],
       "y": [
-        0,
-        0,
+        4,
+        4,
+        4,
+        4,
         3,
-        0,
-        0,
-        4,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "SSData Chemical conns in",
-      "type": "scatter",
-      "x": [
-        "MVULVA",
-        "vm1AL",
-        "vm1AR",
-        "vm1PL",
-        "vm1PR",
-        "vm2AL",
-        "vm2AR",
-        "vm2PL",
-        "vm2PR"
-      ],
-      "y": [
-        3,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
         0
       ]
+    },
+    {
+      "marker": {
+        "color": "moccasin",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "SSData",
+      "type": "scatter",
+      "x": [
+        "vm2PR",
+        "vm2PL",
+        "vm2AR",
+        "vm2AL",
+        "vm1AR",
+        "vm1PR",
+        "vm1PL",
+        "vm1AL",
+        "MVULVA"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -882,6 +883,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

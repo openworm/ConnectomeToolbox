@@ -26,13 +26,13 @@ search:
     <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
 === "Chemical Exc"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Social_Chemical_Exc_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Social_Electrical_graph.json" }
     ```
 

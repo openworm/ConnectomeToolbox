@@ -26,19 +26,19 @@ search:
     <i>Subset of cells involved in locomotion (work in progress!)</i>
 === "Chemical Exc"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Loco1_Chemical_Exc_graph.json" }
     ```
 
 === "Chemical Inh"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Loco1_Chemical_Inh_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Loco1_Electrical_graph.json" }
     ```
 

@@ -1,95 +1,96 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "CEPshDL",
-        "CEPshDR",
+        "CEPshVR",
         "CEPshVL",
-        "CEPshVR"
+        "CEPshDR",
+        "CEPshDL"
       ],
       "y": [
-        0,
-        0,
+        5,
         2,
-        5
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "CEPshDL",
-        "CEPshDR",
+        "CEPshVR",
         "CEPshVL",
-        "CEPshVR"
+        "CEPshDR",
+        "CEPshDL"
       ],
       "y": [
-        0,
-        1,
-        0,
-        2
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Witvliet5 Electrical conns",
-      "type": "scatter",
-      "x": [
-        "CEPshDL",
-        "CEPshDR",
-        "CEPshVL",
-        "CEPshVR"
-      ],
-      "y": [
-        0,
+        2,
         0,
         1,
         0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "#666644",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Witvliet7 Electrical conns",
+      "mode": "markers",
+      "name": "Witvliet5",
       "type": "scatter",
       "x": [
-        "CEPshDL",
-        "CEPshDR",
+        "CEPshVR",
         "CEPshVL",
-        "CEPshVR"
+        "CEPshDR",
+        "CEPshDL"
       ],
       "y": [
         0,
         1,
         0,
-        1
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "#222244",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Witvliet7",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDR",
+        "CEPshDL"
+      ],
+      "y": [
+        1,
+        0,
+        1,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -906,6 +907,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

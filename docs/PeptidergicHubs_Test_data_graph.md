@@ -26,19 +26,19 @@ search:
     <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
 === "Chemical Exc"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Exc_graph.json" }
     ```
 
 === "Chemical Inh"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Inh_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_PeptidergicHubs_Electrical_graph.json" }
     ```
 

@@ -1,43 +1,43 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
-        "g1p",
+        "g1AL",
+        "e3VL",
+        "e3D",
+        "e3VR",
+        "e2VR",
+        "e2VL",
+        "e2D",
+        "g2R",
         "g2L",
-        "g2R"
+        "g1p",
+        "g1P",
+        "e2V",
+        "e2DR",
+        "e2DL"
       ],
       "y": [
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
         1,
         0,
         0,
         0,
-        1,
-        2,
-        3,
-        3,
-        2,
-        4,
-        4,
         0,
         0,
         0,
@@ -45,43 +45,43 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
-        "g1p",
+        "g1AL",
+        "e3VL",
+        "e3D",
+        "e3VR",
+        "e2VR",
+        "e2VL",
+        "e2D",
+        "g2R",
         "g2L",
-        "g2R"
+        "g1p",
+        "g1P",
+        "e2V",
+        "e2DR",
+        "e2DL"
       ],
       "y": [
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
         1,
         0,
         0,
         0,
-        1,
-        2,
-        3,
-        3,
-        2,
-        4,
-        4,
         0,
         0,
         0,
@@ -89,51 +89,52 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2020 Electrical conns",
+      "mode": "markers",
+      "name": "Cook2020",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
-        "g1p",
+        "g1AL",
+        "e3VL",
+        "e3D",
+        "e3VR",
+        "e2VR",
+        "e2VL",
+        "e2D",
+        "g2R",
         "g2L",
-        "g2R"
+        "g1p",
+        "g1P",
+        "e2V",
+        "e2DR",
+        "e2DL"
       ],
       "y": [
-        0,
-        1,
-        1,
-        2,
-        0,
-        0,
+        4,
+        4,
         3,
         3,
         2,
-        4,
-        4,
         0,
         0,
         0,
-        0
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -950,6 +951,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

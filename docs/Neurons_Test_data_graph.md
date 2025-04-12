@@ -26,19 +26,19 @@ search:
     <i>All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset)</i>
 === "Chemical Exc"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Chemical_Exc_graph.json" }
     ```
 
 === "Chemical Inh"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Chemical_Inh_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Neurons_Electrical_graph.json" }
     ```
 

@@ -26,13 +26,13 @@ search:
     <i>All of the cells present in the original connectome dataset</i>
 === "Chemical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Chemical_graph.json" }
     ```
 
 === "Electrical"
 
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Raw_Electrical_graph.json" }
     ```
 
