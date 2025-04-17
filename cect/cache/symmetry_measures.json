@@ -601,6 +601,28 @@
             "Chemical Exc": "65.23"
         }
     },
+    "NeuroMLModel": {
+        "Raw": {
+            "Chemical": "90.81",
+            "Electrical": "96.65"
+        },
+        "Neurons": {
+            "Chemical Exc": "97.37",
+            "Electrical": "96.34"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "97.37",
+            "Electrical": "96.34"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "100.00",
+            "Electrical": "100.00"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "100.00",
+            "Electrical": "100.00"
+        }
+    },
     "SSData": {
         "Raw": {
             "Chemical": "72.54",

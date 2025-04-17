@@ -12,6 +12,7 @@
     * [Cook2019HermReader](cect/Cook2019HermReader.md)
     * [Cook2019MaleReader](cect/Cook2019MaleReader.md)
     * [Cook2020DataReader](cect/Cook2020DataReader.md)
+    * [NeuroMLDataReader](cect/NeuroMLDataReader.md)
     * [RipollSanchezDataReader](cect/RipollSanchezDataReader.md)
     * [RipollSanchezLongRangeReader](cect/RipollSanchezLongRangeReader.md)
     * [RipollSanchezMidRangeReader](cect/RipollSanchezMidRangeReader.md)

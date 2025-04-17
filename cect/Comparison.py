@@ -41,6 +41,7 @@ reader_colors = {
     "SSData": "moccasin",
     "UpdSSData": "papayawhip",
     "UpdSSData2": "mistyrose",
+    "NeuroMLModel": "black",
 }
 reader_pages = {
     "White_A": "White_A_data",
@@ -71,6 +72,7 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "NeuroMLModel": "NeuroMLModel_data",
 }
 
 all_data[""] = [
@@ -258,6 +260,7 @@ def generate_comparison_page(
         ]
 
     readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+    readers["NeuroMLModel"] = ["cect.NeuroMLDataReader", "NeuroMLModel"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]

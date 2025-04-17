@@ -1498,6 +1498,25 @@ ALL_PREFERRED_CELL_NAMES = (
     ALL_PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + ALL_NON_NEURON_MUSCLE_CELLS
 )
 
+# Known to be used in computational models
+KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
+    "DB8",
+    "DB9",
+    "DB10",
+    "DD7",
+    "DD8",
+    "DD9",
+    "DD10",
+    "DA10",
+]
+
+for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
+    cell_notes[cell] = (
+        "NOT A REAL C. ELEGANS NEURON. Sometimes used in computational models of worm locomotion"
+    )
+
+KNOWN_MODELLED_NEURONS = KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS
+
 
 def get_primary_classification():
     """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
@@ -1673,7 +1692,7 @@ def get_primary_classification():
     return classification
 
 
-def is_known_cell(cell: str):
+def is_known_cell(cell: str, allow_modelled_neurons: bool = False):
     """Is this string the name of one of the known cells?
 
     Args:
@@ -1682,7 +1701,10 @@ def is_known_cell(cell: str):
     Returns:
         bool: Whether this is a known cell name
     """
-    return cell in ALL_PREFERRED_CELL_NAMES
+    if allow_modelled_neurons:
+        return cell in ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS
+    else:
+        return cell in ALL_PREFERRED_CELL_NAMES
 
 
 def get_SIM_class(cell: str):
@@ -1737,7 +1759,7 @@ def get_contralateral_cell(cell: str):
     Returns:
         _type_: _description_
     """
-    if not is_known_cell(cell):
+    if not is_known_cell(cell, allow_modelled_neurons=True):
         raise Exception(
             "Cannot determine contralateral cell for: %s (unknown cell)" % cell
         )
@@ -1934,8 +1956,16 @@ def is_male_specific_cell(cell: str):
     )
 
 
-def is_any_neuron(cell: str):
-    return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
+def is_any_neuron(cell: str, allow_modelled_neurons: bool = False):
+    if allow_modelled_neurons:
+        return (
+            cell
+            in PREFERRED_HERM_NEURON_NAMES
+            + MALE_SPECIFIC_NEURONS
+            + KNOWN_MODELLED_NEURONS
+        )
+    else:
+        return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
 def remove_leading_index_zero(cell: str):
@@ -1983,7 +2013,7 @@ def get_standard_color(cell: str):
         + MALE_NON_HEAD_SENSORY_NEURONS
     ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell in MOTORNEURONS_COOK:
+    elif cell in MOTORNEURONS_COOK + KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]

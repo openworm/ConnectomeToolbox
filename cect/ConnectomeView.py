@@ -28,6 +28,7 @@ from cect.Cells import VENTRAL_CORD_MOTORNEURONS
 from cect.Cells import HSN_MOTORNEURONS
 from cect.Cells import VC_HERM_MOTORNEURONS
 from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import KNOWN_MODELLED_NEURONS
 
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
@@ -245,10 +246,11 @@ for cell in (
         + HSN_MOTORNEURONS
     )
     + sorted(UNKNOWN_FUNCTION_NEURONS)
+    + sorted(KNOWN_MODELLED_NEURONS)
 ):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
-    if cell not in MALE_SPECIFIC_NEURONS:
+    if cell not in MALE_SPECIFIC_NEURONS + KNOWN_MODELLED_NEURONS:
         NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
     if cell not in PHARYNGEAL_NEURONS:
@@ -277,7 +279,7 @@ for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS)
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 assert len(NEURONS_VIEW.node_sets) == 302
-assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES)
+assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS)
 
 PHARYNX_VIEW = View(
     "Pharynx",
@@ -457,7 +459,7 @@ for cell_set in sorted(loco1_positions.keys()):
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
         # print("Adding " + cc)
         if cell_set == cc:
-            for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            for m in MOTORNEURONS_NONPHARYNGEAL_COOK + KNOWN_MODELLED_NEURONS:
                 if m.startswith(cc):
                     all_cells.append(m)
 

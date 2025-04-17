@@ -1,5 +1,6 @@
 from cect.WitvlietDataReader import WitvlietDataReader
 from cect.ConnectomeDataset import get_dataset_source_on_github
+from cect.ConnectomeReader import analyse_connections
 
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
@@ -34,3 +35,17 @@ READER_DESCRIPTION = (
     """Data extracted from %s - Witvliet dataset 8 (adult stage)"""
     % get_dataset_source_on_github(my_instance.filename.split("/")[-1])
 )
+
+
+if __name__ == "__main__":
+    cells, neuron_conns = read_data()
+    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+
+    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+
+    cell = "RMHL"
+    conns = my_instance.get_connections_from(cell, "Generic_CS")
+
+    print(f"There are {len(conns)} connections from {cell}:")
+    for c in sorted(conns.keys()):
+        print(f" {cell} -> {c}: {conns[c]}")

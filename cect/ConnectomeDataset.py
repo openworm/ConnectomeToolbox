@@ -228,7 +228,9 @@ class ConnectomeDataset:
         neurons = set([])
         neuron_conns = []
         for conn_info in self.get_current_connection_info_list():
-            if is_any_neuron(conn_info.pre_cell) and is_any_neuron(conn_info.post_cell):
+            if is_any_neuron(
+                conn_info.pre_cell, allow_modelled_neurons=True
+            ) and is_any_neuron(conn_info.post_cell, allow_modelled_neurons=True):
                 neurons.add(conn_info.pre_cell)
                 neurons.add(conn_info.post_cell)
                 neuron_conns.append(conn_info)
@@ -316,7 +318,7 @@ class ConnectomeDataset:
 
         for ns in view.node_sets:
             for cell in ns.cells:
-                if not is_known_cell(cell):
+                if not is_known_cell(cell, allow_modelled_neurons=True):
                     raise Exception(f"Cell {cell} in view {view.name} is not known!")
 
         cv = ConnectomeDataset()
