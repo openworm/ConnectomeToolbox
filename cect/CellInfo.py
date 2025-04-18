@@ -541,7 +541,7 @@ if __name__ == "__main__":
                 a = positions[cell]
                 if right in positions:
                     b = positions[right]
-                    print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
+                    # print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
                     # Add edges to the figure
                     edge_trace = go.Scatter3d(
                         x=[a[0], b[0]],

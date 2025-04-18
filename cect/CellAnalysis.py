@@ -106,9 +106,9 @@ def generate_graphs(cds, synclass):
                     else:
                         markers.append("o")
 
-                    print_(
+                    """print_(
                         f"  Adding {pre_cell}->{post_cell} with weight {weight} ({markers[-1]})"
-                    )
+                    )"""
 
             if len(xs) > 0:
                 fig, ax = plt.subplots()
