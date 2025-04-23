@@ -1,23 +1,23 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "um1AL",
-        "um1AR",
-        "um1PL",
         "um1PR",
-        "um2AL",
-        "um2AR",
+        "um1PL",
+        "um1AR",
+        "um1AL",
+        "um2PR",
         "um2PL",
-        "um2PR"
+        "um2AR",
+        "um2AL"
       ],
       "y": [
         4,
@@ -32,6 +32,7 @@
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -848,6 +849,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

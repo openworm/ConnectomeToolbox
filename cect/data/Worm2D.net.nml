@@ -1,0 +1,533 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.1.xsd" id="Worm2D">
+    <pulseGenerator id="pulseGen_0" delay="20s" duration="10s" amplitude="10.000000 pA"/>
+    <pulseGenerator id="extStim" delay="0s" duration="10000s" amplitude="1 pA"/>
+    <network id="Worm2DNet">
+        <population id="PopDA" component="DA" size="10" type="populationList">
+            <property tag="color" value=".82 .7 .43"/>
+            <property tag="type" value="E"/>
+            <instance id="0">
+                <location x="100.0" y="-100.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="100.0" y="-100.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="100.0" y="-100.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="100.0" y="-100.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="100.0" y="-100.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="100.0" y="-100.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="100.0" y="-100.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="100.0" y="-100.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="100.0" y="-100.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="100.0" y="-100.0" z="900.0"/>
+            </instance>
+        </population>
+        <population id="PopDB" component="DB" size="10" type="populationList">
+            <property tag="color" value=".43 .69 .67"/>
+            <property tag="type" value="E"/>
+            <instance id="0">
+                <location x="100.0" y="0.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="100.0" y="0.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="100.0" y="0.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="100.0" y="0.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="100.0" y="0.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="100.0" y="0.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="100.0" y="0.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="100.0" y="0.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="100.0" y="0.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="100.0" y="0.0" z="900.0"/>
+            </instance>
+        </population>
+        <population id="PopDD" component="DD" size="10" type="populationList">
+            <property tag="color" value=".24 .32 .62"/>
+            <property tag="type" value="I"/>
+            <instance id="0">
+                <location x="100.0" y="100.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="100.0" y="100.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="100.0" y="100.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="100.0" y="100.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="100.0" y="100.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="100.0" y="100.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="100.0" y="100.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="100.0" y="100.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="100.0" y="100.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="100.0" y="100.0" z="900.0"/>
+            </instance>
+        </population>
+        <population id="PopVA" component="VA" size="10" type="populationList">
+            <property tag="color" value=".52 .33 .17"/>
+            <property tag="type" value="E"/>
+            <instance id="0">
+                <location x="-100.0" y="-100.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="-100.0" y="-100.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="-100.0" y="-100.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="-100.0" y="-100.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="-100.0" y="-100.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="-100.0" y="-100.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="-100.0" y="-100.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="-100.0" y="-100.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="-100.0" y="-100.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="-100.0" y="-100.0" z="900.0"/>
+            </instance>
+        </population>
+        <population id="PopVB" component="VB" size="10" type="populationList">
+            <property tag="color" value=".17 .4 .37"/>
+            <property tag="type" value="E"/>
+            <instance id="0">
+                <location x="-100.0" y="0.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="-100.0" y="0.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="-100.0" y="0.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="-100.0" y="0.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="-100.0" y="0.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="-100.0" y="0.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="-100.0" y="0.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="-100.0" y="0.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="-100.0" y="0.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="-100.0" y="0.0" z="900.0"/>
+            </instance>
+        </population>
+        <population id="PopVD" component="VD" size="10" type="populationList">
+            <property tag="color" value=".65 .78 .9"/>
+            <property tag="type" value="I"/>
+            <instance id="0">
+                <location x="-100.0" y="100.0" z="0.0"/>
+            </instance>
+            <instance id="1">
+                <location x="-100.0" y="100.0" z="100.0"/>
+            </instance>
+            <instance id="2">
+                <location x="-100.0" y="100.0" z="200.0"/>
+            </instance>
+            <instance id="3">
+                <location x="-100.0" y="100.0" z="300.0"/>
+            </instance>
+            <instance id="4">
+                <location x="-100.0" y="100.0" z="400.0"/>
+            </instance>
+            <instance id="5">
+                <location x="-100.0" y="100.0" z="500.0"/>
+            </instance>
+            <instance id="6">
+                <location x="-100.0" y="100.0" z="600.0"/>
+            </instance>
+            <instance id="7">
+                <location x="-100.0" y="100.0" z="700.0"/>
+            </instance>
+            <instance id="8">
+                <location x="-100.0" y="100.0" z="800.0"/>
+            </instance>
+            <instance id="9">
+                <location x="-100.0" y="100.0" z="900.0"/>
+            </instance>
+        </population>
+        <electricalProjection id="NC_PopDB_PopDB_gapJunction0" presynapticPopulation="PopDB" postsynapticPopulation="PopDB">
+            <electricalConnectionInstanceW id="0" preCell="../PopDB/1/DB" postCell="../PopDB/0/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="1" preCell="../PopDB/0/DB" postCell="../PopDB/1/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="2" preCell="../PopDB/2/DB" postCell="../PopDB/1/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="3" preCell="../PopDB/1/DB" postCell="../PopDB/2/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="4" preCell="../PopDB/3/DB" postCell="../PopDB/2/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="5" preCell="../PopDB/2/DB" postCell="../PopDB/3/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="6" preCell="../PopDB/4/DB" postCell="../PopDB/3/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="7" preCell="../PopDB/3/DB" postCell="../PopDB/4/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="8" preCell="../PopDB/5/DB" postCell="../PopDB/4/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="9" preCell="../PopDB/4/DB" postCell="../PopDB/5/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="10" preCell="../PopDB/6/DB" postCell="../PopDB/5/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="11" preCell="../PopDB/5/DB" postCell="../PopDB/6/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="12" preCell="../PopDB/7/DB" postCell="../PopDB/6/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="13" preCell="../PopDB/6/DB" postCell="../PopDB/7/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="14" preCell="../PopDB/8/DB" postCell="../PopDB/7/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="15" preCell="../PopDB/7/DB" postCell="../PopDB/8/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="16" preCell="../PopDB/9/DB" postCell="../PopDB/8/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="17" preCell="../PopDB/8/DB" postCell="../PopDB/9/DB" synapse="gapJunction0" weight="0.111893748558795"/>
+        </electricalProjection>
+        <electricalProjection id="NC_PopDD_PopDD_gapJunction0" presynapticPopulation="PopDD" postsynapticPopulation="PopDD">
+            <electricalConnectionInstanceW id="0" preCell="../PopDD/1/DD" postCell="../PopDD/0/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="1" preCell="../PopDD/0/DD" postCell="../PopDD/1/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="2" preCell="../PopDD/2/DD" postCell="../PopDD/1/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="3" preCell="../PopDD/1/DD" postCell="../PopDD/2/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="4" preCell="../PopDD/3/DD" postCell="../PopDD/2/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="5" preCell="../PopDD/2/DD" postCell="../PopDD/3/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="6" preCell="../PopDD/4/DD" postCell="../PopDD/3/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="7" preCell="../PopDD/3/DD" postCell="../PopDD/4/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="8" preCell="../PopDD/5/DD" postCell="../PopDD/4/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="9" preCell="../PopDD/4/DD" postCell="../PopDD/5/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="10" preCell="../PopDD/6/DD" postCell="../PopDD/5/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="11" preCell="../PopDD/5/DD" postCell="../PopDD/6/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="12" preCell="../PopDD/7/DD" postCell="../PopDD/6/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="13" preCell="../PopDD/6/DD" postCell="../PopDD/7/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="14" preCell="../PopDD/8/DD" postCell="../PopDD/7/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="15" preCell="../PopDD/7/DD" postCell="../PopDD/8/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="16" preCell="../PopDD/9/DD" postCell="../PopDD/8/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="17" preCell="../PopDD/8/DD" postCell="../PopDD/9/DD" synapse="gapJunction0" weight="1.626882458649384"/>
+        </electricalProjection>
+        <electricalProjection id="NC_PopVD_PopVD_gapJunction0" presynapticPopulation="PopVD" postsynapticPopulation="PopVD">
+            <electricalConnectionInstanceW id="0" preCell="../PopVD/1/VD" postCell="../PopVD/0/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="1" preCell="../PopVD/0/VD" postCell="../PopVD/1/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="2" preCell="../PopVD/2/VD" postCell="../PopVD/1/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="3" preCell="../PopVD/1/VD" postCell="../PopVD/2/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="4" preCell="../PopVD/3/VD" postCell="../PopVD/2/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="5" preCell="../PopVD/2/VD" postCell="../PopVD/3/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="6" preCell="../PopVD/4/VD" postCell="../PopVD/3/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="7" preCell="../PopVD/3/VD" postCell="../PopVD/4/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="8" preCell="../PopVD/5/VD" postCell="../PopVD/4/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="9" preCell="../PopVD/4/VD" postCell="../PopVD/5/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="10" preCell="../PopVD/6/VD" postCell="../PopVD/5/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="11" preCell="../PopVD/5/VD" postCell="../PopVD/6/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="12" preCell="../PopVD/7/VD" postCell="../PopVD/6/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="13" preCell="../PopVD/6/VD" postCell="../PopVD/7/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="14" preCell="../PopVD/8/VD" postCell="../PopVD/7/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="15" preCell="../PopVD/7/VD" postCell="../PopVD/8/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="16" preCell="../PopVD/9/VD" postCell="../PopVD/8/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+            <electricalConnectionInstanceW id="17" preCell="../PopVD/8/VD" postCell="../PopVD/9/VD" synapse="gapJunction0" weight="1.626882458649384"/>
+        </electricalProjection>
+        <electricalProjection id="NC_PopVB_PopVB_gapJunction0" presynapticPopulation="PopVB" postsynapticPopulation="PopVB">
+            <electricalConnectionInstanceW id="0" preCell="../PopVB/1/VB" postCell="../PopVB/0/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="1" preCell="../PopVB/0/VB" postCell="../PopVB/1/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="2" preCell="../PopVB/2/VB" postCell="../PopVB/1/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="3" preCell="../PopVB/1/VB" postCell="../PopVB/2/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="4" preCell="../PopVB/3/VB" postCell="../PopVB/2/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="5" preCell="../PopVB/2/VB" postCell="../PopVB/3/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="6" preCell="../PopVB/4/VB" postCell="../PopVB/3/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="7" preCell="../PopVB/3/VB" postCell="../PopVB/4/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="8" preCell="../PopVB/5/VB" postCell="../PopVB/4/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="9" preCell="../PopVB/4/VB" postCell="../PopVB/5/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="10" preCell="../PopVB/6/VB" postCell="../PopVB/5/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="11" preCell="../PopVB/5/VB" postCell="../PopVB/6/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="12" preCell="../PopVB/7/VB" postCell="../PopVB/6/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="13" preCell="../PopVB/6/VB" postCell="../PopVB/7/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="14" preCell="../PopVB/8/VB" postCell="../PopVB/7/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="15" preCell="../PopVB/7/VB" postCell="../PopVB/8/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="16" preCell="../PopVB/9/VB" postCell="../PopVB/8/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+            <electricalConnectionInstanceW id="17" preCell="../PopVB/8/VB" postCell="../PopVB/9/VB" synapse="gapJunction0" weight="0.111893748558795"/>
+        </electricalProjection>
+        <continuousProjection id="NC_PopDA_PopDA_silentSyn" presynapticPopulation="PopDA" postsynapticPopulation="PopDA">
+            <continuousConnectionInstanceW id="0" preCell="../PopDA/0/DA" postCell="../PopDA/0/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDA/1/DA" postCell="../PopDA/1/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDA/2/DA" postCell="../PopDA/2/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDA/3/DA" postCell="../PopDA/3/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDA/4/DA" postCell="../PopDA/4/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDA/5/DA" postCell="../PopDA/5/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDA/6/DA" postCell="../PopDA/6/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDA/7/DA" postCell="../PopDA/7/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDA/8/DA" postCell="../PopDA/8/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDA/9/DA" postCell="../PopDA/9/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDD_PopDA_silentSyn" presynapticPopulation="PopDD" postsynapticPopulation="PopDA">
+            <continuousConnectionInstanceW id="0" preCell="../PopDD/0/DD" postCell="../PopDA/0/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDD/1/DD" postCell="../PopDA/1/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDD/2/DD" postCell="../PopDA/2/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDD/3/DD" postCell="../PopDA/3/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDD/4/DD" postCell="../PopDA/4/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDD/5/DD" postCell="../PopDA/5/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDD/6/DD" postCell="../PopDA/6/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDD/7/DD" postCell="../PopDA/7/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDD/8/DD" postCell="../PopDA/8/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDD/9/DD" postCell="../PopDA/9/DA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDB_PopDB_silentSyn" presynapticPopulation="PopDB" postsynapticPopulation="PopDB">
+            <continuousConnectionInstanceW id="0" preCell="../PopDB/0/DB" postCell="../PopDB/0/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDB/1/DB" postCell="../PopDB/1/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDB/2/DB" postCell="../PopDB/2/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDB/3/DB" postCell="../PopDB/3/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDB/4/DB" postCell="../PopDB/4/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDB/5/DB" postCell="../PopDB/5/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDB/6/DB" postCell="../PopDB/6/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDB/7/DB" postCell="../PopDB/7/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDB/8/DB" postCell="../PopDB/8/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDB/9/DB" postCell="../PopDB/9/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDD_PopDB_silentSyn" presynapticPopulation="PopDD" postsynapticPopulation="PopDB">
+            <continuousConnectionInstanceW id="0" preCell="../PopDD/0/DD" postCell="../PopDB/0/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDD/1/DD" postCell="../PopDB/1/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDD/2/DD" postCell="../PopDB/2/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDD/3/DD" postCell="../PopDB/3/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDD/4/DD" postCell="../PopDB/4/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDD/5/DD" postCell="../PopDB/5/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDD/6/DD" postCell="../PopDB/6/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDD/7/DD" postCell="../PopDB/7/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDD/8/DD" postCell="../PopDB/8/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDD/9/DD" postCell="../PopDB/9/DB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDD_PopDD_silentSyn" presynapticPopulation="PopDD" postsynapticPopulation="PopDD">
+            <continuousConnectionInstanceW id="0" preCell="../PopDD/0/DD" postCell="../PopDD/0/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDD/1/DD" postCell="../PopDD/1/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDD/2/DD" postCell="../PopDD/2/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDD/3/DD" postCell="../PopDD/3/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDD/4/DD" postCell="../PopDD/4/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDD/5/DD" postCell="../PopDD/5/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDD/6/DD" postCell="../PopDD/6/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDD/7/DD" postCell="../PopDD/7/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDD/8/DD" postCell="../PopDD/8/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDD/9/DD" postCell="../PopDD/9/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVA_PopDD_silentSyn" presynapticPopulation="PopVA" postsynapticPopulation="PopDD">
+            <continuousConnectionInstanceW id="0" preCell="../PopVA/0/VA" postCell="../PopDD/0/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVA/1/VA" postCell="../PopDD/1/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVA/2/VA" postCell="../PopDD/2/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVA/3/VA" postCell="../PopDD/3/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVA/4/VA" postCell="../PopDD/4/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVA/5/VA" postCell="../PopDD/5/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVA/6/VA" postCell="../PopDD/6/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVA/7/VA" postCell="../PopDD/7/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVA/8/VA" postCell="../PopDD/8/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVA/9/VA" postCell="../PopDD/9/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVB_PopDD_silentSyn" presynapticPopulation="PopVB" postsynapticPopulation="PopDD">
+            <continuousConnectionInstanceW id="0" preCell="../PopVB/0/VB" postCell="../PopDD/0/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVB/1/VB" postCell="../PopDD/1/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVB/2/VB" postCell="../PopDD/2/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVB/3/VB" postCell="../PopDD/3/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVB/4/VB" postCell="../PopDD/4/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVB/5/VB" postCell="../PopDD/5/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVB/6/VB" postCell="../PopDD/6/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVB/7/VB" postCell="../PopDD/7/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVB/8/VB" postCell="../PopDD/8/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVB/9/VB" postCell="../PopDD/9/DD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVD_PopVD_silentSyn" presynapticPopulation="PopVD" postsynapticPopulation="PopVD">
+            <continuousConnectionInstanceW id="0" preCell="../PopVD/0/VD" postCell="../PopVD/0/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVD/1/VD" postCell="../PopVD/1/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVD/2/VD" postCell="../PopVD/2/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVD/3/VD" postCell="../PopVD/3/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVD/4/VD" postCell="../PopVD/4/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVD/5/VD" postCell="../PopVD/5/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVD/6/VD" postCell="../PopVD/6/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVD/7/VD" postCell="../PopVD/7/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVD/8/VD" postCell="../PopVD/8/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVD/9/VD" postCell="../PopVD/9/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="0.43417780432587"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDA_PopVD_silentSyn" presynapticPopulation="PopDA" postsynapticPopulation="PopVD">
+            <continuousConnectionInstanceW id="0" preCell="../PopDA/0/DA" postCell="../PopVD/0/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDA/1/DA" postCell="../PopVD/1/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDA/2/DA" postCell="../PopVD/2/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDA/3/DA" postCell="../PopVD/3/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDA/4/DA" postCell="../PopVD/4/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDA/5/DA" postCell="../PopVD/5/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDA/6/DA" postCell="../PopVD/6/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDA/7/DA" postCell="../PopVD/7/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDA/8/DA" postCell="../PopVD/8/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDA/9/DA" postCell="../PopVD/9/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="1.688431247680192"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopDB_PopVD_silentSyn" presynapticPopulation="PopDB" postsynapticPopulation="PopVD">
+            <continuousConnectionInstanceW id="0" preCell="../PopDB/0/DB" postCell="../PopVD/0/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopDB/1/DB" postCell="../PopVD/1/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopDB/2/DB" postCell="../PopVD/2/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopDB/3/DB" postCell="../PopVD/3/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopDB/4/DB" postCell="../PopVD/4/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopDB/5/DB" postCell="../PopVD/5/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopDB/6/DB" postCell="../PopVD/6/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopDB/7/DB" postCell="../PopVD/7/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopDB/8/DB" postCell="../PopVD/8/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopDB/9/DB" postCell="../PopVD/9/VD" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="5.038926703654519"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVA_PopVA_silentSyn" presynapticPopulation="PopVA" postsynapticPopulation="PopVA">
+            <continuousConnectionInstanceW id="0" preCell="../PopVA/0/VA" postCell="../PopVA/0/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVA/1/VA" postCell="../PopVA/1/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVA/2/VA" postCell="../PopVA/2/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVA/3/VA" postCell="../PopVA/3/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVA/4/VA" postCell="../PopVA/4/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVA/5/VA" postCell="../PopVA/5/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVA/6/VA" postCell="../PopVA/6/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVA/7/VA" postCell="../PopVA/7/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVA/8/VA" postCell="../PopVA/8/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVA/9/VA" postCell="../PopVA/9/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-2.528311446261591"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVD_PopVA_silentSyn" presynapticPopulation="PopVD" postsynapticPopulation="PopVA">
+            <continuousConnectionInstanceW id="0" preCell="../PopVD/0/VD" postCell="../PopVA/0/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVD/1/VD" postCell="../PopVA/1/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVD/2/VD" postCell="../PopVA/2/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVD/3/VD" postCell="../PopVA/3/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVD/4/VD" postCell="../PopVA/4/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVD/5/VD" postCell="../PopVA/5/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVD/6/VD" postCell="../PopVA/6/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVD/7/VD" postCell="../PopVA/7/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVD/8/VD" postCell="../PopVA/8/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVD/9/VD" postCell="../PopVA/9/VA" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-14.672044016483778"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVB_PopVB_silentSyn" presynapticPopulation="PopVB" postsynapticPopulation="PopVB">
+            <continuousConnectionInstanceW id="0" preCell="../PopVB/0/VB" postCell="../PopVB/0/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVB/1/VB" postCell="../PopVB/1/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVB/2/VB" postCell="../PopVB/2/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVB/3/VB" postCell="../PopVB/3/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVB/4/VB" postCell="../PopVB/4/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVB/5/VB" postCell="../PopVB/5/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVB/6/VB" postCell="../PopVB/6/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVB/7/VB" postCell="../PopVB/7/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVB/8/VB" postCell="../PopVB/8/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVB/9/VB" postCell="../PopVB/9/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-5.431573678563159"/>
+        </continuousProjection>
+        <continuousProjection id="NC_PopVD_PopVB_silentSyn" presynapticPopulation="PopVD" postsynapticPopulation="PopVB">
+            <continuousConnectionInstanceW id="0" preCell="../PopVD/0/VD" postCell="../PopVB/0/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="1" preCell="../PopVD/1/VD" postCell="../PopVB/1/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="2" preCell="../PopVD/2/VD" postCell="../PopVB/2/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="3" preCell="../PopVD/3/VD" postCell="../PopVB/3/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="4" preCell="../PopVD/4/VD" postCell="../PopVB/4/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="5" preCell="../PopVD/5/VD" postCell="../PopVB/5/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="6" preCell="../PopVD/6/VD" postCell="../PopVB/6/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="7" preCell="../PopVD/7/VD" postCell="../PopVB/7/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="8" preCell="../PopVD/8/VD" postCell="../PopVB/8/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+            <continuousConnectionInstanceW id="9" preCell="../PopVD/9/VD" postCell="../PopVB/9/VB" preComponent="silentSyn" postComponent="neuron_to_neuron_syn_x" weight="-1.110075444163887"/>
+        </continuousProjection>
+        <inputList id="OneStim" population="PopDA" component="pulseGen_0">
+            <inputW id="0" target="../PopDA/0/DA" destination="synapses" weight="1.0"/>
+        </inputList>
+        <inputList id="ExtStimPopDA" population="PopDA" component="extStim">
+            <inputW id="0" target="../PopDA/0/DA" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopDA/1/DA" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopDA/2/DA" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopDA/3/DA" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopDA/4/DA" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopDA/5/DA" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopDA/6/DA" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopDA/7/DA" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopDA/8/DA" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopDA/9/DA" destination="synapses" weight="0.0"/>
+        </inputList>
+        <inputList id="ExtStimPopDB" population="PopDB" component="extStim">
+            <inputW id="0" target="../PopDB/0/DB" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopDB/1/DB" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopDB/2/DB" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopDB/3/DB" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopDB/4/DB" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopDB/5/DB" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopDB/6/DB" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopDB/7/DB" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopDB/8/DB" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopDB/9/DB" destination="synapses" weight="0.0"/>
+        </inputList>
+        <inputList id="ExtStimPopDD" population="PopDD" component="extStim">
+            <inputW id="0" target="../PopDD/0/DD" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopDD/1/DD" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopDD/2/DD" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopDD/3/DD" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopDD/4/DD" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopDD/5/DD" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopDD/6/DD" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopDD/7/DD" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopDD/8/DD" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopDD/9/DD" destination="synapses" weight="0.0"/>
+        </inputList>
+        <inputList id="ExtStimPopVA" population="PopVA" component="extStim">
+            <inputW id="0" target="../PopVA/0/VA" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopVA/1/VA" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopVA/2/VA" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopVA/3/VA" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopVA/4/VA" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopVA/5/VA" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopVA/6/VA" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopVA/7/VA" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopVA/8/VA" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopVA/9/VA" destination="synapses" weight="0.0"/>
+        </inputList>
+        <inputList id="ExtStimPopVB" population="PopVB" component="extStim">
+            <inputW id="0" target="../PopVB/0/VB" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopVB/1/VB" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopVB/2/VB" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopVB/3/VB" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopVB/4/VB" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopVB/5/VB" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopVB/6/VB" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopVB/7/VB" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopVB/8/VB" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopVB/9/VB" destination="synapses" weight="0.0"/>
+        </inputList>
+        <inputList id="ExtStimPopVD" population="PopVD" component="extStim">
+            <inputW id="0" target="../PopVD/0/VD" destination="synapses" weight="0.0"/>
+            <inputW id="1" target="../PopVD/1/VD" destination="synapses" weight="0.0"/>
+            <inputW id="2" target="../PopVD/2/VD" destination="synapses" weight="0.0"/>
+            <inputW id="3" target="../PopVD/3/VD" destination="synapses" weight="0.0"/>
+            <inputW id="4" target="../PopVD/4/VD" destination="synapses" weight="0.0"/>
+            <inputW id="5" target="../PopVD/5/VD" destination="synapses" weight="0.0"/>
+            <inputW id="6" target="../PopVD/6/VD" destination="synapses" weight="0.0"/>
+            <inputW id="7" target="../PopVD/7/VD" destination="synapses" weight="0.0"/>
+            <inputW id="8" target="../PopVD/8/VD" destination="synapses" weight="0.0"/>
+            <inputW id="9" target="../PopVD/9/VD" destination="synapses" weight="0.0"/>
+        </inputList>
+    </network>
+</neuroml>

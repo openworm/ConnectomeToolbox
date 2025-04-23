@@ -12,6 +12,37 @@ import importlib
 all_data = {}
 
 
+reader_colors = {
+    "White_A": "lightpink",
+    "White_L4": "darkred",
+    "White_whole": "red",
+    "Varshney": "#009e73",
+    "Bentley2016_MA": "#56b4e9",
+    "Bentley2016_PEP": "blue",
+    "Cook2019Herm": "darkmagenta",
+    "Cook2019Male": "fuchsia",
+    "Cook2020": "darkorchid",
+    "Brittin2021": "khaki",
+    "Witvliet1": "#eeee44",
+    "Witvliet2": "#cccc44",
+    "Witvliet3": "#aaaa44",
+    "Witvliet4": "#888844",
+    "Witvliet5": "#666644",
+    "Witvliet6": "#444444",
+    "Witvliet7": "#222244",
+    "Witvliet8": "#111144",
+    "WormNeuroAtlas": "olive",
+    "Randi2023": "peachpuff",
+    "RipollSanchezShortRange": "gold",
+    "RipollSanchezMidRange": "goldenrod",
+    "RipollSanchezLongRange": "orange",
+    "Yim2024": "#0d7ba4",
+    "Test": "palegoldenrod",
+    "SSData": "moccasin",
+    "UpdSSData": "papayawhip",
+    "UpdSSData2": "mistyrose",
+    "NeuroMLModel": "black",
+}
 reader_pages = {
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
@@ -41,6 +72,7 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "NeuroMLModel": "NeuroMLModel_data",
 }
 
 all_data[""] = [
@@ -92,7 +124,7 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
+    return '\n%s```{.plotly .no-auto-theme}\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
         asset_filename,
@@ -138,7 +170,7 @@ def get_matrix_markdown(
 
     extra = "\n" + indent + extra_info if extra_info is not None else ""
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -163,7 +195,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
 def generate_comparison_page(
@@ -179,6 +211,10 @@ def generate_comparison_page(
     readers = {}
 
     if not quick:
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+
+    if not quick:
         readers["White_A"] = ["cect.White_A", "White_1986"]
         readers["White_L4"] = ["cect.White_L4", "White_1986"]
 
@@ -188,11 +224,6 @@ def generate_comparison_page(
     if not quick:
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
-
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-
-    if not quick:
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
     readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
@@ -229,6 +260,7 @@ def generate_comparison_page(
         ]
 
     readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+    readers["NeuroMLModel"] = ["cect.NeuroMLDataReader", "NeuroMLModel"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]

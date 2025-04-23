@@ -4,9 +4,9 @@ title: C. elegans Connectome Toolbox
 
 # Overview
 
-Information on published connectomics data related to _C. elegans_. This is being developed as part of the [OpenWorm project](https://www.openworm.org).
+This resource aims to make available structured datasets on the anatomical (chemical and electrical synapses, e.g., **[White et al. 1986](White_1986.md)**, **[Cook et al. 2019](Cook_2019.md)**), functional (e.g., **[Randi et al. 2023](Randi_2023.md)**) and extrasynaptic (e.g., **[Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md)**) connectomes of _C. elegans_.
 
-**Please note: this is a <u>Work in Progress</u>! Please [get in contact](About.md) if you are interested in contributing to this resource!**
+**This is being developed as part of the [OpenWorm project](https://www.openworm.org) and is a <u>Work in Progress</u>! Please [get in contact](About.md) if you are interested in contributing to this resource!**
 
 ### Example plots
 

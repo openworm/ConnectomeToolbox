@@ -1,139 +1,140 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
+        "g1AL",
         "g1p",
         "g2L",
-        "g2R"
+        "e3VL",
+        "g2R",
+        "e3VR",
+        "e3D",
+        "g1P",
+        "e2VR",
+        "e2VL",
+        "e2V",
+        "e2DR",
+        "e2DL",
+        "e2D"
       ],
       "y": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        2,
-        1,
-        4,
         5,
-        0,
+        4,
         3,
         2,
-        1
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
+        "g1AL",
         "g1p",
         "g2L",
-        "g2R"
+        "e3VL",
+        "g2R",
+        "e3VR",
+        "e3D",
+        "g1P",
+        "e2VR",
+        "e2VL",
+        "e2V",
+        "e2DR",
+        "e2DL",
+        "e2D"
       ],
       "y": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        2,
-        1,
-        4,
         5,
-        0,
+        4,
         3,
         2,
-        1
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2020 Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2020",
       "type": "scatter",
       "x": [
-        "e2D",
-        "e2DL",
-        "e2DR",
-        "e2V",
-        "e2VL",
-        "e2VR",
-        "e3D",
-        "e3VL",
-        "e3VR",
-        "g1AL",
         "g1AR",
-        "g1P",
+        "g1AL",
         "g1p",
         "g2L",
-        "g2R"
+        "e3VL",
+        "g2R",
+        "e3VR",
+        "e3D",
+        "g1P",
+        "e2VR",
+        "e2VL",
+        "e2V",
+        "e2DR",
+        "e2DL",
+        "e2D"
       ],
       "y": [
+        5,
+        4,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
+        2,
         2,
         1,
-        4,
-        5,
+        1,
+        1,
         3,
         0,
-        2,
-        1
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -950,6 +951,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

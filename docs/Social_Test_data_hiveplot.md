@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Social_White_A_data_hiveplot">White_A</a> <a href="../Social_White_L4_data_hiveplot">White_L4</a> <a href="../Social_White_whole_data_hiveplot">White_whole</a> <a href="../Social_Varshney_data_hiveplot">Varshney</a> <a href="../Social_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../Social_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../Social_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../Social_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../Social_Cook2020_data_hiveplot">Cook2020</a> <a href="../Social_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../Social_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../Social_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../Social_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../Social_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../Social_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../Social_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../Social_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../Social_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../Social_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../Social_Randi2023_data_hiveplot">Randi2023</a> <a href="../Social_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../Social_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../Social_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <a href="../Social_Yim2024_data_hiveplot">Yim2024</a> <b><a href="../Social_Test_data_hiveplot">Test</a></b> <a href="../Social_SSData_data_hiveplot">SSData</a> <a href="../Social_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../Social_UpdSSData2_data_hiveplot">UpdSSData2</a> 
+    <a href="../Social_White_A_data_hiveplot">White_A</a> <a href="../Social_White_L4_data_hiveplot">White_L4</a> <a href="../Social_White_whole_data_hiveplot">White_whole</a> <a href="../Social_Varshney_data_hiveplot">Varshney</a> <a href="../Social_Bentley2016_MA_data_hiveplot">Bentley2016_MA</a> <a href="../Social_Bentley2016_PEP_data_hiveplot">Bentley2016_PEP</a> <a href="../Social_Cook2019Herm_data_hiveplot">Cook2019Herm</a> <a href="../Social_Cook2019Male_data_hiveplot">Cook2019Male</a> <a href="../Social_Cook2020_data_hiveplot">Cook2020</a> <a href="../Social_Brittin2021_data_hiveplot">Brittin2021</a> <a href="../Social_Witvliet1_data_hiveplot">Witvliet1</a> <a href="../Social_Witvliet2_data_hiveplot">Witvliet2</a> <a href="../Social_Witvliet3_data_hiveplot">Witvliet3</a> <a href="../Social_Witvliet4_data_hiveplot">Witvliet4</a> <a href="../Social_Witvliet5_data_hiveplot">Witvliet5</a> <a href="../Social_Witvliet6_data_hiveplot">Witvliet6</a> <a href="../Social_Witvliet7_data_hiveplot">Witvliet7</a> <a href="../Social_Witvliet8_data_hiveplot">Witvliet8</a> <a href="../Social_WormNeuroAtlas_data_hiveplot">WormNeuroAtlas</a> <a href="../Social_Randi2023_data_hiveplot">Randi2023</a> <a href="../Social_RipollSanchezShortRange_data_hiveplot">RipollSanchezShortRange</a> <a href="../Social_RipollSanchezMidRange_data_hiveplot">RipollSanchezMidRange</a> <a href="../Social_RipollSanchezLongRange_data_hiveplot">RipollSanchezLongRange</a> <a href="../Social_Yim2024_data_hiveplot">Yim2024</a> <b><a href="../Social_Test_data_hiveplot">Test</a></b> <a href="../Social_SSData_data_hiveplot">SSData</a> <a href="../Social_UpdSSData_data_hiveplot">UpdSSData</a> <a href="../Social_UpdSSData2_data_hiveplot">UpdSSData2</a> <a href="../Social_NeuroMLModel_data_hiveplot">NeuroMLModel</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -21,20 +21,20 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <b><a href="../Social_Test_data_hiveplot"> Social Network</a></b> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - 
+    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <a href="../Pharynx_Test_data_hiveplot"> Pharynx</a> - <b><a href="../Social_Test_data_hiveplot"> Social Network</a></b> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_hiveplot"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_hiveplot"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_hiveplot"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_hiveplot"> Interneurons (somatic)</a> - 
 
     <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
 === "Chemical Exc"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Social_Chemical_Exc_hiveplot.json" }
     ```
 
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Social_Electrical_hiveplot.json" }
     ```
 

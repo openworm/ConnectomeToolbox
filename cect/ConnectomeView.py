@@ -28,6 +28,7 @@ from cect.Cells import VENTRAL_CORD_MOTORNEURONS
 from cect.Cells import HSN_MOTORNEURONS
 from cect.Cells import VC_HERM_MOTORNEURONS
 from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
+from cect.Cells import KNOWN_MODELLED_NEURONS
 
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
@@ -182,9 +183,34 @@ NEURONS_VIEW = View(
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
+SENSORY_NEURONS_SOMATIC_HERM_VIEW = View(
+    "SensorySomaticH",
+    "Sensory Neurons (somatic)",
+    "All **hermaphrodite** sensory neurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+INTERNEURONS_SOMATIC_HERM_VIEW = View(
+    "InterneuronsSomaticH",
+    "Interneurons (somatic)",
+    "All **hermaphrodite** interneurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+MOTORNEURONS_SOMATIC_HERM_VIEW = View(
+    "MotorSomaticH",
+    "Motor Neurons (somatic)",
+    "All **hermaphrodite** motor neurons except those in the pharynx",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
-    "Nonpharyngeal",
-    "Nonpharyngeal Neurons",
+    "NonpharyngealH",
+    "Nonpharyngeal Neurons (herm)",
     "All **hermaphrodite** neurons except those in the pharynx",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
@@ -192,7 +218,7 @@ NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
 )
 
 NONPHARYNGEAL_NEURONS_HM_VIEW = View(
-    "Nonpharyngeal",
+    "NonpharyngealHM",
     "Nonpharyngeal Neurons",
     "All neurons (herm. & male) except those in the pharynx",
     [],
@@ -220,10 +246,11 @@ for cell in (
         + HSN_MOTORNEURONS
     )
     + sorted(UNKNOWN_FUNCTION_NEURONS)
+    + sorted(KNOWN_MODELLED_NEURONS)
 ):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
-    if cell not in MALE_SPECIFIC_NEURONS:
+    if cell not in MALE_SPECIFIC_NEURONS + KNOWN_MODELLED_NEURONS:
         NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
     if cell not in PHARYNGEAL_NEURONS:
@@ -234,12 +261,25 @@ for cell in (
         NONPHARYNGEAL_NEURONS_HM_VIEW.node_sets.append(
             NodeSet(cell, [cell], get_standard_color(cell))
         )
+        if cell in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
+            SENSORY_NEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        if cell in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            MOTORNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        if cell in INTERNEURONS_NONPHARYNGEAL_COOK:
+            INTERNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+
 
 for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
 assert len(NEURONS_VIEW.node_sets) == 302
-assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES)
+assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS)
 
 PHARYNX_VIEW = View(
     "Pharynx",
@@ -419,7 +459,7 @@ for cell_set in sorted(loco1_positions.keys()):
     for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
         # print("Adding " + cc)
         if cell_set == cc:
-            for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
+            for m in MOTORNEURONS_NONPHARYNGEAL_COOK + KNOWN_MODELLED_NEURONS:
                 if m.startswith(cc):
                     all_cells.append(m)
 
@@ -706,6 +746,10 @@ ALL_VIEWS = [
     LOCOMOTION_1_VIEW,
     LOCOMOTION_3_VIEW,
     PEP_HUBS_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
+    SENSORY_NEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_SOMATIC_HERM_VIEW,
+    INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
 

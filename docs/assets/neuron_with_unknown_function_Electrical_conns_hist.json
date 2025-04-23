@@ -1,17 +1,17 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "CANL",
-        "CANR"
+        "CANR",
+        "CANL"
       ],
       "y": [
         4,
@@ -19,17 +19,17 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "CANL",
-        "CANR"
+        "CANR",
+        "CANL"
       ],
       "y": [
         4,
@@ -37,25 +37,26 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "#222244",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Witvliet7 Electrical conns",
+      "mode": "markers",
+      "name": "Witvliet7",
       "type": "scatter",
       "x": [
-        "CANL",
-        "CANR"
+        "CANR",
+        "CANL"
       ],
       "y": [
-        0,
-        1
+        1,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -872,6 +873,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

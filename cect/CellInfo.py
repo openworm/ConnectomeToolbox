@@ -13,6 +13,8 @@ from cect.Cells import get_standard_color
 from cect.Cells import is_male_specific_cell
 from cect.Cells import is_bilateral_left
 
+from cect.Comparison import reader_colors
+
 
 from cect import print_
 # from pprint import pprint
@@ -76,12 +78,22 @@ def get_weight_table_markdown(w):
 
     if df_all is not None:
         fig = df_all.plot(
-            labels=dict(index="Connection", value="Weight", variable="Dataset")
+            labels=dict(index="Connection", value="Weight", variable="Dataset"),
+            color_discrete_map=reader_colors,
         )
         fig.update_traces(
-            marker=dict(size=4), marker_symbol="circle", mode="lines+markers"
+            marker=dict(size=4),
+            marker_symbol="circle",
+            mode="markers",
         )
-        fig_md = f"\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
+        fig.update_layout(
+            template="plotly_white",
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig_md = f"\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
         fig_md = ""
 
@@ -529,7 +541,7 @@ if __name__ == "__main__":
                 a = positions[cell]
                 if right in positions:
                     b = positions[right]
-                    print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
+                    # print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
                     # Add edges to the figure
                     edge_trace = go.Scatter3d(
                         x=[a[0], b[0]],
