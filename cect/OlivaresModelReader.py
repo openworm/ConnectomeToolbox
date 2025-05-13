@@ -17,7 +17,7 @@ import os
 file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%sWorm2D.net.nml" % file_location
 
-READER_DESCRIPTION = """Data extracted from NeuroML file from Gleeson et al. 2018"""
+READER_DESCRIPTION = """Data extracted from a NeuroML file based on <b><a href="https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2021.572339/full">Olivares et al. 2021</a></b>"""
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

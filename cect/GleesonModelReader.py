@@ -16,7 +16,7 @@ import os
 file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%sc302_C2_FW.net.nml" % file_location
 
-READER_DESCRIPTION = """Data extracted from NeuroML file from Gleeson et al. 2018"""
+READER_DESCRIPTION = """Data extracted from a NeuroML file based on <b><a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2017.0379">Gleeson et al. 2018</a></b>"""
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
