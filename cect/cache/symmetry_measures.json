@@ -1,4 +1,38 @@
 {
+    "OpenWormUnified": {
+        "Raw": {
+            "Chemical": "67.57",
+            "Electrical": "66.90"
+        },
+        "Neurons": {
+            "Chemical Exc": "64.11",
+            "Chemical Inh": "66.27",
+            "Electrical": "62.01"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.14",
+            "Electrical": "53.12"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "63.57",
+            "Chemical Inh": "66.27",
+            "Electrical": "62.21"
+        },
+        "SensorySomaticH": {
+            "Chemical Exc": "55.52",
+            "Electrical": "62.79"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "88.98",
+            "Chemical Inh": "93.44",
+            "Electrical": "84.49"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "64.28",
+            "Chemical Inh": "63.46",
+            "Electrical": "57.52"
+        }
+    },
     "Cook2019Herm": {
         "Raw": {
             "Chemical": "67.57",
@@ -601,25 +635,49 @@
             "Chemical Exc": "65.23"
         }
     },
-    "NeuroMLModel": {
+    "GleesonModel": {
         "Raw": {
             "Chemical": "90.81",
             "Electrical": "96.65"
         },
         "Neurons": {
-            "Chemical Exc": "97.37",
+            "Chemical Exc": "94.74",
+            "Chemical Inh": "100.00",
             "Electrical": "96.34"
         },
         "NonpharyngealH": {
-            "Chemical Exc": "97.37",
+            "Chemical Exc": "94.74",
+            "Chemical Inh": "100.00",
             "Electrical": "96.34"
         },
         "MotorSomaticH": {
             "Chemical Exc": "100.00",
+            "Chemical Inh": "100.00",
             "Electrical": "100.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "100.00",
+            "Electrical": "100.00"
+        }
+    },
+    "OlivaresModel": {
+        "Raw": {
+            "Chemical": "100.00",
+            "Electrical": "100.00"
+        },
+        "Neurons": {
+            "Chemical Exc": "100.00",
+            "Chemical Inh": "100.00",
+            "Electrical": "100.00"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "100.00",
+            "Chemical Inh": "100.00",
+            "Electrical": "100.00"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "100.00",
+            "Chemical Inh": "100.00",
             "Electrical": "100.00"
         }
     },

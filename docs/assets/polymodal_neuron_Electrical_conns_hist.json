@@ -2,6 +2,30 @@
   "data": [
     {
       "marker": {
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "OpenWormUnified",
+      "type": "scatter",
+      "x": [
+        "NSMR",
+        "MCR",
+        "MI",
+        "NSML",
+        "MCL"
+      ],
+      "y": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"

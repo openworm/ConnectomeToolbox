@@ -8,16 +8,11 @@
 
 
 from cect.ConnectomeReader import analyse_connections
-
-# from cect.Cells import is_any_neuron
 from cect.Cells import is_known_muscle
-
-# from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect import print_
-
 from cect.Cells import GENERIC_ELEC_SYN
 
 from pyneuroml import pynml
@@ -111,6 +106,7 @@ class NeuroMLDataReader(ConnectomeDataset):
             print_("Adding proj: %s" % cont_proj.id)
             pre_pop = cont_proj.presynaptic_population
             post_pop = cont_proj.postsynaptic_population
+
             for conn in cont_proj.continuous_connection_instance_ws:
                 # print_(" - Adding conn: %s" % conn)
                 pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
@@ -120,6 +116,10 @@ class NeuroMLDataReader(ConnectomeDataset):
                 if w < 0:
                     w = -1 * w
                     synclass = "GABA"
+
+                elif "inh_syn" in conn.post_component:
+                    synclass = "GABA"  # e.g. postComponent="neuron_to_neuron_inh_syn",
+
                 ci = ConnectionInfo(pre, post, w, "???", synclass)
 
                 # print_("Conn: %s" % (ci))
@@ -149,7 +149,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     Returns:
         NeuroMLDataReader: The initialised connectome reader
     """
-    if from_cache and False:
+    if from_cache and False:  #####
         from cect.ConnectomeDataset import (
             load_connectome_dataset_file,
             get_cache_filename,
@@ -159,34 +159,32 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return NeuroMLDataReader("c302_C2_FW.net.nml")
+        return NeuroMLDataReader("Worm2D.net.nml")
 
 
 if __name__ == "__main__":
-    # tdr_instance = NeuroMLDataReader('Worm2D.net.nml')
-    tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
-
+    #
+    # tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
+    tdr_instance = NeuroMLDataReader("Worm2D.net.nml")
     cells, neuron_conns = tdr_instance.read_data()
 
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
-
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     print(tdr_instance.summary())
 
-    from cect.ConnectomeView import NEURONS_VIEW as view
-
     """
     
+    from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import COOK_FIG3_VIEW as 
-    from cect.ConnectomeView import LOCOMOTION_1_VIEW as viewview
     from cect.ConnectomeView import RAW_VIEW as view
     from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
     from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
     """
     # from cect.ConnectomeView import SOCIAL_VIEW as view
+    from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
 
     cds2 = tdr_instance.get_connectome_view(view)
 
@@ -194,16 +192,14 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    """
-    
-    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[2], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(
         list(view.synclass_sets.keys())[2],
         view,
     )
-
+   """
     import plotly.io as pio
 
     pio.renderers.default = "browser"

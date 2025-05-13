@@ -388,9 +388,10 @@ for cell_set in sorted(esc_positions.keys()):
     ESCAPE_VIEW.node_sets.append(ns)
 
 
-loco1_positions = {
+loco1_2_positions = {
     "AVB": (step * -1, step * 0),
     "AVA": (step * 3, step * 0),
+    "AS": (step * 0.5, step * 1.7),
     "DB": (0, step * 1),
     "DD": (step * 1, step * 1),
     "DA": (step * 2, step * 1),
@@ -406,11 +407,20 @@ mn_colors = {
     "VA": ".52 .33 .17",
     "VB": ".17 .4 .37",
     "VD": ".65 .78 .9",
+    "AS": ".65 .2 .2",
 }
 
 LOCOMOTION_1_VIEW = View(
     "Loco1",
     "Locomotion 1",
+    "Subset of cells involved in locomotion (work in progress!)",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+)
+
+LOCOMOTION_2_VIEW = View(
+    "Loco2",
+    "Locomotion 2",
     "Subset of cells involved in locomotion (work in progress!)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
@@ -451,12 +461,12 @@ def get_color_shape(cell_set):
     return color, shape
 
 
-for cell_set in sorted(loco1_positions.keys()):
+for cell_set in sorted(loco1_2_positions.keys()):
     color, shape = get_color_shape(cell_set)
 
     all_cells = []
 
-    for cc in ["VA", "VB", "VD", "DA", "DB", "DD"]:
+    for cc in ["VA", "VB", "VD", "DA", "DB", "DD", "AS"]:
         # print("Adding " + cc)
         if cell_set == cc:
             for m in MOTORNEURONS_NONPHARYNGEAL_COOK + KNOWN_MODELLED_NEURONS:
@@ -471,11 +481,14 @@ for cell_set in sorted(loco1_positions.keys()):
         all_cells,
         color=color,
         shape=shape,
-        position=loco1_positions[cell_set],
+        position=loco1_2_positions[cell_set],
         size=len_scale * 80,
     )
 
-    LOCOMOTION_1_VIEW.node_sets.append(ns)
+    if cell_set not in ["AS"]:
+        LOCOMOTION_1_VIEW.node_sets.append(ns)
+    if cell_set not in ["AVA", "AVB"]:
+        LOCOMOTION_2_VIEW.node_sets.append(ns)
 
 
 LOCOMOTION_3_VIEW = View(
@@ -744,6 +757,7 @@ ALL_VIEWS = [
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
     LOCOMOTION_1_VIEW,
+    LOCOMOTION_2_VIEW,
     LOCOMOTION_3_VIEW,
     PEP_HUBS_VIEW,
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
@@ -808,9 +822,9 @@ if __name__ == "__main__":
     print(tdr_instance.get_connectome_view(LOCOMOTION_1_VIEW).summary())
     print(LOCOMOTION_1_VIEW)
 
-    print("------- Locomotion 3 ---------")
-    print(tdr_instance.get_connectome_view(LOCOMOTION_3_VIEW).summary())
-    print(LOCOMOTION_3_VIEW)
+    print("------- Locomotion 2 ---------")
+    print(tdr_instance.get_connectome_view(LOCOMOTION_2_VIEW).summary())
+    print(LOCOMOTION_2_VIEW)
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES

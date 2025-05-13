@@ -2,6 +2,32 @@
   "data": [
     {
       "marker": {
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "OpenWormUnified",
+      "type": "scatter",
+      "x": [
+        "GLRVL",
+        "GLRVR",
+        "GLRR",
+        "GLRDR",
+        "GLRL",
+        "GLRDL"
+      ],
+      "y": [
+        2,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
