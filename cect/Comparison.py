@@ -37,11 +37,13 @@ reader_colors = {
     "RipollSanchezMidRange": "goldenrod",
     "RipollSanchezLongRange": "orange",
     "Yim2024": "#0d7ba4",
+    "OpenWormUnified": "yellowgreen",
     "Test": "palegoldenrod",
     "SSData": "moccasin",
     "UpdSSData": "papayawhip",
     "UpdSSData2": "mistyrose",
-    "NeuroMLModel": "black",
+    "GleesonModel": "black",
+    "OlivaresModel": "black",
 }
 reader_pages = {
     "White_A": "White_A_data",
@@ -68,11 +70,13 @@ reader_pages = {
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Yim2024": "Yim2024_data",
+    "OpenWormUnified": "OpenWormUnified_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
-    "NeuroMLModel": "NeuroMLModel_data",
+    "GleesonModel": "GleesonModel_data",
+    "OlivaresModel": "OlivaresModel_data",
 }
 
 all_data[""] = [
@@ -210,6 +214,7 @@ def generate_comparison_page(
 
     readers = {}
 
+    readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
     if not quick:
         readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
@@ -260,7 +265,8 @@ def generate_comparison_page(
         ]
 
     readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
-    readers["NeuroMLModel"] = ["cect.NeuroMLDataReader", "NeuroMLModel"]
+    readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+    readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
     if not quick:
         readers["SSData"] = ["cect.SpreadsheetDataReader", None]

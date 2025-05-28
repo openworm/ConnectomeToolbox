@@ -2,6 +2,40 @@
   "data": [
     {
       "marker": {
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "OpenWormUnified",
+      "type": "scatter",
+      "x": [
+        "pm5D",
+        "pm5VR",
+        "pm5VL",
+        "pm3VL",
+        "pm3VR",
+        "pm1",
+        "pm7VR",
+        "pm7D",
+        "pm3D",
+        "pm7VL"
+      ],
+      "y": [
+        11,
+        10,
+        10,
+        4,
+        3,
+        3,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"

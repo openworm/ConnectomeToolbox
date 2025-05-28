@@ -2,6 +2,38 @@
   "data": [
     {
       "marker": {
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "OpenWormUnified",
+      "type": "scatter",
+      "x": [
+        "vm2PR",
+        "vm2PL",
+        "vm2AR",
+        "vm2AL",
+        "vm1PR",
+        "vm1PL",
+        "vm1AR",
+        "vm1AL",
+        "MVULVA"
+      ],
+      "y": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        0
+      ]
+    },
+    {
+      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"

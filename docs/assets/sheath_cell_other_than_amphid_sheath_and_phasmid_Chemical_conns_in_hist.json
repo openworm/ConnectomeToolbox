@@ -2,6 +2,28 @@
   "data": [
     {
       "marker": {
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "OpenWormUnified",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDL",
+        "CEPshDR"
+      ],
+      "y": [
+        8,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
