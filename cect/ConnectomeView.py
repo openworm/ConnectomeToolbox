@@ -387,17 +387,21 @@ for cell_set in sorted(esc_positions.keys()):
 
     ESCAPE_VIEW.node_sets.append(ns)
 
+MDLR = "MD"
+MVLR = "MV"
 
 loco1_2_positions = {
     "AVB": (step * -1, step * 0),
     "AVA": (step * 3, step * 0),
-    "AS": (step * 0.5, step * 1.7),
+    "AS": (step * -1, step * 1.5),
     "DB": (0, step * 1),
-    "DD": (step * 1, step * 1),
+    "DD": (step * 1, step * 0.8),
     "DA": (step * 2, step * 1),
     "VB": (0, step * -1),
-    "VD": (step * 1, step * -1),
+    "VD": (step * 1, step * -0.8),
     "VA": (step * 2, step * -1),
+    MDLR: (step * 1.5, step * 2),
+    MVLR: (step * 1.5, step * -2),
 }
 
 mn_colors = {
@@ -408,6 +412,8 @@ mn_colors = {
     "VB": ".17 .4 .37",
     "VD": ".65 .78 .9",
     "AS": ".65 .2 .2",
+    MDLR: ".2 .7 .2",
+    MVLR: ".2 .7 .2",
 }
 
 LOCOMOTION_1_VIEW = View(
@@ -473,6 +479,13 @@ for cell_set in sorted(loco1_2_positions.keys()):
                 if m.startswith(cc):
                     all_cells.append(m)
 
+    for cc in [MDLR, MVLR]:
+        # print("Adding " + cc)
+        if cell_set == cc:
+            for m in BODY_MUSCLES_COOK:
+                if m.startswith(cc):
+                    all_cells.append(m)
+
     if cell_set in ["AVA", "AVB"]:
         all_cells = ["%sL" % cell_set, "%sR" % cell_set]
 
@@ -485,9 +498,17 @@ for cell_set in sorted(loco1_2_positions.keys()):
         size=len_scale * 80,
     )
 
-    if cell_set not in ["AS"]:
+    if cell_set in [MDLR, MVLR]:
+        LOCOMOTION_2_VIEW.node_sets.append(ns)
+
+    elif cell_set in ["AS"]:
+        LOCOMOTION_2_VIEW.node_sets.append(ns)
+
+    elif cell_set in ["AVA", "AVB"]:
         LOCOMOTION_1_VIEW.node_sets.append(ns)
-    if cell_set not in ["AVA", "AVB"]:
+
+    else:
+        LOCOMOTION_1_VIEW.node_sets.append(ns)
         LOCOMOTION_2_VIEW.node_sets.append(ns)
 
 

@@ -65,12 +65,19 @@ class NeuroMLDataReader(ConnectomeDataset):
     cell_names = {}
 
     def _get_cell_name(self, pop, index, pop_size=None):
-        ref = "%s%i" % (pop, index)
+        ref = "%s_%i" % (pop, index)
         if ref in self.cell_names:
+            # print_(" - Cell name is already known: %s = %s" % (ref, self.cell_names[ref]))
             return self.cell_names[ref]
         if pop_size is not None:
             if pop_size > 1:
-                cell_name = "%s%s" % (pop[3:] if "Pop" in pop else pop, index + 1)
+                if "MD1" in pop or "MV1" in pop:
+                    cell_name = "%sR%s" % (
+                        pop[3:-1],
+                        index + 1 if index > 8 else "0%s" % (index + 1),
+                    )
+                else:
+                    cell_name = "%s%s" % (pop[3:] if "Pop" in pop else pop, index + 1)
             else:
                 cell_name = pop
         else:
@@ -79,7 +86,9 @@ class NeuroMLDataReader(ConnectomeDataset):
             )
 
         self.cell_names[ref] = cell_name
-        print_(f" - Adding {ref}: cell {index} in population {pop} (size: {pop_size}))")
+        print_(
+            f" - Adding cell named {cell_name}, ref: {ref} - cell {index} in population {pop} (size of the pop: {pop_size}))"
+        )
         return cell_name
 
     def read_all_data(self):
@@ -164,8 +173,8 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
 if __name__ == "__main__":
     #
-    # tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
     tdr_instance = NeuroMLDataReader("Worm2D.net.nml")
+    # tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
     cells, neuron_conns = tdr_instance.read_data()
 
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
@@ -175,6 +184,7 @@ if __name__ == "__main__":
 
     print(tdr_instance.summary())
 
+    print("=======================================")
     """
     
     from cect.ConnectomeView import NEURONS_VIEW as view
@@ -186,13 +196,13 @@ if __name__ == "__main__":
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
 
+    print("--- Using view: %s" % view)
     cds2 = tdr_instance.get_connectome_view(view)
-
     print(cds2.summary())
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[2], view)
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(

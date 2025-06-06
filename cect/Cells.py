@@ -2418,6 +2418,8 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
+            fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+
             fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,
                 indent,
