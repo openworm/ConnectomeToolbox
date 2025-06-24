@@ -77,6 +77,39 @@ def main():
 
     print(tdr_instance.summary())
 
+    """
+    
+    from cect.ConnectomeView import NEURONS_VIEW as view
+    from cect.ConnectomeView import COOK_FIG3_VIEW as 
+    from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+    from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
+    """
+    # from cect.ConnectomeView import SOCIAL_VIEW as view
+    from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
+
+    cds2 = tdr_instance.get_connectome_view(view)
+
+    print(cds2.summary())
+
+    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    """
+
+    fig, _ = cds2.to_plotly_matrix_fig(
+        list(view.synclass_sets.keys())[2],
+        view,
+    )
+   """
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    import sys
+
+    if "-nogui" not in sys.argv:
+        fig.show()
+
 
 if __name__ == "__main__":
     main()
