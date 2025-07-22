@@ -332,10 +332,11 @@ class ConnectomeDataset:
 
         if self.verbose:
             print_(
-                "-- Creating view (%s, only_show_existing_nodes=%s) with %i nodes: %s\n  My %i nodes: %s"
+                "-- Creating view (%s, only_show_existing_nodes=%s, synclass_sets=%s) with %i nodes: %s\n  My %i nodes: %s"
                 % (
                     view.name,
                     view.only_show_existing_nodes,
+                    view.synclass_sets,
                     len(cv.nodes),
                     sorted(cv.nodes),
                     len(self.nodes),
@@ -1211,25 +1212,24 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    # from cect.ConnectomeView import NEURONS_VIEW as view
+    from cect.ConnectomeView import NEURONS_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
-    # from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
-    from cect.ConnectomeView import PHARYNX_VIEW as view
+    # from cect.ConnectomeView import PHARYNX_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
+
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
     # from cect.Yim2024DataReader import get_instance
-
-    synclass = "Chemical Inh"
-    synclass = "Chemical Exc"
+    from cect.WormNeuroAtlasMAReader import get_instance
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
@@ -1237,21 +1237,35 @@ if __name__ == "__main__":
     # synclass = "Contact"
     # from cect.TestDataReader import get_instance
 
+    synclass = "Chemical Inh"
+    synclass = "Chemical Exc"
+
+    synclass = "Chemical Exc"
+    synclass = "dopamine"
+
     cds = get_instance()
 
+    print("--------------------------------")
+    print(cds.summary())
+    print("--------------------------------")
+
+    if "MA" in cds.__class__.__name__:
+        synclass = "dopamine"
+        synclass = "tyramine"
+        synclass = "serotonin"
+    synclass = "octopamine"
+    """
     cds2 = cds.get_connectome_view(view)
 
-    print(cds2.summary())
+    print(cds2.summary())"""
 
-    print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
+    print("Keys: %s, plotting: %s" % (view.synclass_sets, synclass))
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
-    fig = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[0], view, symmetry=True
-    )
+    # fig = cds2.to_plotly_matrix_fig( list(view.synclass_sets.keys())[0], view, symmetry=True)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio

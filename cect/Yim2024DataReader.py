@@ -29,7 +29,7 @@ import numpy as np
 
 from cect import print_
 
-DAUER_NORM = "Dauer"
+DAUER_NON_NORM = "Dauer"
 DAUER_NORM = "Dauer_normalized"
 # DAUER_NORM = "L3_normalized"
 
@@ -122,7 +122,8 @@ class Yim2024DataReader(ConnectomeDataset):
                 row = 3 + i
                 col = 3 + j
                 val = sheet.cell(row=row, column=col).value
-                print_("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
+                if val != 0:
+                    print_("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
                 if val is not None:
                     self.conn_nums[conn_type][i, j] = val
 

@@ -203,7 +203,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
 
 def generate_comparison_page(
-    quick: bool,
+    quick: int,
     color_table=True,
     dataset_pages=True,
     save_to_cache=False,
@@ -214,66 +214,75 @@ def generate_comparison_page(
 
     readers = {}
 
-    readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
-    if not quick:
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
-
-    if not quick:
-        readers["White_A"] = ["cect.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.White_L4", "White_1986"]
-
-    readers["White_whole"] = ["cect.White_whole", "White_1986"]
-    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
-
-    if not quick:
+    if quick == 2:  # very quick...
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
 
-    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+    else:
+        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-    readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        if not quick:
+            readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+            readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
-    if not quick:
-        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
-        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
-        readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
-        readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
-        readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
-        readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
-        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        if not quick:
+            readers["White_A"] = ["cect.White_A", "White_1986"]
+            readers["White_L4"] = ["cect.White_L4", "White_1986"]
 
-    readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
 
-    if not quick:
-        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+        readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+        if not quick:
+            readers["Bentley2016_PEP"] = [
+                "cect.WormNeuroAtlasPepReader",
+                "Bentley_2016",
+            ]
 
-    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
-    if not quick:
-        readers["RipollSanchezShortRange"] = [
-            "cect.RipollSanchezShortRangeReader",
-            "RipollSanchez_2023",
-        ]
-        readers["RipollSanchezMidRange"] = [
-            "cect.RipollSanchezMidRangeReader",
-            "RipollSanchez_2023",
-        ]
-        readers["RipollSanchezLongRange"] = [
-            "cect.RipollSanchezLongRangeReader",
-            "RipollSanchez_2023",
-        ]
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
 
-    readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
-    readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
-    readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+        if not quick:
+            readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
+            readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
+            readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
+            readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
+            readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
+            readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
+            readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
 
-    if not quick:
-        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
-        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
-        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
-    readers["Test"] = ["cect.TestDataReader", None]
+        if not quick:
+            readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+
+        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+
+        if not quick:
+            readers["RipollSanchezShortRange"] = [
+                "cect.RipollSanchezShortRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezMidRange"] = [
+                "cect.RipollSanchezMidRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezLongRange"] = [
+                "cect.RipollSanchezLongRangeReader",
+                "RipollSanchez_2023",
+            ]
+
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+
+        if not quick:
+            readers["SSData"] = ["cect.SpreadsheetDataReader", None]
+            readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
+            readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+
+        readers["Test"] = ["cect.TestDataReader", None]
 
     main_mk = "# Comparison between data readers\n"
     table_html = ""
@@ -314,11 +323,14 @@ def generate_comparison_page(
 
             if dataset_pages:
                 if connectome is not None:
-                    from cect.ConnectomeView import ALL_VIEWS
+                    if quick == 2:
+                        from cect.ConnectomeView import QUICK_VIEWS as views
+                    else:
+                        from cect.ConnectomeView import ALL_VIEWS as views
 
                     indent = "    "
 
-                    for view in ALL_VIEWS:
+                    for view in views:
                         print_("Generating view: %s (%s)" % (view.name, view.id))
 
                         view_prefix = "" if view.id == "Raw" else "%s_" % view.id
@@ -472,7 +484,7 @@ def generate_comparison_page(
     """
                                 )
 
-                                for viewb in ALL_VIEWS:
+                                for viewb in views:
                                     viewb_prefix = (
                                         "" if viewb.id == "Raw" else "%s_" % viewb.id
                                     )
