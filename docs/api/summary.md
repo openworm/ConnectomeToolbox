@@ -25,6 +25,7 @@
     * [UpdatedSpreadsheetDataReader](cect/UpdatedSpreadsheetDataReader.md)
     * [UpdatedSpreadsheetDataReader2](cect/UpdatedSpreadsheetDataReader2.md)
     * [VarshneyDataReader](cect/VarshneyDataReader.md)
+    * [Wang2024Reader](cect/Wang2024Reader.md)
     * [WhiteDataReader](cect/WhiteDataReader.md)
     * [White_A](cect/White_A.md)
     * [White_L4](cect/White_L4.md)

@@ -179,6 +179,42 @@
         0,
         1
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "pm4D",
+        "pm4VL",
+        "pm4VR",
+        "pm6VL",
+        "pm6VR",
+        "pm6D",
+        "pm2VL",
+        "pm2D",
+        "pm8",
+        "pm4_UNSPECIFIED",
+        "pm2VR"
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ]
     }
   ],
   "layout": {

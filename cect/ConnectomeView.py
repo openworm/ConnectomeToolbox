@@ -139,6 +139,9 @@ EXC_INH_GJ_SYN_CLASSES = {
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
+for n in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
+    EXC_INH_GJ_SYN_CLASSES[n] = [n]
+
 for m in MONOAMINERGIC_SYN_CLASSES:
     EXC_INH_GJ_SYN_CLASSES[m] = [m]
 
@@ -157,7 +160,7 @@ ALL_SYN_CLASSES = {
 }
 
 CHEM_GJ_SYN_CLASSES = {
-    "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
+    "All Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
     + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
@@ -793,6 +796,7 @@ ALL_VIEWS = [
 QUICK_VIEWS = [
     RAW_VIEW,
     NEURONS_VIEW,
+    ESCAPE_VIEW,
     LOCOMOTION_1_VIEW,
     LOCOMOTION_2_VIEW,
     LOCOMOTION_3_VIEW,

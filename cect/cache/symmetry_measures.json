@@ -1,41 +1,56 @@
 {
     "OpenWormUnified": {
         "Raw": {
-            "Chemical": "67.57",
+            "All Chemical": "67.57",
             "Electrical": "66.90"
         },
         "Neurons": {
             "Chemical Exc": "64.11",
             "Chemical Inh": "66.27",
-            "Electrical": "62.01"
+            "Electrical": "62.01",
+            "Acetylcholine": "67.05",
+            "GABA": "66.27",
+            "Glutamate": "62.82"
         },
         "Pharynx": {
             "Chemical Exc": "77.14",
-            "Electrical": "53.12"
+            "Electrical": "53.12",
+            "Acetylcholine": "79.69",
+            "Glutamate": "79.59"
         },
         "NonpharyngealH": {
             "Chemical Exc": "63.57",
             "Chemical Inh": "66.27",
-            "Electrical": "62.21"
+            "Electrical": "62.21",
+            "Acetylcholine": "66.63",
+            "GABA": "66.27",
+            "Glutamate": "62.00"
         },
         "SensorySomaticH": {
             "Chemical Exc": "55.52",
-            "Electrical": "62.79"
+            "Electrical": "62.79",
+            "Acetylcholine": "51.90",
+            "Glutamate": "54.60"
         },
         "MotorSomaticH": {
             "Chemical Exc": "88.98",
             "Chemical Inh": "93.44",
-            "Electrical": "84.49"
+            "Electrical": "84.49",
+            "Acetylcholine": "88.98",
+            "GABA": "93.44"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "64.28",
             "Chemical Inh": "63.46",
-            "Electrical": "57.52"
+            "Electrical": "57.52",
+            "Acetylcholine": "67.09",
+            "GABA": "63.46",
+            "Glutamate": "66.53"
         }
     },
     "Cook2019Herm": {
         "Raw": {
-            "Chemical": "67.57",
+            "All Chemical": "67.57",
             "Electrical": "66.90"
         },
         "Neurons": {
@@ -65,7 +80,7 @@
     },
     "Cook2019Male": {
         "Raw": {
-            "Chemical": "63.61",
+            "All Chemical": "63.61",
             "Electrical": "67.71"
         },
         "Neurons": {
@@ -95,7 +110,7 @@
     },
     "White_A": {
         "Raw": {
-            "Chemical": "67.53",
+            "All Chemical": "67.53",
             "Electrical": "82.46"
         },
         "Neurons": {
@@ -121,7 +136,7 @@
     },
     "White_L4": {
         "Raw": {
-            "Chemical": "70.34",
+            "All Chemical": "70.34",
             "Electrical": "88.15"
         },
         "Neurons": {
@@ -147,7 +162,7 @@
     },
     "White_whole": {
         "Raw": {
-            "Chemical": "70.12",
+            "All Chemical": "70.12",
             "Electrical": "80.67"
         },
         "Neurons": {
@@ -177,7 +192,7 @@
     },
     "Varshney": {
         "Raw": {
-            "Chemical": "67.73",
+            "All Chemical": "67.73",
             "Electrical": "78.99"
         },
         "Neurons": {
@@ -206,22 +221,36 @@
             "Extrasynaptic": "100.00"
         },
         "Neurons": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "tyramine": "100.00",
+            "dopamine": "100.00",
+            "octopamine": "100.00",
+            "serotonin": "100.00"
         },
         "Pharynx": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "serotonin": "100.00"
         },
         "NonpharyngealH": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "tyramine": "100.00",
+            "dopamine": "100.00",
+            "octopamine": "100.00",
+            "serotonin": "100.00"
         },
         "SensorySomaticH": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "dopamine": "100.00",
+            "serotonin": "100.00"
         },
         "MotorSomaticH": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "serotonin": "100.00"
         },
         "InterneuronsSomaticH": {
-            "Extrasynaptic": "100.00"
+            "Extrasynaptic": "100.00",
+            "tyramine": "100.00",
+            "octopamine": "100.00"
         }
     },
     "Bentley2016_PEP": {
@@ -249,7 +278,7 @@
     },
     "Cook2020": {
         "Raw": {
-            "Chemical": "77.04",
+            "All Chemical": "77.04",
             "Electrical": "80.33"
         },
         "Neurons": {
@@ -283,7 +312,7 @@
     },
     "Witvliet1": {
         "Raw": {
-            "Chemical": "65.29",
+            "All Chemical": "65.29",
             "Electrical": "51.85"
         },
         "Neurons": {
@@ -309,7 +338,7 @@
     },
     "Witvliet2": {
         "Raw": {
-            "Chemical": "71.50",
+            "All Chemical": "71.50",
             "Electrical": "55.74"
         },
         "Neurons": {
@@ -335,7 +364,7 @@
     },
     "Witvliet3": {
         "Raw": {
-            "Chemical": "69.17",
+            "All Chemical": "69.17",
             "Electrical": "54.35"
         },
         "Neurons": {
@@ -361,7 +390,7 @@
     },
     "Witvliet4": {
         "Raw": {
-            "Chemical": "73.68",
+            "All Chemical": "73.68",
             "Electrical": "87.38"
         },
         "Neurons": {
@@ -387,7 +416,7 @@
     },
     "Witvliet5": {
         "Raw": {
-            "Chemical": "65.68",
+            "All Chemical": "65.68",
             "Electrical": "75.87"
         },
         "Neurons": {
@@ -413,7 +442,7 @@
     },
     "Witvliet6": {
         "Raw": {
-            "Chemical": "72.26",
+            "All Chemical": "72.26",
             "Electrical": "58.02"
         },
         "Neurons": {
@@ -439,7 +468,7 @@
     },
     "Witvliet7": {
         "Raw": {
-            "Chemical": "66.68",
+            "All Chemical": "66.68",
             "Electrical": "60.70"
         },
         "Neurons": {
@@ -465,7 +494,7 @@
     },
     "Witvliet8": {
         "Raw": {
-            "Chemical": "67.75",
+            "All Chemical": "67.75",
             "Electrical": "67.88"
         },
         "Neurons": {
@@ -491,36 +520,51 @@
     },
     "WormNeuroAtlas": {
         "Raw": {
-            "Chemical": "73.12",
+            "All Chemical": "73.12",
             "Electrical": "77.82"
         },
         "Neurons": {
             "Chemical Exc": "73.25",
             "Chemical Inh": "71.70",
-            "Electrical": "77.82"
+            "Electrical": "77.82",
+            "Acetylcholine": "74.29",
+            "GABA": "71.70",
+            "Glutamate": "71.92"
         },
         "Pharynx": {
             "Chemical Exc": "97.22",
-            "Electrical": "95.56"
+            "Electrical": "95.56",
+            "Acetylcholine": "100.00",
+            "Glutamate": "100.00"
         },
         "NonpharyngealH": {
             "Chemical Exc": "72.73",
             "Chemical Inh": "71.70",
-            "Electrical": "76.72"
+            "Electrical": "76.72",
+            "Acetylcholine": "73.72",
+            "GABA": "71.70",
+            "Glutamate": "71.30"
         },
         "SensorySomaticH": {
             "Chemical Exc": "68.49",
-            "Electrical": "82.46"
+            "Electrical": "82.46",
+            "Acetylcholine": "65.62",
+            "Glutamate": "63.79"
         },
         "MotorSomaticH": {
             "Chemical Exc": "89.61",
             "Chemical Inh": "94.83",
-            "Electrical": "89.23"
+            "Electrical": "89.23",
+            "Acetylcholine": "89.61",
+            "GABA": "94.83"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "69.82",
             "Chemical Inh": "69.92",
-            "Electrical": "79.08"
+            "Electrical": "79.08",
+            "Acetylcholine": "69.48",
+            "GABA": "69.92",
+            "Glutamate": "72.94"
         }
     },
     "Randi2023": {
@@ -617,7 +661,7 @@
     },
     "Yim2024": {
         "Raw": {
-            "Chemical": "60.56"
+            "All Chemical": "60.56"
         },
         "Neurons": {
             "Chemical Exc": "61.43"
@@ -635,181 +679,323 @@
             "Chemical Exc": "65.23"
         }
     },
+    "Wang2024": {
+        "Raw": {
+            "All Chemical": "71.42"
+        },
+        "Neurons": {
+            "Chemical Exc": "69.81",
+            "Chemical Inh": "71.29",
+            "Acetylcholine": "70.90",
+            "Dopamine": "65.00",
+            "GABA": "71.29",
+            "Glutamate": "68.25",
+            "Octapamine": "60.00",
+            "Serotonin": "44.78",
+            "Tyramine": "62.07",
+            "Betaine": "58.90"
+        },
+        "Pharynx": {
+            "Chemical Exc": "96.88",
+            "Acetylcholine": "100.00",
+            "Glutamate": "100.00",
+            "Serotonin": "50.00",
+            "Betaine": "50.00"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "68.86",
+            "Chemical Inh": "71.29",
+            "Acetylcholine": "69.90",
+            "Dopamine": "65.00",
+            "GABA": "71.29",
+            "Glutamate": "67.12",
+            "Octapamine": "60.00",
+            "Serotonin": "44.44",
+            "Tyramine": "62.07",
+            "Betaine": "59.42"
+        },
+        "SensorySomaticH": {
+            "Chemical Exc": "56.33",
+            "Acetylcholine": "46.34",
+            "Dopamine": "72.73",
+            "Glutamate": "51.81",
+            "Serotonin": "0.00",
+            "Betaine": "75.00"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "90.12",
+            "Chemical Inh": "96.67",
+            "Acetylcholine": "90.12",
+            "GABA": "96.67",
+            "Serotonin": "30.77"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "66.23",
+            "Chemical Inh": "65.71",
+            "Acetylcholine": "64.52",
+            "GABA": "65.71",
+            "Glutamate": "66.83",
+            "Octapamine": "40.00",
+            "Tyramine": "57.14",
+            "Betaine": "63.16"
+        }
+    },
     "GleesonModel": {
         "Raw": {
-            "Chemical": "90.81",
+            "All Chemical": "90.81",
             "Electrical": "96.65"
         },
         "Neurons": {
             "Chemical Exc": "94.74",
             "Chemical Inh": "100.00",
-            "Electrical": "96.34"
+            "Electrical": "96.34",
+            "Acetylcholine": "94.74",
+            "GABA": "100.00"
         },
         "NonpharyngealH": {
             "Chemical Exc": "94.74",
             "Chemical Inh": "100.00",
-            "Electrical": "96.34"
+            "Electrical": "96.34",
+            "Acetylcholine": "94.74",
+            "GABA": "100.00"
         },
         "MotorSomaticH": {
             "Chemical Exc": "100.00",
             "Chemical Inh": "100.00",
-            "Electrical": "100.00"
+            "Electrical": "100.00",
+            "Acetylcholine": "100.00",
+            "GABA": "100.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "100.00",
-            "Electrical": "100.00"
+            "Electrical": "100.00",
+            "Acetylcholine": "100.00"
         }
     },
     "OlivaresModel": {
         "Raw": {
-            "Chemical": "100.00",
+            "All Chemical": "-35.80",
             "Electrical": "100.00"
         },
         "Neurons": {
             "Chemical Exc": "100.00",
             "Chemical Inh": "100.00",
-            "Electrical": "100.00"
+            "Electrical": "100.00",
+            "Acetylcholine": "100.00",
+            "GABA": "100.00"
         },
         "NonpharyngealH": {
             "Chemical Exc": "100.00",
             "Chemical Inh": "100.00",
-            "Electrical": "100.00"
+            "Electrical": "100.00",
+            "Acetylcholine": "100.00",
+            "GABA": "100.00"
         },
         "MotorSomaticH": {
             "Chemical Exc": "100.00",
             "Chemical Inh": "100.00",
-            "Electrical": "100.00"
+            "Electrical": "100.00",
+            "Acetylcholine": "100.00",
+            "GABA": "100.00"
         }
     },
     "SSData": {
         "Raw": {
-            "Chemical": "72.54",
+            "All Chemical": "72.54",
             "Electrical": "79.61"
         },
         "Neurons": {
             "Chemical Exc": "67.72",
             "Chemical Inh": "80.00",
-            "Electrical": "79.61"
+            "Electrical": "79.61",
+            "Acetylcholine": "79.70",
+            "Acetylcholine_Tyramine": "62.07",
+            "Dopamine": "65.00",
+            "FMRFamide": "65.99",
+            "GABA": "80.00",
+            "Glutamate": "64.14",
+            "Octapamine": "60.00",
+            "Serotonin": "65.17",
+            "Serotonin_Acetylcholine": "62.50",
+            "Serotonin_Glutamate": "100.00"
         },
         "Pharynx": {
             "Chemical Exc": "96.47",
-            "Electrical": "91.49"
+            "Electrical": "91.49",
+            "Acetylcholine": "93.75",
+            "Glutamate": "96.43",
+            "Serotonin_Glutamate": "100.00"
         },
         "NonpharyngealH": {
             "Chemical Exc": "66.50",
             "Chemical Inh": "80.00",
-            "Electrical": "78.99"
+            "Electrical": "78.99",
+            "Acetylcholine": "78.45",
+            "Acetylcholine_Tyramine": "62.07",
+            "Dopamine": "65.00",
+            "FMRFamide": "65.99",
+            "GABA": "80.00",
+            "Glutamate": "63.17",
+            "Octapamine": "60.00",
+            "Serotonin": "65.17",
+            "Serotonin_Acetylcholine": "62.50"
         },
         "SensorySomaticH": {
             "Chemical Exc": "59.89",
             "Chemical Inh": "50.00",
-            "Electrical": "86.49"
+            "Electrical": "86.49",
+            "Acetylcholine": "53.33",
+            "Dopamine": "72.73",
+            "FMRFamide": "37.50",
+            "GABA": "50.00",
+            "Glutamate": "62.07",
+            "Serotonin": "53.85"
         },
         "MotorSomaticH": {
             "Chemical Exc": "91.36",
             "Chemical Inh": "87.50",
-            "Electrical": "94.85"
+            "Electrical": "94.85",
+            "Acetylcholine": "95.58",
+            "FMRFamide": "100.00",
+            "GABA": "87.50",
+            "Glutamate": "0.00",
+            "Serotonin": "100.00",
+            "Serotonin_Acetylcholine": "80.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "64.30",
             "Chemical Inh": "72.73",
-            "Electrical": "79.79"
+            "Electrical": "79.79",
+            "Acetylcholine": "80.00",
+            "Acetylcholine_Tyramine": "57.14",
+            "FMRFamide": "58.46",
+            "GABA": "72.73",
+            "Glutamate": "65.60",
+            "Octapamine": "40.00",
+            "Serotonin": "57.14"
         }
     },
     "UpdSSData": {
         "Raw": {
-            "Chemical": "66.83",
+            "All Chemical": "66.83",
             "Electrical": "63.73"
         },
         "Neurons": {
             "Chemical Exc": "62.90",
             "Chemical Inh": "82.46",
-            "Electrical": "60.74"
+            "Electrical": "60.74",
+            "Acetylcholine": "62.90",
+            "GABA": "82.46"
         },
         "Pharynx": {
             "Chemical Exc": "73.23",
-            "Electrical": "54.84"
+            "Electrical": "54.84",
+            "Acetylcholine": "73.23"
         },
         "NonpharyngealH": {
             "Chemical Exc": "62.51",
             "Chemical Inh": "82.46",
-            "Electrical": "60.84"
+            "Electrical": "60.84",
+            "Acetylcholine": "62.51",
+            "GABA": "82.46"
         },
         "SensorySomaticH": {
             "Chemical Exc": "53.09",
-            "Electrical": "63.22"
+            "Electrical": "63.22",
+            "Acetylcholine": "53.09"
         },
         "MotorSomaticH": {
             "Chemical Exc": "87.09",
             "Chemical Inh": "100.00",
-            "Electrical": "82.32"
+            "Electrical": "82.32",
+            "Acetylcholine": "87.09",
+            "GABA": "100.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "63.44",
-            "Electrical": "58.85"
+            "Electrical": "58.85",
+            "Acetylcholine": "63.44"
         }
     },
     "UpdSSData2": {
         "Raw": {
-            "Chemical": "66.94",
+            "All Chemical": "66.94",
             "Electrical": "63.73"
         },
         "Neurons": {
             "Chemical Exc": "63.05",
             "Chemical Inh": "82.46",
-            "Electrical": "60.74"
+            "Electrical": "60.74",
+            "Acetylcholine": "63.05",
+            "GABA": "82.46"
         },
         "Pharynx": {
             "Chemical Exc": "73.23",
-            "Electrical": "54.84"
+            "Electrical": "54.84",
+            "Acetylcholine": "73.23"
         },
         "NonpharyngealH": {
             "Chemical Exc": "62.68",
             "Chemical Inh": "82.46",
-            "Electrical": "60.84"
+            "Electrical": "60.84",
+            "Acetylcholine": "62.68",
+            "GABA": "82.46"
         },
         "SensorySomaticH": {
             "Chemical Exc": "53.09",
-            "Electrical": "63.22"
+            "Electrical": "63.22",
+            "Acetylcholine": "53.09"
         },
         "MotorSomaticH": {
             "Chemical Exc": "87.45",
             "Chemical Inh": "100.00",
-            "Electrical": "82.32"
+            "Electrical": "82.32",
+            "Acetylcholine": "87.45",
+            "GABA": "100.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "63.44",
-            "Electrical": "58.85"
+            "Electrical": "58.85",
+            "Acetylcholine": "63.44"
         }
     },
     "Test": {
         "Raw": {
-            "Chemical": "56.25",
+            "All Chemical": "56.25",
             "Electrical": "-33.33"
         },
         "Neurons": {
             "Chemical Exc": "61.54",
             "Chemical Inh": "100.00",
-            "Electrical": "0.00"
+            "Electrical": "0.00",
+            "Acetylcholine": "61.54",
+            "GABA": "100.00"
         },
         "Pharynx": {
-            "Chemical Exc": "100.00"
+            "Chemical Exc": "100.00",
+            "Acetylcholine": "100.00"
         },
         "NonpharyngealH": {
             "Chemical Exc": "54.55",
             "Chemical Inh": "100.00",
-            "Electrical": "0.00"
+            "Electrical": "0.00",
+            "Acetylcholine": "54.55",
+            "GABA": "100.00"
         },
         "SensorySomaticH": {
             "Chemical Exc": "0.00",
-            "Electrical": "0.00"
+            "Electrical": "0.00",
+            "Acetylcholine": "0.00"
         },
         "MotorSomaticH": {
             "Chemical Exc": "100.00",
-            "Chemical Inh": "100.00"
+            "Chemical Inh": "100.00",
+            "Acetylcholine": "100.00",
+            "GABA": "100.00"
         },
         "InterneuronsSomaticH": {
-            "Chemical Exc": "100.00"
+            "Chemical Exc": "100.00",
+            "Acetylcholine": "100.00"
         }
     }
 }

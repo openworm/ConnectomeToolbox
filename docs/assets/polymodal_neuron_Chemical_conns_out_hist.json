@@ -146,6 +146,30 @@
     },
     {
       "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        7,
+        2,
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
         "color": "moccasin",
         "size": 3,
         "symbol": "circle"

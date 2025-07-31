@@ -457,16 +457,6 @@ if __name__ == "__main__":
 
         cds_src = get_instance()
         cds = cds_src.get_connectome_view(view)
-        """
-        for cell in ['I3']:
-            print(cds.nodes)
-            print(cds.connections.keys())
-            index = cds.nodes.index(cell)
-            print('Conns from %s (index: %i): %s'%(cell,index,cds.get_connections_from(cell, syntype)))
-            matrix = cds.connections[syntype]
-            print(matrix[index])
-            print('Conns to %s (index: %i): %s'%(cell,index,cds.get_connections_to(cell, syntype)))
-            print(matrix.T[index])"""
 
         data = {}
 

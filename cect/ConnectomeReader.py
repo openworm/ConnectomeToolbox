@@ -133,7 +133,14 @@ def check_cells(cells):
     return in_preferred, not_in_preferred, missing_preferred, muscles
 
 
-def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns):
+def analyse_connections(
+    cells,
+    neuron_conns,
+    neurons2muscles,
+    muscles,
+    muscle_conns,
+    print_details_on=["ADAL"],
+):
     print_("Found %s non-muscle cells: %s\n" % (len(cells), sorted(cells)))
 
     preferred, not_in_preferred, missing_preferred, muscles_ = check_cells(cells)
@@ -215,15 +222,15 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
             % (nt, nts[nt], nts_tot[nt], nts_tot[nt] / nts[nt])
         )
 
+    """
     core_set = ["AVBL", "PVCL", "VA6", "VB6", "VD6", "DB4", "DD4"]
     # core_set = ['VA6', 'VD6']
     print_("\n\nConnections between cells in the subset %s:\n" % (core_set))
 
     for c in neuron_conns:
         if c.pre_cell in core_set and c.post_cell in core_set:
-            print_(str(c))
+            print_(str(c))"""
 
-    print_details_on = ["ADAL"]
     for cd in print_details_on:
         print_("\n\nAll outgoing connections of %s:\n" % (cd))
         for c in neuron_conns:

@@ -387,19 +387,30 @@ class ConnectomeDataset:
 
         return cv
 
-    def summary(self):
+    def summary(self, list_pre_cells=False):
         info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
         for c in self.connections:
             conn_array = self.connections[c]
             nonzero = np.count_nonzero(conn_array)
             if nonzero > 0:
+                pre_info = ""
+                if list_pre_cells:
+                    pre = sorted(
+                        [
+                            self.nodes[i]
+                            for i in range(len(self.nodes))
+                            if conn_array[i].sum() > 0
+                        ]
+                    )
+                    pre_info = "  Presynaptic cells (%i total): %s\n" % (len(pre), pre)
                 info += (
-                    "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
+                    "- Connection type - %s: %s, %i non-zero entries, sum of entries = %i\n%s%s\n"
                     % (
                         c,
                         conn_array.shape,
                         nonzero,
                         np.sum(conn_array),
+                        pre_info,
                         conn_array,
                     )
                 )
@@ -629,12 +640,6 @@ class ConnectomeDataset:
                 ]
 
         pos = nx.spring_layout(G, seed=1, iterations=20, k=8, pos=init_pos)
-        """
-        print("..................")
-        print(G.nodes)
-        print(init_pos)
-        print(pos)
-        print("..................")"""
 
         for i, node_value in enumerate(self.nodes):
             node_set = view.get_node_set(node_value)

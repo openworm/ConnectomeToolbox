@@ -15,16 +15,27 @@ from cect import print_
 
 from typing import List
 
+ACETYLCHOLINE = "Acetylcholine"
+GLUTAMATE = "Glutamate"
+DOPAMINE = "Dopamine"
+SEROTONIN = "Serotonin"
+OCTAPAMINE = "Octapamine"
+TYRAMINE = "Tyramine"
+BETAINE = "Betaine"
+
+GABA = "GABA"
 
 ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
-    "Acetylcholine",
+    ACETYLCHOLINE,
     "Acetylcholine_Tyramine",
-    "Dopamine",
+    DOPAMINE,
     "FMRFamide",
-    "GABA",
-    "Glutamate",
-    "Octapamine",
-    "Serotonin",
+    GABA,
+    GLUTAMATE,
+    OCTAPAMINE,
+    SEROTONIN,
+    TYRAMINE,
+    BETAINE,
     "Serotonin_Acetylcholine",
     "Serotonin_Glutamate",
 ]
@@ -2483,7 +2494,9 @@ if __name__ == "__main__":
 
     from cect.CellInfo import generate_cell_info_pages
 
-    generate_cell_info_pages(connectomes)
+    if quick < 2:
+        print_("Generating cell info pages...")
+        generate_cell_info_pages(connectomes)
 
     filename = "docs/Cells.md"
 

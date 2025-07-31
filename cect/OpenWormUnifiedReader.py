@@ -36,13 +36,13 @@ class OpenWormUnifiedReader(ConnectomeDataset):
 
         wna = WormNeuroAtlasReader(exclude_white=True, average=False)
 
-        self.cook2029reader = load_connectome_dataset_file(
+        self.cook2019reader = load_connectome_dataset_file(
             get_cache_filename("Cook2019HermReader")
         )
 
         # neurons, muscles, other_cells, conns = self.read_all_data()
 
-        conns = self.cook2029reader.get_current_connection_info_list()
+        conns = self.cook2019reader.get_current_connection_info_list()
 
         print_("Adding %i conns from Cook2019" % len(conns))
         for conn in conns:

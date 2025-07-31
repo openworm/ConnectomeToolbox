@@ -24,7 +24,7 @@ def save_symmetry_info():
 
 def array_info(conn_array):
     nonzero = np.count_nonzero(conn_array)
-    print(
+    print_(
         "- Connection - shape: %s, %i non-zero entries, %i total\n%s\n"
         % (
             conn_array.shape,
