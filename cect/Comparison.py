@@ -219,7 +219,7 @@ def generate_comparison_page(
     if quick == 2:  # very quick...
         readers["White_whole"] = ["cect.White_whole", "White_1986"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
+        # readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
         readers["Test"] = ["cect.TestDataReader", None]
 
     else:
@@ -290,6 +290,10 @@ def generate_comparison_page(
         readers["Test"] = ["cect.TestDataReader", None]
 
     main_mk = "# Comparison between data readers\n"
+
+    main_mk += "This table shows the current dataset readers with a summary of the different types of cells and connections they contain. \n\n"
+    main_mk += "Scroll to the right for more columns. Hover over colored dots to see the name/description of the cell and click on them to go to a page dedicated to that cell.\n\n"
+
     table_html = ""
 
     for reader_name, reader_info in readers.items():
