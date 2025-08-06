@@ -2498,7 +2498,7 @@ if __name__ == "__main__":
 
     from cect.CellInfo import generate_cell_info_pages
 
-    if quick < 2:
+    if quick < 3:
         print_("Generating cell info pages...")
         generate_cell_info_pages(connectomes)
 

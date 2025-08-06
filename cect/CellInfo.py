@@ -227,12 +227,17 @@ def generate_cell_info_pages(connectomes):
         color = get_standard_color(cell)
 
         cell_info += (
-            'All cells of type: <a href="../Cells/#%s"><b><span style="color:%s">%s</span></b></a></p>\n\n'
+            'All cells of type: <a href="../Cells/#%s"><b><span style="color:%s">%s</span></b></a>\n\n'
             % (
                 cc.lower().replace(" ", "-").replace("(", "").replace(")", ""),
                 color,
                 cc[0].upper() + cc[1:],
             )
+        )
+
+        cell_info += (
+            'Neurotransmitters a/c to <a href="../Wang_2025">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
+            % "???"
         )
 
         cell_info += "    %s " % (
