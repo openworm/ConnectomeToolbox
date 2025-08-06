@@ -2160,6 +2160,7 @@ def get_cell_internal_link(
     text: str = None,
     use_color: bool = False,
     individual_cell_page: bool = False,
+    strikethrough: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
 
@@ -2171,6 +2172,9 @@ def get_cell_internal_link(
         if use_color:
             color = get_standard_color(cell_name)
             link_text = f'<span style="color:{color};">{link_text}</span>'
+
+        if strikethrough:
+            link_text = f'<span style="text-decoration: line-through;"><i>{link_text}</i></span>'
 
         return '<a href="%s" title="%s">%s</a>' % (
             url,

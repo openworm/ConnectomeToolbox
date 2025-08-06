@@ -38,6 +38,7 @@ from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
 from cect.Cells import get_standard_color
+from cect.Cells import get_cell_internal_link
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 from cect.RipollSanchezDataReader import load_hub_info
@@ -102,6 +103,32 @@ class View:
             info += "\n  %s" % self.description
         for n in self.node_sets:
             info += "\n    %s" % n
+        return info
+
+    def to_markdown(self):
+        info = "**%s** (%s)\n" % (
+            self.name,
+            self.id,
+        )
+        if self.description is not None:
+            info += "_%s_\n\n" % self.description
+
+        total_cells = sum([len(n.cells) for n in self.node_sets])
+        info += f"| Nodes ({len(self.node_sets)} total)| Num cells in node | Cells ({total_cells} total)|\n| --- | --- | --- |\n"
+
+        for n in self.node_sets:
+            node_colored = f'<span style="color:{n.color};">{n.name}</span>'
+            cells_linked = [
+                get_cell_internal_link(
+                    c, individual_cell_page=True, html=True, use_color=True
+                )
+                for c in n.cells
+            ]
+            info += "|**%s** |%i | %s|\n" % (
+                node_colored,
+                len(n.cells),
+                ", ".join(cells_linked),
+            )
         return info
 
     def has_color(self):
@@ -425,7 +452,7 @@ mn_colors = {
 LOCOMOTION_1_VIEW = View(
     "Loco1",
     "Locomotion 1",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -433,7 +460,7 @@ LOCOMOTION_1_VIEW = View(
 LOCOMOTION_2_VIEW = View(
     "Loco2",
     "Locomotion 2",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -521,7 +548,7 @@ for cell_set in sorted(loco1_2_positions.keys()):
 LOCOMOTION_3_VIEW = View(
     "Loco3",
     "Locomotion 3",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )

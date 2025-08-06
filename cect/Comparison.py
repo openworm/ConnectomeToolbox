@@ -292,7 +292,8 @@ def generate_comparison_page(
     main_mk = "# Comparison between data readers\n"
 
     main_mk += "This table shows the current dataset readers with a summary of the different types of cells and connections they contain. \n\n"
-    main_mk += "Scroll to the right for more columns. Hover over colored dots to see the name/description of the cell and click on them to go to a page dedicated to that cell.\n\n"
+    main_mk += "**Scroll** to the right to see more columns. \n\n"
+    main_mk += "**Hover over** colored dots to see the name/description of the cell and **click on them** to go to a page dedicated to that cell.\n\n"
 
     table_html = ""
 
@@ -563,6 +564,72 @@ def generate_comparison_page(
 
                                 if no_conns:
                                     f.write("No connections present in this view\n")
+
+                                view_info = "**%s** (%s)\n" % (
+                                    view.name,
+                                    view.id,
+                                )
+                                if view.description is not None:
+                                    view_info += "_%s_\n\n" % view.description
+
+                                view_info += "\n\n"
+
+                                view_info += "| Connection type | Total size | Values present |\n| --- | --- | --- |\n"
+                                for c in cv.connections:
+                                    conn_array = cv.connections[c]
+                                    nonzero = np.count_nonzero(conn_array)
+                                    if nonzero > 0:
+                                        view_info += (
+                                            "|**%s** | %s matrix | %i non-zero entries, sum of weights: %i|\n"
+                                            % (
+                                                c,
+                                                conn_array.shape,
+                                                nonzero,
+                                                np.sum(conn_array),
+                                            )
+                                        )
+
+                                view_info += "\n\n"
+                                total_cells = sum(
+                                    [len(ns.cells) for ns in view.node_sets]
+                                )
+                                total_here = 0
+                                for ns in view.node_sets:
+                                    for c in ns.cells:
+                                        if c in connectome.nodes:
+                                            total_here += 1
+
+                                view_info += f"| Nodes in view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) |Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
+
+                                for ns in view.node_sets:
+                                    n_in_dataset = np.sum(
+                                        [
+                                            (1 if c in connectome.nodes else 0)
+                                            for c in ns.cells
+                                        ]
+                                    )
+                                    node_colored = f'<span style="color:{ns.color};">{ns.name}</span>'
+                                    cells_linked = [
+                                        get_cell_internal_link(
+                                            c,
+                                            individual_cell_page=True,
+                                            html=True,
+                                            use_color=True,
+                                            strikethrough=(c not in connectome.nodes),
+                                        )
+                                        for c in ns.cells
+                                    ]
+                                    view_info += "|**%s** |%i | %i | %s|\n" % (
+                                        node_colored,
+                                        len(ns.cells),
+                                        n_in_dataset,
+                                        ", ".join(cells_linked),
+                                    )
+
+                                f.write(
+                                    '=== "View info"\n\n    %s\n\n'
+                                    % (view_info.replace("\n", "\n    "))
+                                )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,
