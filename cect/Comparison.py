@@ -102,7 +102,8 @@ def shorten_neurotransmitter(nt):
         .replace("Tyramine", "Tyr.")
         .replace("FMRFamide", "FMRFam.")
         .replace("Generic_", "Gen_")
-        .replace("Octapamine", "Octapa.")
+        .replace("Octopamine", "Octopa.")
+        .replace("Octapamine", "Octopa.")
         .replace("Dopamine", "Dopa.")
     )
 
@@ -219,7 +220,7 @@ def generate_comparison_page(
     if quick == 2:  # very quick...
         readers["White_whole"] = ["cect.White_whole", "White_1986"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        # readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
+        readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
         readers["Test"] = ["cect.TestDataReader", None]
 
     else:
@@ -574,18 +575,53 @@ def generate_comparison_page(
 
                                 view_info += "\n\n"
 
-                                view_info += "| Connection type | Total size | Values present |\n| --- | --- | --- |\n"
+                                view_info += "| Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |\n| --- | --- | --- | --- | --- |\n"
                                 for c in cv.connections:
                                     conn_array = cv.connections[c]
                                     nonzero = np.count_nonzero(conn_array)
+                                    pre = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[i].sum() > 0
+                                        ]
+                                    )
+                                    post = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[:, i].sum() > 0
+                                        ]
+                                    )
                                     if nonzero > 0:
                                         view_info += (
-                                            "|**%s** | %s matrix | %i non-zero entries, sum of weights: %i|\n"
+                                            "|**%s** | %s matrix | %i non-zero entries, avg. weight: %s, sum: %s| %s | %s |\n"
                                             % (
                                                 c,
                                                 conn_array.shape,
                                                 nonzero,
+                                                np.sum(conn_array) / nonzero
+                                                if nonzero > 0
+                                                else 0,
                                                 np.sum(conn_array),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in pre
+                                                    ]
+                                                ),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in post
+                                                    ]
+                                                ),
                                             )
                                         )
 
@@ -599,7 +635,7 @@ def generate_comparison_page(
                                         if c in connectome.nodes:
                                             total_here += 1
 
-                                view_info += f"| Nodes in view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) |Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
+                                view_info += f"| Nodes in current view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) | Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
 
                                 for ns in view.node_sets:
                                     n_in_dataset = np.sum(
@@ -608,13 +644,15 @@ def generate_comparison_page(
                                             for c in ns.cells
                                         ]
                                     )
-                                    node_colored = f'<span style="color:{ns.color};">{ns.name}</span>'
+                                    node_colored = ns.to_markdown()
+
                                     cells_linked = [
                                         get_cell_internal_link(
                                             c,
                                             individual_cell_page=True,
                                             html=True,
                                             use_color=True,
+                                            bold=(c in connectome.nodes),
                                             strikethrough=(c not in connectome.nodes),
                                         )
                                         for c in sorted(ns.cells)

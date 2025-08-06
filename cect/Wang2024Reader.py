@@ -20,7 +20,7 @@ from cect.Cells import ACETYLCHOLINE
 from cect.Cells import DOPAMINE
 from cect.Cells import GABA
 from cect.Cells import GLUTAMATE
-from cect.Cells import OCTAPAMINE
+from cect.Cells import OCTOPAMINE
 from cect.Cells import SEROTONIN
 from cect.Cells import TYRAMINE
 from cect.Cells import BETAINE
@@ -35,9 +35,9 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
 
 
-BASIS_ANATOMICAL_CONN = "White_whole"
+# BASIS_ANATOMICAL_CONN = "White_whole"
 # BASIS_ANATOMICAL_CONN = "TestDataReader"
-# BASIS_ANATOMICAL_CONN = "Cook2019HermReader"
+BASIS_ANATOMICAL_CONN = "Cook2019HermReader"
 
 READER_DESCRIPTION = (
     """A reader combining neurotransmitter atlas values from Wang et al. 2024 (source: %s) with basic anatomical connectivity information from %s"""
@@ -78,7 +78,7 @@ class Wang2024Reader(ConnectomeDataset):
         elif neurotransmitter == "Glu" or neurotransmitter == "Glu - NEW":
             return GLUTAMATE
         elif neurotransmitter == "octopamine":
-            return OCTAPAMINE
+            return OCTOPAMINE
         elif neurotransmitter == "tyramine (synthesis + uptake) - NEW":
             return TYRAMINE
         elif (

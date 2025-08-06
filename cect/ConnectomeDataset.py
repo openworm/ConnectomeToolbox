@@ -1217,8 +1217,8 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))
 
-    from cect.ConnectomeView import NEURONS_VIEW as view
-    # from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import NEURONS_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
     # from cect.ConnectomeView import PHARYNX_VIEW as view
@@ -1234,7 +1234,8 @@ if __name__ == "__main__":
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
     # from cect.Yim2024DataReader import get_instance
-    from cect.WormNeuroAtlasMAReader import get_instance
+    # from cect.WormNeuroAtlasMAReader import get_instance
+    from cect.Wang2024Reader import get_instance
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
@@ -1258,7 +1259,7 @@ if __name__ == "__main__":
         synclass = "dopamine"
         synclass = "tyramine"
         synclass = "serotonin"
-    synclass = "octopamine"
+    synclass = "Octopamine"
     """
     cds2 = cds.get_connectome_view(view)
 

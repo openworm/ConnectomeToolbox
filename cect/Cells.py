@@ -19,7 +19,7 @@ ACETYLCHOLINE = "Acetylcholine"
 GLUTAMATE = "Glutamate"
 DOPAMINE = "Dopamine"
 SEROTONIN = "Serotonin"
-OCTAPAMINE = "Octapamine"
+OCTOPAMINE = "Octopamine"
 TYRAMINE = "Tyramine"
 BETAINE = "Betaine"
 
@@ -32,7 +32,7 @@ ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "FMRFamide",
     GABA,
     GLUTAMATE,
-    OCTAPAMINE,
+    OCTOPAMINE,
     SEROTONIN,
     TYRAMINE,
     BETAINE,
@@ -2160,6 +2160,7 @@ def get_cell_internal_link(
     text: str = None,
     use_color: bool = False,
     individual_cell_page: bool = False,
+    bold: bool = False,
     strikethrough: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
@@ -2174,7 +2175,11 @@ def get_cell_internal_link(
             link_text = f'<span style="color:{color};">{link_text}</span>'
 
         if strikethrough:
-            link_text = f'<span style="text-decoration: line-through;"><i>{link_text}</i></span>'
+            link_text = (
+                f'<span style="text-decoration: line-through;">{link_text}</span>'
+            )
+        if bold:
+            link_text = f"<strong>{link_text}</strong>"
 
         return '<a href="%s" title="%s">%s</a>' % (
             url,
@@ -2498,7 +2503,7 @@ if __name__ == "__main__":
 
     from cect.CellInfo import generate_cell_info_pages
 
-    if quick < 3:
+    if quick < 2:
         print_("Generating cell info pages...")
         generate_cell_info_pages(connectomes)
 

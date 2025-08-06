@@ -72,6 +72,13 @@ class NodeSet:
 
         return info
 
+    def to_markdown(self):
+        return (
+            f'<span style="color:{self.color};">{self.name}</span>'
+            if self.color
+            else self.name
+        )
+
 
 class View:
     """A view of a ``ConnectomeDataset`` specifying subsets of cells (or lists of cells) as ``NodeSet``s, e.g. can be used to just show the connections between the pharyngeal neurons in a whole connectome dataset, or to group the sensory neurons, interneuron, etc. together."""
@@ -103,6 +110,8 @@ class View:
             info += "\n  %s" % self.description
         for n in self.node_sets:
             info += "\n    %s" % n
+        for s in self.synclass_sets:
+            info += "\n    Synclass set: %s (%s)" % (s, self.synclass_sets[s])
         return info
 
     def to_markdown(self):
@@ -203,7 +212,7 @@ RAW_VIEW = View(
     "Raw Data",
     "All of the cells present in the original connectome dataset",
     [],
-    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     only_show_existing_nodes=True,
 )
 
@@ -848,9 +857,9 @@ if __name__ == "__main__":
         EXC_INH_GJ_SYN_CLASSES,
     )
 
-    # from cect.TestDataReader import get_instance
+    from cect.TestDataReader import get_instance
     # from cect.Cook2019HermReader import get_instance
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
 
     tdr_instance = get_instance()
 
@@ -887,6 +896,10 @@ if __name__ == "__main__":
 
     print("------- Locomotion 2 ---------")
     print(tdr_instance.get_connectome_view(LOCOMOTION_2_VIEW).summary())
+    print(LOCOMOTION_2_VIEW)
+
+    print("------- Raw ---------")
+    print(tdr_instance.get_connectome_view(RAW_VIEW).summary())
     print(LOCOMOTION_2_VIEW)
 
     """
