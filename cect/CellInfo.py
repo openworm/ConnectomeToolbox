@@ -15,6 +15,8 @@ from cect.Cells import is_bilateral_left
 
 from cect.Comparison import reader_colors
 
+from cect.Wang2024Reader import get_instance as get_wang2024_instance
+
 
 from cect import print_
 # from pprint import pprint
@@ -155,6 +157,9 @@ def generate_cell_info_pages(connectomes):
 
     all_cell_info = [["Cell name", "Type", "Name details", "Lineage", "Classification"]]
 
+    wang2024_reader = get_wang2024_instance()
+    neurotransmitters = wang2024_reader.neurotransmitters
+
     for cell in ALL_PREFERRED_CELL_NAMES:
         print_("Generating individual cell page for: %s" % cell)
 
@@ -227,7 +232,7 @@ def generate_cell_info_pages(connectomes):
         color = get_standard_color(cell)
 
         cell_info += (
-            'All cells of type: <a href="../Cells/#%s"><b><span style="color:%s">%s</span></b></a>\n\n'
+            'All cells of type: <a href="../Cells/#%s"><b><span style="color:%s">%s</span></b></a></p>\n\n'
             % (
                 cc.lower().replace(" ", "-").replace("(", "").replace(")", ""),
                 color,
@@ -236,8 +241,8 @@ def generate_cell_info_pages(connectomes):
         )
 
         cell_info += (
-            'Neurotransmitters a/c to <a href="../Wang_2025">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
-            % "???"
+            '    <p class="subtext">Neurotransmitters a/c to <a href="../Wang_2024">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
+            % ", ".join(neurotransmitters.get(cell, "Not present in Wang et al. 2024"))
         )
 
         cell_info += "    %s " % (

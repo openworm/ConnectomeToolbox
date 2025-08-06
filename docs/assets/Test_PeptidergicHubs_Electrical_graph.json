@@ -4,6 +4,52 @@
       "hoverinfo": "none",
       "line": {
         "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.857142857142858
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.0,
+        -0.5,
+        -0.16666666666666666,
+        0.0
+      ],
+      "y": [
+        0.0,
+        0.16666666666666666,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.857142857142858
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.0,
+        -0.5,
+        -0.16666666666666666,
+        0.0
+      ],
+      "y": [
+        0.0,
+        0.16666666666666666,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
         "shape": "linear",
         "width": 2.2857142857142856
       },
@@ -87,7 +133,7 @@
     {
       "hoverinfo": "text",
       "hovertext": [
-        "<b>Periphery</b><br>Cells: I2L, I2R, I6, M2L, M2R, M3L, M3R, M4, MCL, MCR<br>MCR, MI, NSML, NSMR, ADLL, ADLR, ASEL, ASER, ASHL, ASHR, ASIL<br>ASIL, ASIR, ASJL, ASJR, AWBL, AWBR, AWCL, AWCR, AFDL, AFDR, IL2DL<br>IL2DL, IL2DR, IL2L, IL2R, IL2VL, IL2VR, OLQDL, OLQDR, OLQVL, OLQVR, OLLL<br>OLLL, OLLR, CEPDL, CEPDR, CEPVL, CEPVR, ALNL, ALNR, PLNL, PLNR, FLPL<br>FLPL, FLPR, BAGL, BAGR, URYDL, URYDR, URYVL, URYVR, ADEL, ADER, PDEL<br>PDEL, PDER, PHAL, PHAR, PHBL, PHBR, PHCL, PHCR, AUAL, AUAR, AIAL<br>AIAL, AIAR, ADAL, ADAR, AINL, AINR, RIPL, RIPR, RIFL, RIFR, RIS<br>RIS, RMGL, RMGR, AVG, AVHL, AVHR, AVJL, AVJR, AVL, DVB, DVC<br>DVC, LUAL, LUAR, SAADL, SAADR, SAAVL, SAAVR, IL1DL, IL1DR, IL1L, IL1R<br>IL1R, IL1VL, IL1VR, SIADL, SIADR, SIAVL, SIAVR, SIBDL, SIBDR, SIBVL, SIBVR<br>SIBVR, RMEL, RMER, RIVL, RIVR, SMBDL, SMBDR, SMBVL, SMBVR, URADL, URADR<br>URADR, URAVL, URAVR, DD1, DD2, DD3, DD4, DD5, DD6, VD1, VD2<br>VD2, VD3, VD4, VD5, VD6, VD7, VD8, VD9, VD10, VD11, VD12<br>VD12, VD13, VC1, VC2, VC3, VC4, VC5, VC6<br>Conns out: <b>Sensory core</b>: 1",
+        "<b>Periphery</b><br>Cells: I2L, I2R, I6, M2L, M2R, M3L, M3R, M4, MCL, MCR<br>MCR, MI, NSML, NSMR, ADLL, ADLR, ASEL, ASER, ASHL, ASHR, ASIL<br>ASIL, ASIR, ASJL, ASJR, AWBL, AWBR, AWCL, AWCR, AFDL, AFDR, IL2DL<br>IL2DL, IL2DR, IL2L, IL2R, IL2VL, IL2VR, OLQDL, OLQDR, OLQVL, OLQVR, OLLL<br>OLLL, OLLR, CEPDL, CEPDR, CEPVL, CEPVR, ALNL, ALNR, PLNL, PLNR, FLPL<br>FLPL, FLPR, BAGL, BAGR, URYDL, URYDR, URYVL, URYVR, ADEL, ADER, PDEL<br>PDEL, PDER, PHAL, PHAR, PHBL, PHBR, PHCL, PHCR, AUAL, AUAR, AIAL<br>AIAL, AIAR, ADAL, ADAR, AINL, AINR, RIPL, RIPR, RIFL, RIFR, RIS<br>RIS, RMGL, RMGR, AVG, AVHL, AVHR, AVJL, AVJR, AVL, DVB, DVC<br>DVC, LUAL, LUAR, SAADL, SAADR, SAAVL, SAAVR, IL1DL, IL1DR, IL1L, IL1R<br>IL1R, IL1VL, IL1VR, SIADL, SIADR, SIAVL, SIAVR, SIBDL, SIBDR, SIBVL, SIBVR<br>SIBVR, RMEL, RMER, RIVL, RIVR, SMBDL, SMBDR, SMBVL, SMBVR, URADL, URADR<br>URADR, URAVL, URAVR, DD1, DD2, DD3, DD4, DD5, DD6, VD1, VD2<br>VD2, VD3, VD4, VD5, VD6, VD7, VD8, VD9, VD10, VD11, VD12<br>VD12, VD13, VC1, VC2, VC3, VC4, VC5, VC6<br>Conns in: <b>Periphery</b>: 3<br>Conns out: <b>Periphery</b>: 3, <b>Sensory core</b>: 1",
         "<b>Motor core</b><br>Cells: PVM, PLML, PLMR, PVDL, PVDR, PQR, CANL, CANR, PVWL, PVWR<br>PVWR, DA5, DA6, DA7, DA8, DA9, PDA, DB3, DB4, DB5, DB6<br>DB6, DB7, AS3, AS4, AS5, AS6, AS7, AS8, AS9, AS10, AS11<br>AS11, PDB, VA5, VA6, VA7, VA8, VA9, VA10, VA11, VA12, VB3<br>VB3, VB4, VB5, VB6, VB7, VB8, VB9, VB10, VB11<br>Conns in: <b>Motor core</b>: 3<br>Conns out: <b>Hubs</b>: 7, <b>Motor core</b>: 3",
         "<b>Sensory core</b><br>Cells: I1L, I1R, I3, I4, I5, M1, M5, ADFL, ADFR, ASGL<br>ASGL, ASGR, ASKL, ASKR, AWAL, AWAR, ALML, ALMR, URXL, URXR, AQR<br>AQR, URBL, URBR, AIBL, AIBR, AIYL, AIYR, AIZL, AIZR, AIML, AIMR<br>AIMR, RIAL, RIAR, RIBL, RIBR, RICL, RICR, RIGL, RIGR, RIH, RIR<br>RIR, SABD, SABVL, SABVR, RIML, RIMR, RMDDL, RMDDR, RMDL, RMDR, RMDVL<br>RMDVL, RMDVR, RMFL, RMFR, RMHL, RMHR<br>Conns in: <b>Periphery</b>: 1",
         "<b>Hubs</b><br>Cells: AVM, SDQL, SDQR, DVA, ALA, BDUL, BDUR, AVFL, AVFR, AVKL<br>AVKL, AVKR, PVNL, PVNR, PVPL, PVPR, PVQL, PVQR, PVR, PVT, RID<br>RID, PVCL, PVCR, AVAL, AVAR, AVBL, AVBR, AVDL, AVDR, AVEL, AVER<br>AVER, RMED, RMEV, SMDDL, SMDDR, SMDVL, SMDVR, DA1, DA2, DA3, DA4<br>DA4, DB1, DB2, AS1, AS2, VA1, VA2, VA3, VA4, VB1, VB2<br>VB2, HSNL, HSNR<br>Conns in: <b>Motor core</b>: 7"

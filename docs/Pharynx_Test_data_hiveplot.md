@@ -38,8 +38,45 @@ search:
     { "file_path": "./assets/Test_Pharynx_Acetylcholine_hiveplot.json" }
     ```
 
+=== "View info"
 
-### Neurons (herm) (20)
+    **Pharynx** (Pharynx)
+    _Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)_
+    
+    
+    
+    | Connection type | Total size | Values present |
+    | --- | --- | --- |
+    |**Chemical Exc** | (20, 20) matrix | 2 non-zero entries, sum of weights: 18|
+    |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, sum of weights: 18|
+    
+    
+    | Nodes in view<br/>(20 total)| Num cells in node<br/>(20 total) |Num in this dataset<br/>(3 total) | Cells |
+    | --- | --- | --- | --- |
+    |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1L</span></i></span></a>|
+    |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1R</span></i></span></a>|
+    |**<span style="color:#ff3300;">I2L</span>** |1 | 0 | <a href="../I2L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2L</span></i></span></a>|
+    |**<span style="color:#ff3300;">I2R</span>** |1 | 0 | <a href="../I2R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2R</span></i></span></a>|
+    |**<span style="color:#ff3300;">I3</span>** |1 | 0 | <a href="../I3" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I3</span></i></span></a>|
+    |**<span style="color:#ff3300;">I4</span>** |1 | 0 | <a href="../I4" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I4</span></i></span></a>|
+    |**<span style="color:#ff3300;">I5</span>** |1 | 1 | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>|
+    |**<span style="color:#ff3300;">I6</span>** |1 | 0 | <a href="../I6" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I6</span></i></span></a>|
+    |**<span style="color:#9966cc;">M1</span>** |1 | 1 | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>|
+    |**<span style="color:#9966cc;">M2L</span>** |1 | 0 | <a href="../M2L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2L</span></i></span></a>|
+    |**<span style="color:#9966cc;">M2R</span>** |1 | 0 | <a href="../M2R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2R</span></i></span></a>|
+    |**<span style="color:#9966cc;">M3L</span>** |1 | 0 | <a href="../M3L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3L</span></i></span></a>|
+    |**<span style="color:#9966cc;">M3R</span>** |1 | 0 | <a href="../M3R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3R</span></i></span></a>|
+    |**<span style="color:#9966cc;">M4</span>** |1 | 1 | <a href="../M4" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M4</span></a>|
+    |**<span style="color:#9966cc;">M5</span>** |1 | 0 | <a href="../M5" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M5</span></i></span></a>|
+    |**<span style="color:#cc0033;">MCL</span>** |1 | 0 | <a href="../MCL" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCL</span></i></span></a>|
+    |**<span style="color:#cc0033;">MCR</span>** |1 | 0 | <a href="../MCR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCR</span></i></span></a>|
+    |**<span style="color:#cc0033;">MI</span>** |1 | 0 | <a href="../MI" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MI</span></i></span></a>|
+    |**<span style="color:#cc0033;">NSML</span>** |1 | 0 | <a href="../NSML" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSML</span></i></span></a>|
+    |**<span style="color:#cc0033;">NSMR</span>** |1 | 0 | <a href="../NSMR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSMR</span></i></span></a>|
+    
+
+
+### Neurons (herm) (21)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
@@ -48,6 +85,7 @@ search:
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
+ | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DVA" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">DVA</span></a>
  | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
@@ -64,7 +102,7 @@ search:
 
 </details>
 
-### Missing neurons (282)
+### Missing neurons (281)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -167,7 +205,6 @@ search:
  | <a href="../DD1" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD1</span></a>
  | <a href="../DD2" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD2</span></a>
  | <a href="../DD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD3</span></a>
- | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD6</span></a>
  | <a href="../DVB" title="Layer 3 interneuron"><span style="color:#ff3300;">DVB</span></a>
  | <a href="../DVC" title="Layer 2 interneuron"><span style="color:#ff3300;">DVC</span></a>

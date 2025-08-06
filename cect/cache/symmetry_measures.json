@@ -962,12 +962,12 @@
     "Test": {
         "Raw": {
             "All Chemical": "56.25",
-            "Electrical": "-33.33"
+            "Electrical": "0.00"
         },
         "Neurons": {
             "Chemical Exc": "61.54",
             "Chemical Inh": "100.00",
-            "Electrical": "0.00",
+            "Electrical": "25.00",
             "Acetylcholine": "61.54",
             "GABA": "100.00"
         },
@@ -978,7 +978,7 @@
         "NonpharyngealH": {
             "Chemical Exc": "54.55",
             "Chemical Inh": "100.00",
-            "Electrical": "0.00",
+            "Electrical": "25.00",
             "Acetylcholine": "54.55",
             "GABA": "100.00"
         },
@@ -990,6 +990,7 @@
         "MotorSomaticH": {
             "Chemical Exc": "100.00",
             "Chemical Inh": "100.00",
+            "Electrical": "100.00",
             "Acetylcholine": "100.00",
             "GABA": "100.00"
         },

@@ -105,7 +105,7 @@ class Wang2024Reader(ConnectomeDataset):
 
         wb = load_workbook(filename)
         print_("Opened the Excel file: " + filename)
-        neurotransmitters = {}
+        self.neurotransmitters = {}
 
         sheet = wb.get_sheet_by_name("Supp File 2")
         for i in range(5, 307):
@@ -134,7 +134,7 @@ class Wang2024Reader(ConnectomeDataset):
             if nt_3 is not None:
                 nts.append(nt_3)
             print_("  - Cell: %s, nts: %s" % (cell, nts))
-            neurotransmitters[cell] = nts
+            self.neurotransmitters[cell] = nts
 
         self.anatomical_conn_reader = load_connectome_dataset_file(
             get_cache_filename(BASIS_ANATOMICAL_CONN)
@@ -153,7 +153,7 @@ class Wang2024Reader(ConnectomeDataset):
                     GENERIC_CHEM_SYN
                 ]:
                     conn.number = 1.0
-                    for nt in neurotransmitters[conn.pre_cell]:
+                    for nt in self.neurotransmitters[conn.pre_cell]:
                         conn.synclass = nt
                         print_("    Adding new conn: %s" % conn)
                         self.add_connection_info(conn)
@@ -176,9 +176,11 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
 
 def main():
-    tdr_instance = Wang2024Reader()
+    tdr_instance = get_instance(from_cache=False)
 
     print(tdr_instance.summary(list_pre_cells=True))
+
+    print(tdr_instance.neurotransmitters)
     quit()
 
     cells, neuron_conns = tdr_instance.read_data()

@@ -59,8 +59,330 @@ search:
     { "file_path": "./assets/Test_Neurons_GABA_hiveplot.json" }
     ```
 
+=== "View info"
 
-### Neurons (herm) (20)
+    **Neurons** (Neurons)
+    _All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset)_
+    
+    
+    
+    | Connection type | Total size | Values present |
+    | --- | --- | --- |
+    |**Chemical Exc** | (302, 302) matrix | 13 non-zero entries, sum of weights: 99|
+    |**Chemical Inh** | (302, 302) matrix | 3 non-zero entries, sum of weights: 7|
+    |**Electrical** | (302, 302) matrix | 5 non-zero entries, sum of weights: 14|
+    |**Acetylcholine** | (302, 302) matrix | 13 non-zero entries, sum of weights: 99|
+    |**GABA** | (302, 302) matrix | 3 non-zero entries, sum of weights: 7|
+    
+    
+    | Nodes in view<br/>(302 total)| Num cells in node<br/>(302 total) |Num in this dataset<br/>(21 total) | Cells |
+    | --- | --- | --- | --- |
+    |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1L</span></i></span></a>|
+    |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1R</span></i></span></a>|
+    |**<span style="color:#ff3300;">I2L</span>** |1 | 0 | <a href="../I2L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2L</span></i></span></a>|
+    |**<span style="color:#ff3300;">I2R</span>** |1 | 0 | <a href="../I2R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2R</span></i></span></a>|
+    |**<span style="color:#ff3300;">I3</span>** |1 | 0 | <a href="../I3" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I3</span></i></span></a>|
+    |**<span style="color:#ff3300;">I4</span>** |1 | 0 | <a href="../I4" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I4</span></i></span></a>|
+    |**<span style="color:#ff3300;">I5</span>** |1 | 1 | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>|
+    |**<span style="color:#ff3300;">I6</span>** |1 | 0 | <a href="../I6" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I6</span></i></span></a>|
+    |**<span style="color:#9966cc;">M1</span>** |1 | 1 | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>|
+    |**<span style="color:#9966cc;">M2L</span>** |1 | 0 | <a href="../M2L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2L</span></i></span></a>|
+    |**<span style="color:#9966cc;">M2R</span>** |1 | 0 | <a href="../M2R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2R</span></i></span></a>|
+    |**<span style="color:#9966cc;">M3L</span>** |1 | 0 | <a href="../M3L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3L</span></i></span></a>|
+    |**<span style="color:#9966cc;">M3R</span>** |1 | 0 | <a href="../M3R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3R</span></i></span></a>|
+    |**<span style="color:#9966cc;">M4</span>** |1 | 1 | <a href="../M4" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M4</span></a>|
+    |**<span style="color:#9966cc;">M5</span>** |1 | 0 | <a href="../M5" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M5</span></i></span></a>|
+    |**<span style="color:#cc0033;">MCL</span>** |1 | 0 | <a href="../MCL" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCL</span></i></span></a>|
+    |**<span style="color:#cc0033;">MCR</span>** |1 | 0 | <a href="../MCR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCR</span></i></span></a>|
+    |**<span style="color:#cc0033;">MI</span>** |1 | 0 | <a href="../MI" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MI</span></i></span></a>|
+    |**<span style="color:#cc0033;">NSML</span>** |1 | 0 | <a href="../NSML" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSML</span></i></span></a>|
+    |**<span style="color:#cc0033;">NSMR</span>** |1 | 0 | <a href="../NSMR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSMR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADEL</span>** |1 | 0 | <a href="../ADEL" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADEL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADER</span>** |1 | 0 | <a href="../ADER" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADER</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADFL</span>** |1 | 0 | <a href="../ADFL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADFL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADFR</span>** |1 | 0 | <a href="../ADFR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADFR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADLL</span>** |1 | 0 | <a href="../ADLL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADLL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ADLR</span>** |1 | 0 | <a href="../ADLR" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADLR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AFDL</span>** |1 | 0 | <a href="../AFDL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AFDL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AFDR</span>** |1 | 0 | <a href="../AFDR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AFDR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ALML</span>** |1 | 0 | <a href="../ALML" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ALML</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ALMR</span>** |1 | 0 | <a href="../ALMR" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ALMR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ALNL</span>** |1 | 0 | <a href="../ALNL" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ALNL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ALNR</span>** |1 | 0 | <a href="../ALNR" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ALNR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AQR</span>** |1 | 0 | <a href="../AQR" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AQR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASEL</span>** |1 | 0 | <a href="../ASEL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASEL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASER</span>** |1 | 0 | <a href="../ASER" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASER</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASGL</span>** |1 | 0 | <a href="../ASGL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASGL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASGR</span>** |1 | 0 | <a href="../ASGR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASGR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASHL</span>** |1 | 0 | <a href="../ASHL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASHL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASHR</span>** |1 | 1 | <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>|
+    |**<span style="color:#ff66cc;">ASIL</span>** |1 | 0 | <a href="../ASIL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASIL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASIR</span>** |1 | 0 | <a href="../ASIR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASIR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASJL</span>** |1 | 0 | <a href="../ASJL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASJL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASJR</span>** |1 | 0 | <a href="../ASJR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASJR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASKL</span>** |1 | 0 | <a href="../ASKL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASKL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">ASKR</span>** |1 | 1 | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>|
+    |**<span style="color:#ff66cc;">AVM</span>** |1 | 0 | <a href="../AVM" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AVM</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AWAL</span>** |1 | 0 | <a href="../AWAL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWAL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AWAR</span>** |1 | 0 | <a href="../AWAR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWAR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AWBL</span>** |1 | 0 | <a href="../AWBL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWBL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AWBR</span>** |1 | 1 | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>|
+    |**<span style="color:#ff66cc;">AWCL</span>** |1 | 0 | <a href="../AWCL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWCL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">AWCR</span>** |1 | 0 | <a href="../AWCR" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWCR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">BAGL</span>** |1 | 0 | <a href="../BAGL" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">BAGL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">BAGR</span>** |1 | 0 | <a href="../BAGR" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">BAGR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">CEPDL</span>** |1 | 0 | <a href="../CEPDL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">CEPDL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">CEPDR</span>** |1 | 0 | <a href="../CEPDR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">CEPDR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">CEPVL</span>** |1 | 0 | <a href="../CEPVL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">CEPVL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">CEPVR</span>** |1 | 0 | <a href="../CEPVR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">CEPVR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">DVA</span>** |1 | 1 | <a href="../DVA" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">DVA</span></a>|
+    |**<span style="color:#ff66cc;">FLPL</span>** |1 | 0 | <a href="../FLPL" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">FLPL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">FLPR</span>** |1 | 0 | <a href="../FLPR" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">FLPR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1DL</span>** |1 | 0 | <a href="../IL1DL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1DL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1DR</span>** |1 | 0 | <a href="../IL1DR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1DR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1L</span>** |1 | 0 | <a href="../IL1L" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1L</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1R</span>** |1 | 0 | <a href="../IL1R" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1R</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1VL</span>** |1 | 0 | <a href="../IL1VL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1VL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL1VR</span>** |1 | 0 | <a href="../IL1VR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL1VR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2DL</span>** |1 | 0 | <a href="../IL2DL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2DL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2DR</span>** |1 | 0 | <a href="../IL2DR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2DR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2L</span>** |1 | 0 | <a href="../IL2L" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2L</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2R</span>** |1 | 0 | <a href="../IL2R" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2R</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2VL</span>** |1 | 0 | <a href="../IL2VL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2VL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">IL2VR</span>** |1 | 0 | <a href="../IL2VR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2VR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLLL</span>** |1 | 0 | <a href="../OLLL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLLL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLLR</span>** |1 | 0 | <a href="../OLLR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLLR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLQDL</span>** |1 | 0 | <a href="../OLQDL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLQDL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLQDR</span>** |1 | 0 | <a href="../OLQDR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLQDR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLQVL</span>** |1 | 0 | <a href="../OLQVL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLQVL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">OLQVR</span>** |1 | 0 | <a href="../OLQVR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">OLQVR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PDEL</span>** |1 | 0 | <a href="../PDEL" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PDEL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PDER</span>** |1 | 0 | <a href="../PDER" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PDER</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHAL</span>** |1 | 0 | <a href="../PHAL" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHAL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHAR</span>** |1 | 0 | <a href="../PHAR" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHAR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHBL</span>** |1 | 0 | <a href="../PHBL" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHBL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHBR</span>** |1 | 0 | <a href="../PHBR" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHBR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHCL</span>** |1 | 0 | <a href="../PHCL" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHCL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PHCR</span>** |1 | 0 | <a href="../PHCR" title="Sensory neuron (phasmid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PHCR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PLML</span>** |1 | 0 | <a href="../PLML" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PLML</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PLMR</span>** |1 | 0 | <a href="../PLMR" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PLMR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PLNL</span>** |1 | 0 | <a href="../PLNL" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PLNL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PLNR</span>** |1 | 0 | <a href="../PLNR" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PLNR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PQR</span>** |1 | 0 | <a href="../PQR" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PQR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PVDL</span>** |1 | 0 | <a href="../PVDL" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PVDL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PVDR</span>** |1 | 0 | <a href="../PVDR" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PVDR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">PVM</span>** |1 | 0 | <a href="../PVM" title="Sensory neuron (mechanosensory)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">PVM</span></i></span></a>|
+    |**<span style="color:#ff66cc;">SDQL</span>** |1 | 0 | <a href="../SDQL" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">SDQL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">SDQR</span>** |1 | 0 | <a href="../SDQR" title="Sensory neuron (touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">SDQR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URXL</span>** |1 | 0 | <a href="../URXL" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URXL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URXR</span>** |1 | 0 | <a href="../URXR" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URXR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URYDL</span>** |1 | 0 | <a href="../URYDL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URYDL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URYDR</span>** |1 | 0 | <a href="../URYDR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URYDR</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URYVL</span>** |1 | 0 | <a href="../URYVL" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URYVL</span></i></span></a>|
+    |**<span style="color:#ff66cc;">URYVR</span>** |1 | 0 | <a href="../URYVR" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URYVR</span></i></span></a>|
+    |**<span style="color:#ff3300;">ADAL</span>** |1 | 0 | <a href="../ADAL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">ADAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">ADAR</span>** |1 | 0 | <a href="../ADAR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">ADAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIAL</span>** |1 | 0 | <a href="../AIAL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIAR</span>** |1 | 0 | <a href="../AIAR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIBL</span>** |1 | 0 | <a href="../AIBL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIBL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIBR</span>** |1 | 0 | <a href="../AIBR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIBR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIML</span>** |1 | 0 | <a href="../AIML" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIML</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIMR</span>** |1 | 0 | <a href="../AIMR" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIMR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AINL</span>** |1 | 0 | <a href="../AINL" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AINL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AINR</span>** |1 | 0 | <a href="../AINR" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AINR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIYL</span>** |1 | 0 | <a href="../AIYL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIYL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIYR</span>** |1 | 0 | <a href="../AIYR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIYR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIZL</span>** |1 | 0 | <a href="../AIZL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIZL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AIZR</span>** |1 | 0 | <a href="../AIZR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AIZR</span></i></span></a>|
+    |**<span style="color:#ff3300;">ALA</span>** |1 | 0 | <a href="../ALA" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">ALA</span></i></span></a>|
+    |**<span style="color:#ff3300;">AUAL</span>** |1 | 0 | <a href="../AUAL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AUAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AUAR</span>** |1 | 0 | <a href="../AUAR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AUAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVAL</span>** |1 | 0 | <a href="../AVAL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVAR</span>** |1 | 0 | <a href="../AVAR" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVBL</span>** |1 | 1 | <a href="../AVBL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBL</span></a>|
+    |**<span style="color:#ff3300;">AVBR</span>** |1 | 1 | <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>|
+    |**<span style="color:#ff3300;">AVDL</span>** |1 | 0 | <a href="../AVDL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVDL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVDR</span>** |1 | 0 | <a href="../AVDR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVDR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVEL</span>** |1 | 0 | <a href="../AVEL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVEL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVER</span>** |1 | 0 | <a href="../AVER" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVER</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVFL</span>** |1 | 0 | <a href="../AVFL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVFL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVFR</span>** |1 | 0 | <a href="../AVFR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVFR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVG</span>** |1 | 0 | <a href="../AVG" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVG</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVHL</span>** |1 | 0 | <a href="../AVHL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVHL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVHR</span>** |1 | 0 | <a href="../AVHR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVHR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVJL</span>** |1 | 0 | <a href="../AVJL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVJL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVJR</span>** |1 | 0 | <a href="../AVJR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVJR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVKL</span>** |1 | 0 | <a href="../AVKL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVKL</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVKR</span>** |1 | 0 | <a href="../AVKR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVKR</span></i></span></a>|
+    |**<span style="color:#ff3300;">AVL</span>** |1 | 0 | <a href="../AVL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVL</span></i></span></a>|
+    |**<span style="color:#ff3300;">BDUL</span>** |1 | 0 | <a href="../BDUL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">BDUL</span></i></span></a>|
+    |**<span style="color:#ff3300;">BDUR</span>** |1 | 0 | <a href="../BDUR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">BDUR</span></i></span></a>|
+    |**<span style="color:#ff3300;">DVB</span>** |1 | 0 | <a href="../DVB" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">DVB</span></i></span></a>|
+    |**<span style="color:#ff3300;">DVC</span>** |1 | 0 | <a href="../DVC" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">DVC</span></i></span></a>|
+    |**<span style="color:#ff3300;">LUAL</span>** |1 | 0 | <a href="../LUAL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">LUAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">LUAR</span>** |1 | 0 | <a href="../LUAR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">LUAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVCL</span>** |1 | 1 | <a href="../PVCL" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCL</span></a>|
+    |**<span style="color:#ff3300;">PVCR</span>** |1 | 1 | <a href="../PVCR" title="Layer 1 interneuron"><span style="color:#ff3300;">PVCR</span></a>|
+    |**<span style="color:#ff3300;">PVNL</span>** |1 | 0 | <a href="../PVNL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVNL</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVNR</span>** |1 | 0 | <a href="../PVNR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVNR</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVPL</span>** |1 | 0 | <a href="../PVPL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVPL</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVPR</span>** |1 | 0 | <a href="../PVPR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVPR</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVQL</span>** |1 | 0 | <a href="../PVQL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVQL</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVQR</span>** |1 | 0 | <a href="../PVQR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVQR</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVR</span>** |1 | 0 | <a href="../PVR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVR</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVT</span>** |1 | 0 | <a href="../PVT" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVT</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVWL</span>** |1 | 0 | <a href="../PVWL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVWL</span></i></span></a>|
+    |**<span style="color:#ff3300;">PVWR</span>** |1 | 0 | <a href="../PVWR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">PVWR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIAL</span>** |1 | 0 | <a href="../RIAL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIAL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIAR</span>** |1 | 0 | <a href="../RIAR" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIAR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIBL</span>** |1 | 0 | <a href="../RIBL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIBL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIBR</span>** |1 | 0 | <a href="../RIBR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIBR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RICL</span>** |1 | 0 | <a href="../RICL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RICL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RICR</span>** |1 | 0 | <a href="../RICR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RICR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RID</span>** |1 | 0 | <a href="../RID" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RID</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIFL</span>** |1 | 0 | <a href="../RIFL" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIFL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIFR</span>** |1 | 0 | <a href="../RIFR" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIFR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIGL</span>** |1 | 0 | <a href="../RIGL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIGL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIGR</span>** |1 | 0 | <a href="../RIGR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIGR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIH</span>** |1 | 0 | <a href="../RIH" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIH</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIML</span>** |1 | 0 | <a href="../RIML" title="Layer 1 interneuron; motorneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIML</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIMR</span>** |1 | 0 | <a href="../RIMR" title="Layer 1 interneuron; motorneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIMR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIPL</span>** |1 | 0 | <a href="../RIPL" title="Linker to pharynx"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIPL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIPR</span>** |1 | 0 | <a href="../RIPR" title="Linker to pharynx"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIPR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIR</span>** |1 | 0 | <a href="../RIR" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RIS</span>** |1 | 0 | <a href="../RIS" title="Layer 3 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RIS</span></i></span></a>|
+    |**<span style="color:#ff3300;">RMFL</span>** |1 | 0 | <a href="../RMFL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RMFL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RMFR</span>** |1 | 0 | <a href="../RMFR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RMFR</span></i></span></a>|
+    |**<span style="color:#ff3300;">RMGL</span>** |1 | 0 | <a href="../RMGL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RMGL</span></i></span></a>|
+    |**<span style="color:#ff3300;">RMGR</span>** |1 | 1 | <a href="../RMGR" title="Layer 2 interneuron"><span style="color:#ff3300;">RMGR</span></a>|
+    |**<span style="color:#ff3300;">SAADL</span>** |1 | 0 | <a href="../SAADL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">SAADL</span></i></span></a>|
+    |**<span style="color:#ff3300;">SAADR</span>** |1 | 0 | <a href="../SAADR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">SAADR</span></i></span></a>|
+    |**<span style="color:#ff3300;">SAAVL</span>** |1 | 0 | <a href="../SAAVL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">SAAVL</span></i></span></a>|
+    |**<span style="color:#ff3300;">SAAVR</span>** |1 | 0 | <a href="../SAAVR" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">SAAVR</span></i></span></a>|
+    |**<span style="color:#ff3300;">URBL</span>** |1 | 0 | <a href="../URBL" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">URBL</span></i></span></a>|
+    |**<span style="color:#ff3300;">URBR</span>** |1 | 0 | <a href="../URBR" title="Category 4 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">URBR</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS1</span>** |1 | 0 | <a href="../AS1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS1</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS10</span>** |1 | 0 | <a href="../AS10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS10</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS11</span>** |1 | 0 | <a href="../AS11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS11</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS2</span>** |1 | 0 | <a href="../AS2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS2</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS3</span>** |1 | 0 | <a href="../AS3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS3</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS4</span>** |1 | 0 | <a href="../AS4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS4</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS5</span>** |1 | 0 | <a href="../AS5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS5</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS6</span>** |1 | 0 | <a href="../AS6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS6</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS7</span>** |1 | 0 | <a href="../AS7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS7</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS8</span>** |1 | 0 | <a href="../AS8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS8</span></i></span></a>|
+    |**<span style="color:#9966cc;">AS9</span>** |1 | 0 | <a href="../AS9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">AS9</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA1</span>** |1 | 0 | <a href="../DA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA1</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA2</span>** |1 | 0 | <a href="../DA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA2</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA3</span>** |1 | 0 | <a href="../DA3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA3</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA4</span>** |1 | 0 | <a href="../DA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA4</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA5</span>** |1 | 0 | <a href="../DA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA5</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA6</span>** |1 | 0 | <a href="../DA6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA6</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA7</span>** |1 | 0 | <a href="../DA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA7</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA8</span>** |1 | 0 | <a href="../DA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA8</span></i></span></a>|
+    |**<span style="color:#9966cc;">DA9</span>** |1 | 0 | <a href="../DA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA9</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB1</span>** |1 | 0 | <a href="../DB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB1</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB2</span>** |1 | 0 | <a href="../DB2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB2</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB3</span>** |1 | 0 | <a href="../DB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB3</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB4</span>** |1 | 1 | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>|
+    |**<span style="color:#9966cc;">DB5</span>** |1 | 0 | <a href="../DB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB5</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB6</span>** |1 | 0 | <a href="../DB6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB6</span></i></span></a>|
+    |**<span style="color:#9966cc;">DB7</span>** |1 | 0 | <a href="../DB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB7</span></i></span></a>|
+    |**<span style="color:#9966cc;">DD1</span>** |1 | 0 | <a href="../DD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD1</span></i></span></a>|
+    |**<span style="color:#9966cc;">DD2</span>** |1 | 0 | <a href="../DD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD2</span></i></span></a>|
+    |**<span style="color:#9966cc;">DD3</span>** |1 | 0 | <a href="../DD3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD3</span></i></span></a>|
+    |**<span style="color:#9966cc;">DD4</span>** |1 | 1 | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>|
+    |**<span style="color:#9966cc;">DD5</span>** |1 | 1 | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>|
+    |**<span style="color:#9966cc;">DD6</span>** |1 | 0 | <a href="../DD6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD6</span></i></span></a>|
+    |**<span style="color:#9966cc;">HSNL</span>** |1 | 0 | <a href="../HSNL" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">HSNL</span></i></span></a>|
+    |**<span style="color:#9966cc;">HSNR</span>** |1 | 0 | <a href="../HSNR" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">HSNR</span></i></span></a>|
+    |**<span style="color:#9966cc;">PDA</span>** |1 | 0 | <a href="../PDA" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">PDA</span></i></span></a>|
+    |**<span style="color:#9966cc;">PDB</span>** |1 | 0 | <a href="../PDB" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">PDB</span></i></span></a>|
+    |**<span style="color:#9966cc;">RIVL</span>** |1 | 0 | <a href="../RIVL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RIVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RIVR</span>** |1 | 0 | <a href="../RIVR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RIVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDDL</span>** |1 | 0 | <a href="../RMDDL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDDL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDDR</span>** |1 | 0 | <a href="../RMDDR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDDR</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDL</span>** |1 | 0 | <a href="../RMDL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDR</span>** |1 | 0 | <a href="../RMDR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDR</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDVL</span>** |1 | 0 | <a href="../RMDVL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMDVR</span>** |1 | 0 | <a href="../RMDVR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMDVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMED</span>** |1 | 0 | <a href="../RMED" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMED</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMEL</span>** |1 | 0 | <a href="../RMEL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMEL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMER</span>** |1 | 0 | <a href="../RMER" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMER</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMEV</span>** |1 | 0 | <a href="../RMEV" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMEV</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMHL</span>** |1 | 0 | <a href="../RMHL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMHL</span></i></span></a>|
+    |**<span style="color:#9966cc;">RMHR</span>** |1 | 0 | <a href="../RMHR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMHR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SABD</span>** |1 | 0 | <a href="../SABD" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SABD</span></i></span></a>|
+    |**<span style="color:#9966cc;">SABVL</span>** |1 | 0 | <a href="../SABVL" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SABVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SABVR</span>** |1 | 0 | <a href="../SABVR" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SABVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIADL</span>** |1 | 0 | <a href="../SIADL" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIADL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIADR</span>** |1 | 0 | <a href="../SIADR" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIADR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIAVL</span>** |1 | 0 | <a href="../SIAVL" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIAVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIAVR</span>** |1 | 0 | <a href="../SIAVR" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIAVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIBDL</span>** |1 | 0 | <a href="../SIBDL" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIBDL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIBDR</span>** |1 | 0 | <a href="../SIBDR" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIBDR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIBVL</span>** |1 | 0 | <a href="../SIBVL" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIBVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SIBVR</span>** |1 | 0 | <a href="../SIBVR" title="Sublateral motor neuron; interneuron in White et al., 1986"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SIBVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMBDL</span>** |1 | 0 | <a href="../SMBDL" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMBDL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMBDR</span>** |1 | 0 | <a href="../SMBDR" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMBDR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMBVL</span>** |1 | 0 | <a href="../SMBVL" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMBVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMBVR</span>** |1 | 0 | <a href="../SMBVR" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMBVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMDDL</span>** |1 | 0 | <a href="../SMDDL" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMDDL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMDDR</span>** |1 | 0 | <a href="../SMDDR" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMDDR</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMDVL</span>** |1 | 0 | <a href="../SMDVL" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMDVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">SMDVR</span>** |1 | 0 | <a href="../SMDVR" title="Sublateral motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">SMDVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">URADL</span>** |1 | 0 | <a href="../URADL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">URADL</span></i></span></a>|
+    |**<span style="color:#9966cc;">URADR</span>** |1 | 0 | <a href="../URADR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">URADR</span></i></span></a>|
+    |**<span style="color:#9966cc;">URAVL</span>** |1 | 0 | <a href="../URAVL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">URAVL</span></i></span></a>|
+    |**<span style="color:#9966cc;">URAVR</span>** |1 | 0 | <a href="../URAVR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">URAVR</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA1</span>** |1 | 0 | <a href="../VA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA1</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA10</span>** |1 | 0 | <a href="../VA10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA10</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA11</span>** |1 | 0 | <a href="../VA11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA11</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA12</span>** |1 | 0 | <a href="../VA12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA12</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA2</span>** |1 | 0 | <a href="../VA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA2</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA3</span>** |1 | 1 | <a href="../VA3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA3</span></a>|
+    |**<span style="color:#9966cc;">VA4</span>** |1 | 0 | <a href="../VA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA4</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA5</span>** |1 | 0 | <a href="../VA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA5</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA6</span>** |1 | 1 | <a href="../VA6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA6</span></a>|
+    |**<span style="color:#9966cc;">VA7</span>** |1 | 0 | <a href="../VA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA7</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA8</span>** |1 | 0 | <a href="../VA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA8</span></i></span></a>|
+    |**<span style="color:#9966cc;">VA9</span>** |1 | 0 | <a href="../VA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA9</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB1</span>** |1 | 0 | <a href="../VB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB1</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB10</span>** |1 | 0 | <a href="../VB10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB10</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB11</span>** |1 | 0 | <a href="../VB11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB11</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB2</span>** |1 | 1 | <a href="../VB2" title="Ventral cord motor neuron"><span style="color:#9966cc;">VB2</span></a>|
+    |**<span style="color:#9966cc;">VB3</span>** |1 | 0 | <a href="../VB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB3</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB4</span>** |1 | 0 | <a href="../VB4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB4</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB5</span>** |1 | 0 | <a href="../VB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB5</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB6</span>** |1 | 1 | <a href="../VB6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VB6</span></a>|
+    |**<span style="color:#9966cc;">VB7</span>** |1 | 0 | <a href="../VB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB7</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB8</span>** |1 | 0 | <a href="../VB8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB8</span></i></span></a>|
+    |**<span style="color:#9966cc;">VB9</span>** |1 | 0 | <a href="../VB9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB9</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC1</span>** |1 | 0 | <a href="../VC1" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC1</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC2</span>** |1 | 0 | <a href="../VC2" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC2</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC3</span>** |1 | 0 | <a href="../VC3" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC3</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC4</span>** |1 | 0 | <a href="../VC4" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC4</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC5</span>** |1 | 0 | <a href="../VC5" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC5</span></i></span></a>|
+    |**<span style="color:#9966cc;">VC6</span>** |1 | 0 | <a href="../VC6" title="Hermaphrodite specific motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VC6</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD1</span>** |1 | 0 | <a href="../VD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD1</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD10</span>** |1 | 0 | <a href="../VD10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD10</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD11</span>** |1 | 0 | <a href="../VD11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD11</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD12</span>** |1 | 0 | <a href="../VD12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD12</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD13</span>** |1 | 0 | <a href="../VD13" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD13</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD2</span>** |1 | 0 | <a href="../VD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD2</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD3</span>** |1 | 1 | <a href="../VD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VD3</span></a>|
+    |**<span style="color:#9966cc;">VD4</span>** |1 | 0 | <a href="../VD4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD4</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD5</span>** |1 | 0 | <a href="../VD5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD5</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD6</span>** |1 | 1 | <a href="../VD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VD6</span></a>|
+    |**<span style="color:#9966cc;">VD7</span>** |1 | 0 | <a href="../VD7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD7</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD8</span>** |1 | 0 | <a href="../VD8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD8</span></i></span></a>|
+    |**<span style="color:#9966cc;">VD9</span>** |1 | 0 | <a href="../VD9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD9</span></i></span></a>|
+    |**<span style="color:#990033;">CANL</span>** |1 | 0 | <a href="../CANL" title="Canal neuron"><span style="text-decoration: line-through;"><i><span style="color:#990033;">CANL</span></i></span></a>|
+    |**<span style="color:#990033;">CANR</span>** |1 | 0 | <a href="../CANR" title="Canal neuron"><span style="text-decoration: line-through;"><i><span style="color:#990033;">CANR</span></i></span></a>|
+    
+
+
+### Neurons (herm) (21)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
@@ -69,6 +391,7 @@ search:
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
+ | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DVA" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">DVA</span></a>
  | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
@@ -85,7 +408,7 @@ search:
 
 </details>
 
-### Missing neurons (282)
+### Missing neurons (281)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -188,7 +511,6 @@ search:
  | <a href="../DD1" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD1</span></a>
  | <a href="../DD2" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD2</span></a>
  | <a href="../DD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD3</span></a>
- | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD6</span></a>
  | <a href="../DVB" title="Layer 3 interneuron"><span style="color:#ff3300;">DVB</span></a>
  | <a href="../DVC" title="Layer 2 interneuron"><span style="color:#ff3300;">DVC</span></a>

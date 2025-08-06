@@ -565,7 +565,7 @@ def generate_comparison_page(
                                 if no_conns:
                                     f.write("No connections present in this view\n")
 
-                                view_info = "**%s** (%s)\n" % (
+                                view_info = "**%s** (%s)\n\n" % (
                                     view.name,
                                     view.id,
                                 )
@@ -617,7 +617,7 @@ def generate_comparison_page(
                                             use_color=True,
                                             strikethrough=(c not in connectome.nodes),
                                         )
-                                        for c in ns.cells
+                                        for c in sorted(ns.cells)
                                     ]
                                     view_info += "|**%s** |%i | %i | %s|\n" % (
                                         node_colored,

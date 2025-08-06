@@ -1,4 +1,10 @@
 # Comparison between data readers
+This table shows the current dataset readers with a summary of the different types of cells and connections they contain. 
+
+**Scroll** to the right to see more columns. 
+
+**Hover over** colored dots to see the name/description of the cell and **click on them** to go to a page dedicated to that cell.
+
 <table>
   <tr>
     <th style="width:80px;font-family:Arial"><span style="font-size:100%"> </span></th>
@@ -659,4 +665,4 @@
 | [SSData](SSData_data.md)                                   | 300             | 2                   | 0               | 97              | 3363               | 127                | 564                | ACh (394)<br/>ACh_Tyr. (29)<br/>Dopa. (120)<br/>FMRFam. (247)<br/>GABA (200)<br/>Gen_GJ (1084)<br/>Glu. (962)<br/>Octapa. (20)<br/>5HT (178)<br/>5HT_ACh (104)<br/>5HT_Glu. (25)<br/> | **MISSING** (2)<br/>ACh (377)<br/>AChplus_Tyr. (6)<br/>Dopa. (1)<br/>FMRFam. (3)<br/>FRMFemide (5)<br/>GABA (126)<br/>Glu. (35)<br/>5HT (1)<br/>5HTplus_ACh (8)<br/> |
 | [UpdSSData](UpdSSData_data.md)                             | 300             | 2                   | 0               | 95              | 5806               | 159                | 926                | ACh (3581)<br/>GABA (57)<br/>Gen_GJ (2168)<br/>                                                                                                                                       | ACh (808)<br/>GABA (116)<br/>Gen_GJ (2)<br/>                                                                                                                         |
 | [UpdSSData2](UpdSSData2_data.md)                           | 300             | 2                   | 0               | 95              | 5821               | 159                | 926                | ACh (3596)<br/>GABA (57)<br/>Gen_GJ (2168)<br/>                                                                                                                                       | ACh (808)<br/>GABA (116)<br/>Gen_GJ (2)<br/>                                                                                                                         |
-| [Test](Test_data.md)                                       | 20              | 282                 | 0               | 0               | 20                 | 0                  | 0                  | ACh (13)<br/>GABA (3)<br/>Gen_GJ (4)<br/>                                                                                                                                             |                                                                                                                                                                      |
+| [Test](Test_data.md)                                       | 21              | 281                 | 0               | 0               | 21                 | 0                  | 0                  | ACh (13)<br/>GABA (3)<br/>Gen_GJ (5)<br/>                                                                                                                                             |                                                                                                                                                                      |
