@@ -23,7 +23,7 @@ python -m cect.Cells $quick_test
 
 if [ "$quick_test" == 0 ]; then
 
-    pytest -vs
+    python -m pytest -vs
 
     python -m cect.TestDataReader -nogui                                                                                                                                         
     python -m cect.ConnectomeView                                                                                                                             
