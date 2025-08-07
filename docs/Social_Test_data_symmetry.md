@@ -39,27 +39,28 @@ search:
 === "View info"
 
     **Social Network** (Social)
+    
     _Hub and spoke circuit for social behavior as in Macosko et al. 2009_
     
     
     
-    | Connection type | Total size | Values present |
-    | --- | --- | --- |
-    |**Chemical Exc** | (8, 8) matrix | 2 non-zero entries, sum of weights: 8|
-    |**Electrical** | (8, 8) matrix | 1 non-zero entries, sum of weights: 1|
-    |**Acetylcholine** | (8, 8) matrix | 2 non-zero entries, sum of weights: 8|
+    | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
+    | --- | --- | --- | --- | --- |
+    |**Chemical Exc** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
+    |**Electrical** | (8, 8) matrix | 1 non-zero entries, avg. weight: 1.0, sum: 1.0| **<span style="color:grey;">ASH</span>** | **<span style="color:grey;">ASK</span>** |
+    |**Acetylcholine** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     
     
-    | Nodes in view<br/>(8 total)| Num cells in node<br/>(16 total) |Num in this dataset<br/>(4 total) | Cells |
+    | Nodes in current view<br/>(8 total)| Num cells in node<br/>(16 total) | Num in this dataset<br/>(4 total) | Cells |
     | --- | --- | --- | --- |
-    |**<span style="color:grey;">ADL</span>** |2 | 0 | <a href="../ADLL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADLL</span></i></span></a>, <a href="../ADLR" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ADLR</span></i></span></a>|
-    |**<span style="color:grey;">ASH</span>** |2 | 1 | <a href="../ASHL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASHL</span></i></span></a>, <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>|
-    |**<span style="color:grey;">ASK</span>** |2 | 1 | <a href="../ASKL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">ASKL</span></i></span></a>, <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>|
-    |**<span style="color:grey;">AWB</span>** |2 | 1 | <a href="../AWBL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">AWBL</span></i></span></a>, <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>|
-    |**<span style="color:grey;">IL2</span>** |2 | 0 | <a href="../IL2L" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2L</span></i></span></a>, <a href="../IL2R" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">IL2R</span></i></span></a>|
-    |**<span style="color:lightgrey;">RMG</span>** |2 | 1 | <a href="../RMGL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">RMGL</span></i></span></a>, <a href="../RMGR" title="Layer 2 interneuron"><span style="color:#ff3300;">RMGR</span></a>|
-    |**<span style="color:lightgrey;">RMH</span>** |2 | 0 | <a href="../RMHL" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMHL</span></i></span></a>, <a href="../RMHR" title="Head motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">RMHR</span></i></span></a>|
-    |**<span style="color:grey;">URX</span>** |2 | 0 | <a href="../URXL" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URXL</span></i></span></a>, <a href="../URXR" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><i><span style="color:#ff66cc;">URXR</span></i></span></a>|
+    |**<span style="color:grey;">ADL</span>** |2 | 0 | <a href="../ADLL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ADLL</span></span></a>, <a href="../ADLR" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ADLR</span></span></a>|
+    |**<span style="color:grey;">ASH</span>** |2 | 1 | <a href="../ASHL" title="Sensory neuron (amphid, nociceptive)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ASHL</span></span></a>, <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><strong><span style="color:#ff66cc;">ASHR</span></strong></a>|
+    |**<span style="color:grey;">ASK</span>** |2 | 1 | <a href="../ASKL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ASKL</span></span></a>, <a href="../ASKR" title="Sensory neuron (amphid)"><strong><span style="color:#ff66cc;">ASKR</span></strong></a>|
+    |**<span style="color:grey;">AWB</span>** |2 | 1 | <a href="../AWBL" title="Sensory neuron (amphid)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">AWBL</span></span></a>, <a href="../AWBR" title="Sensory neuron (amphid)"><strong><span style="color:#ff66cc;">AWBR</span></strong></a>|
+    |**<span style="color:grey;">IL2</span>** |2 | 0 | <a href="../IL2L" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">IL2L</span></span></a>, <a href="../IL2R" title="Sensory neuron (cephalic)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">IL2R</span></span></a>|
+    |**<span style="color:lightgrey;">RMG</span>** |2 | 1 | <a href="../RMGL" title="Layer 2 interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">RMGL</span></span></a>, <a href="../RMGR" title="Layer 2 interneuron"><strong><span style="color:#ff3300;">RMGR</span></strong></a>|
+    |**<span style="color:lightgrey;">RMH</span>** |2 | 0 | <a href="../RMHL" title="Head motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">RMHL</span></span></a>, <a href="../RMHR" title="Head motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">RMHR</span></span></a>|
+    |**<span style="color:grey;">URX</span>** |2 | 0 | <a href="../URXL" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">URXL</span></span></a>, <a href="../URXR" title="Sensory neuron (O2, CO2, social signals, touch)"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">URXR</span></span></a>|
     
 
 

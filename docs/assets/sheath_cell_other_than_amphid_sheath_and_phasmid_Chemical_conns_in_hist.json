@@ -307,6 +307,28 @@
         11,
         10
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDL",
+        "CEPshDR"
+      ],
+      "y": [
+        7,
+        3,
+        3,
+        2
+      ]
     }
   ],
   "layout": {

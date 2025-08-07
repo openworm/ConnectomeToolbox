@@ -47,6 +47,22 @@
       "y": [
         1
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "exc_cell"
+      ],
+      "y": [
+        1
+      ]
     }
   ],
   "layout": {

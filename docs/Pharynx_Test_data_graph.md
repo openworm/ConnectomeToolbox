@@ -39,38 +39,39 @@ search:
 === "View info"
 
     **Pharynx** (Pharynx)
+    
     _Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)_
     
     
     
-    | Connection type | Total size | Values present |
-    | --- | --- | --- |
-    |**Chemical Exc** | (20, 20) matrix | 2 non-zero entries, sum of weights: 18|
-    |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, sum of weights: 18|
+    | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
+    | --- | --- | --- | --- | --- |
+    |**Chemical Exc** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
     
     
-    | Nodes in view<br/>(20 total)| Num cells in node<br/>(20 total) |Num in this dataset<br/>(3 total) | Cells |
+    | Nodes in current view<br/>(20 total)| Num cells in node<br/>(20 total) | Num in this dataset<br/>(3 total) | Cells |
     | --- | --- | --- | --- |
-    |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1L</span></i></span></a>|
-    |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I1R</span></i></span></a>|
-    |**<span style="color:#ff3300;">I2L</span>** |1 | 0 | <a href="../I2L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2L</span></i></span></a>|
-    |**<span style="color:#ff3300;">I2R</span>** |1 | 0 | <a href="../I2R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I2R</span></i></span></a>|
-    |**<span style="color:#ff3300;">I3</span>** |1 | 0 | <a href="../I3" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I3</span></i></span></a>|
-    |**<span style="color:#ff3300;">I4</span>** |1 | 0 | <a href="../I4" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I4</span></i></span></a>|
-    |**<span style="color:#ff3300;">I5</span>** |1 | 1 | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>|
-    |**<span style="color:#ff3300;">I6</span>** |1 | 0 | <a href="../I6" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">I6</span></i></span></a>|
-    |**<span style="color:#9966cc;">M1</span>** |1 | 1 | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>|
-    |**<span style="color:#9966cc;">M2L</span>** |1 | 0 | <a href="../M2L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2L</span></i></span></a>|
-    |**<span style="color:#9966cc;">M2R</span>** |1 | 0 | <a href="../M2R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M2R</span></i></span></a>|
-    |**<span style="color:#9966cc;">M3L</span>** |1 | 0 | <a href="../M3L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3L</span></i></span></a>|
-    |**<span style="color:#9966cc;">M3R</span>** |1 | 0 | <a href="../M3R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M3R</span></i></span></a>|
-    |**<span style="color:#9966cc;">M4</span>** |1 | 1 | <a href="../M4" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M4</span></a>|
-    |**<span style="color:#9966cc;">M5</span>** |1 | 0 | <a href="../M5" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">M5</span></i></span></a>|
-    |**<span style="color:#cc0033;">MCL</span>** |1 | 0 | <a href="../MCL" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCL</span></i></span></a>|
-    |**<span style="color:#cc0033;">MCR</span>** |1 | 0 | <a href="../MCR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MCR</span></i></span></a>|
-    |**<span style="color:#cc0033;">MI</span>** |1 | 0 | <a href="../MI" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">MI</span></i></span></a>|
-    |**<span style="color:#cc0033;">NSML</span>** |1 | 0 | <a href="../NSML" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSML</span></i></span></a>|
-    |**<span style="color:#cc0033;">NSMR</span>** |1 | 0 | <a href="../NSMR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><i><span style="color:#cc0033;">NSMR</span></i></span></a>|
+    |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1L</span></span></a>|
+    |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1R</span></span></a>|
+    |**<span style="color:#ff3300;">I2L</span>** |1 | 0 | <a href="../I2L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I2L</span></span></a>|
+    |**<span style="color:#ff3300;">I2R</span>** |1 | 0 | <a href="../I2R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I2R</span></span></a>|
+    |**<span style="color:#ff3300;">I3</span>** |1 | 0 | <a href="../I3" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I3</span></span></a>|
+    |**<span style="color:#ff3300;">I4</span>** |1 | 0 | <a href="../I4" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I4</span></span></a>|
+    |**<span style="color:#ff3300;">I5</span>** |1 | 1 | <a href="../I5" title="Pharyngeal interneuron"><strong><span style="color:#ff3300;">I5</span></strong></a>|
+    |**<span style="color:#ff3300;">I6</span>** |1 | 0 | <a href="../I6" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I6</span></span></a>|
+    |**<span style="color:#9966cc;">M1</span>** |1 | 1 | <a href="../M1" title="Pharyngeal motor neuron"><strong><span style="color:#9966cc;">M1</span></strong></a>|
+    |**<span style="color:#9966cc;">M2L</span>** |1 | 0 | <a href="../M2L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M2L</span></span></a>|
+    |**<span style="color:#9966cc;">M2R</span>** |1 | 0 | <a href="../M2R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M2R</span></span></a>|
+    |**<span style="color:#9966cc;">M3L</span>** |1 | 0 | <a href="../M3L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M3L</span></span></a>|
+    |**<span style="color:#9966cc;">M3R</span>** |1 | 0 | <a href="../M3R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M3R</span></span></a>|
+    |**<span style="color:#9966cc;">M4</span>** |1 | 1 | <a href="../M4" title="Pharyngeal motor neuron"><strong><span style="color:#9966cc;">M4</span></strong></a>|
+    |**<span style="color:#9966cc;">M5</span>** |1 | 0 | <a href="../M5" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M5</span></span></a>|
+    |**<span style="color:#cc0033;">MCL</span>** |1 | 0 | <a href="../MCL" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MCL</span></span></a>|
+    |**<span style="color:#cc0033;">MCR</span>** |1 | 0 | <a href="../MCR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MCR</span></span></a>|
+    |**<span style="color:#cc0033;">MI</span>** |1 | 0 | <a href="../MI" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MI</span></span></a>|
+    |**<span style="color:#cc0033;">NSML</span>** |1 | 0 | <a href="../NSML" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">NSML</span></span></a>|
+    |**<span style="color:#cc0033;">NSMR</span>** |1 | 0 | <a href="../NSMR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">NSMR</span></span></a>|
     
 
 

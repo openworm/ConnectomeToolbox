@@ -37,81 +37,82 @@ No plottable connections of this type...
 === "View info"
 
     **Locomotion 3** (Loco3)
+    
     _Subset of cells involved in locomotion_
     
     
     
-    | Connection type | Total size | Values present |
-    | --- | --- | --- |
-    |**Chemical Exc** | (60, 60) matrix | 4 non-zero entries, sum of weights: 54|
-    |**Chemical Inh** | (60, 60) matrix | 3 non-zero entries, sum of weights: 7|
-    |**Electrical** | (60, 60) matrix | 4 non-zero entries, sum of weights: 13|
-    |**Acetylcholine** | (60, 60) matrix | 4 non-zero entries, sum of weights: 54|
-    |**GABA** | (60, 60) matrix | 3 non-zero entries, sum of weights: 7|
+    | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
+    | --- | --- | --- | --- | --- |
+    |**Chemical Exc** | (60, 60) matrix | 4 non-zero entries, avg. weight: 13.5, sum: 54.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#a6c7e6;">VD6</span>** |
+    |**Chemical Inh** | (60, 60) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#a6c7e6;">VD3</span>**, **<span style="color:#a6c7e6;">VD6</span>** | **<span style="color:#85542b;">VA3</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB2</span>** |
+    |**Electrical** | (60, 60) matrix | 4 non-zero entries, avg. weight: 3.25, sum: 13.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:green;">AVB</span>**, **<span style="color:#3d519e;">DD5</span>**, **<span style="color:#2b665e;">VB6</span>** |
+    |**Acetylcholine** | (60, 60) matrix | 4 non-zero entries, avg. weight: 13.5, sum: 54.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#a6c7e6;">VD6</span>** |
+    |**GABA** | (60, 60) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#a6c7e6;">VD3</span>**, **<span style="color:#a6c7e6;">VD6</span>** | **<span style="color:#85542b;">VA3</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB2</span>** |
     
     
-    | Nodes in view<br/>(60 total)| Num cells in node<br/>(62 total) |Num in this dataset<br/>(11 total) | Cells |
+    | Nodes in current view<br/>(60 total)| Num cells in node<br/>(62 total) | Num in this dataset<br/>(11 total) | Cells |
     | --- | --- | --- | --- |
-    |**<span style="color:blue;">AVA</span>** |2 | 0 | <a href="../AVAL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVAL</span></i></span></a>, <a href="../AVAR" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><i><span style="color:#ff3300;">AVAR</span></i></span></a>|
-    |**<span style="color:green;">AVB</span>** |2 | 2 | <a href="../AVBL" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBL</span></a>, <a href="../AVBR" title="Layer 1 interneuron"><span style="color:#ff3300;">AVBR</span></a>|
-    |**<span style="color:#d1b36e;">DA1</span>** |1 | 0 | <a href="../DA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA1</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA2</span>** |1 | 0 | <a href="../DA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA2</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA3</span>** |1 | 0 | <a href="../DA3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA3</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA4</span>** |1 | 0 | <a href="../DA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA4</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA5</span>** |1 | 0 | <a href="../DA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA5</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA6</span>** |1 | 0 | <a href="../DA6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA6</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA7</span>** |1 | 0 | <a href="../DA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA7</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA8</span>** |1 | 0 | <a href="../DA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA8</span></i></span></a>|
-    |**<span style="color:#d1b36e;">DA9</span>** |1 | 0 | <a href="../DA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DA9</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB1</span>** |1 | 0 | <a href="../DB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB1</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB2</span>** |1 | 0 | <a href="../DB2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB2</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB3</span>** |1 | 0 | <a href="../DB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB3</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB4</span>** |1 | 1 | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>|
-    |**<span style="color:#6eb0ab;">DB5</span>** |1 | 0 | <a href="../DB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB5</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB6</span>** |1 | 0 | <a href="../DB6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB6</span></i></span></a>|
-    |**<span style="color:#6eb0ab;">DB7</span>** |1 | 0 | <a href="../DB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DB7</span></i></span></a>|
-    |**<span style="color:#3d519e;">DD1</span>** |1 | 0 | <a href="../DD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD1</span></i></span></a>|
-    |**<span style="color:#3d519e;">DD2</span>** |1 | 0 | <a href="../DD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD2</span></i></span></a>|
-    |**<span style="color:#3d519e;">DD3</span>** |1 | 0 | <a href="../DD3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD3</span></i></span></a>|
-    |**<span style="color:#3d519e;">DD4</span>** |1 | 1 | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>|
-    |**<span style="color:#3d519e;">DD5</span>** |1 | 1 | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>|
-    |**<span style="color:#3d519e;">DD6</span>** |1 | 0 | <a href="../DD6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">DD6</span></i></span></a>|
-    |**<span style="color:#85542b;">VA1</span>** |1 | 0 | <a href="../VA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA1</span></i></span></a>|
-    |**<span style="color:#85542b;">VA10</span>** |1 | 0 | <a href="../VA10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA10</span></i></span></a>|
-    |**<span style="color:#85542b;">VA11</span>** |1 | 0 | <a href="../VA11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA11</span></i></span></a>|
-    |**<span style="color:#85542b;">VA12</span>** |1 | 0 | <a href="../VA12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA12</span></i></span></a>|
-    |**<span style="color:#85542b;">VA2</span>** |1 | 0 | <a href="../VA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA2</span></i></span></a>|
-    |**<span style="color:#85542b;">VA3</span>** |1 | 1 | <a href="../VA3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA3</span></a>|
-    |**<span style="color:#85542b;">VA4</span>** |1 | 0 | <a href="../VA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA4</span></i></span></a>|
-    |**<span style="color:#85542b;">VA5</span>** |1 | 0 | <a href="../VA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA5</span></i></span></a>|
-    |**<span style="color:#85542b;">VA6</span>** |1 | 1 | <a href="../VA6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VA6</span></a>|
-    |**<span style="color:#85542b;">VA7</span>** |1 | 0 | <a href="../VA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA7</span></i></span></a>|
-    |**<span style="color:#85542b;">VA8</span>** |1 | 0 | <a href="../VA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA8</span></i></span></a>|
-    |**<span style="color:#85542b;">VA9</span>** |1 | 0 | <a href="../VA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VA9</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB1</span>** |1 | 0 | <a href="../VB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB1</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB10</span>** |1 | 0 | <a href="../VB10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB10</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB11</span>** |1 | 0 | <a href="../VB11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB11</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB2</span>** |1 | 1 | <a href="../VB2" title="Ventral cord motor neuron"><span style="color:#9966cc;">VB2</span></a>|
-    |**<span style="color:#2b665e;">VB3</span>** |1 | 0 | <a href="../VB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB3</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB4</span>** |1 | 0 | <a href="../VB4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB4</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB5</span>** |1 | 0 | <a href="../VB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB5</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB6</span>** |1 | 1 | <a href="../VB6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VB6</span></a>|
-    |**<span style="color:#2b665e;">VB7</span>** |1 | 0 | <a href="../VB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB7</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB8</span>** |1 | 0 | <a href="../VB8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB8</span></i></span></a>|
-    |**<span style="color:#2b665e;">VB9</span>** |1 | 0 | <a href="../VB9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VB9</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD1</span>** |1 | 0 | <a href="../VD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD1</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD10</span>** |1 | 0 | <a href="../VD10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD10</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD11</span>** |1 | 0 | <a href="../VD11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD11</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD12</span>** |1 | 0 | <a href="../VD12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD12</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD13</span>** |1 | 0 | <a href="../VD13" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD13</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD2</span>** |1 | 0 | <a href="../VD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD2</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD3</span>** |1 | 1 | <a href="../VD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">VD3</span></a>|
-    |**<span style="color:#a6c7e6;">VD4</span>** |1 | 0 | <a href="../VD4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD4</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD5</span>** |1 | 0 | <a href="../VD5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD5</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD6</span>** |1 | 1 | <a href="../VD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">VD6</span></a>|
-    |**<span style="color:#a6c7e6;">VD7</span>** |1 | 0 | <a href="../VD7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD7</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD8</span>** |1 | 0 | <a href="../VD8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD8</span></i></span></a>|
-    |**<span style="color:#a6c7e6;">VD9</span>** |1 | 0 | <a href="../VD9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><i><span style="color:#9966cc;">VD9</span></i></span></a>|
+    |**<span style="color:blue;">AVA</span>** |2 | 0 | <a href="../AVAL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAL</span></span></a>, <a href="../AVAR" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAR</span></span></a>|
+    |**<span style="color:green;">AVB</span>** |2 | 2 | <a href="../AVBL" title="Layer 1 interneuron"><strong><span style="color:#ff3300;">AVBL</span></strong></a>, <a href="../AVBR" title="Layer 1 interneuron"><strong><span style="color:#ff3300;">AVBR</span></strong></a>|
+    |**<span style="color:#d1b36e;">DA1</span>** |1 | 0 | <a href="../DA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA1</span></span></a>|
+    |**<span style="color:#d1b36e;">DA2</span>** |1 | 0 | <a href="../DA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA2</span></span></a>|
+    |**<span style="color:#d1b36e;">DA3</span>** |1 | 0 | <a href="../DA3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA3</span></span></a>|
+    |**<span style="color:#d1b36e;">DA4</span>** |1 | 0 | <a href="../DA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA4</span></span></a>|
+    |**<span style="color:#d1b36e;">DA5</span>** |1 | 0 | <a href="../DA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA5</span></span></a>|
+    |**<span style="color:#d1b36e;">DA6</span>** |1 | 0 | <a href="../DA6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA6</span></span></a>|
+    |**<span style="color:#d1b36e;">DA7</span>** |1 | 0 | <a href="../DA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA7</span></span></a>|
+    |**<span style="color:#d1b36e;">DA8</span>** |1 | 0 | <a href="../DA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA8</span></span></a>|
+    |**<span style="color:#d1b36e;">DA9</span>** |1 | 0 | <a href="../DA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA9</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB1</span>** |1 | 0 | <a href="../DB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB1</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB2</span>** |1 | 0 | <a href="../DB2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB2</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB3</span>** |1 | 0 | <a href="../DB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB3</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB4</span>** |1 | 1 | <a href="../DB4" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DB4</span></strong></a>|
+    |**<span style="color:#6eb0ab;">DB5</span>** |1 | 0 | <a href="../DB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB5</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB6</span>** |1 | 0 | <a href="../DB6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB6</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB7</span>** |1 | 0 | <a href="../DB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB7</span></span></a>|
+    |**<span style="color:#3d519e;">DD1</span>** |1 | 0 | <a href="../DD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD1</span></span></a>|
+    |**<span style="color:#3d519e;">DD2</span>** |1 | 0 | <a href="../DD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD2</span></span></a>|
+    |**<span style="color:#3d519e;">DD3</span>** |1 | 0 | <a href="../DD3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD3</span></span></a>|
+    |**<span style="color:#3d519e;">DD4</span>** |1 | 1 | <a href="../DD4" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DD4</span></strong></a>|
+    |**<span style="color:#3d519e;">DD5</span>** |1 | 1 | <a href="../DD5" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DD5</span></strong></a>|
+    |**<span style="color:#3d519e;">DD6</span>** |1 | 0 | <a href="../DD6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD6</span></span></a>|
+    |**<span style="color:#85542b;">VA1</span>** |1 | 0 | <a href="../VA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA1</span></span></a>|
+    |**<span style="color:#85542b;">VA10</span>** |1 | 0 | <a href="../VA10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA10</span></span></a>|
+    |**<span style="color:#85542b;">VA11</span>** |1 | 0 | <a href="../VA11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA11</span></span></a>|
+    |**<span style="color:#85542b;">VA12</span>** |1 | 0 | <a href="../VA12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA12</span></span></a>|
+    |**<span style="color:#85542b;">VA2</span>** |1 | 0 | <a href="../VA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA2</span></span></a>|
+    |**<span style="color:#85542b;">VA3</span>** |1 | 1 | <a href="../VA3" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VA3</span></strong></a>|
+    |**<span style="color:#85542b;">VA4</span>** |1 | 0 | <a href="../VA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA4</span></span></a>|
+    |**<span style="color:#85542b;">VA5</span>** |1 | 0 | <a href="../VA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA5</span></span></a>|
+    |**<span style="color:#85542b;">VA6</span>** |1 | 1 | <a href="../VA6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VA6</span></strong></a>|
+    |**<span style="color:#85542b;">VA7</span>** |1 | 0 | <a href="../VA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA7</span></span></a>|
+    |**<span style="color:#85542b;">VA8</span>** |1 | 0 | <a href="../VA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA8</span></span></a>|
+    |**<span style="color:#85542b;">VA9</span>** |1 | 0 | <a href="../VA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA9</span></span></a>|
+    |**<span style="color:#2b665e;">VB1</span>** |1 | 0 | <a href="../VB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB1</span></span></a>|
+    |**<span style="color:#2b665e;">VB10</span>** |1 | 0 | <a href="../VB10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB10</span></span></a>|
+    |**<span style="color:#2b665e;">VB11</span>** |1 | 0 | <a href="../VB11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB11</span></span></a>|
+    |**<span style="color:#2b665e;">VB2</span>** |1 | 1 | <a href="../VB2" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VB2</span></strong></a>|
+    |**<span style="color:#2b665e;">VB3</span>** |1 | 0 | <a href="../VB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB3</span></span></a>|
+    |**<span style="color:#2b665e;">VB4</span>** |1 | 0 | <a href="../VB4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB4</span></span></a>|
+    |**<span style="color:#2b665e;">VB5</span>** |1 | 0 | <a href="../VB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB5</span></span></a>|
+    |**<span style="color:#2b665e;">VB6</span>** |1 | 1 | <a href="../VB6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VB6</span></strong></a>|
+    |**<span style="color:#2b665e;">VB7</span>** |1 | 0 | <a href="../VB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB7</span></span></a>|
+    |**<span style="color:#2b665e;">VB8</span>** |1 | 0 | <a href="../VB8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB8</span></span></a>|
+    |**<span style="color:#2b665e;">VB9</span>** |1 | 0 | <a href="../VB9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB9</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD1</span>** |1 | 0 | <a href="../VD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD1</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD10</span>** |1 | 0 | <a href="../VD10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD10</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD11</span>** |1 | 0 | <a href="../VD11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD11</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD12</span>** |1 | 0 | <a href="../VD12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD12</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD13</span>** |1 | 0 | <a href="../VD13" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD13</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD2</span>** |1 | 0 | <a href="../VD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD2</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD3</span>** |1 | 1 | <a href="../VD3" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VD3</span></strong></a>|
+    |**<span style="color:#a6c7e6;">VD4</span>** |1 | 0 | <a href="../VD4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD4</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD5</span>** |1 | 0 | <a href="../VD5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD5</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD6</span>** |1 | 1 | <a href="../VD6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VD6</span></strong></a>|
+    |**<span style="color:#a6c7e6;">VD7</span>** |1 | 0 | <a href="../VD7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD7</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD8</span>** |1 | 0 | <a href="../VD8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD8</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD9</span>** |1 | 0 | <a href="../VD9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD9</span></span></a>|
     
 
 

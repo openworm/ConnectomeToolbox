@@ -337,6 +337,32 @@
         4,
         4
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "GLRVL",
+        "GLRVR",
+        "GLRR",
+        "GLRDR",
+        "GLRL",
+        "GLRDL"
+      ],
+      "y": [
+        2,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
     }
   ],
   "layout": {

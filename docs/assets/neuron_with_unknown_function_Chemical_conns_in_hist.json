@@ -71,6 +71,24 @@
         1,
         0
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024",
+      "type": "scatter",
+      "x": [
+        "CANR",
+        "CANL"
+      ],
+      "y": [
+        1,
+        1
+      ]
     }
   ],
   "layout": {
