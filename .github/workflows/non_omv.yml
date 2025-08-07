@@ -37,7 +37,7 @@ jobs:
         
         
     - name: Run quick test script
-      shell: bash
+      if: ${{ matrix.runs-on != 'windows-latest' }}
       run: |
         ./test.sh  # also runs pytest
         

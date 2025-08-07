@@ -599,9 +599,23 @@ class ConnectomeDataset:
 
         G = nx.Graph(conn_array)
 
+        remove_disconnected = False
+        if remove_disconnected:
+            G.remove_nodes_from(list(nx.isolates(G)))
+            disconnected = [self.nodes[i] for i in nx.isolates(G)]
+            nodes_to_show = [n for n in self.nodes if n not in disconnected]
+        else:
+            disconnected = []
+            nodes_to_show = self.nodes
+
         init_pos = {}
 
-        for i, node_value in enumerate(self.nodes):
+        print(
+            "Nodes to show: %s (%i), disconnected: %s"
+            % (nodes_to_show, len(nodes_to_show), disconnected)
+        )
+
+        for i, node_value in enumerate(nodes_to_show):
             scale = 20
             if is_pharyngeal_cell(node_value):
                 init_pos[i] = [
@@ -639,9 +653,9 @@ class ConnectomeDataset:
                     -0.1 * scale + _get_epsilon(scale),
                 ]
 
-        pos = nx.spring_layout(G, seed=1, iterations=20, k=8, pos=init_pos)
+        pos = nx.spring_layout(G, seed=1, iterations=25, k=10, pos=init_pos)
 
-        for i, node_value in enumerate(self.nodes):
+        for i, node_value in enumerate(nodes_to_show):
             node_set = view.get_node_set(node_value)
             if node_set.position is not None:
                 pos[i] = node_set.position
@@ -1212,10 +1226,11 @@ if __name__ == "__main__":
     if "-nogui" not in sys.argv:
         cds.connection_number_plot("Acetylcholine")"""
 
+    """
     G = cds.to_networkx_graph(synclass)
     import pprint
 
-    print(pprint.pprint(nx.node_link_data(G)))
+    print(pprint.pprint(nx.node_link_data(G)))"""
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import RAW_VIEW as view
@@ -1259,6 +1274,7 @@ if __name__ == "__main__":
         synclass = "dopamine"
         synclass = "tyramine"
         synclass = "serotonin"
+    synclass = "GABA"
     synclass = "Octopamine"
     """
     cds2 = cds.get_connectome_view(view)
