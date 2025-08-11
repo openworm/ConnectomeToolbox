@@ -26,6 +26,7 @@ from cect.Cells import TYRAMINE
 from cect.Cells import BETAINE
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Cells import GENERIC_CHEM_SYN
+from cect.Cells import MONOAMINERGIC_SYN_CLASSES
 
 from openpyxl import load_workbook
 
@@ -37,11 +38,17 @@ filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
 
 # BASIS_ANATOMICAL_CONN = "White_whole"
 # BASIS_ANATOMICAL_CONN = "TestDataReader"
-BASIS_ANATOMICAL_CONN = "Cook2019HermReader"
+BASIS_ANATOMICAL_CONN = ("Cook et al. 2019", "Cook2019HermReader")
+
+BASIS_MONOAMINERGIC_CONN = ("Bentley et al. 2015", "WormNeuroAtlasMAReader")
 
 READER_DESCRIPTION = (
-    """A reader combining neurotransmitter atlas values from Wang et al. 2024 (source: %s) with basic anatomical connectivity information from %s"""
-    % (get_dataset_source_on_github(filename.split("/")[-1]), BASIS_ANATOMICAL_CONN)
+    """A reader combining neurotransmitter atlas values from Wang et al. 2024 (source: %s) with basic anatomical connectivity information from %s, and monoaminergic receptor expression information from %s"""
+    % (
+        get_dataset_source_on_github(filename.split("/")[-1]),
+        BASIS_ANATOMICAL_CONN[0],
+        BASIS_MONOAMINERGIC_CONN[0],
+    )
 )
 
 
@@ -137,15 +144,19 @@ class Wang2024Reader(ConnectomeDataset):
             self.neurotransmitters[cell] = nts
 
         self.anatomical_conn_reader = load_connectome_dataset_file(
-            get_cache_filename(BASIS_ANATOMICAL_CONN)
+            get_cache_filename(BASIS_ANATOMICAL_CONN[1])
+        )
+
+        self.monoaminergic_conn_reader = load_connectome_dataset_file(
+            get_cache_filename(BASIS_MONOAMINERGIC_CONN[1])
         )
 
         # neurons, muscles, other_cells, conns = self.read_all_data()
 
-        conns = self.anatomical_conn_reader.get_current_connection_info_list()
+        anat_conns = self.anatomical_conn_reader.get_current_connection_info_list()
 
-        print_("Adding %i conns from %s" % (len(conns), BASIS_ANATOMICAL_CONN))
-        for conn in conns[:]:
+        print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
+        for conn in anat_conns[:]:
             print_("Original conn: %s" % conn)
 
             if is_any_neuron(conn.pre_cell):
@@ -154,13 +165,35 @@ class Wang2024Reader(ConnectomeDataset):
                 ]:
                     conn.number = 1.0
                     for nt in self.neurotransmitters[conn.pre_cell]:
-                        conn.synclass = nt
-                        print_("    Adding new conn: %s" % conn)
-                        self.add_connection_info(conn)
+                        if nt in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
+                            conn.synclass = nt
+                            print_("    Adding new conn: %s" % conn)
+                            self.add_connection_info(conn)
                 else:
                     print_(
                         "     Not a known chemical neurotransmitter: %s" % conn.synclass
                     )
+            else:
+                print_("     Not a neuron: %s" % conn.pre_cell)
+
+        monoamine_conns = (
+            self.monoaminergic_conn_reader.get_current_connection_info_list()
+        )
+
+        print_(
+            "Adding %i conns from %s" % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
+        )
+        for conn in monoamine_conns[:]:
+            print_("Original conn: %s" % conn)
+
+            if is_any_neuron(conn.pre_cell):
+                conn.number = 1.0
+                for nt in self.neurotransmitters[conn.pre_cell]:
+                    if nt in MONOAMINERGIC_SYN_CLASSES:
+                        conn.synclass = nt
+                        print_("    Adding new conn: %s" % conn)
+                        self.add_connection_info(conn)
+
             else:
                 print_("     Not a neuron: %s" % conn.pre_cell)
 
@@ -181,7 +214,6 @@ def main():
     print(tdr_instance.summary(list_pre_cells=True))
 
     print(tdr_instance.neurotransmitters)
-    quit()
 
     cells, neuron_conns = tdr_instance.read_data()
 
@@ -219,8 +251,10 @@ def main():
     fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
+    from cect.Cells import DOPAMINE
+
     fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[0],
+        DOPAMINE,
         view,
     )
     import plotly.io as pio

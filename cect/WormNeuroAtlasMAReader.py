@@ -6,6 +6,7 @@
 
 from cect.WormNeuroAtlasExtSynReader import WormNeuroAtlasExtSynReader
 from cect.Cells import MONOAMINERGIC_SYN_GENERAL_CLASS
+from cect.Cells import DOPAMINE
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import logging
@@ -68,14 +69,27 @@ if __name__ == "__main__":
             )
         )
 
-    if "-nogui" not in sys.argv:
-        my_instance.connection_number_plot(synclass)
-
     print(my_instance.summary())
 
-    # from cect.ConnectomeView import NEURONS_VIEW as view
-    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
+    from cect.ConnectomeView import NEURONS_VIEW as view
 
     cds2 = my_instance.get_connectome_view(view)
 
     print(cds2.summary())
+
+    fig = cds2.to_plotly_graph_fig(DOPAMINE, view)
+    """
+
+    fig, _ = cds2.to_plotly_matrix_fig(
+        list(view.synclass_sets.keys())[2],
+        view,
+    )
+   """
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    import sys
+
+    if "-nogui" not in sys.argv:
+        fig.show()

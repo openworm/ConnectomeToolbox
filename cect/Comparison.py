@@ -218,8 +218,8 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
+        readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
         readers["Test"] = ["cect.TestDataReader", None]
 

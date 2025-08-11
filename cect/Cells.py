@@ -17,24 +17,22 @@ from typing import List
 
 ACETYLCHOLINE = "Acetylcholine"
 GLUTAMATE = "Glutamate"
-DOPAMINE = "Dopamine"
-SEROTONIN = "Serotonin"
-OCTOPAMINE = "Octopamine"
-TYRAMINE = "Tyramine"
 BETAINE = "Betaine"
 
 GABA = "GABA"
 
+DOPAMINE = "Dopamine"
+SEROTONIN = "Serotonin"
+OCTOPAMINE = "Octopamine"
+TYRAMINE = "Tyramine"
+
+
 ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     ACETYLCHOLINE,
     "Acetylcholine_Tyramine",
-    DOPAMINE,
     "FMRFamide",
     GABA,
     GLUTAMATE,
-    OCTOPAMINE,
-    SEROTONIN,
-    TYRAMINE,
     BETAINE,
     "Serotonin_Acetylcholine",
     "Serotonin_Glutamate",
@@ -46,7 +44,7 @@ GENERIC_ELEC_SYN = "Generic_GJ"
 EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
 MONOAMINERGIC_SYN_GENERAL_CLASS = "Monoaminergic"
 
-MONOAMINERGIC_SYN_CLASSES = ["tyramine", "dopamine", "octopamine", "serotonin"]
+MONOAMINERGIC_SYN_CLASSES = [DOPAMINE, SEROTONIN, TYRAMINE, OCTOPAMINE]
 # MONOAMINERGIC_SYN_CLASSES = ["dopamine"]
 
 PEPTIDERGIC_SYN_CLASS = "Peptidergic"
@@ -2499,7 +2497,7 @@ if __name__ == "__main__":
 
     from cect.Comparison import generate_comparison_page
 
-    connectomes = generate_comparison_page(quick)
+    connectomes = generate_comparison_page(quick, load_from_cache=False)
 
     from cect.CellInfo import generate_cell_info_pages
 
