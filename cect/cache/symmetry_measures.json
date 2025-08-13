@@ -223,42 +223,42 @@
     "Bentley2016_MA": {
         "Raw": {
             "Extrasynaptic": "100.00",
-            "tyramine": "100.00",
-            "dopamine": "100.00",
-            "octopamine": "100.00",
-            "serotonin": "100.00"
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "Neurons": {
             "Extrasynaptic": "100.00",
-            "tyramine": "100.00",
-            "dopamine": "100.00",
-            "octopamine": "100.00",
-            "serotonin": "100.00"
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "Pharynx": {
             "Extrasynaptic": "100.00",
-            "serotonin": "100.00"
+            "Serotonin": "100.00"
         },
         "NonpharyngealH": {
             "Extrasynaptic": "100.00",
-            "tyramine": "100.00",
-            "dopamine": "100.00",
-            "octopamine": "100.00",
-            "serotonin": "100.00"
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "SensorySomaticH": {
             "Extrasynaptic": "100.00",
-            "dopamine": "100.00",
-            "serotonin": "100.00"
+            "Dopamine": "100.00",
+            "Serotonin": "100.00"
         },
         "MotorSomaticH": {
             "Extrasynaptic": "100.00",
-            "serotonin": "100.00"
+            "Serotonin": "100.00"
         },
         "InterneuronsSomaticH": {
             "Extrasynaptic": "100.00",
-            "tyramine": "100.00",
-            "octopamine": "100.00"
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         }
     },
     "Bentley2016_PEP": {
@@ -693,72 +693,79 @@
     },
     "Wang2024": {
         "Raw": {
-            "Chemical Exc": "68.31",
+            "Chemical Exc": "68.62",
             "Chemical Inh": "75.45",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "71.67",
-            "Dopamine": "60.00",
             "GABA": "75.45",
             "Glutamate": "62.49",
-            "Octopamine": "61.90",
-            "Serotonin": "50.36",
-            "Tyramine": "77.55",
-            "Betaine": "65.77"
+            "Betaine": "65.77",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "Neurons": {
-            "Chemical Exc": "64.87",
+            "Chemical Exc": "64.92",
             "Chemical Inh": "74.72",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "66.67",
-            "Dopamine": "62.11",
             "GABA": "74.72",
             "Glutamate": "62.74",
-            "Octopamine": "61.90",
-            "Serotonin": "44.64",
-            "Tyramine": "75.56",
-            "Betaine": "64.66"
+            "Betaine": "64.66",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "Pharynx": {
             "Chemical Exc": "77.42",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "79.69",
             "Glutamate": "80.39",
-            "Serotonin": "54.55",
-            "Betaine": "54.55"
+            "Betaine": "54.55",
+            "Serotonin": "100.00"
         },
         "NonpharyngealH": {
-            "Chemical Exc": "64.37",
+            "Chemical Exc": "64.39",
             "Chemical Inh": "74.72",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "66.23",
-            "Dopamine": "62.11",
             "GABA": "74.72",
             "Glutamate": "61.95",
-            "Octopamine": "61.90",
-            "Serotonin": "43.56",
-            "Tyramine": "75.56",
-            "Betaine": "65.57"
+            "Betaine": "65.57",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         },
         "SensorySomaticH": {
-            "Chemical Exc": "53.21",
+            "Chemical Exc": "51.13",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "52.94",
-            "Dopamine": "66.67",
             "Glutamate": "50.57",
-            "Serotonin": "42.86",
-            "Betaine": "47.06"
+            "Betaine": "47.06",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00"
         },
         "MotorSomaticH": {
             "Chemical Exc": "88.98",
             "Chemical Inh": "93.44",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "88.98",
             "GABA": "93.44",
-            "Serotonin": "26.67"
+            "Serotonin": "100.00"
         },
         "InterneuronsSomaticH": {
             "Chemical Exc": "66.73",
             "Chemical Inh": "70.83",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "65.55",
             "GABA": "70.83",
             "Glutamate": "67.51",
-            "Octopamine": "60.87",
-            "Tyramine": "68.75",
-            "Betaine": "70.97"
+            "Betaine": "70.97",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
         }
     },
     "GleesonModel": {
@@ -828,32 +835,34 @@
     },
     "SSData": {
         "Raw": {
-            "Chemical Exc": "71.08",
+            "Chemical Exc": "71.97",
             "Chemical Inh": "84.36",
             "Electrical": "79.61",
+            "Extrasynaptic": "64.67",
             "Acetylcholine": "85.08",
             "Acetylcholine_Tyramine": "62.07",
-            "Dopamine": "64.46",
             "FMRFamide": "65.20",
             "GABA": "84.36",
             "Glutamate": "64.09",
-            "Serotonin": "64.80",
             "Serotonin_Acetylcholine": "62.50",
-            "Serotonin_Glutamate": "100.00"
+            "Serotonin_Glutamate": "100.00",
+            "Dopamine": "64.46",
+            "Serotonin": "64.80"
         },
         "Neurons": {
-            "Chemical Exc": "67.80",
+            "Chemical Exc": "68.26",
             "Chemical Inh": "80.00",
             "Electrical": "79.61",
+            "Extrasynaptic": "65.10",
             "Acetylcholine": "79.70",
             "Acetylcholine_Tyramine": "62.07",
-            "Dopamine": "65.00",
             "FMRFamide": "65.99",
             "GABA": "80.00",
             "Glutamate": "64.14",
-            "Serotonin": "65.17",
             "Serotonin_Acetylcholine": "62.50",
-            "Serotonin_Glutamate": "100.00"
+            "Serotonin_Glutamate": "100.00",
+            "Dopamine": "65.00",
+            "Serotonin": "65.17"
         },
         "Pharynx": {
             "Chemical Exc": "96.47",
@@ -863,44 +872,48 @@
             "Serotonin_Glutamate": "100.00"
         },
         "NonpharyngealH": {
-            "Chemical Exc": "66.57",
+            "Chemical Exc": "66.83",
             "Chemical Inh": "80.00",
             "Electrical": "78.99",
+            "Extrasynaptic": "65.10",
             "Acetylcholine": "78.45",
             "Acetylcholine_Tyramine": "62.07",
-            "Dopamine": "65.00",
             "FMRFamide": "65.99",
             "GABA": "80.00",
             "Glutamate": "63.17",
-            "Serotonin": "65.17",
-            "Serotonin_Acetylcholine": "62.50"
+            "Serotonin_Acetylcholine": "62.50",
+            "Dopamine": "65.00",
+            "Serotonin": "65.17"
         },
         "SensorySomaticH": {
-            "Chemical Exc": "59.89",
+            "Chemical Exc": "57.63",
             "Chemical Inh": "50.00",
             "Electrical": "86.49",
+            "Extrasynaptic": "64.41",
             "Acetylcholine": "53.33",
-            "Dopamine": "72.73",
             "FMRFamide": "37.50",
             "GABA": "50.00",
             "Glutamate": "62.07",
+            "Dopamine": "72.73",
             "Serotonin": "53.85"
         },
         "MotorSomaticH": {
-            "Chemical Exc": "91.36",
+            "Chemical Exc": "91.21",
             "Chemical Inh": "87.50",
             "Electrical": "94.85",
+            "Extrasynaptic": "100.00",
             "Acetylcholine": "95.58",
             "FMRFamide": "100.00",
             "GABA": "87.50",
             "Glutamate": "0.00",
-            "Serotonin": "100.00",
-            "Serotonin_Acetylcholine": "80.00"
+            "Serotonin_Acetylcholine": "80.00",
+            "Serotonin": "100.00"
         },
         "InterneuronsSomaticH": {
-            "Chemical Exc": "64.77",
+            "Chemical Exc": "65.46",
             "Chemical Inh": "72.73",
             "Electrical": "79.79",
+            "Extrasynaptic": "57.14",
             "Acetylcholine": "80.00",
             "Acetylcholine_Tyramine": "57.14",
             "FMRFamide": "58.46",
