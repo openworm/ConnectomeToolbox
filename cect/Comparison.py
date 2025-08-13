@@ -37,7 +37,8 @@ reader_colors = {
     "RipollSanchezMidRange": "goldenrod",
     "RipollSanchezLongRange": "orange",
     "Yim2024": "#0d7ba4",
-    "Wang2024": "firebrick",
+    "Wang2024Herm": "firebrick",
+    "Wang2024Male": "#e88989",
     "OpenWormUnified": "yellowgreen",
     "Test": "palegoldenrod",
     "SSData": "moccasin",
@@ -71,7 +72,8 @@ reader_pages = {
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Yim2024": "Yim2024_data",
-    "Wang2024": "Wang2024_data",
+    "Wang2024Herm": "Wang2024Herm_data",
+    "Wang2024Male": "Wang2024Male_data",
     "OpenWormUnified": "OpenWormUnified_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
@@ -218,9 +220,10 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
-        readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
+        readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
+        readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Test"] = ["cect.TestDataReader", None]
 
     else:
@@ -279,7 +282,8 @@ def generate_comparison_page(
             ]
 
         readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
-        readers["Wang2024"] = ["cect.Wang2024Reader", "Wang_2024"]
+        readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
         readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 

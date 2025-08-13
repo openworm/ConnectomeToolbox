@@ -38,6 +38,25 @@ ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "Serotonin_Glutamate",
 ]
 
+SEROTONIN_UPTAKE = "Serotonin_Uptake"
+GABA_UPTAKE = "GABA_Uptake"
+UNKNOWN_ORPHAN_NEUROTRANSMITTER = "Unknown_Orphan_Neurotransmitter"
+UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER = "Unknown_Monoaminergic_Neurotransmitter"
+FIVE_HTP = "5-HTP"
+PEOH = "Possible_PEOH"
+FIVE_HTP_FIVE_HT = "5-HTP_synthesis_5-HT_uptake"
+
+
+WANG_2024_EXTRA_NT_INFO = [
+    SEROTONIN_UPTAKE,
+    GABA_UPTAKE,
+    UNKNOWN_ORPHAN_NEUROTRANSMITTER,
+    UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER,
+    FIVE_HTP,
+    PEOH,
+    FIVE_HTP_FIVE_HT,
+]
+
 GENERIC_CHEM_SYN = "Generic_CS"
 GENERIC_ELEC_SYN = "Generic_GJ"
 
@@ -2501,7 +2520,7 @@ if __name__ == "__main__":
 
     from cect.CellInfo import generate_cell_info_pages
 
-    if quick < 2:
+    if quick < 3:
         print_("Generating cell info pages...")
         generate_cell_info_pages(connectomes)
 

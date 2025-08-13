@@ -718,7 +718,7 @@ COOK_FIG3_VIEW = View(
     "Cook 2019 Fig 3",
     "A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019",
     [],
-    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 sn_pos = {
@@ -833,6 +833,7 @@ QUICK_VIEWS = [
     RAW_VIEW,
     NEURONS_VIEW,
     ESCAPE_VIEW,
+    COOK_FIG3_VIEW,
     LOCOMOTION_1_VIEW,
     LOCOMOTION_2_VIEW,
     LOCOMOTION_3_VIEW,
@@ -901,6 +902,10 @@ if __name__ == "__main__":
     print("------- Raw ---------")
     print(tdr_instance.get_connectome_view(RAW_VIEW).summary())
     print(LOCOMOTION_2_VIEW)
+
+    print("------- Cook 2019 Fig 3 ---------")
+    print(tdr_instance.get_connectome_view(COOK_FIG3_VIEW).summary())
+    print(COOK_FIG3_VIEW)
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES
