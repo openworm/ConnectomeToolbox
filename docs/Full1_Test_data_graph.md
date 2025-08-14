@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Full1_White_A_data_graph">White_A</a> <a href="../Full1_White_L4_data_graph">White_L4</a> <a href="../Full1_White_whole_data_graph">White_whole</a> <a href="../Full1_Varshney_data_graph">Varshney</a> <a href="../Full1_Bentley2016_MA_data_graph">Bentley2016_MA</a> <a href="../Full1_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../Full1_Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../Full1_Cook2019Male_data_graph">Cook2019Male</a> <a href="../Full1_Cook2020_data_graph">Cook2020</a> <a href="../Full1_Brittin2021_data_graph">Brittin2021</a> <a href="../Full1_Witvliet1_data_graph">Witvliet1</a> <a href="../Full1_Witvliet2_data_graph">Witvliet2</a> <a href="../Full1_Witvliet3_data_graph">Witvliet3</a> <a href="../Full1_Witvliet4_data_graph">Witvliet4</a> <a href="../Full1_Witvliet5_data_graph">Witvliet5</a> <a href="../Full1_Witvliet6_data_graph">Witvliet6</a> <a href="../Full1_Witvliet7_data_graph">Witvliet7</a> <a href="../Full1_Witvliet8_data_graph">Witvliet8</a> <a href="../Full1_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../Full1_Randi2023_data_graph">Randi2023</a> <a href="../Full1_RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../Full1_RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../Full1_RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <a href="../Full1_Yim2024_data_graph">Yim2024</a> <a href="../Full1_Wang2024_data_graph">Wang2024</a> <a href="../Full1_OpenWormUnified_data_graph">OpenWormUnified</a> <b><a href="../Full1_Test_data_graph">Test</a></b> <a href="../Full1_SSData_data_graph">SSData</a> <a href="../Full1_UpdSSData_data_graph">UpdSSData</a> <a href="../Full1_UpdSSData2_data_graph">UpdSSData2</a> <a href="../Full1_GleesonModel_data_graph">GleesonModel</a> <a href="../Full1_OlivaresModel_data_graph">OlivaresModel</a> 
+    <a href="../Full1_White_A_data_graph">White_A</a> <a href="../Full1_White_L4_data_graph">White_L4</a> <a href="../Full1_White_whole_data_graph">White_whole</a> <a href="../Full1_Varshney_data_graph">Varshney</a> <a href="../Full1_Bentley2016_MA_data_graph">Bentley2016_MA</a> <a href="../Full1_Bentley2016_PEP_data_graph">Bentley2016_PEP</a> <a href="../Full1_Cook2019Herm_data_graph">Cook2019Herm</a> <a href="../Full1_Cook2019Male_data_graph">Cook2019Male</a> <a href="../Full1_Cook2020_data_graph">Cook2020</a> <a href="../Full1_Brittin2021_data_graph">Brittin2021</a> <a href="../Full1_Witvliet1_data_graph">Witvliet1</a> <a href="../Full1_Witvliet2_data_graph">Witvliet2</a> <a href="../Full1_Witvliet3_data_graph">Witvliet3</a> <a href="../Full1_Witvliet4_data_graph">Witvliet4</a> <a href="../Full1_Witvliet5_data_graph">Witvliet5</a> <a href="../Full1_Witvliet6_data_graph">Witvliet6</a> <a href="../Full1_Witvliet7_data_graph">Witvliet7</a> <a href="../Full1_Witvliet8_data_graph">Witvliet8</a> <a href="../Full1_WormNeuroAtlas_data_graph">WormNeuroAtlas</a> <a href="../Full1_Randi2023_data_graph">Randi2023</a> <a href="../Full1_RipollSanchezShortRange_data_graph">RipollSanchezShortRange</a> <a href="../Full1_RipollSanchezMidRange_data_graph">RipollSanchezMidRange</a> <a href="../Full1_RipollSanchezLongRange_data_graph">RipollSanchezLongRange</a> <a href="../Full1_Yim2024_data_graph">Yim2024</a> <a href="../Full1_Wang2024Herm_data_graph">Wang2024Herm</a> <a href="../Full1_Wang2024Male_data_graph">Wang2024Male</a> <a href="../Full1_OpenWormUnified_data_graph">OpenWormUnified</a> <b><a href="../Full1_Test_data_graph">Test</a></b> <a href="../Full1_SSData_data_graph">SSData</a> <a href="../Full1_UpdSSData_data_graph">UpdSSData</a> <a href="../Full1_UpdSSData2_data_graph">UpdSSData2</a> <a href="../Full1_GleesonModel_data_graph">GleesonModel</a> <a href="../Full1_OlivaresModel_data_graph">OlivaresModel</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -24,16 +24,34 @@ search:
     <a href="../Test_data_graph"> Raw Data</a><a href="../Neurons_Test_data_graph"> Neurons</a><a href="../Pharynx_Test_data_graph"> Pharynx</a><a href="../Social_Test_data_graph"> Social Network</a><a href="../Escape_Test_data_graph"> Escape Response Circuit</a><b><a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a></b><a href="../Loco1_Test_data_graph"> Locomotion 1</a><a href="../Loco2_Test_data_graph"> Locomotion 2</a><a href="../Loco3_Test_data_graph"> Locomotion 3</a><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a><a href="../NonpharyngealH_Test_data_graph"> Nonpharyngeal Neurons (herm)</a><a href="../SensorySomaticH_Test_data_graph"> Sensory Neurons (somatic)</a><a href="../MotorSomaticH_Test_data_graph"> Motor Neurons (somatic)</a><a href="../InterneuronsSomaticH_Test_data_graph"> Interneurons (somatic)</a>
 
     <i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i>
-=== "All Chemical"
+=== "Chemical Exc"
 
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Full1_All_Chemical_graph.json" }
+    { "file_path": "./assets/Test_Full1_Chemical_Exc_graph.json" }
+    ```
+
+=== "Chemical Inh"
+
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Full1_Chemical_Inh_graph.json" }
     ```
 
 === "Electrical"
 
     ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Full1_Electrical_graph.json" }
+    ```
+
+=== "Acetylcholine"
+
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Full1_Acetylcholine_graph.json" }
+    ```
+
+=== "GABA"
+
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Full1_GABA_graph.json" }
     ```
 
 === "View info"
@@ -46,8 +64,11 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**All Chemical** | (17, 17) matrix | 6 non-zero entries, avg. weight: 14.666666666666666, sum: 88.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
+    |**Chemical Exc** | (17, 17) matrix | 6 non-zero entries, avg. weight: 13.5, sum: 81.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
+    |**Chemical Inh** | (17, 17) matrix | 1 non-zero entries, avg. weight: 7.0, sum: 7.0| **<span style="color:#B2832b;">MNVC</span>** | **<span style="color:#B2832b;">MNVC</span>** |
     |**Electrical** | (17, 17) matrix | 3 non-zero entries, avg. weight: 4.666666666666667, sum: 14.0| **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN6</span>** |
+    |**Acetylcholine** | (17, 17) matrix | 6 non-zero entries, avg. weight: 13.5, sum: 81.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
+    |**GABA** | (17, 17) matrix | 1 non-zero entries, avg. weight: 7.0, sum: 7.0| **<span style="color:#B2832b;">MNVC</span>** | **<span style="color:#B2832b;">MNVC</span>** |
     
     
     | Nodes in current view<br/>(17 total)| Num cells in node<br/>(373 total) | Num in this dataset<br/>(18 total) | Cells |

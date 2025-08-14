@@ -691,14 +691,14 @@
             "Chemical Exc": "65.23"
         }
     },
-    "Wang2024": {
+    "Wang2024Herm": {
         "Raw": {
-            "Chemical Exc": "68.62",
-            "Chemical Inh": "75.45",
+            "Chemical Exc": "68.69",
+            "Chemical Inh": "72.51",
             "Extrasynaptic": "100.00",
-            "Acetylcholine": "71.67",
-            "GABA": "75.45",
-            "Glutamate": "62.49",
+            "Acetylcholine": "71.66",
+            "GABA": "72.51",
+            "Glutamate": "62.77",
             "Betaine": "65.77",
             "Dopamine": "100.00",
             "Serotonin": "100.00",
@@ -706,12 +706,12 @@
             "Octopamine": "100.00"
         },
         "Neurons": {
-            "Chemical Exc": "64.92",
-            "Chemical Inh": "74.72",
+            "Chemical Exc": "65.08",
+            "Chemical Inh": "68.71",
             "Extrasynaptic": "100.00",
-            "Acetylcholine": "66.67",
-            "GABA": "74.72",
-            "Glutamate": "62.74",
+            "Acetylcholine": "66.79",
+            "GABA": "68.71",
+            "Glutamate": "62.95",
             "Betaine": "64.66",
             "Dopamine": "100.00",
             "Serotonin": "100.00",
@@ -719,20 +719,20 @@
             "Octopamine": "100.00"
         },
         "Pharynx": {
-            "Chemical Exc": "77.42",
+            "Chemical Exc": "77.27",
             "Extrasynaptic": "100.00",
             "Acetylcholine": "79.69",
-            "Glutamate": "80.39",
+            "Glutamate": "79.66",
             "Betaine": "54.55",
             "Serotonin": "100.00"
         },
         "NonpharyngealH": {
-            "Chemical Exc": "64.39",
-            "Chemical Inh": "74.72",
+            "Chemical Exc": "64.55",
+            "Chemical Inh": "68.71",
             "Extrasynaptic": "100.00",
-            "Acetylcholine": "66.23",
-            "GABA": "74.72",
-            "Glutamate": "61.95",
+            "Acetylcholine": "66.37",
+            "GABA": "68.71",
+            "Glutamate": "62.10",
             "Betaine": "65.57",
             "Dopamine": "100.00",
             "Serotonin": "100.00",
@@ -740,28 +740,105 @@
             "Octopamine": "100.00"
         },
         "SensorySomaticH": {
-            "Chemical Exc": "51.13",
+            "Chemical Exc": "53.33",
             "Extrasynaptic": "100.00",
-            "Acetylcholine": "52.94",
-            "Glutamate": "50.57",
+            "Acetylcholine": "55.21",
+            "Glutamate": "52.75",
             "Betaine": "47.06",
             "Dopamine": "100.00",
             "Serotonin": "100.00"
         },
         "MotorSomaticH": {
             "Chemical Exc": "88.98",
-            "Chemical Inh": "93.44",
+            "Chemical Inh": "90.22",
             "Extrasynaptic": "100.00",
             "Acetylcholine": "88.98",
-            "GABA": "93.44",
+            "GABA": "90.22",
             "Serotonin": "100.00"
         },
         "InterneuronsSomaticH": {
-            "Chemical Exc": "66.73",
-            "Chemical Inh": "70.83",
+            "Chemical Exc": "67.44",
+            "Chemical Inh": "67.57",
             "Extrasynaptic": "100.00",
-            "Acetylcholine": "65.55",
-            "GABA": "70.83",
+            "Acetylcholine": "66.88",
+            "GABA": "67.57",
+            "Glutamate": "67.51",
+            "Betaine": "70.97",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
+        }
+    },
+    "Wang2024Male": {
+        "Raw": {
+            "Chemical Exc": "65.78",
+            "Chemical Inh": "67.16",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "67.29",
+            "GABA": "67.16",
+            "Glutamate": "62.77",
+            "Betaine": "65.77",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
+        },
+        "Neurons": {
+            "Chemical Exc": "65.08",
+            "Chemical Inh": "68.71",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "66.79",
+            "GABA": "68.71",
+            "Glutamate": "62.95",
+            "Betaine": "64.66",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
+        },
+        "Pharynx": {
+            "Chemical Exc": "77.27",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "79.69",
+            "Glutamate": "79.66",
+            "Betaine": "54.55",
+            "Serotonin": "100.00"
+        },
+        "NonpharyngealH": {
+            "Chemical Exc": "64.55",
+            "Chemical Inh": "68.71",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "66.37",
+            "GABA": "68.71",
+            "Glutamate": "62.10",
+            "Betaine": "65.57",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00",
+            "Tyramine": "100.00",
+            "Octopamine": "100.00"
+        },
+        "SensorySomaticH": {
+            "Chemical Exc": "53.33",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "55.21",
+            "Glutamate": "52.75",
+            "Betaine": "47.06",
+            "Dopamine": "100.00",
+            "Serotonin": "100.00"
+        },
+        "MotorSomaticH": {
+            "Chemical Exc": "88.98",
+            "Chemical Inh": "90.22",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "88.98",
+            "GABA": "90.22",
+            "Serotonin": "100.00"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical Exc": "67.44",
+            "Chemical Inh": "67.57",
+            "Extrasynaptic": "100.00",
+            "Acetylcholine": "66.88",
+            "GABA": "67.57",
             "Glutamate": "67.51",
             "Betaine": "70.97",
             "Tyramine": "100.00",
