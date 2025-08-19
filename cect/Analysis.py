@@ -43,8 +43,7 @@ def convert_to_symmetry_array(cds, synclasses):
 
     """for synclass in [
         "Chemical",
-        "Chemical Exc",
-        "Chemical Inh",
+        "Chemical",
         "Electrical",
         "Contact",
         "Functional",
@@ -168,7 +167,7 @@ def test_bilaterals():
     synclass = "Chemical Inh"
 
     synclass = (
-        "Chemical Exc"
+        "Chemical"
         if "Raw" not in view.name
         else ("Functional" if "Func" in view.name else "Chemical")
     )

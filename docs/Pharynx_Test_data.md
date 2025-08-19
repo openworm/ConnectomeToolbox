@@ -24,11 +24,11 @@ search:
     <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <b><a href="../Pharynx_Test_data"> Pharynx</a></b> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     <br/>
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Pharynx_Chemical_Exc.json" }
+    { "file_path": "./assets/Test_Pharynx_Chemical.json" }
     ```
 
 === "Acetylcholine"
@@ -48,7 +48,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    |**Chemical** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
     |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
     
     

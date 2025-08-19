@@ -24,16 +24,10 @@ search:
     <a href="../Test_data_graph"> Raw Data</a><a href="../Neurons_Test_data_graph"> Neurons</a><a href="../Pharynx_Test_data_graph"> Pharynx</a><a href="../Social_Test_data_graph"> Social Network</a><a href="../Escape_Test_data_graph"> Escape Response Circuit</a><b><a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a></b><a href="../Loco1_Test_data_graph"> Locomotion 1</a><a href="../Loco2_Test_data_graph"> Locomotion 2</a><a href="../Loco3_Test_data_graph"> Locomotion 3</a><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a><a href="../NonpharyngealH_Test_data_graph"> Nonpharyngeal Neurons (herm)</a><a href="../SensorySomaticH_Test_data_graph"> Sensory Neurons (somatic)</a><a href="../MotorSomaticH_Test_data_graph"> Motor Neurons (somatic)</a><a href="../InterneuronsSomaticH_Test_data_graph"> Interneurons (somatic)</a>
 
     <i>A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Full1_Chemical_Exc_graph.json" }
-    ```
-
-=== "Chemical Inh"
-
-    ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Full1_Chemical_Inh_graph.json" }
+    { "file_path": "./assets/Test_Full1_Chemical_graph.json" }
     ```
 
 === "Electrical"
@@ -64,8 +58,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (17, 17) matrix | 6 non-zero entries, avg. weight: 13.5, sum: 81.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
-    |**Chemical Inh** | (17, 17) matrix | 1 non-zero entries, avg. weight: 7.0, sum: 7.0| **<span style="color:#B2832b;">MNVC</span>** | **<span style="color:#B2832b;">MNVC</span>** |
+    |**Chemical** | (17, 17) matrix | 6 non-zero entries, avg. weight: 14.666666666666666, sum: 88.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
     |**Electrical** | (17, 17) matrix | 3 non-zero entries, avg. weight: 4.666666666666667, sum: 14.0| **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN6</span>** |
     |**Acetylcholine** | (17, 17) matrix | 6 non-zero entries, avg. weight: 13.5, sum: 81.0| **<span style="color:#16537E;">IN1</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN3</span>**, **<span style="color:#b31b1b;">SN5</span>**, **<span style="color:#b31b1b;">SN6</span>** | **<span style="color:#16537E;">IN1</span>**, **<span style="color:#16537E;">IN2</span>**, **<span style="color:#B2832b;">MNVC</span>**, **<span style="color:#b31b1b;">SN5</span>** |
     |**GABA** | (17, 17) matrix | 1 non-zero entries, avg. weight: 7.0, sum: 7.0| **<span style="color:#B2832b;">MNVC</span>** | **<span style="color:#B2832b;">MNVC</span>** |

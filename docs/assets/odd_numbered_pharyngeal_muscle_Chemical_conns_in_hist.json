@@ -177,7 +177,7 @@
         "symbol": "circle"
       },
       "mode": "markers",
-      "name": "Wang2024",
+      "name": "Wang2024Herm",
       "type": "scatter",
       "x": [
         "pm5D",
@@ -192,9 +192,43 @@
         "pm7VL"
       ],
       "y": [
-        12,
-        12,
-        12,
+        10,
+        11,
+        11,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "pm5D",
+        "pm5VR",
+        "pm5VL",
+        "pm3VL",
+        "pm3VR",
+        "pm1",
+        "pm7VR",
+        "pm7D",
+        "pm3D",
+        "pm7VL"
+      ],
+      "y": [
+        10,
+        11,
+        11,
         4,
         3,
         3,

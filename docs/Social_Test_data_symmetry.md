@@ -24,7 +24,7 @@ search:
     <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <a href="../Pharynx_Test_data_symmetry"> Pharynx</a> - <b><a href="../Social_Test_data_symmetry"> Social Network</a></b> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     Symmetry graph of that view, Social, is not possible, as it contains nodes with multiple cells
 
@@ -46,7 +46,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
+    |**Chemical** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     |**Electrical** | (8, 8) matrix | 1 non-zero entries, avg. weight: 1.0, sum: 1.0| **<span style="color:grey;">ASH</span>** | **<span style="color:grey;">ASK</span>** |
     |**Acetylcholine** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     

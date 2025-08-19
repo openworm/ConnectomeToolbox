@@ -24,21 +24,13 @@ search:
     <a href="../Test_data_symmetry"> Raw Data</a> - <b><a href="../Neurons_Test_data_symmetry"> Neurons</a></b> - <a href="../Pharynx_Test_data_symmetry"> Pharynx</a> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset)</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     <br/>
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Neurons_Chemical_Exc_symm.json" }
+    { "file_path": "./assets/Test_Neurons_Chemical_symm.json" }
     ```
-    Of 91204 possible edges, 13 are connected, 8 are mirrored - 61.54% 
-
-=== "Chemical Inh"
-
-    <br/>
-    ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Neurons_Chemical_Inh_symm.json" }
-    ```
-    Of 91204 possible edges, 3 are connected, 3 are mirrored - 100.00% 
+    Of 91204 possible edges, 16 are connected, 11 are mirrored - 68.75% 
 
 === "Electrical"
 
@@ -74,8 +66,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (302, 302) matrix | 13 non-zero entries, avg. weight: 7.615384615384615, sum: 99.0| **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff66cc;">AWBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#ff66cc;">DVA</span>**, **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">PVCR</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB6</span>** | **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff3300;">AVBL</span>**, **<span style="color:#ff3300;">AVBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#9966cc;">DD4</span>**, **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">RMGR</span>**, **<span style="color:#9966cc;">VB6</span>**, **<span style="color:#9966cc;">VD6</span>** |
-    |**Chemical Inh** | (302, 302) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#9966cc;">VD3</span>**, **<span style="color:#9966cc;">VD6</span>** | **<span style="color:#9966cc;">VA3</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB2</span>** |
+    |**Chemical** | (302, 302) matrix | 16 non-zero entries, avg. weight: 6.625, sum: 106.0| **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff66cc;">AWBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#ff66cc;">DVA</span>**, **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">PVCR</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB6</span>**, **<span style="color:#9966cc;">VD3</span>**, **<span style="color:#9966cc;">VD6</span>** | **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff3300;">AVBL</span>**, **<span style="color:#ff3300;">AVBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#9966cc;">DD4</span>**, **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">RMGR</span>**, **<span style="color:#9966cc;">VA3</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB2</span>**, **<span style="color:#9966cc;">VB6</span>**, **<span style="color:#9966cc;">VD6</span>** |
     |**Electrical** | (302, 302) matrix | 5 non-zero entries, avg. weight: 2.8, sum: 14.0| **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#9966cc;">DD4</span>**, **<span style="color:#9966cc;">VB6</span>** | **<span style="color:#ff66cc;">ASKR</span>**, **<span style="color:#ff3300;">AVBL</span>**, **<span style="color:#9966cc;">DD5</span>**, **<span style="color:#9966cc;">VB6</span>** |
     |**Acetylcholine** | (302, 302) matrix | 13 non-zero entries, avg. weight: 7.615384615384615, sum: 99.0| **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff66cc;">AWBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#ff66cc;">DVA</span>**, **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">PVCR</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB6</span>** | **<span style="color:#ff66cc;">ASHR</span>**, **<span style="color:#ff3300;">AVBL</span>**, **<span style="color:#ff3300;">AVBR</span>**, **<span style="color:#9966cc;">DB4</span>**, **<span style="color:#9966cc;">DD4</span>**, **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>**, **<span style="color:#ff3300;">PVCL</span>**, **<span style="color:#ff3300;">RMGR</span>**, **<span style="color:#9966cc;">VB6</span>**, **<span style="color:#9966cc;">VD6</span>** |
     |**GABA** | (302, 302) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#9966cc;">VD3</span>**, **<span style="color:#9966cc;">VD6</span>** | **<span style="color:#9966cc;">VA3</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB2</span>** |

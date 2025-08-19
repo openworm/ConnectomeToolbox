@@ -1259,9 +1259,9 @@ if __name__ == "__main__":
     # from cect.TestDataReader import get_instance
 
     synclass = "Chemical Inh"
-    synclass = "Chemical Exc"
+    synclass = "Chemical"
 
-    synclass = "Chemical Exc"
+    synclass = "Chemical"
     synclass = "dopamine"
 
     cds = get_instance()

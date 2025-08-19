@@ -61,7 +61,7 @@
         "symbol": "circle"
       },
       "mode": "markers",
-      "name": "Wang2024",
+      "name": "Wang2024Herm",
       "type": "scatter",
       "x": [
         "mu_intR",
@@ -70,6 +70,24 @@
       "y": [
         1,
         1
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "mu_intR",
+        "mu_intL"
+      ],
+      "y": [
+        3,
+        2
       ]
     }
   ],

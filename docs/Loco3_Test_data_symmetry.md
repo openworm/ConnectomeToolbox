@@ -24,11 +24,7 @@ search:
     <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <a href="../Pharynx_Test_data_symmetry"> Pharynx</a> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <b><a href="../Loco3_Test_data_symmetry"> Locomotion 3</a></b> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>Subset of cells involved in locomotion</i>
-=== "Chemical Exc"
-
-    Symmetry graph of that view, Loco3, is not possible, as it contains nodes with multiple cells
-
-=== "Chemical Inh"
+=== "Chemical"
 
     Symmetry graph of that view, Loco3, is not possible, as it contains nodes with multiple cells
 
@@ -54,8 +50,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (60, 60) matrix | 4 non-zero entries, avg. weight: 13.5, sum: 54.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#a6c7e6;">VD6</span>** |
-    |**Chemical Inh** | (60, 60) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#a6c7e6;">VD3</span>**, **<span style="color:#a6c7e6;">VD6</span>** | **<span style="color:#85542b;">VA3</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB2</span>** |
+    |**Chemical** | (60, 60) matrix | 7 non-zero entries, avg. weight: 8.714285714285714, sum: 61.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB6</span>**, **<span style="color:#a6c7e6;">VD3</span>**, **<span style="color:#a6c7e6;">VD6</span>** | **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#85542b;">VA3</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB2</span>**, **<span style="color:#a6c7e6;">VD6</span>** |
     |**Electrical** | (60, 60) matrix | 4 non-zero entries, avg. weight: 3.25, sum: 13.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:green;">AVB</span>**, **<span style="color:#3d519e;">DD5</span>**, **<span style="color:#2b665e;">VB6</span>** |
     |**Acetylcholine** | (60, 60) matrix | 4 non-zero entries, avg. weight: 13.5, sum: 54.0| **<span style="color:#6eb0ab;">DB4</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB6</span>** | **<span style="color:#3d519e;">DD4</span>**, **<span style="color:#a6c7e6;">VD6</span>** |
     |**GABA** | (60, 60) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#a6c7e6;">VD3</span>**, **<span style="color:#a6c7e6;">VD6</span>** | **<span style="color:#85542b;">VA3</span>**, **<span style="color:#85542b;">VA6</span>**, **<span style="color:#2b665e;">VB2</span>** |

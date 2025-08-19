@@ -1547,7 +1547,7 @@ KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
 
 for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
     cell_notes[cell] = (
-        "NOT A REAL C. ELEGANS NEURON. Sometimes used in computational models of worm locomotion"
+        "NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"
     )
 
 KNOWN_MODELLED_NEURONS = KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS
@@ -2516,7 +2516,11 @@ if __name__ == "__main__":
 
     from cect.Comparison import generate_comparison_page
 
-    connectomes = generate_comparison_page(quick, load_from_cache=False)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick, save_to_cache=save_to_cache, load_from_cache=(not save_to_cache)
+    )
 
     from cect.CellInfo import generate_cell_info_pages
 

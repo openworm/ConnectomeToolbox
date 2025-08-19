@@ -170,8 +170,7 @@ putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical Exc": [GENERIC_CHEM_SYN] + putative_exc_syn_class,
-    "Chemical Inh": ["GABA"],
+    "Chemical": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
@@ -196,8 +195,7 @@ ALL_SYN_CLASSES = {
 }
 
 CHEM_GJ_SYN_CLASSES = {
-    "All Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
-    + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
+    "All Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical"],
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
@@ -912,7 +910,7 @@ if __name__ == "__main__":
 
     print("There are %i known cells..." % len(ALL_PREFERRED_CELL_NAMES))
 
-    synclass = "Chemical Exc"
+    synclass = "Chemical"
     G = cv.to_networkx_graph(synclass, view)
     import pprint
     import networkx as nx

@@ -24,16 +24,10 @@ search:
     <a href="../Test_data_graph"> Raw Data</a> - <a href="../Neurons_Test_data_graph"> Neurons</a> - <a href="../Pharynx_Test_data_graph"> Pharynx</a> - <a href="../Social_Test_data_graph"> Social Network</a> - <a href="../Escape_Test_data_graph"> Escape Response Circuit</a> - <a href="../Full1_Test_data_graph"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_graph"> Locomotion 1</a> - <a href="../Loco2_Test_data_graph"> Locomotion 2</a> - <a href="../Loco3_Test_data_graph"> Locomotion 3</a> - <b><a href="../PeptidergicHubs_Test_data_graph"> Peptidergic Hubs</a></b> - <a href="../NonpharyngealH_Test_data_graph"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_graph"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_graph"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_graph"> Interneurons (somatic)</a> - 
 
     <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Exc_graph.json" }
-    ```
-
-=== "Chemical Inh"
-
-    ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_Inh_graph.json" }
+    { "file_path": "./assets/Test_PeptidergicHubs_Chemical_graph.json" }
     ```
 
 === "Electrical"
@@ -64,8 +58,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (4, 4) matrix | 6 non-zero entries, avg. weight: 16.5, sum: 99.0| **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** |
-    |**Chemical Inh** | (4, 4) matrix | 2 non-zero entries, avg. weight: 3.5, sum: 7.0| **<span style="color:Gainsboro;">Periphery</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>** |
+    |**Chemical** | (4, 4) matrix | 8 non-zero entries, avg. weight: 13.25, sum: 106.0| **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** |
     |**Electrical** | (4, 4) matrix | 4 non-zero entries, avg. weight: 3.5, sum: 14.0| **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** |
     |**Acetylcholine** | (4, 4) matrix | 6 non-zero entries, avg. weight: 16.5, sum: 99.0| **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>**, **<span style="color:Gainsboro;">Periphery</span>**, **<span style="color:plum;">Sensory core</span>** |
     |**GABA** | (4, 4) matrix | 2 non-zero entries, avg. weight: 3.5, sum: 7.0| **<span style="color:Gainsboro;">Periphery</span>** | **<span style="color:burlywood;">Hubs</span>**, **<span style="color:DarkSeaGreen;">Motor core</span>** |

@@ -24,11 +24,11 @@ search:
     <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <b><a href="../Social_Test_data"> Social Network</a></b> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
     <i>Hub and spoke circuit for social behavior as in Macosko et al. 2009</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     <br/>
     ```{.plotly .no-auto-theme}
-    { "file_path": "./assets/Test_Social_Chemical_Exc.json" }
+    { "file_path": "./assets/Test_Social_Chemical.json" }
     ```
 
 === "Electrical"
@@ -55,7 +55,7 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical Exc** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
+    |**Chemical** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     |**Electrical** | (8, 8) matrix | 1 non-zero entries, avg. weight: 1.0, sum: 1.0| **<span style="color:grey;">ASH</span>** | **<span style="color:grey;">ASK</span>** |
     |**Acetylcholine** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     

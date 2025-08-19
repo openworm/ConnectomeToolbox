@@ -345,7 +345,33 @@
         "symbol": "circle"
       },
       "mode": "markers",
-      "name": "Wang2024",
+      "name": "Wang2024Herm",
+      "type": "scatter",
+      "x": [
+        "GLRVL",
+        "GLRVR",
+        "GLRR",
+        "GLRDR",
+        "GLRL",
+        "GLRDL"
+      ],
+      "y": [
+        2,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
       "type": "scatter",
       "x": [
         "GLRVL",

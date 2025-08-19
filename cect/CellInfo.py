@@ -239,18 +239,20 @@ def generate_cell_info_pages(connectomes):
                 cc[0].upper() + cc[1:],
             )
         )
-        # print_(f"Checking if {cell} is in: {neurotransmitters}")
-        nt_info = (
-            ", ".join(neurotransmitters[cell])
-            if cell in neurotransmitters
-            and len(neurotransmitters[cell]) > 0
-            and neurotransmitters[cell][0] is not None
-            else "Not present in Wang et al. 2024"
-        )
-        cell_info += (
-            '    <p class="subtext">Neurotransmitters a/c to <a href="../Wang_2024">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
-            % nt_info
-        )
+
+        if is_any_neuron(cell):
+            # print_(f"Checking if {cell} is in: {neurotransmitters}")
+            nt_info = (
+                ", ".join(neurotransmitters[cell])
+                if cell in neurotransmitters
+                and len(neurotransmitters[cell]) > 0
+                and neurotransmitters[cell][0] is not None
+                else "Not present in Wang et al. 2024"
+            )
+            cell_info += (
+                '    <p class="subtext">Neurotransmitters a/c to <a href="../Wang_2024">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
+                % nt_info
+            )
 
         cell_info += "    %s " % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
