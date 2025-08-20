@@ -388,7 +388,7 @@ class ConnectomeDataset:
         return cv
 
     def summary(self, list_pre_cells=False):
-        info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
+        info = "Nodes present (%i): %s\n" % (len(self.nodes), sorted(self.nodes))
         for c in self.connections:
             conn_array = self.connections[c]
             nonzero = np.count_nonzero(conn_array)

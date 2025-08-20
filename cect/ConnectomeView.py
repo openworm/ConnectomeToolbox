@@ -257,6 +257,7 @@ NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
+"""
 NONPHARYNGEAL_NEURONS_HM_VIEW = View(
     "NonpharyngealHM",
     "Nonpharyngeal Neurons",
@@ -264,7 +265,7 @@ NONPHARYNGEAL_NEURONS_HM_VIEW = View(
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     only_show_existing_nodes=False,
-)
+)"""
 
 for cell in (
     sorted(PHARYNGEAL_NEURONS)
@@ -294,13 +295,10 @@ for cell in (
         NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
     if cell not in PHARYNGEAL_NEURONS:
-        if cell not in MALE_SPECIFIC_NEURONS:
+        if cell not in MALE_SPECIFIC_NEURONS + KNOWN_MODELLED_NEURONS:
             NONPHARYNGEAL_NEURONS_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
             )
-        NONPHARYNGEAL_NEURONS_HM_VIEW.node_sets.append(
-            NodeSet(cell, [cell], get_standard_color(cell))
-        )
         if cell in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
             SENSORY_NEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
@@ -835,6 +833,7 @@ QUICK_VIEWS = [
     LOCOMOTION_1_VIEW,
     LOCOMOTION_2_VIEW,
     LOCOMOTION_3_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
 ]
 
 
@@ -884,8 +883,9 @@ if __name__ == "__main__":
     print(cv.summary())
 
     print("------- Nonpharyngeal ---------")
-    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
+    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HERM_VIEW).summary())
 
+    """
     print("------- Escape ---------")
     print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
 
@@ -903,7 +903,7 @@ if __name__ == "__main__":
 
     print("------- Cook 2019 Fig 3 ---------")
     print(tdr_instance.get_connectome_view(COOK_FIG3_VIEW).summary())
-    print(COOK_FIG3_VIEW)
+    print(COOK_FIG3_VIEW)"""
 
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES
