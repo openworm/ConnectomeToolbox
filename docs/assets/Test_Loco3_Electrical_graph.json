@@ -42,6 +42,25 @@
       "hoverinfo": "none",
       "line": {
         "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.75
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        3.316667,
+        4.133333
+      ],
+      "y": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
         "shape": "spline",
         "width": 7.75
       },
@@ -108,8 +127,8 @@
         "<b>DD1</b><br>Ventral cord motor neuron",
         "<b>DD2</b><br>Ventral cord motor neuron",
         "<b>DD3</b><br>Ventral cord motor neuron",
-        "<b>DD4</b><br>Ventral cord motor neuron",
-        "<b>DD5</b><br>Ventral cord motor neuron",
+        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns out: <b>DD5</b>: 3",
+        "<b>DD5</b><br>Ventral cord motor neuron<br>Conns in: <b>DD4</b>: 3",
         "<b>DD6</b><br>Ventral cord motor neuron",
         "<b>VA1</b><br>Ventral cord motor neuron",
         "<b>VA10</b><br>Ventral cord motor neuron",

@@ -49,6 +49,52 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
+        0.3,
+        0.1,
+        0.23333333333333334,
+        0.3
+      ],
+      "y": [
+        0.24,
+        0.30666666666666664,
+        0.43999999999999995,
+        0.24
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 7.75
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.3,
+        0.1,
+        0.23333333333333334,
+        0.3
+      ],
+      "y": [
+        0.24,
+        0.30666666666666664,
+        0.43999999999999995,
+        0.24
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 7.75
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
         0.0,
         -0.19999999999999998,
         -0.06666666666666667,
@@ -91,7 +137,7 @@
         "<b>AVB</b><br>Cells: AVBL, AVBR<br>Conns in: <b>DB</b>: 4, <b>VB</b>: 3",
         "<b>DA</b><br>Cells: DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9, DA10<br>DA10",
         "<b>DB</b><br>Cells: DB1, DB2, DB3, DB4, DB5, DB6, DB7, DB8, DB9, DB10<br>DB10<br>Conns out: <b>AVB</b>: 4",
-        "<b>DD</b><br>Cells: DD1, DD2, DD3, DD4, DD5, DD6, DD7, DD8, DD9, DD10<br>DD10",
+        "<b>DD</b><br>Cells: DD1, DD2, DD3, DD4, DD5, DD6, DD7, DD8, DD9, DD10<br>DD10<br>Conns in: <b>DD</b>: 3<br>Conns out: <b>DD</b>: 3",
         "<b>VA</b><br>Cells: VA1, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9, VA10<br>VA10, VA11, VA12",
         "<b>VB</b><br>Cells: VB1, VB2, VB3, VB4, VB5, VB6, VB7, VB8, VB9, VB10<br>VB10, VB11<br>Conns in: <b>VB</b>: 3<br>Conns out: <b>AVB</b>: 3, <b>VB</b>: 3",
         "<b>VD</b><br>Cells: VD1, VD2, VD3, VD4, VD5, VD6, VD7, VD8, VD9, VD10<br>VD10, VD11, VD12, VD13"

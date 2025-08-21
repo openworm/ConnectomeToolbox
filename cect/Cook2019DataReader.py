@@ -76,7 +76,9 @@ class Cook2019DataReader(ConnectomeDataset):
         self.sex = sex
 
         wb = load_workbook(self.filename)
-        print_("Opened the Excel file: " + self.filename)
+        print_(
+            f"Opened the Excel file for Cook et al. 2019 (sex: {self.sex}): {self.filename}"
+        )
 
         self.pre_cells = {}
         self.post_cells = {}

@@ -15,28 +15,63 @@ from cect import print_
 
 from typing import List
 
+ACETYLCHOLINE = "Acetylcholine"
+GLUTAMATE = "Glutamate"
+BETAINE = "Betaine"
+
+GABA = "GABA"
+
+DOPAMINE = "Dopamine"
+SEROTONIN = "Serotonin"
+OCTOPAMINE = "Octopamine"
+TYRAMINE = "Tyramine"
+
 
 ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
-    "Acetylcholine",
+    ACETYLCHOLINE,
     "Acetylcholine_Tyramine",
-    "Dopamine",
     "FMRFamide",
-    "GABA",
-    "Glutamate",
-    "Octapamine",
-    "Serotonin",
+    GABA,
+    GLUTAMATE,
+    BETAINE,
     "Serotonin_Acetylcholine",
     "Serotonin_Glutamate",
+]
+
+SEROTONIN_UPTAKE = "Serotonin_Uptake"
+GABA_UPTAKE = "GABA_Uptake"
+UNKNOWN_ORPHAN_NEUROTRANSMITTER = "Unknown_Orphan_Neurotransmitter"
+UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER = "Unknown_Monoaminergic_Neurotransmitter"
+FIVE_HTP = "5-HTP"
+PEOH = "Possible_PEOH"
+FIVE_HTP_FIVE_HT = "5-HTP_synthesis_5-HT_uptake"
+
+
+WANG_2024_EXTRA_NT_INFO = [
+    SEROTONIN_UPTAKE,
+    GABA_UPTAKE,
+    UNKNOWN_ORPHAN_NEUROTRANSMITTER,
+    UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER,
+    FIVE_HTP,
+    PEOH,
+    FIVE_HTP_FIVE_HT,
 ]
 
 GENERIC_CHEM_SYN = "Generic_CS"
 GENERIC_ELEC_SYN = "Generic_GJ"
 
 EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
-MONOAMINERGIC_SYN_CLASS = "Monoaminergic"
+MONOAMINERGIC_SYN_GENERAL_CLASS = "Monoaminergic"
+
+MONOAMINERGIC_SYN_CLASSES = [DOPAMINE, SEROTONIN, TYRAMINE, OCTOPAMINE]
+# MONOAMINERGIC_SYN_CLASSES = ["dopamine"]
+
 PEPTIDERGIC_SYN_CLASS = "Peptidergic"
 
-ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [MONOAMINERGIC_SYN_CLASS, PEPTIDERGIC_SYN_CLASS]
+ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [
+    PEPTIDERGIC_SYN_CLASS,
+]
+ALL_KNOWN_EXTRASYNAPTIC_CLASSES += MONOAMINERGIC_SYN_CLASSES
 
 cell_notes = {}
 
@@ -1512,7 +1547,7 @@ KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
 
 for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
     cell_notes[cell] = (
-        "NOT A REAL C. ELEGANS NEURON. Sometimes used in computational models of worm locomotion"
+        "NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"
     )
 
 KNOWN_MODELLED_NEURONS = KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS
@@ -2142,6 +2177,8 @@ def get_cell_internal_link(
     text: str = None,
     use_color: bool = False,
     individual_cell_page: bool = False,
+    bold: bool = False,
+    strikethrough: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
 
@@ -2153,6 +2190,13 @@ def get_cell_internal_link(
         if use_color:
             color = get_standard_color(cell_name)
             link_text = f'<span style="color:{color};">{link_text}</span>'
+
+        if strikethrough:
+            link_text = (
+                f'<span style="text-decoration: line-through;">{link_text}</span>'
+            )
+        if bold:
+            link_text = f"<strong>{link_text}</strong>"
 
         return '<a href="%s" title="%s">%s</a>' % (
             url,
@@ -2472,11 +2516,17 @@ if __name__ == "__main__":
 
     from cect.Comparison import generate_comparison_page
 
-    connectomes = generate_comparison_page(quick)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick, save_to_cache=save_to_cache, load_from_cache=(not save_to_cache)
+    )
 
     from cect.CellInfo import generate_cell_info_pages
 
-    generate_cell_info_pages(connectomes)
+    if quick < 3:
+        print_("Generating cell info pages...")
+        generate_cell_info_pages(connectomes)
 
     filename = "docs/Cells.md"
 

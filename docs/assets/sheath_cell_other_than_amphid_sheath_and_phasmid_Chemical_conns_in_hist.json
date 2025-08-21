@@ -307,6 +307,50 @@
         11,
         10
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Herm",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDL",
+        "CEPshDR"
+      ],
+      "y": [
+        6,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDL",
+        "CEPshDR"
+      ],
+      "y": [
+        8,
+        3,
+        4,
+        1
+      ]
     }
   ],
   "layout": {

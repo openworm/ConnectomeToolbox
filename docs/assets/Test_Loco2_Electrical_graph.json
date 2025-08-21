@@ -11,6 +11,52 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
+        0.3,
+        0.1,
+        0.23333333333333334,
+        0.3
+      ],
+      "y": [
+        0.24,
+        0.30666666666666664,
+        0.43999999999999995,
+        0.24
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 1
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.3,
+        0.1,
+        0.23333333333333334,
+        0.3
+      ],
+      "y": [
+        0.24,
+        0.30666666666666664,
+        0.43999999999999995,
+        0.24
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 1
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
         0.0,
         -0.19999999999999998,
         -0.06666666666666667,
@@ -52,7 +98,7 @@
         "<b>AS</b><br>Cells: AS1, AS2, AS3, AS4, AS5, AS6, AS7, AS8, AS9, AS10<br>AS10, AS11",
         "<b>DA</b><br>Cells: DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9, DA10<br>DA10",
         "<b>DB</b><br>Cells: DB1, DB2, DB3, DB4, DB5, DB6, DB7, DB8, DB9, DB10<br>DB10",
-        "<b>DD</b><br>Cells: DD1, DD2, DD3, DD4, DD5, DD6, DD7, DD8, DD9, DD10<br>DD10",
+        "<b>DD</b><br>Cells: DD1, DD2, DD3, DD4, DD5, DD6, DD7, DD8, DD9, DD10<br>DD10<br>Conns in: <b>DD</b>: 3<br>Conns out: <b>DD</b>: 3",
         "<b>MD</b><br>Cells: MDL08, MDL09, MDL10, MDL11, MDL12, MDL13, MDL14, MDL15, MDL16, MDL17<br>MDL17, MDL18, MDL19, MDL20, MDL21, MDL22, MDL23, MDL24, MDR08, MDR09, MDR10<br>MDR10, MDR11, MDR12, MDR13, MDR14, MDR15, MDR16, MDR17, MDR18, MDR19, MDR20<br>MDR20, MDR21, MDR22, MDR23, MDR24",
         "<b>MV</b><br>Cells: MVL08, MVL09, MVL10, MVL11, MVL12, MVL13, MVL14, MVL15, MVL16, MVL17<br>MVL17, MVL18, MVL19, MVL20, MVL21, MVL22, MVL23, MVR08, MVR09, MVR10, MVR11<br>MVR11, MVR12, MVR13, MVR14, MVR15, MVR16, MVR17, MVR18, MVR19, MVR20, MVR21<br>MVR21, MVR22, MVR23, MVR24",
         "<b>VA</b><br>Cells: VA1, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9, VA10<br>VA10, VA11, VA12",

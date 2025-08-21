@@ -179,6 +179,78 @@
         0,
         1
       ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Herm",
+      "type": "scatter",
+      "x": [
+        "pm4D",
+        "pm4VL",
+        "pm4VR",
+        "pm6VL",
+        "pm6VR",
+        "pm6D",
+        "pm2VL",
+        "pm2D",
+        "pm8",
+        "pm4_UNSPECIFIED",
+        "pm2VR"
+      ],
+      "y": [
+        12,
+        7,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "pm4D",
+        "pm4VL",
+        "pm4VR",
+        "pm6VL",
+        "pm6VR",
+        "pm6D",
+        "pm2VL",
+        "pm2D",
+        "pm8",
+        "pm4_UNSPECIFIED",
+        "pm2VR"
+      ],
+      "y": [
+        12,
+        7,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
     }
   ],
   "layout": {

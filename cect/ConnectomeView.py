@@ -33,10 +33,12 @@ from cect.Cells import KNOWN_MODELLED_NEURONS
 
 from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+from cect.Cells import MONOAMINERGIC_SYN_CLASSES
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
 from cect.Cells import get_standard_color
+from cect.Cells import get_cell_internal_link
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
 from cect.RipollSanchezDataReader import load_hub_info
@@ -70,6 +72,13 @@ class NodeSet:
 
         return info
 
+    def to_markdown(self):
+        return (
+            f'<span style="color:{self.color};">{self.name}</span>'
+            if self.color
+            else self.name
+        )
+
 
 class View:
     """A view of a ``ConnectomeDataset`` specifying subsets of cells (or lists of cells) as ``NodeSet``s, e.g. can be used to just show the connections between the pharyngeal neurons in a whole connectome dataset, or to group the sensory neurons, interneuron, etc. together."""
@@ -101,6 +110,34 @@ class View:
             info += "\n  %s" % self.description
         for n in self.node_sets:
             info += "\n    %s" % n
+        for s in self.synclass_sets:
+            info += "\n    Synclass set: %s (%s)" % (s, self.synclass_sets[s])
+        return info
+
+    def to_markdown(self):
+        info = "**%s** (%s)\n" % (
+            self.name,
+            self.id,
+        )
+        if self.description is not None:
+            info += "_%s_\n\n" % self.description
+
+        total_cells = sum([len(n.cells) for n in self.node_sets])
+        info += f"| Nodes ({len(self.node_sets)} total)| Num cells in node | Cells ({total_cells} total)|\n| --- | --- | --- |\n"
+
+        for n in self.node_sets:
+            node_colored = f'<span style="color:{n.color};">{n.name}</span>'
+            cells_linked = [
+                get_cell_internal_link(
+                    c, individual_cell_page=True, html=True, use_color=True
+                )
+                for c in n.cells
+            ]
+            info += "|**%s** |%i | %s|\n" % (
+                node_colored,
+                len(n.cells),
+                ", ".join(cells_linked),
+            )
         return info
 
     def has_color(self):
@@ -133,11 +170,15 @@ putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical Exc": [GENERIC_CHEM_SYN] + putative_exc_syn_class,
-    "Chemical Inh": ["GABA"],
+    "Chemical": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
+for n in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
+    EXC_INH_GJ_SYN_CLASSES[n] = [n]
+
+for m in MONOAMINERGIC_SYN_CLASSES:
+    EXC_INH_GJ_SYN_CLASSES[m] = [m]
 
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
@@ -154,8 +195,7 @@ ALL_SYN_CLASSES = {
 }
 
 CHEM_GJ_SYN_CLASSES = {
-    "Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical Exc"]
-    + EXC_INH_GJ_SYN_CLASSES["Chemical Inh"],
+    "All Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical"],
     "Electrical": [GENERIC_ELEC_SYN],
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
@@ -170,7 +210,7 @@ RAW_VIEW = View(
     "Raw Data",
     "All of the cells present in the original connectome dataset",
     [],
-    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     only_show_existing_nodes=True,
 )
 
@@ -217,6 +257,7 @@ NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
+"""
 NONPHARYNGEAL_NEURONS_HM_VIEW = View(
     "NonpharyngealHM",
     "Nonpharyngeal Neurons",
@@ -224,7 +265,7 @@ NONPHARYNGEAL_NEURONS_HM_VIEW = View(
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     only_show_existing_nodes=False,
-)
+)"""
 
 for cell in (
     sorted(PHARYNGEAL_NEURONS)
@@ -254,13 +295,10 @@ for cell in (
         NEURONS_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
 
     if cell not in PHARYNGEAL_NEURONS:
-        if cell not in MALE_SPECIFIC_NEURONS:
+        if cell not in MALE_SPECIFIC_NEURONS + KNOWN_MODELLED_NEURONS:
             NONPHARYNGEAL_NEURONS_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
             )
-        NONPHARYNGEAL_NEURONS_HM_VIEW.node_sets.append(
-            NodeSet(cell, [cell], get_standard_color(cell))
-        )
         if cell in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
             SENSORY_NEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
@@ -419,7 +457,7 @@ mn_colors = {
 LOCOMOTION_1_VIEW = View(
     "Loco1",
     "Locomotion 1",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -427,7 +465,7 @@ LOCOMOTION_1_VIEW = View(
 LOCOMOTION_2_VIEW = View(
     "Loco2",
     "Locomotion 2",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -515,7 +553,7 @@ for cell_set in sorted(loco1_2_positions.keys()):
 LOCOMOTION_3_VIEW = View(
     "Loco3",
     "Locomotion 3",
-    "Subset of cells involved in locomotion (work in progress!)",
+    "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
@@ -676,7 +714,7 @@ COOK_FIG3_VIEW = View(
     "Cook 2019 Fig 3",
     "A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019",
     [],
-    CHEM_GJ_FUNC_CONT_SYN_CLASSES,
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
 )
 
 sn_pos = {
@@ -787,6 +825,17 @@ ALL_VIEWS = [
     INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
+QUICK_VIEWS = [
+    RAW_VIEW,
+    NEURONS_VIEW,
+    ESCAPE_VIEW,
+    COOK_FIG3_VIEW,
+    LOCOMOTION_1_VIEW,
+    LOCOMOTION_2_VIEW,
+    LOCOMOTION_3_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
+]
+
 
 if __name__ == "__main__":
     ns_v = NodeSet("Vmn", ["VA6", "VB6", "VB3", "VD6", "VA3", "VD3", "VB2"])
@@ -806,9 +855,9 @@ if __name__ == "__main__":
         EXC_INH_GJ_SYN_CLASSES,
     )
 
-    # from cect.TestDataReader import get_instance
+    from cect.TestDataReader import get_instance
     # from cect.Cook2019HermReader import get_instance
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
 
     tdr_instance = get_instance()
 
@@ -834,8 +883,9 @@ if __name__ == "__main__":
     print(cv.summary())
 
     print("------- Nonpharyngeal ---------")
-    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HM_VIEW).summary())
+    print(tdr_instance.get_connectome_view(NONPHARYNGEAL_NEURONS_HERM_VIEW).summary())
 
+    """
     print("------- Escape ---------")
     print(tdr_instance.get_connectome_view(ESCAPE_VIEW).summary())
 
@@ -847,12 +897,20 @@ if __name__ == "__main__":
     print(tdr_instance.get_connectome_view(LOCOMOTION_2_VIEW).summary())
     print(LOCOMOTION_2_VIEW)
 
+    print("------- Raw ---------")
+    print(tdr_instance.get_connectome_view(RAW_VIEW).summary())
+    print(LOCOMOTION_2_VIEW)
+
+    print("------- Cook 2019 Fig 3 ---------")
+    print(tdr_instance.get_connectome_view(COOK_FIG3_VIEW).summary())
+    print(COOK_FIG3_VIEW)"""
+
     """
     from cect.Cells import ALL_PREFERRED_CELL_NAMES
 
     print("There are %i known cells..." % len(ALL_PREFERRED_CELL_NAMES))
 
-    synclass = "Chemical Exc"
+    synclass = "Chemical"
     G = cv.to_networkx_graph(synclass, view)
     import pprint
     import networkx as nx
