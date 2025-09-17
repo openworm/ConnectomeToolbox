@@ -37,6 +37,7 @@ reader_colors = {
     "RipollSanchezMidRange": "goldenrod",
     "RipollSanchezLongRange": "orange",
     "Yim2024": "#0d7ba4",
+    "Yim2024NonNorm": "#0d7ba4",
     "Wang2024Herm": "firebrick",
     "Wang2024Male": "#e88989",
     "OpenWormUnified": "yellowgreen",
@@ -72,6 +73,7 @@ reader_pages = {
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Yim2024": "Yim2024_data",
+    "Yim2024NonNorm": "Yim2024NonNorm_data",
     "Wang2024Herm": "Wang2024Herm_data",
     "Wang2024Male": "Wang2024Male_data",
     "OpenWormUnified": "OpenWormUnified_data",
@@ -220,11 +222,19 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
-        readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
-        readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        # readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
+        # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Test"] = ["cect.TestDataReader", None]
+
+        # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+
+        # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
     else:
         readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
@@ -282,6 +292,7 @@ def generate_comparison_page(
             ]
 
         readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
         readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
         readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
