@@ -14,6 +14,10 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.Cells import is_one_of_bilateral_pair
 from cect.Cells import get_contralateral_cell
+
+from cect.Cells import CONTACTOME_SYN_TYPE
+from cect.Cells import CONTACTOME_SYN_CLASS
+
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
@@ -67,9 +71,9 @@ class BrittinDataReader(ConnectomeDataset):
                     pre = row[0].value
                     post = row[1].value
                     num = float(row[2].value)
-                    syntype = "Contact"
+                    syntype = CONTACTOME_SYN_TYPE
                     synclass = "%s%s" % (self.reference_graph, row[3].value)
-                    synclass = "Contact"
+                    synclass = CONTACTOME_SYN_CLASS
 
                     ci = ConnectionInfo(pre, post, num, syntype, synclass)
                     conns.append(ci)

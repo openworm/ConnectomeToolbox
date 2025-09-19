@@ -19,6 +19,10 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
+from cect.Cells import CONTACTOME_SYN_TYPE
+from cect.Cells import CONTACTOME_SYN_CLASS
+
+# ruff: noqa: F401
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
@@ -31,25 +35,17 @@ from cect import print_
 
 DAUER_NON_NORM = "Dauer"
 DAUER_NORM = "Dauer_normalized"
-# DAUER_NORM = "L3_normalized"
 
 
-pre_range = {
-    DAUER_NORM: range(3, 225),
-}
-post_range = {
-    DAUER_NORM: range(3, 225),
-}
+pre_range = range(3, 225)
+post_range = range(3, 225)
 
 
-def get_synclass(cell, syntype):
-    if syntype == "GapJunction":
-        return GENERIC_ELEC_SYN
-    else:
-        '''# dirty hack
-        if cell.startswith("DD") or cell.startswith("VD"):
-            return "GABA"'''
+def get_synclass(cell, normalized):
+    if normalized:
         return GENERIC_CHEM_SYN
+    else:
+        return CONTACTOME_SYN_CLASS
 
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
@@ -57,7 +53,7 @@ filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yim et al. 2024 on Dauer connectome"""
+    """Data extracted from %s Yim et al. 2024 on Dauer connectome (Normalized)"""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
@@ -69,24 +65,26 @@ class Yim2024DataReader(ConnectomeDataset):
 
     verbose = False
 
-    def __init__(self):
+    def __init__(self, normalized=True):
         ConnectomeDataset.__init__(self)
 
+        conn_type = DAUER_NORM if normalized else DAUER_NON_NORM
+
+        print_(f"Opening sheet {conn_type} in the Excel file: {filename}")
+
         wb = load_workbook(filename)
-        print_("Opened the Excel file: " + filename)
 
         self.pre_cells = {}
         self.post_cells = {}
         self.conn_nums = {}
+        self.normalized = normalized
 
-        sheet = wb.get_sheet_by_name(DAUER_NORM)
-        print_("Looking at sheet: %s" % DAUER_NORM)
+        sheet = wb.get_sheet_by_name(conn_type)
 
-        conn_type = DAUER_NORM
         self.pre_cells[conn_type] = []
         self.post_cells[conn_type] = []
 
-        for i in pre_range[conn_type]:
+        for i in pre_range:
             self.pre_cells[conn_type].append(sheet["A%i" % i].value)
 
         if self.verbose:
@@ -99,7 +97,7 @@ class Yim2024DataReader(ConnectomeDataset):
                 )
             )
 
-        for i in post_range[conn_type]:
+        for i in post_range:
             self.post_cells[conn_type].append(sheet.cell(row=1, column=i).value)
 
         if self.verbose:
@@ -159,7 +157,7 @@ class Yim2024DataReader(ConnectomeDataset):
         other_cells = set([])
         conns = []
 
-        conn_type = DAUER_NORM
+        conn_type = DAUER_NORM if self.normalized else DAUER_NON_NORM
 
         for pre_index in range(len(self.pre_cells[conn_type])):
             for post_index in range(len(self.post_cells[conn_type])):
@@ -177,8 +175,8 @@ class Yim2024DataReader(ConnectomeDataset):
                     post = convert_to_preferred_muscle_name(post)
 
                 if num > 0:
-                    syntype = "Send"
-                    synclass = get_synclass(pre, syntype)
+                    syntype = CONTACTOME_SYN_TYPE
+                    synclass = get_synclass(pre, self.normalized)
 
                     ci = ConnectionInfo(pre, post, num, syntype, synclass)
                     if self.verbose:
@@ -212,21 +210,38 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return Yim2024DataReader()
+        return Yim2024DataReader(normalized=True)
 
 
 def main():
-    tdr_instance = Yim2024DataReader()
+    tdr_instance = get_instance(from_cache=False)
 
-    cells, neuron_conns = tdr_instance.read_data()
-
-    neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
-
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     print(tdr_instance.summary())
+
+    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import PHARYNX_VIEW as view
+    # from cect.ConnectomeView import NEURONS_VIEW as view
+
+    print("=======================")
+    cds2 = tdr_instance.get_connectome_view(view)
+    print(cds2.summary(list_pre_cells=False))
+
+    print("Plotting view: %s" % view)
+    fig, _ = cds2.to_plotly_matrix_fig(
+        "Chemical",
+        view,
+    )
+    import plotly.io as pio
+
+    pio.renderers.default = "browser"
+    import sys
+
+    if "-nogui" not in sys.argv:
+        fig.show()
 
 
 if __name__ == "__main__":

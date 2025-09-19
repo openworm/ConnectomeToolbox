@@ -37,6 +37,9 @@ from cect.Cells import MONOAMINERGIC_SYN_CLASSES
 from cect.Cells import GENERIC_CHEM_SYN
 from cect.Cells import GENERIC_ELEC_SYN
 
+from cect.Cells import CONTACTOME_SYN_TYPE
+from cect.Cells import CONTACTOME_SYN_CLASS
+
 from cect.Cells import get_standard_color
 from cect.Cells import get_cell_internal_link
 
@@ -182,7 +185,7 @@ for m in MONOAMINERGIC_SYN_CLASSES:
 
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
-EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Contact"] = ["Contact"]
+EXC_INH_GJ_FUNC_CONT_SYN_CLASSES[CONTACTOME_SYN_TYPE] = [CONTACTOME_SYN_CLASS]
 
 ALL_SYN_CLASSES = {
     "All synapses": [GENERIC_CHEM_SYN]
@@ -191,7 +194,7 @@ ALL_SYN_CLASSES = {
     + [GENERIC_ELEC_SYN]
     + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
     + ["Functional"]
-    + ["Contact"]
+    + [CONTACTOME_SYN_CLASS]
 }
 
 CHEM_GJ_SYN_CLASSES = {
@@ -202,7 +205,7 @@ CHEM_GJ_SYN_CLASSES = {
 
 CHEM_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
 CHEM_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
-CHEM_GJ_FUNC_CONT_SYN_CLASSES["Contact"] = ["Contact"]
+CHEM_GJ_FUNC_CONT_SYN_CLASSES[CONTACTOME_SYN_TYPE] = [CONTACTOME_SYN_CLASS]
 
 
 RAW_VIEW = View(
@@ -830,10 +833,9 @@ QUICK_VIEWS = [
     NEURONS_VIEW,
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
-    LOCOMOTION_1_VIEW,
     LOCOMOTION_2_VIEW,
-    LOCOMOTION_3_VIEW,
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
+    MOTORNEURONS_SOMATIC_HERM_VIEW,
 ]
 
 
