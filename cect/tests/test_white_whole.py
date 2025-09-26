@@ -1,3 +1,4 @@
+import unittest
 from pathlib import Path
 
 from cect.ConnectomeDataset import (
@@ -5,8 +6,6 @@ from cect.ConnectomeDataset import (
     get_cache_filename,
 )
 from cect.White_whole import get_cache, get_instance
-
-import unittest
 
 
 class TestWhiteWhole(unittest.TestCase):

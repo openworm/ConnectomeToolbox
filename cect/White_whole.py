@@ -2,15 +2,16 @@
 # Should be tidied up.
 
 
-from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeDataset import get_dataset_source_on_github
-from cect.WhiteDataReader import WhiteDataReader
+import os
+
 from cect.ConnectomeDataset import (
     LOAD_READERS_FROM_CACHE_BY_DEFAULT,
     get_cache_filename,
+    get_dataset_source_on_github,
     load_connectome_dataset_file,
 )
-import os
+from cect.ConnectomeReader import analyse_connections
+from cect.WhiteDataReader import WhiteDataReader
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
