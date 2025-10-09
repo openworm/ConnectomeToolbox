@@ -849,7 +849,7 @@ class ConnectomeDataset:
                     "thickness": 15,
                     "title": "Node Connections",
                     "xanchor": "left",
-                    "title.side": "right"
+                    "title.side": "right",
                 },
                 line_width=1,
             ),
