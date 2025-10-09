@@ -3,7 +3,8 @@ import logging
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.Cells import EXTRASYNAPTIC_SYN_TYPE
-from cect.Cells import MONOAMINERGIC_SYN_CLASS
+from cect.Cells import MONOAMINERGIC_SYN_GENERAL_CLASS
+from cect.Cells import MONOAMINERGIC_SYN_CLASSES
 from cect.Cells import PEPTIDERGIC_SYN_CLASS
 
 from cect import print_
@@ -25,14 +26,12 @@ READER_DESCRIPTION = """Data on extrasynaptic connectivity from the <b><a href="
 
 
 class WormNeuroAtlasExtSynReader(ConnectomeDataset):
-    def __init__(self, synclass):
+    def __init__(self, mono_or_pep):
         ConnectomeDataset.__init__(self)
 
-        self.synclass = synclass
+        self.mono_or_pep = mono_or_pep
 
-        print_(
-            "Initialising WormNeuroAtlasExtSynReader for syn class %s" % self.synclass
-        )
+        print_("Initialising WormNeuroAtlasExtSynReader for %s" % self.mono_or_pep)
 
         import wormneuroatlas as wa
 
@@ -48,40 +47,83 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
     def read_data(self):
         conns = []
 
-        if self.synclass == MONOAMINERGIC_SYN_CLASS:
-            connectome = self.atlas.get_monoaminergic_connectome()
-            syntype = EXTRASYNAPTIC_SYN_TYPE
-
-        if self.synclass == PEPTIDERGIC_SYN_CLASS:
+        if self.mono_or_pep == PEPTIDERGIC_SYN_CLASS:
             connectome = self.atlas.get_peptidergic_connectome()
-            syntype = EXTRASYNAPTIC_SYN_TYPE
 
-        connected_cells = []
+            connected_cells = []
 
-        for pre in self.all_cells:
-            apre = self.atlas.ids_to_ai([pre])
-            for post in self.all_cells:
-                apost = self.atlas.ids_to_ai([post])
+            for pre in self.all_cells:
+                apre = self.atlas.ids_to_ai([pre])
+                for post in self.all_cells:
+                    apost = self.atlas.ids_to_ai([post])
 
-                connection = False
+                    connection = False
 
-                weight = connectome[apost, apre][0]
+                    weight = connectome[apost, apre][0]
 
-                if weight != 0:
-                    # print_( "%s conn (%s (%i) -> %s (%i):\t%s " % (self.synclass, pre, apre, post, apost, weight)       )
+                    if weight != 0:
+                        # print_( "%s conn (%s (%i) -> %s (%i):\t%s " % (self.synclass, pre, apre, post, apost, weight)       )
 
-                    conns.append(
-                        ConnectionInfo(
-                            str(pre), str(post), float(weight), syntype, self.synclass
+                        conns.append(
+                            ConnectionInfo(
+                                str(pre),
+                                str(post),
+                                float(weight),
+                                syntype=EXTRASYNAPTIC_SYN_TYPE,
+                                synclass=PEPTIDERGIC_SYN_CLASS,
+                            )
                         )
-                    )
-                    connection = True
+                        connection = True
 
-                if connection:
-                    if pre not in connected_cells:
-                        connected_cells.append(str(pre))
-                    if post not in connected_cells:
-                        connected_cells.append(str(post))
+                    if connection:
+                        if pre not in connected_cells:
+                            connected_cells.append(str(pre))
+                        if post not in connected_cells:
+                            connected_cells.append(str(post))
+
+        if self.mono_or_pep == MONOAMINERGIC_SYN_GENERAL_CLASS:
+            for synclass in MONOAMINERGIC_SYN_CLASSES:
+                transmitters = [synclass.lower()]
+                print_("Loading Bentley connectome for %s...." % (synclass))
+
+                connectome = self.atlas._get_esconnectome_bentley(
+                    fname=self.atlas.module_folder
+                    + "esconnectome_monoamines_Bentley_2016.csv",
+                    transmitters=transmitters,
+                )
+
+                # print_("Loaded %s" % (connectome))
+
+                connected_cells = []
+
+                for pre in self.all_cells:
+                    apre = self.atlas.ids_to_ai([pre])
+                    for post in self.all_cells:
+                        apost = self.atlas.ids_to_ai([post])
+
+                        connection = False
+
+                        weight = connectome[apost, apre][0]
+
+                        if weight != 0:
+                            # print_( "%s conn (%s (%i) -> %s (%i):\t%s " % (self.synclass, pre, apre, post, apost, weight)       )
+
+                            conns.append(
+                                ConnectionInfo(
+                                    str(pre),
+                                    str(post),
+                                    float(weight),
+                                    syntype=EXTRASYNAPTIC_SYN_TYPE,
+                                    synclass=synclass,
+                                )
+                            )
+                            connection = True
+
+                        if connection:
+                            if pre not in connected_cells:
+                                connected_cells.append(str(pre))
+                            if post not in connected_cells:
+                                connected_cells.append(str(post))
 
         return connected_cells, conns
 
@@ -93,7 +135,7 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
 
 
 if __name__ == "__main__":
-    syn_class_to_test = PEPTIDERGIC_SYN_CLASS
+    syn_class_to_test = MONOAMINERGIC_SYN_GENERAL_CLASS
 
     my_instance = WormNeuroAtlasExtSynReader(syn_class_to_test)
     cells, neuron_conns = my_instance.read_data()
@@ -128,3 +170,5 @@ if __name__ == "__main__":
 
     if "-nogui" not in sys.argv:
         my_instance.connection_number_plot(syn_class_to_test)
+
+    print(my_instance.summary())

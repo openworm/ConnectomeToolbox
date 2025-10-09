@@ -1,51 +1,52 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "dglL1",
-        "dglL2",
-        "dglL3",
-        "dglL4",
-        "dglL5",
-        "dglL6",
-        "dglL7",
-        "dglR1",
-        "dglR2",
-        "dglR3",
-        "dglR4",
-        "dglR5",
-        "dglR6",
         "dglR7",
-        "dglR8"
+        "dglR6",
+        "dglR4",
+        "dglL6",
+        "dglL4",
+        "dglR2",
+        "dglR8",
+        "dglR5",
+        "dglR3",
+        "dglR1",
+        "dglL5",
+        "dglL3",
+        "dglL2",
+        "dglL1",
+        "dglL7"
       ],
       "y": [
-        1,
-        1,
-        1,
         3,
-        1,
         3,
-        0,
-        1,
+        3,
+        3,
+        3,
         2,
         1,
-        3,
         1,
-        3,
-        3,
-        1
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -862,6 +863,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

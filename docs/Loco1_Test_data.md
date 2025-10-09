@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Loco1_White_A_data">White_A</a> <a href="../Loco1_White_L4_data">White_L4</a> <a href="../Loco1_White_whole_data">White_whole</a> <a href="../Loco1_Varshney_data">Varshney</a> <a href="../Loco1_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Loco1_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Loco1_Cook2019Herm_data">Cook2019Herm</a> <a href="../Loco1_Cook2019Male_data">Cook2019Male</a> <a href="../Loco1_Cook2020_data">Cook2020</a> <a href="../Loco1_Brittin2021_data">Brittin2021</a> <a href="../Loco1_Witvliet1_data">Witvliet1</a> <a href="../Loco1_Witvliet2_data">Witvliet2</a> <a href="../Loco1_Witvliet3_data">Witvliet3</a> <a href="../Loco1_Witvliet4_data">Witvliet4</a> <a href="../Loco1_Witvliet5_data">Witvliet5</a> <a href="../Loco1_Witvliet6_data">Witvliet6</a> <a href="../Loco1_Witvliet7_data">Witvliet7</a> <a href="../Loco1_Witvliet8_data">Witvliet8</a> <a href="../Loco1_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Loco1_Randi2023_data">Randi2023</a> <a href="../Loco1_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../Loco1_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../Loco1_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <a href="../Loco1_Yim2024_data">Yim2024</a> <b><a href="../Loco1_Test_data">Test</a></b> <a href="../Loco1_SSData_data">SSData</a> <a href="../Loco1_UpdSSData_data">UpdSSData</a> <a href="../Loco1_UpdSSData2_data">UpdSSData2</a> 
+    <a href="../Loco1_White_A_data">White_A</a> <a href="../Loco1_White_L4_data">White_L4</a> <a href="../Loco1_White_whole_data">White_whole</a> <a href="../Loco1_Varshney_data">Varshney</a> <a href="../Loco1_Bentley2016_MA_data">Bentley2016_MA</a> <a href="../Loco1_Bentley2016_PEP_data">Bentley2016_PEP</a> <a href="../Loco1_Cook2019Herm_data">Cook2019Herm</a> <a href="../Loco1_Cook2019Male_data">Cook2019Male</a> <a href="../Loco1_Cook2020_data">Cook2020</a> <a href="../Loco1_Brittin2021_data">Brittin2021</a> <a href="../Loco1_Witvliet1_data">Witvliet1</a> <a href="../Loco1_Witvliet2_data">Witvliet2</a> <a href="../Loco1_Witvliet3_data">Witvliet3</a> <a href="../Loco1_Witvliet4_data">Witvliet4</a> <a href="../Loco1_Witvliet5_data">Witvliet5</a> <a href="../Loco1_Witvliet6_data">Witvliet6</a> <a href="../Loco1_Witvliet7_data">Witvliet7</a> <a href="../Loco1_Witvliet8_data">Witvliet8</a> <a href="../Loco1_WormNeuroAtlas_data">WormNeuroAtlas</a> <a href="../Loco1_Randi2023_data">Randi2023</a> <a href="../Loco1_RipollSanchezShortRange_data">RipollSanchezShortRange</a> <a href="../Loco1_RipollSanchezMidRange_data">RipollSanchezMidRange</a> <a href="../Loco1_RipollSanchezLongRange_data">RipollSanchezLongRange</a> <a href="../Loco1_Yim2024_data">Yim2024</a> <a href="../Loco1_Yim2024NonNorm_data">Yim2024NonNorm</a> <a href="../Loco1_Wang2024Herm_data">Wang2024Herm</a> <a href="../Loco1_Wang2024Male_data">Wang2024Male</a> <a href="../Loco1_OpenWormUnified_data">OpenWormUnified</a> <b><a href="../Loco1_Test_data">Test</a></b> <a href="../Loco1_SSData_data">SSData</a> <a href="../Loco1_UpdSSData_data">UpdSSData</a> <a href="../Loco1_UpdSSData2_data">UpdSSData2</a> <a href="../Loco1_GleesonModel_data">GleesonModel</a> <a href="../Loco1_OlivaresModel_data">OlivaresModel</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -21,32 +21,67 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <b><a href="../Loco1_Test_data"> Locomotion 1</a></b> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
+    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <b><a href="../Loco1_Test_data"> Locomotion 1</a></b> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
-    <i>Subset of cells involved in locomotion (work in progress!)</i>
-=== "Chemical Exc"
-
-    <br/>
-    ```plotly
-    { "file_path": "./assets/Test_Loco1_Chemical_Exc.json" }
-    ```
-
-=== "Chemical Inh"
+    <i>Subset of cells involved in locomotion</i>
+=== "Chemical"
 
     <br/>
-    ```plotly
-    { "file_path": "./assets/Test_Loco1_Chemical_Inh.json" }
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Loco1_Chemical.json" }
     ```
 
 === "Electrical"
 
     <br/>
-    ```plotly
+    ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Loco1_Electrical.json" }
     ```
 
+=== "Acetylcholine"
 
-### Neurons (herm) (20)
+    <br/>
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Loco1_Acetylcholine.json" }
+    ```
+
+=== "GABA"
+
+    <br/>
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Loco1_GABA.json" }
+    ```
+
+=== "View info"
+
+    **Locomotion 1** (Loco1)
+    
+    _Subset of cells involved in locomotion_
+    
+    
+    
+    | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
+    | --- | --- | --- | --- | --- |
+    |**Chemical** | (8, 8) matrix | 6 non-zero entries, avg. weight: 10.166666666666666, sum: 61.0| **<span style="color:#6eb0ab;">DB</span>**, **<span style="color:#85542b;">VA</span>**, **<span style="color:#2b665e;">VB</span>**, **<span style="color:#a6c7e6;">VD</span>** | **<span style="color:#3d519e;">DD</span>**, **<span style="color:#85542b;">VA</span>**, **<span style="color:#2b665e;">VB</span>**, **<span style="color:#a6c7e6;">VD</span>** |
+    |**Electrical** | (8, 8) matrix | 4 non-zero entries, avg. weight: 3.25, sum: 13.0| **<span style="color:#6eb0ab;">DB</span>**, **<span style="color:#3d519e;">DD</span>**, **<span style="color:#2b665e;">VB</span>** | **<span style="color:green;">AVB</span>**, **<span style="color:#3d519e;">DD</span>**, **<span style="color:#2b665e;">VB</span>** |
+    |**Acetylcholine** | (8, 8) matrix | 4 non-zero entries, avg. weight: 13.5, sum: 54.0| **<span style="color:#6eb0ab;">DB</span>**, **<span style="color:#85542b;">VA</span>**, **<span style="color:#2b665e;">VB</span>** | **<span style="color:#3d519e;">DD</span>**, **<span style="color:#a6c7e6;">VD</span>** |
+    |**GABA** | (8, 8) matrix | 2 non-zero entries, avg. weight: 3.5, sum: 7.0| **<span style="color:#a6c7e6;">VD</span>** | **<span style="color:#85542b;">VA</span>**, **<span style="color:#2b665e;">VB</span>** |
+    
+    
+    | Nodes in current view<br/>(8 total)| Num cells in node<br/>(70 total) | Num in this dataset<br/>(11 total) | Cells |
+    | --- | --- | --- | --- |
+    |**<span style="color:blue;">AVA</span>** |2 | 0 | <a href="../AVAL" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAL</span></span></a>, <a href="../AVAR" title="Layer 1 interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAR</span></span></a>|
+    |**<span style="color:green;">AVB</span>** |2 | 2 | <a href="../AVBL" title="Layer 1 interneuron"><strong><span style="color:#ff3300;">AVBL</span></strong></a>, <a href="../AVBR" title="Layer 1 interneuron"><strong><span style="color:#ff3300;">AVBR</span></strong></a>|
+    |**<span style="color:#d1b36e;">DA</span>** |10 | 0 | <a href="../DA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA1</span></span></a>, <a href="../DA10" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA10</span></span></a>, <a href="../DA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA2</span></span></a>, <a href="../DA3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA3</span></span></a>, <a href="../DA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA4</span></span></a>, <a href="../DA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA5</span></span></a>, <a href="../DA6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA6</span></span></a>, <a href="../DA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA7</span></span></a>, <a href="../DA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA8</span></span></a>, <a href="../DA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DA9</span></span></a>|
+    |**<span style="color:#6eb0ab;">DB</span>** |10 | 1 | <a href="../DB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB1</span></span></a>, <a href="../DB10" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB10</span></span></a>, <a href="../DB2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB2</span></span></a>, <a href="../DB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB3</span></span></a>, <a href="../DB4" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DB4</span></strong></a>, <a href="../DB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB5</span></span></a>, <a href="../DB6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB6</span></span></a>, <a href="../DB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB7</span></span></a>, <a href="../DB8" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB8</span></span></a>, <a href="../DB9" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DB9</span></span></a>|
+    |**<span style="color:#3d519e;">DD</span>** |10 | 2 | <a href="../DD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD1</span></span></a>, <a href="../DD10" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD10</span></span></a>, <a href="../DD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD2</span></span></a>, <a href="../DD3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD3</span></span></a>, <a href="../DD4" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DD4</span></strong></a>, <a href="../DD5" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">DD5</span></strong></a>, <a href="../DD6" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD6</span></span></a>, <a href="../DD7" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD7</span></span></a>, <a href="../DD8" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD8</span></span></a>, <a href="../DD9" title="NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"><span style="text-decoration: line-through;"><span style="color:#9966cc;">DD9</span></span></a>|
+    |**<span style="color:#85542b;">VA</span>** |12 | 2 | <a href="../VA1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA1</span></span></a>, <a href="../VA10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA10</span></span></a>, <a href="../VA11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA11</span></span></a>, <a href="../VA12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA12</span></span></a>, <a href="../VA2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA2</span></span></a>, <a href="../VA3" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VA3</span></strong></a>, <a href="../VA4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA4</span></span></a>, <a href="../VA5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA5</span></span></a>, <a href="../VA6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VA6</span></strong></a>, <a href="../VA7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA7</span></span></a>, <a href="../VA8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA8</span></span></a>, <a href="../VA9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VA9</span></span></a>|
+    |**<span style="color:#2b665e;">VB</span>** |11 | 2 | <a href="../VB1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB1</span></span></a>, <a href="../VB10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB10</span></span></a>, <a href="../VB11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB11</span></span></a>, <a href="../VB2" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VB2</span></strong></a>, <a href="../VB3" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB3</span></span></a>, <a href="../VB4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB4</span></span></a>, <a href="../VB5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB5</span></span></a>, <a href="../VB6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VB6</span></strong></a>, <a href="../VB7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB7</span></span></a>, <a href="../VB8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB8</span></span></a>, <a href="../VB9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VB9</span></span></a>|
+    |**<span style="color:#a6c7e6;">VD</span>** |13 | 2 | <a href="../VD1" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD1</span></span></a>, <a href="../VD10" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD10</span></span></a>, <a href="../VD11" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD11</span></span></a>, <a href="../VD12" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD12</span></span></a>, <a href="../VD13" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD13</span></span></a>, <a href="../VD2" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD2</span></span></a>, <a href="../VD3" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VD3</span></strong></a>, <a href="../VD4" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD4</span></span></a>, <a href="../VD5" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD5</span></span></a>, <a href="../VD6" title="Ventral cord motor neuron"><strong><span style="color:#9966cc;">VD6</span></strong></a>, <a href="../VD7" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD7</span></span></a>, <a href="../VD8" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD8</span></span></a>, <a href="../VD9" title="Ventral cord motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">VD9</span></span></a>|
+    
+
+
+### Neurons (herm) (21)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
@@ -55,6 +90,7 @@ search:
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
+ | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DVA" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">DVA</span></a>
  | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
@@ -71,7 +107,7 @@ search:
 
 </details>
 
-### Missing neurons (282)
+### Missing neurons (281)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -174,7 +210,6 @@ search:
  | <a href="../DD1" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD1</span></a>
  | <a href="../DD2" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD2</span></a>
  | <a href="../DD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD3</span></a>
- | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD6</span></a>
  | <a href="../DVB" title="Layer 3 interneuron"><span style="color:#ff3300;">DVB</span></a>
  | <a href="../DVC" title="Layer 2 interneuron"><span style="color:#ff3300;">DVC</span></a>

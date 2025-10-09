@@ -1,13 +1,13 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
         "exc_gl"
@@ -17,13 +17,29 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
+      "type": "scatter",
+      "x": [
+        "exc_gl"
+      ],
+      "y": [
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
         "exc_gl"
@@ -33,13 +49,13 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "#cccc44",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Witvliet2 Electrical conns",
+      "mode": "markers",
+      "name": "Witvliet2",
       "type": "scatter",
       "x": [
         "exc_gl"
@@ -50,6 +66,7 @@
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -866,6 +883,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

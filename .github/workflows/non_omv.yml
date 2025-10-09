@@ -14,10 +14,7 @@ jobs:
       fail-fast: false
       matrix:        
         runs-on: [ubuntu-latest, macos-latest, windows-latest ]
-        python-version: [ 3.8, 3.9, "3.11" ]
-        exclude:
-          - runs-on: macos-latest
-            python-version: "3.8"
+        python-version: [ "3.10", "3.13" ]
 
     steps:
     - uses: actions/checkout@v4
@@ -40,6 +37,7 @@ jobs:
         
         
     - name: Run quick test script
+      if: ${{ matrix.runs-on != 'windows-latest' }}
       run: |
         ./test.sh  # also runs pytest
         

@@ -1,17 +1,17 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Chemical conns in",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
-        "mu_intL",
-        "mu_intR"
+        "mu_intR",
+        "mu_intL"
       ],
       "y": [
         1,
@@ -19,25 +19,80 @@
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "mu_intL",
-        "mu_intR"
+        "mu_intR",
+        "mu_intL"
       ],
       "y": [
         1,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Male",
+      "type": "scatter",
+      "x": [
+        "mu_intR",
+        "mu_intL"
+      ],
+      "y": [
+        2,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Herm",
+      "type": "scatter",
+      "x": [
+        "mu_intR",
+        "mu_intL"
+      ],
+      "y": [
+        1,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "mu_intR",
+        "mu_intL"
+      ],
+      "y": [
+        3,
         2
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -854,6 +909,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

@@ -12,6 +12,42 @@ import importlib
 all_data = {}
 
 
+reader_colors = {
+    "White_A": "lightpink",
+    "White_L4": "darkred",
+    "White_whole": "red",
+    "Varshney": "#009e73",
+    "Bentley2016_MA": "#56b4e9",
+    "Bentley2016_PEP": "blue",
+    "Cook2019Herm": "darkmagenta",
+    "Cook2019Male": "fuchsia",
+    "Cook2020": "darkorchid",
+    "Brittin2021": "khaki",
+    "Witvliet1": "#eeee44",
+    "Witvliet2": "#cccc44",
+    "Witvliet3": "#aaaa44",
+    "Witvliet4": "#888844",
+    "Witvliet5": "#666644",
+    "Witvliet6": "#444444",
+    "Witvliet7": "#222244",
+    "Witvliet8": "#111144",
+    "WormNeuroAtlas": "olive",
+    "Randi2023": "peachpuff",
+    "RipollSanchezShortRange": "gold",
+    "RipollSanchezMidRange": "goldenrod",
+    "RipollSanchezLongRange": "orange",
+    "Yim2024": "#0d7ba4",
+    "Yim2024NonNorm": "#0d7ba4",
+    "Wang2024Herm": "firebrick",
+    "Wang2024Male": "#e88989",
+    "OpenWormUnified": "yellowgreen",
+    "Test": "palegoldenrod",
+    "SSData": "moccasin",
+    "UpdSSData": "papayawhip",
+    "UpdSSData2": "mistyrose",
+    "GleesonModel": "black",
+    "OlivaresModel": "black",
+}
 reader_pages = {
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
@@ -37,10 +73,16 @@ reader_pages = {
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Yim2024": "Yim2024_data",
+    "Yim2024NonNorm": "Yim2024NonNorm_data",
+    "Wang2024Herm": "Wang2024Herm_data",
+    "Wang2024Male": "Wang2024Male_data",
+    "OpenWormUnified": "OpenWormUnified_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "GleesonModel": "GleesonModel_data",
+    "OlivaresModel": "OlivaresModel_data",
 }
 
 all_data[""] = [
@@ -64,7 +106,8 @@ def shorten_neurotransmitter(nt):
         .replace("Tyramine", "Tyr.")
         .replace("FMRFamide", "FMRFam.")
         .replace("Generic_", "Gen_")
-        .replace("Octapamine", "Octapa.")
+        .replace("Octopamine", "Octopa.")
+        .replace("Octapamine", "Octopa.")
         .replace("Dopamine", "Dopa.")
     )
 
@@ -92,7 +135,7 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
+    return '\n%s```{.plotly .no-auto-theme}\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
         asset_filename,
@@ -138,7 +181,7 @@ def get_matrix_markdown(
 
     extra = "\n" + indent + extra_info if extra_info is not None else ""
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -163,11 +206,11 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
 def generate_comparison_page(
-    quick: bool,
+    quick: int,
     color_table=True,
     dataset_pages=True,
     save_to_cache=False,
@@ -178,66 +221,96 @@ def generate_comparison_page(
 
     readers = {}
 
-    if not quick:
-        readers["White_A"] = ["cect.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.White_L4", "White_1986"]
+    if quick == 2:  # very quick...
+        # readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
+        # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["Test"] = ["cect.TestDataReader", None]
 
-    readers["White_whole"] = ["cect.White_whole", "White_1986"]
-    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
+        # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-    if not quick:
+        # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
+
+    else:
+        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
+
+        if not quick:
+            readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+            readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+
+        if not quick:
+            readers["White_A"] = ["cect.White_A", "White_1986"]
+            readers["White_L4"] = ["cect.White_L4", "White_1986"]
+
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
+
         readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
+        if not quick:
+            readers["Bentley2016_PEP"] = [
+                "cect.WormNeuroAtlasPepReader",
+                "Bentley_2016",
+            ]
 
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
-    if not quick:
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
 
-    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+        if not quick:
+            readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
+            readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
+            readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
+            readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
+            readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
+            readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
+            readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
 
-    readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
-    if not quick:
-        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
-        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
-        readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
-        readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
-        readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
-        readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
-        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        if not quick:
+            readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-    readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-    if not quick:
-        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+        if not quick:
+            readers["RipollSanchezShortRange"] = [
+                "cect.RipollSanchezShortRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezMidRange"] = [
+                "cect.RipollSanchezMidRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezLongRange"] = [
+                "cect.RipollSanchezLongRangeReader",
+                "RipollSanchez_2023",
+            ]
 
-    readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
+        readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
+        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
-    if not quick:
-        readers["RipollSanchezShortRange"] = [
-            "cect.RipollSanchezShortRangeReader",
-            "RipollSanchez_2023",
-        ]
-        readers["RipollSanchezMidRange"] = [
-            "cect.RipollSanchezMidRangeReader",
-            "RipollSanchez_2023",
-        ]
-        readers["RipollSanchezLongRange"] = [
-            "cect.RipollSanchezLongRangeReader",
-            "RipollSanchez_2023",
-        ]
+        if not quick:
+            readers["SSData"] = ["cect.SpreadsheetDataReader", None]
+            readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
+            readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
 
-    readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
-
-    if not quick:
-        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
-        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
-        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
-
-    readers["Test"] = ["cect.TestDataReader", None]
+        readers["Test"] = ["cect.TestDataReader", None]
 
     main_mk = "# Comparison between data readers\n"
+
+    main_mk += "This table shows the current dataset readers with a summary of the different types of cells and connections they contain. \n\n"
+    main_mk += "**Scroll** to the right to see more columns. \n\n"
+    main_mk += "**Hover over** colored dots to see the name/description of the cell and **click on them** to go to a page dedicated to that cell.\n\n"
+
     table_html = ""
 
     for reader_name, reader_info in readers.items():
@@ -276,11 +349,14 @@ def generate_comparison_page(
 
             if dataset_pages:
                 if connectome is not None:
-                    from cect.ConnectomeView import ALL_VIEWS
+                    if quick == 2:
+                        from cect.ConnectomeView import QUICK_VIEWS as views
+                    else:
+                        from cect.ConnectomeView import ALL_VIEWS as views
 
                     indent = "    "
 
-                    for view in ALL_VIEWS:
+                    for view in views:
                         print_("Generating view: %s (%s)" % (view.name, view.id))
 
                         view_prefix = "" if view.id == "Raw" else "%s_" % view.id
@@ -434,7 +510,7 @@ def generate_comparison_page(
     """
                                 )
 
-                                for viewb in ALL_VIEWS:
+                                for viewb in views:
                                     viewb_prefix = (
                                         "" if viewb.id == "Raw" else "%s_" % viewb.id
                                     )
@@ -504,6 +580,109 @@ def generate_comparison_page(
 
                                 if no_conns:
                                     f.write("No connections present in this view\n")
+
+                                view_info = "**%s** (%s)\n\n" % (
+                                    view.name,
+                                    view.id,
+                                )
+                                if view.description is not None:
+                                    view_info += "_%s_\n\n" % view.description
+
+                                view_info += "\n\n"
+
+                                view_info += "| Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |\n| --- | --- | --- | --- | --- |\n"
+                                for c in cv.connections:
+                                    conn_array = cv.connections[c]
+                                    nonzero = np.count_nonzero(conn_array)
+                                    pre = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[i].sum() > 0
+                                        ]
+                                    )
+                                    post = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[:, i].sum() > 0
+                                        ]
+                                    )
+                                    if nonzero > 0:
+                                        view_info += (
+                                            "|**%s** | %s matrix | %i non-zero entries, avg. weight: %s, sum: %s| %s | %s |\n"
+                                            % (
+                                                c,
+                                                conn_array.shape,
+                                                nonzero,
+                                                np.sum(conn_array) / nonzero
+                                                if nonzero > 0
+                                                else 0,
+                                                np.sum(conn_array),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in pre
+                                                    ]
+                                                ),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in post
+                                                    ]
+                                                ),
+                                            )
+                                        )
+
+                                view_info += "\n\n"
+                                total_cells = sum(
+                                    [len(ns.cells) for ns in view.node_sets]
+                                )
+                                total_here = 0
+                                for ns in view.node_sets:
+                                    for c in ns.cells:
+                                        if c in connectome.nodes:
+                                            total_here += 1
+
+                                view_info += f"| Nodes in current view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) | Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
+
+                                for ns in view.node_sets:
+                                    n_in_dataset = np.sum(
+                                        [
+                                            (1 if c in connectome.nodes else 0)
+                                            for c in ns.cells
+                                        ]
+                                    )
+                                    node_colored = ns.to_markdown()
+
+                                    cells_linked = [
+                                        get_cell_internal_link(
+                                            c,
+                                            individual_cell_page=True,
+                                            html=True,
+                                            use_color=True,
+                                            bold=(c in connectome.nodes),
+                                            strikethrough=(c not in connectome.nodes),
+                                        )
+                                        for c in sorted(ns.cells)
+                                    ]
+                                    view_info += "|**%s** |%i | %i | %s|\n" % (
+                                        node_colored,
+                                        len(ns.cells),
+                                        n_in_dataset,
+                                        ", ".join(cells_linked),
+                                    )
+
+                                f.write(
+                                    '=== "View info"\n\n    %s\n\n'
+                                    % (view_info.replace("\n", "\n    "))
+                                )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,

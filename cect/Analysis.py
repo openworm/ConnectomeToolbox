@@ -24,7 +24,7 @@ def save_symmetry_info():
 
 def array_info(conn_array):
     nonzero = np.count_nonzero(conn_array)
-    print(
+    print_(
         "- Connection - shape: %s, %i non-zero entries, %i total\n%s\n"
         % (
             conn_array.shape,
@@ -43,8 +43,7 @@ def convert_to_symmetry_array(cds, synclasses):
 
     """for synclass in [
         "Chemical",
-        "Chemical Exc",
-        "Chemical Inh",
+        "Chemical",
         "Electrical",
         "Contact",
         "Functional",
@@ -82,21 +81,25 @@ def convert_to_symmetry_array(cds, synclasses):
             post_ = get_contralateral_cell(post)
             w = new_conn_array[i][j]
             if w != 0:
-                print(f"Connection {conn_count}:\t{pre}->{post} ({w})")
+                if verbose:
+                    print_(f"Connection {conn_count}:\t{pre}->{post} ({w})")
                 assert pre is not post
                 if pre_ not in cds.nodes:
-                    if verbose: print(
-                        f"   - Mirror conn:\t{pre_}->{post_} not possible as {pre_} missing!\n"
-                    )
+                    if verbose:
+                        print_(
+                            f"   - Mirror conn:\t{pre_}->{post_} not possible as {pre_} missing!\n"
+                        )
                     w_ = -1
                 elif post_ not in cds.nodes:
-                    if verbose: print(
-                        f"   - Mirror conn:\t{pre_}->{post_} not possible as {post_} missing!\n"
-                    )
+                    if verbose:
+                        print_(
+                            f"   - Mirror conn:\t{pre_}->{post_} not possible as {post_} missing!\n"
+                        )
                     w_ = -1
                 else:
                     w_ = new_conn_array[cds.nodes.index(pre_), cds.nodes.index(post_)]
-                    if verbose: print(f"   - Mirror:\t{pre_}->{post_} ({w_})\n")
+                    if verbose:
+                        print_(f"   - Mirror:\t{pre_}->{post_} ({w_})\n")
 
                 symm_conn_count += w_
                 if w_ <= 0:
@@ -109,7 +112,7 @@ def convert_to_symmetry_array(cds, synclasses):
 
     percentage = 100 * symm_conn_count / conn_count
     info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% "
-    print(info)
+    print_(info)
 
     return scaled_conn_array, info
 
@@ -164,7 +167,7 @@ def test_bilaterals():
     synclass = "Chemical Inh"
 
     synclass = (
-        "Chemical Exc"
+        "Chemical"
         if "Raw" not in view.name
         else ("Functional" if "Func" in view.name else "Chemical")
     )

@@ -7,7 +7,7 @@ search:
 
 !!! example "Choose Dataset"
 
-    <a href="../Pharynx_White_A_data_symmetry">White_A</a> <a href="../Pharynx_White_L4_data_symmetry">White_L4</a> <a href="../Pharynx_White_whole_data_symmetry">White_whole</a> <a href="../Pharynx_Varshney_data_symmetry">Varshney</a> <a href="../Pharynx_Bentley2016_MA_data_symmetry">Bentley2016_MA</a> <a href="../Pharynx_Bentley2016_PEP_data_symmetry">Bentley2016_PEP</a> <a href="../Pharynx_Cook2019Herm_data_symmetry">Cook2019Herm</a> <a href="../Pharynx_Cook2019Male_data_symmetry">Cook2019Male</a> <a href="../Pharynx_Cook2020_data_symmetry">Cook2020</a> <a href="../Pharynx_Brittin2021_data_symmetry">Brittin2021</a> <a href="../Pharynx_Witvliet1_data_symmetry">Witvliet1</a> <a href="../Pharynx_Witvliet2_data_symmetry">Witvliet2</a> <a href="../Pharynx_Witvliet3_data_symmetry">Witvliet3</a> <a href="../Pharynx_Witvliet4_data_symmetry">Witvliet4</a> <a href="../Pharynx_Witvliet5_data_symmetry">Witvliet5</a> <a href="../Pharynx_Witvliet6_data_symmetry">Witvliet6</a> <a href="../Pharynx_Witvliet7_data_symmetry">Witvliet7</a> <a href="../Pharynx_Witvliet8_data_symmetry">Witvliet8</a> <a href="../Pharynx_WormNeuroAtlas_data_symmetry">WormNeuroAtlas</a> <a href="../Pharynx_Randi2023_data_symmetry">Randi2023</a> <a href="../Pharynx_RipollSanchezShortRange_data_symmetry">RipollSanchezShortRange</a> <a href="../Pharynx_RipollSanchezMidRange_data_symmetry">RipollSanchezMidRange</a> <a href="../Pharynx_RipollSanchezLongRange_data_symmetry">RipollSanchezLongRange</a> <a href="../Pharynx_Yim2024_data_symmetry">Yim2024</a> <b><a href="../Pharynx_Test_data_symmetry">Test</a></b> <a href="../Pharynx_SSData_data_symmetry">SSData</a> <a href="../Pharynx_UpdSSData_data_symmetry">UpdSSData</a> <a href="../Pharynx_UpdSSData2_data_symmetry">UpdSSData2</a> 
+    <a href="../Pharynx_White_A_data_symmetry">White_A</a> <a href="../Pharynx_White_L4_data_symmetry">White_L4</a> <a href="../Pharynx_White_whole_data_symmetry">White_whole</a> <a href="../Pharynx_Varshney_data_symmetry">Varshney</a> <a href="../Pharynx_Bentley2016_MA_data_symmetry">Bentley2016_MA</a> <a href="../Pharynx_Bentley2016_PEP_data_symmetry">Bentley2016_PEP</a> <a href="../Pharynx_Cook2019Herm_data_symmetry">Cook2019Herm</a> <a href="../Pharynx_Cook2019Male_data_symmetry">Cook2019Male</a> <a href="../Pharynx_Cook2020_data_symmetry">Cook2020</a> <a href="../Pharynx_Brittin2021_data_symmetry">Brittin2021</a> <a href="../Pharynx_Witvliet1_data_symmetry">Witvliet1</a> <a href="../Pharynx_Witvliet2_data_symmetry">Witvliet2</a> <a href="../Pharynx_Witvliet3_data_symmetry">Witvliet3</a> <a href="../Pharynx_Witvliet4_data_symmetry">Witvliet4</a> <a href="../Pharynx_Witvliet5_data_symmetry">Witvliet5</a> <a href="../Pharynx_Witvliet6_data_symmetry">Witvliet6</a> <a href="../Pharynx_Witvliet7_data_symmetry">Witvliet7</a> <a href="../Pharynx_Witvliet8_data_symmetry">Witvliet8</a> <a href="../Pharynx_WormNeuroAtlas_data_symmetry">WormNeuroAtlas</a> <a href="../Pharynx_Randi2023_data_symmetry">Randi2023</a> <a href="../Pharynx_RipollSanchezShortRange_data_symmetry">RipollSanchezShortRange</a> <a href="../Pharynx_RipollSanchezMidRange_data_symmetry">RipollSanchezMidRange</a> <a href="../Pharynx_RipollSanchezLongRange_data_symmetry">RipollSanchezLongRange</a> <a href="../Pharynx_Yim2024_data_symmetry">Yim2024</a> <a href="../Pharynx_Yim2024NonNorm_data_symmetry">Yim2024NonNorm</a> <a href="../Pharynx_Wang2024Herm_data_symmetry">Wang2024Herm</a> <a href="../Pharynx_Wang2024Male_data_symmetry">Wang2024Male</a> <a href="../Pharynx_OpenWormUnified_data_symmetry">OpenWormUnified</a> <b><a href="../Pharynx_Test_data_symmetry">Test</a></b> <a href="../Pharynx_SSData_data_symmetry">SSData</a> <a href="../Pharynx_UpdSSData_data_symmetry">UpdSSData</a> <a href="../Pharynx_UpdSSData2_data_symmetry">UpdSSData2</a> <a href="../Pharynx_GleesonModel_data_symmetry">GleesonModel</a> <a href="../Pharynx_OlivaresModel_data_symmetry">OlivaresModel</a> 
 
     <i>Dummy dataset used for testing webpage/graph generation. <b>Do not assume any of these connections are correct!</b>.&nbsp;&nbsp;&nbsp;Python Reader: <a href="../api/cect/TestDataReader">TestDataReader</a></i>
 
@@ -21,19 +21,65 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <b><a href="../Pharynx_Test_data_symmetry"> Pharynx</a></b> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
+    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <b><a href="../Pharynx_Test_data_symmetry"> Pharynx</a></b> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
-=== "Chemical Exc"
+=== "Chemical"
 
     <br/>
-    ```plotly
-    { "file_path": "./assets/Test_Pharynx_Chemical_Exc_symm.json" }
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Pharynx_Chemical_symm.json" }
     ```
     Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% 
 
+=== "Acetylcholine"
 
-### Neurons (herm) (20)
+    <br/>
+    ```{.plotly .no-auto-theme}
+    { "file_path": "./assets/Test_Pharynx_Acetylcholine_symm.json" }
+    ```
+    Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% 
+
+=== "View info"
+
+    **Pharynx** (Pharynx)
+    
+    _Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)_
+    
+    
+    
+    | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
+    | --- | --- | --- | --- | --- |
+    |**Chemical** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    
+    
+    | Nodes in current view<br/>(20 total)| Num cells in node<br/>(20 total) | Num in this dataset<br/>(3 total) | Cells |
+    | --- | --- | --- | --- |
+    |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1L</span></span></a>|
+    |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1R</span></span></a>|
+    |**<span style="color:#ff3300;">I2L</span>** |1 | 0 | <a href="../I2L" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I2L</span></span></a>|
+    |**<span style="color:#ff3300;">I2R</span>** |1 | 0 | <a href="../I2R" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I2R</span></span></a>|
+    |**<span style="color:#ff3300;">I3</span>** |1 | 0 | <a href="../I3" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I3</span></span></a>|
+    |**<span style="color:#ff3300;">I4</span>** |1 | 0 | <a href="../I4" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I4</span></span></a>|
+    |**<span style="color:#ff3300;">I5</span>** |1 | 1 | <a href="../I5" title="Pharyngeal interneuron"><strong><span style="color:#ff3300;">I5</span></strong></a>|
+    |**<span style="color:#ff3300;">I6</span>** |1 | 0 | <a href="../I6" title="Pharyngeal interneuron"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I6</span></span></a>|
+    |**<span style="color:#9966cc;">M1</span>** |1 | 1 | <a href="../M1" title="Pharyngeal motor neuron"><strong><span style="color:#9966cc;">M1</span></strong></a>|
+    |**<span style="color:#9966cc;">M2L</span>** |1 | 0 | <a href="../M2L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M2L</span></span></a>|
+    |**<span style="color:#9966cc;">M2R</span>** |1 | 0 | <a href="../M2R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M2R</span></span></a>|
+    |**<span style="color:#9966cc;">M3L</span>** |1 | 0 | <a href="../M3L" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M3L</span></span></a>|
+    |**<span style="color:#9966cc;">M3R</span>** |1 | 0 | <a href="../M3R" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M3R</span></span></a>|
+    |**<span style="color:#9966cc;">M4</span>** |1 | 1 | <a href="../M4" title="Pharyngeal motor neuron"><strong><span style="color:#9966cc;">M4</span></strong></a>|
+    |**<span style="color:#9966cc;">M5</span>** |1 | 0 | <a href="../M5" title="Pharyngeal motor neuron"><span style="text-decoration: line-through;"><span style="color:#9966cc;">M5</span></span></a>|
+    |**<span style="color:#cc0033;">MCL</span>** |1 | 0 | <a href="../MCL" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MCL</span></span></a>|
+    |**<span style="color:#cc0033;">MCR</span>** |1 | 0 | <a href="../MCR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MCR</span></span></a>|
+    |**<span style="color:#cc0033;">MI</span>** |1 | 0 | <a href="../MI" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">MI</span></span></a>|
+    |**<span style="color:#cc0033;">NSML</span>** |1 | 0 | <a href="../NSML" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">NSML</span></span></a>|
+    |**<span style="color:#cc0033;">NSMR</span>** |1 | 0 | <a href="../NSMR" title="Pharyngeal polymodal neuron"><span style="text-decoration: line-through;"><span style="color:#cc0033;">NSMR</span></span></a>|
+    
+
+
+### Neurons (herm) (21)
 <details open><summary>Full list of Neurons (hermaphrodite only) in this dataset</summary>
 <a href="../ASHR" title="Sensory neuron (amphid, nociceptive)"><span style="color:#ff66cc;">ASHR</span></a>
  | <a href="../ASKR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">ASKR</span></a>
@@ -42,6 +88,7 @@ search:
  | <a href="../AWBR" title="Sensory neuron (amphid)"><span style="color:#ff66cc;">AWBR</span></a>
  | <a href="../DB4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DB4</span></a>
  | <a href="../DD4" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD4</span></a>
+ | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DVA" title="Sensory neuron (mechanosensory)"><span style="color:#ff66cc;">DVA</span></a>
  | <a href="../I5" title="Pharyngeal interneuron"><span style="color:#ff3300;">I5</span></a>
  | <a href="../M1" title="Pharyngeal motor neuron"><span style="color:#9966cc;">M1</span></a>
@@ -58,7 +105,7 @@ search:
 
 </details>
 
-### Missing neurons (282)
+### Missing neurons (281)
 <details open><summary>Full list of Missing neurons (known hermaphrodite neurons not present)</summary>
 <a href="../ADAL" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAL</span></a>
  | <a href="../ADAR" title="Layer 3 interneuron"><span style="color:#ff3300;">ADAR</span></a>
@@ -161,7 +208,6 @@ search:
  | <a href="../DD1" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD1</span></a>
  | <a href="../DD2" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD2</span></a>
  | <a href="../DD3" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD3</span></a>
- | <a href="../DD5" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD5</span></a>
  | <a href="../DD6" title="Ventral cord motor neuron"><span style="color:#9966cc;">DD6</span></a>
  | <a href="../DVB" title="Layer 3 interneuron"><span style="color:#ff3300;">DVB</span></a>
  | <a href="../DVC" title="Layer 2 interneuron"><span style="color:#ff3300;">DVC</span></a>

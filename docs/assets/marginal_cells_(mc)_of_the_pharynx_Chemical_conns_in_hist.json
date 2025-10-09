@@ -1,103 +1,200 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Chemical conns in",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
-        "mc1DL",
-        "mc1DR",
-        "mc1V",
-        "mc2DL",
         "mc2DR",
         "mc2V",
-        "mc3DL",
+        "mc2DL",
+        "mc3V",
         "mc3DR",
-        "mc3V"
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
       ],
       "y": [
-        0,
-        0,
-        0,
-        2,
         3,
         2,
+        2,
+        1,
         0,
         0,
-        1
+        0,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "mc1DL",
-        "mc1DR",
-        "mc1V",
-        "mc2DL",
         "mc2DR",
         "mc2V",
-        "mc3DL",
+        "mc2DL",
+        "mc3V",
         "mc3DR",
-        "mc3V"
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
       ],
       "y": [
-        0,
-        0,
-        0,
-        2,
         3,
         2,
+        2,
+        1,
         0,
         0,
-        1
+        0,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2020 Chemical conns in",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "mc1DL",
-        "mc1DR",
-        "mc1V",
-        "mc2DL",
         "mc2DR",
         "mc2V",
-        "mc3DL",
+        "mc2DL",
+        "mc3V",
         "mc3DR",
-        "mc3V"
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
       ],
       "y": [
-        0,
-        0,
-        0,
-        2,
         3,
         2,
+        2,
+        1,
         0,
         0,
-        1
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2020",
+      "type": "scatter",
+      "x": [
+        "mc2DR",
+        "mc2V",
+        "mc2DL",
+        "mc3V",
+        "mc3DR",
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
+      ],
+      "y": [
+        3,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Herm",
+      "type": "scatter",
+      "x": [
+        "mc2DR",
+        "mc2V",
+        "mc2DL",
+        "mc3V",
+        "mc3DR",
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
+      ],
+      "y": [
+        3,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "mc2DR",
+        "mc2V",
+        "mc2DL",
+        "mc3V",
+        "mc3DR",
+        "mc3DL",
+        "mc1V",
+        "mc1DR",
+        "mc1DL"
+      ],
+      "y": [
+        3,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -914,6 +1011,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

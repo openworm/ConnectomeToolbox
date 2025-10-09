@@ -15,28 +15,66 @@ from cect import print_
 
 from typing import List
 
+ACETYLCHOLINE = "Acetylcholine"
+GLUTAMATE = "Glutamate"
+BETAINE = "Betaine"
+
+GABA = "GABA"
+
+DOPAMINE = "Dopamine"
+SEROTONIN = "Serotonin"
+OCTOPAMINE = "Octopamine"
+TYRAMINE = "Tyramine"
+
 
 ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
-    "Acetylcholine",
+    ACETYLCHOLINE,
     "Acetylcholine_Tyramine",
-    "Dopamine",
     "FMRFamide",
-    "GABA",
-    "Glutamate",
-    "Octapamine",
-    "Serotonin",
+    GABA,
+    GLUTAMATE,
+    BETAINE,
     "Serotonin_Acetylcholine",
     "Serotonin_Glutamate",
+]
+
+SEROTONIN_UPTAKE = "Serotonin_Uptake"
+GABA_UPTAKE = "GABA_Uptake"
+UNKNOWN_ORPHAN_NEUROTRANSMITTER = "Unknown_Orphan_Neurotransmitter"
+UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER = "Unknown_Monoaminergic_Neurotransmitter"
+FIVE_HTP = "5-HTP"
+PEOH = "Possible_PEOH"
+FIVE_HTP_FIVE_HT = "5-HTP_synthesis_5-HT_uptake"
+
+
+WANG_2024_EXTRA_NT_INFO = [
+    SEROTONIN_UPTAKE,
+    GABA_UPTAKE,
+    UNKNOWN_ORPHAN_NEUROTRANSMITTER,
+    UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER,
+    FIVE_HTP,
+    PEOH,
+    FIVE_HTP_FIVE_HT,
 ]
 
 GENERIC_CHEM_SYN = "Generic_CS"
 GENERIC_ELEC_SYN = "Generic_GJ"
 
+CONTACTOME_SYN_TYPE = "Contact"
+CONTACTOME_SYN_CLASS = "Contact"
+
 EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
-MONOAMINERGIC_SYN_CLASS = "Monoaminergic"
+MONOAMINERGIC_SYN_GENERAL_CLASS = "Monoaminergic"
+
+MONOAMINERGIC_SYN_CLASSES = [DOPAMINE, SEROTONIN, TYRAMINE, OCTOPAMINE]
+# MONOAMINERGIC_SYN_CLASSES = ["dopamine"]
+
 PEPTIDERGIC_SYN_CLASS = "Peptidergic"
 
-ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [MONOAMINERGIC_SYN_CLASS, PEPTIDERGIC_SYN_CLASS]
+ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [
+    PEPTIDERGIC_SYN_CLASS,
+]
+ALL_KNOWN_EXTRASYNAPTIC_CLASSES += MONOAMINERGIC_SYN_CLASSES
 
 cell_notes = {}
 
@@ -1498,6 +1536,25 @@ ALL_PREFERRED_CELL_NAMES = (
     ALL_PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + ALL_NON_NEURON_MUSCLE_CELLS
 )
 
+# Known to be used in computational models
+KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
+    "DB8",
+    "DB9",
+    "DB10",
+    "DD7",
+    "DD8",
+    "DD9",
+    "DD10",
+    "DA10",
+]
+
+for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
+    cell_notes[cell] = (
+        "NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"
+    )
+
+KNOWN_MODELLED_NEURONS = KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS
+
 
 def get_primary_classification():
     """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
@@ -1673,7 +1730,7 @@ def get_primary_classification():
     return classification
 
 
-def is_known_cell(cell: str):
+def is_known_cell(cell: str, allow_modelled_neurons: bool = False):
     """Is this string the name of one of the known cells?
 
     Args:
@@ -1682,7 +1739,10 @@ def is_known_cell(cell: str):
     Returns:
         bool: Whether this is a known cell name
     """
-    return cell in ALL_PREFERRED_CELL_NAMES
+    if allow_modelled_neurons:
+        return cell in ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS
+    else:
+        return cell in ALL_PREFERRED_CELL_NAMES
 
 
 def get_SIM_class(cell: str):
@@ -1737,7 +1797,7 @@ def get_contralateral_cell(cell: str):
     Returns:
         _type_: _description_
     """
-    if not is_known_cell(cell):
+    if not is_known_cell(cell, allow_modelled_neurons=True):
         raise Exception(
             "Cannot determine contralateral cell for: %s (unknown cell)" % cell
         )
@@ -1934,8 +1994,16 @@ def is_male_specific_cell(cell: str):
     )
 
 
-def is_any_neuron(cell: str):
-    return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
+def is_any_neuron(cell: str, allow_modelled_neurons: bool = False):
+    if allow_modelled_neurons:
+        return (
+            cell
+            in PREFERRED_HERM_NEURON_NAMES
+            + MALE_SPECIFIC_NEURONS
+            + KNOWN_MODELLED_NEURONS
+        )
+    else:
+        return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
 def remove_leading_index_zero(cell: str):
@@ -1983,7 +2051,7 @@ def get_standard_color(cell: str):
         + MALE_NON_HEAD_SENSORY_NEURONS
     ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell in MOTORNEURONS_COOK:
+    elif cell in MOTORNEURONS_COOK + KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
@@ -2112,6 +2180,8 @@ def get_cell_internal_link(
     text: str = None,
     use_color: bool = False,
     individual_cell_page: bool = False,
+    bold: bool = False,
+    strikethrough: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
 
@@ -2123,6 +2193,13 @@ def get_cell_internal_link(
         if use_color:
             color = get_standard_color(cell_name)
             link_text = f'<span style="color:{color};">{link_text}</span>'
+
+        if strikethrough:
+            link_text = (
+                f'<span style="text-decoration: line-through;">{link_text}</span>'
+            )
+        if bold:
+            link_text = f"<strong>{link_text}</strong>"
 
         return '<a href="%s" title="%s">%s</a>' % (
             url,
@@ -2294,6 +2371,7 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     import plotly.graph_objects as go
 
     from cect.Comparison import _format_json
+    from cect.Comparison import reader_colors
 
     print_(" - Adding table for %s" % cell_type)
 
@@ -2308,22 +2386,31 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     verbose = False
     some_cells = False
 
+    sorted_cells_alphabetical = sorted(cells)
+
     for syn_summary in syn_summaries:
-        fig = go.Figure()
+        layout = go.Layout(
+            plot_bgcolor="#FFF",  # Sets background color to white
+        )
+        fig = go.Figure(layout=layout)
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+
         fig.layout.showlegend = True
 
         fig_md += '\n=== "%s"\n\n' % syn_summary
         # fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
 
         nonempty_fig_present = False
-        for reader_name, connectome in connectomes.items():
-            sorted_cells = sorted(cells)
 
+        sorted_cells_conns = None
+
+        for reader_name, connectome in connectomes.items():
             indent = "    "
-            y = []
-            for cell in sorted_cells:
+            conn_nums = []
+            for cell in sorted_cells_alphabetical:
                 syn_types = syn_summaries[syn_summary]
-                total_y = 0
+                total_conn_nums = 0
                 for syn_type in syn_types:
                     if "out" in syn_summary:
                         conns_here = connectome.get_connections_from(cell, syn_type)
@@ -2334,20 +2421,37 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
                             "Conns: %i for %s of type %s (%s)"
                             % (len(conns_here), cell, syn_type, syn_summary)
                         )
-                    total_y += len(conns_here)
+                    total_conn_nums += len(conns_here)
 
-                y.append(total_y)
+                conn_nums.append(total_conn_nums)
 
-            if sum(y) > 0:
-                marker_symbol = "square"
-                dash = "solid"
+            if sum(conn_nums) > 0:
+                if sorted_cells_conns is None:
+                    sorted_cells_conns = [
+                        x
+                        for _, x in sorted(
+                            zip(conn_nums, sorted_cells_alphabetical), reverse=True
+                        )
+                    ]
+
+                conn_nums_sorted = []
+                for c in sorted_cells_conns:
+                    ind = sorted_cells_alphabetical.index(c)
+                    conn_nums_sorted.append(conn_nums[ind])
+
+                marker_symbol = "circle"
+                # dash = "solid"
 
                 fig.add_scatter(
-                    name="%s %s" % (reader_name, syn_summary),
-                    x=sorted_cells,
-                    y=y,
+                    name="%s" % (reader_name),
+                    x=sorted_cells_conns,
+                    y=conn_nums_sorted,
                     marker_symbol=marker_symbol,
-                    line=dict(dash=dash),
+                    marker=dict(
+                        color=reader_colors[reader_name],
+                        size=5 if "Cook2019Herm" in reader_name else 3,
+                    ),
+                    mode="markers",
                 )
                 nonempty_fig_present = True
                 some_cells = True
@@ -2361,7 +2465,9 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
-            fig_md += '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n\n' % (
+            fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+
+            fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,
                 indent,
                 asset_filename,
@@ -2413,11 +2519,17 @@ if __name__ == "__main__":
 
     from cect.Comparison import generate_comparison_page
 
-    connectomes = generate_comparison_page(quick)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick, save_to_cache=save_to_cache, load_from_cache=(not save_to_cache)
+    )
 
     from cect.CellInfo import generate_cell_info_pages
 
-    generate_cell_info_pages(connectomes)
+    if quick < 3:
+        print_("Generating cell info pages...")
+        generate_cell_info_pages(connectomes)
 
     filename = "docs/Cells.md"
 

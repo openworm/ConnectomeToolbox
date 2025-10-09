@@ -1,102 +1,136 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
-        "pm1",
-        "pm3D",
-        "pm3VL",
-        "pm3VR",
         "pm5D",
         "pm5VL",
         "pm5VR",
-        "pm7D",
+        "pm3VL",
+        "pm3VR",
+        "pm3D",
+        "pm1",
+        "pm7VR",
         "pm7VL",
-        "pm7VR"
+        "pm7D"
       ],
       "y": [
-        4,
-        4,
-        5,
-        4,
         11,
         9,
         6,
+        5,
+        4,
+        4,
+        4,
         3,
         3,
         3
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "pm1",
-        "pm3D",
-        "pm3VL",
-        "pm3VR",
         "pm5D",
         "pm5VL",
         "pm5VR",
-        "pm7D",
+        "pm3VL",
+        "pm3VR",
+        "pm3D",
+        "pm1",
+        "pm7VR",
         "pm7VL",
-        "pm7VR"
+        "pm7D"
       ],
       "y": [
-        4,
-        4,
-        5,
-        4,
         11,
         9,
         6,
+        5,
+        4,
+        4,
+        4,
         3,
         3,
         3
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2020 Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
-        "pm1",
-        "pm3D",
-        "pm3VL",
-        "pm3VR",
         "pm5D",
         "pm5VL",
         "pm5VR",
-        "pm7D",
+        "pm3VL",
+        "pm3VR",
+        "pm3D",
+        "pm1",
+        "pm7VR",
         "pm7VL",
-        "pm7VR"
+        "pm7D"
       ],
       "y": [
-        4,
-        4,
+        11,
+        9,
+        6,
         5,
         4,
+        4,
+        4,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2020",
+      "type": "scatter",
+      "x": [
+        "pm5D",
+        "pm5VL",
+        "pm5VR",
+        "pm3VL",
+        "pm3VR",
+        "pm3D",
+        "pm1",
+        "pm7VR",
+        "pm7VL",
+        "pm7D"
+      ],
+      "y": [
         10,
         8,
         6,
+        5,
+        4,
+        4,
+        4,
         4,
         4,
         4
@@ -104,6 +138,7 @@
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -920,6 +955,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

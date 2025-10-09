@@ -1,47 +1,68 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Electrical conns",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
-        "MANAL",
         "mu_anal",
-        "mu_sph"
+        "mu_sph",
+        "MANAL"
       ],
       "y": [
-        0,
         4,
-        3
+        3,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
       },
-      "name": "Cook2019Male Electrical conns",
+      "mode": "markers",
+      "name": "Cook2019Herm",
       "type": "scatter",
       "x": [
-        "MANAL",
         "mu_anal",
-        "mu_sph"
+        "mu_sph",
+        "MANAL"
       ],
       "y": [
-        0,
+        4,
+        3,
+        0
+      ]
+    },
+    {
+      "marker": {
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Male",
+      "type": "scatter",
+      "x": [
+        "mu_anal",
+        "mu_sph",
+        "MANAL"
+      ],
+      "y": [
         2,
-        2
+        2,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -858,6 +879,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

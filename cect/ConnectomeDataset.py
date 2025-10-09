@@ -228,7 +228,9 @@ class ConnectomeDataset:
         neurons = set([])
         neuron_conns = []
         for conn_info in self.get_current_connection_info_list():
-            if is_any_neuron(conn_info.pre_cell) and is_any_neuron(conn_info.post_cell):
+            if is_any_neuron(
+                conn_info.pre_cell, allow_modelled_neurons=True
+            ) and is_any_neuron(conn_info.post_cell, allow_modelled_neurons=True):
                 neurons.add(conn_info.pre_cell)
                 neurons.add(conn_info.post_cell)
                 neuron_conns.append(conn_info)
@@ -316,7 +318,7 @@ class ConnectomeDataset:
 
         for ns in view.node_sets:
             for cell in ns.cells:
-                if not is_known_cell(cell):
+                if not is_known_cell(cell, allow_modelled_neurons=True):
                     raise Exception(f"Cell {cell} in view {view.name} is not known!")
 
         cv = ConnectomeDataset()
@@ -330,10 +332,11 @@ class ConnectomeDataset:
 
         if self.verbose:
             print_(
-                "-- Creating view (%s, only_show_existing_nodes=%s) with %i nodes: %s\n  My %i nodes: %s"
+                "-- Creating view (%s, only_show_existing_nodes=%s, synclass_sets=%s) with %i nodes: %s\n  My %i nodes: %s"
                 % (
                     view.name,
                     view.only_show_existing_nodes,
+                    view.synclass_sets,
                     len(cv.nodes),
                     sorted(cv.nodes),
                     len(self.nodes),
@@ -384,19 +387,30 @@ class ConnectomeDataset:
 
         return cv
 
-    def summary(self):
-        info = "Nodes present (%i): %s\n" % (len(self.nodes), self.nodes)
+    def summary(self, list_pre_cells=False):
+        info = "Nodes present (%i): %s\n" % (len(self.nodes), sorted(self.nodes))
         for c in self.connections:
             conn_array = self.connections[c]
             nonzero = np.count_nonzero(conn_array)
             if nonzero > 0:
+                pre_info = ""
+                if list_pre_cells:
+                    pre = sorted(
+                        [
+                            self.nodes[i]
+                            for i in range(len(self.nodes))
+                            if conn_array[i].sum() > 0
+                        ]
+                    )
+                    pre_info = "  Presynaptic cells (%i total): %s\n" % (len(pre), pre)
                 info += (
-                    "- Connection type - %s: %s, %i non-zero entries, %i total\n%s\n"
+                    "- Connection type - %s: %s, %i non-zero entries, sum of entries = %i\n%s%s\n"
                     % (
                         c,
                         conn_array.shape,
                         nonzero,
                         np.sum(conn_array),
+                        pre_info,
                         conn_array,
                     )
                 )
@@ -585,9 +599,23 @@ class ConnectomeDataset:
 
         G = nx.Graph(conn_array)
 
+        remove_disconnected = False
+        if remove_disconnected:
+            G.remove_nodes_from(list(nx.isolates(G)))
+            disconnected = [self.nodes[i] for i in nx.isolates(G)]
+            nodes_to_show = [n for n in self.nodes if n not in disconnected]
+        else:
+            disconnected = []
+            nodes_to_show = self.nodes
+
         init_pos = {}
 
-        for i, node_value in enumerate(self.nodes):
+        print(
+            "Nodes to show: %s (%i), disconnected: %s"
+            % (nodes_to_show, len(nodes_to_show), disconnected)
+        )
+
+        for i, node_value in enumerate(nodes_to_show):
             scale = 20
             if is_pharyngeal_cell(node_value):
                 init_pos[i] = [
@@ -625,15 +653,9 @@ class ConnectomeDataset:
                     -0.1 * scale + _get_epsilon(scale),
                 ]
 
-        pos = nx.spring_layout(G, seed=1, iterations=20, k=8, pos=init_pos)
-        """
-        print("..................")
-        print(G.nodes)
-        print(init_pos)
-        print(pos)
-        print("..................")"""
+        pos = nx.spring_layout(G, seed=1, iterations=25, k=10, pos=init_pos)
 
-        for i, node_value in enumerate(self.nodes):
+        for i, node_value in enumerate(nodes_to_show):
             node_set = view.get_node_set(node_value)
             if node_set.position is not None:
                 pos[i] = node_set.position
@@ -1205,30 +1227,31 @@ if __name__ == "__main__":
     if "-nogui" not in sys.argv:
         cds.connection_number_plot("Acetylcholine")"""
 
+    """
     G = cds.to_networkx_graph(synclass)
     import pprint
 
-    print(pprint.pprint(nx.node_link_data(G)))
+    print(pprint.pprint(nx.node_link_data(G)))"""
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    # from cect.ConnectomeView import RAW_VIEW as view
-    # from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
-    from cect.ConnectomeView import PHARYNX_VIEW as view
+    # from cect.ConnectomeView import PHARYNX_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
+    # from cect.White_whole import get_instance
+
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
     # from cect.Yim2024DataReader import get_instance
-
-    synclass = "Chemical Inh"
-    synclass = "Chemical Exc"
+    # from cect.WormNeuroAtlasMAReader import get_instance
+    from cect.Wang2024Reader import get_instance
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
@@ -1236,21 +1259,36 @@ if __name__ == "__main__":
     # synclass = "Contact"
     # from cect.TestDataReader import get_instance
 
+    synclass = "Chemical Inh"
+    synclass = "Chemical"
+
+    synclass = "Chemical"
+    synclass = "dopamine"
+
     cds = get_instance()
 
+    print("--------------------------------")
+    print(cds.summary())
+    print("--------------------------------")
+
+    if "MA" in cds.__class__.__name__:
+        synclass = "dopamine"
+        synclass = "tyramine"
+        synclass = "serotonin"
+    synclass = "GABA"
+    synclass = "Octopamine"
+    """
     cds2 = cds.get_connectome_view(view)
 
-    print(cds2.summary())
+    print(cds2.summary())"""
 
-    print("Keys: %s, plotting: %s" % (view.synclass_sets.keys(), synclass))
+    print("Keys: %s, plotting: %s" % (view.synclass_sets, synclass))
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
-    fig = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[0], view, symmetry=True
-    )
+    # fig = cds2.to_plotly_matrix_fig( list(view.synclass_sets.keys())[0], view, symmetry=True)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio

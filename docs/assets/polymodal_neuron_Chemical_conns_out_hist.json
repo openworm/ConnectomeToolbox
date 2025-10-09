@@ -1,199 +1,272 @@
 {
   "data": [
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "yellowgreen",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "White_whole Chemical conns out",
+      "mode": "markers",
+      "name": "OpenWormUnified",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
+        "NSMR",
+        "MCR",
+        "MCL"
       ],
       "y": [
-        0,
-        0,
+        15,
+        11,
+        10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkmagenta",
+        "size": 5,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Herm",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        15,
+        11,
+        10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Male",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        15,
+        11,
+        10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "red",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "White_whole",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
         7,
         1,
-        3
+        3,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "Cook2019Herm Chemical conns out",
+      "mode": "markers",
+      "name": "Cook2020",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
-      ],
-      "y": [
-        2,
-        3,
-        15,
-        11,
-        10
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Cook2019Male Chemical conns out",
-      "type": "scatter",
-      "x": [
-        "MCL",
+        "NSMR",
         "MCR",
-        "MI",
-        "NSML",
-        "NSMR"
+        "MCL"
       ],
       "y": [
-        2,
-        3,
-        15,
-        11,
-        10
-      ]
-    },
-    {
-      "line": {
-        "dash": "solid"
-      },
-      "marker": {
-        "symbol": "square"
-      },
-      "name": "Cook2020 Chemical conns out",
-      "type": "scatter",
-      "x": [
-        "MCL",
-        "MCR",
-        "MI",
-        "NSML",
-        "NSMR"
-      ],
-      "y": [
-        2,
-        3,
         15,
         14,
-        9
+        9,
+        3,
+        2
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "olive",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "WormNeuroAtlas Chemical conns out",
+      "mode": "markers",
+      "name": "WormNeuroAtlas",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
+        "NSMR",
+        "MCR",
+        "MCL"
       ],
       "y": [
-        0,
-        0,
         7,
         1,
-        3
+        3,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "firebrick",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "SSData Chemical conns out",
+      "mode": "markers",
+      "name": "Wang2024Herm",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
+        "NSMR",
+        "MCR",
+        "MCL"
       ],
       "y": [
-        6,
+        15,
+        11,
+        10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "#e88989",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Wang2024Male",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        15,
+        11,
+        10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "moccasin",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "SSData",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        0,
+        10,
+        10,
         4,
-        0,
-        10,
-        10
+        6
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "papayawhip",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "UpdSSData Chemical conns out",
+      "mode": "markers",
+      "name": "UpdSSData",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
+        "NSMR",
+        "MCR",
+        "MCL"
       ],
       "y": [
-        0,
-        0,
         10,
         5,
-        5
+        5,
+        0,
+        0
       ]
     },
     {
-      "line": {
-        "dash": "solid"
-      },
       "marker": {
-        "symbol": "square"
+        "color": "mistyrose",
+        "size": 3,
+        "symbol": "circle"
       },
-      "name": "UpdSSData2 Chemical conns out",
+      "mode": "markers",
+      "name": "UpdSSData2",
       "type": "scatter",
       "x": [
-        "MCL",
-        "MCR",
         "MI",
         "NSML",
-        "NSMR"
+        "NSMR",
+        "MCR",
+        "MCL"
       ],
       "y": [
-        0,
-        0,
         10,
         5,
-        5
+        5,
+        0,
+        0
       ]
     }
   ],
   "layout": {
+    "plot_bgcolor": "#FFF",
     "showlegend": true,
     "template": {
       "data": {
@@ -1010,6 +1083,18 @@
           "zerolinewidth": 2
         }
       }
+    },
+    "xaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
+    },
+    "yaxis": {
+      "linecolor": "black",
+      "linewidth": 1,
+      "showgrid": false,
+      "showline": true
     }
   }
 }

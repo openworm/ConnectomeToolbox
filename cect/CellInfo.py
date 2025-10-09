@@ -13,6 +13,10 @@ from cect.Cells import get_standard_color
 from cect.Cells import is_male_specific_cell
 from cect.Cells import is_bilateral_left
 
+from cect.Comparison import reader_colors
+
+from cect.Wang2024MaleReader import get_instance as get_wang2024_male_instance
+
 
 from cect import print_
 # from pprint import pprint
@@ -76,12 +80,22 @@ def get_weight_table_markdown(w):
 
     if df_all is not None:
         fig = df_all.plot(
-            labels=dict(index="Connection", value="Weight", variable="Dataset")
+            labels=dict(index="Connection", value="Weight", variable="Dataset"),
+            color_discrete_map=reader_colors,
         )
         fig.update_traces(
-            marker=dict(size=4), marker_symbol="circle", mode="lines+markers"
+            marker=dict(size=4),
+            marker_symbol="circle",
+            mode="markers",
         )
-        fig_md = f"\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
+        fig.update_layout(
+            template="plotly_white",
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig_md = f"\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
         fig_md = ""
 
@@ -142,6 +156,9 @@ def generate_cell_info_pages(connectomes):
     cell_classification = get_primary_classification()
 
     all_cell_info = [["Cell name", "Type", "Name details", "Lineage", "Classification"]]
+
+    wang2024_male_reader = get_wang2024_male_instance(from_cache=False)
+    neurotransmitters = wang2024_male_reader.all_neurotransmitters
 
     for cell in ALL_PREFERRED_CELL_NAMES:
         print_("Generating individual cell page for: %s" % cell)
@@ -222,6 +239,20 @@ def generate_cell_info_pages(connectomes):
                 cc[0].upper() + cc[1:],
             )
         )
+
+        if is_any_neuron(cell):
+            # print_(f"Checking if {cell} is in: {neurotransmitters}")
+            nt_info = (
+                ", ".join(neurotransmitters[cell])
+                if cell in neurotransmitters
+                and len(neurotransmitters[cell]) > 0
+                and neurotransmitters[cell][0] is not None
+                else "Not present in Wang et al. 2024"
+            )
+            cell_info += (
+                '    <p class="subtext">Neurotransmitters a/c to <a href="../Wang_2024">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
+                % nt_info
+            )
 
         cell_info += "    %s " % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
@@ -445,16 +476,6 @@ if __name__ == "__main__":
 
         cds_src = get_instance()
         cds = cds_src.get_connectome_view(view)
-        """
-        for cell in ['I3']:
-            print(cds.nodes)
-            print(cds.connections.keys())
-            index = cds.nodes.index(cell)
-            print('Conns from %s (index: %i): %s'%(cell,index,cds.get_connections_from(cell, syntype)))
-            matrix = cds.connections[syntype]
-            print(matrix[index])
-            print('Conns to %s (index: %i): %s'%(cell,index,cds.get_connections_to(cell, syntype)))
-            print(matrix.T[index])"""
 
         data = {}
 
@@ -529,7 +550,7 @@ if __name__ == "__main__":
                 a = positions[cell]
                 if right in positions:
                     b = positions[right]
-                    print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
+                    # print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
                     # Add edges to the figure
                     edge_trace = go.Scatter3d(
                         x=[a[0], b[0]],

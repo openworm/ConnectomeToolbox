@@ -4,9 +4,9 @@ title: C. elegans Connectome Toolbox
 
 # Overview
 
-Information on published connectomics data related to _C. elegans_. This is being developed as part of the [OpenWorm project](https://www.openworm.org).
+This resource aims to make available structured datasets on the anatomical (chemical and electrical synapses, e.g., **[White et al. 1986](White_1986.md)**, **[Cook et al. 2019](Cook_2019.md)**), functional (e.g., **[Randi et al. 2023](Randi_2023.md)**) and extrasynaptic (e.g., **[Ripoll-Sanchez et al. 2023](RipollSanchez_2023.md)**) connectomes of _C. elegans_.
 
-**Please note: this is a <u>Work in Progress</u>! Please [get in contact](About.md) if you are interested in contributing to this resource!**
+**This is being developed as part of the [OpenWorm project](https://www.openworm.org) and is a <u>Work in Progress</u>! Please [get in contact](About.md) if you are interested in contributing to this resource!**
 
 ### Example plots
 
@@ -14,8 +14,8 @@ Some of the generated views of the connectomics datasets covered here. Click on 
 
 <a href="Cook2019Male_data_graph/#electrical"><img src="assets/Cook2019Male_Raw_Electrical_graph.png" width="45%"></img></a>
 <a href="RipollSanchezShortRange_data"><img src="assets/RipollSanchezShortRange_Raw_Extrasynaptic.png" width="45%"></img></a>
-<a href="Escape_Cook2019Herm_data_graph/#chemical-exc"><img src="assets/Cook2019Herm_Escape_Chemical_Exc_graph.png" width="45%"></img></a>
-<a href="Cook2020_data_hiveplot/#chemical"><img src="assets/Cook2020_Pharynx_Chemical_Exc_hiveplot.png" width="45%"></img></a>
+<a href="Escape_Cook2019Herm_data_graph/#chemical"><img src="assets/Cook2019Herm_Escape_Chemical_graph.png" width="45%"></img></a>
+<a href="Cook2020_data_hiveplot/#chemical"><img src="assets/Cook2020_Pharynx_Chemical_hiveplot.png" width="45%"></img></a>
 
 ### Historical publications on _C. elegans_ connectomics
 

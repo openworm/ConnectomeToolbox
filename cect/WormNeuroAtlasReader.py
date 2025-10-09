@@ -40,13 +40,16 @@ def get_all_cells(watlas):
 class WormNeuroAtlasReader(ConnectomeDataset):
     """Data from the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)** for neuronal connectivity"""
 
-    def __init__(self):
+    def __init__(self, exclude_white=False, average=False):
         ConnectomeDataset.__init__(self)
 
         print_("Initialising WormNeuroAtlasReader")
         import wormneuroatlas as wa
 
-        self.atlas = wa.NeuroAtlas()
+        self.atlas = wa.NeuroAtlas(load_connectomes=False)
+        self.atlas.load_aconnectome_from_file(
+            exclude_white=exclude_white, average=average
+        )
         syn_sign = wa.SynapseSign()
 
         self.dom_glu = syn_sign.get_neurons_producing("Glu", mode="dominant")
@@ -137,7 +140,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
-    if from_cache:
+    if from_cache and 0:
         from cect.ConnectomeDataset import (
             load_connectome_dataset_file,
             get_cache_filename,
@@ -147,7 +150,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return WormNeuroAtlasReader()
+        return WormNeuroAtlasReader(exclude_white=False, average=False)
 
 
 """
@@ -155,13 +158,17 @@ read_data = my_instance.read_data
 read_muscle_data = my_instance.read_muscle_data"""
 
 if __name__ == "__main__":
-    my_instance = get_instance(False)
+    # my_instance = get_instance(True)
+    my_instance = WormNeuroAtlasReader(exclude_white=True, average=False)
 
     cells, neuron_conns = my_instance._read_data()
     neurons2muscles, muscles, muscle_conns = my_instance._read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    my_instance.get_connections_from(
-        "AWCL",
-    )
+    cell = "RMHL"
+    conns = my_instance.get_connections_from(cell, "Acetylcholine")
+
+    print(f"There are {len(conns)} connections from {cell}:")
+    for c in sorted(conns.keys()):
+        print(f" {cell} -> {c}: {conns[c]}")
