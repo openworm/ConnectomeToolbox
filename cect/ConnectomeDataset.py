@@ -845,11 +845,12 @@ class ConnectomeDataset:
                 reversescale=True,
                 color=[],
                 size=DEFAULT_NODE_SIZE,
-                colorbar=dict(
-                    thickness=15,
-                    title="Node Connections",
-                    xanchor="left",
-                ),
+                colorbar={
+                    "thickness": 15,
+                    "title": "Node Connections",
+                    "xanchor": "left",
+                    "title.side": "right",
+                },
                 line_width=1,
             ),
             opacity=1,

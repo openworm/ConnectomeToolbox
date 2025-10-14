@@ -1,34 +1,37 @@
 # Temporary class to allow this to be used in comparison notebook.
 # Should be tidied up.
 
-from cect.WhiteDataReader import WhiteDataReader
-from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeDataset import get_dataset_source_on_github
 
-from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 import os
+
+from cect.ConnectomeDataset import (
+    LOAD_READERS_FROM_CACHE_BY_DEFAULT,
+    get_cache_filename,
+    get_dataset_source_on_github,
+    load_connectome_dataset_file,
+)
+from cect.ConnectomeReader import analyse_connections
+from cect.WhiteDataReader import WhiteDataReader
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
 
 
-def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+def get_cache() -> object:
+    """Return a cached ConnectomeDataset for this reader, if present."""
+    filename_cache = get_cache_filename(__file__.split("/")[-1].split(".")[0])
+    return load_connectome_dataset_file(filename_cache) or None
+
+
+def get_instance(from_cache: bool = LOAD_READERS_FROM_CACHE_BY_DEFAULT, **kwargs):
     """Uses ``WhiteDataReader`` to load data on the whole worm connectome, including pharynx and ventral cord
 
     Returns:
-        WhiteDataReader: The initialised connectome reader
+        ConnectomeDataset or WhiteDataReader: The initialised connectome reader
     """
-    if from_cache:
-        from cect.ConnectomeDataset import (
-            load_connectome_dataset_file,
-            get_cache_filename,
-        )
-
-        return load_connectome_dataset_file(
-            get_cache_filename(__file__.split("/")[-1].split(".")[0])
-        )
-    else:
-        return WhiteDataReader(filename)
+    cache = get_cache() if from_cache else None
+    instance = cache or WhiteDataReader(kwargs.get("spreadsheet_location", filename))
+    return instance
 
 
 READER_DESCRIPTION = (
