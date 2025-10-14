@@ -233,6 +233,7 @@
         "colorbar": {
           "thickness": 15,
           "title": {
+            "side": "right",
             "text": "Node Connections"
           },
           "xanchor": "left"
