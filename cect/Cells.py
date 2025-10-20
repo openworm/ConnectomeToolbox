@@ -2201,7 +2201,7 @@ def get_cell_internal_link(
         if bold:
             link_text = f"<strong>{link_text}</strong>"
 
-        return '<a href="%s" title="%s">%s</a>' % (
+        return '<a href="%s" title="%s" style="text-decoration:none;">%s</a>' % (
             url,
             (cell_name + " (%s)" if text else "%s") % get_short_description(cell_name),
             link_text,
