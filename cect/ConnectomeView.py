@@ -31,14 +31,17 @@ from cect.Cells import MOTORNEURONS_NONPHARYNGEAL_COOK
 from cect.Cells import KNOWN_MODELLED_NEURONS
 
 
-from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
-from cect.Cells import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
-from cect.Cells import MONOAMINERGIC_SYN_CLASSES
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+from cect.Neurotransmitters import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 
-from cect.Cells import CONTACTOME_SYN_TYPE
-from cect.Cells import CONTACTOME_SYN_CLASS
+from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
+from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
+
+from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS
+from cect.Neurotransmitters import FUNCTIONAL_SYN_TYPE
 
 from cect.Cells import get_standard_color
 from cect.Cells import get_cell_internal_link
@@ -95,6 +98,7 @@ class View:
         synclass_sets={},
         colormap=DEFAULT_COLORMAP,
         only_show_existing_nodes=False,
+        text_scale=1.0,
     ):
         self.id = id
         self.name = name
@@ -103,6 +107,7 @@ class View:
         self.synclass_sets = synclass_sets
         self.colormap = colormap
         self.only_show_existing_nodes = only_show_existing_nodes
+        self.text_scale = text_scale  # scale for text size for nodes in plots etc.
 
     def __repr__(self):
         info = "ConnectomeView: %s (%s)" % (
@@ -184,7 +189,7 @@ for m in MONOAMINERGIC_SYN_CLASSES:
     EXC_INH_GJ_SYN_CLASSES[m] = [m]
 
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(EXC_INH_GJ_SYN_CLASSES)
-EXC_INH_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
+EXC_INH_GJ_FUNC_CONT_SYN_CLASSES[FUNCTIONAL_SYN_TYPE] = [FUNCTIONAL_SYN_CLASS]
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES[CONTACTOME_SYN_TYPE] = [CONTACTOME_SYN_CLASS]
 
 ALL_SYN_CLASSES = {
@@ -193,7 +198,7 @@ ALL_SYN_CLASSES = {
     + ["GABA"]
     + [GENERIC_ELEC_SYN]
     + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
-    + ["Functional"]
+    + [FUNCTIONAL_SYN_CLASS]
     + [CONTACTOME_SYN_CLASS]
 }
 
@@ -204,7 +209,7 @@ CHEM_GJ_SYN_CLASSES = {
 }
 
 CHEM_GJ_FUNC_CONT_SYN_CLASSES = copy.deepcopy(CHEM_GJ_SYN_CLASSES)
-CHEM_GJ_FUNC_CONT_SYN_CLASSES["Functional"] = ["Functional"]
+CHEM_GJ_FUNC_CONT_SYN_CLASSES[FUNCTIONAL_SYN_TYPE] = [FUNCTIONAL_SYN_CLASS]
 CHEM_GJ_FUNC_CONT_SYN_CLASSES[CONTACTOME_SYN_TYPE] = [CONTACTOME_SYN_CLASS]
 
 
@@ -339,6 +344,7 @@ ESCAPE_VIEW = View(
     "Escape Response Circuit from [Pirri & Alkema, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3437330/)",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.3,
 )
 
 len_scale = 1
@@ -434,23 +440,23 @@ MVLR = "MV"
 loco1_2_positions = {
     "AVB": (step * -1, step * 0),
     "AVA": (step * 3, step * 0),
-    "AS": (step * -1, step * 1.5),
+    "AS": (step * -1, step * 0.8),
     "DB": (0, step * 1),
     "DD": (step * 1, step * 0.8),
     "DA": (step * 2, step * 1),
     "VB": (0, step * -1),
     "VD": (step * 1, step * -0.8),
     "VA": (step * 2, step * -1),
-    MDLR: (step * 1.5, step * 2),
-    MVLR: (step * 1.5, step * -2),
+    MDLR: (step * 1, step * 2),
+    MVLR: (step * 1, step * -2),
 }
 
 mn_colors = {
     "DA": ".82 .7 .43",
-    "DB": ".43 .69 .67",
+    "DB": ".85 .7 .85",
     "DD": ".24 .32 .62",
     "VA": ".52 .33 .17",
-    "VB": ".17 .4 .37",
+    "VB": ".95 .65 .25",
     "VD": ".65 .78 .9",
     "AS": ".65 .2 .2",
     MDLR: ".2 .7 .2",
@@ -463,6 +469,7 @@ LOCOMOTION_1_VIEW = View(
     "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.3,
 )
 
 LOCOMOTION_2_VIEW = View(
@@ -471,12 +478,14 @@ LOCOMOTION_2_VIEW = View(
     "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.3,
 )
 
 
-def get_color_shape(cell_set):
+def get_color_shape_scale(cell_set):
     color = "purple"
     shape = "triangle-up"
+    scale = 1.0
 
     if cell_set in ["PVM", "PLM"]:
         color = "red"
@@ -504,12 +513,15 @@ def get_color_shape(cell_set):
         color = "#{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
         # print(f"{cell_set} has color {mn_colors[cell_set_ref]}: {color}")
         shape = "circle"
+        if cell_set in [MDLR, MVLR]:
+            shape = "diamond-wide"
+            scale = 1.3
 
-    return color, shape
+    return color, shape, scale
 
 
 for cell_set in sorted(loco1_2_positions.keys()):
-    color, shape = get_color_shape(cell_set)
+    color, shape, scale = get_color_shape_scale(cell_set)
 
     all_cells = []
 
@@ -536,7 +548,7 @@ for cell_set in sorted(loco1_2_positions.keys()):
         color=color,
         shape=shape,
         position=loco1_2_positions[cell_set],
-        size=len_scale * 80,
+        size=len_scale * 80 * scale,
     )
 
     if cell_set in [MDLR, MVLR]:
@@ -559,6 +571,7 @@ LOCOMOTION_3_VIEW = View(
     "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.1,
 )
 
 hspacing = 7
@@ -582,7 +595,7 @@ loco3_positions = {
 
 mn_range = range(1, 4)
 for cell_set in sorted(loco3_positions.keys()):
-    color, shape = get_color_shape(cell_set)
+    color, shape, scale = get_color_shape_scale(cell_set)
 
     all_cells = []
 
@@ -614,7 +627,7 @@ for cell_set in sorted(loco3_positions.keys()):
                         color=color,
                         shape=shape,
                         position=pos,
-                        size=len_scale * node_size,
+                        size=len_scale * node_size * scale,
                     )
 
                     LOCOMOTION_3_VIEW.node_sets.append(ns)
@@ -628,7 +641,7 @@ for cell_set in sorted(loco3_positions.keys()):
             color=color,
             shape=shape,
             position=loco3_positions[cell_set],
-            size=len_scale * node_size,
+            size=len_scale * node_size * scale,
         )
 
         LOCOMOTION_3_VIEW.node_sets.append(ns)
@@ -640,6 +653,7 @@ PEP_HUBS_VIEW = View(
     "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.2,
 )
 
 len_scale = 1.5
@@ -678,6 +692,7 @@ SOCIAL_VIEW = View(
     "Hub and spoke circuit for social behavior as in Macosko et al. 2009",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.3,
 )
 
 len_scale = 1.5
@@ -718,6 +733,7 @@ COOK_FIG3_VIEW = View(
     "A view of the data set with neurons grouped as in Figure 3 of Cook et al. 2019",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=1.2,
 )
 
 sn_pos = {
@@ -725,7 +741,7 @@ sn_pos = {
     "SN2": (6.1, 2.9),
     "SN3": (6, 4.3),
     "SN4": (2.4, 3.6),
-    "SN5": (3.4, 5.3),
+    "SN5": (3.2, 5.3),
     "SN6": (4, 5.4),
 }
 
@@ -733,6 +749,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
     color = "#b31b1b"
     if category == "SN1":
         color = "#FFC0CB"
+
     COOK_FIG3_VIEW.node_sets.append(
         NodeSet(
             category,
@@ -740,6 +757,7 @@ for category in SENSORY_NEURONS_COOK_CATEGORIES:
             color=color,
             shape="triangle-up",
             position=sn_pos[category],
+            size=60 if category in ["SN5", "SN2"] else None,
         )
     )
 
@@ -831,10 +849,10 @@ ALL_VIEWS = [
 QUICK_VIEWS = [
     RAW_VIEW,
     NEURONS_VIEW,
+    PHARYNX_VIEW,
     ESCAPE_VIEW,
     COOK_FIG3_VIEW,
     LOCOMOTION_2_VIEW,
-    NONPHARYNGEAL_NEURONS_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
 ]
 

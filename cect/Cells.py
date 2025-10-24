@@ -3,7 +3,7 @@
 ############################################################
 
 #    Information on cells in C. elegans
-#    Much of this data taken from supplementary info of Ceook et al 2019
+#    Much of this data taken from supplementary info of Cook et al 2019
 
 ############################################################
 
@@ -15,70 +15,33 @@ from cect import print_
 
 from typing import List
 
-ACETYLCHOLINE = "Acetylcholine"
-GLUTAMATE = "Glutamate"
-BETAINE = "Betaine"
-
-GABA = "GABA"
-
-DOPAMINE = "Dopamine"
-SEROTONIN = "Serotonin"
-OCTOPAMINE = "Octopamine"
-TYRAMINE = "Tyramine"
-
-
-ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
-    ACETYLCHOLINE,
-    "Acetylcholine_Tyramine",
-    "FMRFamide",
-    GABA,
-    GLUTAMATE,
-    BETAINE,
-    "Serotonin_Acetylcholine",
-    "Serotonin_Glutamate",
-]
-
-SEROTONIN_UPTAKE = "Serotonin_Uptake"
-GABA_UPTAKE = "GABA_Uptake"
-UNKNOWN_ORPHAN_NEUROTRANSMITTER = "Unknown_Orphan_Neurotransmitter"
-UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER = "Unknown_Monoaminergic_Neurotransmitter"
-FIVE_HTP = "5-HTP"
-PEOH = "Possible_PEOH"
-FIVE_HTP_FIVE_HT = "5-HTP_synthesis_5-HT_uptake"
-
-
-WANG_2024_EXTRA_NT_INFO = [
-    SEROTONIN_UPTAKE,
-    GABA_UPTAKE,
-    UNKNOWN_ORPHAN_NEUROTRANSMITTER,
-    UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER,
-    FIVE_HTP,
-    PEOH,
-    FIVE_HTP_FIVE_HT,
-]
-
-GENERIC_CHEM_SYN = "Generic_CS"
-GENERIC_ELEC_SYN = "Generic_GJ"
-
-CONTACTOME_SYN_TYPE = "Contact"
-CONTACTOME_SYN_CLASS = "Contact"
-
-EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
-MONOAMINERGIC_SYN_GENERAL_CLASS = "Monoaminergic"
-
-MONOAMINERGIC_SYN_CLASSES = [DOPAMINE, SEROTONIN, TYRAMINE, OCTOPAMINE]
-# MONOAMINERGIC_SYN_CLASSES = ["dopamine"]
-
-PEPTIDERGIC_SYN_CLASS = "Peptidergic"
-
-ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [
-    PEPTIDERGIC_SYN_CLASS,
-]
-ALL_KNOWN_EXTRASYNAPTIC_CLASSES += MONOAMINERGIC_SYN_CLASSES
+from cect.Neurotransmitters import (
+    GENERIC_CHEM_SYN,
+    GENERIC_ELEC_SYN,
+    ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+)
 
 cell_notes = {}
 
 connectomes = None
+
+CORE_ANATOMICAL_CONNECTOMES = [
+    "Cook2019Herm",
+    "Cook2019Male",
+    "White_A",
+    "White_L4",
+    "White_whole",
+    "Varshney",
+    "Witvliet1",
+    "Witvliet2",
+    "Witvliet3",
+    "Witvliet4",
+    "Witvliet5",
+    "Witvliet6",
+    "Witvliet7",
+    "Witvliet8",
+    "Yim2024",
+]
 
 
 def get_cell_notes(cell: str):
@@ -2406,6 +2369,8 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
         sorted_cells_conns = None
 
         for reader_name, connectome in connectomes.items():
+            if reader_name not in CORE_ANATOMICAL_CONNECTOMES:
+                continue
             indent = "    "
             conn_nums = []
             for cell in sorted_cells_alphabetical:

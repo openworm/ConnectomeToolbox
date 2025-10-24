@@ -5,7 +5,7 @@ from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-from cect.Cells import ACETYLCHOLINE, GABA, GENERIC_ELEC_SYN
+from cect.Neurotransmitters import ACETYLCHOLINE, GABA, GENERIC_ELEC_SYN
 
 import os
 import sys

@@ -13,7 +13,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect import print_
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 
 from pyneuroml import pynml
 import os

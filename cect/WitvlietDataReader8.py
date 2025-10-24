@@ -38,14 +38,27 @@ READER_DESCRIPTION = (
 
 
 if __name__ == "__main__":
-    cells, neuron_conns = read_data()
-    neurons2muscles, muscles, muscle_conns = read_muscle_data()
+    my_instance = get_instance(from_cache=False)
+    cells, neuron_conns = my_instance.read_data()
+    neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    cell = "RMHL"
-    conns = my_instance.get_connections_from(cell, "Generic_CS")
+    print(my_instance.summary())
+    print("--------------------------------")
 
-    print(f"There are {len(conns)} connections from {cell}:")
-    for c in sorted(conns.keys()):
-        print(f" {cell} -> {c}: {conns[c]}")
+    cells = ["VD8", "VD9", "SMDDR", "HSNR"]
+    for cell in cells:
+        print(f"\n -  {cell} - ")
+        syntypes = ["Generic_CS"]
+        for syntype in syntypes:
+            conns = my_instance.get_connections_to(cell, syntype)
+
+            print(f"There are {len(conns)} {syntype} connections to {cell}")
+            max = 10
+            for c in sorted(conns.keys())[:max]:
+                print(f"   {c} -> {cell}: {conns[c]}")
+            if len(conns) > max:
+                print("   ...")
+
+    # suspect connection: RIFR -> HSNR: 1.0

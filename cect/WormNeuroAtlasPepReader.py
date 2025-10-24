@@ -5,7 +5,7 @@
 ############################################################
 
 from cect.WormNeuroAtlasExtSynReader import WormNeuroAtlasExtSynReader
-from cect.Cells import PEPTIDERGIC_SYN_CLASS
+from cect.Neurotransmitters import PEPTIDERGIC_SYN_CLASS
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import logging

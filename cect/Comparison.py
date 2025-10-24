@@ -31,7 +31,7 @@ reader_colors = {
     "Witvliet6": "#444444",
     "Witvliet7": "#222244",
     "Witvliet8": "#111144",
-    "WormNeuroAtlas": "olive",
+    "WormNeuroAtlas": "lightblue",
     "Randi2023": "peachpuff",
     "RipollSanchezShortRange": "gold",
     "RipollSanchezMidRange": "goldenrod",
@@ -225,10 +225,10 @@ def generate_comparison_page(
         # readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        readers["Test"] = ["cect.TestDataReader", None]
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        # readers["Test"] = ["cect.TestDataReader", None]
 
-        # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
         # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
@@ -236,10 +236,17 @@ def generate_comparison_page(
         # readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
-        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
-        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+
+        # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
+
+        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
     else:
         if not quick:
@@ -320,7 +327,12 @@ def generate_comparison_page(
 
     table_html = ""
 
-    for reader_name, reader_info in readers.items():
+    to_include = []
+    for dataset in readers.keys():
+        to_include.append(dataset)
+
+    for reader_name in to_include:
+        reader_info = readers[reader_name]
         reader = reader_info[0]
 
         description_page = reader_info[1] if len(reader_info) > 1 else None
