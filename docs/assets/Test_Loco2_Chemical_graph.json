@@ -3,7 +3,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "#6eb0ab",
+        "color": "#d9b3d9",
         "shape": "linear",
         "width": 1.5625
       },
@@ -22,7 +22,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "#6eb0ab",
+        "color": "#d9b3d9",
         "shape": "linear",
         "width": 4.9375
       },
@@ -41,7 +41,7 @@
     {
       "hoverinfo": "none",
       "line": {
-        "color": "#2b665e",
+        "color": "#f3a640",
         "shape": "linear",
         "width": 10.0
       },
@@ -135,12 +135,12 @@
         "color": [
           "#a63333",
           "#d1b36e",
-          "#6eb0ab",
+          "#d9b3d9",
           "#3d519e",
           "#33b333",
           "#33b333",
           "#85542b",
-          "#2b665e",
+          "#f3a640",
           "#a6c7e6"
         ],
         "colorbar": {
@@ -195,23 +195,23 @@
         "reversescale": true,
         "showscale": false,
         "size": [
-          80,
-          80,
-          80,
-          80,
-          80,
-          80,
-          80,
-          80,
-          80
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          104.0,
+          104.0,
+          80.0,
+          80.0,
+          80.0
         ],
         "symbol": [
           "circle",
           "circle",
           "circle",
           "circle",
-          "circle",
-          "circle",
+          "diamond-wide",
+          "diamond-wide",
           "circle",
           "circle",
           "circle"
@@ -220,15 +220,15 @@
       "mode": "markers+text",
       "opacity": 1,
       "text": [
-        "<span style=\"color:#000000;font-size:1.0em\"><b>AS</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DA</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DB</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DD</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>MD</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>MV</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VA</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VB</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VD</b></span>"
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>AS</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>DA</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>DB</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>DD</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>MD</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>MV</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>VA</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>VB</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>VD</b></span>"
       ],
       "textposition": "middle center",
       "type": "scatter",
@@ -237,14 +237,14 @@
         0.6,
         0.0,
         0.3,
-        0.45,
-        0.45,
+        0.3,
+        0.3,
         0.6,
         0.0,
         0.3
       ],
       "y": [
-        0.45,
+        0.24,
         0.3,
         0.3,
         0.24,
