@@ -478,7 +478,7 @@ LOCOMOTION_2_VIEW = View(
     "Subset of cells involved in locomotion",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
-    text_scale=1.3,
+    text_scale=1.4,
 )
 
 

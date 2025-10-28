@@ -19,46 +19,6 @@
         1,
         0
       ]
-    },
-    {
-      "marker": {
-        "color": "#e88989",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Wang2024Male",
-      "type": "scatter",
-      "x": [
-        "mu_anal",
-        "mu_sph",
-        "MANAL"
-      ],
-      "y": [
-        3,
-        1,
-        0
-      ]
-    },
-    {
-      "marker": {
-        "color": "moccasin",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "SSData",
-      "type": "scatter",
-      "x": [
-        "mu_anal",
-        "mu_sph",
-        "MANAL"
-      ],
-      "y": [
-        0,
-        0,
-        1
-      ]
     }
   ],
   "layout": {

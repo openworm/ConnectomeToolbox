@@ -2,32 +2,6 @@
   "data": [
     {
       "marker": {
-        "color": "yellowgreen",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "OpenWormUnified",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVR",
-        "GLRVL"
-      ],
-      "y": [
-        8,
-        7,
-        6,
-        5,
-        2,
-        1
-      ]
-    },
-    {
-      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
@@ -49,32 +23,6 @@
         6,
         5,
         2,
-        1
-      ]
-    },
-    {
-      "marker": {
-        "color": "fuchsia",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Cook2019Male",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVR",
-        "GLRVL"
-      ],
-      "y": [
-        0,
-        1,
-        0,
-        0,
-        0,
         1
       ]
     },
@@ -153,6 +101,32 @@
         1,
         1,
         1,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "fuchsia",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2019Male",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVR",
+        "GLRVL"
+      ],
+      "y": [
+        0,
+        1,
+        0,
+        0,
+        0,
         1
       ]
     },

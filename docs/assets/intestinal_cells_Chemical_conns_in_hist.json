@@ -2,22 +2,6 @@
   "data": [
     {
       "marker": {
-        "color": "yellowgreen",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "OpenWormUnified",
-      "type": "scatter",
-      "x": [
-        "int"
-      ],
-      "y": [
-        3
-      ]
-    },
-    {
-      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
@@ -30,38 +14,6 @@
       ],
       "y": [
         3
-      ]
-    },
-    {
-      "marker": {
-        "color": "firebrick",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Wang2024Herm",
-      "type": "scatter",
-      "x": [
-        "int"
-      ],
-      "y": [
-        2
-      ]
-    },
-    {
-      "marker": {
-        "color": "#e88989",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Wang2024Male",
-      "type": "scatter",
-      "x": [
-        "int"
-      ],
-      "y": [
-        2
       ]
     }
   ],
