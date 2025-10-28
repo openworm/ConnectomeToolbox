@@ -2351,6 +2351,14 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
 
     sorted_cells_alphabetical = sorted(cells)
 
+    sorted_reader_names = list(connectomes.keys())
+    if "Cook2020Male" in sorted_reader_names:
+        sorted_reader_names.remove("Cook2020Male")
+        sorted_reader_names = ["Cook2020Male"] + sorted_reader_names
+    if "Cook2019Herm" in sorted_reader_names:
+        sorted_reader_names.remove("Cook2019Herm")
+        sorted_reader_names = ["Cook2019Herm"] + sorted_reader_names
+
     for syn_summary in syn_summaries:
         layout = go.Layout(
             plot_bgcolor="#FFF",  # Sets background color to white
@@ -2368,7 +2376,9 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
 
         sorted_cells_conns = None
 
-        for reader_name, connectome in connectomes.items():
+        for reader_name in sorted_reader_names:
+            connectome = connectomes[reader_name]
+
             if reader_name not in CORE_ANATOMICAL_CONNECTOMES:
                 continue
             indent = "    "
