@@ -229,14 +229,10 @@ def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str =
                     continue
                 y_vals.append(val)
                 labels.append(dataset)
-
-        # Order datasets by ascending symmetry
-        sorted_pairs = sorted(zip(y_vals, labels))
-        if sorted_pairs:
-            y_sorted, labels_sorted = zip(*sorted_pairs)
-            ax.plot(labels_sorted, y_sorted, marker="o", linestyle="-", color="tab:blue")
-            ax.set_xticks(range(len(labels_sorted)))
-            ax.set_xticklabels(labels_sorted, rotation=45, ha="right")
+        
+        ax.plot(labels, y_vals, marker="o", linestyle="-", color="tab:blue")
+        ax.set_xticks(range(len(labels)))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
 
         ax.set_title(view, fontsize=14)
         ax.set_xlabel("Dataset", fontsize=12)
@@ -250,13 +246,19 @@ def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str =
 
 def main():
     datasets_to_plot = [
+        "Witvliet1",
+        "Witvliet2",
+        "Witvliet3",
+        "Witvliet4",
+        "Witvliet5",
+        "Yim2024",
+        "Witvliet6",
         "Witvliet7",
         "Witvliet8",
+        "Varshney",
         "White_whole",
         "Cook2019Herm",
-        "Yim2024",
-        "Cook2019Male",
-        "Varshney"
+        "Cook2019Male"
     ]
 
     synclass = "Chemical"
