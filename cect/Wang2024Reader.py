@@ -307,7 +307,7 @@ class Wang2024Reader(ConnectomeDataset):
 
             print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
             for conn in anat_conns[:]:
-                print_("Original conn: %s" % conn)
+                # print_("Original conn: %s" % conn)
 
                 if is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters:
                     if conn.synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS + [
@@ -317,7 +317,7 @@ class Wang2024Reader(ConnectomeDataset):
                         for nt in neurotransmitters[conn.pre_cell]:
                             if nt in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
                                 conn.synclass = nt
-                                print_("    Adding new conn: %s" % conn)
+                                # print_("    Adding new conn: %s" % conn)
                                 self.add_connection_info(conn)
                     else:
                         print_(

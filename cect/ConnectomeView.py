@@ -265,15 +265,6 @@ NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
-"""
-NONPHARYNGEAL_NEURONS_HM_VIEW = View(
-    "NonpharyngealHM",
-    "Nonpharyngeal Neurons",
-    "All neurons (herm. & male) except those in the pharynx",
-    [],
-    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
-    only_show_existing_nodes=False,
-)"""
 
 for cell in (
     sorted(PHARYNGEAL_NEURONS)
@@ -401,11 +392,11 @@ for cell_set in sorted(esc_positions.keys()):
 
     if cell_set == "VB/DB":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
-            if "VB" in m or "DB" in m:
+            if m.startswith("VB") or m.startswith("DB"):
                 all_cells.append(m)
     elif cell_set == "VA/DA":
         for m in MOTORNEURONS_NONPHARYNGEAL_COOK:
-            if "VA" in m or "DA" in m:
+            if m.startswith("VA") or m.startswith("DA"):
                 all_cells.append(m)
     elif cell_set == "Body Musc":
         for m in BODY_MUSCLES_COOK + UNSPECIFIED_BODY_WALL_MUSCLES:
@@ -414,7 +405,11 @@ for cell_set in sorted(esc_positions.keys()):
         for m in HEAD_MUSCLES_COOK:
             all_cells.append(m)
 
-    elif cell_set in ["SMD"]:
+    elif cell_set == "RMD":
+        for s in ["DL", "DR", "VL", "VR", "L", "R"]:
+            all_cells.append("%s%s" % (cell_set, s))
+
+    elif cell_set == "SMD":
         for s in ["DL", "DR", "VL", "VR"]:
             all_cells.append("%s%s" % (cell_set, s))
 

@@ -226,7 +226,7 @@ def generate_comparison_page(
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         # readers["White_A"] = ["cect.White_A", "White_1986"]
-        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Test"] = ["cect.TestDataReader", None]
 
         # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
@@ -238,13 +238,13 @@ def generate_comparison_page(
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+        # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
         # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
-        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
+        # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
         # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
