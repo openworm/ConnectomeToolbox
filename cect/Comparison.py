@@ -209,6 +209,39 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
+def get_improved_reader_name(reader_name):
+    better_name = (
+        reader_name.replace("_", " ")
+        .replace("201", " 201")
+        .replace("202", " 202")
+        .replace("Sanchez", " Sanchez et al. 2023")
+        .replace("tley", "tley et al.")
+        .replace("Cook", "Cook et al.")
+        .replace("Wang", "Wang et al.")
+        .replace("ttin", "ttin et al.")
+        .replace("im", "im et al.")
+        .replace("Herm", " (herm.)")
+        .replace("Male", " (male)")
+        .replace("ShortRange", " (short range)")
+        .replace("liet", "liet ")
+        .replace("MA", " (monoamin.)")
+        .replace("PEP", " (peptid.)")
+        .replace("ite A", "ite et al. 1986 N2U/adult")
+        .replace("ite L4", "ite et al. 1986 JSU/L4")
+        .replace("ite whole", "ite et al. 1986 (whole worm)")
+        .replace("Randi", "Randi et al.")
+        .replace("Varshney", "Varshney et al. 2011")
+        .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
+        .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
+        .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
+        .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+        .replace("Gleeson", "Gleeson et al. 2018")
+        .replace("Olivares", "Olivares et al. 2021")
+        .replace("Model", " (model)")
+    )
+    return better_name
+
+
 def generate_comparison_page(
     quick: int,
     color_table=True,
@@ -422,7 +455,7 @@ def generate_comparison_page(
 
                                 f.write(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
-                                    % reader_name
+                                    % get_improved_reader_name(reader_name)
                                 )
 
                                 desc_full = ""
@@ -842,35 +875,7 @@ def generate_comparison_page(
 
         better_names = {}
         for reader_name in readers_to_include:
-            better_name = (
-                reader_name.replace("_", " ")
-                .replace("201", " 201")
-                .replace("202", " 202")
-                .replace("Sanchez", " Sanchez et al. 2023")
-                .replace("tley", "tley et al.")
-                .replace("Cook", "Cook et al.")
-                .replace("Wang", "Wang et al.")
-                .replace("ttin", "ttin et al.")
-                .replace("im", "im et al.")
-                .replace("Herm", " (herm.)")
-                .replace("Male", " (male)")
-                .replace("ShortRange", " (short range)")
-                .replace("liet", "liet ")
-                .replace("MA", " (monoamin.)")
-                .replace("PEP", " (peptid.)")
-                .replace("ite A", "ite et al. 1986 N2U/adult")
-                .replace("ite L4", "ite et al. 1986 JSU/L4")
-                .replace("ite whole", "ite et al. 1986 (whole worm)")
-                .replace("Randi", "Randi et al.")
-                .replace("Varshney", "Varshney et al. 2011")
-                .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
-                .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
-                .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
-                .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
-                .replace("Gleeson", "Gleeson et al. 2018")
-                .replace("Olivares", "Olivares et al. 2021")
-                .replace("Model", " (model)")
-            )
+            better_name = get_improved_reader_name(reader_name)
             better_names[reader_name] = better_name
 
             # table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
