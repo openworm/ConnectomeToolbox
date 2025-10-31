@@ -2,26 +2,6 @@
   "data": [
     {
       "marker": {
-        "color": "yellowgreen",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "OpenWormUnified",
-      "type": "scatter",
-      "x": [
-        "mu_anal",
-        "mu_sph",
-        "MANAL"
-      ],
-      "y": [
-        4,
-        3,
-        0
-      ]
-    },
-    {
-      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"

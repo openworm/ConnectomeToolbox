@@ -31,7 +31,7 @@ reader_colors = {
     "Witvliet6": "#444444",
     "Witvliet7": "#222244",
     "Witvliet8": "#111144",
-    "WormNeuroAtlas": "olive",
+    "WormNeuroAtlas": "lightblue",
     "Randi2023": "peachpuff",
     "RipollSanchezShortRange": "gold",
     "RipollSanchezMidRange": "goldenrod",
@@ -225,24 +225,31 @@ def generate_comparison_page(
         # readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        # readers["White_A"] = ["cect.White_A", "White_1986"]
+        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Test"] = ["cect.TestDataReader", None]
 
         # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
         # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
-        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
-        readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
+        # readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        # readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
-    else:
+        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+
+        # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+
         readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-        if not quick:
-            readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-            readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
 
+    else:
         if not quick:
             readers["White_A"] = ["cect.White_A", "White_1986"]
             readers["White_L4"] = ["cect.White_L4", "White_1986"]
@@ -256,6 +263,10 @@ def generate_comparison_page(
                 "cect.WormNeuroAtlasPepReader",
                 "Bentley_2016",
             ]
+
+        if not quick:
+            readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+            readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
 
         readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
@@ -293,10 +304,14 @@ def generate_comparison_page(
 
         readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
         readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
+
         readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
+
         readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+
+        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
         if not quick:
             readers["SSData"] = ["cect.SpreadsheetDataReader", None]
@@ -313,7 +328,12 @@ def generate_comparison_page(
 
     table_html = ""
 
-    for reader_name, reader_info in readers.items():
+    to_include = []
+    for dataset in readers.keys():
+        to_include.append(dataset)
+
+    for reader_name in to_include:
+        reader_info = readers[reader_name]
         reader = reader_info[0]
 
         description_page = reader_info[1] if len(reader_info) > 1 else None
@@ -815,6 +835,8 @@ def generate_comparison_page(
                 and "WormNeuroAtlas" not in reader_name
                 and "RipollSanchezMidRange" not in reader_name
                 and "RipollSanchezLongRange" not in reader_name
+                and "NonNorm" not in reader_name
+                and "OpenWorm" not in reader_name
             ):
                 readers_to_include.append(reader_name)
 
@@ -824,23 +846,30 @@ def generate_comparison_page(
                 reader_name.replace("_", " ")
                 .replace("201", " 201")
                 .replace("202", " 202")
-                .replace("Sanchez", " Sanchez et al. 2023 ")
+                .replace("Sanchez", " Sanchez et al. 2023")
                 .replace("tley", "tley et al.")
                 .replace("Cook", "Cook et al.")
-                .replace("in", "in et al.")
-                .replace("19", "19 ")
+                .replace("Wang", "Wang et al.")
+                .replace("ttin", "ttin et al.")
+                .replace("im", "im et al.")
+                .replace("Herm", " (herm.)")
+                .replace("Male", " (male)")
+                .replace("ShortRange", " (short range)")
                 .replace("liet", "liet ")
-                .replace("MA", "Monoamin.")
-                .replace("PEP", "Peptid.")
-                .replace("ite A", "ite et al. 1986 N2U/Adult")
+                .replace("MA", " (monoamin.)")
+                .replace("PEP", " (peptid.)")
+                .replace("ite A", "ite et al. 1986 N2U/adult")
                 .replace("ite L4", "ite et al. 1986 JSU/L4")
-                .replace("ite whole", "ite et al. 1986 Whole worm")
+                .replace("ite whole", "ite et al. 1986 (whole worm)")
                 .replace("Randi", "Randi et al.")
                 .replace("Varshney", "Varshney et al. 2011")
                 .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
                 .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
                 .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
-                .replace("Witvliet 8", "Witvliet et al. 2021 8 (Adult)")
+                .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+                .replace("Gleeson", "Gleeson et al. 2018")
+                .replace("Olivares", "Olivares et al. 2021")
+                .replace("Model", " (model)")
             )
             better_names[reader_name] = better_name
 

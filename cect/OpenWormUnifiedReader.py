@@ -12,7 +12,7 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.WormNeuroAtlasReader import WormNeuroAtlasReader
 from cect.Cells import is_any_neuron
-from cect.Cells import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
 from cect.ConnectomeDataset import load_connectome_dataset_file
 from cect.ConnectomeDataset import get_cache_filename
 from cect import print_

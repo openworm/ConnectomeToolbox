@@ -20,6 +20,8 @@ from cect.Cells import is_pharyngeal_cell
 from cect.Cells import is_known_cell
 from cect.Cells import get_SIM_class
 
+from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS
+
 import numpy as np
 import math
 import sys
@@ -28,7 +30,6 @@ import pprint
 import random
 import json
 
-random.seed(10)
 
 LOAD_READERS_FROM_CACHE_BY_DEFAULT = False
 
@@ -436,7 +437,7 @@ class ConnectomeDataset:
                 else color_continuous_scale
             )
 
-        if synclass == "Functional":
+        if synclass == FUNCTIONAL_SYN_CLASS:
             color_continuous_scale = (
                 POS_NEG_COLORMAP
                 if color_continuous_scale is None
@@ -615,6 +616,8 @@ class ConnectomeDataset:
             % (nodes_to_show, len(nodes_to_show), disconnected)
         )
 
+        random.seed(10)
+
         for i, node_value in enumerate(nodes_to_show):
             scale = 20
             if is_pharyngeal_cell(node_value):
@@ -783,7 +786,7 @@ class ConnectomeDataset:
                 # https://stackoverflow.com/questions/3942878
                 if (
                     float(rgb[0]) * 0.299 + float(rgb[1]) * 0.587 + float(rgb[2]) * 0.2
-                ) > 0.35:
+                ) > 0.45:
                     fcolor = "#000000"
                 else:
                     fcolor = "#ffffff"
@@ -835,8 +838,12 @@ class ConnectomeDataset:
             y=node_y,
             mode="markers+text" if add_text else "markers",
             text=[
-                '<span style="color:%s;font-size:1.0em"><b>%s</b></span>'
-                % (node_font_colors[n] if n in node_font_colors else "black", n)
+                '<span style="color:%s;font-size:%sem"><b>%s</b></span>'
+                % (
+                    node_font_colors[n] if n in node_font_colors else "black",
+                    view.text_scale,
+                    n,
+                )
                 for n in self.nodes
             ],
             marker=dict(
@@ -1062,32 +1069,45 @@ class ConnectomeDataset:
         fig.update(data=[{"hoverinfo": "skip"}])
 
         # print(dir(fig))
+        fontsize_hive = 24
         count = 0
         for d in fig.data:
             if d["mode"] == "text":
-                if d["text"] == "Sensory" and d["textposition"] == "top center":
-                    d["y"] = [-5.4]
-                if d["text"] == "Motorneuron" and d["textposition"] == "bottom center":
-                    d["y"] = [5.4]
+                if d["text"] == "Sensory":
+                    d["textfont"]["color"] = SENSORY_COLOR
+                    d["textfont"]["size"] = fontsize_hive
+                    if d["textposition"] == "top center":
+                        d["y"] = [-5.4]
+                if d["text"] == "Motorneuron":
+                    d["textfont"]["color"] = MOTORNEURON_COLOR
+                    d["textfont"]["size"] = fontsize_hive
+                    if d["textposition"] == "bottom center":
+                        d["y"] = [5.4]
                 if d["text"] == "Interneuron":
+                    d["textfont"]["color"] = INTERNEURON_COLOR
+                    d["textfont"]["size"] = fontsize_hive
                     if d["y"][0] > 0:
-                        d["y"] = [2.6]
+                        d["y"] = [3]
                     if d["y"][0] < 0:
-                        d["y"] = [-2.6]
+                        d["y"] = [-3]
                 # print("Moving text %s" % d)
             if d["mode"] == "markers":
                 nrn_num = len(d["x"])
                 d["hovertemplate"] = "%{text}<extra></extra>"
                 d.pop("hoverinfo", None)
 
+                marker_size = 10
                 if count == 0 or count == 1:
                     d["marker"]["color"] = [INTERNEURON_COLOR] * nrn_num
+                    d["marker"]["size"] = marker_size
                     type_ = "Interneuron"
                 if count == 2 or count == 3:
                     d["marker"]["color"] = [MOTORNEURON_COLOR] * nrn_num
+                    d["marker"]["size"] = marker_size
                     type_ = "Motorneuron"
                 if count == 4 or count == 5:
                     d["marker"]["color"] = [SENSORY_COLOR] * nrn_num
+                    d["marker"]["size"] = marker_size
                     type_ = "Sensory"
 
                 text_at_point = {}
@@ -1234,24 +1254,25 @@ if __name__ == "__main__":
     print(pprint.pprint(nx.node_link_data(G)))"""
 
     # from cect.ConnectomeView import NEURONS_VIEW as view
-    from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
     # from cect.ConnectomeView import PHARYNX_VIEW as view
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    # from cect.White_whole import get_instance
+    from cect.White_whole import get_instance
+    # from cect.TestDataReader import get_instance
 
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
     # from cect.Cook2019HermReader import get_instance
     # from cect.Yim2024DataReader import get_instance
     # from cect.WormNeuroAtlasMAReader import get_instance
-    from cect.Wang2024Reader import get_instance
+    # from cect.Wang2024Reader import get_instance
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
@@ -1262,7 +1283,6 @@ if __name__ == "__main__":
     synclass = "Chemical Inh"
     synclass = "Chemical"
 
-    synclass = "Chemical"
     synclass = "dopamine"
 
     cds = get_instance()
@@ -1277,16 +1297,18 @@ if __name__ == "__main__":
         synclass = "serotonin"
     synclass = "GABA"
     synclass = "Octopamine"
-    """
+    synclass = "Chemical"
+
     cds2 = cds.get_connectome_view(view)
 
-    print(cds2.summary())"""
+    print(cds2.summary())
 
     print("Keys: %s, plotting: %s" % (view.synclass_sets, synclass))
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
-    fig = cds.to_plotly_graph_fig(synclass, view)
+    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
     # fig = cds2.to_plotly_matrix_fig( list(view.synclass_sets.keys())[0], view, symmetry=True)
     # fig = cds2.to_plotly_matrix_fig(synclass, view)

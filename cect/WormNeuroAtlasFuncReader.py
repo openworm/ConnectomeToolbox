@@ -11,6 +11,8 @@ import sys
 from cect.WormNeuroAtlasReader import get_all_cells
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS
+from cect.Neurotransmitters import FUNCTIONAL_SYN_TYPE
 
 ############################################################
 
@@ -21,9 +23,6 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 LOGGER = logging.getLogger(__name__)
 
 READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
-
-FUNCTIONAL_SYN_TYPE = "Functional"
-FUNCTIONAL_SYN_CLASS = "Functional"
 
 
 class WormNeuroAtlasFuncReader(ConnectomeDataset):

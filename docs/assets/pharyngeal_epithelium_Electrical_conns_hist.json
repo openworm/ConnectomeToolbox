@@ -2,50 +2,6 @@
   "data": [
     {
       "marker": {
-        "color": "yellowgreen",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "OpenWormUnified",
-      "type": "scatter",
-      "x": [
-        "g1AR",
-        "g1AL",
-        "e3VL",
-        "e3D",
-        "e3VR",
-        "e2VR",
-        "e2VL",
-        "e2D",
-        "g2R",
-        "g2L",
-        "g1p",
-        "g1P",
-        "e2V",
-        "e2DR",
-        "e2DL"
-      ],
-      "y": [
-        4,
-        4,
-        3,
-        3,
-        2,
-        2,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
@@ -130,50 +86,6 @@
         0,
         0,
         0
-      ]
-    },
-    {
-      "marker": {
-        "color": "darkorchid",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Cook2020",
-      "type": "scatter",
-      "x": [
-        "g1AR",
-        "g1AL",
-        "e3VL",
-        "e3D",
-        "e3VR",
-        "e2VR",
-        "e2VL",
-        "e2D",
-        "g2R",
-        "g2L",
-        "g1p",
-        "g1P",
-        "e2V",
-        "e2DR",
-        "e2DL"
-      ],
-      "y": [
-        4,
-        4,
-        3,
-        3,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        1,
-        1
       ]
     }
   ],

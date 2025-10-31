@@ -4,8 +4,8 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 
 from openpyxl import load_workbook
 

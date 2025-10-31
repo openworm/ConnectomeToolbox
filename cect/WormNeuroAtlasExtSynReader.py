@@ -2,10 +2,10 @@ import logging
 
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
-from cect.Cells import EXTRASYNAPTIC_SYN_TYPE
-from cect.Cells import MONOAMINERGIC_SYN_GENERAL_CLASS
-from cect.Cells import MONOAMINERGIC_SYN_CLASSES
-from cect.Cells import PEPTIDERGIC_SYN_CLASS
+from cect.Neurotransmitters import EXTRASYNAPTIC_SYN_TYPE
+from cect.Neurotransmitters import MONOAMINERGIC_SYN_GENERAL_CLASS
+from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
+from cect.Neurotransmitters import PEPTIDERGIC_SYN_CLASS
 
 from cect import print_
 

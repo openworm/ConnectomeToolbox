@@ -8,8 +8,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import OTHER_CHEMICAL_NT
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -74,7 +74,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
         elif neuron in self.dom_gaba:
             return "GABA"
         else:
-            nt = GENERIC_CHEM_SYN
+            nt = OTHER_CHEMICAL_NT
             if neuron in self.alt_glu:
                 nt += "_Glutamate"
             if neuron in self.alt_ach:
@@ -160,15 +160,33 @@ read_muscle_data = my_instance.read_muscle_data"""
 if __name__ == "__main__":
     # my_instance = get_instance(True)
     my_instance = WormNeuroAtlasReader(exclude_white=True, average=False)
+    # my_instance = get_instance(from_cache=False)
 
     cells, neuron_conns = my_instance._read_data()
     neurons2muscles, muscles, muscle_conns = my_instance._read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    cell = "RMHL"
-    conns = my_instance.get_connections_from(cell, "Acetylcholine")
+    print(my_instance.summary())
 
-    print(f"There are {len(conns)} connections from {cell}:")
-    for c in sorted(conns.keys()):
-        print(f" {cell} -> {c}: {conns[c]}")
+    cells = ["VD8", "VD9", "SMDDR", "HSNR"]
+    print("--------------------------------")
+    for cell in cells:
+        print(f"\n -  {cell} - ")
+        syntypes = [
+            "Acetylcholine",
+            "GABA",
+            "Glutamate",
+            OTHER_CHEMICAL_NT,
+            "Generic_CS",
+        ]
+        for syntype in syntypes:
+            conns = my_instance.get_connections_to(cell, syntype)
+
+            print(f"There are {len(conns)} {syntype} connections to {cell}")
+            max = 10
+
+            for c in sorted(conns.keys())[:max]:
+                print(f"   {c} -> {cell}: {conns[c]}")
+            if len(conns) > max:
+                print("   ...")

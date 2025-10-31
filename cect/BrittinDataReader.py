@@ -15,8 +15,8 @@ from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.Cells import is_one_of_bilateral_pair
 from cect.Cells import get_contralateral_cell
 
-from cect.Cells import CONTACTOME_SYN_TYPE
-from cect.Cells import CONTACTOME_SYN_CLASS
+from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
+from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 

@@ -11,8 +11,8 @@ from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
 from cect.Cells import is_marginal_cell
 from cect.Cells import convert_to_preferred_phar_cell_name
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os

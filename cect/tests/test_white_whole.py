@@ -23,9 +23,9 @@ class TestWhiteWhole(unittest.TestCase):
             spreadsheet_directory / "aconnectome_white_1986_whole.csv"
         )
 
-        assert spreadsheet_filepath.is_file(), (
-            f"Test data file should exist at {spreadsheet_filepath}"
-        )
+        assert (
+            spreadsheet_filepath.is_file()
+        ), f"Test data file should exist at {spreadsheet_filepath}"
         filename = str(spreadsheet_filepath)
         instance = get_instance(from_cache=False, spreadsheet_location=filename)
         data = instance.read_data()
@@ -52,12 +52,12 @@ class TestWhiteWhole(unittest.TestCase):
 
         assert cache is not None, "Cache should not be None"
         assert any([any(_) for _ in cache._read_data()]), "Cache should contain data"
-        assert isinstance(cache, ConnectomeDataset), (
-            "Cache should be of type ConnectomeDataset"
-        )
-        assert instance._read_data() == cache._read_data(), (
-            "Data from instance and cache should be identical"
-        )
+        assert isinstance(
+            cache, ConnectomeDataset
+        ), "Cache should be of type ConnectomeDataset"
+        assert (
+            instance._read_data() == cache._read_data()
+        ), "Data from instance and cache should be identical"
 
 
 if __name__ == "__main__":

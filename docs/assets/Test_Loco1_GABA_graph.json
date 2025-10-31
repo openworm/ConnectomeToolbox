@@ -55,10 +55,10 @@
           "blue",
           "green",
           "#d1b36e",
-          "#6eb0ab",
+          "#d9b3d9",
           "#3d519e",
           "#85542b",
-          "#2b665e",
+          "#f3a640",
           "#a6c7e6"
         ],
         "colorbar": {
@@ -113,14 +113,14 @@
         "reversescale": true,
         "showscale": false,
         "size": [
-          80,
-          80,
-          80,
-          80,
-          80,
-          80,
-          80,
-          80
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0,
+          80.0
         ],
         "symbol": [
           "octagon",
@@ -136,14 +136,14 @@
       "mode": "markers+text",
       "opacity": 1,
       "text": [
-        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVA</b></span>",
-        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVB</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DA</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DB</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>DD</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VA</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VB</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>VD</b></span>"
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>AVA</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>AVB</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>DA</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>DB</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>DD</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.3em\"><b>VA</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>VB</b></span>",
+        "<span style=\"color:#000000;font-size:1.3em\"><b>VD</b></span>"
       ],
       "textposition": "middle center",
       "type": "scatter",

@@ -16,25 +16,25 @@ from cect.ConnectomeDataset import get_cache_filename
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect import print_
 
-from cect.Cells import ACETYLCHOLINE
-from cect.Cells import DOPAMINE
-from cect.Cells import GABA
-from cect.Cells import GLUTAMATE
-from cect.Cells import OCTOPAMINE
-from cect.Cells import SEROTONIN
-from cect.Cells import TYRAMINE
-from cect.Cells import BETAINE
-from cect.Cells import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import MONOAMINERGIC_SYN_CLASSES
+from cect.Neurotransmitters import ACETYLCHOLINE
+from cect.Neurotransmitters import DOPAMINE
+from cect.Neurotransmitters import GABA
+from cect.Neurotransmitters import GLUTAMATE
+from cect.Neurotransmitters import OCTOPAMINE
+from cect.Neurotransmitters import SEROTONIN
+from cect.Neurotransmitters import TYRAMINE
+from cect.Neurotransmitters import BETAINE
+from cect.Neurotransmitters import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
 
-from cect.Cells import SEROTONIN_UPTAKE
-from cect.Cells import GABA_UPTAKE
-from cect.Cells import UNKNOWN_ORPHAN_NEUROTRANSMITTER
-from cect.Cells import UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER
-from cect.Cells import FIVE_HTP
-from cect.Cells import PEOH
-from cect.Cells import FIVE_HTP_FIVE_HT
+from cect.Neurotransmitters import SEROTONIN_UPTAKE
+from cect.Neurotransmitters import GABA_UPTAKE
+from cect.Neurotransmitters import UNKNOWN_ORPHAN_NEUROTRANSMITTER
+from cect.Neurotransmitters import UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER
+from cect.Neurotransmitters import FIVE_HTP
+from cect.Neurotransmitters import PEOH
+from cect.Neurotransmitters import FIVE_HTP_FIVE_HT
 
 from openpyxl import load_workbook
 

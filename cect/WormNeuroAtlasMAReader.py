@@ -5,8 +5,8 @@
 ############################################################
 
 from cect.WormNeuroAtlasExtSynReader import WormNeuroAtlasExtSynReader
-from cect.Cells import MONOAMINERGIC_SYN_GENERAL_CLASS
-from cect.Cells import DOPAMINE
+from cect.Neurotransmitters import MONOAMINERGIC_SYN_GENERAL_CLASS
+from cect.Neurotransmitters import DOPAMINE
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import logging

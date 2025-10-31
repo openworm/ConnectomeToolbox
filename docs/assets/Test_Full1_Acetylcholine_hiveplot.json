@@ -398,8 +398,8 @@
       "showlegend": false,
       "text": "Interneuron",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#ff3300",
+        "size": 24
       },
       "textposition": "middle left",
       "type": "scatter",
@@ -407,7 +407,7 @@
         5.873078879911928
       ],
       "y": [
-        -2.6
+        -3
       ]
     },
     {
@@ -416,8 +416,8 @@
       "showlegend": false,
       "text": "Interneuron",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#ff3300",
+        "size": 24
       },
       "textposition": "middle left",
       "type": "scatter",
@@ -425,7 +425,7 @@
         5.873078879911928
       ],
       "y": [
-        2.6
+        3
       ]
     },
     {
@@ -434,8 +434,8 @@
       "showlegend": false,
       "text": "Motorneuron",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#9966cc",
+        "size": 24
       },
       "textposition": "bottom center",
       "type": "scatter",
@@ -452,8 +452,8 @@
       "showlegend": false,
       "text": "Motorneuron",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#9966cc",
+        "size": 24
       },
       "textposition": "bottom right",
       "type": "scatter",
@@ -470,8 +470,8 @@
       "showlegend": false,
       "text": "Sensory",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#ff66cc",
+        "size": 24
       },
       "textposition": "top right",
       "type": "scatter",
@@ -488,8 +488,8 @@
       "showlegend": false,
       "text": "Sensory",
       "textfont": {
-        "color": "black",
-        "size": 16
+        "color": "#ff66cc",
+        "size": 24
       },
       "textposition": "top center",
       "type": "scatter",
@@ -618,7 +618,7 @@
           "#ff3300"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,
@@ -652,7 +652,7 @@
           "#ff3300"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,
@@ -687,7 +687,7 @@
           "#9966cc"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,
@@ -725,7 +725,7 @@
           "#9966cc"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,
@@ -764,7 +764,7 @@
           "#ff66cc"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,
@@ -806,7 +806,7 @@
           "#ff66cc"
         ],
         "opacity": 0.8,
-        "size": 8
+        "size": 10
       },
       "mode": "markers",
       "showlegend": false,

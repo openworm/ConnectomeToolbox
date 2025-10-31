@@ -8,8 +8,8 @@ from cect.Cells import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 
 from openpyxl import load_workbook
 import os

@@ -14,6 +14,7 @@
     * [Cook2020DataReader](cect/Cook2020DataReader.md)
     * [GleesonModelReader](cect/GleesonModelReader.md)
     * [NeuroMLDataReader](cect/NeuroMLDataReader.md)
+    * [Neurotransmitters](cect/Neurotransmitters.md)
     * [OlivaresModelReader](cect/OlivaresModelReader.md)
     * [OpenWormUnifiedReader](cect/OpenWormUnifiedReader.md)
     * [RipollSanchezDataReader](cect/RipollSanchezDataReader.md)

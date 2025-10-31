@@ -47,12 +47,13 @@ def get_weight_table_markdown(w):
 
     for dataset in w:
         # print(dataset)
-        # print(w[dataset].values())
+        # print("-- Checking whether to add dataset: %s" % dataset)
         if (
             len(w[dataset]) > 0
             and sum(w[dataset].values()) > 0
             and "SSData" not in dataset
         ):
+            # print("   -- Adding dataset: %s" % dataset)
             ww[dataset] = w[dataset]
             tot_conns += sum(w[dataset].values())
 
@@ -608,11 +609,14 @@ if __name__ == "__main__":
 
         from cect.Cook2019HermReader import get_instance
 
-        connectomes["Cook2019Herm"] = get_instance()
+        connectomes["Cook2019Herm"] = get_instance(from_cache=True)
 
         from cect.Cook2019MaleReader import get_instance
 
-        connectomes["Cook2019Male"] = get_instance()
+        connectomes["Cook2019Male"] = get_instance(from_cache=True)
+        from cect.WormNeuroAtlasReader import get_instance
+
+        connectomes["WormNeuroAtlas"] = get_instance()
 
         """
         from cect.WormNeuroAtlasMAReader import get_instance

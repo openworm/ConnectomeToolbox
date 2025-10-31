@@ -2,60 +2,12 @@
   "data": [
     {
       "marker": {
-        "color": "yellowgreen",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "OpenWormUnified",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        10,
-        10,
-        6,
-        6,
-        3
-      ]
-    },
-    {
-      "marker": {
         "color": "darkmagenta",
         "size": 5,
         "symbol": "circle"
       },
       "mode": "markers",
       "name": "Cook2019Herm",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        10,
-        10,
-        6,
-        6,
-        3
-      ]
-    },
-    {
-      "marker": {
-        "color": "fuchsia",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
         "NSMR",
@@ -98,156 +50,12 @@
     },
     {
       "marker": {
-        "color": "darkorchid",
+        "color": "fuchsia",
         "size": 3,
         "symbol": "circle"
       },
       "mode": "markers",
-      "name": "Cook2020",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        10,
-        11,
-        8,
-        8,
-        4
-      ]
-    },
-    {
-      "marker": {
-        "color": "olive",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "WormNeuroAtlas",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        8,
-        8,
-        0,
-        3,
-        3
-      ]
-    },
-    {
-      "marker": {
-        "color": "firebrick",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Wang2024Herm",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        9,
-        9,
-        6,
-        6,
-        3
-      ]
-    },
-    {
-      "marker": {
-        "color": "#e88989",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "Wang2024Male",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        9,
-        9,
-        6,
-        6,
-        3
-      ]
-    },
-    {
-      "marker": {
-        "color": "moccasin",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "SSData",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        4,
-        4,
-        5,
-        0,
-        0
-      ]
-    },
-    {
-      "marker": {
-        "color": "papayawhip",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "UpdSSData",
-      "type": "scatter",
-      "x": [
-        "NSMR",
-        "NSML",
-        "MI",
-        "MCL",
-        "MCR"
-      ],
-      "y": [
-        10,
-        10,
-        6,
-        6,
-        3
-      ]
-    },
-    {
-      "marker": {
-        "color": "mistyrose",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "UpdSSData2",
+      "name": "Cook2019Male",
       "type": "scatter",
       "x": [
         "NSMR",
