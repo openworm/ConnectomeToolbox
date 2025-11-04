@@ -18,9 +18,9 @@ reader_colors = {
     "White_whole": "red",
     "Varshney": "#009e73",
     "Bentley2016_MA": "#56b4e9",
-    "Bentley2016_PEP": "blue",
+    "Bentley2016_PEP": "fuchsia",
     "Cook2019Herm": "darkmagenta",
-    "Cook2019Male": "fuchsia",
+    "Cook2019Male": "blue",
     "Cook2020": "darkorchid",
     "Brittin2021": "khaki",
     "Witvliet1": "#eeee44",
@@ -232,8 +232,12 @@ def get_improved_reader_name(reader_name):
         .replace("Randi", "Randi et al.")
         .replace("Varshney", "Varshney et al. 2011")
         .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
+        .replace("Witvliet 2", "Witvliet et al. 2021 2 (L1)")
+        .replace("Witvliet 3", "Witvliet et al. 2021 3 (L1)")
+        .replace("Witvliet 4", "Witvliet et al. 2021 4 (L1)")
         .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
         .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
+        .replace("Witvliet 7", "Witvliet et al. 2021 7 (adult)")
         .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
         .replace("Gleeson", "Gleeson et al. 2018")
         .replace("Olivares", "Olivares et al. 2021")
@@ -274,8 +278,9 @@ def generate_comparison_page(
         # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
-        # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-        # readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
@@ -951,16 +956,51 @@ def generate_comparison_page(
 
 
 if __name__ == "__main__":
-    quick = len(sys.argv) > 1 and eval(sys.argv[1])
+    if "-color" in sys.argv:
+        from cect.Cells import CORE_ANATOMICAL_CONNECTOMES
 
-    save_to_cache = True
+        import matplotlib.pyplot as plt
 
-    connectomes = generate_comparison_page(
-        quick,
-        color_table=True,
-        dataset_pages=False,
-        save_to_cache=save_to_cache,
-        load_from_cache=(not save_to_cache),
-    )
+        plt.figure(figsize=(8, 6))
 
-    print("Finished. All loaded connectomes:\n%s" % connectomes)
+        for conn in CORE_ANATOMICAL_CONNECTOMES:
+            color = reader_colors[conn]
+            print(f"{conn}: {color}")
+            name = get_improved_reader_name(conn)
+            plt.plot(
+                [0],
+                [1],
+                label=f"{name}",
+                color=color,
+                linestyle="None",
+                marker="o",
+                markersize=6 if "Cook2019Herm" in conn else 3,
+            )
+
+        handles, labels = plt.gca().get_legend_handles_labels()
+        ncol = 4
+        plt.legend(
+            handles,
+            labels,
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.15),
+            ncol=ncol,
+            frameon=False,
+        )
+        plt.gcf().subplots_adjust(bottom=0.25)
+
+        plt.show()
+    else:
+        quick = len(sys.argv) > 1 and eval(sys.argv[1])
+
+        save_to_cache = True
+
+        connectomes = generate_comparison_page(
+            quick,
+            color_table=True,
+            dataset_pages=False,
+            save_to_cache=save_to_cache,
+            load_from_cache=(not save_to_cache),
+        )
+
+        print("Finished. All loaded connectomes:\n%s" % connectomes)
