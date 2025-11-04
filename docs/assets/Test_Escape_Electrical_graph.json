@@ -79,10 +79,10 @@
         "<b>PVC</b><br>Cells: PVCL, PVCR",
         "<b>PVM</b><br>Sensory neuron (mechanosensory)",
         "<b>RIM</b><br>Cells: RIML, RIMR",
-        "<b>RMD</b><br>Cells: RMDL, RMDR",
+        "<b>RMD</b><br>Cells: RMDDL, RMDDR, RMDVL, RMDVR, RMDL, RMDR",
         "<b>SMD</b><br>Cells: SMDDL, SMDDR, SMDVL, SMDVR",
-        "<b>VA/DA</b><br>Cells: DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9, PDA<br>PDA, VA1, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9, VA10<br>VA10, VA11, VA12",
-        "<b>VB/DB</b><br>Cells: DB1, DB2, DB3, DB4, DB5, DB6, DB7, PDB, VB1, VB2<br>VB2, VB3, VB4, VB5, VB6, VB7, VB8, VB9, VB10, VB11<br>Conns in: <b>VB/DB</b>: 3<br>Conns out: <b>AVB</b>: 7, <b>VB/DB</b>: 3"
+        "<b>VA/DA</b><br>Cells: DA1, DA2, DA3, DA4, DA5, DA6, DA7, DA8, DA9, VA1<br>VA1, VA2, VA3, VA4, VA5, VA6, VA7, VA8, VA9, VA10, VA11<br>VA11, VA12",
+        "<b>VB/DB</b><br>Cells: DB1, DB2, DB3, DB4, DB5, DB6, DB7, VB1, VB2, VB3<br>VB3, VB4, VB5, VB6, VB7, VB8, VB9, VB10, VB11<br>Conns in: <b>VB/DB</b>: 3<br>Conns out: <b>AVB</b>: 7, <b>VB/DB</b>: 3"
       ],
       "marker": {
         "color": [

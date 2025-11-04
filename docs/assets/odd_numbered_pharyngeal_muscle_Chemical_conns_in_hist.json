@@ -70,7 +70,7 @@
     },
     {
       "marker": {
-        "color": "fuchsia",
+        "color": "blue",
         "size": 3,
         "symbol": "circle"
       },
@@ -100,6 +100,40 @@
         1,
         1,
         0
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2020",
+      "type": "scatter",
+      "x": [
+        "pm5D",
+        "pm5VR",
+        "pm5VL",
+        "pm3VL",
+        "pm3VR",
+        "pm1",
+        "pm7VR",
+        "pm7D",
+        "pm3D",
+        "pm7VL"
+      ],
+      "y": [
+        14,
+        10,
+        9,
+        4,
+        3,
+        4,
+        1,
+        1,
+        1,
+        1
       ]
     }
   ],
