@@ -615,8 +615,8 @@ class ConnectomeDataset:
             "Nodes to show: %s (%i), disconnected: %s"
             % (nodes_to_show, len(nodes_to_show), disconnected)
         )
-
-        random.seed(10)
+        ref = synclass + view.name
+        random.seed(int.from_bytes(ref.encode(), "big"))
 
         for i, node_value in enumerate(nodes_to_show):
             scale = 20
@@ -817,6 +817,9 @@ class ConnectomeDataset:
                 desc = desc[:-2]
 
             text = f"<b>{node_value}</b>"
+            if node_set.description is not None:
+                text += " <i>(%s)</i>" % node_set.description
+
             text += "<br>%s" % desc
 
             into = self.get_connections_summary(
@@ -1261,7 +1264,9 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import BRAINMAP_VIEW as view
+    from cect.ConnectomeView import BRAINMAP_A_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
     from cect.White_whole import get_instance
@@ -1283,21 +1288,22 @@ if __name__ == "__main__":
     synclass = "Chemical Inh"
     synclass = "Chemical"
 
-    synclass = "dopamine"
+    # synclass = "dopamine"
 
     cds = get_instance()
 
     print("--------------------------------")
     print(cds.summary())
     print("--------------------------------")
+    print(cds.__class__.__name__)
 
     if "MA" in cds.__class__.__name__:
         synclass = "dopamine"
         synclass = "tyramine"
         synclass = "serotonin"
-    synclass = "GABA"
-    synclass = "Octopamine"
-    synclass = "Chemical"
+
+    if "Brittin" in cds.__class__.__name__:
+        synclass = "Contact"
 
     cds2 = cds.get_connectome_view(view)
 
@@ -1305,7 +1311,7 @@ if __name__ == "__main__":
 
     print("Keys: %s, plotting: %s" % (view.synclass_sets, synclass))
 
-    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_hive_plot_fig(synclass, view)
 
     # fig = cds2.to_plotly_graph_fig(synclass, view)
     fig = cds2.to_plotly_graph_fig(synclass, view)
