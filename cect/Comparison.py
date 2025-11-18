@@ -190,6 +190,9 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     if np.sum(connectome.connections[synclass]) == 0:
         return None
 
+    if "brainmap" in view.id.lower():
+        return f"\n{indent}Hive plot of that view, {view_id}, is not possible, as it is the BrainMap view\n"
+
     fig = connectome.to_plotly_hive_plot_fig(synclass, view)
 
     if fig is None:
@@ -270,22 +273,23 @@ def generate_comparison_page(
 
         # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        # readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
-        # readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.White_whole", "White_1986"]
         # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
         # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
-        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
 
     else:
         if not quick:
@@ -324,7 +328,7 @@ def generate_comparison_page(
         if not quick:
             readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+            readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         if not quick:
             readers["RipollSanchezShortRange"] = [
@@ -708,7 +712,13 @@ def generate_comparison_page(
                                         if c in connectome.nodes:
                                             total_here += 1
 
-                                view_info += f"| Nodes in current view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) | Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
+                                view_info += (
+                                    f'| Nodes in current view<br/>({len(view.node_sets)} total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| '
+                                    + f"Num cells in node<br/>({total_cells} total) | "
+                                    + f"Num in this dataset<br/>({total_here} total) | "
+                                    + "Cells in node |\n"
+                                    + "| --- | --- | --- | --- |\n"
+                                )
 
                                 for ns in view.node_sets:
                                     n_in_dataset = np.sum(
@@ -718,6 +728,12 @@ def generate_comparison_page(
                                         ]
                                     )
                                     node_colored = ns.to_markdown()
+
+                                    node_desc = (
+                                        " <br/><i>%s</i>" % ns.description
+                                        if ns.description is not None
+                                        else ""
+                                    )
 
                                     cells_linked = [
                                         get_cell_internal_link(
@@ -730,8 +746,9 @@ def generate_comparison_page(
                                         )
                                         for c in sorted(ns.cells)
                                     ]
-                                    view_info += "|**%s** |%i | %i | %s|\n" % (
+                                    view_info += "|**%s**%s |%i | %i | %s|\n" % (
                                         node_colored,
+                                        node_desc,
                                         len(ns.cells),
                                         n_in_dataset,
                                         ", ".join(cells_linked),

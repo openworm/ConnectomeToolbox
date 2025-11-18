@@ -759,6 +759,7 @@ class ConnectomeDataset:
         node_text = []
         node_sizes = []
         node_shapes = []
+        node_with_pre_conns = []
 
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
@@ -833,6 +834,9 @@ class ConnectomeDataset:
             )
             if len(out_of) > 0:
                 text += f"<br>Conns out: {out_of}"
+                node_with_pre_conns.append(1)
+            else:
+                node_with_pre_conns.append(0)
 
             node_text.append(text)
 
@@ -869,6 +873,9 @@ class ConnectomeDataset:
 
         node_trace.marker.size = node_sizes
         node_trace.marker.symbol = node_shapes
+        node_trace.marker.line.color = "#444444"
+        node_trace.marker.line.width = node_with_pre_conns * 3
+
         node_trace.marker.color = node_colours
         node_trace.hovertext = node_text
 
@@ -1269,8 +1276,8 @@ if __name__ == "__main__":
     from cect.ConnectomeView import BRAINMAP_A_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
-    # from cect.TestDataReader import get_instance
+    # from cect.White_whole import get_instance
+    from cect.TestDataReader import get_instance
 
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
