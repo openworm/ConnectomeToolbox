@@ -982,7 +982,7 @@ class ConnectomeDataset:
                     f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}"
                 )
 
-        num_steps_for_edge_curves = 25
+        num_steps_for_edge_curves = 15
 
         hp = hive_plot_n_axes(
             node_list=nodes,
