@@ -50,7 +50,7 @@
     },
     {
       "marker": {
-        "color": "fuchsia",
+        "color": "blue",
         "size": 3,
         "symbol": "circle"
       },
@@ -68,6 +68,30 @@
         15,
         11,
         10,
+        3,
+        2
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2020",
+      "type": "scatter",
+      "x": [
+        "MI",
+        "NSML",
+        "NSMR",
+        "MCR",
+        "MCL"
+      ],
+      "y": [
+        15,
+        14,
+        9,
         3,
         2
       ]

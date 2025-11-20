@@ -462,17 +462,7 @@ if __name__ == "__main__":
         from cect.White_whole import get_instance
 
         cds_src = get_instance()
-        """
-        from cect.RipollSanchezMidRangeReader import get_instance
-        cds_src = get_instance()"""
-        """ 
-        from cect.Cook2019HermReader import get_instance
-        from cect.WormNeuroAtlasFuncReader import get_instance
-        from cect.TestDataReader import get_instance
 
-        from cect.ConnectomeView import PHARYNX_VIEW as view
-        from cect.ConnectomeView import RAW_VIEW as view
-        """
         from cect.ConnectomeView import NEURONS_VIEW as view
 
         cds_src = get_instance()

@@ -18,9 +18,9 @@ reader_colors = {
     "White_whole": "red",
     "Varshney": "#009e73",
     "Bentley2016_MA": "#56b4e9",
-    "Bentley2016_PEP": "blue",
+    "Bentley2016_PEP": "fuchsia",
     "Cook2019Herm": "darkmagenta",
-    "Cook2019Male": "fuchsia",
+    "Cook2019Male": "blue",
     "Cook2020": "darkorchid",
     "Brittin2021": "khaki",
     "Witvliet1": "#eeee44",
@@ -190,6 +190,9 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     if np.sum(connectome.connections[synclass]) == 0:
         return None
 
+    if "brainmap" in view.id.lower():
+        return f"\n{indent}Hive plot of that view, {view_id}, is not possible, as it is the BrainMap view\n"
+
     fig = connectome.to_plotly_hive_plot_fig(synclass, view)
 
     if fig is None:
@@ -209,6 +212,43 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
+def get_improved_reader_name(reader_name):
+    better_name = (
+        reader_name.replace("_", " ")
+        .replace("201", " 201")
+        .replace("202", " 202")
+        .replace("Sanchez", " Sanchez et al. 2023")
+        .replace("tley", "tley et al.")
+        .replace("Cook", "Cook et al.")
+        .replace("Wang", "Wang et al.")
+        .replace("ttin", "ttin et al.")
+        .replace("im", "im et al.")
+        .replace("Herm", " (herm.)")
+        .replace("Male", " (male)")
+        .replace("ShortRange", " (short range)")
+        .replace("liet", "liet ")
+        .replace("MA", " (monoamin.)")
+        .replace("PEP", " (peptid.)")
+        .replace("ite A", "ite et al. 1986 N2U/adult")
+        .replace("ite L4", "ite et al. 1986 JSU/L4")
+        .replace("ite whole", "ite et al. 1986 (whole worm)")
+        .replace("Randi", "Randi et al.")
+        .replace("Varshney", "Varshney et al. 2011")
+        .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
+        .replace("Witvliet 2", "Witvliet et al. 2021 2 (L1)")
+        .replace("Witvliet 3", "Witvliet et al. 2021 3 (L1)")
+        .replace("Witvliet 4", "Witvliet et al. 2021 4 (L1)")
+        .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
+        .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
+        .replace("Witvliet 7", "Witvliet et al. 2021 7 (adult)")
+        .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+        .replace("Gleeson", "Gleeson et al. 2018")
+        .replace("Olivares", "Olivares et al. 2021")
+        .replace("Model", " (model)")
+    )
+    return better_name
+
+
 def generate_comparison_page(
     quick: int,
     color_table=True,
@@ -226,28 +266,30 @@ def generate_comparison_page(
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
         # readers["White_A"] = ["cect.White_A", "White_1986"]
-        # readers["White_whole"] = ["cect.White_whole", "White_1986"]
+        readers["White_whole"] = ["cect.White_whole", "White_1986"]
         readers["Test"] = ["cect.TestDataReader", None]
 
         # readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
         # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        # readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
-        # readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
+        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+        # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
         # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
-        # readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+        # readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
-        readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
+        # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
         # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
-        readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
 
     else:
         if not quick:
@@ -286,7 +328,7 @@ def generate_comparison_page(
         if not quick:
             readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
 
-        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+            readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         if not quick:
             readers["RipollSanchezShortRange"] = [
@@ -422,7 +464,7 @@ def generate_comparison_page(
 
                                 f.write(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
-                                    % reader_name
+                                    % get_improved_reader_name(reader_name)
                                 )
 
                                 desc_full = ""
@@ -670,7 +712,13 @@ def generate_comparison_page(
                                         if c in connectome.nodes:
                                             total_here += 1
 
-                                view_info += f"| Nodes in current view<br/>({len(view.node_sets)} total)| Num cells in node<br/>({total_cells} total) | Num in this dataset<br/>({total_here} total) | Cells |\n| --- | --- | --- | --- |\n"
+                                view_info += (
+                                    f'| Nodes in current view<br/>({len(view.node_sets)} total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| '
+                                    + f"Num cells in node<br/>({total_cells} total) | "
+                                    + f"Num in this dataset<br/>({total_here} total) | "
+                                    + "Cells in node |\n"
+                                    + "| --- | --- | --- | --- |\n"
+                                )
 
                                 for ns in view.node_sets:
                                     n_in_dataset = np.sum(
@@ -680,6 +728,12 @@ def generate_comparison_page(
                                         ]
                                     )
                                     node_colored = ns.to_markdown()
+
+                                    node_desc = (
+                                        " <br/><i>%s</i>" % ns.description
+                                        if ns.description is not None
+                                        else ""
+                                    )
 
                                     cells_linked = [
                                         get_cell_internal_link(
@@ -692,8 +746,9 @@ def generate_comparison_page(
                                         )
                                         for c in sorted(ns.cells)
                                     ]
-                                    view_info += "|**%s** |%i | %i | %s|\n" % (
+                                    view_info += "|**%s**%s |%i | %i | %s|\n" % (
                                         node_colored,
+                                        node_desc,
                                         len(ns.cells),
                                         n_in_dataset,
                                         ", ".join(cells_linked),
@@ -842,35 +897,7 @@ def generate_comparison_page(
 
         better_names = {}
         for reader_name in readers_to_include:
-            better_name = (
-                reader_name.replace("_", " ")
-                .replace("201", " 201")
-                .replace("202", " 202")
-                .replace("Sanchez", " Sanchez et al. 2023")
-                .replace("tley", "tley et al.")
-                .replace("Cook", "Cook et al.")
-                .replace("Wang", "Wang et al.")
-                .replace("ttin", "ttin et al.")
-                .replace("im", "im et al.")
-                .replace("Herm", " (herm.)")
-                .replace("Male", " (male)")
-                .replace("ShortRange", " (short range)")
-                .replace("liet", "liet ")
-                .replace("MA", " (monoamin.)")
-                .replace("PEP", " (peptid.)")
-                .replace("ite A", "ite et al. 1986 N2U/adult")
-                .replace("ite L4", "ite et al. 1986 JSU/L4")
-                .replace("ite whole", "ite et al. 1986 (whole worm)")
-                .replace("Randi", "Randi et al.")
-                .replace("Varshney", "Varshney et al. 2011")
-                .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
-                .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
-                .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
-                .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
-                .replace("Gleeson", "Gleeson et al. 2018")
-                .replace("Olivares", "Olivares et al. 2021")
-                .replace("Model", " (model)")
-            )
+            better_name = get_improved_reader_name(reader_name)
             better_names[reader_name] = better_name
 
             # table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
@@ -946,16 +973,51 @@ def generate_comparison_page(
 
 
 if __name__ == "__main__":
-    quick = len(sys.argv) > 1 and eval(sys.argv[1])
+    if "-color" in sys.argv:
+        from cect.Cells import CORE_ANATOMICAL_CONNECTOMES
 
-    save_to_cache = True
+        import matplotlib.pyplot as plt
 
-    connectomes = generate_comparison_page(
-        quick,
-        color_table=True,
-        dataset_pages=False,
-        save_to_cache=save_to_cache,
-        load_from_cache=(not save_to_cache),
-    )
+        plt.figure(figsize=(8, 6))
 
-    print("Finished. All loaded connectomes:\n%s" % connectomes)
+        for conn in CORE_ANATOMICAL_CONNECTOMES:
+            color = reader_colors[conn]
+            print(f"{conn}: {color}")
+            name = get_improved_reader_name(conn)
+            plt.plot(
+                [0],
+                [1],
+                label=f"{name}",
+                color=color,
+                linestyle="None",
+                marker="o",
+                markersize=6 if "Cook2019Herm" in conn else 3,
+            )
+
+        handles, labels = plt.gca().get_legend_handles_labels()
+        ncol = 4
+        plt.legend(
+            handles,
+            labels,
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.15),
+            ncol=ncol,
+            frameon=False,
+        )
+        plt.gcf().subplots_adjust(bottom=0.25)
+
+        plt.show()
+    else:
+        quick = len(sys.argv) > 1 and eval(sys.argv[1])
+
+        save_to_cache = True
+
+        connectomes = generate_comparison_page(
+            quick,
+            color_table=True,
+            dataset_pages=False,
+            save_to_cache=save_to_cache,
+            load_from_cache=(not save_to_cache),
+        )
+
+        print("Finished. All loaded connectomes:\n%s" % connectomes)

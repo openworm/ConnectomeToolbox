@@ -615,8 +615,8 @@ class ConnectomeDataset:
             "Nodes to show: %s (%i), disconnected: %s"
             % (nodes_to_show, len(nodes_to_show), disconnected)
         )
-
-        random.seed(10)
+        ref = synclass + view.name
+        random.seed(int.from_bytes(ref.encode(), "big"))
 
         for i, node_value in enumerate(nodes_to_show):
             scale = 20
@@ -759,6 +759,7 @@ class ConnectomeDataset:
         node_text = []
         node_sizes = []
         node_shapes = []
+        node_with_pre_conns = []
 
         for node, adjacencies in enumerate(G.adjacency()):
             node_adjacencies.append(len(adjacencies[1]))
@@ -817,6 +818,9 @@ class ConnectomeDataset:
                 desc = desc[:-2]
 
             text = f"<b>{node_value}</b>"
+            if node_set.description is not None:
+                text += " <i>(%s)</i>" % node_set.description
+
             text += "<br>%s" % desc
 
             into = self.get_connections_summary(
@@ -830,6 +834,9 @@ class ConnectomeDataset:
             )
             if len(out_of) > 0:
                 text += f"<br>Conns out: {out_of}"
+                node_with_pre_conns.append(1)
+            else:
+                node_with_pre_conns.append(0)
 
             node_text.append(text)
 
@@ -866,6 +873,9 @@ class ConnectomeDataset:
 
         node_trace.marker.size = node_sizes
         node_trace.marker.symbol = node_shapes
+        node_trace.marker.line.color = "#444444"
+        node_trace.marker.line.width = node_with_pre_conns * 3
+
         node_trace.marker.color = node_colours
         node_trace.hovertext = node_text
 
@@ -972,7 +982,7 @@ class ConnectomeDataset:
                     f" - Node {node.unique_id}, block {block} has degree {deg}; {node.data}"
                 )
 
-        num_steps_for_edge_curves = 25
+        num_steps_for_edge_curves = 15
 
         hp = hive_plot_n_axes(
             node_list=nodes,
@@ -1261,11 +1271,13 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    # from cect.ConnectomeView import BRAINMAP_VIEW as view
+    from cect.ConnectomeView import BRAINMAP_A_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
-    # from cect.TestDataReader import get_instance
+    # from cect.White_whole import get_instance
+    from cect.TestDataReader import get_instance
 
     # from cect.BrittinDataReader import get_instance
     # from cect.WitvlietDataReader8 import get_instance
@@ -1283,21 +1295,22 @@ if __name__ == "__main__":
     synclass = "Chemical Inh"
     synclass = "Chemical"
 
-    synclass = "dopamine"
+    # synclass = "dopamine"
 
     cds = get_instance()
 
     print("--------------------------------")
     print(cds.summary())
     print("--------------------------------")
+    print(cds.__class__.__name__)
 
     if "MA" in cds.__class__.__name__:
         synclass = "dopamine"
         synclass = "tyramine"
         synclass = "serotonin"
-    synclass = "GABA"
-    synclass = "Octopamine"
-    synclass = "Chemical"
+
+    if "Brittin" in cds.__class__.__name__:
+        synclass = "Contact"
 
     cds2 = cds.get_connectome_view(view)
 
@@ -1305,7 +1318,7 @@ if __name__ == "__main__":
 
     print("Keys: %s, plotting: %s" % (view.synclass_sets, synclass))
 
-    # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+    # fig = cds2.to_plotly_hive_plot_fig(synclass, view)
 
     # fig = cds2.to_plotly_graph_fig(synclass, view)
     fig = cds2.to_plotly_graph_fig(synclass, view)

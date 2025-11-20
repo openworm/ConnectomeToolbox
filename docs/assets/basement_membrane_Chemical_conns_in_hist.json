@@ -18,12 +18,28 @@
     },
     {
       "marker": {
-        "color": "fuchsia",
+        "color": "blue",
         "size": 3,
         "symbol": "circle"
       },
       "mode": "markers",
       "name": "Cook2019Male",
+      "type": "scatter",
+      "x": [
+        "bm"
+      ],
+      "y": [
+        4
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorchid",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "Cook2020",
       "type": "scatter",
       "x": [
         "bm"

@@ -32,6 +32,7 @@ CORE_ANATOMICAL_CONNECTOMES = [
     "White_L4",
     "White_whole",
     "Varshney",
+    "Cook2020",
     "Witvliet1",
     "Witvliet2",
     "Witvliet3",
