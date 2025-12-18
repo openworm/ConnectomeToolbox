@@ -274,6 +274,15 @@ MOTORNEURONS_SOMATIC_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
+MOTORNEURONS_MUSCLES_VIEW = View(
+    "MotorMuscles",
+    "Motor Neurons and muscles",
+    "All **hermaphrodite** motor neurons except those in the pharynx and all body wall muscles",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
     "NonpharyngealH",
     "Nonpharyngeal Neurons (herm)",
@@ -324,6 +333,9 @@ for cell in (
             MOTORNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
             )
+            MOTORNEURONS_MUSCLES_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
         if cell in INTERNEURONS_NONPHARYNGEAL_COOK:
             INTERNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
@@ -332,6 +344,11 @@ for cell in (
 
 for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
+
+for cell in sorted(BODY_MUSCLES_COOK):
+    MOTORNEURONS_MUSCLES_VIEW.node_sets.append(
+        NodeSet(cell, [cell], get_standard_color(cell))
+    )
 
 assert len(NEURONS_VIEW.node_sets) == 302
 assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS)
@@ -1216,6 +1233,7 @@ ALL_VIEWS = [
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     SENSORY_NEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_MUSCLES_VIEW,
     INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
@@ -1229,6 +1247,7 @@ QUICK_VIEWS = [
     BRAINMAP_VIEW,
     LOCOMOTION_2_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_MUSCLES_VIEW,
 ]
 
 
