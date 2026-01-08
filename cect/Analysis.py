@@ -250,15 +250,11 @@ def main():
         "Witvliet2",
         "Witvliet3",
         "Witvliet4",
-        "Witvliet5",
         "Yim2024",
+        "Witvliet5",
         "Witvliet6",
         "Witvliet7",
         "Witvliet8",
-        "Varshney",
-        "White_whole",
-        "Cook2019Herm",
-        "Cook2019Male"
     ]
 
     synclass = "Chemical"
