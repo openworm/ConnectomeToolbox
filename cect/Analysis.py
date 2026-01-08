@@ -5,6 +5,8 @@ from cect.Cells import get_contralateral_cell
 from cect.ConnectomeReader import SYMMETRY_COLORMAP
 from cect import print_
 import json
+import matplotlib.pyplot as plt
+
 
 all_sym_info = {}
 
@@ -191,5 +193,76 @@ def test_bilaterals():
         fig.show()
 
 
+def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str = "Chemical", datasets_to_plot=None):
+    """
+    Plot symmetry for specified synclass across selected datasets.
+    Produces 3 subplots for SensorySomaticH, MotorSomaticH, InterneuronsSomaticH.
+    
+    Parameters:
+        json_file (str): Path to the cached JSON file.
+        synclass (str): Synapse class to plot, e.g., "Chemical".
+        datasets_to_plot (list, optional): List of datasets to include. Defaults to all.
+    """
+    # Load JSON data
+    with open(json_file, "r") as f:
+        data = json.load(f)
+
+    views = ["SensorySomaticH", "MotorSomaticH", "InterneuronsSomaticH"]
+
+    if datasets_to_plot is None:
+        datasets_to_plot = list(data.keys())
+
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+    fig.suptitle(f"Symmetry Across SomaticH Views ({synclass})", fontsize=16)
+
+    for i, view in enumerate(views):
+        ax = axes[i]
+        y_vals = []
+        labels = []
+
+        for dataset in datasets_to_plot:
+            val = data.get(dataset, {}).get(view, {}).get(synclass)
+            if val is not None:
+                try:
+                    val = float(val)
+                except ValueError:
+                    continue
+                y_vals.append(val)
+                labels.append(dataset)
+        
+        ax.plot(labels, y_vals, marker="o", linestyle="-", color="tab:blue")
+        ax.set_xticks(range(len(labels)))
+        ax.set_xticklabels(labels, rotation=45, ha="right")
+
+        ax.set_title(view, fontsize=14)
+        ax.set_xlabel("Dataset", fontsize=12)
+        ax.set_ylabel("Symmetry (%)", fontsize=12)
+        ax.set_ylim(0, 105)
+        ax.grid(True, linestyle="--", alpha=0.5)
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.show()
+    
+
+def main():
+    datasets_to_plot = [
+        "Witvliet1",
+        "Witvliet2",
+        "Witvliet3",
+        "Witvliet4",
+        "Witvliet5",
+        "Yim2024",
+        "Witvliet6",
+        "Witvliet7",
+        "Witvliet8",
+        "Varshney",
+        "White_whole",
+        "Cook2019Herm",
+        "Cook2019Male"
+    ]
+
+    synclass = "Chemical"
+    plot_symmetry(synclass=synclass, datasets_to_plot=datasets_to_plot)
+    
 if __name__ == "__main__":
-    test_bilaterals()
+    main()
