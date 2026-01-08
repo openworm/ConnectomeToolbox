@@ -18,7 +18,8 @@ theme:
 plugins:
   - plotly
   - search
-  - mkdocs-jupyter
+  - mkdocs-jupyter:
+      include_requirejs: true
   - mkdocs-autoapi:
       autoapi_dir: "cect"
       autoapi_root: "api/"
@@ -775,7 +776,8 @@ nav:
     - 'Resources': 'Resources.md'
   - Python package:
     - 'Installation': 'Python.md'
-    - 'Example notebook': 'notebooks/Introduction.ipynb'
+    - 'Example notebooks':
+      - 'Using the cect Python API': 'notebooks/Introduction.ipynb'
     - 'API Reference': "api/summary/"
   - Help:
     - 'About & Contact': 'About.md'
