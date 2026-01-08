@@ -193,11 +193,16 @@ def test_bilaterals():
         fig.show()
 
 
-def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str = "Chemical", datasets_line1=None, datasets_line2=None,):
+def plot_symmetry(
+    json_file="cect/cache/symmetry_measures.json",
+    synclass: str = "Chemical",
+    datasets_line1=None,
+    datasets_line2=None,
+):
     """
     Plot symmetry for specified synclass across selected datasets.
     Produces 3 subplots for SensorySomaticH, MotorSomaticH, InterneuronsSomaticH.
-    
+
     Parameters:
         json_file (str): Path to the cached JSON file.
         synclass (str): Synapse class to plot, e.g., "Chemical".
@@ -213,7 +218,7 @@ def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str =
         datasets_line1 = list(data.keys())
     if datasets_line2 is None:
         datasets_line2 = list(data.keys())
-    
+
     x_labels = list(datasets_line2)
     x_full = np.arange(len(x_labels))
 
@@ -261,6 +266,7 @@ def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str =
     plt.tight_layout(rect=[0, 0, 1, 0.95])
     plt.show()
 
+
 def main():
     line1 = [
         "Witvliet1",
@@ -289,7 +295,8 @@ def main():
         "Cook2019Herm",
     ]
 
-    plot_symmetry(synclass="Chemical", datasets_line1=line1, datasets_line2=line2)    
+    plot_symmetry(synclass="Chemical", datasets_line1=line1, datasets_line2=line2)
+
 
 if __name__ == "__main__":
     main()
