@@ -193,7 +193,7 @@ def test_bilaterals():
         fig.show()
 
 
-def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str = "Chemical", datasets_to_plot=None):
+def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str = "Chemical", datasets_line1=None, datasets_line2=None,):
     """
     Plot symmetry for specified synclass across selected datasets.
     Produces 3 subplots for SensorySomaticH, MotorSomaticH, InterneuronsSomaticH.
@@ -209,56 +209,87 @@ def plot_symmetry(json_file="cect/cache/symmetry_measures.json", synclass: str =
 
     views = ["SensorySomaticH", "MotorSomaticH", "InterneuronsSomaticH"]
 
-    if datasets_to_plot is None:
-        datasets_to_plot = list(data.keys())
+    if datasets_line1 is None:
+        datasets_line1 = list(data.keys())
+    if datasets_line2 is None:
+        datasets_line2 = list(data.keys())
+    
+    x_labels = list(datasets_line2)
+    x_full = np.arange(len(x_labels))
 
     fig, axes = plt.subplots(1, 3, figsize=(18, 5))
     fig.suptitle(f"Symmetry Across SomaticH Views ({synclass})", fontsize=16)
 
+    def get_val(view, dataset):
+        val = data.get(dataset, {}).get(view, {}).get(synclass)
+        if val is None:
+            return None
+        try:
+            return float(val)
+        except (ValueError, TypeError):
+            return None
+
     for i, view in enumerate(views):
         ax = axes[i]
-        y_vals = []
-        labels = []
 
-        for dataset in datasets_to_plot:
-            val = data.get(dataset, {}).get(view, {}).get(synclass)
-            if val is not None:
-                try:
-                    val = float(val)
-                except ValueError:
-                    continue
-                y_vals.append(val)
-                labels.append(dataset)
-        
-        ax.plot(labels, y_vals, marker="o", linestyle="-", color="tab:blue")
-        ax.set_xticks(range(len(labels)))
-        ax.set_xticklabels(labels, rotation=45, ha="right")
+        # --- Line 1 (baseline): use only its own x positions; this keeps the line continuous across Yim2024 ---
+        x1 = []
+        y1 = []
+        for idx, lbl in enumerate(x_labels):
+            if lbl in datasets_line1:
+                v = get_val(view, lbl)
+                if v is not None:
+                    x1.append(idx)
+                    y1.append(v)
+        # --- Line 2 (with Yim2024): aligned to every x tick in datasets_line2 ---
+        y2 = [get_val(view, lbl) if lbl in datasets_line2 else None for lbl in x_labels]
+        # Convert None to np.nan for plotting
+        y2 = [np.nan if v is None else v for v in y2]
 
+        ax.plot(x1, y1, marker="o", linestyle="-", label="Normal")
+        ax.plot(x_full, y2, marker="s", linestyle="--", label="Dauer")
+
+        ax.set_xticks(x_full)
+        ax.set_xticklabels(x_labels, rotation=45, ha="right")
         ax.set_title(view, fontsize=14)
         ax.set_xlabel("Dataset", fontsize=12)
         ax.set_ylabel("Symmetry (%)", fontsize=12)
         ax.set_ylim(0, 105)
         ax.grid(True, linestyle="--", alpha=0.5)
+        ax.legend()
 
     plt.tight_layout(rect=[0, 0, 1, 0.95])
     plt.show()
-    
 
 def main():
-    datasets_to_plot = [
+    line1 = [
         "Witvliet1",
         "Witvliet2",
         "Witvliet3",
         "Witvliet4",
-        "Yim2024",
         "Witvliet5",
         "Witvliet6",
+        "White_L4",
         "Witvliet7",
         "Witvliet8",
+        "Cook2019Herm",
     ]
 
-    synclass = "Chemical"
-    plot_symmetry(synclass=synclass, datasets_to_plot=datasets_to_plot)
-    
+    line2 = [
+        "Witvliet1",
+        "Witvliet2",
+        "Witvliet3",
+        "Witvliet4",
+        "Witvliet5",
+        "Witvliet6",
+        "Yim2024",
+        "White_L4",
+        "Witvliet7",
+        "Witvliet8",
+        "Cook2019Herm",
+    ]
+
+    plot_symmetry(synclass="Chemical", datasets_line1=line1, datasets_line2=line2)    
+
 if __name__ == "__main__":
     main()
