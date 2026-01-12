@@ -230,7 +230,7 @@ def get_improved_reader_name(reader_name):
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
         .replace("ite A", "ite et al. 1986 N2U/adult")
-        .replace("ite L4", "ite et al. 1986 JSU/L4")
+        .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
         .replace("Randi", "Randi et al.")
         .replace("Varshney", "Varshney et al. 2011")
@@ -278,8 +278,8 @@ def generate_comparison_page(
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.White_whole", "White_1986"]
-        readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
+        # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
         # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
