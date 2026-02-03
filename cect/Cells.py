@@ -1103,7 +1103,7 @@ BODY_WALL_MUSCLE_NAMES = [
 ]
 
 HEAD_MUSCLES_COOK = []
-BODY_MUSCLES_COOK = []
+BODY_ONLY_MUSCLES_COOK = []
 
 for bwm in BODY_WALL_MUSCLE_NAMES:
     num = int(bwm[3:5])
@@ -1111,7 +1111,7 @@ for bwm in BODY_WALL_MUSCLE_NAMES:
         HEAD_MUSCLES_COOK.append(bwm)
         cell_notes[bwm] = "head muscle"
     else:
-        BODY_MUSCLES_COOK.append(bwm)
+        BODY_ONLY_MUSCLES_COOK.append(bwm)
         cell_notes[bwm] = "main body muscle"
 
 
