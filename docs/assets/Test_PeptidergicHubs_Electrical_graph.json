@@ -192,7 +192,21 @@
           ]
         ],
         "line": {
-          "width": 1
+          "color": "#444444",
+          "width": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
         },
         "reversescale": true,
         "showscale": false,

@@ -230,7 +230,7 @@ def get_improved_reader_name(reader_name):
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
         .replace("ite A", "ite et al. 1986 N2U/adult")
-        .replace("ite L4", "ite et al. 1986 JSU/L4")
+        .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
         .replace("Randi", "Randi et al.")
         .replace("Varshney", "Varshney et al. 2011")
@@ -273,7 +273,7 @@ def generate_comparison_page(
 
         # readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        # readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
         readers["Yim2024"] = ["cect.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.Yim2024NonNormDataReader", "Yim_2024"]
 
@@ -290,6 +290,8 @@ def generate_comparison_page(
         # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
+        # readers["RipollSanchezLongRange"] = [ "cect.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
+        # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
     else:
         if not quick:

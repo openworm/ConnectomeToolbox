@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <b><a href="../Loco1_Test_data"> Locomotion 1</a></b> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
+    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data"> BrainMap A</a> - <a href="../Brainmap_Test_data"> BrainMap B</a> - <b><a href="../Loco1_Test_data"> Locomotion 1</a></b> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../MotorMuscles_Test_data"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
     <i>Subset of cells involved in locomotion</i>
 === "Chemical"
@@ -68,7 +68,7 @@ search:
     |**GABA** | (8, 8) matrix | 2 non-zero entries, avg. weight: 3.5, sum: 7.0| **<span style="color:#a6c7e6;">VD</span>** | **<span style="color:#85542b;">VA</span>**, **<span style="color:#f3a640;">VB</span>** |
     
     
-    | Nodes in current view<br/>(8 total)| Num cells in node<br/>(70 total) | Num in this dataset<br/>(11 total) | Cells |
+    | Nodes in current view<br/>(8 total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| Num cells in node<br/>(70 total) | Num in this dataset<br/>(11 total) | Cells in node |
     | --- | --- | --- | --- |
     |**<span style="color:blue;">AVA</span>** |2 | 0 | <a href="../AVAL" title="Layer 1 interneuron" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAL</span></span></a>, <a href="../AVAR" title="Layer 1 interneuron" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff3300;">AVAR</span></span></a>|
     |**<span style="color:green;">AVB</span>** |2 | 2 | <a href="../AVBL" title="Layer 1 interneuron" style="text-decoration:none;"><strong><span style="color:#ff3300;">AVBL</span></strong></a>, <a href="../AVBR" title="Layer 1 interneuron" style="text-decoration:none;"><strong><span style="color:#ff3300;">AVBR</span></strong></a>|

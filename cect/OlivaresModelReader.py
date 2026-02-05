@@ -14,7 +14,7 @@ from cect.NeuroMLDataReader import NeuroMLDataReader
 
 import os
 
-file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/NeuroML/"
 filename = "%sWorm2D.net.nml" % file_location
 
 READER_DESCRIPTION = """Data extracted from a NeuroML file based on <b><a href="https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2021.572339/full">Olivares et al. 2021</a></b>"""
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print(tdr_instance.summary())
 
     """
-    
+      
     from cect.ConnectomeView import NEURONS_VIEW as view
     from cect.ConnectomeView import COOK_FIG3_VIEW as 
     from cect.ConnectomeView import LOCOMOTION_3_VIEW as view

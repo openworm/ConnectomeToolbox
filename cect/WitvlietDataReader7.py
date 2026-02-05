@@ -43,9 +43,22 @@ if __name__ == "__main__":
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    cell = "RMHL"
+    cell = "RMDDR"
+    cell = "RMDR"
     conns = my_instance.get_connections_from(cell, "Generic_CS")
 
     print(f"There are {len(conns)} connections from {cell}:")
     for c in sorted(conns.keys()):
         print(f" {cell} -> {c}: {conns[c]}")
+
+    from cect.ConnectomeView import MOTORNEURONS_MUSCLES_VIEW as VIEW
+
+    print("----------------")
+    v = my_instance.get_connectome_view(VIEW)
+    print(v.summary())
+
+    conns = v.get_connections_from(cell, "Chemical")
+
+    print(f"There are {len(conns)} connections from {cell} within view: {VIEW.name}:")
+    for c in sorted(conns.keys()):
+        print(f" (within view: {VIEW.name}) {cell} -> {c}: {conns[c]}")

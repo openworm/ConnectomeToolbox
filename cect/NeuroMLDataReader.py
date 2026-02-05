@@ -14,6 +14,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect import print_
 from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import ACETYLCHOLINE
+from cect.Neurotransmitters import GABA
 
 from pyneuroml import pynml
 import os
@@ -22,7 +24,7 @@ import os
 def get_file_location(nml_model):
     if "/" in nml_model:
         return nml_model
-    location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+    location = os.path.dirname(os.path.abspath(__file__)) + "/data//NeuroML/"
     filename = "%s%s" % (
         location,
         nml_model,
@@ -121,13 +123,13 @@ class NeuroMLDataReader(ConnectomeDataset):
                 pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
                 post = self._get_cell_name(post_pop, conn.get_post_cell_id())
                 w = conn.get_weight()
-                synclass = "Acetylcholine"
+                synclass = ACETYLCHOLINE
                 if w < 0:
                     w = -1 * w
-                    synclass = "GABA"
+                    synclass = GABA
 
                 elif "inh_syn" in conn.post_component:
-                    synclass = "GABA"  # e.g. postComponent="neuron_to_neuron_inh_syn",
+                    synclass = GABA  # e.g. postComponent="neuron_to_neuron_inh_syn",
 
                 ci = ConnectionInfo(pre, post, w, "???", synclass)
 

@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Pharynx</a></b> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco2_Test_data_hiveplot"> Locomotion 2</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_hiveplot"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_hiveplot"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_hiveplot"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data_hiveplot"> Interneurons (somatic)</a> - 
+    <a href="../Test_data_hiveplot"> Raw Data</a> - <a href="../Neurons_Test_data_hiveplot"> Neurons</a> - <b><a href="../Pharynx_Test_data_hiveplot"> Pharynx</a></b> - <a href="../Social_Test_data_hiveplot"> Social Network</a> - <a href="../Escape_Test_data_hiveplot"> Escape Response Circuit</a> - <a href="../Full1_Test_data_hiveplot"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data_hiveplot"> BrainMap A</a> - <a href="../Brainmap_Test_data_hiveplot"> BrainMap B</a> - <a href="../Loco1_Test_data_hiveplot"> Locomotion 1</a> - <a href="../Loco2_Test_data_hiveplot"> Locomotion 2</a> - <a href="../Loco3_Test_data_hiveplot"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_hiveplot"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_hiveplot"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_hiveplot"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_hiveplot"> Motor Neurons (somatic)</a> - <a href="../MotorMuscles_Test_data_hiveplot"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data_hiveplot"> Interneurons (somatic)</a> - 
 
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 === "Chemical"
@@ -52,7 +52,7 @@ search:
     |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
     
     
-    | Nodes in current view<br/>(20 total)| Num cells in node<br/>(20 total) | Num in this dataset<br/>(3 total) | Cells |
+    | Nodes in current view<br/>(20 total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| Num cells in node<br/>(20 total) | Num in this dataset<br/>(3 total) | Cells in node |
     | --- | --- | --- | --- |
     |**<span style="color:#ff3300;">I1L</span>** |1 | 0 | <a href="../I1L" title="Pharyngeal interneuron" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1L</span></span></a>|
     |**<span style="color:#ff3300;">I1R</span>** |1 | 0 | <a href="../I1R" title="Pharyngeal interneuron" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff3300;">I1R</span></span></a>|

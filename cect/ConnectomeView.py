@@ -21,9 +21,10 @@ from cect.Cells import MOTORNEURONS_COOK
 from cect.Cells import SENSORY_NEURONS_COOK_CATEGORIES
 from cect.Cells import INTERNEURONS_NONPHARYNGEAL_COOK_CATEGORIES
 
-from cect.Cells import BODY_MUSCLES_COOK
+from cect.Cells import BODY_ONLY_MUSCLES_COOK
 from cect.Cells import UNSPECIFIED_BODY_WALL_MUSCLES
 from cect.Cells import HEAD_MUSCLES_COOK
+from cect.Cells import BODY_WALL_MUSCLE_NAMES
 
 from cect.Cells import HEAD_MOTORNEURONS_COOK
 from cect.Cells import SUBLATERAL_MOTORNEURONS_COOK
@@ -274,6 +275,15 @@ MOTORNEURONS_SOMATIC_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
+MOTORNEURONS_MUSCLES_VIEW = View(
+    "MotorMuscles",
+    "Motor Neurons and muscles",
+    "All **hermaphrodite** motor neurons except those in the pharynx and all body wall muscles",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 NONPHARYNGEAL_NEURONS_HERM_VIEW = View(
     "NonpharyngealH",
     "Nonpharyngeal Neurons (herm)",
@@ -324,6 +334,9 @@ for cell in (
             MOTORNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
             )
+            MOTORNEURONS_MUSCLES_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
         if cell in INTERNEURONS_NONPHARYNGEAL_COOK:
             INTERNEURONS_SOMATIC_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
@@ -332,6 +345,12 @@ for cell in (
 
 for cell in sorted(PREFERRED_MUSCLE_NAMES) + sorted(ALL_NON_NEURON_MUSCLE_CELLS):
     RAW_VIEW.node_sets.append(NodeSet(cell, [cell], get_standard_color(cell)))
+
+for cell in sorted(HEAD_MUSCLES_COOK + BODY_ONLY_MUSCLES_COOK):
+    # print("Adding muscle cell to MOTORNEURONS_MUSCLES_VIEW:", cell)
+    MOTORNEURONS_MUSCLES_VIEW.node_sets.append(
+        NodeSet(cell, [cell], get_standard_color(cell))
+    )
 
 assert len(NEURONS_VIEW.node_sets) == 302
 assert len(RAW_VIEW.node_sets) == len(ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS)
@@ -417,7 +436,7 @@ for cell_set in sorted(esc_positions.keys()):
             if m.startswith("VA") or m.startswith("DA"):
                 all_cells.append(m)
     elif cell_set == "Body Musc":
-        for m in BODY_MUSCLES_COOK + UNSPECIFIED_BODY_WALL_MUSCLES:
+        for m in BODY_ONLY_MUSCLES_COOK + UNSPECIFIED_BODY_WALL_MUSCLES:
             all_cells.append(m)
     elif cell_set == "Head Musc":
         for m in HEAD_MUSCLES_COOK:
@@ -548,7 +567,7 @@ for cell_set in sorted(loco1_2_positions.keys()):
     for cc in [MDLR, MVLR]:
         # print("Adding " + cc)
         if cell_set == cc:
-            for m in BODY_MUSCLES_COOK:
+            for m in BODY_WALL_MUSCLE_NAMES:
                 if m.startswith(cc):
                     all_cells.append(m)
 
@@ -1181,7 +1200,7 @@ COOK_FIG3_VIEW.node_sets.append(
 COOK_FIG3_VIEW.node_sets.append(
     NodeSet(
         "MUBODY",
-        BODY_MUSCLES_COOK,
+        BODY_ONLY_MUSCLES_COOK,
         color="#5a2d0d",
         shape="square",
         position=(5, 0.73),
@@ -1216,6 +1235,7 @@ ALL_VIEWS = [
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     SENSORY_NEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_MUSCLES_VIEW,
     INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
@@ -1229,6 +1249,7 @@ QUICK_VIEWS = [
     BRAINMAP_VIEW,
     LOCOMOTION_2_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_MUSCLES_VIEW,
 ]
 
 
@@ -1257,6 +1278,7 @@ if __name__ == "__main__":
     tdr_instance = get_instance()
 
     print(NodeSet(COOK_FIG3_VIEW, COOK_FIG3_VIEW))
+    quit()
 
     print(tdr_instance.summary())
 

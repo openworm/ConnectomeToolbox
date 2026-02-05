@@ -21,7 +21,7 @@ search:
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <b><a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a></b> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
+    <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data"> BrainMap A</a> - <a href="../Brainmap_Test_data"> BrainMap B</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a> - <b><a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a></b> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../MotorMuscles_Test_data"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
     <i>All **hermaphrodite** neurons except those in the pharynx</i>
 === "Chemical"
@@ -68,7 +68,7 @@ search:
     |**GABA** | (282, 282) matrix | 3 non-zero entries, avg. weight: 2.3333333333333335, sum: 7.0| **<span style="color:#9966cc;">VD3</span>**, **<span style="color:#9966cc;">VD6</span>** | **<span style="color:#9966cc;">VA3</span>**, **<span style="color:#9966cc;">VA6</span>**, **<span style="color:#9966cc;">VB2</span>** |
     
     
-    | Nodes in current view<br/>(282 total)| Num cells in node<br/>(282 total) | Num in this dataset<br/>(18 total) | Cells |
+    | Nodes in current view<br/>(282 total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| Num cells in node<br/>(282 total) | Num in this dataset<br/>(18 total) | Cells in node |
     | --- | --- | --- | --- |
     |**<span style="color:#ff66cc;">ADEL</span>** |1 | 0 | <a href="../ADEL" title="Sensory neuron (mechanosensory)" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ADEL</span></span></a>|
     |**<span style="color:#ff66cc;">ADER</span>** |1 | 0 | <a href="../ADER" title="Sensory neuron (mechanosensory)" style="text-decoration:none;"><span style="text-decoration: line-through;"><span style="color:#ff66cc;">ADER</span></span></a>|

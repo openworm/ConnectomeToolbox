@@ -13,7 +13,7 @@ from cect.NeuroMLDataReader import NeuroMLDataReader
 
 import os
 
-file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+file_location = os.path.dirname(os.path.abspath(__file__)) + "/data/NeuroML/"
 filename = "%sc302_C2_FW.net.nml" % file_location
 
 READER_DESCRIPTION = """Data extracted from a NeuroML file based on <b><a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2017.0379">Gleeson et al. 2018</a></b>"""
