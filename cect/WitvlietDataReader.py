@@ -25,6 +25,10 @@ def fix_witvliet_cell_naming(cell):
         return cell
 
 
+def get_filename_from_spreadsheet(spreadsheet):
+    return spreadsheet_location + spreadsheet
+
+
 class WitvlietDataReader(ConnectomeDataset):
     """Reader for datasets from [Witvliet et al. 2021](../../Witvliet_2021.md)"""
 
@@ -32,7 +36,7 @@ class WitvlietDataReader(ConnectomeDataset):
 
     def __init__(self, spreadsheet):
         ConnectomeDataset.__init__(self)
-        self.filename = "%s%s" % (spreadsheet_location, spreadsheet)
+        self.filename = get_filename_from_spreadsheet(spreadsheet)
 
         neurons, muscles, other_cells, conns = self.read_all_data()
 
@@ -53,7 +57,7 @@ class WitvlietDataReader(ConnectomeDataset):
 
         wb = load_workbook(self.filename)
         sheet = wb.worksheets[0]
-        print_("Opened the Excel file: " + self.filename)
+        print_("Opened the Excel file (Witvliet data): " + self.filename)
 
         for row in sheet.iter_rows(
             min_row=2, values_only=True

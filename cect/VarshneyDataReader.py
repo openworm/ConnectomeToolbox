@@ -19,6 +19,8 @@ spreadsheet_name = "NeuronConnect.xlsx"  # has old name...
 spreadsheet_name = "NeuronConnectFormatted.xlsx"
 filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
 
+NAME = "Varshney"
+
 READER_DESCRIPTION = (
     """Data extracted from %s for neuronal connectivity"""
     % get_dataset_source_on_github(filename.split("/")[-1])

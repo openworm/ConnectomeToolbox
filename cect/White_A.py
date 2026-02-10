@@ -11,6 +11,8 @@ import os
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_A.csv" % spreadsheet_location
 
+NAME = "White_A"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WhiteDataReader`` to load data on the adult (A) N2U series

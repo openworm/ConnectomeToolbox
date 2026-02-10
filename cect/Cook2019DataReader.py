@@ -32,9 +32,12 @@ HERM_GAP_SYMM = "herm gap jn symmetric"
 MALE_CHEM = "male chemical"
 MALE_GAP_SYMM = "male gap jn symmetric"
 
+HERMAPHRODITE = "Hermaphrodite"
+MALE = "Male"
+
 SEX_SPECIFIC_SHEETS = {
-    "Hermaphodite": [HERM_CHEM, HERM_GAP_SYMM],
-    "Male": [MALE_CHEM, MALE_GAP_SYMM],
+    HERMAPHRODITE: [HERM_CHEM, HERM_GAP_SYMM],
+    MALE: [MALE_CHEM, MALE_GAP_SYMM],
 }
 
 pre_range = {
@@ -204,7 +207,7 @@ class Cook2019DataReader(ConnectomeDataset):
 
 
 def main():
-    tdr_instance = Cook2019DataReader("Hermaphodite")
+    tdr_instance = Cook2019DataReader(HERMAPHRODITE)
 
     cells, neuron_conns = tdr_instance.read_data()
 

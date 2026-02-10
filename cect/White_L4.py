@@ -8,6 +8,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
 
+NAME = "White_L4"
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_L4.csv" % spreadsheet_location
