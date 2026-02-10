@@ -406,7 +406,10 @@ def generate_comparison_page(
             print_("Adding full connectome info: %s" % connectome)
 
         except Exception as e:
-            print_("NOT adding full connectome info (%s)" % e)
+            print_(
+                "NOT adding full connectome info (%s, %s, error: %s)"
+                % (reader_name, reader_info, str(e))
+            )
             connectome = None
 
         if reader_name in reader_pages:
