@@ -1205,9 +1205,9 @@ class ConnectomeDataset:
 
 
 def load_connectome_dataset_file(filename: str, verbose: bool = False):
+    if verbose:
+        print_("Loading cached ConnectomeDataset file: " + filename)
 
-    if verbose: print_("Loading cached ConnectomeDataset file: " + filename)
-    
     with open(filename) as json_data:
         d = json.load(json_data)
     return load_connectome_dataset(d)
