@@ -8,15 +8,10 @@
 
 
 from cect.ConnectomeReader import analyse_connections
-from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
-from cect.WormNeuroAtlasReader import WormNeuroAtlasReader
-from cect.Cells import is_any_neuron
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.ConnectomeDataset import load_connectome_dataset_file
-from cect.ConnectomeDataset import get_cache_filename
 from cect import print_
 
+from cect.Wang2024Reader import Wang2024Reader
 
 import os
 
@@ -24,6 +19,26 @@ import os
 READER_DESCRIPTION = """An OpenWorm unified reader combining multiple connectomes. <b>NOTE: WORK IN PROGRESS! SUBJECT TO CHANGE WITHOUT NOTICE!</b>"""
 
 
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    if from_cache:
+        from cect.ConnectomeDataset import (
+            load_connectome_dataset_file,
+            get_cache_filename,
+        )
+
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+    else:
+        global READER_DESCRIPTION
+        inst = Wang2024Reader(
+            sex="Hermaphrodite",
+            normalize_conn_numbers=False,
+            include_monoamine_conns=False,
+        )
+        READER_DESCRIPTION = inst.reader_description
+        return inst
+
+
+'''
 class OpenWormUnifiedReader(ConnectomeDataset):
     """
     Reader of data from multiple connectomes...
@@ -62,10 +77,11 @@ class OpenWormUnifiedReader(ConnectomeDataset):
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     return OpenWormUnifiedReader()
+'''
 
 
 def main():
-    tdr_instance = OpenWormUnifiedReader()
+    tdr_instance = get_instance(from_cache=False)
 
     cells, neuron_conns = tdr_instance.read_data()
 

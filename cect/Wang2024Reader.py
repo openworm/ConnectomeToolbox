@@ -212,7 +212,7 @@ class Wang2024Reader(ConnectomeDataset):
             raise ValueError("Unknown neurotransmitter: %s" % neurotransmitter)
             # return "NT_not_yet_supported__%s" % neurotransmitter.replace(' ', '_').replace('(', '_').replace(')', '_')  # neurotransmitter
 
-    def __init__(self, sex):
+    def __init__(self, sex, normalize_conn_numbers=True, include_monoamine_conns=True):
         ConnectomeDataset.__init__(self)
 
         sources = []
@@ -313,7 +313,8 @@ class Wang2024Reader(ConnectomeDataset):
                     if conn.synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS + [
                         GENERIC_CHEM_SYN
                     ]:
-                        conn.number = 1.0
+                        if normalize_conn_numbers:
+                            conn.number = 1.0
                         for nt in neurotransmitters[conn.pre_cell]:
                             if nt in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
                                 conn.synclass = nt
@@ -329,29 +330,34 @@ class Wang2024Reader(ConnectomeDataset):
                         "     Not a neuron, or not in cells with known neurotransmitters..."
                     )
 
-            monoamine_conns = (
-                monoaminergic_conn_reader.get_current_connection_info_list()
-            )
+            if include_monoamine_conns:
+                monoamine_conns = (
+                    monoaminergic_conn_reader.get_current_connection_info_list()
+                )
 
-            print_(
-                "Adding %i conns from %s"
-                % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
-            )
-            for conn in monoamine_conns[:]:
-                print_("Original conn: %s" % conn)
+                print_(
+                    "Adding %i conns from %s"
+                    % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
+                )
+                for conn in monoamine_conns[:]:
+                    print_("Original conn: %s" % conn)
 
-                if is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters:
-                    conn.number = 1.0
-                    for nt in neurotransmitters[conn.pre_cell]:
-                        if nt in MONOAMINERGIC_SYN_CLASSES:
-                            conn.synclass = nt
-                            print_("    Adding new conn: %s" % conn)
-                            self.add_connection_info(conn)
+                    if (
+                        is_any_neuron(conn.pre_cell)
+                        and conn.pre_cell in neurotransmitters
+                    ):
+                        if normalize_conn_numbers:
+                            conn.number = 1.0
+                        for nt in neurotransmitters[conn.pre_cell]:
+                            if nt in MONOAMINERGIC_SYN_CLASSES:
+                                conn.synclass = nt
+                                print_("    Adding new conn: %s" % conn)
+                                self.add_connection_info(conn)
 
-                else:
-                    print_(
-                        "     Not a neuron, or not in cells with known neurotransmitters..."
-                    )
+                    else:
+                        print_(
+                            "     Not a neuron, or not in cells with known neurotransmitters..."
+                        )
 
             self.all_neurotransmitters.update(neurotransmitters)
 
