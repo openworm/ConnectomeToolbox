@@ -31,12 +31,6 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return WhiteDataReader(filename)
 
 
-my_instance = get_instance()
-
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
-
-
 READER_DESCRIPTION = (
     """Data extracted from %s - adult (A) N2U series ("The N2U series was from an old hermaphrodite that gave good quality pictures" - White et al. 1986)"""
     % get_dataset_source_on_github(filename.split("/")[-1])
@@ -44,6 +38,11 @@ READER_DESCRIPTION = (
 
 
 def main1():
+    my_instance = get_instance()
+
+    read_data = my_instance.read_data
+    read_muscle_data = my_instance.read_muscle_data
+
     cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

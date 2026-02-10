@@ -262,6 +262,7 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
+        readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
         # readers["Wang2024Male"] = ["cect.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
@@ -281,13 +282,13 @@ def generate_comparison_page(
         # readers["GleesonModel"] = ["cect.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.OlivaresModelReader", "OlivaresModel"]
 
-        # readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-        # readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
         # readers["Wang2024Herm"] = ["cect.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]

@@ -82,7 +82,7 @@ class WhiteDataReader(ConnectomeDataset):
         conns = []
 
         with open(self.filename, "r") as f:
-            print_("Opened file: " + self.filename)
+            print_("Opened White et al file: " + self.filename)
             f.readline()
 
             # known_nonconnected_cells = ["CANL", "CANR"]

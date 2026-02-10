@@ -37,26 +37,22 @@ def array_info(conn_array):
     )
 
 
-def convert_to_symmetry_array(cds, synclasses):
+def convert_to_symmetry_array(cds, synclasses, verbose=False):
+    if verbose:
+        print_("Converting to symmetry array for synclasses: %s" % (synclasses))
     dim = list(cds.connections.values())[0].shape[0]
 
     new_conn_array = np.zeros([dim, dim], dtype=np.float64)
-    array_info(new_conn_array)
+    if verbose:
+        array_info(new_conn_array)
 
-    """for synclass in [
-        "Chemical",
-        "Chemical",
-        "Electrical",
-        "Contact",
-        "Functional",
-        "Extrasynaptic",
-    ]:"""
     for synclass in synclasses:
-        print("   Adding conns of type: %s" % synclass)
+        # print_("   Adding conns of type: %s" % synclass)
         if synclass in cds.connections:
             conns_cs = cds.connections[synclass]
 
-            array_info(conns_cs)
+            if verbose:
+                array_info(conns_cs)
             for i in range(len(conns_cs)):
                 for j in range(len(conns_cs[i])):
                     if (
@@ -66,8 +62,9 @@ def convert_to_symmetry_array(cds, synclasses):
                             new_conn_array[i, j] or conns_cs[i, j] > 0
                         )
 
-    print_("Symm array:")
-    array_info(new_conn_array)
+    if verbose:
+        print_("Symm array:")
+        array_info(new_conn_array)
 
     conn_count = 0
     symm_conn_count = 0
@@ -114,9 +111,10 @@ def convert_to_symmetry_array(cds, synclasses):
 
     percentage = 100 * symm_conn_count / conn_count
     info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% "
-    print_(info)
+    if verbose:
+        print_(info)
 
-    return scaled_conn_array, info
+    return scaled_conn_array, percentage, info
 
 
 def test_bilaterals():
@@ -212,7 +210,12 @@ def plot_symmetry(
     with open(json_file, "r") as f:
         data = json.load(f)
 
-    views = ["SensorySomaticH", "MotorSomaticH", "InterneuronsSomaticH"]
+    views = [
+        "SensorySomaticH",
+        "MotorSomaticH",
+        "InterneuronsSomaticH",
+        "NonpharyngealH",
+    ]
 
     if datasets_line1 is None:
         datasets_line1 = list(data.keys())
@@ -235,7 +238,7 @@ def plot_symmetry(
             return None
 
     for i, view in enumerate(views):
-        ax = axes[i]
+        ax = axes[0]
 
         # --- Line 1 (baseline): use only its own x positions; this keeps the line continuous across Yim2024 ---
         x1 = []
@@ -267,7 +270,7 @@ def plot_symmetry(
     plt.show()
 
 
-def main():
+def main1():
     line1 = [
         "Witvliet1",
         "Witvliet2",
@@ -280,6 +283,7 @@ def main():
         "Witvliet8",
         "Cook2019Herm",
     ]
+    print(line1)
 
     line2 = [
         "Witvliet1",
@@ -295,8 +299,91 @@ def main():
         "Cook2019Herm",
     ]
 
-    plot_symmetry(synclass="Chemical", datasets_line1=line1, datasets_line2=line2)
+    plot_symmetry(synclass="Chemical", datasets_line1=None, datasets_line2=line2)
+
+
+def main2():
+    from cect.Analysis import convert_to_symmetry_array
+    from cect.Utils import get_connectome_dataset
+    from cect.ConnectomeView import get_view
+
+    # quit()
+
+    datasets = [
+        "Witvliet1",
+        "Witvliet2",
+        "Witvliet3",
+        "Witvliet4",
+        "Witvliet5",
+        "Witvliet6",
+        "Yim2024",
+        "White_L4",
+        "Witvliet7",
+        "Witvliet8",
+        "Cook2019Herm",
+    ]
+    views = [
+        "SensorySomaticH",
+        "MotorSomaticH",
+        "InterneuronsSomaticH",
+        "Neurons",
+    ]
+
+    synclass = "Chemical"
+
+    symmetries = {}
+
+    for dataset_name in datasets:
+        print_(f"\n\n--- Loading dataset: {dataset_name} ---")
+        cds = get_connectome_dataset(dataset_name, from_cache=True)
+
+        for view in views:
+            print_(f"  Applying view: {view} to dataset: {dataset_name} ---")
+
+            v = get_view(view)
+            if v.name not in symmetries:
+                symmetries[v.name] = []
+
+            cds_view = cds.get_connectome_view(v)
+
+            conn_array, percentage, sym_info = convert_to_symmetry_array(
+                cds_view, [synclass]
+            )
+
+            symmetries[v.name].append(percentage)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.set_ylabel("Symmetry (%)", fontsize=12)
+
+    for view in symmetries:
+        ax.plot(
+            datasets,
+            symmetries[view],
+            marker="o",
+            linestyle="-",
+            label=view,
+            linewidth=3 if view == "Neurons" else 1,
+        )
+
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
+
+    ax.legend()
+
+    """print_("\n\n=== Final Symmetry Info ===")
+    for dataset_name in info:
+        print_(f"\nDataset: {dataset_name}")
+        for view in info[dataset_name]:
+            print_(f"  View: {view} - {info[dataset_name][view]}")"""
+
+    print_("\n\n=== Symmetry Percentages by View ===")
+    for view in symmetries:
+        print_(f"View: {view} - Symmetry Percentages: {symmetries[view]}")
+
+    # plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.show()
 
 
 if __name__ == "__main__":
-    main()
+    # main1()
+
+    main2()

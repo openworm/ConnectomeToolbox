@@ -29,6 +29,7 @@ import networkx as nx
 import pprint
 import random
 import json
+import os
 
 
 LOAD_READERS_FROM_CACHE_BY_DEFAULT = False
@@ -54,7 +55,7 @@ def get_dataset_source_on_github(dataset_file):
 
 
 def get_cache_filename(reader):
-    return "cect/cache/%s.json" % reader
+    return os.path.dirname(os.path.abspath(__file__)) + "/cache/%s.json" % reader
 
 
 class ConnectomeDataset:
@@ -1203,8 +1204,10 @@ class ConnectomeDataset:
         plt.show()
 
 
-def load_connectome_dataset_file(filename: str):
-    print_("Loading ConnectomeDataset file: " + filename)
+def load_connectome_dataset_file(filename: str, verbose: bool = False):
+
+    if verbose: print_("Loading cached ConnectomeDataset file: " + filename)
+    
     with open(filename) as json_data:
         d = json.load(json_data)
     return load_connectome_dataset(d)
