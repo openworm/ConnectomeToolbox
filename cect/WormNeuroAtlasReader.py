@@ -140,7 +140,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
-    if from_cache and 0:
+    if from_cache:
         from cect.ConnectomeDataset import (
             load_connectome_dataset_file,
             get_cache_filename,
