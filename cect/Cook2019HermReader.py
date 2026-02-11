@@ -50,6 +50,8 @@ def main1():
     if "-nogui" not in sys.argv:
         my_instance.connection_number_plot("Acetylcholine")
 
+    print(my_instance.summary())
+
 
 if __name__ == "__main__":
     main1()

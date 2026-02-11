@@ -33,6 +33,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             sex="Hermaphrodite",
             normalize_conn_numbers=False,
             include_monoamine_conns=False,
+            include_electrical_connections=True,
         )
         READER_DESCRIPTION = inst.reader_description
         return inst
@@ -92,6 +93,7 @@ def main():
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     print(tdr_instance.summary())
+    quit()
 
     """
     
