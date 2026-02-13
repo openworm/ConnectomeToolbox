@@ -1,0 +1,5463 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.345712,
+        -0.025417
+      ],
+      "y": [
+        -0.063769,
+        -0.160645
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.345712,
+        0.039262
+      ],
+      "y": [
+        -0.063769,
+        -0.105145
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.318525,
+        0.101851
+      ],
+      "y": [
+        0.074404,
+        -0.250613
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.318525,
+        0.09404
+      ],
+      "y": [
+        0.074404,
+        0.107111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.318525,
+        0.055945
+      ],
+      "y": [
+        0.074404,
+        0.116182
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.101851,
+        0.10079437660753333,
+        0.141365
+      ],
+      "y": [
+        -0.250613,
+        -0.16599985252226665,
+        -0.09174
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.141365,
+        0.14242162339246667,
+        0.101851
+      ],
+      "y": [
+        -0.09174,
+        -0.1763531474777333,
+        -0.250613
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.101851,
+        -0.080051
+      ],
+      "y": [
+        -0.250613,
+        -0.226065
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.101851,
+        0.11445
+      ],
+      "y": [
+        -0.250613,
+        -0.409313
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.101851,
+        -0.055424
+      ],
+      "y": [
+        -0.250613,
+        -0.283931
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.101851,
+        0.118795
+      ],
+      "y": [
+        -0.250613,
+        -0.489214
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.101851
+      ],
+      "y": [
+        -0.333029,
+        -0.250613
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        0.101851
+      ],
+      "y": [
+        -0.385545,
+        -0.250613
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        0.101851
+      ],
+      "y": [
+        -0.056763,
+        -0.250613
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 8.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.025417,
+        -0.0816355661268,
+        -0.089366
+      ],
+      "y": [
+        -0.160645,
+        -0.07649382632873335,
+        0.024413
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 8.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.089366,
+        -0.0331474338732,
+        -0.025417
+      ],
+      "y": [
+        0.024413,
+        -0.05973817367126667,
+        -0.160645
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.025417,
+        -0.156649
+      ],
+      "y": [
+        -0.160645,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.025417,
+        0.024602
+      ],
+      "y": [
+        -0.160645,
+        -0.271111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.025417,
+        -0.122014
+      ],
+      "y": [
+        -0.160645,
+        -0.240439
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.025417,
+        -0.183
+      ],
+      "y": [
+        -0.160645,
+        -0.459248
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        -0.025417
+      ],
+      "y": [
+        -0.333029,
+        -0.160645
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        -0.025417
+      ],
+      "y": [
+        -0.056763,
+        -0.160645
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.04148901262693334,
+        -0.048269
+      ],
+      "y": [
+        -0.333029,
+        -0.38100235099760005,
+        -0.385545
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        0.027728987373066668,
+        0.117487
+      ],
+      "y": [
+        -0.385545,
+        -0.3375716490024,
+        -0.333029
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.141365
+      ],
+      "y": [
+        -0.333029,
+        -0.09174
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.11445
+      ],
+      "y": [
+        -0.333029,
+        -0.409313
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.118795
+      ],
+      "y": [
+        -0.333029,
+        -0.489214
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117487,
+        0.082009
+      ],
+      "y": [
+        -0.333029,
+        -0.034431
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        -0.089366
+      ],
+      "y": [
+        -0.385545,
+        0.024413
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        0.024602
+      ],
+      "y": [
+        -0.385545,
+        -0.271111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        -0.183
+      ],
+      "y": [
+        -0.385545,
+        -0.459248
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        -0.336794
+      ],
+      "y": [
+        -0.385545,
+        -0.864038
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        0.244669
+      ],
+      "y": [
+        -0.385545,
+        -0.137802
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.048269,
+        0.032443
+      ],
+      "y": [
+        -0.385545,
+        -0.001107
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.089366,
+        -0.025741
+      ],
+      "y": [
+        0.024413,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.089366,
+        0.082009
+      ],
+      "y": [
+        0.024413,
+        -0.034431
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.089366,
+        -0.059431
+      ],
+      "y": [
+        0.024413,
+        0.221774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.089366,
+        -0.230144
+      ],
+      "y": [
+        0.024413,
+        0.259062
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        -0.089366
+      ],
+      "y": [
+        -0.048061,
+        0.024413
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        -0.089366
+      ],
+      "y": [
+        0.148454,
+        0.024413
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.141365,
+        0.131435
+      ],
+      "y": [
+        -0.09174,
+        0.019617
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 8.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.141365,
+        0.244669
+      ],
+      "y": [
+        -0.09174,
+        -0.137802
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.141365,
+        0.228091
+      ],
+      "y": [
+        -0.09174,
+        0.174646
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.141365,
+        0.032443
+      ],
+      "y": [
+        -0.09174,
+        -0.001107
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        0.141365
+      ],
+      "y": [
+        -0.048061,
+        -0.09174
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.141365
+      ],
+      "y": [
+        0.060347,
+        -0.09174
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        -0.045232
+      ],
+      "y": [
+        -0.048061,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        -0.027858
+      ],
+      "y": [
+        -0.048061,
+        -0.072675
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        0.039262
+      ],
+      "y": [
+        -0.048061,
+        -0.105145
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        0.131435
+      ],
+      "y": [
+        -0.048061,
+        0.019617
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        0.228091
+      ],
+      "y": [
+        -0.048061,
+        0.174646
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        -0.025741
+      ],
+      "y": [
+        -0.048061,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.013633,
+        -0.059431
+      ],
+      "y": [
+        -0.048061,
+        0.221774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.013633
+      ],
+      "y": [
+        -0.41867,
+        -0.048061
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.013633
+      ],
+      "y": [
+        -0.277303,
+        -0.048061
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.24302,
+        -0.013633
+      ],
+      "y": [
+        -0.058073,
+        -0.048061
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.136223,
+        -0.013633
+      ],
+      "y": [
+        0.120889,
+        -0.048061
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.155723,
+        0.11445
+      ],
+      "y": [
+        -0.20669,
+        -0.409313
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.155723,
+        0.082009
+      ],
+      "y": [
+        -0.20669,
+        -0.034431
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.015525,
+        0.155723
+      ],
+      "y": [
+        -0.33591,
+        -0.20669
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.069094,
+        0.155723
+      ],
+      "y": [
+        -0.126204,
+        -0.20669
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.24302,
+        0.155723
+      ],
+      "y": [
+        -0.058073,
+        -0.20669
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.174195,
+        0.24302
+      ],
+      "y": [
+        -0.076351,
+        -0.058073
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.174195,
+        0.024602
+      ],
+      "y": [
+        -0.076351,
+        -0.271111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 8.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.174195,
+        0.244669
+      ],
+      "y": [
+        -0.076351,
+        -0.137802
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.069094,
+        0.174195
+      ],
+      "y": [
+        -0.126204,
+        -0.076351
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.136223,
+        0.174195
+      ],
+      "y": [
+        0.120889,
+        -0.076351
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        0.09404
+      ],
+      "y": [
+        -0.056763,
+        0.107111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        0.055945
+      ],
+      "y": [
+        -0.056763,
+        0.116182
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        -0.156649
+      ],
+      "y": [
+        -0.056763,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        -0.122014
+      ],
+      "y": [
+        -0.056763,
+        -0.240439
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        -0.080051
+      ],
+      "y": [
+        -0.056763,
+        -0.226065
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.045232,
+        -0.055424
+      ],
+      "y": [
+        -0.056763,
+        -0.283931
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        -0.045232
+      ],
+      "y": [
+        0.060347,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        -0.045232
+      ],
+      "y": [
+        0.148454,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.069094,
+        -0.045232
+      ],
+      "y": [
+        -0.126204,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.24302,
+        -0.045232
+      ],
+      "y": [
+        -0.058073,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.136223,
+        -0.045232
+      ],
+      "y": [
+        0.120889,
+        -0.056763
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.690411
+      ],
+      "y": [
+        -0.277303,
+        -0.179709
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.242277
+      ],
+      "y": [
+        -0.41867,
+        -0.277303
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.156649
+      ],
+      "y": [
+        -0.41867,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.433596
+      ],
+      "y": [
+        -0.41867,
+        -0.700519
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.080051
+      ],
+      "y": [
+        -0.41867,
+        -0.226065
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        0.11445
+      ],
+      "y": [
+        -0.41867,
+        -0.409313
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.055424
+      ],
+      "y": [
+        -0.41867,
+        -0.283931
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        0.118795
+      ],
+      "y": [
+        -0.41867,
+        -0.489214
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.304484
+      ],
+      "y": [
+        -0.41867,
+        -0.880983
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.205375,
+        -0.647424
+      ],
+      "y": [
+        -0.41867,
+        -0.515119
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        0.039262
+      ],
+      "y": [
+        -0.277303,
+        -0.105145
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.156649
+      ],
+      "y": [
+        -0.277303,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        0.024602
+      ],
+      "y": [
+        -0.277303,
+        -0.271111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.122014
+      ],
+      "y": [
+        -0.277303,
+        -0.240439
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.183
+      ],
+      "y": [
+        -0.277303,
+        -0.459248
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.242277,
+        -0.433596
+      ],
+      "y": [
+        -0.277303,
+        -0.700519
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.055945
+      ],
+      "y": [
+        0.060347,
+        0.116182
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.131435
+      ],
+      "y": [
+        0.060347,
+        0.019617
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.244669
+      ],
+      "y": [
+        0.060347,
+        -0.137802
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.228091
+      ],
+      "y": [
+        0.060347,
+        0.174646
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.193009,
+        0.032443
+      ],
+      "y": [
+        0.060347,
+        -0.001107
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        -0.025741
+      ],
+      "y": [
+        0.148454,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        0.082009
+      ],
+      "y": [
+        0.148454,
+        -0.034431
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        -0.059431
+      ],
+      "y": [
+        0.148454,
+        0.221774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.126982,
+        -0.230144
+      ],
+      "y": [
+        0.148454,
+        0.259062
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.027858,
+        0.09404
+      ],
+      "y": [
+        -0.072675,
+        0.107111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.027858,
+        -0.01069826526553333,
+        0.055945
+      ],
+      "y": [
+        -0.072675,
+        0.032732357837133325,
+        0.116182
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        0.03878526526553333,
+        -0.027858
+      ],
+      "y": [
+        0.116182,
+        0.010774642162866662,
+        -0.072675
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.027858,
+        -0.122014
+      ],
+      "y": [
+        -0.072675,
+        -0.240439
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.027858,
+        -0.080051
+      ],
+      "y": [
+        -0.072675,
+        -0.226065
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.027858,
+        -0.055424
+      ],
+      "y": [
+        -0.072675,
+        -0.283931
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039262,
+        0.0388437801024,
+        0.09404
+      ],
+      "y": [
+        -0.105145,
+        0.008159352572133332,
+        0.107111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "spline",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.09404,
+        0.0944582198976,
+        0.039262
+      ],
+      "y": [
+        0.107111,
+        -0.0061933525721333356,
+        -0.105145
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039262,
+        -0.156649
+      ],
+      "y": [
+        -0.105145,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039262,
+        -0.122014
+      ],
+      "y": [
+        -0.105145,
+        -0.240439
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        0.039262
+      ],
+      "y": [
+        0.116182,
+        -0.105145
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.09404,
+        -0.025741
+      ],
+      "y": [
+        0.107111,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.09404,
+        -0.059431
+      ],
+      "y": [
+        0.107111,
+        0.221774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        0.131435
+      ],
+      "y": [
+        0.116182,
+        0.019617
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        0.228091
+      ],
+      "y": [
+        0.116182,
+        0.174646
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        -0.025741
+      ],
+      "y": [
+        0.116182,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 2.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.055945,
+        -0.059431
+      ],
+      "y": [
+        0.116182,
+        0.221774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.015525,
+        -0.156649
+      ],
+      "y": [
+        -0.33591,
+        -0.195578
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.015525,
+        0.024602
+      ],
+      "y": [
+        -0.33591,
+        -0.271111
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.069094,
+        -0.080051
+      ],
+      "y": [
+        -0.126204,
+        -0.226065
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.24302,
+        0.131435
+      ],
+      "y": [
+        -0.058073,
+        0.019617
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.24302,
+        0.244669
+      ],
+      "y": [
+        -0.058073,
+        -0.137802
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.136223,
+        -0.025741
+      ],
+      "y": [
+        0.120889,
+        0.136074
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#9966cc",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.136223,
+        0.082009
+      ],
+      "y": [
+        0.120889,
+        -0.034431
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "hovertext": [
+        "<b>AS1</b><br>Ventral cord motor neuron",
+        "<b>AS10</b><br>Ventral cord motor neuron",
+        "<b>AS11</b><br>Ventral cord motor neuron",
+        "<b>AS2</b><br>Ventral cord motor neuron",
+        "<b>AS3</b><br>Ventral cord motor neuron",
+        "<b>AS4</b><br>Ventral cord motor neuron",
+        "<b>AS5</b><br>Ventral cord motor neuron",
+        "<b>AS6</b><br>Ventral cord motor neuron",
+        "<b>AS7</b><br>Ventral cord motor neuron",
+        "<b>AS8</b><br>Ventral cord motor neuron",
+        "<b>AS9</b><br>Ventral cord motor neuron",
+        "<b>DA1</b><br>Ventral cord motor neuron",
+        "<b>DA2</b><br>Ventral cord motor neuron",
+        "<b>DA3</b><br>Ventral cord motor neuron",
+        "<b>DA4</b><br>Ventral cord motor neuron",
+        "<b>DA5</b><br>Ventral cord motor neuron",
+        "<b>DA6</b><br>Ventral cord motor neuron",
+        "<b>DA7</b><br>Ventral cord motor neuron",
+        "<b>DA8</b><br>Ventral cord motor neuron",
+        "<b>DA9</b><br>Ventral cord motor neuron",
+        "<b>DB1</b><br>Ventral cord motor neuron",
+        "<b>DB2</b><br>Ventral cord motor neuron",
+        "<b>DB3</b><br>Ventral cord motor neuron",
+        "<b>DB4</b><br>Ventral cord motor neuron",
+        "<b>DB5</b><br>Ventral cord motor neuron",
+        "<b>DB6</b><br>Ventral cord motor neuron",
+        "<b>DB7</b><br>Ventral cord motor neuron",
+        "<b>DD1</b><br>Ventral cord motor neuron",
+        "<b>DD2</b><br>Ventral cord motor neuron",
+        "<b>DD3</b><br>Ventral cord motor neuron",
+        "<b>DD4</b><br>Ventral cord motor neuron",
+        "<b>DD5</b><br>Ventral cord motor neuron",
+        "<b>DD6</b><br>Ventral cord motor neuron",
+        "<b>HSNL</b><br>Hermaphrodite specific motor neuron",
+        "<b>HSNR</b><br>Hermaphrodite specific motor neuron",
+        "<b>PDA</b><br>Ventral cord motor neuron",
+        "<b>PDB</b><br>Ventral cord motor neuron",
+        "<b>RIVL</b><br>Head motor neuron<br>Conns out: <b>RMDDR</b>: 1, <b>SMDDR</b>: 1",
+        "<b>RIVR</b><br>Head motor neuron<br>Conns out: <b>RMDDL</b>: 1, <b>SMDVL</b>: 1, <b>SMDVR</b>: 1",
+        "<b>RMDDL</b><br>Head motor neuron<br>Conns in: <b>RMDVR</b>: 6, <b>RMDL</b>: 2, <b>RIVR</b>: 1, <b>RMDR</b>: 1, <b>RMEV</b>: 1<br>Conns out: <b>RMDVR</b>: 6, <b>MDR01</b>: 3, <b>MDR02</b>: 3, <b>MDR03</b>: 3, <b>MDR04</b>: 2",
+        "<b>RMDDR</b><br>Head motor neuron<br>Conns in: <b>RMDVL</b>: 5, <b>RMEV</b>: 3, <b>RIVL</b>: 1, <b>RMDL</b>: 1<br>Conns out: <b>RMDVL</b>: 5, <b>MDL02</b>: 3, <b>MDL01</b>: 2, <b>MDL03</b>: 2, <b>MDL04</b>: 1",
+        "<b>RMDL</b><br>Head motor neuron<br>Conns in: <b>RMDR</b>: 3<br>Conns out: <b>RMDR</b>: 4, <b>RMDDL</b>: 2, <b>MDR02</b>: 2, <b>RMDDR</b>: 1, <b>RMDVR</b>: 1, <br><b>MDR04</b>: 1, <b>MVR02</b>: 1",
+        "<b>RMDR</b><br>Head motor neuron<br>Conns in: <b>RMDL</b>: 4<br>Conns out: <b>RMDL</b>: 3, <b>MDL04</b>: 2, <b>RMDDL</b>: 1, <b>RMDVL</b>: 1, <b>MDL02</b>: 1, <br><b>MDL06</b>: 1, <b>MVL02</b>: 1, <b>MVL04</b>: 1",
+        "<b>RMDVL</b><br>Head motor neuron<br>Conns in: <b>RMDDR</b>: 5, <b>RMED</b>: 4, <b>SMBVR</b>: 2, <b>RMDR</b>: 1<br>Conns out: <b>RMDDR</b>: 5, <b>MVR02</b>: 3, <b>MVR01</b>: 2, <b>MVR03</b>: 2, <b>MVR04</b>: 2",
+        "<b>RMDVR</b><br>Head motor neuron<br>Conns in: <b>RMDDL</b>: 6, <b>RMED</b>: 4, <b>SMBVL</b>: 2, <b>RMDL</b>: 1<br>Conns out: <b>RMDDL</b>: 6, <b>MVL02</b>: 5, <b>MVL04</b>: 3, <b>MVL01</b>: 2, <b>MVL03</b>: 1",
+        "<b>RMED</b><br>Head motor neuron<br>Conns in: <b>SMBDR</b>: 3, <b>SMBDL</b>: 2, <b>URAVL</b>: 1, <b>URAVR</b>: 1<br>Conns out: <b>MVL01</b>: 6, <b>RMDVL</b>: 4, <b>RMDVR</b>: 4, <b>MVR01</b>: 4, <b>RMEV</b>: 2, <br><b>SMDDL</b>: 1, <b>SMDDR</b>: 1, <b>MVL03</b>: 1, <b>MVR03</b>: 1",
+        "<b>RMEL</b><br>Head motor neuron<br>Conns in: <b>URADL</b>: 2, <b>URAVL</b>: 2, <b>URADR</b>: 1<br>Conns out: <b>MVR02</b>: 4, <b>MDR02</b>: 2",
+        "<b>RMER</b><br>Head motor neuron<br>Conns in: <b>URAVR</b>: 3, <b>URADR</b>: 2<br>Conns out: <b>MVL02</b>: 5, <b>MDL02</b>: 2, <b>URAVL</b>: 1",
+        "<b>RMEV</b><br>Head motor neuron<br>Conns in: <b>RMED</b>: 2, <b>SMBVL</b>: 2, <b>SMBVR</b>: 2, <b>URADR</b>: 1, <b>URAVL</b>: 1, <br><b>URAVR</b>: 1<br>Conns out: <b>MDL01</b>: 4, <b>RMDDR</b>: 3, <b>MDR01</b>: 3, <b>MDR03</b>: 2, <b>RMDDL</b>: 1, <br><b>SMDVL</b>: 1, <b>SMDVR</b>: 1, <b>MDL03</b>: 1",
+        "<b>RMHL</b><br>Head motor neuron",
+        "<b>RMHR</b><br>Head motor neuron",
+        "<b>SABD</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SABVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SABVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIADL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIADR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIAVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIAVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBDL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBDR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986<br>Conns in: <b>SMBDR</b>: 1",
+        "<b>SIBVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SMBDL</b><br>Sublateral motor neuron<br>Conns out: <b>RMED</b>: 2, <b>MDR01</b>: 2, <b>SMBDR</b>: 1, <b>MDL01</b>: 1, <b>MDL05</b>: 1, <br><b>MDR02</b>: 1, <b>MDR03</b>: 1, <b>MDR04</b>: 1, <b>MDR05</b>: 1, <b>MDR08</b>: 1",
+        "<b>SMBDR</b><br>Sublateral motor neuron<br>Conns in: <b>SMBDL</b>: 1<br>Conns out: <b>RMED</b>: 3, <b>MDL01</b>: 3, <b>MDL03</b>: 2, <b>MDL04</b>: 2, <b>SIBVL</b>: 1, <br><b>SMDDR</b>: 1, <b>MDL02</b>: 1, <b>MDL05</b>: 1",
+        "<b>SMBVL</b><br>Sublateral motor neuron<br>Conns out: <b>RMDVR</b>: 2, <b>RMEV</b>: 2, <b>MVL03</b>: 2, <b>SMDVR</b>: 1, <b>MVL01</b>: 1, <br><b>MVL02</b>: 1, <b>MVL04</b>: 1",
+        "<b>SMBVR</b><br>Sublateral motor neuron<br>Conns out: <b>RMDVL</b>: 2, <b>RMEV</b>: 2, <b>MVR01</b>: 2, <b>MVR03</b>: 2, <b>MVR02</b>: 1, <br><b>MVR04</b>: 1",
+        "<b>SMDDL</b><br>Sublateral motor neuron<br>Conns in: <b>SMDVR</b>: 3, <b>RMED</b>: 1<br>Conns out: <b>SMDVR</b>: 3, <b>SMDVL</b>: 1, <b>MDL03</b>: 1, <b>MDR01</b>: 1, <b>MDR03</b>: 1",
+        "<b>SMDDR</b><br>Sublateral motor neuron<br>Conns in: <b>SMDVL</b>: 2, <b>RIVL</b>: 1, <b>RMED</b>: 1, <b>SMBDR</b>: 1, <b>SMDVR</b>: 1<br>Conns out: <b>SMDVL</b>: 3, <b>MDL01</b>: 1, <b>MDL03</b>: 1",
+        "<b>SMDVL</b><br>Sublateral motor neuron<br>Conns in: <b>SMDDR</b>: 3, <b>RIVR</b>: 1, <b>RMEV</b>: 1, <b>SMDDL</b>: 1<br>Conns out: <b>SMDDR</b>: 2, <b>MVR01</b>: 1, <b>MVR03</b>: 1",
+        "<b>SMDVR</b><br>Sublateral motor neuron<br>Conns in: <b>SMDDL</b>: 3, <b>RIVR</b>: 1, <b>RMEV</b>: 1, <b>SMBVL</b>: 1<br>Conns out: <b>SMDDL</b>: 3, <b>MVR01</b>: 2, <b>SMDDR</b>: 1, <b>MVL01</b>: 1, <b>MVL03</b>: 1, <br><b>MVR03</b>: 1",
+        "<b>URADL</b><br>Head motor neuron<br>Conns out: <b>MDL02</b>: 3, <b>RMEL</b>: 2, <b>MDL01</b>: 2",
+        "<b>URADR</b><br>Head motor neuron<br>Conns out: <b>RMER</b>: 2, <b>MDR01</b>: 2, <b>RMEL</b>: 1, <b>RMEV</b>: 1",
+        "<b>URAVL</b><br>Head motor neuron<br>Conns in: <b>RMER</b>: 1<br>Conns out: <b>RMEL</b>: 2, <b>MVL01</b>: 2, <b>MVL02</b>: 2, <b>RMED</b>: 1, <b>RMEV</b>: 1",
+        "<b>URAVR</b><br>Head motor neuron<br>Conns out: <b>RMER</b>: 3, <b>MVR01</b>: 2, <b>MVR02</b>: 2, <b>RMED</b>: 1, <b>RMEV</b>: 1",
+        "<b>VA1</b><br>Ventral cord motor neuron",
+        "<b>VA10</b><br>Ventral cord motor neuron",
+        "<b>VA11</b><br>Ventral cord motor neuron",
+        "<b>VA12</b><br>Ventral cord motor neuron",
+        "<b>VA2</b><br>Ventral cord motor neuron",
+        "<b>VA3</b><br>Ventral cord motor neuron",
+        "<b>VA4</b><br>Ventral cord motor neuron",
+        "<b>VA5</b><br>Ventral cord motor neuron",
+        "<b>VA6</b><br>Ventral cord motor neuron",
+        "<b>VA7</b><br>Ventral cord motor neuron",
+        "<b>VA8</b><br>Ventral cord motor neuron",
+        "<b>VA9</b><br>Ventral cord motor neuron",
+        "<b>VB1</b><br>Ventral cord motor neuron",
+        "<b>VB10</b><br>Ventral cord motor neuron",
+        "<b>VB11</b><br>Ventral cord motor neuron",
+        "<b>VB2</b><br>Ventral cord motor neuron",
+        "<b>VB3</b><br>Ventral cord motor neuron",
+        "<b>VB4</b><br>Ventral cord motor neuron",
+        "<b>VB5</b><br>Ventral cord motor neuron",
+        "<b>VB6</b><br>Ventral cord motor neuron",
+        "<b>VB7</b><br>Ventral cord motor neuron",
+        "<b>VB8</b><br>Ventral cord motor neuron",
+        "<b>VB9</b><br>Ventral cord motor neuron",
+        "<b>VC1</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC2</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC3</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC4</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC5</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC6</b><br>Hermaphrodite specific motor neuron",
+        "<b>VD1</b><br>Ventral cord motor neuron",
+        "<b>VD10</b><br>Ventral cord motor neuron",
+        "<b>VD11</b><br>Ventral cord motor neuron",
+        "<b>VD12</b><br>Ventral cord motor neuron",
+        "<b>VD13</b><br>Ventral cord motor neuron",
+        "<b>VD2</b><br>Ventral cord motor neuron",
+        "<b>VD3</b><br>Ventral cord motor neuron",
+        "<b>VD4</b><br>Ventral cord motor neuron",
+        "<b>VD5</b><br>Ventral cord motor neuron",
+        "<b>VD6</b><br>Ventral cord motor neuron",
+        "<b>VD7</b><br>Ventral cord motor neuron",
+        "<b>VD8</b><br>Ventral cord motor neuron",
+        "<b>VD9</b><br>Ventral cord motor neuron",
+        "<b>MDL01</b><br>Head muscle<br>Conns in: <b>RMEV</b>: 4, <b>SMBDR</b>: 3, <b>RMDDR</b>: 2, <b>URADL</b>: 2, <b>SMBDL</b>: 1, <br><b>SMDDR</b>: 1",
+        "<b>MDL02</b><br>Head muscle<br>Conns in: <b>RMDDR</b>: 3, <b>URADL</b>: 3, <b>RMER</b>: 2, <b>RMDR</b>: 1, <b>SMBDR</b>: 1",
+        "<b>MDL03</b><br>Head muscle<br>Conns in: <b>RMDDR</b>: 2, <b>SMBDR</b>: 2, <b>RMEV</b>: 1, <b>SMDDL</b>: 1, <b>SMDDR</b>: 1",
+        "<b>MDL04</b><br>Head muscle<br>Conns in: <b>RMDR</b>: 2, <b>SMBDR</b>: 2, <b>RMDDR</b>: 1",
+        "<b>MDL05</b><br>Head muscle<br>Conns in: <b>SMBDL</b>: 1, <b>SMBDR</b>: 1",
+        "<b>MDL06</b><br>Head muscle<br>Conns in: <b>RMDR</b>: 1",
+        "<b>MDL07</b><br>Head muscle",
+        "<b>MDL08</b><br>Main body muscle",
+        "<b>MDL09</b><br>Main body muscle",
+        "<b>MDL10</b><br>Main body muscle",
+        "<b>MDL11</b><br>Main body muscle",
+        "<b>MDL12</b><br>Main body muscle",
+        "<b>MDL13</b><br>Main body muscle",
+        "<b>MDL14</b><br>Main body muscle",
+        "<b>MDL15</b><br>Main body muscle",
+        "<b>MDL16</b><br>Main body muscle",
+        "<b>MDL17</b><br>Main body muscle",
+        "<b>MDL18</b><br>Main body muscle",
+        "<b>MDL19</b><br>Main body muscle",
+        "<b>MDL20</b><br>Main body muscle",
+        "<b>MDL21</b><br>Main body muscle",
+        "<b>MDL22</b><br>Main body muscle",
+        "<b>MDL23</b><br>Main body muscle",
+        "<b>MDL24</b><br>Main body muscle",
+        "<b>MDR01</b><br>Head muscle<br>Conns in: <b>RMDDL</b>: 3, <b>RMEV</b>: 3, <b>SMBDL</b>: 2, <b>URADR</b>: 2, <b>SMDDL</b>: 1",
+        "<b>MDR02</b><br>Head muscle<br>Conns in: <b>RMDDL</b>: 3, <b>RMDL</b>: 2, <b>RMEL</b>: 2, <b>SMBDL</b>: 1",
+        "<b>MDR03</b><br>Head muscle<br>Conns in: <b>RMDDL</b>: 3, <b>RMEV</b>: 2, <b>SMBDL</b>: 1, <b>SMDDL</b>: 1",
+        "<b>MDR04</b><br>Head muscle<br>Conns in: <b>RMDDL</b>: 2, <b>RMDL</b>: 1, <b>SMBDL</b>: 1",
+        "<b>MDR05</b><br>Head muscle<br>Conns in: <b>SMBDL</b>: 1",
+        "<b>MDR06</b><br>Head muscle",
+        "<b>MDR07</b><br>Head muscle",
+        "<b>MDR08</b><br>Main body muscle<br>Conns in: <b>SMBDL</b>: 1",
+        "<b>MDR09</b><br>Main body muscle",
+        "<b>MDR10</b><br>Main body muscle",
+        "<b>MDR11</b><br>Main body muscle",
+        "<b>MDR12</b><br>Main body muscle",
+        "<b>MDR13</b><br>Main body muscle",
+        "<b>MDR14</b><br>Main body muscle",
+        "<b>MDR15</b><br>Main body muscle",
+        "<b>MDR16</b><br>Main body muscle",
+        "<b>MDR17</b><br>Main body muscle",
+        "<b>MDR18</b><br>Main body muscle",
+        "<b>MDR19</b><br>Main body muscle",
+        "<b>MDR20</b><br>Main body muscle",
+        "<b>MDR21</b><br>Main body muscle",
+        "<b>MDR22</b><br>Main body muscle",
+        "<b>MDR23</b><br>Main body muscle",
+        "<b>MDR24</b><br>Main body muscle",
+        "<b>MVL01</b><br>Head muscle<br>Conns in: <b>RMED</b>: 6, <b>RMDVR</b>: 2, <b>URAVL</b>: 2, <b>SMBVL</b>: 1, <b>SMDVR</b>: 1",
+        "<b>MVL02</b><br>Head muscle<br>Conns in: <b>RMDVR</b>: 5, <b>RMER</b>: 5, <b>URAVL</b>: 2, <b>RMDR</b>: 1, <b>SMBVL</b>: 1",
+        "<b>MVL03</b><br>Head muscle<br>Conns in: <b>SMBVL</b>: 2, <b>RMDVR</b>: 1, <b>RMED</b>: 1, <b>SMDVR</b>: 1",
+        "<b>MVL04</b><br>Head muscle<br>Conns in: <b>RMDVR</b>: 3, <b>RMDR</b>: 1, <b>SMBVL</b>: 1",
+        "<b>MVL05</b><br>Head muscle",
+        "<b>MVL06</b><br>Head muscle",
+        "<b>MVL07</b><br>Head muscle",
+        "<b>MVL08</b><br>Main body muscle",
+        "<b>MVL09</b><br>Main body muscle",
+        "<b>MVL10</b><br>Main body muscle",
+        "<b>MVL11</b><br>Main body muscle",
+        "<b>MVL12</b><br>Main body muscle",
+        "<b>MVL13</b><br>Main body muscle",
+        "<b>MVL14</b><br>Main body muscle",
+        "<b>MVL15</b><br>Main body muscle",
+        "<b>MVL16</b><br>Main body muscle",
+        "<b>MVL17</b><br>Main body muscle",
+        "<b>MVL18</b><br>Main body muscle",
+        "<b>MVL19</b><br>Main body muscle",
+        "<b>MVL20</b><br>Main body muscle",
+        "<b>MVL21</b><br>Main body muscle",
+        "<b>MVL22</b><br>Main body muscle",
+        "<b>MVL23</b><br>Main body muscle",
+        "<b>MVR01</b><br>Head muscle<br>Conns in: <b>RMED</b>: 4, <b>RMDVL</b>: 2, <b>SMBVR</b>: 2, <b>SMDVR</b>: 2, <b>URAVR</b>: 2, <br><b>SMDVL</b>: 1",
+        "<b>MVR02</b><br>Head muscle<br>Conns in: <b>RMEL</b>: 4, <b>RMDVL</b>: 3, <b>URAVR</b>: 2, <b>RMDL</b>: 1, <b>SMBVR</b>: 1",
+        "<b>MVR03</b><br>Head muscle<br>Conns in: <b>RMDVL</b>: 2, <b>SMBVR</b>: 2, <b>RMED</b>: 1, <b>SMDVL</b>: 1, <b>SMDVR</b>: 1",
+        "<b>MVR04</b><br>Head muscle<br>Conns in: <b>RMDVL</b>: 2, <b>SMBVR</b>: 1",
+        "<b>MVR05</b><br>Head muscle",
+        "<b>MVR06</b><br>Head muscle",
+        "<b>MVR07</b><br>Head muscle",
+        "<b>MVR08</b><br>Main body muscle",
+        "<b>MVR09</b><br>Main body muscle",
+        "<b>MVR10</b><br>Main body muscle",
+        "<b>MVR11</b><br>Main body muscle",
+        "<b>MVR12</b><br>Main body muscle",
+        "<b>MVR13</b><br>Main body muscle",
+        "<b>MVR14</b><br>Main body muscle",
+        "<b>MVR15</b><br>Main body muscle",
+        "<b>MVR16</b><br>Main body muscle",
+        "<b>MVR17</b><br>Main body muscle",
+        "<b>MVR18</b><br>Main body muscle",
+        "<b>MVR19</b><br>Main body muscle",
+        "<b>MVR20</b><br>Main body muscle",
+        "<b>MVR21</b><br>Main body muscle",
+        "<b>MVR22</b><br>Main body muscle",
+        "<b>MVR23</b><br>Main body muscle",
+        "<b>MVR24</b><br>Main body muscle"
+      ],
+      "marker": {
+        "color": [
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600",
+          "#336600"
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "side": "right",
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "color": "#444444",
+          "width": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
+      },
+      "mode": "markers",
+      "opacity": 1,
+      "text": [
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>HSNL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>HSNR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDB</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RIVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RIVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMED</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMEL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMER</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMEV</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMHL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMHR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABD</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIADL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIADR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIAVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIAVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URADL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URADR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URAVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URAVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA12</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD12</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD13</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD9</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL01</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL02</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL03</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL04</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL05</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL06</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL07</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL08</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL09</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL10</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL11</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL12</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL13</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL14</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL15</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL16</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL17</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL18</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL19</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL20</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL21</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL22</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL23</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDL24</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR01</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR02</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR03</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR04</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR05</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR06</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR07</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR08</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR09</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR10</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR11</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR12</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR13</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR14</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR15</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR16</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR17</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR18</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR19</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR20</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR21</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR22</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR23</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MDR24</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL01</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL02</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL03</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL04</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL05</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL06</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL07</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL08</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL09</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL10</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL11</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL12</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL13</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL14</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL15</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL16</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL17</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL18</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL19</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL20</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL21</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL22</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVL23</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR01</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR02</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR03</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR04</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR05</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR06</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR07</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR08</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR09</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR10</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR11</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR12</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR13</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR14</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR15</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR16</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR17</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR18</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR19</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR20</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR21</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR22</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR23</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>MVR24</b></span>"
+      ],
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.380166,
+        -0.121153,
+        -0.621244,
+        0.73268,
+        -0.535597,
+        0.651688,
+        -0.652496,
+        0.061065,
+        0.346717,
+        -0.04102,
+        0.172129,
+        -0.343614,
+        0.705791,
+        -0.655651,
+        -0.641142,
+        0.653382,
+        0.740096,
+        0.342007,
+        -0.41029,
+        -0.653493,
+        0.622542,
+        0.683508,
+        0.257844,
+        0.722238,
+        -0.592968,
+        0.600634,
+        0.494145,
+        -0.685896,
+        -0.448461,
+        -0.598242,
+        -0.275703,
+        0.312848,
+        -0.659157,
+        0.546387,
+        0.55317,
+        0.571526,
+        0.726921,
+        0.345712,
+        0.318525,
+        0.101851,
+        -0.025417,
+        0.117487,
+        -0.048269,
+        -0.089366,
+        0.141365,
+        -0.013633,
+        0.155723,
+        0.174195,
+        -0.045232,
+        -0.719006,
+        -0.70466,
+        -0.576756,
+        0.617656,
+        -0.197895,
+        0.22685,
+        0.042939,
+        -0.086343,
+        0.423106,
+        0.614322,
+        -0.309555,
+        -0.690411,
+        -0.579178,
+        -0.205375,
+        -0.242277,
+        0.193009,
+        -0.126982,
+        -0.027858,
+        0.039262,
+        0.09404,
+        0.055945,
+        0.015525,
+        -0.069094,
+        0.24302,
+        0.136223,
+        0.678041,
+        0.578582,
+        0.718922,
+        0.605042,
+        0.694215,
+        -0.686112,
+        0.685182,
+        -0.468716,
+        0.511082,
+        0.675677,
+        -0.68553,
+        -0.444713,
+        0.719923,
+        -0.504932,
+        0.662629,
+        -0.709025,
+        -0.514633,
+        0.728562,
+        -0.685122,
+        -0.710195,
+        0.673174,
+        0.705899,
+        0.426546,
+        -0.510899,
+        -0.587589,
+        -0.584763,
+        -0.710667,
+        -0.678993,
+        0.413579,
+        -0.666439,
+        -0.55762,
+        0.458701,
+        0.043805,
+        0.144906,
+        -0.618666,
+        -0.610519,
+        0.624224,
+        0.704439,
+        -0.697705,
+        -0.213212,
+        0.614144,
+        -0.01462,
+        -0.156649,
+        0.024602,
+        -0.122014,
+        -0.183,
+        -0.433596,
+        -0.336794,
+        0.567493,
+        0.107794,
+        -0.425116,
+        -0.213074,
+        -0.609661,
+        0.008503,
+        -0.478922,
+        0.049536,
+        0.412156,
+        0.150033,
+        -0.364486,
+        0.398551,
+        -0.05572,
+        0.256279,
+        0.538694,
+        -0.526743,
+        0.629115,
+        -0.04264,
+        -0.080051,
+        0.11445,
+        -0.055424,
+        0.118795,
+        -0.304484,
+        -0.144636,
+        -0.240274,
+        -0.647424,
+        0.105025,
+        0.257853,
+        0.679722,
+        -0.61274,
+        0.287728,
+        -0.367501,
+        -0.098596,
+        0.48748,
+        0.343906,
+        -0.59131,
+        0.620623,
+        -0.561973,
+        0.478323,
+        -0.656773,
+        -0.210064,
+        0.203339,
+        0.131435,
+        0.244669,
+        0.228091,
+        0.032443,
+        0.157728,
+        -0.117678,
+        -0.106076,
+        0.61353,
+        -0.060178,
+        -0.27126,
+        0.501124,
+        0.017253,
+        0.333571,
+        -0.248384,
+        0.213054,
+        0.043456,
+        -0.012098,
+        -0.189609,
+        0.569242,
+        -0.5183,
+        -0.283573,
+        -0.367257,
+        0.614531,
+        -0.025741,
+        0.082009,
+        -0.059431,
+        -0.230144,
+        -0.660623,
+        -0.457145,
+        0.456113,
+        0.403376,
+        0.271327,
+        0.607443,
+        -0.476537,
+        0.215781,
+        -0.445089,
+        0.100666,
+        -0.584346,
+        -0.154104,
+        -0.535206,
+        -0.632511,
+        -0.313647,
+        0.306418,
+        0.378143,
+        0.515697,
+        0.121221,
+        -0.416788
+      ],
+      "y": [
+        0.62913,
+        0.727143,
+        0.364092,
+        -0.034295,
+        0.470558,
+        0.36121,
+        -0.228038,
+        0.651089,
+        0.587095,
+        0.717362,
+        -0.6896,
+        -0.596584,
+        0.052671,
+        0.3059,
+        -0.307659,
+        -0.324173,
+        0.01346,
+        -0.611324,
+        -0.547689,
+        0.201302,
+        -0.272106,
+        -0.237902,
+        -0.660469,
+        -0.080102,
+        0.201528,
+        0.204835,
+        -0.516054,
+        0.213071,
+        0.494016,
+        0.402465,
+        0.683408,
+        0.67466,
+        -0.268203,
+        -0.480427,
+        0.500394,
+        0.358837,
+        0.163854,
+        -0.063769,
+        0.074404,
+        -0.250613,
+        -0.160645,
+        -0.333029,
+        -0.385545,
+        0.024413,
+        -0.09174,
+        -0.048061,
+        -0.20669,
+        -0.076351,
+        -0.056763,
+        0.022498,
+        -0.08157,
+        -0.369502,
+        -0.351429,
+        0.703268,
+        0.68289,
+        -0.697888,
+        -0.699098,
+        -0.584415,
+        -0.394815,
+        0.621903,
+        -0.179709,
+        0.44596,
+        -0.41867,
+        -0.277303,
+        0.060347,
+        0.148454,
+        -0.072675,
+        -0.105145,
+        0.107111,
+        0.116182,
+        -0.33591,
+        -0.126204,
+        -0.058073,
+        0.120889,
+        -0.281656,
+        -0.432849,
+        0.123548,
+        -0.072208,
+        0.198327,
+        0.158078,
+        -0.098855,
+        -0.511462,
+        -0.366795,
+        -0.195286,
+        -0.047411,
+        0.580852,
+        -0.136193,
+        0.339187,
+        0.001066,
+        0.061105,
+        -0.463361,
+        0.079696,
+        0.090479,
+        -0.0169,
+        0.298527,
+        -0.179374,
+        -0.521418,
+        0.526268,
+        -0.191834,
+        -0.007319,
+        0.125835,
+        -0.203301,
+        0.618426,
+        0.262061,
+        -0.420398,
+        0.47525,
+        0.747551,
+        0.723869,
+        0.320383,
+        -0.336973,
+        0.265407,
+        0.243689,
+        -0.123545,
+        -0.652725,
+        0.424004,
+        -0.622444,
+        -0.195578,
+        -0.271111,
+        -0.240439,
+        -0.459248,
+        -0.700519,
+        -0.864038,
+        -0.633853,
+        -0.832914,
+        -0.811608,
+        -0.92717,
+        -0.54136,
+        -0.942187,
+        -0.703411,
+        -0.965119,
+        -0.798978,
+        -0.932204,
+        -0.742355,
+        -0.849165,
+        -0.843553,
+        -0.917459,
+        -0.701729,
+        -0.723224,
+        -0.589337,
+        -0.958329,
+        -0.226065,
+        -0.409313,
+        -0.283931,
+        -0.489214,
+        -0.880983,
+        -0.931182,
+        -0.891249,
+        -0.515119,
+        -0.957166,
+        -0.822093,
+        -0.483039,
+        -0.583377,
+        -0.879057,
+        -0.81776,
+        -0.957373,
+        -0.712924,
+        -0.874912,
+        -0.631401,
+        -0.540217,
+        -0.675856,
+        -0.791462,
+        -0.431076,
+        -0.832099,
+        -0.936998,
+        0.019617,
+        -0.137802,
+        0.174646,
+        -0.001107,
+        0.972908,
+        0.983388,
+        0.870191,
+        0.55676,
+        0.981896,
+        0.841329,
+        0.795799,
+        0.873429,
+        0.922126,
+        0.946858,
+        0.845057,
+        0.991389,
+        1.0,
+        0.969096,
+        0.721917,
+        0.652612,
+        0.886665,
+        0.874457,
+        0.611573,
+        0.136074,
+        -0.034431,
+        0.221774,
+        0.259062,
+        0.514215,
+        0.807897,
+        0.836099,
+        0.883908,
+        0.946606,
+        0.669233,
+        0.725338,
+        0.975264,
+        0.782386,
+        0.992379,
+        0.67588,
+        0.931541,
+        0.744957,
+        0.588615,
+        0.913313,
+        0.840765,
+        0.83432,
+        0.747221,
+        0.894041,
+        0.852028
+      ]
+    }
+  ],
+  "layout": {
+    "height": 800,
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "white",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "#C8D4E3"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "white",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "radialaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "yaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "zaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "caxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "width": 800,
+    "xaxis": {
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    }
+  }
+}
