@@ -5,12 +5,15 @@ from cect.ConnectomeReader import analyse_connections
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+NAME = "Witvliet8"
+SRC_FILENAME = "witvliet_2020_8.xlsx"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WitvlietDataReader`` to load data on Witvliet dataset 8 (adult stage)
 
     Returns:
-        WitvlietDataReader: The initialised connectome reader
+        WitvlietDataReader: The initialized connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (
@@ -22,18 +25,19 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return WitvlietDataReader("witvliet_2020_8.xlsx")
+        return WitvlietDataReader(SRC_FILENAME)
 
 
+"""
 my_instance = get_instance()
 
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 READER_DESCRIPTION = (
     """Data extracted from %s - Witvliet dataset 8 (adult stage)"""
-    % get_dataset_source_on_github(my_instance.filename.split("/")[-1])
+    % get_dataset_source_on_github(SRC_FILENAME)
 )
 
 

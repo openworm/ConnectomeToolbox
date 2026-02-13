@@ -26,6 +26,7 @@ from cect.Neurotransmitters import TYRAMINE
 from cect.Neurotransmitters import BETAINE
 from cect.Neurotransmitters import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN
 from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
 
 from cect.Neurotransmitters import SEROTONIN_UPTAKE
@@ -40,24 +41,10 @@ from openpyxl import load_workbook
 
 import os
 
-spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
-filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
+# spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
+# wang24_filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
 
 
-# BASIS_ANATOMICAL_CONN = "White_whole"
-# BASIS_ANATOMICAL_CONN = "TestDataReader"
-'''
-BASIS_ANATOMICAL_CONN = ("Cook et al. 2019", "Cook2019HermReader")
-BASIS_MONOAMINERGIC_CONN = ("Bentley et al. 2015", "WormNeuroAtlasMAReader")
-
-READER_DESCRIPTION = (
-    """A reader combining neurotransmitter atlas values from Wang et al. 2024 (source: %s) with basic anatomical connectivity information from %s, and monoaminergic receptor expression information from %s"""
-    % (
-        get_dataset_source_on_github(filename.split("/")[-1]),
-        BASIS_ANATOMICAL_CONN[0],
-        BASIS_MONOAMINERGIC_CONN[0],
-    )
-)'''
 READER_DESCRIPTION = "????"
 
 
@@ -212,7 +199,13 @@ class Wang2024Reader(ConnectomeDataset):
             raise ValueError("Unknown neurotransmitter: %s" % neurotransmitter)
             # return "NT_not_yet_supported__%s" % neurotransmitter.replace(' ', '_').replace('(', '_').replace(')', '_')  # neurotransmitter
 
-    def __init__(self, sex):
+    def __init__(
+        self,
+        sex,
+        normalize_conn_numbers=True,
+        include_electrical_connections=False,
+        include_monoamine_conns=True,
+    ):
         ConnectomeDataset.__init__(self)
 
         sources = []
@@ -309,11 +302,21 @@ class Wang2024Reader(ConnectomeDataset):
             for conn in anat_conns[:]:
                 # print_("Original conn: %s" % conn)
 
-                if is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters:
+                if conn.synclass == GENERIC_ELEC_SYN:
+                    if include_electrical_connections:
+                        # print_("    Adding electrical conn: %s" % conn)
+                        if normalize_conn_numbers:
+                            conn.number = 1.0
+                        self.add_connection_info(conn)
+
+                elif (
+                    is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters
+                ):
                     if conn.synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS + [
                         GENERIC_CHEM_SYN
                     ]:
-                        conn.number = 1.0
+                        if normalize_conn_numbers:
+                            conn.number = 1.0
                         for nt in neurotransmitters[conn.pre_cell]:
                             if nt in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
                                 conn.synclass = nt
@@ -329,29 +332,34 @@ class Wang2024Reader(ConnectomeDataset):
                         "     Not a neuron, or not in cells with known neurotransmitters..."
                     )
 
-            monoamine_conns = (
-                monoaminergic_conn_reader.get_current_connection_info_list()
-            )
+            if include_monoamine_conns:
+                monoamine_conns = (
+                    monoaminergic_conn_reader.get_current_connection_info_list()
+                )
 
-            print_(
-                "Adding %i conns from %s"
-                % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
-            )
-            for conn in monoamine_conns[:]:
-                print_("Original conn: %s" % conn)
+                print_(
+                    "Adding %i conns from %s"
+                    % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
+                )
+                for conn in monoamine_conns[:]:
+                    print_("Original conn: %s" % conn)
 
-                if is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters:
-                    conn.number = 1.0
-                    for nt in neurotransmitters[conn.pre_cell]:
-                        if nt in MONOAMINERGIC_SYN_CLASSES:
-                            conn.synclass = nt
-                            print_("    Adding new conn: %s" % conn)
-                            self.add_connection_info(conn)
+                    if (
+                        is_any_neuron(conn.pre_cell)
+                        and conn.pre_cell in neurotransmitters
+                    ):
+                        if normalize_conn_numbers:
+                            conn.number = 1.0
+                        for nt in neurotransmitters[conn.pre_cell]:
+                            if nt in MONOAMINERGIC_SYN_CLASSES:
+                                conn.synclass = nt
+                                print_("    Adding new conn: %s" % conn)
+                                self.add_connection_info(conn)
 
-                else:
-                    print_(
-                        "     Not a neuron, or not in cells with known neurotransmitters..."
-                    )
+                    else:
+                        print_(
+                            "     Not a neuron, or not in cells with known neurotransmitters..."
+                        )
 
             self.all_neurotransmitters.update(neurotransmitters)
 
@@ -426,6 +434,7 @@ def main():
     cds2 = tdr_instance.get_connectome_view(view)
 
     print(cds2.summary(list_pre_cells=True))
+    quit()
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 

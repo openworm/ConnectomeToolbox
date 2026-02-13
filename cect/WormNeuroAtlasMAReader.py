@@ -34,7 +34,14 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return WormNeuroAtlasExtSynReader(MONOAMINERGIC_SYN_GENERAL_CLASS)
+        try:
+            return WormNeuroAtlasExtSynReader(MONOAMINERGIC_SYN_GENERAL_CLASS)
+        except Exception as e:
+            print(
+                "Problem loading WormNeuroAtlas data. Can be caused by WormBase url not working. Defaulting to loading from cache... Issue: %s"
+                % str(e)
+            )
+            return get_instance(from_cache=True)
 
 
 if __name__ == "__main__":

@@ -1239,6 +1239,13 @@ ALL_VIEWS = [
     INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
 
+
+def get_view(id: str):
+    for view in ALL_VIEWS:
+        if view.id == id:
+            return view
+
+
 QUICK_VIEWS = [
     RAW_VIEW,
     NEURONS_VIEW,

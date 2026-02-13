@@ -2,6 +2,7 @@
 
 
 from cect.Cook2019DataReader import Cook2019DataReader
+from cect.Cook2019DataReader import HERMAPHRODITE
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
 
@@ -10,12 +11,14 @@ import sys
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+NAME = "Cook2019Herm"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``Cook2019DataReader`` to load data on hermaphrodite connectome
 
     Returns:
-        Cook2019DataReader: The initialised hermaphrodite connectome reader
+        Cook2019DataReader: The initialized hermaphrodite connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (
@@ -25,7 +28,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
         return load_connectome_dataset_file(get_cache_filename("Cook2019HermReader"))
     else:
-        return Cook2019DataReader("Hermaphodite")
+        return Cook2019DataReader(HERMAPHRODITE)
 
 
 """
@@ -46,6 +49,8 @@ def main1():
 
     if "-nogui" not in sys.argv:
         my_instance.connection_number_plot("Acetylcholine")
+
+    print(my_instance.summary())
 
 
 if __name__ == "__main__":

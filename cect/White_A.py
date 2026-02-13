@@ -11,6 +11,8 @@ import os
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_A.csv" % spreadsheet_location
 
+NAME = "White_A"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WhiteDataReader`` to load data on the adult (A) N2U series
@@ -29,12 +31,6 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return WhiteDataReader(filename)
 
 
-my_instance = get_instance()
-
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
-
-
 READER_DESCRIPTION = (
     """Data extracted from %s - adult (A) N2U series ("The N2U series was from an old hermaphrodite that gave good quality pictures" - White et al. 1986)"""
     % get_dataset_source_on_github(filename.split("/")[-1])
@@ -42,6 +38,11 @@ READER_DESCRIPTION = (
 
 
 def main1():
+    my_instance = get_instance()
+
+    read_data = my_instance.read_data
+    read_muscle_data = my_instance.read_muscle_data
+
     cells, neuron_conns = read_data()
     neurons2muscles, muscles, muscle_conns = read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)

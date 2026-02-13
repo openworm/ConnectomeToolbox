@@ -13,6 +13,9 @@ from cect.ConnectomeDataset import (
 from cect.ConnectomeReader import analyse_connections
 from cect.WhiteDataReader import WhiteDataReader
 
+
+NAME = "White_whole"
+
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
 

@@ -25,6 +25,7 @@
     * [TestDataReader](cect/TestDataReader.md)
     * [UpdatedSpreadsheetDataReader](cect/UpdatedSpreadsheetDataReader.md)
     * [UpdatedSpreadsheetDataReader2](cect/UpdatedSpreadsheetDataReader2.md)
+    * [Utils](cect/Utils.md)
     * [VarshneyDataReader](cect/VarshneyDataReader.md)
     * [Wang2024HermReader](cect/Wang2024HermReader.md)
     * [Wang2024MaleReader](cect/Wang2024MaleReader.md)
