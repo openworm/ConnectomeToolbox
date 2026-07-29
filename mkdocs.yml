@@ -15,6 +15,11 @@ theme:
       question: material/information-slab-circle-outline
       warning: material/web
 
+extra:
+  generator: false
+
+copyright: Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Generated with <a href="https://openworm.org/ConnectomeToolbox/Python/">cect v0.3.2</a>
+
 plugins:
   - plotly
   - search
