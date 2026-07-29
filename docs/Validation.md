@@ -52,7 +52,7 @@ Expected number of nonzero connection weights: **586** (matches)
 
 Expected total weight of connections: **1546** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -91,7 +91,7 @@ Expected number of nonzero connection weights: **556** (matches)
 
 Expected total weight of connections: **692** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -164,7 +164,7 @@ Expected number of nonzero connection weights: **1036** (matches)
 
 Expected total weight of connections: **1782** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -245,7 +245,7 @@ Expected number of nonzero connection weights: **1031** (matches)
 
 Expected total weight of connections: **1777** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -307,7 +307,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected number of nonzero connection weights: **492** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -327,7 +327,7 @@ _Validation **PASSED** on 2026-07-17 with cect v0.3.2_
 
 Expected number of nonzero connection weights: **7078** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -426,7 +426,7 @@ Expected number of nonzero connection weights: **2883** (matches)
 
 Expected total weight of connections: **23313** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -475,7 +475,7 @@ Expected number of nonzero connection weights: **3482** (matches)
 
 Expected total weight of connections: **31702** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -610,7 +610,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -650,7 +650,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: **3850** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -694,7 +694,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **164** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -724,7 +724,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -754,7 +754,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **186** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -784,7 +784,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **415** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -814,7 +814,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **578** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -844,7 +844,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **426** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -874,7 +874,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **576** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -904,7 +904,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **612** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -934,7 +934,7 @@ We obtained the validation values below by calling the above functions and print
 
 Expected number of nonzero connection weights: **1150** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -942,7 +942,8 @@ _Validation **PASSED** on 2026-07-17 with cect v0.3.2_
 
 Data on neuropeptidergic signalling has been taken from: Ripoll-Sánchez et al. 2023, The neuropeptidergic connectome of C. elegans. [Neuron, Volume 111, Issue 22, 2023, Pages 3570-3589.e5](https://doi.org/10.1016/j.neuron.2023.09.043). 
 
-There is a GitHub repository referenced in the paper: https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome. There are 3 different models used for the neuropeptidergic connectome (short-, medium- and long-range), and the following files have been used in Connectome Toolbox as the source of these models:
+There is a GitHub repository referenced in the paper: [https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome). 
+There are 3 different models used for the neuropeptidergic connectome (short-, medium- and long-range), and the following files have been used in Connectome Toolbox as the source of these models:
 
 - [01022024_neuropeptide_connectome_short_range_model.csv](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome/blob/main/Adjacency%20matrices%20for%20networks/01022024_neuropeptide_connectome_short_range_model.csv)
 - [01022024_neuropeptide_connectome_mid_range_model.csv](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome/blob/main/Adjacency%20matrices%20for%20networks/01022024_neuropeptide_connectome_mid_range_model.csv)
@@ -964,7 +965,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: **31417** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -982,7 +983,7 @@ _Validation **PASSED** on 2026-07-17 with cect v0.3.2_
 
 Expected number of nonzero connection weights: **40425** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -1005,7 +1006,7 @@ _Validation **PASSED** on 2026-07-17 with cect v0.3.2_
 
 Expected number of nonzero connection weights: **53558** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -1042,7 +1043,7 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -1060,13 +1061,13 @@ _Validation **PASSED** on 2026-07-17 with cect v0.3.2_
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
 ## WangEtAl2024
 
-This reader combines neurotransmitter expression values from: Wang et al. 2024 (A neurotransmitter atlas of C. elegans males and hermaphrodites, [eLife 13:RP95402](https://doi.org/10.7554/eLife.95402.3)) with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al 2015.
+This reader combines neurotransmitter expression values from: Wang et al. 2024 (A neurotransmitter atlas of C. elegans males and hermaphrodites, [eLife 13:RP95402](https://doi.org/10.7554/eLife.95402.3)) with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al 2016.
 
 [Supplementary file 2](https://cdn.elifesciences.org/articles/95402/elife-95402-supp2-v1.xlsx) in that publication contains the expression patterns of neurotransmitter pathway genes in hermaphrodites.
     
@@ -1184,7 +1185,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
@@ -1290,7 +1291,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-07-17 with cect v0.3.2_
+_Validation **PASSED** on 2026-07-29 with cect v0.3.2_
 
 
 
