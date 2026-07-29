@@ -26,7 +26,7 @@ Papers/datasets highlighted in **bold** have been incorporated into this package
 | -------------                                              | -----         | ---- |
 | [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |
 | **[White et al. 1986](White_1986.md)**     | Anatomical | **[White_whole](White_whole_data.md)** |
-| **[Durbin 1987](Durbin_1987.md)**    | Anatomical | **[Durbin JSH](WhiteJSH_data.md)- [Durbin N2A](DurbinN2A_data.md)** |
+| **[Durbin 1987](Durbin_1987.md)**    | Anatomical | **[Durbin JSH](WhiteJSH_data.md)- [Durbin N2A](WhiteN2A_data.md)** |
 | [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |
 | [Altun et al. 2009](Altun_2009.md)   | Gene Expression |  *[Data](https://docs.google.com/spreadsheets/d/1Jc9pOJAce8DdcgkTgkUXafhsBQdrer2Y47zrHsxlqWg/edit?gid=283505544#gid=283505544)* |
 | **[Varshney et al. 2011](Varshney_2011.md)**  | Anatomical | **[Varshney 2011](Varshney_data.md)** |
