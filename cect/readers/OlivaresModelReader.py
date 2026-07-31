@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
     print(view.synclass_sets.keys())
-    sc = list(view.synclass_sets.keys())[1]
+    sc = list(view.synclass_sets.keys())[0]
     print("Synclass set: %s" % sc)
 
     fig = cds2.to_plotly_graph_fig(sc, view)
