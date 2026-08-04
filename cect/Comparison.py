@@ -329,9 +329,10 @@ def generate_comparison_page(
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
-        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -339,7 +340,7 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
