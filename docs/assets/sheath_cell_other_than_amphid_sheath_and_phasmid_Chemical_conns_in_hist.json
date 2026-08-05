@@ -24,28 +24,6 @@
     },
     {
       "marker": {
-        "color": "orange",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "WhiteN2U",
-      "type": "scatter",
-      "x": [
-        "CEPshVR",
-        "CEPshVL",
-        "CEPshDL",
-        "CEPshDR"
-      ],
-      "y": [
-        4,
-        5,
-        0,
-        1
-      ]
-    },
-    {
-      "marker": {
         "color": "darkorange",
         "size": 3,
         "symbol": "circle"
@@ -64,6 +42,28 @@
         6,
         0,
         0
+      ]
+    },
+    {
+      "marker": {
+        "color": "orange",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "WhiteN2U",
+      "type": "scatter",
+      "x": [
+        "CEPshVR",
+        "CEPshVL",
+        "CEPshDL",
+        "CEPshDR"
+      ],
+      "y": [
+        4,
+        5,
+        0,
+        1
       ]
     },
     {

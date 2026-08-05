@@ -88,11 +88,13 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
-    "HaspelODonovan": "HaspelODonovan_data",
-    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
     "GleesonModel": "GleesonModel_data",
     "OlivaresModel": "OlivaresModel_data",
 }
+"""
+    "HaspelODonovan": "HaspelODonovan_data",
+    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
+"""
 
 all_data[""] = [
     "Num<br/>neurons",

@@ -1,34 +1,4 @@
 {
-    "WhiteN2U": {
-        "Raw": {
-            "Chemical": "65.61",
-            "Electrical": "80.14"
-        },
-        "Neurons": {
-            "Chemical": "65.25",
-            "Electrical": "80.07"
-        },
-        "NonpharyngealH": {
-            "Chemical": "65.25",
-            "Electrical": "80.07"
-        },
-        "SensorySomaticH": {
-            "Chemical": "57.62",
-            "Electrical": "86.67"
-        },
-        "MotorSomaticH": {
-            "Chemical": "66.67",
-            "Electrical": "82.61"
-        },
-        "MotorMuscles": {
-            "Chemical": "66.67",
-            "Electrical": "82.61"
-        },
-        "InterneuronsSomaticH": {
-            "Chemical": "68.16",
-            "Electrical": "84.85"
-        }
-    },
     "WhiteJSH": {
         "Raw": {
             "Chemical": "68.81",
@@ -57,6 +27,36 @@
         "InterneuronsSomaticH": {
             "Chemical": "68.21",
             "Electrical": "93.24"
+        }
+    },
+    "WhiteN2U": {
+        "Raw": {
+            "Chemical": "65.61",
+            "Electrical": "80.14"
+        },
+        "Neurons": {
+            "Chemical": "65.25",
+            "Electrical": "80.07"
+        },
+        "NonpharyngealH": {
+            "Chemical": "65.25",
+            "Electrical": "80.07"
+        },
+        "SensorySomaticH": {
+            "Chemical": "57.62",
+            "Electrical": "86.67"
+        },
+        "MotorSomaticH": {
+            "Chemical": "66.67",
+            "Electrical": "82.61"
+        },
+        "MotorMuscles": {
+            "Chemical": "66.67",
+            "Electrical": "82.61"
+        },
+        "InterneuronsSomaticH": {
+            "Chemical": "68.16",
+            "Electrical": "84.85"
         }
     },
     "White_whole": {
@@ -900,74 +900,10 @@
             "Octopamine": "100.00"
         }
     },
-    "HaspelODonovan": {
-        "Raw": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "Neurons": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "NonpharyngealH": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "MotorSomaticH": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "MotorMuscles": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        }
-    },
-    "HaspelODonovan1Seg": {
-        "Raw": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "Neurons": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "NonpharyngealH": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "MotorSomaticH": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        },
-        "MotorMuscles": {
-            "Chemical": "100.00",
-            "Electrical": "100.00",
-            "ExcitatoryChem": "100.00",
-            "InhibitoryChem": "100.00"
-        }
-    },
     "GleesonModel": {
         "Raw": {
             "Chemical": "90.81",
-            "Electrical": "96.65",
+            "Electrical": "96.11",
             "ExcitatoryChem": "93.55",
             "InhibitoryChem": "87.86"
         },
@@ -991,7 +927,7 @@
         },
         "MotorMuscles": {
             "Chemical": "91.78",
-            "Electrical": "97.93",
+            "Electrical": "97.26",
             "ExcitatoryChem": "95.56",
             "InhibitoryChem": "87.86"
         },
@@ -1029,8 +965,8 @@
         "MotorMuscles": {
             "Chemical": "31.49",
             "Electrical": "100.00",
-            "ExcitatoryChem": "22.88",
-            "InhibitoryChem": "47.56"
+            "ExcitatoryChem": "21.33",
+            "InhibitoryChem": "49.41"
         }
     },
     "OpenWormUnified": {
