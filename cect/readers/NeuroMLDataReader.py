@@ -61,7 +61,7 @@ class NeuroMLDataReader(ConnectomeDataset):
         neurons, muscles, other_cells, conns = self.read_all_data()
 
         for conn in conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(conn, append_existing_connections=True)
 
     def read_data(self):
         return self._read_data()
@@ -143,18 +143,21 @@ class NeuroMLDataReader(ConnectomeDataset):
 
         for elec_proj in self.nml_net.electrical_projections:
             print_("Adding proj: %s" % elec_proj.id)
-            pre_pop = elec_proj.presynaptic_population
-            post_pop = elec_proj.postsynaptic_population
+
+            a_pop = elec_proj.presynaptic_population
+            b_pop = elec_proj.postsynaptic_population
+
             for conn in elec_proj.electrical_connection_instance_ws:
                 # print_(" - Adding conn: %s" % conn)
-                pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
-                post = self._get_cell_name(post_pop, conn.get_post_cell_id())
+                a = self._get_cell_name(a_pop, conn.get_pre_cell_id())
+                b = self._get_cell_name(b_pop, conn.get_post_cell_id())
                 w = conn.get_weight()
                 synclass = GENERIC_ELEC_SYN_CLASS
-                ci = ConnectionInfo(pre, post, w, ELECTRICAL_SYN_TYPE, synclass)
 
-                # print_("Conn: %s" % (ci))
-                conns.append(ci)
+                ci_a_b = ConnectionInfo(a, b, w, ELECTRICAL_SYN_TYPE, synclass)
+                conns.append(ci_a_b)
+                ci_b_a = ConnectionInfo(b, a, w, ELECTRICAL_SYN_TYPE, synclass)
+                conns.append(ci_b_a)
 
         return list(neurons), list(muscles), list(other_cells), conns
 
@@ -202,7 +205,8 @@ if __name__ == "__main__":
     """
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
-    from cect.ConnectomeView import ESCAPE_VIEW as view
+    # from cect.ConnectomeView import ESCAPE_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
 
     print("--- Using view: %s" % view)
     cds2 = tdr_instance.get_connectome_view(view)
@@ -211,11 +215,11 @@ if __name__ == "__main__":
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
     """
-    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
+    fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[1], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[0],
+        list(view.synclass_sets.keys())[1],
         view,
     )
     import plotly.io as pio

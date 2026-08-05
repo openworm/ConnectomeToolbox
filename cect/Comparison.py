@@ -88,11 +88,13 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
-    "HaspelODonovan": "HaspelODonovan_data",
-    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
     "GleesonModel": "GleesonModel_data",
     "OlivaresModel": "OlivaresModel_data",
 }
+"""
+    "HaspelODonovan": "HaspelODonovan_data",
+    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
+"""
 
 all_data[""] = [
     "Num<br/>neurons",
@@ -329,9 +331,10 @@ def generate_comparison_page(
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
-        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -339,7 +342,7 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
@@ -437,6 +440,7 @@ def generate_comparison_page(
         readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -444,7 +448,8 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
+
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 

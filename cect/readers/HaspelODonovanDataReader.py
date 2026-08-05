@@ -29,7 +29,7 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = "A complete connectivity model for all 75 _C. elegans_ ventral cord motorneurons from Haspel and O'Donovan 2011, produced by identifying a repeating pattern in the empirically known anterior connections and extrapolating it into the posterior half of the animal where direct EM data were absent."
+DATASET_DESCRIPTION = "A complete connectivity model for all 75 _C. elegans_ ventral cord motorneurons from Haspel and O'Donovan 2011, produced by identifying a repeating pattern in the empirically known anterior connections and extrapolating it into the posterior half of the animal where direct EM data were absent. TODO: correct muscle numbering!!"
 
 
 WEIGHTS = "Weights are based on White et al. 1986 and Varshney et al. 2011 connectivity datasets"
@@ -46,6 +46,7 @@ def _standardise_cell_name(cell):
         -2:
     ].startswith("0"):
         return ["%s%s" % (cell[:-2], cell[-1:])]
+
     if cell.startswith("MDlr"):
         return ["MDL%s" % (cell[4:]), "MDR%s" % (cell[4:])]
     if cell.startswith("MVlr"):
@@ -89,15 +90,20 @@ class HaspelODonovanDataReader(ConnectomeDataset):
         J = mat["J_conn_%s" % self.full_or_one_seg]
 
         for i, pre in enumerate(names):
+            orig_pre = pre
             pre = _standardise_cell_name(pre)[0]
             cells.add(pre)
             for j, post in enumerate(names):
+                orig_posts = post
                 posts = _standardise_cell_name(post)
                 for post in posts:
                     cells.add(post)
                     w = A[j, i]
                     if w != 0:
-                        print_("%s -> %s: A=%d" % (pre, post, w))
+                        print_(
+                            " - %s -> %s;\t(was: %s -> %s);\tA=%d"
+                            % (pre, post, orig_pre, orig_posts, w)
+                        )
                         conns.append(
                             ConnectionInfo(
                                 pre,
@@ -196,21 +202,22 @@ def main():
         if "-nogui" not in sys.argv:
             print(my_instance.summary())
 
-            from cect.ConnectomeView import RAW_VIEW as view
+            # from cect.ConnectomeView import RAW_VIEW as view
+            from cect.ConnectomeView import LOCOMOTION_4_VIEW as view
             # from cect.ConnectomeView import NEURONS_VIEW as view
 
             cds2 = my_instance.get_connectome_view(view)
 
             print(cds2.summary())
 
-            """
-            fig = cds2.to_plotly_graph_fig(DOPAMINE, view)
+            fig = cds2.to_plotly_graph_fig(GENERIC_EXCITATORY_CHEM_SYN_CLASS, view)
+            fig = cds2.to_plotly_graph_fig("Chemical", view)
             """
 
             fig, _ = cds2.to_plotly_matrix_fig(
                 "Chemical",
                 view,
-            )
+            )"""
             import plotly.io as pio
 
             pio.renderers.default = "browser"

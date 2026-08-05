@@ -59,7 +59,8 @@ import copy
 
 
 class NodeSet:
-    """Set of nodes (can be single cells or lists of cells) to use in a ``View``. Can specify the `color`, `shape`, `position` or `size` to use in graphical depictions."""
+    """Set of nodes (each of which can contain single cells or lists of cells) to use in a ``ConnectomeView``.
+    An optional text `description` can be provided, and the `color`, `shape`, `position` or `size` of the NodeSets to use in graphical depictions can be set."""
 
     def __init__(
         self,
@@ -80,9 +81,15 @@ class NodeSet:
         self.description = description
 
     def is_one_cell(self):
+        """
+        Returns True if the NodeSet contains only one cell, and the name of the NodeSet is the same as that cell.
+        """
         return len(self.cells) == 1 and self.name == self.cells[0]
 
     def __repr__(self):
+        """
+        Returns a string representation of the NodeSet, including its name, description, color, shape, position, and the list of cells it contains.
+        """
         info = "NodeSet: %s" % self.name
         if self.description is not None:
             info += " (%s)" % self.description
@@ -98,6 +105,9 @@ class NodeSet:
         return info
 
     def to_markdown(self):
+        """
+        Returns a HTML <span> element for use in markdown or HTML for a representation of the NodeSet, including its name colored by the set color.
+        """
         return (
             f'<span style="color:{self.color};">{self.name}</span>'
             if self.color
@@ -683,6 +693,85 @@ for cell_set in sorted(loco3_positions.keys()):
         LOCOMOTION_3_VIEW.node_sets.append(ns)
 
 
+LOCOMOTION_4_VIEW = View(
+    "Loco4",
+    "Locomotion 4",
+    "Subset of cells involved in locomotion",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    text_scale=0.8,
+)
+
+
+node_size = 30
+scale = 0.05
+v_scale = 5 * scale
+h_scale = 1 * scale
+
+num_segs = 6
+seg_offset = 14 * scale
+
+loco4_positions = {
+    "AS": [(0, -1), (7, -1)],
+    "DA": [(1, -2), (8, -2)],
+    "DB": [(5, -3)],
+    "DD": [(6, -4)],
+    "VD": [(2, -5), (8, -5)],
+    "VB": [(4, -6), (7, -6)],
+    "VA": [(3, -7), (8, -7)],
+    "MDL": [(1, 1), (4, 1.5), (7, 1)],
+}
+loco4_positions["MDR"] = [(p[0], p[1] + 0.25) for p in loco4_positions["MDL"]]
+loco4_positions["MVL"] = [(p[0], (p[1] * -1) - 8) for p in loco4_positions["MDL"]]
+loco4_positions["MVR"] = [(p[0], p[1] - 0.25) for p in loco4_positions["MVL"]]
+
+loco4_colors = {
+    "AS": "yellow",
+    "DA": "red",
+    "DB": "mediumseagreen",
+    "DD": "cornflowerblue",
+    "MDL": "burlywood",
+}
+loco4_colors["VD"] = loco4_colors["DD"]
+loco4_colors["VB"] = loco4_colors["DB"]
+loco4_colors["VA"] = loco4_colors["DA"]
+for m in ["MDR", "MVL", "MVR"]:
+    loco4_colors[m] = loco4_colors["MDL"]
+
+for seg in range(num_segs):
+    for cell_set in sorted(loco4_positions.keys()):
+        color, shape, scale = get_color_shape_scale(cell_set)
+        color = loco4_colors[cell_set]
+        is_muscle = cell_set.startswith("M")
+
+        if is_muscle:
+            shape = "diamond-wide"
+            scale = 1.2
+
+        celltype_index = 1 + len(loco4_positions[cell_set]) * seg
+        if is_muscle:
+            celltype_index += 0
+
+        for pos in loco4_positions[cell_set]:
+            x = pos[0] * h_scale + seg_offset * seg
+            y = pos[1] * v_scale
+            zero = "0" if is_muscle and celltype_index < 10 else ""
+            cell = "%s%s%i" % (cell_set, zero, celltype_index)
+            celltype_index += 1
+            print(f"Adding {cell} at ({x},{y})")
+
+            ns = NodeSet(
+                cell,
+                [cell],
+                color=color,
+                shape=shape,
+                position=(x, y),
+                size=len_scale * node_size * scale,
+            )
+
+            LOCOMOTION_4_VIEW.node_sets.append(ns)
+
+
 PEP_HUBS_VIEW = View(
     "PeptidergicHubs",
     "Peptidergic Hubs",
@@ -1261,6 +1350,7 @@ QUICK_VIEWS = [
     BRAINMAP_VIEW,
     LOCOMOTION_2_VIEW,
     LOCOMOTION_3_VIEW,
+    LOCOMOTION_4_VIEW,
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_MUSCLES_VIEW,
