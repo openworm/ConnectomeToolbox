@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-__version__ = "0.3.2"
+__version__ = "0.3.3"
 
 
 def print_(msg, print_it=True):  # print_it=False when not verbose
