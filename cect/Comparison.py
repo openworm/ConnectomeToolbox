@@ -438,6 +438,7 @@ def generate_comparison_page(
         readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -445,7 +446,8 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
+
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
