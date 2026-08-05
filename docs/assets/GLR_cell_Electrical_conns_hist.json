@@ -28,32 +28,6 @@
     },
     {
       "marker": {
-        "color": "orange",
-        "size": 3,
-        "symbol": "circle"
-      },
-      "mode": "markers",
-      "name": "WhiteN2U",
-      "type": "scatter",
-      "x": [
-        "GLRDL",
-        "GLRDR",
-        "GLRL",
-        "GLRR",
-        "GLRVR",
-        "GLRVL"
-      ],
-      "y": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "marker": {
         "color": "darkorange",
         "size": 3,
         "symbol": "circle"
@@ -73,6 +47,32 @@
         0,
         0,
         0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "marker": {
+        "color": "orange",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "WhiteN2U",
+      "type": "scatter",
+      "x": [
+        "GLRDL",
+        "GLRDR",
+        "GLRL",
+        "GLRR",
+        "GLRVR",
+        "GLRVL"
+      ],
+      "y": [
+        1,
+        1,
+        1,
         1,
         1,
         1

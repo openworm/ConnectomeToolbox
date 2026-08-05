@@ -33,7 +33,7 @@ NAME = "Cook2020"
 
 DATASET_DESCRIPTION = "Chemical and electrical connectivity of the _C. elegans_ pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells (epithelial, gland and marginal)."
 
-WEIGHTS = "Weights are the total number of serial EM sections across which presynaptic specializations are visible, summed across all individual synapses contributing to that connection"
+WEIGHTS = "Weights represent the anatomical strength of a connection, calculated as the total number of serial EM sections across which the connection is observed, summed over all individual synapses between the two cells. For chemical connections, a section is counted if a presynaptic specialization is visible; for electrical connections, a section is counted if a gap junction is visible between the two cells."
 
 READER_DESCRIPTION = (
     """Data extracted from %s and %s for connectivity of pharyngeal neurons, muscles and other cells"""

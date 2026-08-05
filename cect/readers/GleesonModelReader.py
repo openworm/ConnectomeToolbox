@@ -67,8 +67,8 @@ if __name__ == "__main__":
     from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
     """
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
-    # from cect.ConnectomeView import RAW_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    from cect.ConnectomeView import RAW_VIEW as view
 
     cds2 = tdr_instance.get_connectome_view(view)
 
@@ -76,14 +76,14 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
+    """
     fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[2],
+        list(view.synclass_sets.keys())[1],
         view,
     )
-   """
     import plotly.io as pio
 
     pio.renderers.default = "browser"

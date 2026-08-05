@@ -18,8 +18,8 @@ GENERATE_PNGS = True
 
 
 reader_colors = {
-    "WhiteN2U": "orange",
     "WhiteJSH": "darkorange",
+    "WhiteN2U": "orange",
     "White_whole": "red",
     "Varshney": "#009e73",
     "Bentley2016_MA": "#56b4e9",
@@ -56,8 +56,8 @@ reader_colors = {
     "OlivaresModel": "black",
 }
 reader_pages = {
-    "WhiteN2U": "WhiteN2U_data",
     "WhiteJSH": "WhiteJSH_data",
+    "WhiteN2U": "WhiteN2U_data",
     "White_whole": "White_whole_data",
     "Varshney": "Varshney_data",
     "Bentley2016_MA": "Bentley2016_MA_data",
@@ -88,11 +88,13 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
-    "HaspelODonovan": "HaspelODonovan_data",
-    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
     "GleesonModel": "GleesonModel_data",
     "OlivaresModel": "OlivaresModel_data",
 }
+"""
+    "HaspelODonovan": "HaspelODonovan_data",
+    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
+"""
 
 all_data[""] = [
     "Num<br/>neurons",
@@ -244,8 +246,8 @@ def get_improved_reader_name(reader_name):
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
         .replace("NonNorm", " (non norm.)")
-        .replace("WhiteN2U", "White et al. 1986 N2U/adult")
         .replace("WhiteJSH", "White et al. 1986 JSH/L4")
+        .replace("WhiteN2U", "White et al. 1986 N2U/adult")
         .replace("ite A", "ite et al. 1986 N2U/adult")
         .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
@@ -274,6 +276,7 @@ def generate_comparison_page(
     dataset_pages=True,
     save_to_cache=False,
     load_from_cache=True,
+    nonums=False,
 ):
     connectomes = {}
     all_connectomes = {}
@@ -291,8 +294,8 @@ def generate_comparison_page(
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
 
-        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
         readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
 
         """
         readers["White_A"] = ["cect.readers.White_A", "White_1986"]
@@ -331,6 +334,7 @@ def generate_comparison_page(
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -338,7 +342,7 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
@@ -354,8 +358,8 @@ def generate_comparison_page(
         # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
-        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
         readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
         """
         if not quick:
             readers["White_A"] = ["cect.readers.White_A", "White_1986"]
@@ -436,6 +440,7 @@ def generate_comparison_page(
         readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
+        """
         readers["HaspelODonovan"] = [
             "cect.readers.HaspelODonovanDataReader",
             "HaspelODonovan_2012",
@@ -443,7 +448,8 @@ def generate_comparison_page(
         readers["HaspelODonovan1Seg"] = [
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
-        ]
+        ]"""
+
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
@@ -1019,7 +1025,7 @@ def generate_comparison_page(
 
     if color_table:
         STYLE = '"width:80px;font-family:Arial"'
-        font_size = "150%"
+        font_size = "170%"
         table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:{font_size}"> </span></th>\n'
 
         readers_to_include = []
@@ -1031,12 +1037,14 @@ def generate_comparison_page(
                 and "Witvliet2" not in reader_name
                 and "Witvliet3" not in reader_name
                 and "Witvliet4" not in reader_name
+                and "Witvliet6" not in reader_name
                 and "Witvliet7" not in reader_name
                 and "WormNeuroAtlas" not in reader_name
                 and "RipollSanchezMidRange" not in reader_name
                 and "RipollSanchezLongRange" not in reader_name
                 and "NonNorm" not in reader_name
                 and "OpenWorm" not in reader_name
+                and "Haspel" not in reader_name
             ):
                 readers_to_include.append(reader_name)
 
@@ -1072,10 +1080,10 @@ def generate_comparison_page(
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
 
-                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 14:
+                    if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 11:
                         cells_here += "<br/>\n"
 
-                if len(cell_names) > 0:
+                if len(cell_names) > 0 and not nonums and False:
                     cells_here += f"<p align='left' valign='bottom'><div title='{', '.join(cell_names)}'><u><b>({len(cell_names)})</b></u></div></p>\n"
 
                 table_html += f'    <td align="middle">{cells_here}</th>\n'
@@ -1169,6 +1177,7 @@ if __name__ == "__main__":
             dataset_pages=False,
             save_to_cache=save_to_cache,
             load_from_cache=(not save_to_cache),
+            nonums="-nonums" in sys.argv,
         )
 
         print("Finished. All loaded connectomes:\n%s" % connectomes)

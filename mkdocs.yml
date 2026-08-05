@@ -15,6 +15,11 @@ theme:
       question: material/information-slab-circle-outline
       warning: material/web
 
+extra:
+  generator: false
+
+copyright: Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Generated with <a href="https://openworm.org/ConnectomeToolbox/Python/">cect v0.3.3</a>
+
 plugins:
   - plotly
   - search
@@ -751,7 +756,6 @@ nav:
       - 'R9stR': 'R9stR.md'
 
   - 'Computational models':
-    - "Haspel & O'Donovan 2018": 'HaspelODonovan_data_graph.md'
     - 'Gleeson et al. 2018': 'GleesonModel_data_graph.md'
     - 'Olivares et al. 2021': 'OlivaresModel_data_graph.md'
 

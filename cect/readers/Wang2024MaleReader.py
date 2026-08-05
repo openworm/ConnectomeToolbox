@@ -21,9 +21,9 @@ NAME = "Wang2024Male"
 
 READER_DESCRIPTION = "???"
 
-DATASET_DESCRIPTION = "This dataset for the male _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2015"
+DATASET_DESCRIPTION = "This dataset for the male _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016"
 
-WEIGHTS = "A weight of 1 indicates that the cell expresses the specific neurotransmitter, in addition to an anatomical connection between the pre- and post-synaptic cells (for Glutamate, Acetylcholine, GABA, Betaine), or (for Dopamine, Serotonin, Tyramine, Octopamine) a connection between a monoaminergic receptor-expressing cell and a monoaminergic cell according to Bentley et al. 2015."
+WEIGHTS = "A weight of 1 indicates that the cell expresses the specific neurotransmitter, in addition to an anatomical connection between the pre- and post-synaptic cells (for Glutamate, Acetylcholine, GABA, Betaine), or (for Dopamine, Serotonin, Tyramine, Octopamine) a connection between a monoaminergic receptor-expressing cell and a monoaminergic cell according to Bentley et al. 2016."
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

@@ -1514,8 +1514,9 @@ KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
     "DD7",
     "DD8",
     "DD9",
-    "DD10",
     "DA10",
+    "DA11",
+    "DA12",
 ]
 
 for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
