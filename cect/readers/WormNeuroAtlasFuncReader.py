@@ -29,7 +29,7 @@ LOGGER = logging.getLogger(__name__)
 READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
 DATASET_DESCRIPTION = (
-    "Data on functional connectivity of _C. elegans_ from WormNeuroAtlas Python package (values extracted with get_signal_propagation_map() & get_signal_propagation_q(), with max_q = %s)"
+    "Data on functional connectivity of _C. elegans_ from WormNeuroAtlas Python package (values extracted with get_signal_propagation_map() & get_signal_propagation_q(), with max_q (q being the false discovery rate) = %s)"
     % DEFAULT_MAX_Q
 )
 
