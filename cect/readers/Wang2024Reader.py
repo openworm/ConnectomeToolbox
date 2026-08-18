@@ -44,6 +44,8 @@ import os
 
 READER_DESCRIPTION = "--None--"  # added in herm/male
 
+WEIGHTS = "A weight of 1 indicates that the cell expresses the specific neurotransmitter, in addition to an anatomical connection between the pre- and post-synaptic cells (for Glutamate, Acetylcholine, GABA, Betaine), or (for Dopamine, Serotonin, Tyramine, Octopamine) a connection between a monoaminergic receptor-expressing cell and a monoaminergic cell according to Bentley et al. 2016."
+
 
 class Wang2024Reader(ConnectomeDataset):
     """
