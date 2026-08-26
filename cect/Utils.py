@@ -32,6 +32,8 @@ readers = [
     "RipollSanchezLongRangeReader",
     "Yim2024DataReader",
     "Yim2024NonNormDataReader",
+    "Yim2024ContactomeDataReader",
+    "Yim2024ContactomeNonNormDataReader",
     "Wang2024HermReader",
     "Wang2024MaleReader",
 ]

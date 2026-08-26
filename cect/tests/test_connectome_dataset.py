@@ -33,8 +33,13 @@ class TestConnectomeDataset(unittest.TestCase):
             "WormNeuroAtlasFuncReader",
             "WormNeuroAtlasReader",
             "Yim2024DataReader",
+            "Yim2024NonNormDataReader",
+            "Yim2024ContactomeDataReader",
+            "Yim2024ContactomeNonNormDataReader",
             "TestDataReader",
-        ]:  # "VarshneyDataReader",
+            "Wang2024HermReader",
+            "Wang2024MaleReader",
+        ]:
             m = importlib.import_module("cect.readers." + r)
 
             print_("Loading %s from source..." % r)

@@ -103,6 +103,8 @@ class TestExpectedConnections(unittest.TestCase):
             "YimEtAl2024": [
                 "Yim2024NonNormDataReader",
                 "Yim2024DataReader",
+                "Yim2024ContactomeNonNormDataReader",
+                "Yim2024ContactomeDataReader",
             ],
             "WangEtAl2024": ["Wang2024HermReader", "Wang2024MaleReader"],
         }
@@ -459,7 +461,6 @@ if __name__ == "__main__":
         yim_data = generate_reader_exp_data_obj(
             reader_name="Yim2024DataReader",
             source_files={GENERIC_CHEM_SYN_CLASS: "41467_2024_45943_MOESM6_ESM.xlsx"},
-            additional_comment='Normalized data is on tab/sheet "Dauer_normalized". Values were copied from the cells in Microsoft Excel',
         )
 
         chem_conns = yim_data.get_connection_list_by_synapse(GENERIC_CHEM_SYN_CLASS)

@@ -7,9 +7,7 @@
 ############################################################
 
 from cect.readers.Yim2024DataReader import Yim2024DataReader
-from cect.readers.Yim2024DataReader import SYNAPTIC_CONNS_FILENAME
-from cect.readers.Yim2024DataReader import DATASET_DESCRIPTION_0
-from cect.readers.Yim2024DataReader import WEIGHTS_0
+from cect.readers.Yim2024DataReader import CONTACTOME_FILENAME
 
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
@@ -20,24 +18,36 @@ import os
 
 from cect import print_
 
-NAME = "Yim2024NonNorm"
 
-DATASET_DESCRIPTION = DATASET_DESCRIPTION_0
+NAME = "Yim2024Contactome"
 
-WEIGHTS = WEIGHTS_0
+DATASET_DESCRIPTION_0 = """Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labelled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. """
+
+DATASET_DESCRIPTION = (
+    DATASET_DESCRIPTION_0
+    + """This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets."""
+)
+
+WEIGHTS_0 = (
+    "Weights are the total contact area (nm<sup>2</sup>) between a pair of cells. "
+)
+WEIGHTS = (
+    WEIGHTS_0
+    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+)
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Synaptic connections; Non-normalized)**"""
-    % get_dataset_source_on_github(SYNAPTIC_CONNS_FILENAME.split("/")[-1])
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Contactome; Normalized)**"""
+    % get_dataset_source_on_github(CONTACTOME_FILENAME.split("/")[-1])
 )
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
-    """Uses ``Yim2024NonNormDataReader`` to load data on dauer connectome
+    """Uses ``Yim2024DataReader`` to load data on dauer connectome
 
     Returns:
-        (Yim2024NonNormDataReader): The initialised connectome reader
+        (Yim2024DataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (
@@ -49,9 +59,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return Yim2024DataReader(
-            normalized=False, conn_filename=SYNAPTIC_CONNS_FILENAME
-        )
+        return Yim2024DataReader(normalized=True, conn_filename=CONTACTOME_FILENAME)
 
 
 def main():

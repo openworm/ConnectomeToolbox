@@ -52,7 +52,7 @@ Expected number of nonzero connection weights: **586** (matches)
 
 Expected total weight of connections: **1546** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -91,7 +91,7 @@ Expected number of nonzero connection weights: **556** (matches)
 
 Expected total weight of connections: **692** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -164,7 +164,7 @@ Expected number of nonzero connection weights: **1036** (matches)
 
 Expected total weight of connections: **1782** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -245,7 +245,7 @@ Expected number of nonzero connection weights: **1031** (matches)
 
 Expected total weight of connections: **1777** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -307,7 +307,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected number of nonzero connection weights: **492** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -327,7 +327,7 @@ _Validation **PASSED** on 2026-08-18 with cect v0.3.3_
 
 Expected number of nonzero connection weights: **7078** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -426,7 +426,7 @@ Expected number of nonzero connection weights: **2883** (matches)
 
 Expected total weight of connections: **23313** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -475,7 +475,7 @@ Expected number of nonzero connection weights: **3482** (matches)
 
 Expected total weight of connections: **31702** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -610,7 +610,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -650,7 +650,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: **3850** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -694,7 +694,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **164** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -724,7 +724,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -754,7 +754,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **186** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -784,7 +784,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **415** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -814,7 +814,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **578** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -844,7 +844,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **426** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -874,7 +874,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **576** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -904,7 +904,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **612** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -934,7 +934,7 @@ We obtained the validation values below by calling the above functions and print
 
 Expected number of nonzero connection weights: **1150** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -965,7 +965,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: **31417** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -983,7 +983,7 @@ _Validation **PASSED** on 2026-08-18 with cect v0.3.3_
 
 Expected number of nonzero connection weights: **40425** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -1006,34 +1006,39 @@ _Validation **PASSED** on 2026-08-18 with cect v0.3.3_
 
 Expected number of nonzero connection weights: **53558** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
 ## YimEtAl2024
 
-Data on the dauer connectivity was obtained from the supplementary information of: Yim et al. 2024, Comparative connectomics of dauer reveals developmental plasticity
+Data on the dauer connectivity, comprising both directed synaptic connections and contact area matrices, was obtained from the supplementary information of:
 [Nature Communications, 15:1546](https://www.nature.com/articles/s41467-024-45943-3).
 
-Supplementary Data 3 links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM6_ESM.xlsx).
+Two distinct types of connection information are used from this paper:
 
-This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
+A) **Synaptic connectivity** (Supplementary Data 3). A directed matrix, with rows presynaptic and columns postsynaptic. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion. Weights are the summed volume (nm³) of active zone material attributed to a pre/post pair.
 
-#### Contactome based/non-normalised data
+B) **Contact area** (Supplementary Data 6). A symmetric matrix, as physical apposition has no pre/post polarity, measured from the volumetric segmentation rather than from synapses. Weights are the summed area (nm²) of contact between two cells.
 
-The spreadsheet above contained a sheet named "Dauer", from where the values for the contact area of connections were read. 
-This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
+Both are available as raw values and normalised by the standard deviation of weights excluding the top 5th percentile, the latter easing comparison with other datasets. 
 
-### Normalised data
+Supplementary Data 3 in the paper links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM6_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
 
-The spreadsheet above contained a sheet named "Dauer_normalized", from where the values for the "normalized" connections were read. 
-This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
+Supplementary Data 6 in the paper links to file [41467_2024_45943_MOESM9_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM9_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM9_ESM.xlsx).
+
+
+Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and one named "Dauer_normalized", from where the values for the non normalized/normalized (respectively) synaptic weights/contact areas of connections were read.
+
+Each file was opened in Excel and weights of selected connections were visually read from the spreadsheet cells, noting the pre and post cells, and the values were added to the connection test yaml file for validation below. 
+
+
 
 
 ### Validation tests for [Yim2024NonNormDataReader](Yim2024NonNorm_data.md) 
 
 
-#### Contact connections
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -1043,7 +1048,7 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -1061,7 +1066,46 @@ _Validation **PASSED** on 2026-08-18 with cect v0.3.3_
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+
+
+
+
+### Validation tests for [Yim2024ContactomeNonNormDataReader](Yim2024ContactomeNonNorm_data.md) 
+
+
+#### Contact connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADFR | AFDR | 1527984 | Yes |
+| AFDR | ADFR | 1527984 | Yes |
+| RIH | CEPshDL | 251712 | Yes |
+| PVNL | ALMR | 290064 | Yes |
+| URYDR | URADR | 537136 | Yes |
+
+Expected number of nonzero connection weights: **12160** (matches)
+
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+
+
+
+
+### Validation tests for [Yim2024ContactomeDataReader](Yim2024Contactome_data.md) 
+
+
+#### Contact connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADFR | AFDR | 3.47775177807871 | Yes |
+| SMBDL | RMED | 1.7182985712879 | Yes |
+| ASHL | RIPL | 1.92777331045848 | Yes |
+| RIPL | ASHL | 1.92777331045848 | Yes |
+
+Expected number of nonzero connection weights: **12160** (matches)
+
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -1185,7 +1229,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 
@@ -1291,7 +1335,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-08-18 with cect v0.3.3_
+_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 
 

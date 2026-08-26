@@ -327,10 +327,11 @@ class Wang2024Reader(ConnectomeDataset):
                             % conn.synclass
                         )
                 else:
-                    print_(
-                        "     Not a neuron, or not in cells with known neurotransmitters:  %s..."
-                        % conn
-                    )
+                    if self.verbose:
+                        print_(
+                            "     Not a neuron, or not in cells with known neurotransmitters:  %s..."
+                            % conn
+                        )
 
             if include_monoamine_conns:
                 monoamine_conns = (

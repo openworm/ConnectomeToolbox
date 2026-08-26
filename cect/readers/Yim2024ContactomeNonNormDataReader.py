@@ -7,9 +7,9 @@
 ############################################################
 
 from cect.readers.Yim2024DataReader import Yim2024DataReader
-from cect.readers.Yim2024DataReader import SYNAPTIC_CONNS_FILENAME
-from cect.readers.Yim2024DataReader import DATASET_DESCRIPTION_0
-from cect.readers.Yim2024DataReader import WEIGHTS_0
+from cect.readers.Yim2024DataReader import CONTACTOME_FILENAME
+from cect.readers.Yim2024ContactomeDataReader import DATASET_DESCRIPTION_0
+from cect.readers.Yim2024ContactomeDataReader import WEIGHTS_0
 
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
@@ -20,24 +20,24 @@ import os
 
 from cect import print_
 
-NAME = "Yim2024NonNorm"
+
+NAME = "Yim2024ContactomeNonNorm"
 
 DATASET_DESCRIPTION = DATASET_DESCRIPTION_0
-
 WEIGHTS = WEIGHTS_0
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Synaptic connections; Non-normalized)**"""
-    % get_dataset_source_on_github(SYNAPTIC_CONNS_FILENAME.split("/")[-1])
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Contactome; Non-normalized)**"""
+    % get_dataset_source_on_github(CONTACTOME_FILENAME.split("/")[-1])
 )
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
-    """Uses ``Yim2024NonNormDataReader`` to load data on dauer connectome
+    """Uses ``Yim2024DataReader`` to load data on dauer connectome
 
     Returns:
-        (Yim2024NonNormDataReader): The initialised connectome reader
+        (Yim2024DataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (
@@ -49,9 +49,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return Yim2024DataReader(
-            normalized=False, conn_filename=SYNAPTIC_CONNS_FILENAME
-        )
+        return Yim2024DataReader(normalized=False, conn_filename=CONTACTOME_FILENAME)
 
 
 def main():

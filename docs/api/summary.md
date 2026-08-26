@@ -57,6 +57,8 @@
         * [WormNeuroAtlasMAReader](cect/readers/WormNeuroAtlasMAReader.md)
         * [WormNeuroAtlasPepReader](cect/readers/WormNeuroAtlasPepReader.md)
         * [WormNeuroAtlasReader](cect/readers/WormNeuroAtlasReader.md)
+        * [Yim2024ContactomeDataReader](cect/readers/Yim2024ContactomeDataReader.md)
+        * [Yim2024ContactomeNonNormDataReader](cect/readers/Yim2024ContactomeNonNormDataReader.md)
         * [Yim2024DataReader](cect/readers/Yim2024DataReader.md)
         * [Yim2024NonNormDataReader](cect/readers/Yim2024NonNormDataReader.md)
     * [validation](cect/validation/index.md)

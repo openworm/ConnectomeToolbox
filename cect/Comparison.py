@@ -42,7 +42,9 @@ reader_colors = {
     "RipollSanchezMidRange": "goldenrod",
     "RipollSanchezLongRange": "orange",
     "Yim2024": "#0d7ba4",
-    "Yim2024NonNorm": "#0d7ba4",
+    "Yim2024NonNorm": "#0d7bff",
+    "Yim2024Contactome": "#0d7ba4",
+    "Yim2024ContactomeNonNorm": "#0d7bff",
     "Wang2024Herm": "firebrick",
     "Wang2024Male": "#e88989",
     "OpenWormUnified": "yellowgreen",
@@ -81,6 +83,8 @@ reader_pages = {
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
     "Yim2024": "Yim2024_data",
     "Yim2024NonNorm": "Yim2024NonNorm_data",
+    "Yim2024Contactome": "Yim2024Contactome_data",
+    "Yim2024ContactomeNonNorm": "Yim2024ContactomeNonNorm_data",
     "Wang2024Herm": "Wang2024Herm_data",
     "Wang2024Male": "Wang2024Male_data",
     "OpenWormUnified": "OpenWormUnified_data",
@@ -229,6 +233,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 def get_improved_reader_name(reader_name):
     better_name = (
         reader_name.replace("_", " ")
+        .replace("Yim2024", "Yim et al. 2024 ")
         .replace("201", " 201")
         .replace("202", " 202")
         .replace("Sanchez", " Sanchez et al. 2023")
@@ -236,7 +241,6 @@ def get_improved_reader_name(reader_name):
         .replace("Cook", "Cook et al.")
         .replace("Wang", "Wang et al.")
         .replace("ttin", "ttin et al.")
-        .replace("im", "im et al.")
         .replace("Herm", " (herm.)")
         .replace("Male", " (male)")
         .replace("ShortRange", " (short range)")
@@ -289,11 +293,6 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
-        # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
-        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
-        # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
-        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
-
         readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
         readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
 
@@ -331,8 +330,8 @@ def generate_comparison_page(
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
-        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
         """
         readers["HaspelODonovan"] = [
@@ -351,9 +350,26 @@ def generate_comparison_page(
 
         # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
+
+        # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
+
+        readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = [
+            "cect.readers.Yim2024NonNormDataReader",
+            "Yim_2024",
+        ]
+        readers["Yim2024Contactome"] = [
+            "cect.readers.Yim2024ContactomeDataReader",
+            "Yim_2024",
+        ]
+        readers["Yim2024ContactomeNonNorm"] = [
+            "cect.readers.Yim2024ContactomeNonNormDataReader",
+            "Yim_2024",
+        ]
 
         # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
@@ -434,6 +450,14 @@ def generate_comparison_page(
         readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
         readers["Yim2024NonNorm"] = [
             "cect.readers.Yim2024NonNormDataReader",
+            "Yim_2024",
+        ]
+        readers["Yim2024Contactome"] = [
+            "cect.readers.Yim2024ContactomeDataReader",
+            "Yim_2024",
+        ]
+        readers["Yim2024ContactomeNonNorm"] = [
+            "cect.readers.Yim2024ContactomeNonNormDataReader",
             "Yim_2024",
         ]
 

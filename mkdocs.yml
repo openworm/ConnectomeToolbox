@@ -18,7 +18,7 @@ theme:
 extra:
   generator: false
 
-copyright: Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Generated with <a href="https://openworm.org/ConnectomeToolbox/Python/">cect v0.3.3</a>
+copyright: Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Generated with <a href="https://openworm.org/ConnectomeToolbox/Python/">cect v0.3.4</a>
 
 plugins:
   - plotly
@@ -117,6 +117,8 @@ nav:
     - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
     - 'Yim et al. 2024': 'Yim2024_data.md'
     - 'Yim et al. 2024 (non norm.)': 'Yim2024NonNorm_data.md'
+    - 'Yim et al. 2024 (contact.)': 'Yim2024Contactome_data.md'
+    - 'Yim et al. 2024 (contact-non norm.)': 'Yim2024NonNorm_data.md'
     - 'Wang et al. 2024 Herm': 'Wang2024Herm_data.md'
     - 'Wang et al. 2024 Male': 'Wang2024Male_data.md'
     - 'Test': 'Test_data_graph.md'

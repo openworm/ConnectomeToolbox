@@ -1,0 +1,22 @@
+
+reader: Yim2024ContactomeNonNormDataReader
+connection_lists:
+- comment: 
+  connections:
+  - post: AFDR
+    pre: ADFR
+    weight: 1527984
+  - post: ADFR
+    pre: AFDR
+    weight: 1527984
+  - pre: RIH
+    post: CEPshDL
+    weight: 251712
+  - pre: PVNL
+    post: ALMR
+    weight: 290064
+  - pre: URYDR
+    post: URADR
+    weight: 537136
+  synapse: Contact
+  total_nonzero_conns: 12160

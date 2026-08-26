@@ -8,7 +8,6 @@
 
 
 from cect.ConnectomeReader import ConnectionInfo
-from cect.ConnectomeReader import analyse_connections
 from cect.Cells import convert_to_preferred_muscle_name
 from cect.Cells import is_any_neuron
 from cect.Cells import remove_leading_index_zero
@@ -22,9 +21,8 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
-# ruff: noqa: F401
+from cect.Neurotransmitters import CHEMICAL_SYN_TYPE
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
-from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
 from openpyxl import load_workbook
 
@@ -32,6 +30,11 @@ import os
 import numpy as np
 
 from cect import print_
+
+spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
+
+SYNAPTIC_CONNS_FILENAME = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
+CONTACTOME_FILENAME = "%s41467_2024_45943_MOESM9_ESM.xlsx" % spreadsheet_location
 
 DAUER_NON_NORM = "Dauer"
 DAUER_NORM = "Dauer_normalized"
@@ -43,25 +46,30 @@ pre_range = range(3, 225)
 post_range = range(3, 225)
 
 
-def get_synclass(cell, normalized):
-    if normalized:
-        return GENERIC_CHEM_SYN_CLASS
+def get_syntype_synclass(conn_filename):
+    if conn_filename == SYNAPTIC_CONNS_FILENAME:
+        return CHEMICAL_SYN_TYPE, GENERIC_CHEM_SYN_CLASS
     else:
-        return CONTACTOME_SYN_CLASS
-
-
-spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
+        return CONTACTOME_SYN_TYPE, CONTACTOME_SYN_CLASS
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yim et al. 2024 on Dauer connectome (Normalized)"""
-    % get_dataset_source_on_github(filename.split("/")[-1])
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Synaptic connections; Normalized)**"""
+    % get_dataset_source_on_github(SYNAPTIC_CONNS_FILENAME.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of _C. elegans_, with the weights normalized to ease comparison to other datasets."""
+DATASET_DESCRIPTION_0 = """Reconstruction of the directed chemical synaptic connectome of the dauer, a distinct developmental stage of _C. elegans_. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion. """
 
-WEIGHTS = "Weights represent the contact area between pairs of cells, normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+DATASET_DESCRIPTION = (
+    DATASET_DESCRIPTION_0
+    + """This connectome dataset contains normalized weights to ease comparison to other datasets."""
+)
+
+WEIGHTS_0 = "Weights are the summed volume (nm<sup>3</sup>) of active zone material attributed to a pre/post pair."
+WEIGHTS = (
+    WEIGHTS_0
+    + ". In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+)
 
 
 class Yim2024DataReader(ConnectomeDataset):
@@ -74,14 +82,16 @@ class Yim2024DataReader(ConnectomeDataset):
 
     verbose = False
 
-    def __init__(self, normalized=True):
+    def __init__(self, normalized, conn_filename):
+
         ConnectomeDataset.__init__(self)
 
         conn_type = DAUER_NORM if normalized else DAUER_NON_NORM
+        self.conn_filename = conn_filename
 
-        print_(f"Opening sheet {conn_type} in the Excel file: {filename}")
+        print_(f"Opening sheet {conn_type} in the Excel file: {conn_filename}")
 
-        wb = load_workbook(filename)
+        wb = load_workbook(conn_filename)
 
         self.pre_cells = {}
         self.post_cells = {}
@@ -130,7 +140,10 @@ class Yim2024DataReader(ConnectomeDataset):
                 col = 3 + j
                 val = sheet.cell(row=row, column=col).value
                 if val != 0:
-                    print_("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
+                    if self.verbose:
+                        print_(
+                            "Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val)
+                        )
                 if val is not None:
                     self.conn_nums[conn_type][i, j] = val
 
@@ -184,8 +197,7 @@ class Yim2024DataReader(ConnectomeDataset):
                     post = convert_to_preferred_muscle_name(post)
 
                 if num > 0:
-                    syntype = CONTACTOME_SYN_TYPE
-                    synclass = get_synclass(pre, self.normalized)
+                    syntype, synclass = get_syntype_synclass(self.conn_filename)
 
                     ci = ConnectionInfo(pre, post, num, syntype, synclass)
                     if self.verbose:
@@ -219,7 +231,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename(__file__.split("/")[-1].split(".")[0])
         )
     else:
-        return Yim2024DataReader(normalized=True)
+        return Yim2024DataReader(normalized=True, conn_filename=SYNAPTIC_CONNS_FILENAME)
 
 
 def main():

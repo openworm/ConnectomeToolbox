@@ -1,0 +1,17 @@
+connection_lists:
+- connections:
+  - post: AFDR
+    pre: ADFR
+    weight: 3.47775177807871
+  - post: RMED
+    pre: SMBDL
+    weight: 1.7182985712879
+  - post: RIPL
+    pre: ASHL
+    weight: 1.92777331045848
+  - post: ASHL
+    pre: RIPL
+    weight: 1.92777331045848
+  synapse: Contact
+  total_nonzero_conns: 12160
+reader: Yim2024ContactomeDataReader
