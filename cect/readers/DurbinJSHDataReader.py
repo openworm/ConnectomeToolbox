@@ -18,7 +18,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 NAME = "WhiteJSH"
 
-DATASET_DESCRIPTION = "Chemical and electrical connectivity of the JSH L4 worm from White et al. 1986 data, taken from the neurodata.txt file from R. Durbin's thesis 1987."
+DATASET_DESCRIPTION = "Chemical and electrical connectivity of the JSH L4 worm from White et al. 1986 data, based on the neurodata.txt file from R. M. Durbin's thesis, 1987. See validation information for minor changes from that file."
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

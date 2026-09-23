@@ -18,7 +18,11 @@ import numpy as np
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
-WEIGHTS = "Weights represent the integer number of agreed presynaptic active zones between each pair of cells, counted from electron micrographs and agreed upon by at least two of three independent annotators"
+WEIGHTS = "Weights represent the integer number of agreed presynaptic active zones between each pair of cells, counted from electron micrographs and agreed upon by at least two of three independent annotators."
+
+GJ_COMMENT = "Note: see comments in the Witvliet et al. 2021 paper regarding the incompleteness of the electrical connectivity data."
+
+WEIGHTS += " " + GJ_COMMENT
 
 
 def fix_witvliet_cell_naming(cell):

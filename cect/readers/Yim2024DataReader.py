@@ -68,7 +68,7 @@ DATASET_DESCRIPTION = (
 WEIGHTS_0 = "Weights are the summed volume (nm<sup>3</sup>) of active zone material attributed to a pre/post pair."
 WEIGHTS = (
     WEIGHTS_0
-    + ". In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+    + " In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 
 
@@ -245,17 +245,28 @@ def main():
 
     from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import PHARYNX_VIEW as view
-    # from cect.ConnectomeView import NEURONS_VIEW as view
+    # from cect.ConnectomeView import SENSORY_NEURONS_SOMATIC_HERM_VIEW as view
 
     print("=======================")
     cds2 = tdr_instance.get_connectome_view(view)
     print(cds2.summary(list_pre_cells=False))
 
     print("Plotting view: %s" % view)
+    """
     fig, _ = cds2.to_plotly_matrix_fig(
         "Chemical",
         view,
     )
+
+    """
+    fig = cds2.to_plotly_graph_fig(
+        list(view.synclass_sets.keys())[0],
+        view,
+        spring_layout_k=1.25,
+        spring_layout_iterations=10,
+        spring_layout_seed=1,
+    )
+
     import plotly.io as pio
 
     pio.renderers.default = "browser"

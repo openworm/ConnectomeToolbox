@@ -678,7 +678,14 @@ class ConnectomeDataset:
             return 1
         return 1 + (9 * weight / max_weight)
 
-    def to_plotly_graph_fig(self, synclass, view):
+    def to_plotly_graph_fig(
+        self,
+        synclass,
+        view,
+        spring_layout_seed=1,
+        spring_layout_iterations=25,
+        spring_layout_k=10,
+    ):
         conn_array = self.connections[synclass]
 
         verbose = False
@@ -769,7 +776,13 @@ class ConnectomeDataset:
                     -0.1 * scale + _get_epsilon(scale),
                 ]
 
-        pos = nx.spring_layout(G, seed=1, iterations=25, k=10, pos=init_pos)
+        pos = nx.spring_layout(
+            G,
+            seed=spring_layout_seed,
+            iterations=spring_layout_iterations,
+            k=spring_layout_k,
+            pos=init_pos,
+        )
 
         for i, node_value in enumerate(nodes_to_show):
             node_set = view.get_node_set(node_value)

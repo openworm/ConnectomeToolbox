@@ -4,4 +4,4 @@ Connectivity was originally released in supplementary information: [S1 Dataset](
 
 The contents of this zip file were extracted and the 2 files [edge_lists/edgelist_MA.csv](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/edgelist_MA.csv) and [edge_lists/edgelist_NP.csv](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/edgelist_NP.csv) were added to our repository and used in the monoaminergic and peptidergic DataReaders respectively. 
 
-For the validation tests below, specific connections between pre and postsynaptic cells were read out from the edgelist_MA.csv and edgelist_NP.csv files above and a weight of 1 was added to the connection test yaml file for these. 
+For the validation tests below, specific connections between pre and postsynaptic cells were read out from the edgelist_MA.csv and edgelist_NP.csv files above and a weight of 1 was added to the connection test YAML file for these. 

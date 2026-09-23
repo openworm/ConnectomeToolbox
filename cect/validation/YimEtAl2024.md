@@ -16,5 +16,5 @@ Supplementary Data 6 in the paper links to file [41467_2024_45943_MOESM9_ESM.xls
 
 Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and one named "Dauer_normalized", from where the values for the non normalized/normalized (respectively) synaptic weights/contact areas of connections were read.
 
-Each file was opened in Excel and weights of selected connections were visually read from the spreadsheet cells, noting the pre and post cells, and the values were added to the connection test yaml file for validation below. 
+Each file was opened in Excel and weights of selected connections were visually read from the spreadsheet cells, noting the pre and post cells, and the values were added to the connection test YAML file for validation below. 
 

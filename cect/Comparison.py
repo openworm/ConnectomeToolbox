@@ -1067,6 +1067,7 @@ def generate_comparison_page(
                 and "RipollSanchezMidRange" not in reader_name
                 and "RipollSanchezLongRange" not in reader_name
                 and "NonNorm" not in reader_name
+                and "Contactome" not in reader_name
                 and "OpenWorm" not in reader_name
                 and "Haspel" not in reader_name
             ):

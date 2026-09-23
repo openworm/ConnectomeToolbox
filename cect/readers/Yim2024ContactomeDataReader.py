@@ -21,7 +21,7 @@ from cect import print_
 
 NAME = "Yim2024Contactome"
 
-DATASET_DESCRIPTION_0 = """Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labelled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. """
+DATASET_DESCRIPTION_0 = """Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. """
 
 DATASET_DESCRIPTION = (
     DATASET_DESCRIPTION_0
@@ -33,7 +33,7 @@ WEIGHTS_0 = (
 )
 WEIGHTS = (
     WEIGHTS_0
-    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 
 

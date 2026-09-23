@@ -37,7 +37,7 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = """Membrane contact information from Brittin et al. 2021. This dataset contains information on the contact area between pairs of cells in the C. elegans nerve ring, as measured by electron microscopy. The M<sup>4</sup> graph as described in the paper is used here. 
+DATASET_DESCRIPTION = """Contactome information from Brittin et al. 2021. This dataset contains the contact area between pairs of cells in the _C. elegans_ nerve ring, as measured from volumetric reconstructions of the JSH and N2U animals, based on the previously published electron micrographs from White et al. 1986. The M<sup>4</sup> graph as described in the Brittin et al. 2021 paper is used here (i.e. limited to contacts that are conserved across the left and right sides of the JSH and N2U animals). 
 """
 
 WEIGHTS = "Weights represent the contact area between pairs of cells"

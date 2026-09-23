@@ -15,7 +15,7 @@ from cect.readers.WhiteDataReader import WhiteDataReader
 
 NAME = "White_whole"
 
-DATASET_DESCRIPTION = "Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011, but including the pharynx."
+DATASET_DESCRIPTION = "Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011. This version includes the pharynx."
 
 WEIGHTS = "Used Varshney et al. 2011 interpretation of weights: the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
 
