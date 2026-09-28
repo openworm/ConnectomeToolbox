@@ -1388,7 +1388,7 @@ for cell in PHARYNGEAL_EPITHELIUM:
 g1p_COOK2019 = "g1p"
 g1P_COOK2020 = "g1P"
 
-PHARYNGEAL_GLIAL_CELL = [
+PHARYNGEAL_GLAND_CELL = [
     "g1AL",
     "g1AR",
     g1P_COOK2020,
@@ -1396,8 +1396,8 @@ PHARYNGEAL_GLIAL_CELL = [
     "g2R",
 ]
 
-for cell in PHARYNGEAL_GLIAL_CELL:
-    cell_notes[cell] = "pharyngeal glial cell"
+for cell in PHARYNGEAL_GLAND_CELL:
+    cell_notes[cell] = "pharyngeal gland cell"
 
 PHARYNGEAL_BASEMENT_MEMBRANE = ["bm"]
 cell_notes["bm"] = "pharyngeal basement membrane"
@@ -1408,7 +1408,7 @@ ALL_PHARYNGEAL_CELLS = (
     + PHARYNGEAL_MUSCLE_NAMES
     + PHARYNGEAL_MARGINAL_CELLS
     + PHARYNGEAL_EPITHELIUM
-    + PHARYNGEAL_GLIAL_CELL
+    + PHARYNGEAL_GLAND_CELL
     + PHARYNGEAL_BASEMENT_MEMBRANE
 )
 
@@ -1442,7 +1442,7 @@ KNOWN_HERM_NON_NEURON_MUSCLE_CELLS_COOK_19 = (
     GLIAL_CELLS
     + PHARYNGEAL_MARGINAL_CELLS
     + PHARYNGEAL_EPITHELIUM
-    + PHARYNGEAL_GLIAL_CELL
+    + PHARYNGEAL_GLAND_CELL
     + PHARYNGEAL_BASEMENT_MEMBRANE
     + EXCRETORY_CELL
     + EXCRETORY_GLAND
@@ -1579,8 +1579,11 @@ def get_primary_classification():
                 elif cell_type == "marginal cells (mc) of the pharynx":
                     for cell in PHARYNGEAL_MARGINAL_CELLS:
                         classification[cell] = cell_type
+                elif cell_type == "gland cells of the pharynx":
+                    for cell in PHARYNGEAL_GLAND_CELL:
+                        classification[cell] = cell_type
                 elif cell_type == "pharyngeal epithelium":
-                    for cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL:
+                    for cell in PHARYNGEAL_EPITHELIUM:
                         classification[cell] = cell_type  # TODO: check!
                 elif cell_type == "basement membrane":
                     for cell in PHARYNGEAL_BASEMENT_MEMBRANE:
@@ -1919,7 +1922,7 @@ def is_marginal_epithelial_gland_cell(cell: str):
     known_mc_prefix = get_marginal_cell_prefixes()
     return cell.startswith(
         tuple(known_mc_prefix)
-    ) or cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL + [g1p_COOK2019]
+    ) or cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLAND_CELL + [g1p_COOK2019]
 
 
 def get_all_muscle_prefixes():
@@ -2037,10 +2040,12 @@ def get_standard_color(cell: str):
         ]
     elif cell in PHARYNGEAL_EPITHELIUM:
         return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"]["pharyngeal epithelium"]
-    elif cell in PHARYNGEAL_GLIAL_CELL:
-        return WA_COLORS["Hermaphrodite"]["Epithelial Tissue"][
-            "pharyngeal epithelium"
+
+    elif cell in PHARYNGEAL_GLAND_CELL:
+        return WA_COLORS["Hermaphrodite"]["Alimentary System"][
+            "gland cells of the pharynx"
         ]  # TODO: check!!
+
     elif cell in PHARYNGEAL_BASEMENT_MEMBRANE:
         return WA_COLORS["Hermaphrodite"]["Other Tissues"]["basement membrane"]
     elif cell in GLR_CELLS:
@@ -2245,7 +2250,7 @@ def get_cell_wormatlas_link(
         cell_name
         in PHARYNGEAL_MARGINAL_CELLS
         + PHARYNGEAL_EPITHELIUM
-        + PHARYNGEAL_GLIAL_CELL
+        + PHARYNGEAL_GLAND_CELL
         + PHARYNGEAL_BASEMENT_MEMBRANE
         + PHARYNGEAL_MUSCLE_NAMES
     ):
@@ -2627,11 +2632,15 @@ if __name__ == "__main__":
                                     cell_type, PHARYNGEAL_MARGINAL_CELLS
                                 )
                             )
+                        elif cell_type == "gland cells of the pharynx":
+                            f.write(
+                                _generate_cell_table(cell_type, PHARYNGEAL_GLAND_CELL)
+                            )
                         elif cell_type == "pharyngeal epithelium":
                             f.write(
                                 _generate_cell_table(
                                     cell_type,
-                                    PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL,
+                                    PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLAND_CELL,
                                 )
                             )  # TODO: check!
                         elif cell_type == "basement membrane":

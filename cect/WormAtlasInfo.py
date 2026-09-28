@@ -40,6 +40,9 @@ WA_COLORS["Hermaphrodite"]["Alimentary System"] = {}
 WA_COLORS["Hermaphrodite"]["Alimentary System"][
     "marginal cells (mc) of the pharynx"
 ] = "#cc33cc"
+WA_COLORS["Hermaphrodite"]["Alimentary System"]["gland cells of the pharynx"] = (
+    "#cc33cc"
+)
 WA_COLORS["Hermaphrodite"]["Alimentary System"]["intestinal cells"] = "#ffccff"
 
 # REPRODUCTIVE SYSTEM
