@@ -31,7 +31,7 @@ READER_DESCRIPTION = (
     % (get_dataset_source_on_github(filename.split("/")[-1]),)
 )
 
-DATASET_DESCRIPTION = """Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extracellular transmission)."""
+DATASET_DESCRIPTION = """Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extrasynaptic transmission)."""
 
 WEIGHTS = "Adjacency matrices are binary and directed; a weight of 1 between neurons A and B signifies that cell A expresses a biosynthetic enzyme or transporter for the specific monoamine and neuron B expresses a cognate receptor for that monoamine."
 

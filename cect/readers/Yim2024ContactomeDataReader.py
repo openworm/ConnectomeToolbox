@@ -30,7 +30,7 @@ DATASET_DESCRIPTION = (
 
 WEIGHTS = (
     "Weights are calculated from the total contact area between a pair of cells. "
-    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
+    + "In this dataset, these are normalized by the standard deviation of connection weights excluding the top 5% of weights, to remove the bias due to the big outliers."
 )
 
 
