@@ -6,7 +6,7 @@ Three spreadsheets with these connections have been identified:
 
 Connectivity matrices were released in the following supplementary information file with the publication: [41586_2019_1352_MOESM9_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-019-1352-7/MediaObjects/41586_2019_1352_MOESM9_ESM.xlsx).
 
-**Note:** there is a slight internal consistency issue in this file - some of the male ray structural cells are named R1stL, R2stR, etc. ), but in other locations the names R1shL, R2shR, etc. are used.
+**Note:** there is a slight internal consistency issue in this file - some of the male ray structural cells are named R1stL, R2stR, etc., but in other locations the names R1shL, R2shR, etc. are used.
 
 
 2) WormWiring original adjacency matrices
@@ -50,5 +50,5 @@ We have used "pharyngeal gland cell" for their types, as this is what is used in
 
 Additionally, we used **g1P**, not **g1p** for the name of this pharyngeal gland cell, as this is the form used in Cook et al. 2020, as well as on WormWiring. 
 
-This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. hermaphrodite chemical, male gap jn symmetric), 
+This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. "hermaphrodite chemical", "male gap jn symmetric"), 
 noting the pre and post cells and these added to the connection test YAML file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 

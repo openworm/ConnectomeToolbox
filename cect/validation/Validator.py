@@ -64,7 +64,7 @@ The entries below for each of the **Datasets** currently incorporated into the _
 - A list of any issues found with these data files, and what steps were taken to address these issues. 
 - Links to the final version of the (updated) files which have been included in the Connectome Toolbox repository (generally stored [here](https://github.com/openworm/ConnectomeToolbox/tree/main/cect/data)).
 
-The source files (e.g. Excel spreadsheets) containing the originally data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
+The source files (e.g. Excel spreadsheets) containing the original data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
 
 For each individual **DataReader** associated with a publication there will be:
 
@@ -72,9 +72,9 @@ For each individual **DataReader** associated with a publication there will be:
 - A link to a YAML file containing the expected data for that reader (e.g. manually extracted values from source Excel spreadsheets), which is used to validate the data.
 - A set of tables, one for each of the synapse types included in the data (e.g. chemical and electrical), comparing the expected data with the actual data extracted from running the equivalent call in the Connectome Toolbox API.
 
-The full suite of tests are run automatically as part of the [continuous integration (CI) tests](https://github.com/openworm/ConnectomeToolbox/actions/workflows/non_omv.yml) for the 
+The full suite of tests is run automatically as part of the [continuous integration (CI) tests](https://github.com/openworm/ConnectomeToolbox/actions/workflows/non_omv.yml) for the 
 Connectome Toolbox on GitHub, and any mismatches between the expected and actual data will cause the CI tests to fail. 
-Successfully passing the tests on the main branch of the repository will deploy the latest version of the website, which includes the most up to date [validation summary](https://openworm.org/ConnectomeToolbox/Validation).
+Successfully passing the tests on the main branch of the repository will deploy the latest version of the website, which includes the most up-to-date [validation summary](https://openworm.org/ConnectomeToolbox/Validation).
     
 """
 

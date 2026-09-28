@@ -7,14 +7,14 @@ A) **Synaptic connectivity** (Supplementary Data 3). A directed matrix, with row
 
 B) **Contact area** (Supplementary Data 6). A symmetric matrix, as physical apposition has no pre/post polarity, measured from the volumetric segmentation rather than from synapses. Weights are the summed area (nm²) of contact between two cells.
 
-Both are available as raw values and normalised by the standard deviation of weights excluding the top 5% of weights, the latter easing comparison with other datasets. 
+Both are available as raw values and normalized by the standard deviation of weights excluding the top 5% of weights, the latter easing comparison with other datasets. 
 
 Supplementary Data 3 in the paper links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM6_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
 
 Supplementary Data 6 in the paper links to file [41467_2024_45943_MOESM9_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM9_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM9_ESM.xlsx).
 
 
-Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and one named "Dauer_normalized", from where the values for the non normalized/normalized (respectively) synaptic weights/contact areas of connections were read.
+Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and "Dauer_normalized", from where the values for the non normalized and normalized, respectively, synaptic weights/contact areas of connections were read.
 
 Each file was opened in Excel and weights of selected connections were visually read from the spreadsheet cells, noting the pre and post cells, and the values were added to the connection test YAML file for validation below. 
 

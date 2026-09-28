@@ -236,7 +236,7 @@ def get_improved_reader_name(reader_name):
         .replace("Yim2024", "Yim et al. 2024 (dauer) ")
         .replace("201", " 201")
         .replace("202", " 202")
-        .replace("Sanchez", " Sanchez et al. 2023")
+        .replace("Sanchez", "-Sánchez et al. 2023")
         .replace("tley", "tley et al.")
         .replace("Cook", "Cook et al.")
         .replace("Wang", "Wang et al.")

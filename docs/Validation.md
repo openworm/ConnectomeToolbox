@@ -11,7 +11,7 @@ The entries below for each of the **Datasets** currently incorporated into the _
 - A list of any issues found with these data files, and what steps were taken to address these issues. 
 - Links to the final version of the (updated) files which have been included in the Connectome Toolbox repository (generally stored [here](https://github.com/openworm/ConnectomeToolbox/tree/main/cect/data)).
 
-The source files (e.g. Excel spreadsheets) containing the originally data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
+The source files (e.g. Excel spreadsheets) containing the original data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
 
 For each individual **DataReader** associated with a publication there will be:
 
@@ -19,24 +19,24 @@ For each individual **DataReader** associated with a publication there will be:
 - A link to a YAML file containing the expected data for that reader (e.g. manually extracted values from source Excel spreadsheets), which is used to validate the data.
 - A set of tables, one for each of the synapse types included in the data (e.g. chemical and electrical), comparing the expected data with the actual data extracted from running the equivalent call in the Connectome Toolbox API.
 
-The full suite of tests are run automatically as part of the [continuous integration (CI) tests](https://github.com/openworm/ConnectomeToolbox/actions/workflows/non_omv.yml) for the 
+The full suite of tests is run automatically as part of the [continuous integration (CI) tests](https://github.com/openworm/ConnectomeToolbox/actions/workflows/non_omv.yml) for the 
 Connectome Toolbox on GitHub, and any mismatches between the expected and actual data will cause the CI tests to fail. 
-Successfully passing the tests on the main branch of the repository will deploy the latest version of the website, which includes the most up to date [validation summary](https://openworm.org/ConnectomeToolbox/Validation).
+Successfully passing the tests on the main branch of the repository will deploy the latest version of the website, which includes the most up-to-date [validation summary](https://openworm.org/ConnectomeToolbox/Validation).
     
 ## WhiteEtAl1986
 
-Data from White et al. 1986, The Structure of the Nervous System of the Nematode Caenorhabditis elegans, [Phil. Trans. R. Soc. Lond. B3141–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056) (also on [WormAtlas](https://wormatlas.org/MoW_built0.92/MoW.html)).
+Data from White et al. 1986, The Structure of the Nervous System of the Nematode Caenorhabditis elegans, [Phil. Trans. R. Soc. Lond. B 314 (1165): 1–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056) (also on [WormAtlas](https://wormatlas.org/MoW_built0.92/MoW.html)).
 
 As described on [WormAtlas](https://www.wormatlas.org/neuronalwiring.html), the primary structured dataset describing this connectivity is the **neurodata.txt** file which was compiled by Richard Durbin in his thesis (Studies on the Development and Organisation of the Nervous System of Caenorhabditis elegans.
 University of Cambridge; 1987). This (and the [Readme](https://www.wormatlas.org/neurodata_readme.txt) describing it) can be found [on WormAtlas](https://www.wormatlas.org/neurodata.txt). 
 
-The **neurodata.txt** file describes reconstructed connectivity for 2 animals: an N2U (adult hermaphrodite) and JSH (which Durbin described as an L4 male, it is now believed that this animal was an L4 hermaphrodite). This file has been copied into our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata.txt).
+The **neurodata.txt** file describes reconstructed connectivity for 2 animals: an N2U (adult hermaphrodite) and JSH (which Durbin described as an L4 male; it is now believed that this animal was an L4 hermaphrodite). This file has been copied into our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata.txt).
 
 We noted however a small number of minor issues (described below) that were found in the original data file. 
 These updates were incorporated in cect by using an updated version of this file (**neurodata_updated.txt**, in our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata_updated.txt)), as opposed to being fixed in the source of our Python reader (DurbinDataReader), for clarity. 
 The issues are: 
 
-**Issue 1)** Line 2 in the original file (ADAL ADAR Gap_junction 1) was missing JSH or N2U, and so assuming N2U as "ADAL ADAR Gap_junction JSH 2" was already present.
+**Issue 1)** Line 2 in the original file (ADAL ADAR Gap_junction 1) did not specify the animal (JSH or N2U). As an equivalent JSH entry (ADAL ADAR Gap_junction JSH 2) was already present, we assumed line 2 referred to N2U.
 
 **Issue 2)** While most gap junction connections contained both A->B and B->A connections, some were missing the reverse connection. The missing connections have been included at the top of the updated file.
 
@@ -221,7 +221,7 @@ An updated version of the White et al. 1986 wiring data, as presented in Varshne
 
 The file [NeuronConnect.xls](https://www.wormatlas.org/images/NeuronConnect.xls), referenced in the paper ("The collected data is available from the WormAtlas"), which is also available [here](https://wormwiring.org/), has been copied into our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/NeuronConnect.xls), and used in our DataReader.
 
-The spreadsheet above contained a single sheet, with a list of presynaptic cells, postsynaptic cells, synapse numbers, and types of synapse (S, Sp, R, Rp, EJ, NMJ). See [here](https://www.wormatlas.org/neuronalwiring.html#Connectivitydata) for full details. This file was opened in Excel and weights of selected connections were visually read from the cells (summing entries for S and Sp where both were present), noting the pre and post cells and added to the connection test YAML file. 
+The spreadsheet above contained a single sheet, with a list of presynaptic cells, postsynaptic cells, synapse numbers, and types of synapse (S, Sp, R, Rp, EJ, NMJ). See [here](https://www.wormatlas.org/neuronalwiring.html#Connectivitydata) for full details. This file was opened in Excel and weights of selected connections were visually read from the cells (summing entries for S and Sp where both were present), noting the pre- and postsynaptic cells and added to the connection test YAML file. 
 
 
 
@@ -307,7 +307,7 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 Data from: The Multilayer Connectome of Caenorhabditis elegans, Bentley et al. 2016, [PLoS Comput Biol 12(12): e1005283](https://doi.org/10.1371/journal.pcbi.1005283)
 
-Connectivity was originally released in supplementary information: [S1 Dataset](https://doi.org/10.1371/journal.pcbi.1005283.s004) ("Included are edge lists for monoamine and neuropeptide networks").
+Connectivity was originally released in supplementary information: [S1 Dataset, a zip file](https://doi.org/10.1371/journal.pcbi.1005283.s004) ("Included are edge lists for monoamine and neuropeptide networks").
 
 The contents of this zip file were extracted and the 2 files [edge_lists/edgelist_MA.csv](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/edgelist_MA.csv) and [edge_lists/edgelist_NP.csv](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/edgelist_NP.csv) were added to our repository and used in the monoaminergic and peptidergic DataReaders respectively. 
 
@@ -405,7 +405,7 @@ Three spreadsheets with these connections have been identified:
 
 Connectivity matrices were released in the following supplementary information file with the publication: [41586_2019_1352_MOESM9_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-019-1352-7/MediaObjects/41586_2019_1352_MOESM9_ESM.xlsx).
 
-**Note:** there is a slight internal consistency issue in this file - some of the male ray structural cells are named R1stL, R2stR, etc. ), but in other locations the names R1shL, R2shR, etc. are used.
+**Note:** there is a slight internal consistency issue in this file - some of the male ray structural cells are named R1stL, R2stR, etc., but in other locations the names R1shL, R2shR, etc. are used.
 
 
 2) WormWiring original adjacency matrices
@@ -449,7 +449,7 @@ We have used "pharyngeal gland cell" for their types, as this is what is used in
 
 Additionally, we used **g1P**, not **g1p** for the name of this pharyngeal gland cell, as this is the form used in Cook et al. 2020, as well as on WormWiring. 
 
-This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. hermaphrodite chemical, male gap jn symmetric), 
+This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. "hermaphrodite chemical", "male gap jn symmetric"), 
 noting the pre and post cells and these added to the connection test YAML file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 
 
 
@@ -562,17 +562,17 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 Data was taken from Cook et al. 2020, The connectome of the Caenorhabditis elegans pharynx, [J Comp Neurol. 2020; 528: 2767–2784](https://onlinelibrary.wiley.com/doi/10.1002/cne.24932).
 
-The connectivity data was released in 2 CSV files in the supplementary information for that paper:
+The connectivity data were released in 2 CSV files in the supplementary information for that paper:
 
 - [cne24932-sup-0004-Supinfo4.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0004-Supinfo4.csv) described as "Complete edge list for pharyngeal reconstruction."
 
-- [cne24932-sup-0005-Supinfo5.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0005-Supinfo5.csv) described as "Inferred gap junction connectivity between end-organs". These connections have been included and some of these tested below also. 
+- [cne24932-sup-0005-Supinfo5.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0005-Supinfo5.csv) described as "Inferred gap junction connectivity between end-organs". These connections are included and some of these are tested below. 
 
 These files were opened in Apple Numbers, and the weights (numbers of connections between pairs of cells, electrical or chemical) were read off, to provide checks listed below. 
 
 **Validation issue: Repeated connections**
 
-There were multiple entries in [cne24932-sup-0004-Supinfo4.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0004-Supinfo4.csv) for the same pair of cells and the same type of connection. Where there are multiple lines of this type, the weights in the new line have been appended to the existing weight. 
+There were multiple entries in [cne24932-sup-0004-Supinfo4.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0004-Supinfo4.csv) for the same pair of cells and the same type of connection. Where there are multiple lines of this type, the weights in the new line have been added to (summed with) the existing weight. 
 
 This is a summary of the connections which were repeated: 
 
@@ -747,11 +747,11 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 ## WitvlietEtAl2021
 
 Data on neuronal connectivity at different developmental stages of _C. elegans_ from: Connectomes across development reveal principles of brain maturation
-[Witvliet et al. Nature 2021](https://www.nature.com/articles/s41586-021-03778-8). 
+[Witvliet et al. Nature 2021 596:257–261](https://www.nature.com/articles/s41586-021-03778-8). 
 
 While the paper's supplementary information contained connectivity matrices ([here](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03778-8/MediaObjects/41586_2021_3778_MOESM4_ESM.xlsx)), these only contain the chemical connections. 
 
-The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html), also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
+The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html) also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
 
 The chemical connection weights below were read from the supplementary information spreadsheet, and the electrical connection weights were taken from the WormWiring spreadsheet.
 
@@ -1044,7 +1044,8 @@ Functional connectivity data of _C. elegans_ from: Randi et al. 2023, Neural sig
 
 We used the [WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas) as discussed in the paper to provide the signal propagation map values. 
 The method _get_signal_propagation_map()_ specifying the wildtype data (strain="wt") was used to get the post-stimulus calcium response amplitude (⟨ΔF/F₀⟩ₜ) matrix, while 
-_get_signal_propagation_q()_ was used to get the q-values (the false discovery rate, i.e. the probability that a neuron pair declared "functionally connected" is actually a false positive). We used a q_max = 0.05 and just added that to the adjacency matrix used in this example.
+_get_signal_propagation_q()_ was used to get the q-values (i.e. the minimum false discovery rate at which that pair would be called significant). 
+Only pairs with q < max_q = 0.05 were included in the adjacency matrix for the example we use.
 
 We obtained the validation values below by calling the above functions and printing the value in the signal propagation for specific connections, checking q < 0.05. 
 
@@ -1075,16 +1076,16 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 ## RipollSanchezEtAl2023
 
-Data on neuropeptidergic signalling has been taken from: Ripoll-Sánchez et al. 2023, The neuropeptidergic connectome of C. elegans. [Neuron, Volume 111, Issue 22, 2023, Pages 3570-3589.e5](https://doi.org/10.1016/j.neuron.2023.09.043). 
+Data on neuropeptidergic signaling has been taken from: Ripoll-Sánchez et al. 2023, The neuropeptidergic connectome of C. elegans. [Neuron, Volume 111, Issue 22, 2023, Pages 3570-3589.e5](https://doi.org/10.1016/j.neuron.2023.09.043). 
 
 There is a GitHub repository referenced in the paper: [https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome). 
-There are 3 different models used for the neuropeptidergic connectome (short-, medium- and long-range), and the following files have been used in Connectome Toolbox as the source of these models:
+There are 3 different models used for the neuropeptidergic connectome (short-, mid- and long-range), and the following files have been used in Connectome Toolbox as the source of these models:
 
 - [01022024_neuropeptide_connectome_short_range_model.csv](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome/blob/main/Adjacency%20matrices%20for%20networks/01022024_neuropeptide_connectome_short_range_model.csv)
 - [01022024_neuropeptide_connectome_mid_range_model.csv](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome/blob/main/Adjacency%20matrices%20for%20networks/01022024_neuropeptide_connectome_mid_range_model.csv)
 - [01022024_neuropeptide_connectome_long_range_model.csv](https://github.com/LidiaRipollSanchez/Neuropeptide-Connectome/blob/main/Adjacency%20matrices%20for%20networks/01022024_neuropeptide_connectome_long_range_model.csv)
 
-For each of these CSV files, the file was opened in Apple Numbers, and the weights (numbers of matched peptides expressed in pre cell with corresponding receptor in post cell) read off, to provide checks listed below. 
+For each of these CSV files, the file was opened in Apple Numbers, and the weights (number of different NPP-GPCR pathways) read off, to provide checks listed below. 
 
 
 ### Validation tests for DataReader: [RipollSanchezShortRangeReader](RipollSanchezShortRange_data.md) 
@@ -1171,14 +1172,14 @@ A) **Synaptic connectivity** (Supplementary Data 3). A directed matrix, with row
 
 B) **Contact area** (Supplementary Data 6). A symmetric matrix, as physical apposition has no pre/post polarity, measured from the volumetric segmentation rather than from synapses. Weights are the summed area (nm²) of contact between two cells.
 
-Both are available as raw values and normalised by the standard deviation of weights excluding the top 5% of weights, the latter easing comparison with other datasets. 
+Both are available as raw values and normalized by the standard deviation of weights excluding the top 5% of weights, the latter easing comparison with other datasets. 
 
 Supplementary Data 3 in the paper links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM6_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
 
 Supplementary Data 6 in the paper links to file [41467_2024_45943_MOESM9_ESM.xlsx](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-45943-3/MediaObjects/41467_2024_45943_MOESM9_ESM.xlsx). This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM9_ESM.xlsx).
 
 
-Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and one named "Dauer_normalized", from where the values for the non normalized/normalized (respectively) synaptic weights/contact areas of connections were read.
+Both of the Supplementary Data 3 & 6 spreadsheets contained sheets named "Dauer" and "Dauer_normalized", from where the values for the non normalized and normalized, respectively, synaptic weights/contact areas of connections were read.
 
 Each file was opened in Excel and weights of selected connections were visually read from the spreadsheet cells, noting the pre and post cells, and the values were added to the connection test YAML file for validation below. 
 
@@ -1233,7 +1234,7 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 ### Validation tests for DataReader: [Yim2024ContactomeNonNormDataReader](Yim2024ContactomeNonNorm_data.md) 
 
-**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed.  
+**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pairs of cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed.  
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024ContactomeNonNormDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1258,7 +1259,7 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 ### Validation tests for DataReader: [Yim2024ContactomeDataReader](Yim2024Contactome_data.md) 
 
-**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets. 
+**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pairs of cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024ContactomeDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1281,7 +1282,7 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 
 ## WangEtAl2024
 
-This reader combines neurotransmitter expression values from: Wang et al. 2024 (A neurotransmitter atlas of C. elegans males and hermaphrodites, [eLife 13:RP95402](https://doi.org/10.7554/eLife.95402.3)) with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al 2016.
+This reader combines neurotransmitter expression values from: Wang et al. 2024 (A neurotransmitter atlas of C. elegans males and hermaphrodites, [eLife 13:RP95402](https://doi.org/10.7554/eLife.95402.3)) with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016.
 
 [Supplementary file 2](https://cdn.elifesciences.org/articles/95402/elife-95402-supp2-v1.xlsx) in that publication contains the expression patterns of neurotransmitter pathway genes in hermaphrodites.
     
@@ -1292,7 +1293,7 @@ This has been added to our repository [here](https://github.com/openworm/Connect
 
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp3-v1.xlsx).
 
-These files were used to identify potential presynaptic cells for each neurotransmitter, and then validation tests were added towards known connected anatomical (or monoaminergic) postsynaptic targets of these. 
+These files were used to identify potential presynaptic cells for each neurotransmitter, and then validation tests were added for known anatomically (or monoaminergically) connected postsynaptic targets of these. 
 
     
 
