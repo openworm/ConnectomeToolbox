@@ -1963,6 +1963,10 @@ def is_herm_neuron(cell: str):
     return cell in PREFERRED_HERM_NEURON_NAMES
 
 
+def is_male_neuron(cell: str):
+    return cell in ALL_NEURON_NAMES_COOK and cell not in HERM_SPECIFIC_MOTORNEURONS
+
+
 def is_male_specific_cell(cell: str):
     return (
         cell

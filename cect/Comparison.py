@@ -342,8 +342,8 @@ def generate_comparison_page(
             "cect.readers.HaspelODonovan1SegDataReader",
             "HaspelODonovan1Seg_2012",
         ]"""
-        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
-        # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
@@ -351,8 +351,8 @@ def generate_comparison_page(
         # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
 
-        # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
-        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
+        readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
 
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]

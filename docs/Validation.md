@@ -727,7 +727,6 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 | ADAL | ADLL | 11319.5 | Yes |
 | ADLL | ADAL | 11319.5 | Yes |
 | ADLR | ADAR | 11319.5 | Yes |
-| ADLR | ADAR | 11319.5 | Yes |
 | ADAR | ADLR | 11319.5 | Yes |
 | RID | RICL | 10043.5 | Yes |
 | RICL | RID | 10043.5 | Yes |
@@ -1288,13 +1287,13 @@ This reader combines neurotransmitter expression values from: Wang et al. 2024 (
     
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp2-v1.xlsx). 
 
-
 [Supplementary file 3](https://cdn.elifesciences.org/articles/95402/elife-95402-supp3-v1.xlsx) contains the expression patterns of neurotransmitter pathway genes in male-specific neurons.
 
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp3-v1.xlsx).
 
 These files were used to identify potential presynaptic cells for each neurotransmitter, and then validation tests were added for known anatomically (or monoaminergically) connected postsynaptic targets of these. 
 
+Note: while Cook et al. 2019 contains hermaphrodite and male specific anatomical connectomes, the data from Bentley et al. 2016 is hermaphrodite only, and is used for both sexes here. 
     
 
 
@@ -1424,13 +1423,12 @@ _Validation **PASSED** on 2026-09-28 with cect v0.3.4_
 |----------|------|-----------------|-------|
 | I1R | I2R | 1 | Yes |
 | SMBDL | SDQR | 1 | Yes |
-| VC2 | PVT | 1 | Yes |
 | DB4 | MDL13 | 1 | Yes |
 | M1 | g1P | 1 | Yes |
 
-Expected number of nonzero connection weights: **3889** (matches).
+Expected number of nonzero connection weights: **3155** (matches).
 
-Expected total weight of connections: **3889** (matches).
+Expected total weight of connections: **3155** (matches).
 
 #### Glutamate connections
 
@@ -1440,9 +1438,9 @@ Expected total weight of connections: **3889** (matches).
 | CP05 | AVG | 1 | Yes |
 | R9AL | HOB | 1 | Yes |
 
-Expected number of nonzero connection weights: **1722** (matches).
+Expected number of nonzero connection weights: **1368** (matches).
 
-Expected total weight of connections: **1722** (matches).
+Expected total weight of connections: **1368** (matches).
 
 #### Betaine connections
 
@@ -1450,23 +1448,26 @@ Expected total weight of connections: **1722** (matches).
 |----------|------|-----------------|-------|
 | ASIL | AIBL | 1 | Yes |
 | NSMR | pm5VR | 1 | Yes |
-| RIR | AQR | 1 | Yes |
+| RIR | AQR | 0 | Yes |
+| RIR | DVA | 1 | Yes |
 
-Expected number of nonzero connection weights: **150** (matches).
+Expected number of nonzero connection weights: **96** (matches).
 
-Expected total weight of connections: **150** (matches).
+Expected total weight of connections: **96** (matches).
 
 #### GABA connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
-| RIBL | CEPVL | 1 | Yes |
-| VD10 | MVR20 | 1 | Yes |
+| RIBL | CEPVL | 0 | Yes |
+| RIBL | RIS | 1 | Yes |
+| VD10 | MVR20 | 0 | Yes |
+| VD10 | MVL20 | 1 | Yes |
 | SMDDL | SIBDL | 1 | Yes |
 
-Expected number of nonzero connection weights: **691** (matches).
+Expected number of nonzero connection weights: **606** (matches).
 
-Expected total weight of connections: **691** (matches).
+Expected total weight of connections: **606** (matches).
 
 #### Dopamine connections
 
@@ -1476,21 +1477,20 @@ Expected total weight of connections: **691** (matches).
 | PDEL | RICR | 1 | Yes |
 | ADEL | DD4 | 1 | Yes |
 
-Expected number of nonzero connection weights: **1176** (matches).
+Expected number of nonzero connection weights: **1160** (matches).
 
-Expected total weight of connections: **1176** (matches).
+Expected total weight of connections: **1160** (matches).
 
 #### Serotonin connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
-| HSNL | PVQL | 1 | Yes |
 | NSML | VD3 | 1 | Yes |
 | ADFR | RID | 1 | Yes |
 
-Expected number of nonzero connection weights: **492** (matches).
+Expected number of nonzero connection weights: **328** (matches).
 
-Expected total weight of connections: **492** (matches).
+Expected total weight of connections: **328** (matches).
 
 #### Tyramine connections
 
@@ -1500,9 +1500,9 @@ Expected total weight of connections: **492** (matches).
 | RIMR | SIADL | 1 | Yes |
 | RIML | VD5 | 1 | Yes |
 
-Expected number of nonzero connection weights: **228** (matches).
+Expected number of nonzero connection weights: **224** (matches).
 
-Expected total weight of connections: **228** (matches).
+Expected total weight of connections: **224** (matches).
 
 #### Octopamine connections
 
