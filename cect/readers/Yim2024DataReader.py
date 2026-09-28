@@ -65,9 +65,8 @@ DATASET_DESCRIPTION = (
     + """This connectome dataset contains normalized weights to ease comparison to other datasets."""
 )
 
-WEIGHTS_0 = "Weights are the summed volume (nm<sup>3</sup>) of active zone material attributed to a pre/post pair."
 WEIGHTS = (
-    WEIGHTS_0
+    "Weights are calculated from the summed volume of active zone material attributed to a pre/post pair."
     + " In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 

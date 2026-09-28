@@ -28,11 +28,8 @@ DATASET_DESCRIPTION = (
     + """This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets."""
 )
 
-WEIGHTS_0 = (
-    "Weights are the total contact area (nm<sup>2</sup>) between a pair of cells. "
-)
 WEIGHTS = (
-    WEIGHTS_0
+    "Weights are calculated from the total contact area between a pair of cells. "
     + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 

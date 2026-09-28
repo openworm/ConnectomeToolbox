@@ -177,7 +177,7 @@ def get_matrix_markdown(
         from cect.Analysis import register_symmetry_info
 
         if symmetry:
-            percentage = extra_info.split()[-1][:-1]
+            percentage = extra_info.split("%")[0].split()[-1]
             register_symmetry_info(reader_name, view_id, synclass, percentage)
 
     except Exception as e:
@@ -233,7 +233,7 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 def get_improved_reader_name(reader_name):
     better_name = (
         reader_name.replace("_", " ")
-        .replace("Yim2024", "Yim et al. 2024 ")
+        .replace("Yim2024", "Yim et al. 2024 (dauer) ")
         .replace("201", " 201")
         .replace("202", " 202")
         .replace("Sanchez", " Sanchez et al. 2023")

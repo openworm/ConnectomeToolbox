@@ -9,7 +9,6 @@
 from cect.readers.Yim2024DataReader import Yim2024DataReader
 from cect.readers.Yim2024DataReader import CONTACTOME_FILENAME
 from cect.readers.Yim2024ContactomeDataReader import DATASET_DESCRIPTION_0
-from cect.readers.Yim2024ContactomeDataReader import WEIGHTS_0
 
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
@@ -24,7 +23,9 @@ from cect import print_
 NAME = "Yim2024ContactomeNonNorm"
 
 DATASET_DESCRIPTION = DATASET_DESCRIPTION_0
-WEIGHTS = WEIGHTS_0
+WEIGHTS = (
+    "Weights are the total contact area (nm<sup>2</sup>) between a pair of cells. "
+)
 
 
 READER_DESCRIPTION = (

@@ -1,9 +1,10 @@
 # Validation status of _C. elegans_ Connectome Toolbox Data Readers
 
 These tests aim to ensure the connectivity data accessed through the Connectome Toolbox API matches the 
- data present in the original publications.
+ data present in the original publications. Each **Dataset** is associated with a specific publication, and each of these contains one or more **DataReaders** 
+ for the different types of connectome data it contains (e.g. for hermaphrodite and male worms).
         
-The entries below for each of the publications with data currently incorporated into the _C. elegans_ Connectome Toolbox include:
+The entries below for each of the **Datasets** currently incorporated into the _C. elegans_ Connectome Toolbox include:
 
 - A brief description of the original publication from which the data is taken.
 - Information on the supplementary data file(s) etc. from which the connectivity data were extracted.
@@ -12,9 +13,9 @@ The entries below for each of the publications with data currently incorporated 
 
 The source files (e.g. Excel spreadsheets) containing the originally data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
 
-For each individual Reader associated with a paper there will be:
+For each individual **DataReader** associated with a publication there will be:
 
-- A description of focus/scope of that Reader (e.g., a specific developmental stage or sex).
+- A description of focus/scope of that DataReader (e.g., a specific developmental stage or sex).
 - A link to a YAML file containing the expected data for that reader (e.g. manually extracted values from source Excel spreadsheets), which is used to validate the data.
 - A set of tables, one for each of the synapse types included in the data (e.g. chemical and electrical), comparing the expected data with the actual data extracted from running the equivalent call in the Connectome Toolbox API.
 
@@ -49,9 +50,9 @@ Note: this dataset contained 3 electrical connections not present in the Varshne
 
 
 
-### Validation tests for [DurbinJSHDataReader](WhiteJSH_data.md) 
+### Validation tests for DataReader: [DurbinJSHDataReader](WhiteJSH_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of the JSH L4 worm from White et al. 1986 data, based on the neurodata.txt file from R. M. Durbin's thesis, 1987. See validation information for minor changes from that file. 
+**DataReader Description:** Chemical and electrical connectivity of the JSH L4 worm from White et al. 1986 data, based on the neurodata.txt file from R. M. Durbin's thesis, 1987. See validation information for minor changes from that file. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/DurbinJSHDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -86,14 +87,14 @@ Expected number of nonzero connection weights: **586** (matches).
 
 Expected total weight of connections: **1546** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [DurbinN2UDataReader](WhiteN2U_data.md) 
+### Validation tests for DataReader: [DurbinN2UDataReader](WhiteN2U_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of the N2U (adult hermaphrodite) worm from White et al. 1986 data, based on the neurodata.txt file from R. M. Durbin's thesis, 1987. See validation information for minor changes from that file. 
+**DataReader Description:** Chemical and electrical connectivity of the N2U (adult hermaphrodite) worm from White et al. 1986 data, based on the neurodata.txt file from R. M. Durbin's thesis, 1987. See validation information for minor changes from that file. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/DurbinN2UDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -130,14 +131,14 @@ Expected number of nonzero connection weights: **556** (matches).
 
 Expected total weight of connections: **692** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [White_whole](White_whole_data.md) 
+### Validation tests for DataReader: [White_whole](White_whole_data.md) 
 
-**Reader Description:** Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011. This version includes the pharynx. 
+**DataReader Description:** Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011. This version includes the pharynx. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/White_whole_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -210,7 +211,7 @@ Expected number of nonzero connection weights: **1036** (matches).
 
 Expected total weight of connections: **1782** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -225,9 +226,9 @@ The spreadsheet above contained a single sheet, with a list of presynaptic cells
 
 
 
-### Validation tests for [VarshneyDataReader](Varshney_data.md) 
+### Validation tests for DataReader: [VarshneyDataReader](Varshney_data.md) 
 
-**Reader Description:** A corrected and extended version of the White et al. 1986 chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motor neuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell). 
+**DataReader Description:** A corrected and extended version of the White et al. 1986 chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motor neuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell). 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/VarshneyDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -298,7 +299,7 @@ Expected number of nonzero connection weights: **1031** (matches).
 
 Expected total weight of connections: **1777** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -314,9 +315,9 @@ For the validation tests below, specific connections between pre and postsynapti
 
 
 
-### Validation tests for [Bentley2016MAReader](Bentley2016_MA_data.md) 
+### Validation tests for DataReader: [Bentley2016MAReader](Bentley2016_MA_data.md) 
 
-**Reader Description:** Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extracellular transmission). 
+**DataReader Description:** Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extracellular transmission). 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Bentley2016MAReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -365,14 +366,14 @@ Expected number of nonzero connection weights: **56** (matches).
 
 Expected number of nonzero connection weights: **492** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Bentley2016PepReader](Bentley2016_Pep_data.md) 
+### Validation tests for DataReader: [Bentley2016PepReader](Bentley2016_Pep_data.md) 
 
-**Reader Description:** Data on peptidergic connectivity from Bentley et al. 2016 (i.e. extracellular synaptic transmission via neuropeptides). 
+**DataReader Description:** Data on peptidergic connectivity from Bentley et al. 2016 (i.e. extracellular synaptic transmission via neuropeptides). 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Bentley2016PepReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -390,7 +391,7 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **7078** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -449,9 +450,9 @@ This file was opened in Excel and weights of selected connections were visually 
 noting the pre and post cells and these added to the connection test YAML file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 
 
 
-### Validation tests for [Cook2019HermReader](Cook2019Herm_data.md) 
+### Validation tests for DataReader: [Cook2019HermReader](Cook2019Herm_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of the hermaphrodite from Cook et al. 2019, including connections between neurons, muscles and other cells. 
+**DataReader Description:** Chemical and electrical connectivity of the hermaphrodite from Cook et al. 2019, including connections between neurons, muscles and other cells. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Cook2019HermReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -496,14 +497,14 @@ Expected number of nonzero connection weights: **2883** (matches).
 
 Expected total weight of connections: **23313** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Cook2019MaleReader](Cook2019Male_data.md) 
+### Validation tests for DataReader: [Cook2019MaleReader](Cook2019Male_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of the male from Cook et al. 2019, including connections between neurons, muscles and other cells. 
+**DataReader Description:** Chemical and electrical connectivity of the male from Cook et al. 2019, including connections between neurons, muscles and other cells. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Cook2019MaleReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -550,7 +551,7 @@ Expected number of nonzero connection weights: **3482** (matches).
 
 Expected total weight of connections: **31702** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -653,9 +654,9 @@ This is a summary of the connections which were repeated:
 > Existing connection at (49,60) (pm4VR->mc1DR, GapJunction), was: 3.0, new conn weight: 3.0, appended weight is: 6.000000
 
 
-### Validation tests for [Cook2020DataReader](Cook2020_data.md) 
+### Validation tests for DataReader: [Cook2020DataReader](Cook2020_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of the _C. elegans_ pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells (epithelial, gland and marginal). 
+**DataReader Description:** Chemical and electrical connectivity of the _C. elegans_ pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells (epithelial, gland and marginal). 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Cook2020DataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -690,7 +691,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -707,9 +708,9 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 
 
-### Validation tests for [BrittinDataReader](Brittin2021_data.md) 
+### Validation tests for DataReader: [BrittinDataReader](Brittin2021_data.md) 
 
-**Reader Description:** Contactome information from Brittin et al. 2021. This dataset contains the contact area between pairs of cells in the _C. elegans_ nerve ring, as measured from volumetric reconstructions of the JSH and N2U animals, based on the previously published electron micrographs from White et al. 1986. The M<sup>4</sup> graph as described in the Brittin et al. 2021 paper is used here (i.e. limited to contacts that are conserved across the left and right sides of the JSH and N2U animals). 
+**DataReader Description:** Contactome information from Brittin et al. 2021. This dataset contains the contact area between pairs of cells in the _C. elegans_ nerve ring, as measured from volumetric reconstructions of the JSH and N2U animals, based on the previously published electron micrographs from White et al. 1986. The M<sup>4</sup> graph as described in the Brittin et al. 2021 paper is used here (i.e. limited to contacts that are conserved across the left and right sides of the JSH and N2U animals). 
  
 
 
@@ -736,7 +737,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: **3850** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -755,9 +756,9 @@ The chemical connection weights below were read from the supplementary informati
 
 
 
-### Validation tests for [WitvlietDataReader1](Witvliet1_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader1](Witvliet1_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 1 (L1 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 1 (L1 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader1_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -785,14 +786,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **164** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader2](Witvliet2_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader2](Witvliet2_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 2 (L1 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 2 (L1 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader2_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -820,14 +821,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader3](Witvliet3_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader3](Witvliet3_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 3 (L1 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 3 (L1 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader3_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -855,14 +856,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **186** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader4](Witvliet4_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader4](Witvliet4_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 4 (L1 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 4 (L1 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader4_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -890,14 +891,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **415** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader5](Witvliet5_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader5](Witvliet5_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 5 (L2 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 5 (L2 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader5_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -925,14 +926,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **578** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader6](Witvliet6_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader6](Witvliet6_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 6 (L3 stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 6 (L3 stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader6_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -960,14 +961,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **426** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader7](Witvliet7_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader7](Witvliet7_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 7 (adult stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 7 (adult stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader7_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -995,14 +996,14 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **576** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [WitvlietDataReader8](Witvliet8_data.md) 
+### Validation tests for DataReader: [WitvlietDataReader8](Witvliet8_data.md) 
 
-**Reader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 8 (adult stage) 
+**DataReader Description:** Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 8 (adult stage) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WitvlietDataReader8_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1030,7 +1031,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **612** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -1045,9 +1046,9 @@ _get_signal_propagation_q()_ was used to get the q-values (the false discovery r
 We obtained the validation values below by calling the above functions and printing the value in the signal propagation for specific connections, checking q < 0.05. 
 
 
-### Validation tests for [WormNeuroAtlasFuncReader](Randi2023_data.md) 
+### Validation tests for DataReader: [WormNeuroAtlasFuncReader](Randi2023_data.md) 
 
-**Reader Description:** Data on functional connectivity of _C. elegans_ from WormNeuroAtlas Python package (values extracted with get_signal_propagation_map() & get_signal_propagation_q(), with max_q (q being the false discovery rate) = 0.05) 
+**DataReader Description:** Data on functional connectivity of _C. elegans_ from WormNeuroAtlas Python package (values extracted with get_signal_propagation_map() & get_signal_propagation_q(), with max_q (q being the false discovery rate) = 0.05) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/WormNeuroAtlasFuncReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1065,7 +1066,7 @@ We obtained the validation values below by calling the above functions and print
 
 Expected number of nonzero connection weights: **1150** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -1083,9 +1084,9 @@ There are 3 different models used for the neuropeptidergic connectome (short-, m
 For each of these CSV files, the file was opened in Apple Numbers, and the weights (numbers of matched peptides expressed in pre cell with corresponding receptor in post cell) read off, to provide checks listed below. 
 
 
-### Validation tests for [RipollSanchezShortRangeReader](RipollSanchezShortRange_data.md) 
+### Validation tests for DataReader: [RipollSanchezShortRangeReader](RipollSanchezShortRange_data.md) 
 
-**Reader Description:** Dataset of neuropeptidergic connections only between neurons whose processes overlap in the same neuronal process bundle 
+**DataReader Description:** Dataset of neuropeptidergic connections only between neurons whose processes overlap in the same neuronal process bundle 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/RipollSanchezShortRangeReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1101,14 +1102,14 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: **31417** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [RipollSanchezMidRangeReader](RipollSanchezMidRange_data.md) 
+### Validation tests for DataReader: [RipollSanchezMidRangeReader](RipollSanchezMidRange_data.md) 
 
-**Reader Description:** Dataset of neuropeptidergic connections between any neurons whose processes lie within the same broad body region (head, midbody, or tail) 
+**DataReader Description:** Dataset of neuropeptidergic connections between any neurons whose processes lie within the same broad body region (head, midbody, or tail) 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/RipollSanchezMidRangeReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1124,14 +1125,14 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **40425** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [RipollSanchezLongRangeReader](RipollSanchezLongRange_data.md) 
+### Validation tests for DataReader: [RipollSanchezLongRangeReader](RipollSanchezLongRange_data.md) 
 
-**Reader Description:** Dataset of neuropeptidergic connections between any neuron pair regardless of anatomical location 
+**DataReader Description:** Dataset of neuropeptidergic connections between any neuron pair regardless of anatomical location 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/RipollSanchezLongRangeReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1152,7 +1153,7 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **53558** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -1181,9 +1182,9 @@ Each file was opened in Excel and weights of selected connections were visually 
 
 
 
-### Validation tests for [Yim2024NonNormDataReader](Yim2024NonNorm_data.md) 
+### Validation tests for DataReader: [Yim2024NonNormDataReader](Yim2024NonNorm_data.md) 
 
-**Reader Description:** Reconstruction of the directed chemical synaptic connectome of the dauer, a distinct developmental stage of _C. elegans_. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion.  
+**DataReader Description:** Reconstruction of the directed chemical synaptic connectome of the dauer, a distinct developmental stage of _C. elegans_. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion.  
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024NonNormDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1199,14 +1200,14 @@ Each file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: **2198** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Yim2024DataReader](Yim2024_data.md) 
+### Validation tests for DataReader: [Yim2024DataReader](Yim2024_data.md) 
 
-**Reader Description:** Reconstruction of the directed chemical synaptic connectome of the dauer, a distinct developmental stage of _C. elegans_. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion. This connectome dataset contains normalized weights to ease comparison to other datasets. 
+**DataReader Description:** Reconstruction of the directed chemical synaptic connectome of the dauer, a distinct developmental stage of _C. elegans_. Presynaptic active zones were detected by a convolutional neural network, reconstructed in 3D and proofread; postsynaptic partners and each partner's share of an active zone were assigned by simulating neurotransmitter diffusion. This connectome dataset contains normalized weights to ease comparison to other datasets. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024DataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1222,14 +1223,14 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **2198** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Yim2024ContactomeNonNormDataReader](Yim2024ContactomeNonNorm_data.md) 
+### Validation tests for DataReader: [Yim2024ContactomeNonNormDataReader](Yim2024ContactomeNonNorm_data.md) 
 
-**Reader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed.  
+**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed.  
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024ContactomeNonNormDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1247,14 +1248,14 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **12160** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Yim2024ContactomeDataReader](Yim2024Contactome_data.md) 
+### Validation tests for DataReader: [Yim2024ContactomeDataReader](Yim2024Contactome_data.md) 
 
-**Reader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets. 
+**DataReader Description:** Reconstruction of the contactome of the dauer, a distinct developmental stage of _C. elegans_, contains a symmetric matrix measuring physical contact between pre/post cells. Every cell in the reconstructed EM volume was traced voxel by voxel; these labeled cells were then expanded until the extracellular gaps between them closed, and the area of each resulting point of contact summed. This connectome dataset contains normalized contact areas/weights to ease comparison to other datasets. 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Yim2024ContactomeDataReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1271,7 +1272,7 @@ _Validation **PASSED** on 2026-09-22 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **12160** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
@@ -1293,9 +1294,9 @@ These files were used to identify potential presynaptic cells for each neurotran
     
 
 
-### Validation tests for [Wang2024HermReader](Wang2024Herm_data.md) 
+### Validation tests for DataReader: [Wang2024HermReader](Wang2024Herm_data.md) 
 
-**Reader Description:** This dataset for the hermaphrodite _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016 
+**DataReader Description:** This dataset for the hermaphrodite _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Wang2024HermReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1400,14 +1401,14 @@ Expected number of nonzero connection weights: **56** (matches).
 
 Expected total weight of connections: **56** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 
 
-### Validation tests for [Wang2024MaleReader](Wang2024Male_data.md) 
+### Validation tests for DataReader: [Wang2024MaleReader](Wang2024Male_data.md) 
 
-**Reader Description:** This dataset for the male _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016 
+**DataReader Description:** This dataset for the male _C. elegans_ contains neurotransmitter expression values from: Wang et al. 2024 with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al. 2016 
 
 
 [Source YAML file with expected values](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/validation/Wang2024MaleReader_expected_data.yaml). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. 
@@ -1511,7 +1512,7 @@ Expected number of nonzero connection weights: **56** (matches).
 
 Expected total weight of connections: **56** (matches).
 
-_Validation **PASSED** on 2026-09-22 with cect v0.3.4_
+_Validation **PASSED** on 2026-09-25 with cect v0.3.4_
 
 
 

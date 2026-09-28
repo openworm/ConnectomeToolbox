@@ -54,9 +54,10 @@ class TestExpectedConnections(unittest.TestCase):
         )
 
         validation_md += """These tests aim to ensure the connectivity data accessed through the Connectome Toolbox API matches the 
- data present in the original publications.
+ data present in the original publications. Each **Dataset** is associated with a specific publication, and each of these contains one or more **DataReaders** 
+ for the different types of connectome data it contains (e.g. for hermaphrodite and male worms).
         
-The entries below for each of the publications with data currently incorporated into the _C. elegans_ Connectome Toolbox include:
+The entries below for each of the **Datasets** currently incorporated into the _C. elegans_ Connectome Toolbox include:
 
 - A brief description of the original publication from which the data is taken.
 - Information on the supplementary data file(s) etc. from which the connectivity data were extracted.
@@ -65,9 +66,9 @@ The entries below for each of the publications with data currently incorporated 
 
 The source files (e.g. Excel spreadsheets) containing the originally data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
 
-For each individual Reader associated with a paper there will be:
+For each individual **DataReader** associated with a publication there will be:
 
-- A description of focus/scope of that Reader (e.g., a specific developmental stage or sex).
+- A description of focus/scope of that DataReader (e.g., a specific developmental stage or sex).
 - A link to a YAML file containing the expected data for that reader (e.g. manually extracted values from source Excel spreadsheets), which is used to validate the data.
 - A set of tables, one for each of the synapse types included in the data (e.g. chemical and electrical), comparing the expected data with the actual data extracted from running the equivalent call in the Connectome Toolbox API.
 
@@ -79,14 +80,14 @@ Successfully passing the tests on the main branch of the repository will deploy 
 
         latex_md = """\\footnotesize
 \\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.12\\textwidth}>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
-  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
+  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox, with descriptions of their DataReaders and interpretations of connectivity weights.}\\label{tab:dataset-table}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{DataReaders/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endfirsthead
   \\caption[]{(continued)}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{DataReaders/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endhead
   \\midrule
@@ -251,9 +252,9 @@ Successfully passing the tests on the main branch of the repository will deploy 
 
             ref = reader_ref
 
-            report += f"\n### Validation tests for [{data_reader}]({ref}_data.md) \n\n"
+            report += f"\n### Validation tests for DataReader: [{data_reader}]({ref}_data.md) \n\n"
 
-            report += f"**Reader Description:** {description} \n\n"
+            report += f"**DataReader Description:** {description} \n\n"
 
             report += f"\n[Source YAML file with expected values]({expected_data_file_url}). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. \n\n"
 

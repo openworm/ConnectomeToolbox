@@ -46,9 +46,8 @@ class Bentley2016PepReader(ConnectomeDataset):
 
     def __init__(self):
         ConnectomeDataset.__init__(self)
-
-        cells, neuron_conns = self.read_data()
         self.verbose = False
+        cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
             self.add_connection_info(
                 conn,
@@ -68,7 +67,7 @@ class Bentley2016PepReader(ConnectomeDataset):
 
         with open(filename, "r") as f:
             reader = csv.reader(f)
-            print_("Opened file: " + filename)
+            # print_("Opened file: " + filename)
 
             for row in reader:
                 pre = str.strip(row[0])
@@ -89,9 +88,10 @@ class Bentley2016PepReader(ConnectomeDataset):
                 if pre_post not in all_pairs:
                     all_pairs.append(pre_post)
 
-            print_(
-                f"Read {len(conns)} connections, with {len(all_pairs)} unique pre-post pairs, and {len(cells)} unique cells"
-            )
+            if self.verbose:
+                print_(
+                    f"Read {len(conns)} connections, with {len(all_pairs)} unique pre-post pairs, and {len(cells)} unique cells"
+                )
 
         return cells, conns
 

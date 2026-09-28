@@ -20,6 +20,10 @@
             "Chemical": "70.91",
             "Electrical": "90.48"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "70.37",
+            "Electrical": "95.00"
+        },
         "MotorMuscles": {
             "Chemical": "70.91",
             "Electrical": "90.48"
@@ -49,6 +53,10 @@
         "MotorSomaticH": {
             "Chemical": "66.67",
             "Electrical": "82.61"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "66.67",
+            "Electrical": "90.00"
         },
         "MotorMuscles": {
             "Chemical": "66.67",
@@ -84,6 +92,10 @@
             "Chemical": "90.81",
             "Electrical": "94.85"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "66.67",
+            "Electrical": "90.00"
+        },
         "MotorMuscles": {
             "Chemical": "90.81",
             "Electrical": "94.85"
@@ -113,6 +125,10 @@
         "MotorSomaticH": {
             "Chemical": "90.81",
             "Electrical": "94.85"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "66.67",
+            "Electrical": "90.00"
         },
         "MotorMuscles": {
             "Chemical": "90.81",
@@ -187,6 +203,9 @@
         "MotorSomaticH": {
             "Extrasynaptic": "100.00"
         },
+        "MotorHeadSubLat": {
+            "Extrasynaptic": "100.00"
+        },
         "MotorMuscles": {
             "Extrasynaptic": "100.00"
         },
@@ -218,6 +237,10 @@
         "MotorSomaticH": {
             "Chemical": "89.46",
             "Electrical": "84.53"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "68.31",
+            "Electrical": "50.00"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
@@ -252,6 +275,10 @@
         "MotorSomaticH": {
             "Chemical": "92.03",
             "Electrical": "92.53"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "65.35",
+            "Electrical": "51.85"
         },
         "MotorMuscles": {
             "Chemical": "86.55",
@@ -292,6 +319,9 @@
         "MotorSomaticH": {
             "Contact": "100.00"
         },
+        "MotorHeadSubLat": {
+            "Contact": "100.00"
+        },
         "MotorMuscles": {
             "Contact": "100.00"
         },
@@ -317,6 +347,10 @@
             "Electrical": "70.59"
         },
         "MotorSomaticH": {
+            "Chemical": "67.44",
+            "Electrical": "66.67"
+        },
+        "MotorHeadSubLat": {
             "Chemical": "67.44",
             "Electrical": "66.67"
         },
@@ -350,6 +384,10 @@
             "Chemical": "75.00",
             "Electrical": "33.33"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "75.00",
+            "Electrical": "33.33"
+        },
         "MotorMuscles": {
             "Chemical": "82.68",
             "Electrical": "33.33"
@@ -377,6 +415,10 @@
             "Electrical": "66.67"
         },
         "MotorSomaticH": {
+            "Chemical": "70.83",
+            "Electrical": "83.33"
+        },
+        "MotorHeadSubLat": {
             "Chemical": "70.83",
             "Electrical": "83.33"
         },
@@ -410,6 +452,10 @@
             "Chemical": "81.13",
             "Electrical": "88.24"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "81.13",
+            "Electrical": "88.24"
+        },
         "MotorMuscles": {
             "Chemical": "83.46",
             "Electrical": "88.24"
@@ -437,6 +483,10 @@
             "Electrical": "78.12"
         },
         "MotorSomaticH": {
+            "Chemical": "63.16",
+            "Electrical": "62.50"
+        },
+        "MotorHeadSubLat": {
             "Chemical": "63.16",
             "Electrical": "62.50"
         },
@@ -470,6 +520,10 @@
             "Chemical": "81.33",
             "Electrical": "60.00"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "81.33",
+            "Electrical": "60.00"
+        },
         "MotorMuscles": {
             "Chemical": "84.65",
             "Electrical": "57.69"
@@ -497,6 +551,10 @@
             "Electrical": "90.32"
         },
         "MotorSomaticH": {
+            "Chemical": "75.00",
+            "Electrical": "68.75"
+        },
+        "MotorHeadSubLat": {
             "Chemical": "75.00",
             "Electrical": "68.75"
         },
@@ -528,6 +586,10 @@
         },
         "MotorSomaticH": {
             "Chemical": "77.11",
+            "Electrical": "73.08"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "78.05",
             "Electrical": "73.08"
         },
         "MotorMuscles": {
@@ -577,6 +639,12 @@
             "Acetylcholine": "75.56",
             "GABA": "75.00"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "76.29",
+            "Electrical": "71.79",
+            "Acetylcholine": "76.40",
+            "GABA": "75.00"
+        },
         "MotorMuscles": {
             "Chemical": "75.51",
             "Electrical": "71.79",
@@ -611,6 +679,9 @@
         "MotorSomaticH": {
             "Functional": "49.25"
         },
+        "MotorHeadSubLat": {
+            "Functional": "41.67"
+        },
         "MotorMuscles": {
             "Functional": "49.25"
         },
@@ -637,6 +708,9 @@
         "MotorSomaticH": {
             "Extrasynaptic": "99.98"
         },
+        "MotorHeadSubLat": {
+            "Extrasynaptic": "99.84"
+        },
         "MotorMuscles": {
             "Extrasynaptic": "99.98"
         },
@@ -661,6 +735,9 @@
             "Extrasynaptic": "99.03"
         },
         "MotorSomaticH": {
+            "Extrasynaptic": "100.00"
+        },
+        "MotorHeadSubLat": {
             "Extrasynaptic": "100.00"
         },
         "MotorMuscles": {
@@ -689,6 +766,9 @@
         "MotorSomaticH": {
             "Extrasynaptic": "100.00"
         },
+        "MotorHeadSubLat": {
+            "Extrasynaptic": "100.00"
+        },
         "MotorMuscles": {
             "Extrasynaptic": "100.00"
         },
@@ -711,6 +791,9 @@
         },
         "MotorSomaticH": {
             "Chemical": "55.38"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "55.81"
         },
         "MotorMuscles": {
             "Chemical": "66.94"
@@ -735,6 +818,9 @@
         "MotorSomaticH": {
             "Chemical": "55.38"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "55.81"
+        },
         "MotorMuscles": {
             "Chemical": "66.94"
         },
@@ -758,6 +844,9 @@
         "MotorSomaticH": {
             "Contact": "89.26"
         },
+        "MotorHeadSubLat": {
+            "Contact": "91.53"
+        },
         "MotorMuscles": {
             "Contact": "84.74"
         },
@@ -780,6 +869,9 @@
         },
         "MotorSomaticH": {
             "Contact": "89.26"
+        },
+        "MotorHeadSubLat": {
+            "Contact": "91.53"
         },
         "MotorMuscles": {
             "Contact": "84.74"
@@ -848,6 +940,11 @@
             "Acetylcholine": "88.98",
             "GABA": "90.22",
             "Serotonin": "100.00"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "68.31",
+            "Acetylcholine": "69.17",
+            "GABA": "79.49"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
@@ -927,6 +1024,11 @@
             "Acetylcholine": "88.98",
             "GABA": "90.22",
             "Serotonin": "100.00"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "68.31",
+            "Acetylcholine": "69.17",
+            "GABA": "79.49"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
@@ -1060,6 +1162,12 @@
             "Acetylcholine": "88.98",
             "GABA": "90.22"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "68.31",
+            "Electrical": "50.00",
+            "Acetylcholine": "69.17",
+            "GABA": "79.49"
+        },
         "MotorMuscles": {
             "Chemical": "86.43",
             "Electrical": "88.61",
@@ -1150,6 +1258,13 @@
             "Serotonin_Acetylcholine": "80.00",
             "Serotonin": "100.00"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "66.67",
+            "Electrical": "90.00",
+            "Acetylcholine": "75.00",
+            "GABA": "54.55",
+            "Glutamate": "0.00"
+        },
         "MotorMuscles": {
             "Chemical": "91.44",
             "Electrical": "94.85",
@@ -1209,6 +1324,11 @@
             "Acetylcholine": "87.09",
             "GABA": "100.00"
         },
+        "MotorHeadSubLat": {
+            "Chemical": "66.88",
+            "Electrical": "41.30",
+            "Acetylcholine": "66.88"
+        },
         "MotorMuscles": {
             "Chemical": "86.25",
             "Electrical": "87.74",
@@ -1255,6 +1375,11 @@
             "Electrical": "82.32",
             "Acetylcholine": "87.45",
             "GABA": "100.00"
+        },
+        "MotorHeadSubLat": {
+            "Chemical": "66.88",
+            "Electrical": "41.30",
+            "Acetylcholine": "66.88"
         },
         "MotorMuscles": {
             "Chemical": "86.39",

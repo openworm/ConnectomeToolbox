@@ -52,6 +52,8 @@ class Cook2020DataReader(ConnectomeDataset):
         (Cook2020DataReader): The initialized Cook et al 2020 pharyngeal connectome reader
     """
 
+    verbose = False
+
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
@@ -64,9 +66,10 @@ class Cook2020DataReader(ConnectomeDataset):
                 fail_on_any_repeated_connection=False,
             )
 
-        print_("\n*********************** Validation Info ************************")
-        print(self.validation_info)
-        print_("****************************************************************")
+        if self.verbose:
+            print_("\n*********************** Validation Info ************************")
+            print(self.validation_info)
+            print_("****************************************************************")
 
     def read_data(self):
         """
@@ -78,7 +81,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
         with open(filename, "r") as f:
             reader = csv.DictReader(f)
-            print_("Opened file: " + filename)
+            # print_("Opened file: " + filename)
 
             for row in reader:
                 pre = str.strip(row["Source"])
@@ -115,7 +118,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
         with open(filename2, "r") as f:
             reader = csv.DictReader(f)
-            print_("Opened file: " + filename)
+            # print_("Opened file: " + filename)
 
             for row in reader:
                 pre = str.strip(row["Source"])

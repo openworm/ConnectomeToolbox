@@ -44,6 +44,8 @@ class Bentley2016MAReader(ConnectomeDataset):
         (Bentley2016MAReader): The initialized Bentley et al. 2016 monoaminergic connectome reader
     """
 
+    verbose = False
+
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
@@ -56,9 +58,10 @@ class Bentley2016MAReader(ConnectomeDataset):
                 fail_on_any_repeated_connection=False,
             )
 
-        print_("\n*********************** Validation Info ************************")
-        print(self.validation_info)
-        print_("****************************************************************")
+        if self.verbose:
+            print_("\n*********************** Validation Info ************************")
+            print(self.validation_info)
+            print_("****************************************************************")
 
     def read_data(self):
         """
@@ -70,7 +73,7 @@ class Bentley2016MAReader(ConnectomeDataset):
 
         with open(filename, "r") as f:
             reader = csv.reader(f)
-            print_("Opened file: " + filename)
+            # print_("Opened file: " + filename)
 
             for row in reader:
                 # print_("Reading row: " + str(row))

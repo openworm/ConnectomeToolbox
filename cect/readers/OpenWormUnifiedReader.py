@@ -18,6 +18,8 @@ import os
 
 READER_DESCRIPTION = """An OpenWorm unified reader combining multiple connectomes. <b>NOTE: WORK IN PROGRESS! SUBJECT TO CHANGE WITHOUT NOTICE!</b>"""
 
+DATASET_DESCRIPTION = READER_DESCRIPTION
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     if from_cache:

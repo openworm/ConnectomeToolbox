@@ -110,10 +110,12 @@ def convert_to_symmetry_array(cds, synclasses, verbose=False):
                 conn_count += 1
 
     if symm_conn_count > 0:
-        percentage = 100 * symm_conn_count / conn_count
+        bsi = symm_conn_count / conn_count
+        percentage = 100 * bsi
     else:
         percentage = 0.0
-    info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% "
+        bsi = 0.0
+    info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% (bilateral symmetry index: {'%.4f' % bsi}) "
     if verbose:
         print_(info)
 

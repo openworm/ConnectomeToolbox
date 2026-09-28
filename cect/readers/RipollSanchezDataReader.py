@@ -107,7 +107,8 @@ def load_hub_info():
 
     wb = load_workbook(neuron_info_file)
     sheet = wb.worksheets[0]
-    print_("Opened the Excel file for Ripoll Sanchez et al: " + neuron_info_file)
+
+    # print_("Opened the Excel file for Ripoll Sanchez et al: " + neuron_info_file)
 
     clusters = {}
 

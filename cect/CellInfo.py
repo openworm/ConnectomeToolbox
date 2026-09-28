@@ -55,10 +55,14 @@ def get_weight_table_markdown(w):
 
     for dataset in w:
         # print(dataset)
-        # print("-- Checking whether to add dataset: %s" % dataset)
+        print("-- Checking whether to add dataset: %s" % dataset)
         if (
             len(w[dataset]) > 0
             and sum(w[dataset].values()) > 0
+            and "Yim2024NonNorm<"
+            not in dataset  # only use the normalized version for the "chemical" connectome, which is comparable to the other chemical connectomes
+            and "Yim2024Contactome<"
+            not in dataset  # only use the NonNorm version for the contactome, which is comparable to the other dimensional contactomes
             and "SSData" not in dataset
         ):
             # print("   -- Adding dataset: %s" % dataset)

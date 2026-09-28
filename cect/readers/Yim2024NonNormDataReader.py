@@ -9,7 +9,6 @@
 from cect.readers.Yim2024DataReader import Yim2024DataReader
 from cect.readers.Yim2024DataReader import SYNAPTIC_CONNS_FILENAME
 from cect.readers.Yim2024DataReader import DATASET_DESCRIPTION_0
-from cect.readers.Yim2024DataReader import WEIGHTS_0
 
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
@@ -24,7 +23,7 @@ NAME = "Yim2024NonNorm"
 
 DATASET_DESCRIPTION = DATASET_DESCRIPTION_0
 
-WEIGHTS = WEIGHTS_0
+WEIGHTS = "Weights are the summed volume (nm<sup>3</sup>) of active zone material attributed to a pre/post pair."
 
 
 READER_DESCRIPTION = (

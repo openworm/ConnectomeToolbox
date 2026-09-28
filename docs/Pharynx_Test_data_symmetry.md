@@ -22,7 +22,7 @@ Note: this is just a test dataset, without real biological meaning.
 
 !!! tip  "Choose View"
 
-    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <b><a href="../Pharynx_Test_data_symmetry"> Pharynx</a></b> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data_symmetry"> BrainMap A</a> - <a href="../Brainmap_Test_data_symmetry"> BrainMap B</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../MotorMuscles_Test_data_symmetry"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
+    <a href="../Test_data_symmetry"> Raw Data</a> - <a href="../Neurons_Test_data_symmetry"> Neurons</a> - <b><a href="../Pharynx_Test_data_symmetry"> Pharynx</a></b> - <a href="../Social_Test_data_symmetry"> Social Network</a> - <a href="../Escape_Test_data_symmetry"> Escape Response Circuit</a> - <a href="../Full1_Test_data_symmetry"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data_symmetry"> BrainMap A</a> - <a href="../Brainmap_Test_data_symmetry"> BrainMap B</a> - <a href="../Loco1_Test_data_symmetry"> Locomotion 1</a> - <a href="../Loco2_Test_data_symmetry"> Locomotion 2</a> - <a href="../Loco3_Test_data_symmetry"> Locomotion 3</a> - <a href="../PeptidergicHubs_Test_data_symmetry"> Peptidergic Hubs</a> - <a href="../NonpharyngealH_Test_data_symmetry"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data_symmetry"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data_symmetry"> Motor Neurons (somatic)</a> - <a href="../MotorHeadSubLat_Test_data_symmetry"> Motor Neurons (head & sub lat.)</a> - <a href="../MotorMuscles_Test_data_symmetry"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data_symmetry"> Interneurons (somatic)</a> - 
 
     <i>Only the 20 neurons of the pharynx (whether present or not in the connectome dataset)</i>
 === "Chemical"
@@ -31,7 +31,7 @@ Note: this is just a test dataset, without real biological meaning.
     ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Pharynx_Chemical_symm.json" }
     ```
-    Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% 
+    Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% (bilateral symmetry index: 1.0000) 
 
 === "Acetylcholine"
 
@@ -39,7 +39,7 @@ Note: this is just a test dataset, without real biological meaning.
     ```{.plotly .no-auto-theme}
     { "file_path": "./assets/Test_Pharynx_Acetylcholine_symm.json" }
     ```
-    Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% 
+    Of 400 possible edges, 2 are connected, 2 are mirrored - 100.00% (bilateral symmetry index: 1.0000) 
 
 === "View info"
 
