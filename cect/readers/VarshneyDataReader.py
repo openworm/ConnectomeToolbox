@@ -28,7 +28,7 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = "A corrected and extended version of the White et al. 1986 chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motor neuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell)."
+DATASET_DESCRIPTION = "A corrected and extended version of the White et al. 1986 chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motorneuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell)."
 
 WEIGHTS = "Weights are the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
 

@@ -19,7 +19,7 @@ NAME = "Bentley2016_MAwna"
 
 READER_DESCRIPTION = """Data on monoaminergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
-DATASET_DESCRIPTION = """Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extracellular transmission), accessed via the WormNeuroAtlas package"""
+DATASET_DESCRIPTION = """Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extrasynaptic transmission), accessed via the WormNeuroAtlas package"""
 
 WEIGHTS = "Adjacency matrices are binary and directed; a weight of 1 between neurons A and B signifies that cell A expresses a biosynthetic enzyme or transporter for the specific monoamine and neuron B expresses a cognate receptor for that monoamine."
 

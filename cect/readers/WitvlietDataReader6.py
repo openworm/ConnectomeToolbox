@@ -9,7 +9,7 @@ from cect.readers.WitvlietDataReader import WEIGHTS
 NAME = "Witvliet6"
 SRC_FILENAME = "witvliet_2020_6 L3.xlsx"
 
-DATASET_DESCRIPTION = "Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 6 (L3 stage)"
+DATASET_DESCRIPTION = "Chemical and electrical connectivity from Witvliet et al. 2021, dataset 6 (L3 stage)"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
