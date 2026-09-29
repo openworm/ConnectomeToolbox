@@ -11,6 +11,8 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.Cells import convert_to_preferred_muscle_name
 from cect.Cells import is_any_neuron
+from cect.Cells import is_herm_neuron
+from cect.Cells import is_male_neuron
 from cect.Cells import remove_leading_index_zero
 from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
@@ -184,6 +186,16 @@ class Cook2019DataReader(ConnectomeDataset):
         neurons, muscles, other_cells, conns = self.read_all_data()
 
         for conn in conns:
+            for cell in [conn.pre_cell, conn.post_cell]:
+                if is_any_neuron(cell):
+                    if sex == HERMAPHRODITE:
+                        assert is_herm_neuron(cell), (
+                            "Cell %s is not a hermaphrodite neuron" % cell
+                        )
+                    elif sex == MALE:
+                        assert is_male_neuron(cell), (
+                            "Cell %s is not a male neuron" % cell
+                        )
             self.add_connection_info(conn)
 
     def read_data(self):

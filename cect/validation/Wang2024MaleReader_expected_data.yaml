@@ -7,9 +7,6 @@ connection_lists:
   - pre: SMBDL
     post: SDQR
     weight: 1
-  - pre: VC2
-    post: PVT
-    weight: 1
   - pre: DB4
     post: MDL13
     weight: 1
@@ -17,8 +14,8 @@ connection_lists:
     post: g1P
     weight: 1
   synapse: Acetylcholine
-  total_nonzero_conns: 3889
-  total_weight: 3889
+  total_nonzero_conns: 3155
+  total_weight: 3155
 - connections:
   - pre: RIMR
     post: MDL05
@@ -30,8 +27,8 @@ connection_lists:
     post: HOB
     weight: 1
   synapse: Glutamate
-  total_nonzero_conns: 1722
-  total_weight: 1722
+  total_nonzero_conns: 1368
+  total_weight: 1368
 - connections:
   - pre: ASIL
     post: AIBL
@@ -41,23 +38,32 @@ connection_lists:
     weight: 1
   - pre: RIR
     post: AQR
+    weight: 0
+  - pre: RIR
+    post: DVA
     weight: 1
   synapse: Betaine
-  total_nonzero_conns: 150
-  total_weight: 150
+  total_nonzero_conns: 96
+  total_weight: 96
 - connections:
   - pre: RIBL
     post: CEPVL
+    weight: 0
+  - pre: RIBL
+    post: RIS
     weight: 1
   - pre: VD10
     post: MVR20
+    weight: 0
+  - pre: VD10
+    post: MVL20
     weight: 1
   - pre: SMDDL
     post: SIBDL
     weight: 1
   synapse: GABA
-  total_nonzero_conns: 691
-  total_weight: 691
+  total_nonzero_conns: 606
+  total_weight: 606
 - connections:
   - pre: CEPVL
     post: AIMR
@@ -69,12 +75,9 @@ connection_lists:
     post: DD4
     weight: 1
   synapse: Dopamine
-  total_nonzero_conns: 1176
-  total_weight: 1176
+  total_nonzero_conns: 1160
+  total_weight: 1160
 - connections:
-  - pre: HSNL
-    post: PVQL
-    weight: 1
   - pre: NSML
     post: VD3
     weight: 1
@@ -82,8 +85,8 @@ connection_lists:
     post: RID
     weight: 1
   synapse: Serotonin
-  total_nonzero_conns: 492
-  total_weight: 492
+  total_nonzero_conns: 328
+  total_weight: 328
 - connections:
   - pre: RIMR
     post: RMEV
@@ -95,8 +98,8 @@ connection_lists:
     post: VD5
     weight: 1
   synapse: Tyramine
-  total_nonzero_conns: 228
-  total_weight: 228
+  total_nonzero_conns: 224
+  total_weight: 224
 - connections:
   - pre: RICR
     post: ASIL

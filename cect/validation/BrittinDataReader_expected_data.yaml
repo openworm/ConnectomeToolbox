@@ -12,9 +12,6 @@ connection_lists:
   - pre: ADLR
     post: ADAR
     weight: 11319.5
-  - pre: ADLR
-    post: ADAR
-    weight: 11319.5
   - pre: ADAR
     post: ADLR
     weight: 11319.5

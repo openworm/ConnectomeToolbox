@@ -31,7 +31,7 @@ READER_DESCRIPTION = (
     % (get_dataset_source_on_github(filename.split("/")[-1]),)
 )
 
-DATASET_DESCRIPTION = """Data on peptidergic connectivity from Bentley et al. 2016 (i.e. extracellular synaptic transmission via neuropeptides)."""
+DATASET_DESCRIPTION = """Data on peptidergic connectivity from Bentley et al. 2016 (i.e. extrasynaptic transmission via neuropeptides)."""
 
 WEIGHTS = "Adjacency matrices are binary and directed; a weight of 1 between neurons signifies that a ligand-receptor pair with a biologically plausible EC50 is co-expressed across the two neurons."
 

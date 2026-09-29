@@ -55,7 +55,7 @@ def get_weight_table_markdown(w):
 
     for dataset in w:
         # print(dataset)
-        print("-- Checking whether to add dataset: %s" % dataset)
+        # print("-- Checking whether to add dataset: %s" % dataset)
         if (
             len(w[dataset]) > 0
             and sum(w[dataset].values()) > 0

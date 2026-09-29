@@ -11,6 +11,7 @@ from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.Cells import is_any_neuron
+from cect.Cells import is_male_neuron
 from cect.ConnectomeDataset import load_connectome_dataset_file
 from cect.ConnectomeDataset import get_cache_filename
 from cect.ConnectomeDataset import get_dataset_source_on_github
@@ -36,6 +37,9 @@ from cect.Neurotransmitters import UNKNOWN_MONOAMINERGIC_NEUROTRANSMITTER
 from cect.Neurotransmitters import FIVE_HTP
 from cect.Neurotransmitters import PEOH
 from cect.Neurotransmitters import FIVE_HTP_FIVE_HT
+
+from cect.readers.Cook2019DataReader import HERMAPHRODITE
+from cect.readers.Cook2019DataReader import MALE
 
 from openpyxl import load_workbook
 
@@ -210,7 +214,7 @@ class Wang2024Reader(ConnectomeDataset):
         sources = []
         self.all_neurotransmitters = {}
 
-        if sex == "Hermaphrodite" or sex == "Male":
+        if sex == HERMAPHRODITE or sex == MALE:
             sources.append(
                 [
                     "%selife-95402-supp2-v1.xlsx" % self.spreadsheet_location,
@@ -220,7 +224,8 @@ class Wang2024Reader(ConnectomeDataset):
                 ]
             )
 
-        if sex == "Male":
+        if sex == MALE:
+            sources[0][2] = ("Cook et al. 2019 Male connectome", "Cook2019MaleReader")
             sources.append(
                 [
                     "%selife-95402-supp3-v1.xlsx" % self.spreadsheet_location,
@@ -287,6 +292,8 @@ class Wang2024Reader(ConnectomeDataset):
                         print_("  - Cell: %s, nts: %s" % (cell, nts))
                     neurotransmitters[cell] = nts
 
+            print_("Read neurotransmitters: %s" % neurotransmitters)
+
             anatomical_conn_reader = load_connectome_dataset_file(
                 get_cache_filename(BASIS_ANATOMICAL_CONN[1])
             )
@@ -299,7 +306,11 @@ class Wang2024Reader(ConnectomeDataset):
 
             anat_conns = anatomical_conn_reader.get_current_connection_info_list()
 
-            print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
+            print_(
+                "Adding %i anat conns from %s"
+                % (len(anat_conns), BASIS_ANATOMICAL_CONN)
+            )
+            anat_conns_added = 0
             for conn in anat_conns[:]:
                 if conn.synclass == GENERIC_ELEC_SYN_CLASS:
                     if include_electrical_connections:
@@ -307,6 +318,7 @@ class Wang2024Reader(ConnectomeDataset):
                         if normalize_conn_numbers:
                             conn.number = 1.0
                         self.add_connection_info(conn)
+                        anat_conns_added += 1
 
                 elif (
                     is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters
@@ -321,6 +333,7 @@ class Wang2024Reader(ConnectomeDataset):
                                 conn.synclass = nt
                                 # print_("    Adding new conn: %s" % conn)
                                 self.add_connection_info(conn)
+                                anat_conns_added += 1
                     else:
                         print_(
                             "     Not a known chemical neurotransmitter: %s"
@@ -329,9 +342,14 @@ class Wang2024Reader(ConnectomeDataset):
                 else:
                     if self.verbose:
                         print_(
-                            "     Not a neuron, or not in cells with known neurotransmitters:  %s..."
+                            "     Not a neuron, or not in cells with known neurotransmitters: %s..."
                             % conn
                         )
+
+            print_(
+                "  ----  Added %i anat conns from %s"
+                % (anat_conns_added, BASIS_ANATOMICAL_CONN)
+            )
 
             if include_monoamine_conns:
                 monoamine_conns = (
@@ -350,6 +368,12 @@ class Wang2024Reader(ConnectomeDataset):
                         is_any_neuron(conn.pre_cell)
                         and conn.pre_cell in neurotransmitters
                     ):
+                        if sex == MALE:
+                            if not is_male_neuron(conn.pre_cell) or (
+                                is_any_neuron(conn.post_cell)
+                                and not is_male_neuron(conn.post_cell)
+                            ):
+                                continue  # skip non-male neurons for male connectome
                         if normalize_conn_numbers:
                             conn.number = 1.0
                         for nt in neurotransmitters[conn.pre_cell]:
@@ -361,7 +385,8 @@ class Wang2024Reader(ConnectomeDataset):
 
                     else:
                         print_(
-                            "     Not a neuron, or not in cells with known neurotransmitters..."
+                            "     Not a neuron, or not in cells with known neurotransmitters: %s..."
+                            % conn
                         )
 
             self.all_neurotransmitters.update(neurotransmitters)
@@ -384,7 +409,7 @@ class Wang2024Reader(ConnectomeDataset):
         return self._read_muscle_data()
 
 
-def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT, sex=HERMAPHRODITE):
     if from_cache:
         from cect.ConnectomeDataset import (
             load_connectome_dataset_file,
@@ -394,17 +419,16 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
         global READER_DESCRIPTION
-        inst = Wang2024Reader(sex="Hermaphrodite")
+        inst = Wang2024Reader(sex=sex)
         READER_DESCRIPTION = inst.reader_description
         return inst
 
 
 def main():
-    tdr_instance = get_instance(from_cache=False)
+    tdr_instance = get_instance(from_cache=False, sex=MALE)
 
     print(tdr_instance.summary(list_pre_cells=False))
     print(tdr_instance.reader_description)
-    quit()
 
     print(tdr_instance.all_neurotransmitters)
 
@@ -437,7 +461,6 @@ def main():
     cds2 = tdr_instance.get_connectome_view(view)
 
     print(cds2.summary(list_pre_cells=True))
-    quit()
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
@@ -445,10 +468,8 @@ def main():
     fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
-    from cect.Cells import GLUTAMATE
-
     fig, _ = cds2.to_plotly_matrix_fig(
-        GLUTAMATE,
+        TYRAMINE,
         view,
     )
     import plotly.io as pio

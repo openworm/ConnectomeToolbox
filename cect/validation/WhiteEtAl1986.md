@@ -1,15 +1,15 @@
-Data from White et al. 1986, The Structure of the Nervous System of the Nematode Caenorhabditis elegans, [Phil. Trans. R. Soc. Lond. B3141–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056) (also on [WormAtlas](https://wormatlas.org/MoW_built0.92/MoW.html)).
+Data from White et al. 1986, The Structure of the Nervous System of the Nematode Caenorhabditis elegans, [Phil. Trans. R. Soc. Lond. B 314 (1165): 1–340](https://royalsocietypublishing.org/doi/10.1098/rstb.1986.0056) (also on [WormAtlas](https://wormatlas.org/MoW_built0.92/MoW.html)).
 
 As described on [WormAtlas](https://www.wormatlas.org/neuronalwiring.html), the primary structured dataset describing this connectivity is the **neurodata.txt** file which was compiled by Richard Durbin in his thesis (Studies on the Development and Organisation of the Nervous System of Caenorhabditis elegans.
 University of Cambridge; 1987). This (and the [Readme](https://www.wormatlas.org/neurodata_readme.txt) describing it) can be found [on WormAtlas](https://www.wormatlas.org/neurodata.txt). 
 
-The **neurodata.txt** file describes reconstructed connectivity for 2 animals: an N2U (adult hermaphrodite) and JSH (which Durbin described as an L4 male, it is now believed that this animal was an L4 hermaphrodite). This file has been copied into our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata.txt).
+The **neurodata.txt** file describes reconstructed connectivity for 2 animals: an N2U (adult hermaphrodite) and JSH (which Durbin described as an L4 male; it is now believed that this animal was an L4 hermaphrodite). This file has been copied into our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata.txt).
 
 We noted however a small number of minor issues (described below) that were found in the original data file. 
 These updates were incorporated in cect by using an updated version of this file (**neurodata_updated.txt**, in our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/neurodata_updated.txt)), as opposed to being fixed in the source of our Python reader (DurbinDataReader), for clarity. 
 The issues are: 
 
-**Issue 1)** Line 2 in the original file (ADAL ADAR Gap_junction 1) was missing JSH or N2U, and so assuming N2U as "ADAL ADAR Gap_junction JSH 2" was already present.
+**Issue 1)** Line 2 in the original file (ADAL ADAR Gap_junction 1) did not specify the animal (JSH or N2U). As an equivalent JSH entry (ADAL ADAR Gap_junction JSH 2) was already present, we assumed line 2 referred to N2U.
 
 **Issue 2)** While most gap junction connections contained both A->B and B->A connections, some were missing the reverse connection. The missing connections have been included at the top of the updated file.
 
