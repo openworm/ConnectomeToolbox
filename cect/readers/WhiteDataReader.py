@@ -111,9 +111,9 @@ class WhiteDataReader(ConnectomeDataset):
 
                 for p in [pre, post]:
                     if is_herm_neuron(p):
-                        neurons.add(pre)
+                        neurons.add(p)
                     elif is_known_muscle(p):
-                        muscles.add(pre)
+                        muscles.add(p)
                     else:
                         other_cells.add(p)
 
